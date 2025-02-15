@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./GraphView-D9ZzDQZV.js","./index-DKIv7atk.js","./index-DXE47DZl.js","./keybindingService-DEgCutrm.js","./serverConfigStore-Kb5DJVFt.js","./GraphView-CVCdiww1.css","./UserSelectView-wxa07xPk.js","./BaseViewTemplate-Cz111_1A.js","./ServerStartView-BpH4TXPO.js","./ServerStartView-CJiwVDQY.css","./InstallView-CVZcZZXJ.js","./index-BNlqgrYT.js","./uvMirrors-B-HKMf6X.js","./InstallView-DbJ2cGfL.css","./WelcomeView-BrXELNIm.js","./WelcomeView-Brz3-luE.css","./NotSupportedView-BUpntA4x.js","./NotSupportedView-RFx6eCkN.css","./DownloadGitView-DVXUne-M.js","./ManualConfigurationView-Cz0_f_T-.js","./ManualConfigurationView-CsirlNfV.css","./MetricsConsentView-B5NlgqrS.js","./DesktopStartView-FKlxS2Lt.js","./MaintenanceView-Df7CHNWW.js","./index-BapOFhAR.js","./MaintenanceView-Bj5_Vr6o.css","./KeybindingPanel-CeHhC2F4.js","./KeybindingPanel-DvrUYZ4S.css","./ExtensionPanel-iPOrhDVM.js","./ServerConfigPanel-B1lI5M9c.js","./index-BYzwFNH3.js","./index-BRhY6FpL.css"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./GraphView-CLFBgoGf.js","./index-DSWvxALN.js","./index-BTHx8UHZ.js","./index-B0BQ8jlU.js","./keybindingService-DgS0S2M6.js","./serverConfigStore-C8uoM7Sm.js","./GraphView-Bo28XDd0.css","./UserSelectView-CRPNAEVJ.js","./BaseViewTemplate-DlGljfEG.js","./ServerStartView-BENqs5bD.js","./ServerStartView-BZ7uhZHv.css","./InstallView-x9XCq0hC.js","./index-A-dAhghd.js","./uvMirrors-B-HKMf6X.js","./InstallView-DbJ2cGfL.css","./WelcomeView-Cvtvw05C.js","./WelcomeView-Brz3-luE.css","./NotSupportedView-BzM0uuqA.js","./NotSupportedView-RFx6eCkN.css","./DownloadGitView-SPK8AXQU.js","./ManualConfigurationView-D3on5kXY.js","./ManualConfigurationView-CsirlNfV.css","./MetricsConsentView-DK20ednB.js","./DesktopStartView-B2BMUZxW.js","./MaintenanceView-BUmTZX1d.js","./index-KUUE4Ew8.js","./TerminalOutputDrawer-BgTEspHP.js","./MaintenanceView-DEJCj8SR.css","./DesktopUpdateView-DWsew03S.js","./DesktopUpdateView-CxchaIvw.css","./KeybindingPanel-BIrxefrS.js","./KeybindingPanel-CDYVPYDp.css","./ExtensionPanel-1HZtMFvH.js","./ServerConfigPanel-D0jTW_iX.js","./index-D9D9jjLT.js","./index-BRhY6FpL.css"])))=>i.map(i=>d[i]);
 var __defProp2 = Object.defineProperty;
 var __name = (target2, value4) => __defProp2(target2, "name", { value: value4, configurable: true });
 (/* @__PURE__ */ __name(function polyfill2() {
@@ -10941,10 +10941,10 @@ async function close$1(timeout) {
   return Promise.resolve(false);
 }
 __name(close$1, "close$1");
-function isInitialized() {
+function isInitialized$1() {
   return !!getClient();
 }
-__name(isInitialized, "isInitialized");
+__name(isInitialized$1, "isInitialized$1");
 function isEnabled() {
   const client = getClient();
   return !!client && client.getOptions().enabled !== false && !!client.getTransport();
@@ -19319,16 +19319,16 @@ function toUpperCase(str) {
 }
 __name(toUpperCase, "toUpperCase");
 const ORIGINAL_ATTRIBUTE_NAME = "__rrweb_original__";
-function is2DCanvasBlank(canvas) {
-  const ctx = canvas.getContext("2d");
+function is2DCanvasBlank(canvas2) {
+  const ctx = canvas2.getContext("2d");
   if (!ctx)
     return true;
   const chunkSize = 50;
-  for (let x2 = 0; x2 < canvas.width; x2 += chunkSize) {
-    for (let y2 = 0; y2 < canvas.height; y2 += chunkSize) {
+  for (let x2 = 0; x2 < canvas2.width; x2 += chunkSize) {
+    for (let y2 = 0; y2 < canvas2.height; y2 += chunkSize) {
       const getImageData = ctx.getImageData;
       const originalGetImageData = ORIGINAL_ATTRIBUTE_NAME in getImageData ? getImageData[ORIGINAL_ATTRIBUTE_NAME] : getImageData;
-      const pixelBuffer = new Uint32Array(originalGetImageData.call(ctx, x2, y2, Math.min(chunkSize, canvas.width - x2), Math.min(chunkSize, canvas.height - y2)).data.buffer);
+      const pixelBuffer = new Uint32Array(originalGetImageData.call(ctx, x2, y2, Math.min(chunkSize, canvas2.width - x2), Math.min(chunkSize, canvas2.height - y2)).data.buffer);
       if (pixelBuffer.some((pixel) => pixel !== 0))
         return false;
     }
@@ -19472,13 +19472,13 @@ function getAbsoluteSrcsetString(doc2, attributeValue) {
   if (attributeValue.trim() === "") {
     return attributeValue;
   }
-  let pos2 = 0;
+  let pos = 0;
   function collectCharacters(regEx) {
     let chars2;
-    const match2 = regEx.exec(attributeValue.substring(pos2));
+    const match2 = regEx.exec(attributeValue.substring(pos));
     if (match2) {
       chars2 = match2[0];
-      pos2 += chars2.length;
+      pos += chars2.length;
       return chars2;
     }
     return "";
@@ -19487,7 +19487,7 @@ function getAbsoluteSrcsetString(doc2, attributeValue) {
   const output = [];
   while (true) {
     collectCharacters(SRCSET_COMMAS_OR_SPACES);
-    if (pos2 >= attributeValue.length) {
+    if (pos >= attributeValue.length) {
       break;
     }
     let url = collectCharacters(SRCSET_NOT_SPACES);
@@ -19499,13 +19499,13 @@ function getAbsoluteSrcsetString(doc2, attributeValue) {
       url = absoluteToDoc(doc2, url);
       let inParens = false;
       while (true) {
-        const c2 = attributeValue.charAt(pos2);
+        const c2 = attributeValue.charAt(pos);
         if (c2 === "") {
           output.push((url + descriptorsStr).trim());
           break;
         } else if (!inParens) {
           if (c2 === ",") {
-            pos2 += 1;
+            pos += 1;
             output.push((url + descriptorsStr).trim());
             break;
           } else if (c2 === "(") {
@@ -19517,7 +19517,7 @@ function getAbsoluteSrcsetString(doc2, attributeValue) {
           }
         }
         descriptorsStr += c2;
-        pos2 += 1;
+        pos += 1;
       }
     }
   }
@@ -21686,17 +21686,17 @@ function initInputObserver({ inputCb, doc: doc2, mirror: mirror2, blockClass, bl
 __name(initInputObserver, "initInputObserver");
 function getNestedCSSRulePositions(rule) {
   const positions = [];
-  function recurse(childRule, pos2) {
+  function recurse(childRule, pos) {
     if (hasNestedCSSRule("CSSGroupingRule") && childRule.parentRule instanceof CSSGroupingRule || hasNestedCSSRule("CSSMediaRule") && childRule.parentRule instanceof CSSMediaRule || hasNestedCSSRule("CSSSupportsRule") && childRule.parentRule instanceof CSSSupportsRule || hasNestedCSSRule("CSSConditionRule") && childRule.parentRule instanceof CSSConditionRule) {
       const rules = Array.from(childRule.parentRule.cssRules);
       const index2 = rules.indexOf(childRule);
-      pos2.unshift(index2);
+      pos.unshift(index2);
     } else if (childRule.parentStyleSheet) {
       const rules = Array.from(childRule.parentStyleSheet.cssRules);
       const index2 = rules.indexOf(childRule);
-      pos2.unshift(index2);
+      pos.unshift(index2);
     }
-    return pos2;
+    return pos;
   }
   __name(recurse, "recurse");
   return recurse(rule, positions);
@@ -23199,9 +23199,9 @@ function onWindowOpen(cb) {
   }
   handlers$2.push(cb);
   return () => {
-    const pos2 = handlers$2 ? handlers$2.indexOf(cb) : -1;
-    if (pos2 > -1) {
-      handlers$2.splice(pos2, 1);
+    const pos = handlers$2 ? handlers$2.indexOf(cb) : -1;
+    if (pos > -1) {
+      handlers$2.splice(pos, 1);
     }
   };
 }
@@ -23329,10 +23329,10 @@ class ClickDetector {
       }
     });
     for (const click2 of timedOutClicks) {
-      const pos2 = this._clicks.indexOf(click2);
-      if (pos2 > -1) {
+      const pos = this._clicks.indexOf(click2);
+      if (pos > -1) {
         this._generateBreadcrumbs(click2);
-        this._clicks.splice(pos2, 1);
+        this._clicks.splice(pos, 1);
       }
     }
     if (this._clicks.length) {
@@ -27708,9 +27708,9 @@ class CanvasManager {
       }
       const matchedCanvas = [];
       const searchCanvas = /* @__PURE__ */ __name((root29) => {
-        root29.querySelectorAll("canvas").forEach((canvas) => {
-          if (!isBlocked(canvas, blockClass, blockSelector, unblockSelector)) {
-            matchedCanvas.push(canvas);
+        root29.querySelectorAll("canvas").forEach((canvas2) => {
+          if (!isBlocked(canvas2, blockClass, blockSelector, unblockSelector)) {
+            matchedCanvas.push(canvas2);
           }
         });
       }, "searchCanvas");
@@ -27737,28 +27737,28 @@ class CanvasManager {
         return;
       }
       lastSnapshotTime = timestamp2;
-      getCanvas(canvasElement).forEach((canvas) => {
-        if (!this.mirror.hasNode(canvas)) {
+      getCanvas(canvasElement).forEach((canvas2) => {
+        if (!this.mirror.hasNode(canvas2)) {
           return;
         }
-        const id3 = this.mirror.getId(canvas);
+        const id3 = this.mirror.getId(canvas2);
         if (this.snapshotInProgressMap.get(id3))
           return;
-        if (!canvas.width || !canvas.height)
+        if (!canvas2.width || !canvas2.height)
           return;
         this.snapshotInProgressMap.set(id3, true);
-        if (!isManualSnapshot && ["webgl", "webgl2"].includes(canvas.__context)) {
-          const context = canvas.getContext(canvas.__context);
+        if (!isManualSnapshot && ["webgl", "webgl2"].includes(canvas2.__context)) {
+          const context = canvas2.getContext(canvas2.__context);
           if (_optionalChain([context, "optionalAccess", (_4) => _4.getContextAttributes, "call", (_5) => _5(), "optionalAccess", (_6) => _6.preserveDrawingBuffer]) === false) {
             context.clear(context.COLOR_BUFFER_BIT);
           }
         }
-        createImageBitmap(canvas).then((bitmap) => {
+        createImageBitmap(canvas2).then((bitmap) => {
           _optionalChain([this, "access", (_7) => _7.worker, "optionalAccess", (_8) => _8.postMessage, "call", (_9) => _9({
             id: id3,
             bitmap,
-            width: canvas.width,
-            height: canvas.height,
+            width: canvas2.width,
+            height: canvas2.height,
             dataURLOptions,
             maxCanvasSize
           }, [bitmap])]);
@@ -27786,17 +27786,17 @@ class CanvasManager {
     onRequestAnimationFrame(setLatestRAFTimestamp);
   }
   flushPendingCanvasMutations() {
-    this.pendingCanvasMutations.forEach((values, canvas) => {
-      const id3 = this.mirror.getId(canvas);
-      this.flushPendingCanvasMutationFor(canvas, id3);
+    this.pendingCanvasMutations.forEach((values, canvas2) => {
+      const id3 = this.mirror.getId(canvas2);
+      this.flushPendingCanvasMutationFor(canvas2, id3);
     });
     onRequestAnimationFrame(() => this.flushPendingCanvasMutations());
   }
-  flushPendingCanvasMutationFor(canvas, id3) {
+  flushPendingCanvasMutationFor(canvas2, id3) {
     if (this.frozen || this.locked) {
       return;
     }
-    const valuesWithType = this.pendingCanvasMutations.get(canvas);
+    const valuesWithType = this.pendingCanvasMutations.get(canvas2);
     if (!valuesWithType || id3 === -1)
       return;
     const values = valuesWithType.map((value4) => {
@@ -27805,7 +27805,7 @@ class CanvasManager {
     });
     const { type } = valuesWithType[0];
     this.mutationCb({ id: id3, type, commands: values });
-    this.pendingCanvasMutations.delete(canvas);
+    this.pendingCanvasMutations.delete(canvas2);
   }
 }
 const CANVAS_QUALITY = {
@@ -32008,7 +32008,7 @@ const toHandlerKey = cacheStringFunction$1(
     return s2;
   }
 );
-const hasChanged = /* @__PURE__ */ __name((value4, oldValue2) => !Object.is(value4, oldValue2), "hasChanged");
+const hasChanged = /* @__PURE__ */ __name((value4, oldValue) => !Object.is(value4, oldValue), "hasChanged");
 const invokeArrayFns = /* @__PURE__ */ __name((fns, ...arg) => {
   for (let i2 = 0; i2 < fns.length; i2++) {
     fns[i2](...arg);
@@ -33096,7 +33096,7 @@ function track(target2, type, key) {
   }
 }
 __name(track, "track");
-function trigger(target2, type, key, newValue2, oldValue2, oldTarget) {
+function trigger(target2, type, key, newValue2, oldValue, oldTarget) {
   const depsMap = targetMap.get(target2);
   if (!depsMap) {
     globalVersion++;
@@ -33110,7 +33110,7 @@ function trigger(target2, type, key, newValue2, oldValue2, oldTarget) {
           type,
           key,
           newValue: newValue2,
-          oldValue: oldValue2,
+          oldValue,
           oldTarget
         });
       } else {
@@ -33435,18 +33435,18 @@ class MutableReactiveHandler extends BaseReactiveHandler {
     super(false, isShallow2);
   }
   set(target2, key, value4, receiver) {
-    let oldValue2 = target2[key];
+    let oldValue = target2[key];
     if (!this._isShallow) {
-      const isOldValueReadonly = isReadonly(oldValue2);
+      const isOldValueReadonly = isReadonly(oldValue);
       if (!isShallow(value4) && !isReadonly(value4)) {
-        oldValue2 = toRaw(oldValue2);
+        oldValue = toRaw(oldValue);
         value4 = toRaw(value4);
       }
-      if (!isArray$b(target2) && isRef(oldValue2) && !isRef(value4)) {
+      if (!isArray$b(target2) && isRef(oldValue) && !isRef(value4)) {
         if (isOldValueReadonly) {
           return false;
         } else {
-          oldValue2.value = value4;
+          oldValue.value = value4;
           return true;
         }
       }
@@ -33461,18 +33461,18 @@ class MutableReactiveHandler extends BaseReactiveHandler {
     if (target2 === toRaw(receiver)) {
       if (!hadKey) {
         trigger(target2, "add", key, value4);
-      } else if (hasChanged(value4, oldValue2)) {
-        trigger(target2, "set", key, value4, oldValue2);
+      } else if (hasChanged(value4, oldValue)) {
+        trigger(target2, "set", key, value4, oldValue);
       }
     }
     return result;
   }
   deleteProperty(target2, key) {
     const hadKey = hasOwn$3(target2, key);
-    const oldValue2 = target2[key];
+    const oldValue = target2[key];
     const result = Reflect.deleteProperty(target2, key);
     if (result && hadKey) {
-      trigger(target2, "delete", key, void 0, oldValue2);
+      trigger(target2, "delete", key, void 0, oldValue);
     }
     return result;
   }
@@ -33652,12 +33652,12 @@ function createInstrumentations(readonly2, shallow) {
         } else if (false) {
           checkIdentityKeys(target2, has2, key);
         }
-        const oldValue2 = get3.call(target2, key);
+        const oldValue = get3.call(target2, key);
         target2.set(key, value4);
         if (!hadKey) {
           trigger(target2, "add", key, value4);
-        } else if (hasChanged(value4, oldValue2)) {
-          trigger(target2, "set", key, value4, oldValue2);
+        } else if (hasChanged(value4, oldValue)) {
+          trigger(target2, "set", key, value4, oldValue);
         }
         return this;
       },
@@ -33671,10 +33671,10 @@ function createInstrumentations(readonly2, shallow) {
         } else if (false) {
           checkIdentityKeys(target2, has2, key);
         }
-        const oldValue2 = get3 ? get3.call(target2, key) : void 0;
+        const oldValue = get3 ? get3.call(target2, key) : void 0;
         const result = target2.delete(key);
         if (hadKey) {
-          trigger(target2, "delete", key, void 0, oldValue2);
+          trigger(target2, "delete", key, void 0, oldValue);
         }
         return result;
       },
@@ -33921,10 +33921,10 @@ class RefImpl {
     return this._value;
   }
   set value(newValue2) {
-    const oldValue2 = this._rawValue;
+    const oldValue = this._rawValue;
     const useDirectValue = this["__v_isShallow"] || isShallow(newValue2) || isReadonly(newValue2);
     newValue2 = useDirectValue ? newValue2 : toRaw(newValue2);
-    if (hasChanged(newValue2, oldValue2)) {
+    if (hasChanged(newValue2, oldValue)) {
       this._rawValue = newValue2;
       this._value = useDirectValue ? newValue2 : toReactive$1(newValue2);
       if (false) {
@@ -33933,7 +33933,7 @@ class RefImpl {
           type: "set",
           key: "value",
           newValue: newValue2,
-          oldValue: oldValue2
+          oldValue
         });
       } else {
         this.dep.trigger();
@@ -33967,9 +33967,9 @@ __name(toValue$4, "toValue$4");
 const shallowUnwrapHandlers = {
   get: /* @__PURE__ */ __name((target2, key, receiver) => key === "__v_raw" ? target2 : unref(Reflect.get(target2, key, receiver)), "get"),
   set: /* @__PURE__ */ __name((target2, key, value4, receiver) => {
-    const oldValue2 = target2[key];
-    if (isRef(oldValue2) && !isRef(value4)) {
-      oldValue2.value = value4;
+    const oldValue = target2[key];
+    if (isRef(oldValue) && !isRef(value4)) {
+      oldValue.value = value4;
       return true;
     } else {
       return Reflect.set(target2, key, value4, receiver);
@@ -34264,14 +34264,14 @@ function watch$1(source, cb, options4 = EMPTY_OBJ) {
       watchHandle();
     }, "cb");
   }
-  let oldValue2 = isMultiSource ? new Array(source.length).fill(INITIAL_WATCHER_VALUE) : INITIAL_WATCHER_VALUE;
+  let oldValue = isMultiSource ? new Array(source.length).fill(INITIAL_WATCHER_VALUE) : INITIAL_WATCHER_VALUE;
   const job = /* @__PURE__ */ __name((immediateFirstRun) => {
     if (!(effect2.flags & 1) || !effect2.dirty && !immediateFirstRun) {
       return;
     }
     if (cb) {
       const newValue2 = effect2.run();
-      if (deep || forceTrigger || (isMultiSource ? newValue2.some((v2, i2) => hasChanged(v2, oldValue2[i2])) : hasChanged(newValue2, oldValue2))) {
+      if (deep || forceTrigger || (isMultiSource ? newValue2.some((v2, i2) => hasChanged(v2, oldValue[i2])) : hasChanged(newValue2, oldValue))) {
         if (cleanup) {
           cleanup();
         }
@@ -34281,14 +34281,14 @@ function watch$1(source, cb, options4 = EMPTY_OBJ) {
           const args = [
             newValue2,
             // pass undefined as the old value when it's changed for the first time
-            oldValue2 === INITIAL_WATCHER_VALUE ? void 0 : isMultiSource && oldValue2[0] === INITIAL_WATCHER_VALUE ? [] : oldValue2,
+            oldValue === INITIAL_WATCHER_VALUE ? void 0 : isMultiSource && oldValue[0] === INITIAL_WATCHER_VALUE ? [] : oldValue,
             boundCleanup
           ];
           call ? call(cb, 3, args) : (
             // @ts-expect-error
             cb(...args)
           );
-          oldValue2 = newValue2;
+          oldValue = newValue2;
         } finally {
           activeWatcher = currentWatcher;
         }
@@ -34322,7 +34322,7 @@ function watch$1(source, cb, options4 = EMPTY_OBJ) {
     if (immediate) {
       job(true);
     } else {
-      oldValue2 = effect2.run();
+      oldValue = effect2.run();
     }
   } else if (scheduler) {
     scheduler(job.bind(null, true), true);
@@ -43375,8 +43375,8 @@ const vShow = {
       transition.enter(el);
     }
   },
-  updated(el, { value: value4, oldValue: oldValue2 }, { transition }) {
-    if (!value4 === !oldValue2) return;
+  updated(el, { value: value4, oldValue }, { transition }) {
+    if (!value4 === !oldValue) return;
     if (transition) {
       if (value4) {
         transition.beforeEnter(el);
@@ -43616,13 +43616,13 @@ function patchDOMProp(el, key, value4, parentComponent, attrName) {
   const tag = el.tagName;
   if (key === "value" && tag !== "PROGRESS" && // custom elements may use _value internally
   !tag.includes("-")) {
-    const oldValue2 = tag === "OPTION" ? el.getAttribute("value") || "" : el.value;
+    const oldValue = tag === "OPTION" ? el.getAttribute("value") || "" : el.value;
     const newValue2 = value4 == null ? (
       // #11647: value should be set as empty string for null and undefined,
       // but <input type="checkbox"> should be set as 'on'.
       el.type === "checkbox" ? "on" : ""
     ) : String(value4);
-    if (oldValue2 !== newValue2 || !("_value" in el)) {
+    if (oldValue !== newValue2 || !("_value" in el)) {
       el.value = newValue2;
     }
     if (value4 == null) {
@@ -44433,7 +44433,7 @@ const vModelText = {
   mounted(el, { value: value4 }) {
     el.value = value4 == null ? "" : value4;
   },
-  beforeUpdate(el, { value: value4, oldValue: oldValue2, modifiers: { lazy, trim: trim2, number: number2 } }, vnode) {
+  beforeUpdate(el, { value: value4, oldValue, modifiers: { lazy, trim: trim2, number: number2 } }, vnode) {
     el[assignKey] = getModelAssigner(vnode);
     if (el.composing) return;
     const elValue = (number2 || el.type === "number") && !/^0\d/.test(el.value) ? looseToNumber(el.value) : el.value;
@@ -44442,7 +44442,7 @@ const vModelText = {
       return;
     }
     if (document.activeElement === el && el.type !== "range") {
-      if (lazy && value4 === oldValue2) {
+      if (lazy && value4 === oldValue) {
         return;
       }
       if (trim2 && el.value.trim() === newValue2) {
@@ -44492,7 +44492,7 @@ const vModelCheckbox = {
     setChecked(el, binding, vnode);
   }
 };
-function setChecked(el, { value: value4, oldValue: oldValue2 }, vnode) {
+function setChecked(el, { value: value4, oldValue }, vnode) {
   el._modelValue = value4;
   let checked4;
   if (isArray$b(value4)) {
@@ -44500,7 +44500,7 @@ function setChecked(el, { value: value4, oldValue: oldValue2 }, vnode) {
   } else if (isSet$3(value4)) {
     checked4 = value4.has(vnode.props.value);
   } else {
-    if (value4 === oldValue2) return;
+    if (value4 === oldValue) return;
     checked4 = looseEqual(value4, getCheckboxValue(el, true));
   }
   if (el.checked !== checked4) {
@@ -44516,9 +44516,9 @@ const vModelRadio = {
       el[assignKey](getValue$3(el));
     });
   },
-  beforeUpdate(el, { value: value4, oldValue: oldValue2 }, vnode) {
+  beforeUpdate(el, { value: value4, oldValue }, vnode) {
     el[assignKey] = getModelAssigner(vnode);
-    if (value4 !== oldValue2) {
+    if (value4 !== oldValue) {
       el.checked = looseEqual(value4, vnode.props.value);
     }
   }
@@ -45887,7 +45887,7 @@ function addStoreToDevtools(app2, store) {
       });
     }, true);
     store._customProperties.forEach((name2) => {
-      watch(() => unref(store[name2]), (newValue2, oldValue2) => {
+      watch(() => unref(store[name2]), (newValue2, oldValue) => {
         api2.notifyComponentUpdate();
         api2.sendInspectorState(INSPECTOR_ID);
         if (isTimelineActive) {
@@ -45899,7 +45899,7 @@ function addStoreToDevtools(app2, store) {
               subtitle: name2,
               data: {
                 newValue: newValue2,
-                oldValue: oldValue2
+                oldValue
               },
               groupId: activeAction
             }
@@ -48906,10 +48906,10 @@ function setupConfig(app2, PrimeVue2) {
       isThemeChanged.value = true;
     }
   });
-  var stopConfigWatcher = watch(PrimeVue2.config, function(newValue2, oldValue2) {
+  var stopConfigWatcher = watch(PrimeVue2.config, function(newValue2, oldValue) {
     PrimeVueService.emit("config:change", {
       newValue: newValue2,
-      oldValue: oldValue2
+      oldValue
     });
   }, {
     immediate: true,
@@ -48917,10 +48917,10 @@ function setupConfig(app2, PrimeVue2) {
   });
   var stopRippleWatcher = watch(function() {
     return PrimeVue2.config.ripple;
-  }, function(newValue2, oldValue2) {
+  }, function(newValue2, oldValue) {
     PrimeVueService.emit("config:ripple:change", {
       newValue: newValue2,
-      oldValue: oldValue2
+      oldValue
     });
   }, {
     immediate: true,
@@ -48928,7 +48928,7 @@ function setupConfig(app2, PrimeVue2) {
   });
   var stopThemeWatcher = watch(function() {
     return PrimeVue2.config.theme;
-  }, function(newValue2, oldValue2) {
+  }, function(newValue2, oldValue) {
     if (!isThemeChanged.value) {
       config_default$1.setTheme(newValue2);
     }
@@ -48938,7 +48938,7 @@ function setupConfig(app2, PrimeVue2) {
     isThemeChanged.value = false;
     PrimeVueService.emit("config:theme:change", {
       newValue: newValue2,
-      oldValue: oldValue2
+      oldValue
     });
   }, {
     immediate: true,
@@ -48946,13 +48946,13 @@ function setupConfig(app2, PrimeVue2) {
   });
   var stopUnstyledWatcher = watch(function() {
     return PrimeVue2.config.unstyled;
-  }, function(newValue2, oldValue2) {
+  }, function(newValue2, oldValue) {
     if (!newValue2 && PrimeVue2.config.theme) {
       loadCommonTheme();
     }
     PrimeVueService.emit("config:unstyled:change", {
       newValue: newValue2,
-      oldValue: oldValue2
+      oldValue
     });
   }, {
     immediate: true,
@@ -49659,14 +49659,14 @@ var BaseDirective = {
       watchers === null || watchers === void 0 || (_watchers$config = watchers["config"]) === null || _watchers$config === void 0 || _watchers$config.call(el.$instance, (_el$$instance11 = el.$instance) === null || _el$$instance11 === void 0 ? void 0 : _el$$instance11.$primevueConfig);
       PrimeVueService.on("config:change", function(_ref8) {
         var _watchers$config2;
-        var newValue2 = _ref8.newValue, oldValue2 = _ref8.oldValue;
-        return watchers === null || watchers === void 0 || (_watchers$config2 = watchers["config"]) === null || _watchers$config2 === void 0 ? void 0 : _watchers$config2.call(el.$instance, newValue2, oldValue2);
+        var newValue2 = _ref8.newValue, oldValue = _ref8.oldValue;
+        return watchers === null || watchers === void 0 || (_watchers$config2 = watchers["config"]) === null || _watchers$config2 === void 0 ? void 0 : _watchers$config2.call(el.$instance, newValue2, oldValue);
       });
       watchers === null || watchers === void 0 || (_watchers$configRipp = watchers["config.ripple"]) === null || _watchers$configRipp === void 0 || _watchers$configRipp.call(el.$instance, (_el$$instance12 = el.$instance) === null || _el$$instance12 === void 0 || (_el$$instance12 = _el$$instance12.$primevueConfig) === null || _el$$instance12 === void 0 ? void 0 : _el$$instance12.ripple);
       PrimeVueService.on("config:ripple:change", function(_ref9) {
         var _watchers$configRipp2;
-        var newValue2 = _ref9.newValue, oldValue2 = _ref9.oldValue;
-        return watchers === null || watchers === void 0 || (_watchers$configRipp2 = watchers["config.ripple"]) === null || _watchers$configRipp2 === void 0 ? void 0 : _watchers$configRipp2.call(el.$instance, newValue2, oldValue2);
+        var newValue2 = _ref9.newValue, oldValue = _ref9.oldValue;
+        return watchers === null || watchers === void 0 || (_watchers$configRipp2 = watchers["config.ripple"]) === null || _watchers$configRipp2 === void 0 ? void 0 : _watchers$configRipp2.call(el.$instance, newValue2, oldValue);
       });
     }, "handleWatch");
     return {
@@ -54831,12 +54831,12 @@ const streamChunk = /* @__PURE__ */ __name(function* (chunk, chunkSize) {
     yield chunk;
     return;
   }
-  let pos2 = 0;
+  let pos = 0;
   let end;
-  while (pos2 < len) {
-    end = pos2 + chunkSize;
-    yield chunk.slice(pos2, end);
-    pos2 = end;
+  while (pos < len) {
+    end = pos + chunkSize;
+    yield chunk.slice(pos, end);
+    pos = end;
   }
 }, "streamChunk");
 const readBytes = /* @__PURE__ */ __name(async function* (iterable, chunkSize, encode2) {
@@ -55879,10 +55879,10 @@ function createBounds(objects, padding = 10) {
   ];
 }
 __name(createBounds, "createBounds");
-function snapPoint(pos2, snapTo) {
+function snapPoint(pos, snapTo) {
   if (!snapTo) return false;
-  pos2[0] = snapTo * Math.round(pos2[0] / snapTo);
-  pos2[1] = snapTo * Math.round(pos2[1] / snapTo);
+  pos[0] = snapTo * Math.round(pos[0] / snapTo);
+  pos[1] = snapTo * Math.round(pos[1] / snapTo);
   return true;
 }
 __name(snapPoint, "snapPoint");
@@ -55897,10 +55897,10 @@ class Reroute {
    * @param pos Position in graph coordinates
    * @param linkIds Link IDs ({@link LLink.id}) of all links that use this reroute
    */
-  constructor(id3, network, pos2, parentId, linkIds) {
+  constructor(id3, network, pos, parentId, linkIds) {
     this.id = id3;
     this.#network = new WeakRef(network);
-    this.update(parentId, pos2, linkIds);
+    this.update(parentId, pos, linkIds);
     this.linkIds ??= /* @__PURE__ */ new Set();
   }
   static radius = 10;
@@ -55976,9 +55976,9 @@ class Reroute {
    * @param pos The position of this reroute
    * @param linkIds All link IDs that pass through this reroute
    */
-  update(parentId, pos2, linkIds) {
+  update(parentId, pos, linkIds) {
     this.parentId = parentId;
-    if (pos2) this.pos = pos2;
+    if (pos) this.pos = pos;
     if (linkIds) this.linkIds = new Set(linkIds);
   }
   /**
@@ -56034,9 +56034,9 @@ class Reroute {
   /** @inheritdoc */
   snapToGrid(snapTo) {
     if (!snapTo) return false;
-    const { pos: pos2 } = this;
-    pos2[0] = snapTo * Math.round(pos2[0] / snapTo);
-    pos2[1] = snapTo * Math.round(pos2[1] / snapTo);
+    const { pos } = this;
+    pos[0] = snapTo * Math.round(pos[0] / snapTo);
+    pos[1] = snapTo * Math.round(pos[1] / snapTo);
     return true;
   }
   calculateAngle(lastRenderTime, network, linkStart) {
@@ -56049,9 +56049,9 @@ class Reroute {
     for (const linkId of linkIds) {
       const link2 = links.get(linkId);
       if (!link2) continue;
-      const pos2 = LLink.findNextReroute(network, link2, id3)?.pos ?? network.getNodeById(link2.target_id)?.getConnectionPos(true, link2.target_slot, this.#buffer);
-      if (!pos2) continue;
-      const angle = Math.atan2(pos2[1] - this.#pos[1], pos2[0] - this.#pos[0]);
+      const pos = LLink.findNextReroute(network, link2, id3)?.pos ?? network.getNodeById(link2.target_id)?.getConnectionPos(true, link2.target_slot, this.#buffer);
+      if (!pos) continue;
+      const angle = Math.atan2(pos[1] - this.#pos[1], pos[0] - this.#pos[0]);
       angles.push(angle);
       sum += angle;
     }
@@ -56080,10 +56080,10 @@ class Reroute {
    * @remarks Leaves {@link ctx}.fillStyle, strokeStyle, and lineWidth dirty (perf.).
    */
   draw(ctx) {
-    const { pos: pos2 } = this;
+    const { pos } = this;
     ctx.fillStyle = this._colour;
     ctx.beginPath();
-    ctx.arc(pos2[0], pos2[1], Reroute.radius, 0, 2 * Math.PI);
+    ctx.arc(pos[0], pos[1], Reroute.radius, 0, 2 * Math.PI);
     ctx.fill();
     ctx.lineWidth = Reroute.radius * 0.1;
     ctx.strokeStyle = "rgb(0,0,0,0.5)";
@@ -56091,13 +56091,13 @@ class Reroute {
     ctx.fillStyle = "#ffffff55";
     ctx.strokeStyle = "rgb(0,0,0,0.3)";
     ctx.beginPath();
-    ctx.arc(pos2[0], pos2[1], Reroute.radius * 0.8, 0, 2 * Math.PI);
+    ctx.arc(pos[0], pos[1], Reroute.radius * 0.8, 0, 2 * Math.PI);
     ctx.fill();
     ctx.stroke();
     if (this.selected) {
       ctx.strokeStyle = "#fff";
       ctx.beginPath();
-      ctx.arc(pos2[0], pos2[1], Reroute.radius * 1.2, 0, 2 * Math.PI);
+      ctx.arc(pos[0], pos[1], Reroute.radius * 1.2, 0, 2 * Math.PI);
       ctx.stroke();
     }
   }
@@ -56178,6 +56178,900 @@ class LGraphBadge {
     ctx.fillStyle = fillStyle;
   }
 }
+var SlotType = /* @__PURE__ */ ((SlotType2) => {
+  SlotType2["Array"] = "array";
+  SlotType2[SlotType2["Event"] = -1] = "Event";
+  return SlotType2;
+})(SlotType || {});
+var SlotShape = ((SlotShape2) => {
+  SlotShape2[SlotShape2["Box"] = RenderShape.BOX] = "Box";
+  SlotShape2[SlotShape2["Arrow"] = RenderShape.ARROW] = "Arrow";
+  SlotShape2[SlotShape2["Grid"] = RenderShape.GRID] = "Grid";
+  SlotShape2[SlotShape2["Circle"] = RenderShape.CIRCLE] = "Circle";
+  SlotShape2[SlotShape2["HollowCircle"] = RenderShape.HollowCircle] = "HollowCircle";
+  return SlotShape2;
+})(SlotShape || {});
+var SlotDirection = ((SlotDirection2) => {
+  SlotDirection2[SlotDirection2["Up"] = LinkDirection.UP] = "Up";
+  SlotDirection2[SlotDirection2["Right"] = LinkDirection.RIGHT] = "Right";
+  SlotDirection2[SlotDirection2["Down"] = LinkDirection.DOWN] = "Down";
+  SlotDirection2[SlotDirection2["Left"] = LinkDirection.LEFT] = "Left";
+  return SlotDirection2;
+})(SlotDirection || {});
+var LabelPosition = /* @__PURE__ */ ((LabelPosition2) => {
+  LabelPosition2["Left"] = "left";
+  LabelPosition2["Right"] = "right";
+  return LabelPosition2;
+})(LabelPosition || {});
+function strokeShape(ctx, area, options22 = {}) {
+  const {
+    shape = RenderShape.BOX,
+    round_radius = LiteGraph.ROUND_RADIUS,
+    title_height = LiteGraph.NODE_TITLE_HEIGHT,
+    title_mode = TitleMode.NORMAL_TITLE,
+    colour = LiteGraph.NODE_BOX_OUTLINE_COLOR,
+    padding = 6,
+    collapsed: collapsed2 = false,
+    thickness = 1
+  } = options22;
+  if (title_mode === TitleMode.TRANSPARENT_TITLE) {
+    area[1] -= title_height;
+    area[3] += title_height;
+  }
+  const { lineWidth, strokeStyle } = ctx;
+  ctx.lineWidth = thickness;
+  ctx.globalAlpha = 0.8;
+  ctx.strokeStyle = colour;
+  ctx.beginPath();
+  const [x2, y2, width2, height] = area;
+  switch (shape) {
+    case RenderShape.BOX: {
+      ctx.rect(
+        x2 - padding,
+        y2 - padding,
+        width2 + 2 * padding,
+        height + 2 * padding
+      );
+      break;
+    }
+    case RenderShape.ROUND:
+    case RenderShape.CARD: {
+      const radius = round_radius + padding;
+      const isCollapsed = shape === RenderShape.CARD && collapsed2;
+      const cornerRadii = isCollapsed || shape === RenderShape.ROUND ? [radius] : [radius, 2, radius, 2];
+      ctx.roundRect(
+        x2 - padding,
+        y2 - padding,
+        width2 + 2 * padding,
+        height + 2 * padding,
+        cornerRadii
+      );
+      break;
+    }
+    case RenderShape.CIRCLE: {
+      const centerX = x2 + width2 / 2;
+      const centerY = y2 + height / 2;
+      const radius = Math.max(width2, height) / 2 + padding;
+      ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+      break;
+    }
+  }
+  ctx.stroke();
+  ctx.lineWidth = lineWidth;
+  ctx.strokeStyle = strokeStyle;
+  ctx.globalAlpha = 1;
+}
+__name(strokeShape, "strokeShape");
+class NodeSlot {
+  static {
+    __name(this, "NodeSlot");
+  }
+  name;
+  localized_name;
+  label;
+  type;
+  dir;
+  removable;
+  shape;
+  color_off;
+  color_on;
+  locked;
+  nameLocked;
+  pos;
+  widget;
+  constructor(slot) {
+    Object.assign(this, slot);
+    this.name = slot.name;
+    this.type = slot.type;
+  }
+  /**
+   * The label to display in the UI.
+   */
+  get renderingLabel() {
+    return this.label || this.localized_name || this.name || "";
+  }
+  connectedColor(context) {
+    return this.color_on || context.default_connection_color_byType[this.type] || context.default_connection_color.output_on;
+  }
+  disconnectedColor(context) {
+    return this.color_off || context.default_connection_color_byTypeOff[this.type] || context.default_connection_color_byType[this.type] || context.default_connection_color.output_off;
+  }
+  renderingColor(context) {
+    return this.isConnected() ? this.connectedColor(context) : this.disconnectedColor(context);
+  }
+  draw(ctx, options22) {
+    const {
+      pos,
+      colorContext,
+      labelColor = "#AAA",
+      labelPosition = LabelPosition.Right,
+      lowQuality = false,
+      renderText = true,
+      highlight = false,
+      doStroke: _doStroke = false
+    } = options22;
+    const originalFillStyle = ctx.fillStyle;
+    const originalStrokeStyle = ctx.strokeStyle;
+    const originalLineWidth = ctx.lineWidth;
+    const slot_type = this.type;
+    const slot_shape = slot_type === SlotType.Array ? SlotShape.Grid : this.shape;
+    ctx.beginPath();
+    let doStroke = _doStroke;
+    let doFill = true;
+    ctx.fillStyle = this.renderingColor(colorContext);
+    ctx.lineWidth = 1;
+    if (slot_type === SlotType.Event || slot_shape === SlotShape.Box) {
+      ctx.rect(pos[0] - 6 + 0.5, pos[1] - 5 + 0.5, 14, 10);
+    } else if (slot_shape === SlotShape.Arrow) {
+      ctx.moveTo(pos[0] + 8, pos[1] + 0.5);
+      ctx.lineTo(pos[0] - 4, pos[1] + 6 + 0.5);
+      ctx.lineTo(pos[0] - 4, pos[1] - 6 + 0.5);
+      ctx.closePath();
+    } else if (slot_shape === SlotShape.Grid) {
+      const gridSize = 3;
+      const cellSize = 2;
+      const spacing = 3;
+      for (let x2 = 0; x2 < gridSize; x2++) {
+        for (let y2 = 0; y2 < gridSize; y2++) {
+          ctx.rect(
+            pos[0] - 4 + x2 * spacing,
+            pos[1] - 4 + y2 * spacing,
+            cellSize,
+            cellSize
+          );
+        }
+      }
+      doStroke = false;
+    } else {
+      if (lowQuality) {
+        ctx.rect(pos[0] - 4, pos[1] - 4, 8, 8);
+      } else {
+        let radius;
+        if (slot_shape === SlotShape.HollowCircle) {
+          doFill = false;
+          doStroke = true;
+          ctx.lineWidth = 3;
+          ctx.strokeStyle = ctx.fillStyle;
+          radius = highlight ? 4 : 3;
+        } else {
+          radius = highlight ? 5 : 4;
+        }
+        ctx.arc(pos[0], pos[1], radius, 0, Math.PI * 2);
+      }
+    }
+    if (doFill) ctx.fill();
+    if (!lowQuality && doStroke) ctx.stroke();
+    if (renderText) {
+      const text2 = this.renderingLabel;
+      if (text2) {
+        ctx.fillStyle = labelColor;
+        if (labelPosition === LabelPosition.Right) {
+          if (this.dir == LinkDirection.UP) {
+            ctx.fillText(text2, pos[0], pos[1] - 10);
+          } else {
+            ctx.fillText(text2, pos[0] + 10, pos[1] + 5);
+          }
+        } else {
+          if (this.dir == LinkDirection.DOWN) {
+            ctx.fillText(text2, pos[0], pos[1] - 8);
+          } else {
+            ctx.fillText(text2, pos[0] - 10, pos[1] + 5);
+          }
+        }
+      }
+    }
+    ctx.fillStyle = originalFillStyle;
+    ctx.strokeStyle = originalStrokeStyle;
+    ctx.lineWidth = originalLineWidth;
+  }
+  drawCollapsed(ctx, options22) {
+    const [x2, y2] = options22.pos;
+    const originalFillStyle = ctx.fillStyle;
+    ctx.fillStyle = "#686";
+    ctx.beginPath();
+    if (this.type === SlotType.Event || this.shape === RenderShape.BOX) {
+      ctx.rect(x2 - 7 + 0.5, y2 - 4, 14, 8);
+    } else if (this.shape === RenderShape.ARROW) {
+      const isInput = this instanceof NodeInputSlot;
+      if (isInput) {
+        ctx.moveTo(x2 + 8, y2);
+        ctx.lineTo(x2 - 4, y2 - 4);
+        ctx.lineTo(x2 - 4, y2 + 4);
+      } else {
+        ctx.moveTo(x2 + 6, y2);
+        ctx.lineTo(x2 - 6, y2 - 4);
+        ctx.lineTo(x2 - 6, y2 + 4);
+      }
+      ctx.closePath();
+    } else {
+      ctx.arc(x2, y2, 4, 0, Math.PI * 2);
+    }
+    ctx.fill();
+    ctx.fillStyle = originalFillStyle;
+  }
+}
+class NodeInputSlot extends NodeSlot {
+  static {
+    __name(this, "NodeInputSlot");
+  }
+  link;
+  constructor(slot) {
+    super(slot);
+    this.link = slot.link;
+  }
+  isConnected() {
+    return this.link != null;
+  }
+  isValidTarget(link2) {
+    if (!link2) return true;
+    return !!link2.output && LiteGraph.isValidConnection(this.type, link2.output.type);
+  }
+  draw(ctx, options22) {
+    const originalTextAlign = ctx.textAlign;
+    ctx.textAlign = "left";
+    super.draw(ctx, {
+      ...options22,
+      labelPosition: LabelPosition.Right,
+      doStroke: false
+    });
+    ctx.textAlign = originalTextAlign;
+  }
+}
+class NodeOutputSlot extends NodeSlot {
+  static {
+    __name(this, "NodeOutputSlot");
+  }
+  links;
+  _data;
+  slot_index;
+  constructor(slot) {
+    super(slot);
+    this.links = slot.links;
+    this._data = slot._data;
+    this.slot_index = slot.slot_index;
+  }
+  isValidTarget(link2) {
+    if (!link2) return true;
+    return !!link2.input && LiteGraph.isValidConnection(this.type, link2.input.type);
+  }
+  isConnected() {
+    return this.links != null && this.links.length > 0;
+  }
+  draw(ctx, options22) {
+    const originalTextAlign = ctx.textAlign;
+    const originalStrokeStyle = ctx.strokeStyle;
+    ctx.textAlign = "right";
+    ctx.strokeStyle = "black";
+    super.draw(ctx, {
+      ...options22,
+      labelPosition: LabelPosition.Left,
+      doStroke: true
+    });
+    ctx.textAlign = originalTextAlign;
+    ctx.strokeStyle = originalStrokeStyle;
+  }
+}
+class BaseWidget {
+  static {
+    __name(this, "BaseWidget");
+  }
+  linkedWidgets;
+  options;
+  marker;
+  label;
+  clicked;
+  name;
+  type;
+  value;
+  y;
+  last_y;
+  width;
+  disabled;
+  hidden;
+  advanced;
+  tooltip;
+  element;
+  constructor(widget) {
+    Object.assign(this, widget);
+    this.options = widget.options;
+  }
+  get outline_color() {
+    return this.advanced ? LiteGraph.WIDGET_ADVANCED_OUTLINE_COLOR : LiteGraph.WIDGET_OUTLINE_COLOR;
+  }
+  get background_color() {
+    return LiteGraph.WIDGET_BGCOLOR;
+  }
+  get height() {
+    return LiteGraph.NODE_WIDGET_HEIGHT;
+  }
+  get text_color() {
+    return LiteGraph.WIDGET_TEXT_COLOR;
+  }
+  get secondary_text_color() {
+    return LiteGraph.WIDGET_SECONDARY_TEXT_COLOR;
+  }
+  /**
+   * Handles the click event for the widget
+   * @param options - The options for handling the click event
+   */
+  onClick(options22) {
+  }
+  /**
+   * Handles the drag event for the widget
+   * @param options - The options for handling the drag event
+   */
+  onDrag(options22) {
+  }
+  /**
+   * Sets the value of the widget
+   * @param value - The value to set
+   * @param options - The options for setting the value
+   */
+  setValue(value4, options22) {
+    const { node: node22, canvas: canvas2, e: e2 } = options22;
+    const oldValue = this.value;
+    const v2 = this.type === "number" ? Number(value4) : value4;
+    this.value = v2;
+    if (this.options?.property && node22.properties[this.options.property] !== void 0) {
+      node22.setProperty(this.options.property, v2);
+    }
+    const pos = canvas2.graph_mouse;
+    this.callback?.(this.value, canvas2, node22, pos, e2);
+    node22.onWidgetChanged?.(this.name ?? "", v2, oldValue, this);
+    if (node22.graph) node22.graph._version++;
+  }
+}
+class BooleanWidget extends BaseWidget {
+  static {
+    __name(this, "BooleanWidget");
+  }
+  constructor(widget) {
+    super(widget);
+    this.type = "toggle";
+    this.value = widget.value;
+  }
+  drawWidget(ctx, options22) {
+    const { y: y2, width: width2, show_text = true, margin = 15 } = options22;
+    const widget_width = width2;
+    const H = this.height;
+    ctx.textAlign = "left";
+    ctx.strokeStyle = this.outline_color;
+    ctx.fillStyle = this.background_color;
+    ctx.beginPath();
+    if (show_text)
+      ctx.roundRect(margin, y2, widget_width - margin * 2, H, [H * 0.5]);
+    else ctx.rect(margin, y2, widget_width - margin * 2, H);
+    ctx.fill();
+    if (show_text && !this.disabled) ctx.stroke();
+    ctx.fillStyle = this.value ? "#89A" : "#333";
+    ctx.beginPath();
+    ctx.arc(
+      widget_width - margin * 2,
+      y2 + H * 0.5,
+      H * 0.36,
+      0,
+      Math.PI * 2
+    );
+    ctx.fill();
+    if (show_text) {
+      ctx.fillStyle = this.secondary_text_color;
+      const label5 = this.label || this.name;
+      if (label5 != null) {
+        ctx.fillText(label5, margin * 2, y2 + H * 0.7);
+      }
+      ctx.fillStyle = this.value ? this.text_color : this.secondary_text_color;
+      ctx.textAlign = "right";
+      ctx.fillText(
+        this.value ? this.options.on || "true" : this.options.off || "false",
+        widget_width - 40,
+        y2 + H * 0.7
+      );
+    }
+  }
+  onClick(options22) {
+    this.setValue(!this.value, options22);
+  }
+}
+class ButtonWidget extends BaseWidget {
+  static {
+    __name(this, "ButtonWidget");
+  }
+  constructor(widget) {
+    super(widget);
+    this.type = "button";
+    this.value = widget.value ?? "";
+  }
+  /**
+   * Draws the widget
+   * @param ctx - The canvas context
+   * @param options - The options for drawing the widget
+   */
+  drawWidget(ctx, options22) {
+    const originalTextAlign = ctx.textAlign;
+    const originalStrokeStyle = ctx.strokeStyle;
+    const originalFillStyle = ctx.fillStyle;
+    const { y: y2, width: width2, show_text = true, margin = 15 } = options22;
+    const widget_width = width2;
+    const H = this.height;
+    ctx.fillStyle = this.background_color;
+    if (this.clicked) {
+      ctx.fillStyle = "#AAA";
+      this.clicked = false;
+    }
+    ctx.fillRect(margin, y2, widget_width - margin * 2, H);
+    if (show_text && !this.disabled) {
+      ctx.strokeStyle = this.outline_color;
+      ctx.strokeRect(margin, y2, widget_width - margin * 2, H);
+    }
+    if (show_text) {
+      ctx.textAlign = "center";
+      ctx.fillStyle = this.text_color;
+      ctx.fillText(
+        this.label || this.name || "",
+        widget_width * 0.5,
+        y2 + H * 0.7
+      );
+    }
+    ctx.textAlign = originalTextAlign;
+    ctx.strokeStyle = originalStrokeStyle;
+    ctx.fillStyle = originalFillStyle;
+  }
+  onClick(options22) {
+    const { e: e2, node: node22, canvas: canvas2 } = options22;
+    const pos = canvas2.graph_mouse;
+    this.clicked = true;
+    canvas2.setDirty(true);
+    this.callback?.(this, canvas2, node22, pos, e2);
+  }
+}
+class ComboWidget extends BaseWidget {
+  static {
+    __name(this, "ComboWidget");
+  }
+  constructor(widget) {
+    super(widget);
+    this.type = "combo";
+    this.value = widget.value;
+  }
+  /**
+   * Draws the widget
+   * @param ctx - The canvas context
+   * @param options - The options for drawing the widget
+   */
+  drawWidget(ctx, options22) {
+    const originalTextAlign = ctx.textAlign;
+    const originalStrokeStyle = ctx.strokeStyle;
+    const originalFillStyle = ctx.fillStyle;
+    const { y: y2, width: width2, show_text = true, margin = 15 } = options22;
+    const widget_width = width2;
+    const H = this.height;
+    ctx.textAlign = "left";
+    ctx.strokeStyle = this.outline_color;
+    ctx.fillStyle = this.background_color;
+    ctx.beginPath();
+    if (show_text)
+      ctx.roundRect(margin, y2, widget_width - margin * 2, H, [H * 0.5]);
+    else
+      ctx.rect(margin, y2, widget_width - margin * 2, H);
+    ctx.fill();
+    if (show_text) {
+      if (!this.disabled) {
+        ctx.stroke();
+        ctx.fillStyle = this.text_color;
+        ctx.beginPath();
+        ctx.moveTo(margin + 16, y2 + 5);
+        ctx.lineTo(margin + 6, y2 + H * 0.5);
+        ctx.lineTo(margin + 16, y2 + H - 5);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.moveTo(widget_width - margin - 16, y2 + 5);
+        ctx.lineTo(widget_width - margin - 6, y2 + H * 0.5);
+        ctx.lineTo(widget_width - margin - 16, y2 + H - 5);
+        ctx.fill();
+      }
+      ctx.fillStyle = this.secondary_text_color;
+      const label5 = this.label || this.name;
+      if (label5 != null) {
+        ctx.fillText(label5, margin * 2 + 5, y2 + H * 0.7);
+      }
+      ctx.fillStyle = this.text_color;
+      ctx.textAlign = "right";
+      let displayValue = typeof this.value === "number" ? String(this.value) : this.value;
+      if (this.options.values) {
+        let values = this.options.values;
+        if (typeof values === "function") {
+          values = values();
+        }
+        if (values && !Array.isArray(values)) {
+          displayValue = values[this.value];
+        }
+      }
+      const labelWidth = ctx.measureText(label5 || "").width + margin * 2;
+      const inputWidth = widget_width - margin * 4;
+      const availableWidth = inputWidth - labelWidth;
+      const textWidth = ctx.measureText(displayValue).width;
+      if (textWidth > availableWidth) {
+        const ELLIPSIS = "…";
+        const ellipsisWidth = ctx.measureText(ELLIPSIS).width;
+        const charWidthAvg = ctx.measureText("a").width;
+        if (availableWidth <= ellipsisWidth) {
+          displayValue = "․";
+        } else {
+          displayValue = `${displayValue}`;
+          const overflowWidth = textWidth + ellipsisWidth - availableWidth;
+          if (overflowWidth + charWidthAvg * 3 > availableWidth) {
+            const preciseRange = availableWidth + charWidthAvg * 3;
+            const preTruncateCt = Math.floor((preciseRange - ellipsisWidth) / charWidthAvg);
+            displayValue = displayValue.substr(0, preTruncateCt);
+          }
+          while (ctx.measureText(displayValue).width + ellipsisWidth > availableWidth) {
+            displayValue = displayValue.substr(0, displayValue.length - 1);
+          }
+          displayValue += ELLIPSIS;
+        }
+      }
+      ctx.fillText(
+        displayValue,
+        widget_width - margin * 2 - 20,
+        y2 + H * 0.7
+      );
+    }
+    ctx.textAlign = originalTextAlign;
+    ctx.strokeStyle = originalStrokeStyle;
+    ctx.fillStyle = originalFillStyle;
+  }
+  onClick(options22) {
+    const { e: e2, node: node22, canvas: canvas2 } = options22;
+    const x2 = e2.canvasX - node22.pos[0];
+    const width2 = this.width || node22.size[0];
+    const delta2 = x2 < 40 ? -1 : x2 > width2 - 40 ? 1 : 0;
+    let values = this.options.values;
+    if (typeof values === "function") {
+      values = values(this, node22);
+    }
+    const values_list = Array.isArray(values) ? values : Object.keys(values);
+    if (delta2) {
+      let index2 = -1;
+      canvas2.last_mouseclick = 0;
+      index2 = typeof values === "object" ? values_list.indexOf(String(this.value)) + delta2 : values_list.indexOf(this.value) + delta2;
+      if (index2 >= values_list.length) index2 = values_list.length - 1;
+      if (index2 < 0) index2 = 0;
+      this.setValue(
+        Array.isArray(values) ? values[index2] : index2,
+        {
+          e: e2,
+          node: node22,
+          canvas: canvas2
+        }
+      );
+      return;
+    }
+    const text_values = values != values_list ? Object.values(values) : values;
+    new LiteGraph.ContextMenu(text_values, {
+      scale: Math.max(1, canvas2.ds.scale),
+      event: e2,
+      className: "dark",
+      callback: /* @__PURE__ */ __name((value4) => {
+        this.setValue(
+          values != values_list ? text_values.indexOf(value4) : value4,
+          {
+            e: e2,
+            node: node22,
+            canvas: canvas2
+          }
+        );
+      }, "callback")
+    });
+  }
+}
+class NumberWidget extends BaseWidget {
+  static {
+    __name(this, "NumberWidget");
+  }
+  constructor(widget) {
+    super(widget);
+    this.type = "number";
+    this.value = widget.value;
+  }
+  /**
+   * Draws the widget
+   * @param ctx - The canvas context
+   * @param options - The options for drawing the widget
+   */
+  drawWidget(ctx, options22) {
+    const originalTextAlign = ctx.textAlign;
+    const originalStrokeStyle = ctx.strokeStyle;
+    const originalFillStyle = ctx.fillStyle;
+    const { y: y2, width: width2, show_text = true, margin = 15 } = options22;
+    const widget_width = width2;
+    const H = this.height;
+    ctx.textAlign = "left";
+    ctx.strokeStyle = this.outline_color;
+    ctx.fillStyle = this.background_color;
+    ctx.beginPath();
+    if (show_text)
+      ctx.roundRect(margin, y2, widget_width - margin * 2, H, [H * 0.5]);
+    else
+      ctx.rect(margin, y2, widget_width - margin * 2, H);
+    ctx.fill();
+    if (show_text) {
+      if (!this.disabled) {
+        ctx.stroke();
+        ctx.fillStyle = this.text_color;
+        ctx.beginPath();
+        ctx.moveTo(margin + 16, y2 + 5);
+        ctx.lineTo(margin + 6, y2 + H * 0.5);
+        ctx.lineTo(margin + 16, y2 + H - 5);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.moveTo(widget_width - margin - 16, y2 + 5);
+        ctx.lineTo(widget_width - margin - 6, y2 + H * 0.5);
+        ctx.lineTo(widget_width - margin - 16, y2 + H - 5);
+        ctx.fill();
+      }
+      ctx.fillStyle = this.secondary_text_color;
+      const label5 = this.label || this.name;
+      if (label5 != null) {
+        ctx.fillText(label5, margin * 2 + 5, y2 + H * 0.7);
+      }
+      ctx.fillStyle = this.text_color;
+      ctx.textAlign = "right";
+      ctx.fillText(
+        Number(this.value).toFixed(
+          this.options.precision !== void 0 ? this.options.precision : 3
+        ),
+        widget_width - margin * 2 - 20,
+        y2 + H * 0.7
+      );
+    }
+    ctx.textAlign = originalTextAlign;
+    ctx.strokeStyle = originalStrokeStyle;
+    ctx.fillStyle = originalFillStyle;
+  }
+  onClick(options) {
+    const { e, node, canvas } = options;
+    const x = e.canvasX - node.pos[0];
+    const width = this.width || node.size[0];
+    const delta = x < 40 ? -1 : x > width - 40 ? 1 : 0;
+    if (delta) {
+      let newValue2 = this.value + delta * 0.1 * (this.options.step || 1);
+      if (this.options.min != null && newValue2 < this.options.min) {
+        newValue2 = this.options.min;
+      }
+      if (this.options.max != null && newValue2 > this.options.max) {
+        newValue2 = this.options.max;
+      }
+      if (newValue2 !== this.value) {
+        this.setValue(newValue2, { e, node, canvas });
+      }
+      return;
+    }
+    canvas.prompt("Value", this.value, (v) => {
+      if (/^[0-9+\-*/()\s]+|\d+\.\d+$/.test(v)) {
+        try {
+          v = eval(v);
+        } catch {
+        }
+      }
+      const newValue = Number(v);
+      if (!isNaN(newValue)) {
+        this.setValue(newValue, { e, node, canvas });
+      }
+    }, e);
+  }
+  /**
+   * Handles drag events for the number widget
+   * @param options - The options for handling the drag event
+   */
+  onDrag(options22) {
+    const { e: e2, node: node22, canvas: canvas2 } = options22;
+    const width2 = this.width || node22.width;
+    const x2 = e2.canvasX - node22.pos[0];
+    const delta2 = x2 < 40 ? -1 : x2 > width2 - 40 ? 1 : 0;
+    if (delta2 && (x2 > -3 && x2 < width2 + 3)) return;
+    let newValue2 = this.value;
+    if (e2.deltaX) newValue2 += e2.deltaX * 0.1 * (this.options.step || 1);
+    if (this.options.min != null && newValue2 < this.options.min) {
+      newValue2 = this.options.min;
+    }
+    if (this.options.max != null && newValue2 > this.options.max) {
+      newValue2 = this.options.max;
+    }
+    if (newValue2 !== this.value) {
+      this.setValue(newValue2, { e: e2, node: node22, canvas: canvas2 });
+    }
+  }
+}
+class SliderWidget extends BaseWidget {
+  static {
+    __name(this, "SliderWidget");
+  }
+  constructor(widget) {
+    super(widget);
+    this.type = "slider";
+    this.value = widget.value;
+    this.options = widget.options;
+  }
+  /**
+   * Draws the widget
+   * @param ctx - The canvas context
+   * @param options - The options for drawing the widget
+   */
+  drawWidget(ctx, options22) {
+    const originalTextAlign = ctx.textAlign;
+    const originalStrokeStyle = ctx.strokeStyle;
+    const originalFillStyle = ctx.fillStyle;
+    const { y: y2, width: widget_width, show_text = true, margin = 15 } = options22;
+    const H = this.height;
+    ctx.fillStyle = this.background_color;
+    ctx.fillRect(margin, y2, widget_width - margin * 2, H);
+    const range2 = this.options.max - this.options.min;
+    let nvalue = (this.value - this.options.min) / range2;
+    nvalue = clamp$1(nvalue, 0, 1);
+    ctx.fillStyle = this.options.slider_color ?? "#678";
+    ctx.fillRect(margin, y2, nvalue * (widget_width - margin * 2), H);
+    if (show_text && !this.disabled) {
+      ctx.strokeStyle = this.outline_color;
+      ctx.strokeRect(margin, y2, widget_width - margin * 2, H);
+    }
+    if (this.marker != null) {
+      let marker_nvalue = (this.marker - this.options.min) / range2;
+      marker_nvalue = clamp$1(marker_nvalue, 0, 1);
+      ctx.fillStyle = this.options.marker_color ?? "#AA9";
+      ctx.fillRect(
+        margin + marker_nvalue * (widget_width - margin * 2),
+        y2,
+        2,
+        H
+      );
+    }
+    if (show_text) {
+      ctx.textAlign = "center";
+      ctx.fillStyle = this.text_color;
+      ctx.fillText(
+        (this.label || this.name) + "  " + Number(this.value).toFixed(
+          this.options.precision != null ? this.options.precision : 3
+        ),
+        widget_width * 0.5,
+        y2 + H * 0.7
+      );
+    }
+    ctx.textAlign = originalTextAlign;
+    ctx.strokeStyle = originalStrokeStyle;
+    ctx.fillStyle = originalFillStyle;
+  }
+  /**
+   * Handles click events for the slider widget
+   */
+  onClick(options22) {
+    if (this.options.read_only) return;
+    const { e: e2, node: node22 } = options22;
+    const width2 = this.width || node22.size[0];
+    const x2 = e2.canvasX - node22.pos[0];
+    const slideFactor = clamp$1((x2 - 15) / (width2 - 30), 0, 1);
+    const newValue2 = this.options.min + (this.options.max - this.options.min) * slideFactor;
+    if (newValue2 !== this.value) {
+      this.setValue(newValue2, options22);
+    }
+  }
+  /**
+   * Handles drag events for the slider widget
+   */
+  onDrag(options22) {
+    if (this.options.read_only) return false;
+    const { e: e2, node: node22 } = options22;
+    const width2 = this.width || node22.size[0];
+    const x2 = e2.canvasX - node22.pos[0];
+    const slideFactor = clamp$1((x2 - 15) / (width2 - 30), 0, 1);
+    const newValue2 = this.options.min + (this.options.max - this.options.min) * slideFactor;
+    if (newValue2 !== this.value) {
+      this.setValue(newValue2, options22);
+    }
+  }
+}
+class TextWidget extends BaseWidget {
+  static {
+    __name(this, "TextWidget");
+  }
+  constructor(widget) {
+    super(widget);
+    this.type = widget.type;
+    this.value = widget.value?.toString() ?? "";
+  }
+  /**
+   * Draws the widget
+   * @param ctx - The canvas context
+   * @param options - The options for drawing the widget
+   */
+  drawWidget(ctx, options22) {
+    const originalTextAlign = ctx.textAlign;
+    const originalStrokeStyle = ctx.strokeStyle;
+    const originalFillStyle = ctx.fillStyle;
+    const { y: y2, width: width2, show_text = true, margin = 15 } = options22;
+    const widget_width = width2;
+    const H = this.height;
+    ctx.textAlign = "left";
+    ctx.strokeStyle = this.outline_color;
+    ctx.fillStyle = this.background_color;
+    ctx.beginPath();
+    if (show_text)
+      ctx.roundRect(margin, y2, widget_width - margin * 2, H, [H * 0.5]);
+    else
+      ctx.rect(margin, y2, widget_width - margin * 2, H);
+    ctx.fill();
+    if (show_text) {
+      if (!this.disabled) ctx.stroke();
+      ctx.save();
+      ctx.beginPath();
+      ctx.rect(margin, y2, widget_width - margin * 2, H);
+      ctx.clip();
+      ctx.fillStyle = this.secondary_text_color;
+      const label5 = this.label || this.name;
+      if (label5 != null) {
+        ctx.fillText(label5, margin * 2, y2 + H * 0.7);
+      }
+      ctx.fillStyle = this.text_color;
+      ctx.textAlign = "right";
+      ctx.fillText(
+        String(this.value).substr(0, 30),
+        // 30 chars max
+        widget_width - margin * 2,
+        y2 + H * 0.7
+      );
+      ctx.restore();
+    }
+    ctx.textAlign = originalTextAlign;
+    ctx.strokeStyle = originalStrokeStyle;
+    ctx.fillStyle = originalFillStyle;
+  }
+  onClick(options22) {
+    const { e: e2, node: node22, canvas: canvas2 } = options22;
+    canvas2.prompt(
+      "Value",
+      this.value,
+      (v2) => {
+        if (v2 !== null) {
+          this.setValue(v2, { e: e2, node: node22, canvas: canvas2 });
+        }
+      },
+      e2,
+      this.options?.multiline ?? false
+    );
+  }
+}
+const WIDGET_TYPE_MAP = {
+  button: ButtonWidget,
+  toggle: BooleanWidget,
+  slider: SliderWidget,
+  combo: ComboWidget,
+  number: NumberWidget,
+  string: TextWidget,
+  text: TextWidget
+};
+function toClass(cls, obj) {
+  return obj instanceof cls ? obj : new cls(obj);
+}
+__name(toClass, "toClass");
 class LGraphNode {
   static {
     __name(this, "LGraphNode");
@@ -56187,12 +57081,18 @@ class LGraphNode {
   static MAX_CONSOLE;
   static type;
   static category;
-  static supported_extensions;
   static filter;
   static skip_list;
   /** Default setting for {@link LGraphNode.connectInputToOutput}. @see {@link INodeFlags.keepAllLinksOnBypass} */
   static keepAllLinksOnBypass = false;
+  /** The title text of the node. */
   title;
+  /**
+   * The font style used to render the node's title text.
+   */
+  get titleFontStyle() {
+    return `${LiteGraph.NODE_TEXT_SIZE}px Arial`;
+  }
   graph = null;
   id;
   type = null;
@@ -56210,9 +57110,37 @@ class LGraphNode {
   mode;
   last_serialization;
   serialize_widgets;
+  /**
+   * The overridden fg color used to render the node.
+   * @see {@link renderingColor}
+   */
   color;
+  /**
+   * The overridden bg color used to render the node.
+   * @see {@link renderingBgColor}
+   */
   bgcolor;
+  /**
+   * The overridden box color used to render the node.
+   * @see {@link renderingBoxColor}
+   */
   boxcolor;
+  /** The fg color used to render the node. */
+  get renderingColor() {
+    return this.color || this.constructor.color || LiteGraph.NODE_DEFAULT_COLOR;
+  }
+  /** The bg color used to render the node. */
+  get renderingBgColor() {
+    return this.bgcolor || this.constructor.bgcolor || LiteGraph.NODE_DEFAULT_BGCOLOR;
+  }
+  /** The box color used to render the node. */
+  get renderingBoxColor() {
+    let colState = LiteGraph.node_box_coloured_by_mode && LiteGraph.NODE_MODES_COLORS[this.mode] ? LiteGraph.NODE_MODES_COLORS[this.mode] : void 0;
+    if (LiteGraph.node_box_coloured_when_on) {
+      colState = this.action_triggered ? "#FFF" : this.execute_triggered ? "#AAA" : colState;
+    }
+    return this.boxcolor || colState || LiteGraph.NODE_DEFAULT_BOXCOLOR;
+  }
   exec_version;
   action_call;
   execute_triggered;
@@ -56223,13 +57151,14 @@ class LGraphNode {
   gotFocusAt;
   badges = [];
   badgePosition = BadgePosition.TopLeft;
+  /**
+   * The width of the node when collapsed.
+   * Updated by {@link LGraphCanvas.drawNode}
+   */
   _collapsed_width;
-  horizontal;
   console;
   _level;
   _shape;
-  subgraph;
-  skip_subgraph_button;
   mouseOver;
   redraw_on_mouse;
   // Appears unused
@@ -56285,6 +57214,12 @@ class LGraphNode {
     this._size[0] = value4[0];
     this._size[1] = value4[1];
   }
+  /**
+   * The size of the node used for rendering.
+   */
+  get renderingSize() {
+    return this.flags.collapsed ? [this._collapsed_width, 0] : this._size;
+  }
   get shape() {
     return this._shape;
   }
@@ -56309,11 +57244,20 @@ class LGraphNode {
         this._shape = v2;
     }
   }
+  /**
+   * The shape of the node used for rendering. @see {@link RenderShape}
+   */
+  get renderingShape() {
+    return this._shape || this.constructor.shape || LiteGraph.NODE_DEFAULT_SHAPE;
+  }
   get is_selected() {
     return this.selected;
   }
   set is_selected(value4) {
     this.selected = value4;
+  }
+  get title_mode() {
+    return this.constructor.title_mode ?? TitleMode.NORMAL_TITLE;
   }
   constructor(title) {
     this.id = LiteGraph.use_uuids ? LiteGraph.uuidv4() : -1;
@@ -56351,30 +57295,27 @@ class LGraphNode {
     if (!info.title) {
       this.title = this.constructor.title;
     }
-    if (this.inputs) {
-      for (let i2 = 0; i2 < this.inputs.length; ++i2) {
-        const input = this.inputs[i2];
-        const link2 = this.graph ? this.graph._links.get(input.link) : null;
-        this.onConnectionsChange?.(NodeSlotType.INPUT, i2, true, link2, input);
-        this.onInputAdded?.(input);
-      }
+    this.inputs ??= [];
+    this.inputs = this.inputs.map((input) => toClass(NodeInputSlot, input));
+    for (const [i2, input] of this.inputs.entries()) {
+      const link2 = this.graph ? this.graph._links.get(input.link) : null;
+      this.onConnectionsChange?.(NodeSlotType.INPUT, i2, true, link2, input);
+      this.onInputAdded?.(input);
     }
-    if (this.outputs) {
-      for (let i2 = 0; i2 < this.outputs.length; ++i2) {
-        const output = this.outputs[i2];
-        if (!output.links) {
-          continue;
-        }
-        for (let j2 = 0; j2 < output.links.length; ++j2) {
-          const link2 = this.graph ? this.graph._links.get(output.links[j2]) : null;
-          this.onConnectionsChange?.(NodeSlotType.OUTPUT, i2, true, link2, output);
-        }
-        this.onOutputAdded?.(output);
+    this.outputs ??= [];
+    this.outputs = this.outputs.map((output) => toClass(NodeOutputSlot, output));
+    for (const [i2, output] of this.outputs.entries()) {
+      if (!output.links) {
+        continue;
       }
+      for (const linkId of output.links) {
+        const link2 = this.graph ? this.graph._links.get(linkId) : null;
+        this.onConnectionsChange?.(NodeSlotType.OUTPUT, i2, true, link2, output);
+      }
+      this.onOutputAdded?.(output);
     }
     if (this.widgets) {
-      for (let i2 = 0; i2 < this.widgets.length; ++i2) {
-        const w2 = this.widgets[i2];
+      for (const w2 of this.widgets) {
         if (!w2) continue;
         if (w2.options?.property && this.properties[w2.options.property] != void 0)
           w2.value = JSON.parse(JSON.stringify(this.properties[w2.options.property]));
@@ -56709,10 +57650,10 @@ class LGraphNode {
     }
     return trigS;
   }
-  onAfterExecuteNode(param, options4) {
+  onAfterExecuteNode(param, options22) {
     const trigS = this.findOutputSlot("onExecuted");
     if (trigS != -1) {
-      this.triggerSlot(trigS, param, null, options4);
+      this.triggerSlot(trigS, param, null, options22);
     }
   }
   changeMode(modeTo) {
@@ -56738,46 +57679,46 @@ class LGraphNode {
   /**
    * Triggers the node code execution, place a boolean/counter to mark the node as being executed
    */
-  doExecute(param, options4) {
-    options4 = options4 || {};
+  doExecute(param, options22) {
+    options22 = options22 || {};
     if (this.onExecute) {
-      options4.action_call ||= this.id + "_exec_" + Math.floor(Math.random() * 9999);
+      options22.action_call ||= this.id + "_exec_" + Math.floor(Math.random() * 9999);
       this.graph.nodes_executing[this.id] = true;
-      this.onExecute(param, options4);
+      this.onExecute(param, options22);
       this.graph.nodes_executing[this.id] = false;
       this.exec_version = this.graph.iteration;
-      if (options4?.action_call) {
-        this.action_call = options4.action_call;
-        this.graph.nodes_executedAction[this.id] = options4.action_call;
+      if (options22?.action_call) {
+        this.action_call = options22.action_call;
+        this.graph.nodes_executedAction[this.id] = options22.action_call;
       }
     }
     this.execute_triggered = 2;
-    this.onAfterExecuteNode?.(param, options4);
+    this.onAfterExecuteNode?.(param, options22);
   }
   /**
    * Triggers an action, wrapped by logics to control execution flow
    * @param action name
    */
-  actionDo(action, param, options4) {
-    options4 = options4 || {};
+  actionDo(action, param, options22) {
+    options22 = options22 || {};
     if (this.onAction) {
-      options4.action_call ||= this.id + "_" + (action ? action : "action") + "_" + Math.floor(Math.random() * 9999);
+      options22.action_call ||= this.id + "_" + (action ? action : "action") + "_" + Math.floor(Math.random() * 9999);
       this.graph.nodes_actioning[this.id] = action ? action : "actioning";
-      this.onAction(action, param, options4);
+      this.onAction(action, param, options22);
       this.graph.nodes_actioning[this.id] = false;
-      if (options4?.action_call) {
-        this.action_call = options4.action_call;
-        this.graph.nodes_executedAction[this.id] = options4.action_call;
+      if (options22?.action_call) {
+        this.action_call = options22.action_call;
+        this.graph.nodes_executedAction[this.id] = options22.action_call;
       }
     }
     this.action_triggered = 2;
-    this.onAfterExecuteNode?.(param, options4);
+    this.onAfterExecuteNode?.(param, options22);
   }
   /**
    * Triggers an event in this node, this will trigger any output with the same name
    * @param action name ( "on_play", ... ) if action is equivalent to false then the event is send to all
    */
-  trigger(action, param, options4) {
+  trigger(action, param, options22) {
     if (!this.outputs || !this.outputs.length) {
       return;
     }
@@ -56786,7 +57727,7 @@ class LGraphNode {
       const output = this.outputs[i2];
       if (!output || output.type !== LiteGraph.EVENT || action && output.name != action)
         continue;
-      this.triggerSlot(i2, param, null, options4);
+      this.triggerSlot(i2, param, null, options22);
     }
   }
   /**
@@ -56794,8 +57735,8 @@ class LGraphNode {
    * @param slot the index of the output slot
    * @param link_id [optional] in case you want to trigger and specific output link in a slot
    */
-  triggerSlot(slot, param, link_id, options4) {
-    options4 = options4 || {};
+  triggerSlot(slot, param, link_id, options22) {
+    options22 = options22 || {};
     if (!this.outputs) return;
     if (slot == null) {
       console.error("slot must be a number");
@@ -56817,14 +57758,14 @@ class LGraphNode {
       const node22 = this.graph.getNodeById(link_info.target_id);
       if (!node22) continue;
       if (node22.mode === LGraphEventMode.ON_TRIGGER) {
-        if (!options4.action_call)
-          options4.action_call = this.id + "_trigg_" + Math.floor(Math.random() * 9999);
-        node22.doExecute?.(param, options4);
+        if (!options22.action_call)
+          options22.action_call = this.id + "_trigg_" + Math.floor(Math.random() * 9999);
+        node22.doExecute?.(param, options22);
       } else if (node22.onAction) {
-        if (!options4.action_call)
-          options4.action_call = this.id + "_act_" + Math.floor(Math.random() * 9999);
+        if (!options22.action_call)
+          options22.action_call = this.id + "_act_" + Math.floor(Math.random() * 9999);
         const target_connection = node22.inputs[link_info.target_slot];
-        node22.actionDo(target_connection.name, param, options4);
+        node22.actionDo(target_connection.name, param, options22);
       }
     }
   }
@@ -56882,7 +57823,7 @@ class LGraphNode {
    * @param extra_info this can be used to have special properties of an output (label, special color, position, etc)
    */
   addOutput(name2, type, extra_info) {
-    const output = { name: name2, type, links: null };
+    const output = new NodeOutputSlot({ name: name2, type, links: null });
     if (extra_info) {
       for (const i2 in extra_info) {
         output[i2] = extra_info[i2];
@@ -56904,7 +57845,7 @@ class LGraphNode {
   addOutputs(array) {
     for (let i2 = 0; i2 < array.length; ++i2) {
       const info = array[i2];
-      const o2 = { name: info[0], type: info[1], links: null };
+      const o2 = new NodeOutputSlot({ name: info[0], type: info[1], links: null });
       if (array[2]) {
         for (const j2 in info[2]) {
           o2[j2] = info[2][j2];
@@ -56945,7 +57886,7 @@ class LGraphNode {
    */
   addInput(name2, type, extra_info) {
     type = type || 0;
-    const input = { name: name2, type, link: null };
+    const input = new NodeInputSlot({ name: name2, type, link: null });
     if (extra_info) {
       for (const i2 in extra_info) {
         input[i2] = extra_info[i2];
@@ -56966,7 +57907,7 @@ class LGraphNode {
   addInputs(array) {
     for (let i2 = 0; i2 < array.length; ++i2) {
       const info = array[i2];
-      const o2 = { name: info[0], type: info[1], link: null };
+      const o2 = new NodeInputSlot({ name: info[0], type: info[1], link: null });
       if (array[2]) {
         for (const j2 in info[2]) {
           o2[j2] = info[2][j2];
@@ -57002,11 +57943,11 @@ class LGraphNode {
    * @param pos position of the connection inside the node
    * @param direction if is input or output
    */
-  addConnection(name2, type, pos2, direction) {
+  addConnection(name2, type, pos, direction) {
     const o2 = {
       name: name2,
       type,
-      pos: pos2,
+      pos,
       direction,
       links: null
     };
@@ -57056,9 +57997,9 @@ class LGraphNode {
     let widgets_height = 0;
     if (this.widgets?.length) {
       for (let i2 = 0, l2 = this.widgets.length; i2 < l2; ++i2) {
-        const widget2 = this.widgets[i2];
-        if (widget2.hidden || widget2.advanced && !this.showAdvanced) continue;
-        widgets_height += widget2.computeSize ? widget2.computeSize(size[0])[1] + 4 : LiteGraph.NODE_WIDGET_HEIGHT + 4;
+        const widget = this.widgets[i2];
+        if (widget.hidden || widget.advanced && !this.showAdvanced) continue;
+        widgets_height += widget.computeSize ? widget.computeSize(size[0])[1] + 4 : LiteGraph.NODE_WIDGET_HEIGHT + 4;
       }
       widgets_height += 8;
     }
@@ -57126,17 +58067,17 @@ class LGraphNode {
    * @param options the object that contains special properties of this widget
    * @returns the created widget object
    */
-  addWidget(type, name2, value4, callback, options4) {
+  addWidget(type, name2, value4, callback, options22) {
     this.widgets ||= [];
-    if (!options4 && callback && typeof callback === "object") {
-      options4 = callback;
+    if (!options22 && callback && typeof callback === "object") {
+      options22 = callback;
       callback = null;
     }
-    if (options4 && typeof options4 === "string")
-      options4 = { property: options4 };
+    if (options22 && typeof options22 === "string")
+      options22 = { property: options22 };
     if (callback && typeof callback === "string") {
-      options4 ||= {};
-      options4.property = callback;
+      options22 ||= {};
+      options22.property = callback;
       callback = null;
     }
     if (callback && typeof callback !== "function") {
@@ -57149,7 +58090,7 @@ class LGraphNode {
       name: name2,
       value: value4,
       callback,
-      options: options4 || {}
+      options: options22 || {}
     };
     if (w2.options.y !== void 0) {
       w2.y = w2.options.y;
@@ -57160,14 +58101,16 @@ class LGraphNode {
     if (type == "combo" && !w2.options.values) {
       throw "LiteGraph addWidget('combo',...) requires to pass values in options: { values:['red','blue'] }";
     }
-    this.widgets.push(w2);
+    const widget = this.addCustomWidget(w2);
     this.setSize(this.computeSize());
-    return w2;
+    return widget;
   }
   addCustomWidget(custom_widget) {
     this.widgets ||= [];
-    this.widgets.push(custom_widget);
-    return custom_widget;
+    const WidgetClass = WIDGET_TYPE_MAP[custom_widget.type];
+    const widget = WidgetClass ? new WidgetClass(custom_widget) : custom_widget;
+    this.widgets.push(widget);
+    return widget;
   }
   move(deltaX, deltaY) {
     if (this.pinned) return;
@@ -57183,7 +58126,7 @@ class LGraphNode {
    * @param pad Expands the area by this amount on each side.  Default: 0
    */
   measure(out, pad = 0) {
-    const titleMode = this.constructor.title_mode;
+    const titleMode = this.title_mode;
     const renderTitle = titleMode != TitleMode.TRANSPARENT_TITLE && titleMode != TitleMode.NO_TITLE;
     const titleHeight = renderTitle ? LiteGraph.NODE_TITLE_HEIGHT : 0;
     out[0] = this.pos[0] - pad;
@@ -57285,18 +58228,18 @@ class LGraphNode {
    * @returns The widget found, otherwise `null`
    */
   getWidgetOnPos(canvasX, canvasY, includeDisabled = false) {
-    const { widgets, pos: pos2, size } = this;
+    const { widgets, pos, size } = this;
     if (!widgets?.length) return null;
-    const x2 = canvasX - pos2[0];
-    const y2 = canvasY - pos2[1];
+    const x2 = canvasX - pos[0];
+    const y2 = canvasY - pos[1];
     const nodeWidth = size[0];
-    for (const widget2 of widgets) {
-      if (!widget2 || widget2.disabled && !includeDisabled || widget2.hidden || widget2.advanced && !this.showAdvanced)
+    for (const widget of widgets) {
+      if (!widget || widget.disabled && !includeDisabled || widget.hidden || widget.advanced && !this.showAdvanced)
         continue;
-      const h2 = widget2.computeSize ? widget2.computeSize(nodeWidth)[1] : LiteGraph.NODE_WIDGET_HEIGHT;
-      const w2 = widget2.width || nodeWidth;
-      if (widget2.last_y !== void 0 && isInRectangle(x2, y2, 6, widget2.last_y, w2 - 12, h2))
-        return widget2;
+      const h2 = widget.computeSize ? widget.computeSize(nodeWidth)[1] : LiteGraph.NODE_WIDGET_HEIGHT;
+      const w2 = widget.width || nodeWidth;
+      if (widget.last_y !== void 0 && isInRectangle(x2, y2, 6, widget.last_y, w2 - 12, h2))
+        return widget;
     }
     return null;
   }
@@ -57328,12 +58271,12 @@ class LGraphNode {
    * Finds the next free slot
    * @param slots The slots to search, i.e. this.inputs or this.outputs
    */
-  #findFreeSlot(slots, options4) {
+  #findFreeSlot(slots, options22) {
     const defaults2 = {
       returnObj: false,
       typesNotAccepted: []
     };
-    const opts = Object.assign(defaults2, options4 || {});
+    const opts = Object.assign(defaults2, options22 || {});
     const length = slots?.length;
     if (!(length > 0)) return -1;
     for (let i2 = 0; i2 < length; ++i2) {
@@ -57423,18 +58366,18 @@ class LGraphNode {
    * @see {connectByType}
    * @see {connectByTypeOutput}
    */
-  findConnectByTypeSlot(findInputs, node22, slotType, options4) {
-    if (options4 && typeof options4 === "object") {
-      if ("firstFreeIfInputGeneralInCase" in options4) options4.wildcardToTyped = !!options4.firstFreeIfInputGeneralInCase;
-      if ("firstFreeIfOutputGeneralInCase" in options4) options4.wildcardToTyped = !!options4.firstFreeIfOutputGeneralInCase;
-      if ("generalTypeInCase" in options4) options4.typedToWildcard = !!options4.generalTypeInCase;
+  findConnectByTypeSlot(findInputs, node22, slotType, options22) {
+    if (options22 && typeof options22 === "object") {
+      if ("firstFreeIfInputGeneralInCase" in options22) options22.wildcardToTyped = !!options22.firstFreeIfInputGeneralInCase;
+      if ("firstFreeIfOutputGeneralInCase" in options22) options22.wildcardToTyped = !!options22.firstFreeIfOutputGeneralInCase;
+      if ("generalTypeInCase" in options22) options22.typedToWildcard = !!options22.generalTypeInCase;
     }
     const optsDef = {
       createEventInCase: true,
       wildcardToTyped: true,
       typedToWildcard: true
     };
-    const opts = Object.assign(optsDef, options4);
+    const opts = Object.assign(optsDef, options22);
     if (node22 && typeof node22 === "number") {
       node22 = this.graph.getNodeById(node22);
     }
@@ -57789,13 +58732,8 @@ class LGraphNode {
     const offset = LiteGraph.NODE_SLOT_HEIGHT * 0.5;
     if (this.flags.collapsed) {
       const w2 = this._collapsed_width || LiteGraph.NODE_COLLAPSED_WIDTH;
-      if (this.horizontal) {
-        out[0] = this.pos[0] + w2 * 0.5;
-        out[1] = is_input ? this.pos[1] - LiteGraph.NODE_TITLE_HEIGHT : this.pos[1];
-      } else {
-        out[0] = is_input ? this.pos[0] : this.pos[0] + w2;
-        out[1] = this.pos[1] - LiteGraph.NODE_TITLE_HEIGHT * 0.5;
-      }
+      out[0] = is_input ? this.pos[0] : this.pos[0] + w2;
+      out[1] = this.pos[1] - LiteGraph.NODE_TITLE_HEIGHT * 0.5;
       return out;
     }
     if (is_input && slot_number == -1) {
@@ -57810,11 +58748,6 @@ class LGraphNode {
     } else if (!is_input && num_slots > slot_number && this.outputs[slot_number].pos) {
       out[0] = this.pos[0] + this.outputs[slot_number].pos[0];
       out[1] = this.pos[1] + this.outputs[slot_number].pos[1];
-      return out;
-    }
-    if (this.horizontal) {
-      out[0] = this.pos[0] + (slot_number + 0.5) * (this.size[0] / num_slots);
-      out[1] = is_input ? this.pos[1] - LiteGraph.NODE_TITLE_HEIGHT : this.pos[1] + this.size[1];
       return out;
     }
     out[0] = is_input ? this.pos[0] + offset : this.pos[0] + this.size[0] + 1 - offset;
@@ -57920,8 +58853,12 @@ class LGraphNode {
   get width() {
     return this.collapsed ? this._collapsed_width || LiteGraph.NODE_COLLAPSED_WIDTH : this.size[0];
   }
+  /**
+   * Returns the height of the node, including the title bar.
+   */
   get height() {
-    return this.collapsed ? LiteGraph.NODE_COLLAPSED_HEIGHT : this.size[1];
+    const bodyHeight = this.collapsed ? 0 : this.size[1];
+    return LiteGraph.NODE_TITLE_HEIGHT + bodyHeight;
   }
   drawBadges(ctx, { gap = 2 } = {}) {
     const badgeInstances = this.badges.map((badge) => badge instanceof LGraphBadge ? badge : badge());
@@ -57931,6 +58868,168 @@ class LGraphNode {
     for (const badge of badgeInstances) {
       badge.draw(ctx, currentX, y2 - badge.height);
       currentX += badge.getWidth(ctx) + gap;
+    }
+  }
+  /**
+   * Renders the node's title bar background
+   */
+  drawTitleBarBackground(ctx, options22) {
+    const {
+      scale,
+      title_height = LiteGraph.NODE_TITLE_HEIGHT,
+      low_quality = false
+    } = options22;
+    const fgcolor = this.renderingColor;
+    const shape = this.renderingShape;
+    const size = this.renderingSize;
+    if (this.onDrawTitleBar) {
+      this.onDrawTitleBar(ctx, title_height, size, scale, fgcolor);
+      return;
+    }
+    if (this.title_mode === TitleMode.TRANSPARENT_TITLE) {
+      return;
+    }
+    if (this.collapsed) {
+      ctx.shadowColor = LiteGraph.DEFAULT_SHADOW_COLOR;
+    }
+    ctx.fillStyle = this.constructor.title_color || fgcolor;
+    ctx.beginPath();
+    if (shape == RenderShape.BOX || low_quality) {
+      ctx.rect(0, -title_height, size[0], title_height);
+    } else if (shape == RenderShape.ROUND || shape == RenderShape.CARD) {
+      ctx.roundRect(
+        0,
+        -title_height,
+        size[0],
+        title_height,
+        this.collapsed ? [LiteGraph.ROUND_RADIUS] : [LiteGraph.ROUND_RADIUS, LiteGraph.ROUND_RADIUS, 0, 0]
+      );
+    }
+    ctx.fill();
+    ctx.shadowColor = "transparent";
+  }
+  /**
+   * Renders the node's title box, i.e. the dot in front of the title text that
+   * when clicked toggles the node's collapsed state. The term `title box` comes
+   * from the original LiteGraph implementation.
+   */
+  drawTitleBox(ctx, options22) {
+    const {
+      scale,
+      low_quality = false,
+      title_height = LiteGraph.NODE_TITLE_HEIGHT,
+      box_size = 10
+    } = options22;
+    const size = this.renderingSize;
+    const shape = this.renderingShape;
+    if (this.onDrawTitleBox) {
+      this.onDrawTitleBox(ctx, title_height, size, scale);
+      return;
+    }
+    if ([RenderShape.ROUND, RenderShape.CIRCLE, RenderShape.CARD].includes(shape)) {
+      if (low_quality) {
+        ctx.fillStyle = "black";
+        ctx.beginPath();
+        ctx.arc(
+          title_height * 0.5,
+          title_height * -0.5,
+          box_size * 0.5 + 1,
+          0,
+          Math.PI * 2
+        );
+        ctx.fill();
+      }
+      ctx.fillStyle = this.renderingBoxColor;
+      if (low_quality)
+        ctx.fillRect(
+          title_height * 0.5 - box_size * 0.5,
+          title_height * -0.5 - box_size * 0.5,
+          box_size,
+          box_size
+        );
+      else {
+        ctx.beginPath();
+        ctx.arc(
+          title_height * 0.5,
+          title_height * -0.5,
+          box_size * 0.5,
+          0,
+          Math.PI * 2
+        );
+        ctx.fill();
+      }
+    } else {
+      if (low_quality) {
+        ctx.fillStyle = "black";
+        ctx.fillRect(
+          (title_height - box_size) * 0.5 - 1,
+          (title_height + box_size) * -0.5 - 1,
+          box_size + 2,
+          box_size + 2
+        );
+      }
+      ctx.fillStyle = this.renderingBoxColor;
+      ctx.fillRect(
+        (title_height - box_size) * 0.5,
+        (title_height + box_size) * -0.5,
+        box_size,
+        box_size
+      );
+    }
+  }
+  /**
+   * Renders the node's title text.
+   */
+  drawTitleText(ctx, options22) {
+    const {
+      scale,
+      default_title_color,
+      low_quality = false,
+      title_height = LiteGraph.NODE_TITLE_HEIGHT
+    } = options22;
+    const size = this.renderingSize;
+    const selected2 = this.selected;
+    if (this.onDrawTitleText) {
+      this.onDrawTitleText(
+        ctx,
+        title_height,
+        size,
+        scale,
+        this.titleFontStyle,
+        selected2
+      );
+      return;
+    }
+    if (low_quality) {
+      return;
+    }
+    ctx.font = this.titleFontStyle;
+    const rawTitle = this.getTitle() ?? `❌ ${this.type}`;
+    const title = String(rawTitle) + (this.pinned ? "📌" : "");
+    if (title) {
+      if (selected2) {
+        ctx.fillStyle = LiteGraph.NODE_SELECTED_TITLE_COLOR;
+      } else {
+        ctx.fillStyle = this.constructor.title_text_color || default_title_color;
+      }
+      if (this.collapsed) {
+        ctx.textAlign = "left";
+        ctx.fillText(
+          title.substr(0, 20),
+          // avoid urls too long
+          title_height,
+          // + measure.width * 0.5,
+          LiteGraph.NODE_TITLE_TEXT_Y - title_height
+        );
+        ctx.textAlign = "left";
+      } else {
+        ctx.textAlign = "left";
+        ctx.fillText(
+          title,
+          title_height,
+          LiteGraph.NODE_TITLE_TEXT_Y - title_height
+        );
+      }
     }
   }
   /**
@@ -57990,6 +59089,147 @@ class LGraphNode {
       }
     }
     __name(bypassAllLinks, "bypassAllLinks");
+  }
+  drawWidgets(ctx, options22) {
+    if (!this.widgets) return;
+    const { y: y2, colorContext, linkOverWidget, linkOverWidgetType, lowQuality = false, editorAlpha = 1 } = options22;
+    let posY = y2;
+    if (this.widgets_up) {
+      posY = 2;
+    }
+    if (this.widgets_start_y != null) posY = this.widgets_start_y;
+    const width2 = this.size[0];
+    const widgets = this.widgets;
+    posY += 2;
+    const H = LiteGraph.NODE_WIDGET_HEIGHT;
+    const show_text = !lowQuality;
+    ctx.save();
+    ctx.globalAlpha = editorAlpha;
+    const margin = 15;
+    for (const w2 of widgets) {
+      if (w2.hidden || w2.advanced && !this.showAdvanced) continue;
+      const y22 = w2.y || posY;
+      const outline_color = w2.advanced ? LiteGraph.WIDGET_ADVANCED_OUTLINE_COLOR : LiteGraph.WIDGET_OUTLINE_COLOR;
+      if (w2 === linkOverWidget) {
+        new NodeInputSlot({
+          name: "",
+          type: linkOverWidgetType,
+          link: 0
+        }).draw(ctx, { pos: [10, y22 + 10], colorContext });
+      }
+      w2.last_y = y22;
+      ctx.strokeStyle = outline_color;
+      ctx.fillStyle = "#222";
+      ctx.textAlign = "left";
+      if (w2.disabled) ctx.globalAlpha *= 0.5;
+      const widget_width = w2.width || width2;
+      const WidgetClass = WIDGET_TYPE_MAP[w2.type];
+      if (WidgetClass) {
+        toClass(WidgetClass, w2).drawWidget(ctx, { y: y22, width: widget_width, show_text, margin });
+      } else {
+        w2.draw?.(ctx, this, widget_width, y22, H);
+      }
+      posY += (w2.computeSize ? w2.computeSize(widget_width)[1] : H) + 4;
+      ctx.globalAlpha = editorAlpha;
+    }
+    ctx.restore();
+  }
+  /**
+   * When {@link LGraphNode.collapsed} is `true`, this method draws the node's collapsed slots.
+   */
+  drawCollapsedSlots(ctx) {
+    let input_slot = null;
+    let output_slot = null;
+    for (const slot of this.inputs ?? []) {
+      if (slot.link == null) {
+        continue;
+      }
+      input_slot = slot;
+      break;
+    }
+    for (const slot of this.outputs ?? []) {
+      if (!slot.links || !slot.links.length) {
+        continue;
+      }
+      output_slot = slot;
+      break;
+    }
+    if (input_slot) {
+      const x2 = 0;
+      const y2 = LiteGraph.NODE_TITLE_HEIGHT * -0.5;
+      toClass(NodeInputSlot, input_slot).drawCollapsed(ctx, {
+        pos: [x2, y2]
+      });
+    }
+    if (output_slot) {
+      const x2 = this._collapsed_width;
+      const y2 = LiteGraph.NODE_TITLE_HEIGHT * -0.5;
+      toClass(NodeOutputSlot, output_slot).drawCollapsed(ctx, {
+        pos: [x2, y2]
+      });
+    }
+  }
+  get highlightColor() {
+    return LiteGraph.NODE_TEXT_HIGHLIGHT_COLOR ?? LiteGraph.NODE_SELECTED_TITLE_COLOR ?? LiteGraph.NODE_TEXT_COLOR;
+  }
+  /**
+   * Draws the node's input and output slots.
+   * @returns The maximum y-coordinate of the slots.
+   * TODO: Calculate the bounding box of the slots and return it instead of the maximum y-coordinate.
+   */
+  drawSlots(ctx, options22) {
+    const { colorContext, connectingLink, editorAlpha, lowQuality } = options22;
+    let max_y = 0;
+    const slot_pos = new Float32Array(2);
+    for (const [i2, input] of (this.inputs ?? []).entries()) {
+      const slot = toClass(NodeInputSlot, input);
+      const isValid2 = slot.isValidTarget(connectingLink);
+      const highlight = isValid2 && this.mouseOver?.inputId === i2;
+      const label_color = highlight ? this.highlightColor : LiteGraph.NODE_TEXT_COLOR;
+      ctx.globalAlpha = isValid2 ? editorAlpha : 0.4 * editorAlpha;
+      const pos = this.getConnectionPos(
+        true,
+        i2,
+        /* out= */
+        slot_pos
+      );
+      pos[0] -= this.pos[0];
+      pos[1] -= this.pos[1];
+      max_y = Math.max(max_y, pos[1] + LiteGraph.NODE_SLOT_HEIGHT * 0.5);
+      slot.draw(ctx, {
+        pos,
+        colorContext,
+        labelColor: label_color,
+        lowQuality,
+        renderText: !lowQuality,
+        highlight
+      });
+    }
+    for (const [i2, output] of (this.outputs ?? []).entries()) {
+      const slot = toClass(NodeOutputSlot, output);
+      const isValid2 = slot.isValidTarget(connectingLink);
+      const highlight = isValid2 && this.mouseOver?.outputId === i2;
+      const label_color = highlight ? this.highlightColor : LiteGraph.NODE_TEXT_COLOR;
+      ctx.globalAlpha = isValid2 ? editorAlpha : 0.4 * editorAlpha;
+      const pos = this.getConnectionPos(
+        false,
+        i2,
+        /* out= */
+        slot_pos
+      );
+      pos[0] -= this.pos[0];
+      pos[1] -= this.pos[1];
+      max_y = Math.max(max_y, pos[1] + LiteGraph.NODE_SLOT_HEIGHT * 0.5);
+      slot.draw(ctx, {
+        pos,
+        colorContext,
+        labelColor: label_color,
+        lowQuality,
+        renderText: !lowQuality,
+        highlight
+      });
+    }
+    return max_y;
   }
 }
 class LGraphGroup {
@@ -58121,7 +59361,7 @@ class LGraphGroup {
     ctx.textAlign = "left";
     ctx.fillText(this.title + (this.pinned ? "📌" : ""), x2 + padding, y2 + font_size);
     if (LiteGraph.highlight_selected_group && this.selected) {
-      graphCanvas.strokeShape(ctx, this._bounding, {
+      strokeShape(ctx, this._bounding, {
         title_height: this.titleHeight,
         padding
       });
@@ -58235,117 +59475,6 @@ class LGraphGroup {
   isPointInside = LGraphNode.prototype.isPointInside;
   setDirtyCanvas = LGraphNode.prototype.setDirtyCanvas;
 }
-var SlotType = /* @__PURE__ */ ((SlotType2) => {
-  SlotType2["Array"] = "array";
-  SlotType2[SlotType2["Event"] = -1] = "Event";
-  return SlotType2;
-})(SlotType || {});
-var SlotShape = ((SlotShape2) => {
-  SlotShape2[SlotShape2["Box"] = RenderShape.BOX] = "Box";
-  SlotShape2[SlotShape2["Arrow"] = RenderShape.ARROW] = "Arrow";
-  SlotShape2[SlotShape2["Grid"] = RenderShape.GRID] = "Grid";
-  SlotShape2[SlotShape2["Circle"] = RenderShape.CIRCLE] = "Circle";
-  SlotShape2[SlotShape2["HollowCircle"] = RenderShape.HollowCircle] = "HollowCircle";
-  return SlotShape2;
-})(SlotShape || {});
-var SlotDirection = ((SlotDirection2) => {
-  SlotDirection2[SlotDirection2["Up"] = LinkDirection.UP] = "Up";
-  SlotDirection2[SlotDirection2["Right"] = LinkDirection.RIGHT] = "Right";
-  SlotDirection2[SlotDirection2["Down"] = LinkDirection.DOWN] = "Down";
-  SlotDirection2[SlotDirection2["Left"] = LinkDirection.LEFT] = "Left";
-  return SlotDirection2;
-})(SlotDirection || {});
-var LabelPosition = /* @__PURE__ */ ((LabelPosition2) => {
-  LabelPosition2["Left"] = "left";
-  LabelPosition2["Right"] = "right";
-  return LabelPosition2;
-})(LabelPosition || {});
-function drawSlot(ctx, slot, pos2, {
-  label_color = "#AAA",
-  label_position = "right",
-  horizontal: horizontal2 = false,
-  low_quality = false,
-  render_text = true,
-  do_stroke = false,
-  highlight = false
-} = {}) {
-  const originalFillStyle = ctx.fillStyle;
-  const originalStrokeStyle = ctx.strokeStyle;
-  const originalLineWidth = ctx.lineWidth;
-  const slot_type = slot.type;
-  const slot_shape = slot_type === "array" ? SlotShape.Grid : slot.shape;
-  ctx.beginPath();
-  let doStroke = do_stroke;
-  let doFill = true;
-  if (slot_type === -1 || slot_shape === SlotShape.Box) {
-    if (horizontal2) {
-      ctx.rect(pos2[0] - 5 + 0.5, pos2[1] - 8 + 0.5, 10, 14);
-    } else {
-      ctx.rect(pos2[0] - 6 + 0.5, pos2[1] - 5 + 0.5, 14, 10);
-    }
-  } else if (slot_shape === SlotShape.Arrow) {
-    ctx.moveTo(pos2[0] + 8, pos2[1] + 0.5);
-    ctx.lineTo(pos2[0] - 4, pos2[1] + 6 + 0.5);
-    ctx.lineTo(pos2[0] - 4, pos2[1] - 6 + 0.5);
-    ctx.closePath();
-  } else if (slot_shape === SlotShape.Grid) {
-    const gridSize = 3;
-    const cellSize = 2;
-    const spacing = 3;
-    for (let x2 = 0; x2 < gridSize; x2++) {
-      for (let y2 = 0; y2 < gridSize; y2++) {
-        ctx.rect(
-          pos2[0] - 4 + x2 * spacing,
-          pos2[1] - 4 + y2 * spacing,
-          cellSize,
-          cellSize
-        );
-      }
-    }
-    doStroke = false;
-  } else {
-    if (low_quality) {
-      ctx.rect(pos2[0] - 4, pos2[1] - 4, 8, 8);
-    } else {
-      let radius;
-      if (slot_shape === SlotShape.HollowCircle) {
-        doFill = false;
-        doStroke = true;
-        ctx.lineWidth = 3;
-        ctx.strokeStyle = ctx.fillStyle;
-        radius = highlight ? 4 : 3;
-      } else {
-        radius = highlight ? 5 : 4;
-      }
-      ctx.arc(pos2[0], pos2[1], radius, 0, Math.PI * 2);
-    }
-  }
-  if (doFill) ctx.fill();
-  if (!low_quality && doStroke) ctx.stroke();
-  if (render_text) {
-    const text2 = slot.label || slot.localized_name || slot.name;
-    if (text2) {
-      ctx.fillStyle = label_color;
-      if (label_position === "right") {
-        if (horizontal2 || slot.dir == LinkDirection.UP) {
-          ctx.fillText(text2, pos2[0], pos2[1] - 10);
-        } else {
-          ctx.fillText(text2, pos2[0] + 10, pos2[1] + 5);
-        }
-      } else {
-        if (horizontal2 || slot.dir == LinkDirection.DOWN) {
-          ctx.fillText(text2, pos2[0], pos2[1] - 8);
-        } else {
-          ctx.fillText(text2, pos2[0] - 10, pos2[1] + 5);
-        }
-      }
-    }
-  }
-  ctx.fillStyle = originalFillStyle;
-  ctx.strokeStyle = originalStrokeStyle;
-  ctx.lineWidth = originalLineWidth;
-}
-__name(drawSlot, "drawSlot");
 class DragAndScale {
   static {
     __name(this, "DragAndScale");
@@ -58435,8 +59564,8 @@ class DragAndScale {
     if (!this.enabled) {
       return;
     }
-    const canvas = this.element;
-    const rect = canvas.getBoundingClientRect();
+    const canvas2 = this.element;
+    const rect = canvas2.getBoundingClientRect();
     const x2 = e2.clientX - rect.left;
     const y2 = e2.clientY - rect.top;
     e2.canvasx = x2;
@@ -58449,7 +59578,7 @@ class DragAndScale {
     }
     if (e2.type == LiteGraph.pointerevents_method + "down" && is_inside) {
       this.dragging = true;
-      LiteGraph.pointerListenerRemove(canvas, "move", this._binded_mouse_callback);
+      LiteGraph.pointerListenerRemove(canvas2, "move", this._binded_mouse_callback);
       LiteGraph.pointerListenerAdd(document, "move", this._binded_mouse_callback);
       LiteGraph.pointerListenerAdd(document, "up", this._binded_mouse_callback);
     } else if (e2.type == LiteGraph.pointerevents_method + "move") {
@@ -58464,7 +59593,7 @@ class DragAndScale {
       this.dragging = false;
       LiteGraph.pointerListenerRemove(document, "move", this._binded_mouse_callback);
       LiteGraph.pointerListenerRemove(document, "up", this._binded_mouse_callback);
-      LiteGraph.pointerListenerAdd(canvas, "move", this._binded_mouse_callback);
+      LiteGraph.pointerListenerAdd(canvas2, "move", this._binded_mouse_callback);
     } else if (is_inside && (e2.type == "mousewheel" || e2.type == "wheel" || e2.type == "DOMMouseScroll")) {
       e2.eventType = "mousewheel";
       if (e2.type == "wheel") e2.wheel = -e2.deltaY;
@@ -58484,16 +59613,16 @@ class DragAndScale {
     ctx.scale(this.scale, this.scale);
     ctx.translate(this.offset[0], this.offset[1]);
   }
-  convertOffsetToCanvas(pos2) {
+  convertOffsetToCanvas(pos) {
     return [
-      (pos2[0] + this.offset[0]) * this.scale,
-      (pos2[1] + this.offset[1]) * this.scale
+      (pos[0] + this.offset[0]) * this.scale,
+      (pos[1] + this.offset[1]) * this.scale
     ];
   }
-  convertCanvasToOffset(pos2, out) {
+  convertCanvasToOffset(pos, out) {
     out = out || [0, 0];
-    out[0] = pos2[0] / this.scale - this.offset[0];
-    out[1] = pos2[1] / this.scale - this.offset[1];
+    out[0] = pos[0] / this.scale - this.offset[0];
+    out[1] = pos[1] / this.scale - this.offset[1];
     return out;
   }
   /** @deprecated Has not been kept up to date */
@@ -58512,13 +59641,15 @@ class DragAndScale {
     if (!this.element) return;
     const rect = this.element.getBoundingClientRect();
     if (!rect) return;
-    zooming_center = zooming_center || [rect.width * 0.5, rect.height * 0.5];
-    zooming_center[0] -= rect.x;
-    zooming_center[1] -= rect.y;
-    const center = this.convertCanvasToOffset(zooming_center);
+    zooming_center = zooming_center ?? [rect.width * 0.5, rect.height * 0.5];
+    const normalizedCenter = [
+      zooming_center[0] - rect.x,
+      zooming_center[1] - rect.y
+    ];
+    const center = this.convertCanvasToOffset(normalizedCenter);
     this.scale = value4;
     if (Math.abs(this.scale - 1) < 0.01) this.scale = 1;
-    const new_center = this.convertCanvasToOffset(zooming_center);
+    const new_center = this.convertCanvasToOffset(normalizedCenter);
     const delta_offset = [
       new_center[0] - center[0],
       new_center[1] - center[1]
@@ -58914,6 +60045,9 @@ class LGraphCanvas {
     this.#updateCursorStyle();
   }
   // #endregion Legacy accessors
+  /**
+   * @deprecated Use {@link LGraphNode.titleFontStyle} instead.
+   */
   get title_text_font() {
     return `${LiteGraph.NODE_TEXT_SIZE}px Arial`;
   }
@@ -58927,6 +60061,24 @@ class LGraphCanvas {
   }
   set maximumFps(value4) {
     this.#maximumFrameGap = value4 > Number.EPSILON ? 1e3 / value4 : 0;
+  }
+  /**
+   * @deprecated Use {@link LiteGraphGlobal.ROUND_RADIUS} instead.
+   */
+  get round_radius() {
+    return LiteGraph.ROUND_RADIUS;
+  }
+  /**
+   * @deprecated Use {@link LiteGraphGlobal.ROUND_RADIUS} instead.
+   */
+  set round_radius(value4) {
+    LiteGraph.ROUND_RADIUS = value4;
+  }
+  /**
+   * Render low quality when zoomed out.
+   */
+  get low_quality() {
+    return this.ds.scale < this.low_quality_zoom_threshold;
   }
   options;
   background_image;
@@ -58967,13 +60119,14 @@ class LGraphCanvas {
   render_connection_arrows;
   render_collapsed_slots;
   render_execution_order;
-  render_title_colored;
   render_link_tooltip;
   /** Controls whether reroutes are rendered at all. */
   reroutesEnabled = false;
   /** Shape of the markers shown at the midpoint of links.  Default: Circle */
   linkMarkerShape = LinkMarkerShape.Circle;
   links_render_mode;
+  /** Zoom threshold for low quality rendering. Zoom below this threshold will render low quality. */
+  low_quality_zoom_threshold = 0.6;
   /** mouse in canvas coordinates, where 0,0 is the top-left corner of the blue rectangle */
   mouse;
   /** mouse in graph coordinates, where 0,0 is the top-left corner of the blue rectangle */
@@ -58989,7 +60142,6 @@ class LGraphCanvas {
   /** to render foreground objects (above nodes and connections) in the canvas affected by transform */
   onDrawForeground;
   connections_width;
-  round_radius;
   /** The current node being drawn by {@link drawNode}.  This should NOT be used to determine the currently selected node.  See {@link selectedItems} */
   current_node;
   /** used for widgets */
@@ -59035,7 +60187,6 @@ class LGraphCanvas {
   last_mouse = [0, 0];
   last_mouseclick = 0;
   graph;
-  _graph_stack = null;
   canvas;
   bgcanvas;
   ctx;
@@ -59076,6 +60227,10 @@ class LGraphCanvas {
   #snapToGrid;
   /** Set on keydown, keyup. @todo */
   #shiftDown = false;
+  /** If true, enable drag zoom. Ctrl+Shift+Drag Up/Down: zoom canvas. */
+  dragZoomEnabled = false;
+  /** The start position of the drag zoom. */
+  #dragZoomStart = null;
   static active_node;
   onClear;
   /** called after moving a node @deprecated Does not handle multi-node move, and can return the wrong node. */
@@ -59100,9 +60255,9 @@ class LGraphCanvas {
    * @param graph The graph that owns this canvas.
    * @param options
    */
-  constructor(canvas, graph, options4) {
-    options4 ||= {};
-    this.options = options4;
+  constructor(canvas2, graph, options22) {
+    options22 ||= {};
+    this.options = options22;
     this.background_image = LGraphCanvas.DEFAULT_BACKGROUND_IMAGE;
     this.ds = new DragAndScale();
     this.pointer = new CanvasPointer(this.canvas);
@@ -59156,7 +60311,6 @@ class LGraphCanvas {
     this.render_connection_arrows = false;
     this.render_collapsed_slots = true;
     this.render_execution_order = false;
-    this.render_title_colored = true;
     this.render_link_tooltip = true;
     this.links_render_mode = LinkRenderType.SPLINE_LINK;
     this.mouse = [0, 0];
@@ -59171,11 +60325,9 @@ class LGraphCanvas {
     this.onDrawLinkTooltip = null;
     this.onNodeMoved = null;
     this.onSelectionChange = null;
-    this.onConnectingChange = null;
     this.onBeforeChange = null;
     this.onAfterChange = null;
     this.connections_width = 3;
-    this.round_radius = 8;
     this.current_node = null;
     this.node_widget = null;
     this.over_link_center = null;
@@ -59183,14 +60335,14 @@ class LGraphCanvas {
     this.visible_area = this.ds.visible_area;
     this.visible_links = [];
     this.connecting_links = null;
-    this.viewport = options4.viewport || null;
+    this.viewport = options22.viewport || null;
     graph?.attachCanvas(this);
-    this.setCanvas(canvas, options4.skip_events);
+    this.setCanvas(canvas2, options22.skip_events);
     this.clear();
-    if (!options4.skip_render) {
+    if (!options22.skip_render) {
       this.startRendering();
     }
-    this.autoresize = options4.autoresize;
+    this.autoresize = options22.autoresize;
   }
   static getFileExtension(url) {
     const question = url.indexOf("?");
@@ -59199,10 +60351,10 @@ class LGraphCanvas {
     return point === -1 ? "" : url.substring(point + 1).toLowerCase();
   }
   static onGroupAdd(info, entry, mouse_event) {
-    const canvas = LGraphCanvas.active_canvas;
+    const canvas2 = LGraphCanvas.active_canvas;
     const group = new LiteGraph.LGraphGroup();
-    group.pos = canvas.convertEventToCanvasOffset(mouse_event);
-    canvas.graph.add(group);
+    group.pos = canvas2.convertEventToCanvasOffset(mouse_event);
+    canvas2.graph.add(group);
   }
   /**
    * @deprecated Functionality moved to {@link getBoundaryNodes}.  The new function returns null on failure, instead of an object with all null properties.
@@ -59229,7 +60381,7 @@ class LGraphCanvas {
     alignNodes(Object.values(nodes), direction, align_to);
     LGraphCanvas.active_canvas.setDirty(true, true);
   }
-  static onNodeAlign(value4, options4, event, prev_menu, node22) {
+  static onNodeAlign(value4, options22, event, prev_menu, node22) {
     new LiteGraph.ContextMenu(["Top", "Bottom", "Left", "Right"], {
       event,
       callback: inner_clicked,
@@ -59245,7 +60397,7 @@ class LGraphCanvas {
     }
     __name(inner_clicked, "inner_clicked");
   }
-  static onGroupAlign(value4, options4, event, prev_menu) {
+  static onGroupAlign(value4, options22, event, prev_menu) {
     new LiteGraph.ContextMenu(["Top", "Bottom", "Left", "Right"], {
       event,
       callback: inner_clicked,
@@ -59260,26 +60412,26 @@ class LGraphCanvas {
     }
     __name(inner_clicked, "inner_clicked");
   }
-  static createDistributeMenu(value4, options4, event, prev_menu, node22) {
+  static createDistributeMenu(value4, options22, event, prev_menu, node22) {
     new LiteGraph.ContextMenu(["Vertically", "Horizontally"], {
       event,
       callback: inner_clicked,
       parentMenu: prev_menu
     });
     function inner_clicked(value22) {
-      const canvas = LGraphCanvas.active_canvas;
-      distributeNodes(Object.values(canvas.selected_nodes), value22 === "Horizontally");
-      canvas.setDirty(true, true);
+      const canvas2 = LGraphCanvas.active_canvas;
+      distributeNodes(Object.values(canvas2.selected_nodes), value22 === "Horizontally");
+      canvas2.setDirty(true, true);
     }
     __name(inner_clicked, "inner_clicked");
   }
-  static onMenuAdd(node22, options4, e2, prev_menu, callback) {
-    const canvas = LGraphCanvas.active_canvas;
-    const ref_window = canvas.getCanvasWindow();
-    const graph = canvas.graph;
+  static onMenuAdd(node22, options22, e2, prev_menu, callback) {
+    const canvas2 = LGraphCanvas.active_canvas;
+    const ref_window = canvas2.getCanvasWindow();
+    const graph = canvas2.graph;
     if (!graph) return;
     function inner_onMenuAdded(base_category, prev_menu2) {
-      const categories = LiteGraph.getNodeTypesCategories(canvas.filter || graph.filter).filter(function(category) {
+      const categories = LiteGraph.getNodeTypesCategories(canvas2.filter || graph.filter).filter(function(category) {
         return category.startsWith(base_category);
       });
       const entries = [];
@@ -59299,32 +60451,32 @@ class LGraphCanvas {
             value: category_path,
             content: name2,
             has_submenu: true,
-            callback: /* @__PURE__ */ __name(function(value4, event, mouseEvent, contextMenu) {
-              inner_onMenuAdded(value4.value, contextMenu);
+            callback: /* @__PURE__ */ __name(function(value4, event, mouseEvent, contextMenu2) {
+              inner_onMenuAdded(value4.value, contextMenu2);
             }, "callback")
           });
         }
       });
       const nodes = LiteGraph.getNodeTypesInCategory(
         base_category.slice(0, -1),
-        canvas.filter || graph.filter
+        canvas2.filter || graph.filter
       );
-      nodes.map(function(node3) {
-        if (node3.skip_list) return;
+      nodes.map(function(node222) {
+        if (node222.skip_list) return;
         const entry = {
-          value: node3.type,
-          content: node3.title,
+          value: node222.type,
+          content: node222.title,
           has_submenu: false,
-          callback: /* @__PURE__ */ __name(function(value4, event, mouseEvent, contextMenu) {
-            const first_event = contextMenu.getFirstEvent();
-            canvas.graph.beforeChange();
-            const node4 = LiteGraph.createNode(value4.value);
-            if (node4) {
-              node4.pos = canvas.convertEventToCanvasOffset(first_event);
-              canvas.graph.add(node4);
+          callback: /* @__PURE__ */ __name(function(value4, event, mouseEvent, contextMenu2) {
+            const first_event = contextMenu2.getFirstEvent();
+            canvas2.graph.beforeChange();
+            const node3 = LiteGraph.createNode(value4.value);
+            if (node3) {
+              node3.pos = canvas2.convertEventToCanvasOffset(first_event);
+              canvas2.graph.add(node3);
             }
-            callback?.(node4);
-            canvas.graph.afterChange();
+            callback?.(node3);
+            canvas2.graph.afterChange();
           }, "callback")
         };
         entries.push(entry);
@@ -59340,16 +60492,16 @@ class LGraphCanvas {
   static onMenuNodeEdit() {
   }
   /** @param options Parameter is never used */
-  static showMenuNodeOptionalInputs(v2, options4, e2, prev_menu, node22) {
+  static showMenuNodeOptionalInputs(v2, options22, e2, prev_menu, node22) {
     if (!node22) return;
     const that = this;
-    const canvas = LGraphCanvas.active_canvas;
-    const ref_window = canvas.getCanvasWindow();
-    options4 = node22.onGetInputs ? node22.onGetInputs() : node22.optional_inputs;
+    const canvas2 = LGraphCanvas.active_canvas;
+    const ref_window = canvas2.getCanvasWindow();
+    options22 = node22.onGetInputs ? node22.onGetInputs() : node22.optional_inputs;
     let entries = [];
-    if (options4) {
-      for (let i2 = 0; i2 < options4.length; i2++) {
-        const entry = options4[i2];
+    if (options22) {
+      for (let i2 = 0; i2 < options22.length; i2++) {
+        const entry = options22[i2];
         if (!entry) {
           entries.push(null);
           continue;
@@ -59384,30 +60536,30 @@ class LGraphCanvas {
       // @ts-expect-error Unused param
       ref_window
     );
-    function inner_clicked(v3, e3, prev2) {
+    function inner_clicked(v22, e22, prev2) {
       if (!node22) return;
-      v3.callback?.call(that, node22, v3, e3, prev2);
-      if (!v3.value) return;
+      v22.callback?.call(that, node22, v22, e22, prev2);
+      if (!v22.value) return;
       node22.graph.beforeChange();
-      node22.addInput(v3.value[0], v3.value[1], v3.value[2]);
-      node22.onNodeInputAdd?.(v3.value);
-      canvas.setDirty(true, true);
+      node22.addInput(v22.value[0], v22.value[1], v22.value[2]);
+      node22.onNodeInputAdd?.(v22.value);
+      canvas2.setDirty(true, true);
       node22.graph.afterChange();
     }
     __name(inner_clicked, "inner_clicked");
     return false;
   }
   /** @param options Parameter is never used */
-  static showMenuNodeOptionalOutputs(v2, options4, e2, prev_menu, node22) {
+  static showMenuNodeOptionalOutputs(v2, options22, e2, prev_menu, node22) {
     if (!node22) return;
     const that = this;
-    const canvas = LGraphCanvas.active_canvas;
-    const ref_window = canvas.getCanvasWindow();
-    options4 = node22.onGetOutputs ? node22.onGetOutputs() : node22.optional_outputs;
+    const canvas2 = LGraphCanvas.active_canvas;
+    const ref_window = canvas2.getCanvasWindow();
+    options22 = node22.onGetOutputs ? node22.onGetOutputs() : node22.optional_outputs;
     let entries = [];
-    if (options4) {
-      for (let i2 = 0; i2 < options4.length; i2++) {
-        const entry = options4[i2];
+    if (options22) {
+      for (let i2 = 0; i2 < options22.length; i2++) {
+        const entry = options22[i2];
         if (!entry) {
           entries.push(null);
           continue;
@@ -59448,18 +60600,18 @@ class LGraphCanvas {
       // @ts-expect-error Unused
       ref_window
     );
-    function inner_clicked(v3, e3, prev2) {
+    function inner_clicked(v22, e22, prev2) {
       if (!node22) return;
-      if (v3.callback) v3.callback.call(that, node22, v3, e3, prev2);
-      if (!v3.value) return;
-      const value4 = v3.value[1];
+      if (v22.callback) v22.callback.call(that, node22, v22, e22, prev2);
+      if (!v22.value) return;
+      const value4 = v22.value[1];
       if (value4 && (typeof value4 === "object" || Array.isArray(value4))) {
         const entries2 = [];
         for (const i2 in value4) {
           entries2.push({ content: i2, value: value4[i2] });
         }
         new LiteGraph.ContextMenu(entries2, {
-          event: e3,
+          event: e22,
           callback: inner_clicked,
           parentMenu: prev_menu,
           node: node22
@@ -59468,19 +60620,19 @@ class LGraphCanvas {
       }
       const graph = node22.graph;
       graph.beforeChange();
-      node22.addOutput(v3.value[0], v3.value[1], v3.value[2]);
-      node22.onNodeOutputAdd?.(v3.value);
-      canvas.setDirty(true, true);
+      node22.addOutput(v22.value[0], v22.value[1], v22.value[2]);
+      node22.onNodeOutputAdd?.(v22.value);
+      canvas2.setDirty(true, true);
       graph.afterChange();
     }
     __name(inner_clicked, "inner_clicked");
     return false;
   }
   /** @param value Parameter is never used */
-  static onShowMenuNodeProperties(value4, options4, e2, prev_menu, node22) {
+  static onShowMenuNodeProperties(value4, options22, e2, prev_menu, node22) {
     if (!node22 || !node22.properties) return;
-    const canvas = LGraphCanvas.active_canvas;
-    const ref_window = canvas.getCanvasWindow();
+    const canvas2 = LGraphCanvas.active_canvas;
+    const ref_window = canvas2.getCanvasWindow();
     const entries = [];
     for (const i2 in node22.properties) {
       value4 = node22.properties[i2] !== void 0 ? node22.properties[i2] : " ";
@@ -59513,7 +60665,7 @@ class LGraphCanvas {
     function inner_clicked(v2) {
       if (!node22) return;
       const rect = this.getBoundingClientRect();
-      canvas.showEditPropertyValue(node22, v2.value, {
+      canvas2.showEditPropertyValue(node22, v2.value, {
         position: [rect.left, rect.top]
       });
     }
@@ -59525,24 +60677,24 @@ class LGraphCanvas {
     e2.innerText = str;
     return e2.innerHTML;
   }
-  static onMenuResizeNode(value4, options4, e2, menu2, node22) {
+  static onMenuResizeNode(value4, options22, e2, menu2, node22) {
     if (!node22) return;
-    const fApplyMultiNode = /* @__PURE__ */ __name(function(node3) {
-      node3.size = node3.computeSize();
-      node3.onResize?.(node3.size);
+    const fApplyMultiNode = /* @__PURE__ */ __name(function(node222) {
+      node222.size = node222.computeSize();
+      node222.onResize?.(node222.size);
     }, "fApplyMultiNode");
-    const canvas = LGraphCanvas.active_canvas;
-    if (!canvas.selected_nodes || Object.keys(canvas.selected_nodes).length <= 1) {
+    const canvas2 = LGraphCanvas.active_canvas;
+    if (!canvas2.selected_nodes || Object.keys(canvas2.selected_nodes).length <= 1) {
       fApplyMultiNode(node22);
     } else {
-      for (const i2 in canvas.selected_nodes) {
-        fApplyMultiNode(canvas.selected_nodes[i2]);
+      for (const i2 in canvas2.selected_nodes) {
+        fApplyMultiNode(canvas2.selected_nodes[i2]);
       }
     }
-    canvas.setDirty(true, true);
+    canvas2.setDirty(true, true);
   }
   // TODO refactor :: this is used fot title but not for properties!
-  static onShowPropertyEditor(item3, options4, e2, menu2, node22) {
+  static onShowPropertyEditor(item3, options22, e2, menu2, node22) {
     const property = item3.property || "title";
     const value4 = node22[property];
     const dialog = document.createElement("div");
@@ -59560,21 +60712,21 @@ class LGraphCanvas {
       input.addEventListener("blur", function() {
         this.focus();
       });
-      input.addEventListener("keydown", function(e3) {
+      input.addEventListener("keydown", function(e22) {
         dialog.is_modified = true;
-        if (e3.keyCode == 27) {
+        if (e22.keyCode == 27) {
           dialog.close();
-        } else if (e3.keyCode == 13) {
+        } else if (e22.keyCode == 13) {
           inner();
-        } else if (e3.keyCode != 13 && e3.target.localName != "textarea") {
+        } else if (e22.keyCode != 13 && e22.target.localName != "textarea") {
           return;
         }
-        e3.preventDefault();
-        e3.stopPropagation();
+        e22.preventDefault();
+        e22.stopPropagation();
       });
     }
-    const canvas = LGraphCanvas.active_canvas;
-    const canvasEl = canvas.canvas;
+    const canvas2 = LGraphCanvas.active_canvas;
+    const canvasEl = canvas2.canvas;
     const rect = canvasEl.getBoundingClientRect();
     let offsetx = -20;
     let offsety = -20;
@@ -59620,7 +60772,7 @@ class LGraphCanvas {
       }
       node22[property] = value22;
       dialog.parentNode?.removeChild(dialog);
-      canvas.setDirty(true, true);
+      canvas2.setDirty(true, true);
     }
     __name(setValue2, "setValue");
   }
@@ -59639,12 +60791,12 @@ class LGraphCanvas {
       return String(value4) + " (" + desc_value + ")";
     }
   }
-  static onMenuNodeCollapse(value4, options4, e2, menu2, node22) {
+  static onMenuNodeCollapse(value4, options22, e2, menu2, node22) {
     node22.graph.beforeChange(
       /* ? */
     );
-    const fApplyMultiNode = /* @__PURE__ */ __name(function(node3) {
-      node3.collapse();
+    const fApplyMultiNode = /* @__PURE__ */ __name(function(node222) {
+      node222.collapse();
     }, "fApplyMultiNode");
     const graphcanvas = LGraphCanvas.active_canvas;
     if (!graphcanvas.selected_nodes || Object.keys(graphcanvas.selected_nodes).length <= 1) {
@@ -59658,12 +60810,12 @@ class LGraphCanvas {
       /* ? */
     );
   }
-  static onMenuToggleAdvanced(value4, options4, e2, menu2, node22) {
+  static onMenuToggleAdvanced(value4, options22, e2, menu2, node22) {
     node22.graph.beforeChange(
       /* ? */
     );
-    const fApplyMultiNode = /* @__PURE__ */ __name(function(node3) {
-      node3.toggleAdvanced();
+    const fApplyMultiNode = /* @__PURE__ */ __name(function(node222) {
+      node222.toggleAdvanced();
     }, "fApplyMultiNode");
     const graphcanvas = LGraphCanvas.active_canvas;
     if (!graphcanvas.selected_nodes || Object.keys(graphcanvas.selected_nodes).length <= 1) {
@@ -59677,9 +60829,9 @@ class LGraphCanvas {
       /* ? */
     );
   }
-  static onMenuNodePin(value4, options4, e2, menu2, node22) {
+  static onMenuNodePin(value4, options22, e2, menu2, node22) {
   }
-  static onMenuNodeMode(value4, options4, e2, menu2, node22) {
+  static onMenuNodeMode(value4, options22, e2, menu2, node22) {
     new LiteGraph.ContextMenu(
       LiteGraph.NODE_MODES,
       { event: e2, callback: inner_clicked, parentMenu: menu2, node: node22 }
@@ -59687,12 +60839,12 @@ class LGraphCanvas {
     function inner_clicked(v2) {
       if (!node22) return;
       const kV = Object.values(LiteGraph.NODE_MODES).indexOf(v2);
-      const fApplyMultiNode = /* @__PURE__ */ __name(function(node3) {
+      const fApplyMultiNode = /* @__PURE__ */ __name(function(node222) {
         if (kV >= 0 && LiteGraph.NODE_MODES[kV])
-          node3.changeMode(kV);
+          node222.changeMode(kV);
         else {
           console.warn("unexpected mode: " + v2);
-          node3.changeMode(LGraphEventMode.ALWAYS);
+          node222.changeMode(LGraphEventMode.ALWAYS);
         }
       }, "fApplyMultiNode");
       const graphcanvas = LGraphCanvas.active_canvas;
@@ -59708,7 +60860,7 @@ class LGraphCanvas {
     return false;
   }
   /** @param value Parameter is never used */
-  static onMenuNodeColors(value4, options4, e2, menu2, node22) {
+  static onMenuNodeColors(value4, options22, e2, menu2, node22) {
     if (!node22) throw "no node for color";
     const values = [];
     values.push({
@@ -59732,33 +60884,33 @@ class LGraphCanvas {
     function inner_clicked(v2) {
       if (!node22) return;
       const color2 = v2.value ? LGraphCanvas.node_colors[v2.value] : null;
-      const fApplyColor = /* @__PURE__ */ __name(function(node3) {
+      const fApplyColor = /* @__PURE__ */ __name(function(node222) {
         if (color2) {
-          if (node3 instanceof LGraphGroup) {
-            node3.color = color2.groupcolor;
+          if (node222 instanceof LGraphGroup) {
+            node222.color = color2.groupcolor;
           } else {
-            node3.color = color2.color;
-            node3.bgcolor = color2.bgcolor;
+            node222.color = color2.color;
+            node222.bgcolor = color2.bgcolor;
           }
         } else {
-          delete node3.color;
-          delete node3.bgcolor;
+          delete node222.color;
+          delete node222.bgcolor;
         }
       }, "fApplyColor");
-      const canvas = LGraphCanvas.active_canvas;
-      if (!canvas.selected_nodes || Object.keys(canvas.selected_nodes).length <= 1) {
+      const canvas2 = LGraphCanvas.active_canvas;
+      if (!canvas2.selected_nodes || Object.keys(canvas2.selected_nodes).length <= 1) {
         fApplyColor(node22);
       } else {
-        for (const i2 in canvas.selected_nodes) {
-          fApplyColor(canvas.selected_nodes[i2]);
+        for (const i2 in canvas2.selected_nodes) {
+          fApplyColor(canvas2.selected_nodes[i2]);
         }
       }
-      canvas.setDirty(true, true);
+      canvas2.setDirty(true, true);
     }
     __name(inner_clicked, "inner_clicked");
     return false;
   }
-  static onMenuNodeShapes(value4, options4, e2, menu2, node22) {
+  static onMenuNodeShapes(value4, options22, e2, menu2, node22) {
     if (!node22) throw "no node passed";
     new LiteGraph.ContextMenu(LiteGraph.VALID_SHAPES, {
       event: e2,
@@ -59771,82 +60923,69 @@ class LGraphCanvas {
       node22.graph.beforeChange(
         /* ? */
       );
-      const fApplyMultiNode = /* @__PURE__ */ __name(function(node3) {
-        node3.shape = v2;
+      const fApplyMultiNode = /* @__PURE__ */ __name(function(node222) {
+        node222.shape = v2;
       }, "fApplyMultiNode");
-      const canvas = LGraphCanvas.active_canvas;
-      if (!canvas.selected_nodes || Object.keys(canvas.selected_nodes).length <= 1) {
+      const canvas2 = LGraphCanvas.active_canvas;
+      if (!canvas2.selected_nodes || Object.keys(canvas2.selected_nodes).length <= 1) {
         fApplyMultiNode(node22);
       } else {
-        for (const i2 in canvas.selected_nodes) {
-          fApplyMultiNode(canvas.selected_nodes[i2]);
+        for (const i2 in canvas2.selected_nodes) {
+          fApplyMultiNode(canvas2.selected_nodes[i2]);
         }
       }
       node22.graph.afterChange(
         /* ? */
       );
-      canvas.setDirty(true);
+      canvas2.setDirty(true);
     }
     __name(inner_clicked, "inner_clicked");
     return false;
   }
-  static onMenuNodeRemove(value4, options4, e2, menu2, node22) {
+  static onMenuNodeRemove(value4, options22, e2, menu2, node22) {
     if (!node22) throw "no node passed";
     const graph = node22.graph;
     graph.beforeChange();
-    const fApplyMultiNode = /* @__PURE__ */ __name(function(node3) {
-      if (node3.removable === false) return;
-      graph.remove(node3);
+    const fApplyMultiNode = /* @__PURE__ */ __name(function(node222) {
+      if (node222.removable === false) return;
+      graph.remove(node222);
     }, "fApplyMultiNode");
-    const canvas = LGraphCanvas.active_canvas;
-    if (!canvas.selected_nodes || Object.keys(canvas.selected_nodes).length <= 1) {
+    const canvas2 = LGraphCanvas.active_canvas;
+    if (!canvas2.selected_nodes || Object.keys(canvas2.selected_nodes).length <= 1) {
       fApplyMultiNode(node22);
     } else {
-      for (const i2 in canvas.selected_nodes) {
-        fApplyMultiNode(canvas.selected_nodes[i2]);
+      for (const i2 in canvas2.selected_nodes) {
+        fApplyMultiNode(canvas2.selected_nodes[i2]);
       }
     }
     graph.afterChange();
-    canvas.setDirty(true, true);
+    canvas2.setDirty(true, true);
   }
-  static onMenuNodeToSubgraph(value4, options4, e2, menu2, node22) {
-    const graph = node22.graph;
-    const canvas = LGraphCanvas.active_canvas;
-    if (!canvas) return;
-    let nodes_list = Object.values(canvas.selected_nodes || {});
-    if (!nodes_list.length) nodes_list = [node22];
-    const subgraph_node = LiteGraph.createNode("graph/subgraph");
-    subgraph_node.pos = node22.pos.concat();
-    graph.add(subgraph_node);
-    subgraph_node.buildFromNodes(nodes_list);
-    canvas.deselectAll();
-    canvas.setDirty(true, true);
-  }
-  static onMenuNodeClone(value4, options4, e2, menu2, node22) {
+  static onMenuNodeClone(value4, options22, e2, menu2, node22) {
     const graph = node22.graph;
     graph.beforeChange();
     const newSelected = /* @__PURE__ */ new Set();
-    const fApplyMultiNode = /* @__PURE__ */ __name(function(node3, newNodes) {
-      if (node3.clonable === false) return;
-      const newnode = node3.clone();
+    const fApplyMultiNode = /* @__PURE__ */ __name(function(node222, newNodes) {
+      if (node222.clonable === false) return;
+      const newnode = node222.clone();
       if (!newnode) return;
-      newnode.pos = [node3.pos[0] + 5, node3.pos[1] + 5];
-      node3.graph.add(newnode);
+      newnode.pos = [node222.pos[0] + 5, node222.pos[1] + 5];
+      node222.graph.add(newnode);
       newNodes.add(newnode);
     }, "fApplyMultiNode");
-    const canvas = LGraphCanvas.active_canvas;
-    if (!canvas.selected_nodes || Object.keys(canvas.selected_nodes).length <= 1) {
+    const canvas2 = LGraphCanvas.active_canvas;
+    if (!canvas2.selected_nodes || Object.keys(canvas2.selected_nodes).length <= 1) {
       fApplyMultiNode(node22, newSelected);
     } else {
-      for (const i2 in canvas.selected_nodes) {
-        fApplyMultiNode(canvas.selected_nodes[i2], newSelected);
+      for (const i2 in canvas2.selected_nodes) {
+        fApplyMultiNode(canvas2.selected_nodes[i2], newSelected);
       }
     }
     if (newSelected.size) {
-      canvas.selectNodes([...newSelected]);
+      canvas2.selectNodes([...newSelected]);
     }
     graph.afterChange();
-    canvas.setDirty(true, true);
+    canvas2.setDirty(true, true);
   }
   /**
    * clears all the data inside
@@ -59888,14 +61027,7 @@ class LGraphCanvas {
       return;
     }
     graph.attachCanvas(this);
-    this._graph_stack &&= null;
     this.setDirty(true, true);
-  }
-  /**
-   * @returns the top level graph (in case there are subgraphs open on the canvas)
-   */
-  getTopGraph() {
-    return this._graph_stack.length ? this._graph_stack[0] : this.graph;
   }
   /**
    * @returns the visually active graph (in case there are more in the stack)
@@ -59909,13 +61041,13 @@ class LGraphCanvas {
    * @returns The canvas element
    * @throws If {@link canvas} is an element ID that does not belong to a valid HTML canvas element
    */
-  #validateCanvas(canvas) {
-    if (typeof canvas === "string") {
-      const el = document.getElementById(canvas);
+  #validateCanvas(canvas2) {
+    if (typeof canvas2 === "string") {
+      const el = document.getElementById(canvas2);
       if (!(el instanceof HTMLCanvasElement)) throw "Error validating LiteGraph canvas: Canvas element not found";
       return el;
     }
-    return canvas;
+    return canvas2;
   }
   /**
    * Sets the current HTML canvas element.
@@ -59923,8 +61055,8 @@ class LGraphCanvas {
    * @param canvas The canvas element to assign, or its HTML element ID.  If null or undefined, the current reference is cleared.
    * @param skip_events If true, events on the previous canvas will not be removed.  Has no effect on the first invocation.
    */
-  setCanvas(canvas, skip_events) {
-    const element = this.#validateCanvas(canvas);
+  setCanvas(canvas2, skip_events) {
+    const element = this.#validateCanvas(canvas2);
     if (element === this.canvas) return;
     if (!element && this.canvas && !skip_events) this.unbindEvents();
     this.canvas = element;
@@ -59973,7 +61105,7 @@ class LGraphCanvas {
       console.warn("LGraphCanvas: events already binded");
       return;
     }
-    const canvas = this.canvas;
+    const canvas2 = this.canvas;
     const ref_window = this.getCanvasWindow();
     const document2 = ref_window.document;
     this._mousedown_callback = this.processMouseDown.bind(this);
@@ -59982,26 +61114,26 @@ class LGraphCanvas {
     this._mouseup_callback = this.processMouseUp.bind(this);
     this._mouseout_callback = this.processMouseOut.bind(this);
     this._mousecancel_callback = this.processMouseCancel.bind(this);
-    LiteGraph.pointerListenerAdd(canvas, "down", this._mousedown_callback, true);
-    canvas.addEventListener("mousewheel", this._mousewheel_callback, false);
-    LiteGraph.pointerListenerAdd(canvas, "up", this._mouseup_callback, true);
-    LiteGraph.pointerListenerAdd(canvas, "move", this._mousemove_callback);
-    canvas.addEventListener("pointerout", this._mouseout_callback);
-    canvas.addEventListener("pointercancel", this._mousecancel_callback, true);
-    canvas.addEventListener("contextmenu", this._doNothing);
-    canvas.addEventListener(
+    LiteGraph.pointerListenerAdd(canvas2, "down", this._mousedown_callback, true);
+    canvas2.addEventListener("mousewheel", this._mousewheel_callback, false);
+    LiteGraph.pointerListenerAdd(canvas2, "up", this._mouseup_callback, true);
+    LiteGraph.pointerListenerAdd(canvas2, "move", this._mousemove_callback);
+    canvas2.addEventListener("pointerout", this._mouseout_callback);
+    canvas2.addEventListener("pointercancel", this._mousecancel_callback, true);
+    canvas2.addEventListener("contextmenu", this._doNothing);
+    canvas2.addEventListener(
       "DOMMouseScroll",
       this._mousewheel_callback,
       false
     );
     this._key_callback = this.processKey.bind(this);
-    canvas.addEventListener("keydown", this._key_callback, true);
+    canvas2.addEventListener("keydown", this._key_callback, true);
     document2.addEventListener("keyup", this._key_callback, true);
     this._ondrop_callback = this.processDrop.bind(this);
-    canvas.addEventListener("dragover", this._doNothing, false);
-    canvas.addEventListener("dragend", this._doNothing, false);
-    canvas.addEventListener("drop", this._ondrop_callback, false);
-    canvas.addEventListener("dragenter", this._doReturnTrue, false);
+    canvas2.addEventListener("dragover", this._doNothing, false);
+    canvas2.addEventListener("dragend", this._doNothing, false);
+    canvas2.addEventListener("drop", this._ondrop_callback, false);
+    canvas2.addEventListener("dragenter", this._doReturnTrue, false);
     this._events_binded = true;
   }
   /**
@@ -60128,17 +61260,17 @@ class LGraphCanvas {
     const graphPos = this.graph_mouse;
     const x2 = graphPos[0] - node22.pos[0];
     const y2 = graphPos[1] - node22.pos[1];
-    for (const widget2 of node22.widgets) {
-      if (widget2.hidden || widget2.advanced && !node22.showAdvanced) continue;
+    for (const widget of node22.widgets) {
+      if (widget.hidden || widget.advanced && !node22.showAdvanced) continue;
       let widgetWidth, widgetHeight;
-      if (widget2.computeSize) {
-        [widgetWidth, widgetHeight] = widget2.computeSize(node22.size[0]);
+      if (widget.computeSize) {
+        [widgetWidth, widgetHeight] = widget.computeSize(node22.size[0]);
       } else {
-        widgetWidth = widget2.width || node22.size[0];
+        widgetWidth = widget.width || node22.size[0];
         widgetHeight = LiteGraph.NODE_WIDGET_HEIGHT;
       }
-      if (widget2.last_y !== void 0 && x2 >= 6 && x2 <= widgetWidth - 12 && y2 >= widget2.last_y && y2 <= widget2.last_y + widgetHeight) {
-        return widget2;
+      if (widget.last_y !== void 0 && x2 >= 6 && x2 <= widgetWidth - 12 && y2 >= widget.last_y && y2 <= widget.last_y + widgetHeight) {
+        return widget;
       }
     }
     return null;
@@ -60167,9 +61299,13 @@ class LGraphCanvas {
     }
   }
   processMouseDown(e2) {
-    const { graph, pointer: pointer2 } = this;
+    if (this.dragZoomEnabled && e2.ctrlKey && e2.shiftKey && !e2.altKey && e2.buttons) {
+      this.#dragZoomStart = { pos: [e2.x, e2.y], scale: this.ds.scale };
+      return;
+    }
+    const { graph, pointer } = this;
     this.adjustMouseEvent(e2);
-    if (e2.isPrimary) pointer2.down(e2);
+    if (e2.isPrimary) pointer.down(e2);
     if (this.set_canvas_dirty_on_mouse_event) this.dirty_canvas = true;
     if (!graph) return;
     const ref_window = this.getCanvasWindow();
@@ -60185,16 +61321,16 @@ class LGraphCanvas {
     this.graph_mouse[0] = e2.canvasX;
     this.graph_mouse[1] = e2.canvasY;
     this.last_click_position = [this.mouse[0], this.mouse[1]];
-    pointer2.isDouble = pointer2.isDown && e2.isPrimary;
-    pointer2.isDown = true;
+    pointer.isDouble = pointer.isDown && e2.isPrimary;
+    pointer.isDown = true;
     this.canvas.focus();
     LiteGraph.closeAllContextMenus(ref_window);
     if (this.onMouse?.(e2) == true) return;
-    if (e2.button === 0 && !pointer2.isDouble) {
+    if (e2.button === 0 && !pointer.isDouble) {
       this.#processPrimaryButton(e2, node22);
     } else if (e2.button === 1) {
       this.#processMiddleButton(e2, node22);
-    } else if ((e2.button === 2 || pointer2.isDouble) && this.allow_interaction && !this.read_only) {
+    } else if ((e2.button === 2 || pointer.isDouble) && this.allow_interaction && !this.read_only) {
       if (node22) this.processSelect(node22, e2, true);
       this.processContextMenu(node22, e2);
     }
@@ -60209,7 +61345,7 @@ class LGraphCanvas {
     this.onMouseDown?.(e2);
   }
   #processPrimaryButton(e2, node22) {
-    const { pointer: pointer2, graph } = this;
+    const { pointer, graph } = this;
     const x2 = e2.canvasX;
     const y2 = e2.canvasY;
     const ctrlOrMeta = e2.ctrlKey || e2.metaKey;
@@ -60219,17 +61355,17 @@ class LGraphCanvas {
       dragRect[1] = y2;
       dragRect[2] = 1;
       dragRect[3] = 1;
-      pointer2.onClick = (eUp) => {
+      pointer.onClick = (eUp) => {
         const clickedItem = node22 ?? (this.reroutesEnabled ? graph.getRerouteOnPos(eUp.canvasX, eUp.canvasY) : null) ?? graph.getGroupTitlebarOnPos(eUp.canvasX, eUp.canvasY);
         this.processSelect(clickedItem, eUp);
       };
-      pointer2.onDragStart = () => this.dragging_rectangle = dragRect;
-      pointer2.onDragEnd = (upEvent2) => this.#handleMultiSelect(upEvent2, dragRect);
-      pointer2.finally = () => this.dragging_rectangle = null;
+      pointer.onDragStart = () => this.dragging_rectangle = dragRect;
+      pointer.onDragEnd = (upEvent) => this.#handleMultiSelect(upEvent, dragRect);
+      pointer.finally = () => this.dragging_rectangle = null;
       return;
     }
     if (this.read_only) {
-      pointer2.finally = () => this.dragging_canvas = false;
+      pointer.finally = () => this.dragging_canvas = false;
       this.dragging_canvas = true;
       return;
     }
@@ -60241,11 +61377,11 @@ class LGraphCanvas {
         cloned.pos[0] += 5;
         cloned.pos[1] += 5;
         if (this.allow_dragnodes) {
-          pointer2.onDragStart = (pointer3) => {
+          pointer.onDragStart = (pointer2) => {
             graph.add(cloned, false);
-            this.#startDraggingItems(cloned, pointer3);
+            this.#startDraggingItems(cloned, pointer2);
           };
-          pointer2.onDragEnd = (e3) => this.#processDraggedItems(e3);
+          pointer.onDragEnd = (e22) => this.#processDraggedItems(e22);
         } else {
           graph.beforeChange();
           graph.add(cloned, false);
@@ -60272,13 +61408,13 @@ class LGraphCanvas {
               afterRerouteId: reroute.id
             };
             this.connecting_links = [connecting];
-            pointer2.onDragStart = () => connecting.output = outputNode.outputs[slot];
+            pointer.onDragStart = () => connecting.output = outputNode.outputs[slot];
             this.dirty_bgcanvas = true;
           }
-          pointer2.onClick = () => this.processSelect(reroute, e2);
-          if (!pointer2.onDragStart) {
-            pointer2.onDragStart = (pointer3) => this.#startDraggingItems(reroute, pointer3, true);
-            pointer2.onDragEnd = (e3) => this.#processDraggedItems(e3);
+          pointer.onClick = () => this.processSelect(reroute, e2);
+          if (!pointer.onDragStart) {
+            pointer.onDragStart = (pointer2) => this.#startDraggingItems(reroute, pointer2, true);
+            pointer.onDragEnd = (e22) => this.#processDraggedItems(e22);
           }
           return;
         }
@@ -60301,19 +61437,19 @@ class LGraphCanvas {
             };
             this.connecting_links = [connecting];
             if (linkSegment.parentId) connecting.afterRerouteId = linkSegment.parentId;
-            pointer2.onDragStart = () => connecting.output = originNode.outputs[slot];
+            pointer.onDragStart = () => connecting.output = originNode.outputs[slot];
             return;
           } else if (this.reroutesEnabled && e2.altKey && !e2.shiftKey) {
             const newReroute = graph.createReroute([x2, y2], linkSegment);
-            pointer2.onDragStart = (pointer3) => this.#startDraggingItems(newReroute, pointer3);
-            pointer2.onDragEnd = (e3) => this.#processDraggedItems(e3);
+            pointer.onDragStart = (pointer2) => this.#startDraggingItems(newReroute, pointer2);
+            pointer.onDragEnd = (e22) => this.#processDraggedItems(e22);
             return;
           }
         } else if (isInRectangle(x2, y2, centre[0] - 4, centre[1] - 4, 8, 8)) {
           this.ctx.lineWidth = lineWidth;
-          pointer2.onClick = () => this.showLinkMenu(linkSegment, e2);
-          pointer2.onDragStart = () => this.dragging_canvas = true;
-          pointer2.finally = () => this.dragging_canvas = false;
+          pointer.onClick = () => this.showLinkMenu(linkSegment, e2);
+          pointer.onDragStart = () => this.dragging_canvas = true;
+          pointer.finally = () => this.dragging_canvas = false;
           this.over_link_center = null;
           return;
         }
@@ -60326,18 +61462,18 @@ class LGraphCanvas {
           const b2 = group.boundingRect;
           const offsetX = x2 - (b2[0] + b2[2]);
           const offsetY = y2 - (b2[1] + b2[3]);
-          pointer2.onDragStart = () => this.resizingGroup = group;
-          pointer2.onDrag = (eMove) => {
+          pointer.onDragStart = () => this.resizingGroup = group;
+          pointer.onDrag = (eMove) => {
             if (this.read_only) return;
-            const pos2 = [
+            const pos = [
               eMove.canvasX - group.pos[0] - offsetX,
               eMove.canvasY - group.pos[1] - offsetY
             ];
-            snapPoint(pos2, this.#snapToGrid);
-            const resized = group.resize(pos2[0], pos2[1]);
+            snapPoint(pos, this.#snapToGrid);
+            const resized = group.resize(pos[0], pos[1]);
             if (resized) this.dirty_bgcanvas = true;
           };
-          pointer2.finally = () => this.resizingGroup = null;
+          pointer.finally = () => this.resizingGroup = null;
         } else {
           const f2 = group.font_size || LiteGraph.DEFAULT_GROUP_FONT_SIZE;
           const headerHeight = f2 * 1.4;
@@ -60349,15 +61485,15 @@ class LGraphCanvas {
             group.size[0],
             headerHeight
           )) {
-            pointer2.onClick = () => this.processSelect(group, e2);
-            pointer2.onDragStart = (pointer3) => {
+            pointer.onClick = () => this.processSelect(group, e2);
+            pointer.onDragStart = (pointer2) => {
               group.recomputeInsideNodes();
-              this.#startDraggingItems(group, pointer3, true);
+              this.#startDraggingItems(group, pointer2, true);
             };
-            pointer2.onDragEnd = (e3) => this.#processDraggedItems(e3);
+            pointer.onDragEnd = (e22) => this.#processDraggedItems(e22);
           }
         }
-        pointer2.onDoubleClick = () => {
+        pointer.onDoubleClick = () => {
           this.emitEvent({
             subType: "group-double-click",
             originalEvent: e2,
@@ -60365,7 +61501,7 @@ class LGraphCanvas {
           });
         };
       } else {
-        pointer2.onDoubleClick = () => {
+        pointer.onDoubleClick = () => {
           if (this.allow_searchbox) {
             this.showSearchBox(e2);
             e2.preventDefault();
@@ -60377,9 +61513,9 @@ class LGraphCanvas {
         };
       }
     }
-    if (!pointer2.onDragStart && !pointer2.onClick && !pointer2.onDrag && this.allow_dragcanvas) {
-      pointer2.onClick = () => this.processSelect(null, e2);
-      pointer2.finally = () => this.dragging_canvas = false;
+    if (!pointer.onDragStart && !pointer.onClick && !pointer.onDrag && this.allow_dragcanvas) {
+      pointer.onClick = () => this.processSelect(null, e2);
+      pointer.finally = () => this.dragging_canvas = false;
       this.dragging_canvas = true;
     }
   }
@@ -60390,16 +61526,16 @@ class LGraphCanvas {
    * @param node The node to process a click event for
    */
   #processNodeClick(e2, ctrlOrMeta, node22) {
-    const { pointer: pointer2, graph } = this;
+    const { pointer, graph } = this;
     const x2 = e2.canvasX;
     const y2 = e2.canvasY;
-    pointer2.onClick = () => this.processSelect(node22, e2);
+    pointer.onClick = () => this.processSelect(node22, e2);
     if (!node22.flags.pinned) {
       this.bringToFront(node22);
     }
     const inCollapse = node22.isPointInCollapse(x2, y2);
     if (inCollapse) {
-      pointer2.onClick = () => {
+      pointer.onClick = () => {
         node22.collapse();
         this.setDirty(true, true);
       };
@@ -60408,28 +61544,28 @@ class LGraphCanvas {
         const b2 = node22.boundingRect;
         const offsetX = x2 - (b2[0] + b2[2]);
         const offsetY = y2 - (b2[1] + b2[3]);
-        pointer2.onDragStart = () => {
+        pointer.onDragStart = () => {
           graph.beforeChange();
           this.resizing_node = node22;
         };
-        pointer2.onDrag = (eMove) => {
+        pointer.onDrag = (eMove) => {
           if (this.read_only) return;
-          const pos3 = [
+          const pos2 = [
             eMove.canvasX - node22.pos[0] - offsetX,
             eMove.canvasY - node22.pos[1] - offsetY
           ];
-          snapPoint(pos3, this.#snapToGrid);
+          snapPoint(pos2, this.#snapToGrid);
           const min = node22.computeSize();
-          pos3[0] = Math.max(min[0], pos3[0]);
-          pos3[1] = Math.max(min[1], pos3[1]);
-          node22.setSize(pos3);
+          pos2[0] = Math.max(min[0], pos2[0]);
+          pos2[1] = Math.max(min[1], pos2[1]);
+          node22.setSize(pos2);
           this.#dirty();
         };
-        pointer2.onDragEnd = (upEvent2) => {
+        pointer.onDragEnd = (upEvent) => {
           this.#dirty();
           graph.afterChange(this.resizing_node);
         };
-        pointer2.finally = () => this.resizing_node = null;
+        pointer.finally = () => this.resizing_node = null;
         this.canvas.style.cursor = "se-resize";
         return;
       }
@@ -60445,14 +61581,14 @@ class LGraphCanvas {
                 const slot = link2.target_slot;
                 const linked_node = graph._nodes_by_id[link2.target_id];
                 const input = linked_node.inputs[slot];
-                const pos3 = linked_node.getConnectionPos(true, slot);
+                const pos2 = linked_node.getConnectionPos(true, slot);
                 this.connecting_links.push({
                   node: linked_node,
                   slot,
                   input,
                   output: null,
-                  pos: pos3,
-                  direction: node22.horizontal !== true ? LinkDirection.RIGHT : LinkDirection.CENTER
+                  pos: pos2,
+                  direction: LinkDirection.RIGHT
                 });
               }
               return;
@@ -60476,8 +61612,8 @@ class LGraphCanvas {
                 node22.disconnectOutput(i2);
               }
             }
-            pointer2.onDoubleClick = () => node22.onOutputDblClick?.(i2, e2);
-            pointer2.onClick = () => node22.onOutputClick?.(i2, e2);
+            pointer.onDoubleClick = () => node22.onOutputDblClick?.(i2, e2);
+            pointer.onClick = () => node22.onOutputClick?.(i2, e2);
             return;
           }
         }
@@ -60487,8 +61623,8 @@ class LGraphCanvas {
           const input = node22.inputs[i2];
           const link_pos = node22.getConnectionPos(true, i2);
           if (isInRectangle(x2, y2, link_pos[0] - 15, link_pos[1] - 10, 30, 20)) {
-            pointer2.onDoubleClick = () => node22.onInputDblClick?.(i2, e2);
-            pointer2.onClick = () => node22.onInputClick?.(i2, e2);
+            pointer.onDoubleClick = () => node22.onInputDblClick?.(i2, e2);
+            pointer.onClick = () => node22.onInputClick?.(i2, e2);
             if (input.link !== null) {
               const link_info = graph._links.get(input.link);
               const slot = link_info.origin_slot;
@@ -60503,7 +61639,7 @@ class LGraphCanvas {
                   pos: linked_node.getConnectionPos(false, slot)
                 };
                 this.connecting_links = [connecting];
-                pointer2.onDragStart = () => {
+                pointer.onDragStart = () => {
                   if (this.allow_reconnect_links && !LiteGraph.click_do_break_link_to)
                     node22.disconnectInput(i2);
                   connecting.output = linked_node.outputs[slot];
@@ -60511,7 +61647,7 @@ class LGraphCanvas {
                 this.dirty_bgcanvas = true;
               }
             }
-            if (!pointer2.onDragStart) {
+            if (!pointer.onDragStart) {
               const connecting = {
                 node: node22,
                 slot: i2,
@@ -60519,7 +61655,7 @@ class LGraphCanvas {
                 pos: link_pos
               };
               this.connecting_links = [connecting];
-              pointer2.onDragStart = () => connecting.input = input;
+              pointer.onDragStart = () => connecting.input = input;
               this.dirty_bgcanvas = true;
             }
             return;
@@ -60527,17 +61663,17 @@ class LGraphCanvas {
         }
       }
     }
-    const pos2 = [x2 - node22.pos[0], y2 - node22.pos[1]];
-    const widget2 = node22.getWidgetOnPos(x2, y2);
-    if (widget2) {
-      this.#processWidgetClick(e2, node22, widget2);
-      this.node_widget = [node22, widget2];
+    const pos = [x2 - node22.pos[0], y2 - node22.pos[1]];
+    const widget = node22.getWidgetOnPos(x2, y2);
+    if (widget) {
+      this.#processWidgetClick(e2, node22, widget);
+      this.node_widget = [node22, widget];
     } else {
-      pointer2.onDoubleClick = () => {
-        if (pos2[1] < 0 && !inCollapse) {
-          node22.onNodeTitleDblClick?.(e2, pos2, this);
+      pointer.onDoubleClick = () => {
+        if (pos[1] < 0 && !inCollapse) {
+          node22.onNodeTitleDblClick?.(e2, pos, this);
         }
-        node22.onDblClick?.(e2, pos2, this);
+        node22.onDblClick?.(e2, pos, this);
         this.emitEvent({
           subType: "node-double-click",
           originalEvent: e2,
@@ -60545,167 +61681,54 @@ class LGraphCanvas {
         });
         this.processNodeDblClicked(node22);
       };
-      if (node22.onMouseDown?.(e2, pos2, this) || !this.allow_dragnodes)
+      if (node22.onMouseDown?.(e2, pos, this) || !this.allow_dragnodes)
         return;
-      pointer2.onDragStart = (pointer3) => this.#startDraggingItems(node22, pointer3, true);
-      pointer2.onDragEnd = (e3) => this.#processDraggedItems(e3);
+      pointer.onDragStart = (pointer2) => this.#startDraggingItems(node22, pointer2, true);
+      pointer.onDragEnd = (e22) => this.#processDraggedItems(e22);
     }
     this.dirty_canvas = true;
   }
-  #processWidgetClick(e, node, widget) {
+  #processWidgetClick(e2, node22, widget) {
     const { pointer } = this;
     if (typeof widget.onPointerDown === "function") {
-      const handled = widget.onPointerDown(pointer, node, this);
+      const handled = widget.onPointerDown(pointer, node22, this);
       if (handled) return;
     }
-    const width = widget.width || node.width;
     const oldValue = widget.value;
     const pos = this.graph_mouse;
-    const x = pos[0] - node.pos[0];
-    const y = pos[1] - node.pos[1];
-    switch (widget.type) {
-      case "button":
-        pointer.onClick = () => {
-          widget.callback?.(widget, this, node, pos, e);
-          widget.clicked = true;
-          this.dirty_canvas = true;
-        };
-        break;
-      case "slider": {
-        if (widget.options.read_only) break;
-        pointer.onDrag = (eMove) => {
-          const x2 = eMove.canvasX - node.pos[0];
-          const slideFactor = clamp$1((x2 - 15) / (width - 30), 0, 1);
-          widget.value = widget.options.min + (widget.options.max - widget.options.min) * slideFactor;
-          if (oldValue != widget.value) {
-            setWidgetValue(this, node, widget, widget.value);
-          }
-          this.dirty_canvas = true;
-        };
-        break;
+    const x2 = pos[0] - node22.pos[0];
+    const y2 = pos[1] - node22.pos[1];
+    const WidgetClass = WIDGET_TYPE_MAP[widget.type];
+    if (WidgetClass) {
+      const widgetInstance = toClass(WidgetClass, widget);
+      pointer.onClick = () => widgetInstance.onClick({
+        e: e2,
+        node: node22,
+        canvas: this
+      });
+      pointer.onDrag = (eMove) => widgetInstance.onDrag({
+        e: eMove,
+        node: node22,
+        canvas: this
+      });
+    } else {
+      if (widget.mouse) {
+        const result = widget.mouse(e2, [x2, y2], node22);
+        if (result != null) this.dirty_canvas = result;
       }
-      case "number": {
-        const delta = x < 40 ? -1 : x > width - 40 ? 1 : 0;
-        pointer.onClick = (upEvent) => {
-          let newValue = widget.value + delta * 0.1 * (widget.options.step || 1);
-          if (widget.options.min != null && newValue < widget.options.min) {
-            newValue = widget.options.min;
-          }
-          if (widget.options.max != null && newValue > widget.options.max) {
-            newValue = widget.options.max;
-          }
-          if (newValue !== widget.value) setWidgetValue(this, node, widget, newValue);
-          if (delta !== 0) return;
-          this.prompt("Value", widget.value, (v) => {
-            if (/^[0-9+\-*/()\s]+|\d+\.\d+$/.test(v)) {
-              try {
-                v = eval(v);
-              } catch {
-              }
-            }
-            widget.value = Number(v);
-            setWidgetValue(this, node, widget, widget.value);
-          }, e);
-          this.dirty_canvas = true;
-        };
-        pointer.onDrag = (eMove) => {
-          const x2 = eMove.canvasX - node.pos[0];
-          if (delta && (x2 > -3 && x2 < width + 3)) return;
-          let newValue2 = widget.value;
-          if (eMove.deltaX) newValue2 += eMove.deltaX * 0.1 * (widget.options.step || 1);
-          if (widget.options.min != null && newValue2 < widget.options.min) {
-            newValue2 = widget.options.min;
-          }
-          if (widget.options.max != null && newValue2 > widget.options.max) {
-            newValue2 = widget.options.max;
-          }
-          if (newValue2 !== widget.value) setWidgetValue(this, node, widget, newValue2);
-        };
-        break;
-      }
-      case "combo": {
-        let values;
-        let values_list;
-        pointer.onClick = (upEvent2) => {
-          const delta2 = x < 40 ? -1 : x > width - 40 ? 1 : 0;
-          values = widget.options.values;
-          if (typeof values === "function") {
-            values = values(widget, node);
-          }
-          values_list = null;
-          values_list = Array.isArray(values) ? values : Object.keys(values);
-          if (delta2) {
-            let index2 = -1;
-            this.last_mouseclick = 0;
-            index2 = typeof values === "object" ? values_list.indexOf(String(widget.value)) + delta2 : values_list.indexOf(widget.value) + delta2;
-            if (index2 >= values_list.length) index2 = values_list.length - 1;
-            if (index2 < 0) index2 = 0;
-            widget.value = Array.isArray(values) ? values[index2] : index2;
-            if (oldValue != widget.value) setWidgetValue(this, node, widget, widget.value);
-            this.dirty_canvas = true;
-            return;
-          }
-          const text_values = values != values_list ? Object.values(values) : values;
-          new LiteGraph.ContextMenu(text_values, {
-            scale: Math.max(1, this.ds.scale),
-            event: e,
-            className: "dark",
-            callback: /* @__PURE__ */ __name((value4) => {
-              widget.value = values != values_list ? text_values.indexOf(value4) : value4;
-              setWidgetValue(this, node, widget, widget.value);
-              this.dirty_canvas = true;
-              return false;
-            }, "callback")
-          });
-        };
-        break;
-      }
-      case "toggle":
-        pointer.onClick = () => {
-          widget.value = !widget.value;
-          setWidgetValue(this, node, widget, widget.value);
-        };
-        break;
-      case "string":
-      case "text":
-        pointer.onClick = () => this.prompt(
-          "Value",
-          widget.value,
-          (v2) => setWidgetValue(this, node, widget, v2),
-          e,
-          widget.options ? widget.options.multiline : false
-        );
-        break;
-      default:
-        if (widget.mouse) {
-          const result = widget.mouse(e, [x, y], node);
-          if (result != null) this.dirty_canvas = result;
-        }
-        break;
     }
     if (oldValue != widget.value) {
-      node.onWidgetChanged?.(widget.name, widget.value, oldValue, widget);
-      node.graph._version++;
+      node22.onWidgetChanged?.(widget.name, widget.value, oldValue, widget);
+      node22.graph._version++;
     }
     pointer.finally = () => {
       if (widget.mouse) {
         const { eUp } = pointer;
         const { canvasX, canvasY } = eUp;
-        widget.mouse(eUp, [canvasX - node.pos[0], canvasY - node.pos[1]], node);
+        widget.mouse(eUp, [canvasX - node22.pos[0], canvasY - node22.pos[1]], node22);
       }
       this.node_widget = null;
     };
-    function setWidgetValue(canvas, node22, widget2, value4) {
-      const v2 = widget2.type === "number" ? Number(value4) : value4;
-      widget2.value = v2;
-      if (widget2.options?.property && node22.properties[widget2.options.property] !== void 0) {
-        node22.setProperty(widget2.options.property, v2);
-      }
-      widget2.callback?.(widget2.value, canvas, node22, pos, e);
-      node22.onWidgetChanged?.(widget2.name, v2, oldValue, widget2);
-      node22.graph._version++;
-    }
-    __name(setWidgetValue, "setWidgetValue");
   }
   /**
    * Pointer middle button click processing.  Part of {@link processMouseDown}.
@@ -60713,7 +61736,7 @@ class LGraphCanvas {
    * @param node The node to process a click event for
    */
   #processMiddleButton(e2, node22) {
-    const { pointer: pointer2 } = this;
+    const { pointer } = this;
     if (LiteGraph.middle_click_slot_add_default_node && node22 && this.allow_interaction && !this.read_only && !this.connecting_links && !node22.flags.collapsed) {
       let mClikSlot = false;
       let mClikSlot_index = false;
@@ -60749,7 +61772,7 @@ class LGraphCanvas {
           !mClikSlot_isOut ? node_bounding[0] : node_bounding[0] + node_bounding[2],
           e2.canvasY - 80
         ];
-        pointer2.onClick = () => this.createDefaultNodeForSlot({
+        pointer.onClick = () => this.createDefaultNodeForSlot({
           nodeFrom: !mClikSlot_isOut ? null : node22,
           slotFrom: !mClikSlot_isOut ? null : mClikSlot_index,
           nodeTo: !mClikSlot_isOut ? node22 : null,
@@ -60762,14 +61785,29 @@ class LGraphCanvas {
       }
     }
     if (this.allow_dragcanvas) {
-      pointer2.onDragStart = () => this.dragging_canvas = true;
-      pointer2.finally = () => this.dragging_canvas = false;
+      pointer.onDragStart = () => this.dragging_canvas = true;
+      pointer.finally = () => this.dragging_canvas = false;
     }
+  }
+  #processDragZoom(e2) {
+    if (!e2.buttons) {
+      this.#dragZoomStart = null;
+      return;
+    }
+    const deltaY = e2.y - this.#dragZoomStart.pos[1];
+    const startScale = this.#dragZoomStart.scale;
+    const scale = startScale - deltaY / 100;
+    this.ds.changeScale(scale, this.#dragZoomStart.pos);
+    this.graph.change();
   }
   /**
    * Called when a mouse move event has to be processed
    */
   processMouseMove(e2) {
+    if (this.dragZoomEnabled && e2.ctrlKey && e2.shiftKey && this.#dragZoomStart) {
+      this.#processDragZoom(e2);
+      return;
+    }
     if (this.autoresize) this.resize();
     if (this.set_canvas_dirty_on_mouse_event) this.dirty_canvas = true;
     if (!this.graph) return;
@@ -60792,11 +61830,11 @@ class LGraphCanvas {
     }
     e2.dragging = this.last_mouse_dragging;
     if (this.node_widget) {
-      const [node3, widget2] = this.node_widget;
-      if (widget2?.mouse) {
-        const x2 = e2.canvasX - node3.pos[0];
-        const y2 = e2.canvasY - node3.pos[1];
-        const result = widget2.mouse(e2, [x2, y2], node3);
+      const [node222, widget] = this.node_widget;
+      if (widget?.mouse) {
+        const x2 = e2.canvasX - node222.pos[0];
+        const y2 = e2.canvasY - node222.pos[1];
+        const result = widget.mouse(e2, [x2, y2], node222);
         if (result != null) this.dirty_canvas = result;
       }
     }
@@ -60824,9 +61862,9 @@ class LGraphCanvas {
       if (node22) {
         underPointer |= CanvasItem.Node;
         if (node22.redraw_on_mouse) this.dirty_canvas = true;
-        const pos2 = [0, 0];
-        const inputId = this.isOverNodeInput(node22, e2.canvasX, e2.canvasY, pos2);
-        const outputId = this.isOverNodeOutput(node22, e2.canvasX, e2.canvasY, pos2);
+        const pos = [0, 0];
+        const inputId = this.isOverNodeInput(node22, e2.canvasX, e2.canvasY, pos);
+        const outputId = this.isOverNodeOutput(node22, e2.canvasX, e2.canvasY, pos);
         const overWidget = this.getWidgetAtCursor(node22);
         if (!node22.mouseOver) {
           node22.mouseOver = {
@@ -60863,14 +61901,14 @@ class LGraphCanvas {
                 if (!linkOverWidget) {
                   const targetSlotId = firstLink.node.findConnectByTypeSlot(true, node22, firstLink.output.type);
                   if (targetSlotId !== null && targetSlotId >= 0) {
-                    node22.getConnectionPos(true, targetSlotId, pos2);
-                    highlightPos = pos2;
+                    node22.getConnectionPos(true, targetSlotId, pos);
+                    highlightPos = pos;
                     highlightInput = node22.inputs[targetSlotId];
                   }
                 }
               } else if (inputId != -1 && node22.inputs[inputId] && LiteGraph.isValidConnection(firstLink.output.type, node22.inputs[inputId].type)) {
                 if (inputId != -1 && node22.inputs[inputId] && LiteGraph.isValidConnection(firstLink.output.type, node22.inputs[inputId].type)) {
-                  highlightPos = pos2;
+                  highlightPos = pos;
                   highlightInput = node22.inputs[inputId];
                 }
               }
@@ -60878,12 +61916,12 @@ class LGraphCanvas {
               if (inputId === -1 && outputId === -1) {
                 const targetSlotId = firstLink.node.findConnectByTypeSlot(false, node22, firstLink.input.type);
                 if (targetSlotId !== null && targetSlotId >= 0) {
-                  node22.getConnectionPos(false, targetSlotId, pos2);
-                  highlightPos = pos2;
+                  node22.getConnectionPos(false, targetSlotId, pos);
+                  highlightPos = pos;
                 }
               } else {
                 if (outputId != -1 && node22.outputs[outputId] && LiteGraph.isValidConnection(firstLink.input.type, node22.outputs[outputId].type)) {
-                  highlightPos = pos2;
+                  highlightPos = pos;
                 }
               }
             }
@@ -60944,15 +61982,15 @@ class LGraphCanvas {
    * @param pointer The pointer event that initiated the drag, e.g. pointerdown
    * @param sticky If `true`, the item is added to the selection - see {@link processSelect}
    */
-  #startDraggingItems(item3, pointer2, sticky = false) {
+  #startDraggingItems(item3, pointer, sticky = false) {
     this.emitBeforeChange();
     this.graph.beforeChange();
-    pointer2.finally = () => {
+    pointer.finally = () => {
       this.isDragging = false;
       this.graph.afterChange();
       this.emitAfterChange();
     };
-    this.processSelect(item3, pointer2.eDown, sticky);
+    this.processSelect(item3, pointer.eDown, sticky);
     this.isDragging = true;
   }
   /**
@@ -60972,16 +62010,16 @@ class LGraphCanvas {
    */
   processMouseUp(e2) {
     if (e2.isPrimary === false) return;
-    const { graph, pointer: pointer2 } = this;
+    const { graph, pointer } = this;
     if (!graph) return;
     LGraphCanvas.active_canvas = this;
     this.adjustMouseEvent(e2);
     const now2 = LiteGraph.getTime();
     e2.click_time = now2 - this.last_mouseclick;
-    const isClick = pointer2.up(e2);
+    const isClick = pointer.up(e2);
     if (isClick === true) {
-      pointer2.isDown = false;
-      pointer2.isDouble = false;
+      pointer.isDown = false;
+      pointer.isDouble = false;
       this.connecting_links = null;
       this.dragging_canvas = false;
       graph.change();
@@ -61081,8 +62119,8 @@ class LGraphCanvas {
     } else if (e2.button === 2) {
       this.dirty_canvas = true;
     }
-    pointer2.isDown = false;
-    pointer2.isDouble = false;
+    pointer.isDown = false;
+    pointer.isDouble = false;
     graph.change();
     e2.stopPropagation();
     e2.preventDefault();
@@ -61107,8 +62145,8 @@ class LGraphCanvas {
     if (!this.graph || !this.allow_dragcanvas) return;
     const delta2 = e2.wheelDeltaY ?? e2.detail * -60;
     this.adjustMouseEvent(e2);
-    const pos2 = [e2.clientX, e2.clientY];
-    if (this.viewport && !isPointInRect(pos2, this.viewport)) return;
+    const pos = [e2.clientX, e2.clientY];
+    if (this.viewport && !isPointInRect(pos, this.viewport)) return;
     let scale = this.ds.scale;
     if (delta2 > 0) scale *= this.zoom_speed;
     else if (delta2 < 0) scale *= 1 / this.zoom_speed;
@@ -61126,26 +62164,15 @@ class LGraphCanvas {
         const input = node22.inputs[i2];
         const link_pos = node22.getConnectionPos(true, i2);
         let is_inside = false;
-        if (node22.horizontal) {
-          is_inside = isInRectangle(
-            canvasx,
-            canvasy,
-            link_pos[0] - 5,
-            link_pos[1] - 10,
-            10,
-            20
-          );
-        } else {
-          const width2 = 20 + ((input.label?.length ?? input.localized_name?.length ?? input.name?.length) || 3) * 7;
-          is_inside = isInRectangle(
-            canvasx,
-            canvasy,
-            link_pos[0] - 10,
-            link_pos[1] - 10,
-            width2,
-            20
-          );
-        }
+        const width2 = 20 + ((input.label?.length ?? input.localized_name?.length ?? input.name?.length) || 3) * 7;
+        is_inside = isInRectangle(
+          canvasx,
+          canvasy,
+          link_pos[0] - 10,
+          link_pos[1] - 10,
+          width2,
+          20
+        );
         if (is_inside) {
           if (slot_pos) {
             slot_pos[0] = link_pos[0];
@@ -61164,26 +62191,14 @@ class LGraphCanvas {
     if (node22.outputs) {
       for (let i2 = 0, l2 = node22.outputs.length; i2 < l2; ++i2) {
         const link_pos = node22.getConnectionPos(false, i2);
-        let is_inside = false;
-        if (node22.horizontal) {
-          is_inside = isInRectangle(
-            canvasx,
-            canvasy,
-            link_pos[0] - 5,
-            link_pos[1] - 10,
-            10,
-            20
-          );
-        } else {
-          is_inside = isInRectangle(
-            canvasx,
-            canvasy,
-            link_pos[0] - 10,
-            link_pos[1] - 10,
-            40,
-            20
-          );
-        }
+        const is_inside = isInRectangle(
+          canvasx,
+          canvasy,
+          link_pos[0] - 10,
+          link_pos[1] - 10,
+          40,
+          20
+        );
         if (is_inside) {
           if (slot_pos) {
             slot_pos[0] = link_pos[0];
@@ -61224,7 +62239,7 @@ class LGraphCanvas {
           block_default = true;
         }
       } else if (e2.keyCode === 86 && (e2.metaKey || e2.ctrlKey)) {
-        this.pasteFromClipboard(e2.shiftKey);
+        this.pasteFromClipboard({ connectInputs: e2.shiftKey });
       } else if (e2.keyCode == 46 || e2.keyCode == 8) {
         if (e2.target.localName != "input" && e2.target.localName != "textarea") {
           this.deleteSelected();
@@ -61312,7 +62327,11 @@ class LGraphCanvas {
    * Pastes the items from the canvas "clipbaord" - a local storage variable.
    * @param connectInputs If `true`, always attempt to connect inputs of pasted nodes - including to nodes that were not pasted.
    */
-  _pasteFromClipboard(connectInputs = false) {
+  _pasteFromClipboard(options22 = {}) {
+    const {
+      connectInputs = false,
+      position: position3 = this.graph_mouse
+    } = options22;
     if (!LiteGraph.ctrl_shift_v_paste_connect_unselected_outputs && connectInputs) return;
     const data26 = localStorage.getItem("litegrapheditor_clipboard");
     if (!data26) return;
@@ -61395,17 +62414,17 @@ class LGraphCanvas {
       if (!reroute.validateLinks(graph.links)) graph.removeReroute(reroute.id);
     }
     for (const item3 of created4) {
-      item3.pos[0] += this.graph_mouse[0] - offsetX;
-      item3.pos[1] += this.graph_mouse[1] - offsetY;
+      item3.pos[0] += position3[0] - offsetX;
+      item3.pos[1] += position3[1] - offsetY;
     }
     this.selectItems(created4);
     graph.afterChange();
     return results;
   }
-  pasteFromClipboard(isConnectUnselected = false) {
+  pasteFromClipboard(options22 = {}) {
     this.emitBeforeChange();
     try {
-      this._pasteFromClipboard(isConnectUnselected);
+      this._pasteFromClipboard(options22);
     } finally {
       this.emitAfterChange();
     }
@@ -61420,8 +62439,8 @@ class LGraphCanvas {
     const y2 = e2.clientY;
     const is_inside = !this.viewport || isInRect(x2, y2, this.viewport);
     if (!is_inside) return;
-    const pos2 = [e2.canvasX, e2.canvasY];
-    const node22 = this.graph ? this.graph.getNodeOnPos(pos2[0], pos2[1]) : null;
+    const pos = [e2.canvasX, e2.canvasY];
+    const node22 = this.graph ? this.graph.getNodeOnPos(pos[0], pos[1]) : null;
     if (!node22) {
       const r2 = this.onDropItem?.(e2);
       if (!r2) this.checkDropItem(e2);
@@ -61731,14 +62750,14 @@ class LGraphCanvas {
   /**
    * converts a coordinate from graph coordinates to canvas2D coordinates
    */
-  convertOffsetToCanvas(pos2, out) {
-    return this.ds.convertOffsetToCanvas(pos2, out);
+  convertOffsetToCanvas(pos, out) {
+    return this.ds.convertOffsetToCanvas(pos, out);
   }
   /**
    * converts a coordinate from Canvas2D coordinates to graph space
    */
-  convertCanvasToOffset(pos2, out) {
-    return this.ds.convertCanvasToOffset(pos2, out);
+  convertCanvasToOffset(pos, out) {
+    return this.ds.convertCanvasToOffset(pos, out);
   }
   // converts event coordinates from canvas2D to graph coordinates
   convertEventToCanvasOffset(e2) {
@@ -61811,7 +62830,7 @@ class LGraphCanvas {
     }
     const ctx = this.ctx;
     if (!ctx) return;
-    const canvas = this.canvas;
+    const canvas2 = this.canvas;
     if (ctx.start2D && !this.viewport) {
       ctx.start2D();
       ctx.restore();
@@ -61827,7 +62846,7 @@ class LGraphCanvas {
     this.#snapToGrid = this.#shiftDown || LiteGraph.alwaysSnapToGrid ? this.graph.getSnapToGridSize() : void 0;
     if (this.clear_background) {
       if (area) ctx.clearRect(area[0], area[1], area[2], area[3]);
-      else ctx.clearRect(0, 0, canvas.width, canvas.height);
+      else ctx.clearRect(0, 0, canvas2.width, canvas2.height);
     }
     if (this.bgcanvas == this.canvas) {
       this.drawBackCanvas();
@@ -61841,7 +62860,7 @@ class LGraphCanvas {
         this.bgcanvas.height / scale
       );
     }
-    this.onRender?.(canvas, ctx);
+    this.onRender?.(canvas2, ctx);
     if (this.show_info) {
       this.renderInfo(ctx, area ? area[0] : 0, area ? area[1] : 0);
     }
@@ -61874,9 +62893,9 @@ class LGraphCanvas {
           let connDir = connInOrOut?.dir;
           if (connDir == null) {
             if (link2.output)
-              connDir = link2.node.horizontal ? LinkDirection.DOWN : LinkDirection.RIGHT;
+              connDir = LinkDirection.RIGHT;
             else
-              connDir = link2.node.horizontal ? LinkDirection.UP : LinkDirection.LEFT;
+              connDir = LinkDirection.LEFT;
           }
           const connShape = connInOrOut?.shape;
           switch (connType) {
@@ -61886,11 +62905,11 @@ class LGraphCanvas {
             default:
               link_color = LiteGraph.CONNECTING_LINK_COLOR;
           }
-          const pos2 = this.graph.reroutes.get(link2.afterRerouteId)?.pos ?? link2.pos;
+          const pos = this.graph.reroutes.get(link2.afterRerouteId)?.pos ?? link2.pos;
           const highlightPos = this.#getHighlightPosition();
           this.renderLink(
             ctx,
-            pos2,
+            pos,
             highlightPos,
             null,
             false,
@@ -61901,7 +62920,7 @@ class LGraphCanvas {
           );
           ctx.beginPath();
           if (connType === LiteGraph.EVENT || connShape === RenderShape.BOX) {
-            ctx.rect(pos2[0] - 6 + 0.5, pos2[1] - 5 + 0.5, 14, 10);
+            ctx.rect(pos[0] - 6 + 0.5, pos[1] - 5 + 0.5, 14, 10);
             ctx.fill();
             ctx.beginPath();
             ctx.rect(
@@ -61911,12 +62930,12 @@ class LGraphCanvas {
               10
             );
           } else if (connShape === RenderShape.ARROW) {
-            ctx.moveTo(pos2[0] + 8, pos2[1] + 0.5);
-            ctx.lineTo(pos2[0] - 4, pos2[1] + 6 + 0.5);
-            ctx.lineTo(pos2[0] - 4, pos2[1] - 6 + 0.5);
+            ctx.moveTo(pos[0] + 8, pos[1] + 0.5);
+            ctx.lineTo(pos[0] - 4, pos[1] + 6 + 0.5);
+            ctx.lineTo(pos[0] - 4, pos[1] - 6 + 0.5);
             ctx.closePath();
           } else {
-            ctx.arc(pos2[0], pos2[1], 4, 0, Math.PI * 2);
+            ctx.arc(pos[0], pos[1], 4, 0, Math.PI * 2);
             ctx.fill();
             ctx.beginPath();
             ctx.arc(this.graph_mouse[0], this.graph_mouse[1], 4, 0, Math.PI * 2);
@@ -61991,7 +63010,7 @@ class LGraphCanvas {
     const { strokeStyle, lineWidth } = ctx;
     const area = node22.boundingRect;
     const gap = 3;
-    const radius = this.round_radius + gap;
+    const radius = LiteGraph.ROUND_RADIUS + gap;
     const x2 = area[0] - gap;
     const y2 = area[1] - gap;
     const width2 = area[2] + gap * 2;
@@ -62046,10 +63065,10 @@ class LGraphCanvas {
    * draws the back canvas (the one containing the background and the connections)
    */
   drawBackCanvas() {
-    const canvas = this.bgcanvas;
-    if (canvas.width != this.canvas.width || canvas.height != this.canvas.height) {
-      canvas.width = this.canvas.width;
-      canvas.height = this.canvas.height;
+    const canvas2 = this.bgcanvas;
+    if (canvas2.width != this.canvas.width || canvas2.height != this.canvas.height) {
+      canvas2.width = this.canvas.width;
+      canvas2.height = this.canvas.height;
     }
     if (!this.bgctx) {
       this.bgctx = this.bgcanvas.getContext("2d");
@@ -62060,24 +63079,7 @@ class LGraphCanvas {
     if (this.clear_background) {
       ctx.clearRect(viewport[0], viewport[1], viewport[2], viewport[3]);
     }
-    if (this._graph_stack?.length) {
-      ctx.save();
-      const subgraph_node = this.graph._subgraph_node;
-      ctx.strokeStyle = subgraph_node.bgcolor;
-      ctx.lineWidth = 10;
-      ctx.strokeRect(1, 1, canvas.width - 2, canvas.height - 2);
-      ctx.lineWidth = 1;
-      ctx.font = "40px Arial";
-      ctx.textAlign = "center";
-      ctx.fillStyle = subgraph_node.bgcolor || "#AAA";
-      let title = "";
-      for (let i2 = 1; i2 < this._graph_stack.length; ++i2) {
-        title += this._graph_stack[i2]._subgraph_node.getTitle() + " >> ";
-      }
-      ctx.fillText(title + subgraph_node.getTitle(), canvas.width * 0.5, 40);
-      ctx.restore();
-    }
-    const bg_already_painted = this.onRenderBackground ? this.onRenderBackground(canvas, ctx) : false;
+    const bg_already_painted = this.onRenderBackground ? this.onRenderBackground(canvas2, ctx) : false;
     if (!this.viewport) {
       const scale = window.devicePixelRatio;
       ctx.restore();
@@ -62132,12 +63134,12 @@ class LGraphCanvas {
         ctx.imageSmoothingEnabled = true;
       }
       if (this.graph._groups.length) {
-        this.drawGroups(canvas, ctx);
+        this.drawGroups(canvas2, ctx);
       }
       this.onDrawBackground?.(ctx, this.visible_area);
       if (this.render_canvas_border) {
         ctx.strokeStyle = "#235";
-        ctx.strokeRect(0, 0, canvas.width, canvas.height);
+        ctx.strokeRect(0, 0, canvas2.width, canvas2.height);
       }
       if (this.render_connections_shadows) {
         ctx.shadowColor = "#000";
@@ -62160,9 +63162,9 @@ class LGraphCanvas {
    */
   drawNode(node22, ctx) {
     this.current_node = node22;
-    const color2 = node22.color || node22.constructor.color || LiteGraph.NODE_DEFAULT_COLOR;
-    const bgcolor = node22.bgcolor || node22.constructor.bgcolor || LiteGraph.NODE_DEFAULT_BGCOLOR;
-    const low_quality = this.ds.scale < 0.6;
+    const color2 = node22.renderingColor;
+    const bgcolor = node22.renderingBgColor;
+    const low_quality = this.low_quality;
     const editor_alpha = this.editor_alpha;
     ctx.globalAlpha = editor_alpha;
     if (this.render_shadows && !low_quality) {
@@ -62178,7 +63180,6 @@ class LGraphCanvas {
     const shape = node22._shape || RenderShape.BOX;
     const size = LGraphCanvas.#temp_vec2;
     LGraphCanvas.#temp_vec2.set(node22.size);
-    const horizontal2 = node22.horizontal;
     if (node22.flags.collapsed) {
       ctx.font = this.inner_text_font;
       const title = node22.getTitle ? node22.getTitle() : node22.title;
@@ -62217,152 +63218,19 @@ class LGraphCanvas {
     ctx.shadowColor = "transparent";
     ctx.strokeStyle = LiteGraph.NODE_BOX_OUTLINE_COLOR;
     node22.onDrawForeground?.(ctx, this, this.canvas);
-    ctx.textAlign = horizontal2 ? "center" : "left";
     ctx.font = this.inner_text_font;
-    const render_text = !low_quality;
-    const highlightColour = LiteGraph.NODE_TEXT_HIGHLIGHT_COLOR ?? LiteGraph.NODE_SELECTED_TITLE_COLOR ?? LiteGraph.NODE_TEXT_COLOR;
-    const out_slot = this.connecting_links?.[0]?.output;
-    const in_slot = this.connecting_links?.[0]?.input;
-    ctx.lineWidth = 1;
-    let max_y = 0;
-    const slot_pos = new Float32Array(2);
-    if (!node22.flags.collapsed) {
-      if (node22.inputs) {
-        for (let i2 = 0; i2 < node22.inputs.length; i2++) {
-          const slot = node22.inputs[i2];
-          const slot_type = slot.type;
-          const isValid2 = !this.connecting_links || out_slot && LiteGraph.isValidConnection(slot.type, out_slot.type);
-          const highlight = isValid2 && node22.mouseOver?.inputId === i2;
-          const label_color = highlight ? highlightColour : LiteGraph.NODE_TEXT_COLOR;
-          ctx.globalAlpha = isValid2 ? editor_alpha : 0.4 * editor_alpha;
-          ctx.fillStyle = slot.link != null ? slot.color_on || this.default_connection_color_byType[slot_type] || this.default_connection_color.input_on : slot.color_off || this.default_connection_color_byTypeOff[slot_type] || this.default_connection_color_byType[slot_type] || this.default_connection_color.input_off;
-          const pos2 = node22.getConnectionPos(true, i2, slot_pos);
-          pos2[0] -= node22.pos[0];
-          pos2[1] -= node22.pos[1];
-          if (max_y < pos2[1] + LiteGraph.NODE_SLOT_HEIGHT * 0.5) {
-            max_y = pos2[1] + LiteGraph.NODE_SLOT_HEIGHT * 0.5;
-          }
-          drawSlot(ctx, slot, pos2, {
-            horizontal: horizontal2,
-            low_quality,
-            render_text,
-            label_color,
-            label_position: LabelPosition.Right,
-            // Input slot is not stroked.
-            do_stroke: false,
-            highlight
-          });
-        }
-      }
-      ctx.textAlign = horizontal2 ? "center" : "right";
-      ctx.strokeStyle = "black";
-      if (node22.outputs) {
-        for (let i2 = 0; i2 < node22.outputs.length; i2++) {
-          const slot = node22.outputs[i2];
-          const slot_type = slot.type;
-          const isValid2 = !this.connecting_links || in_slot && LiteGraph.isValidConnection(slot_type, in_slot.type);
-          const highlight = isValid2 && node22.mouseOver?.outputId === i2;
-          const label_color = highlight ? highlightColour : LiteGraph.NODE_TEXT_COLOR;
-          ctx.globalAlpha = isValid2 ? editor_alpha : 0.4 * editor_alpha;
-          const pos2 = node22.getConnectionPos(false, i2, slot_pos);
-          pos2[0] -= node22.pos[0];
-          pos2[1] -= node22.pos[1];
-          if (max_y < pos2[1] + LiteGraph.NODE_SLOT_HEIGHT * 0.5) {
-            max_y = pos2[1] + LiteGraph.NODE_SLOT_HEIGHT * 0.5;
-          }
-          ctx.fillStyle = slot.links && slot.links.length ? slot.color_on || this.default_connection_color_byType[slot_type] || this.default_connection_color.output_on : slot.color_off || this.default_connection_color_byTypeOff[slot_type] || this.default_connection_color_byType[slot_type] || this.default_connection_color.output_off;
-          drawSlot(ctx, slot, pos2, {
-            horizontal: horizontal2,
-            low_quality,
-            render_text,
-            label_color,
-            label_position: LabelPosition.Left,
-            do_stroke: true,
-            highlight
-          });
-        }
-      }
+    if (!node22.collapsed) {
+      const max_y = node22.drawSlots(ctx, {
+        colorContext: this,
+        connectingLink: this.connecting_links?.[0],
+        editorAlpha: this.editor_alpha,
+        lowQuality: this.low_quality
+      });
       ctx.textAlign = "left";
       ctx.globalAlpha = 1;
-      if (node22.widgets) {
-        let widgets_y = max_y;
-        if (horizontal2 || node22.widgets_up) {
-          widgets_y = 2;
-        }
-        if (node22.widgets_start_y != null) widgets_y = node22.widgets_start_y;
-        this.drawNodeWidgets(
-          node22,
-          widgets_y,
-          ctx,
-          this.node_widget && this.node_widget[0] == node22 ? this.node_widget[1] : null
-        );
-      }
+      this.drawNodeWidgets(node22, max_y, ctx);
     } else if (this.render_collapsed_slots) {
-      let input_slot = null;
-      let output_slot = null;
-      let slot;
-      if (node22.inputs) {
-        for (let i2 = 0; i2 < node22.inputs.length; i2++) {
-          slot = node22.inputs[i2];
-          if (slot.link == null) {
-            continue;
-          }
-          input_slot = slot;
-          break;
-        }
-      }
-      if (node22.outputs) {
-        for (let i2 = 0; i2 < node22.outputs.length; i2++) {
-          slot = node22.outputs[i2];
-          if (!slot.links || !slot.links.length) {
-            continue;
-          }
-          output_slot = slot;
-        }
-      }
-      if (input_slot) {
-        let x2 = 0;
-        let y2 = LiteGraph.NODE_TITLE_HEIGHT * -0.5;
-        if (horizontal2) {
-          x2 = node22._collapsed_width * 0.5;
-          y2 = -LiteGraph.NODE_TITLE_HEIGHT;
-        }
-        ctx.fillStyle = "#686";
-        ctx.beginPath();
-        if (slot.type === LiteGraph.EVENT || slot.shape === RenderShape.BOX) {
-          ctx.rect(x2 - 7 + 0.5, y2 - 4, 14, 8);
-        } else if (slot.shape === RenderShape.ARROW) {
-          ctx.moveTo(x2 + 8, y2);
-          ctx.lineTo(x2 + -4, y2 - 4);
-          ctx.lineTo(x2 + -4, y2 + 4);
-          ctx.closePath();
-        } else {
-          ctx.arc(x2, y2, 4, 0, Math.PI * 2);
-        }
-        ctx.fill();
-      }
-      if (output_slot) {
-        let x2 = node22._collapsed_width;
-        let y2 = LiteGraph.NODE_TITLE_HEIGHT * -0.5;
-        if (horizontal2) {
-          x2 = node22._collapsed_width * 0.5;
-          y2 = 0;
-        }
-        ctx.fillStyle = "#686";
-        ctx.strokeStyle = "black";
-        ctx.beginPath();
-        if (slot.type === LiteGraph.EVENT || slot.shape === RenderShape.BOX) {
-          ctx.rect(x2 - 7 + 0.5, y2 - 4, 14, 8);
-        } else if (slot.shape === RenderShape.ARROW) {
-          ctx.moveTo(x2 + 6, y2);
-          ctx.lineTo(x2 - 6, y2 - 4);
-          ctx.lineTo(x2 - 6, y2 + 4);
-          ctx.closePath();
-        } else {
-          ctx.arc(x2, y2, 4, 0, Math.PI * 2);
-        }
-        ctx.fill();
-      }
+      node22.drawCollapsedSlots(ctx);
     }
     if (node22.clip_area) {
       ctx.restore();
@@ -62378,19 +63246,19 @@ class LGraphCanvas {
    * @todo Split tooltip from hover, so it can be drawn / eased separately
    */
   drawLinkTooltip(ctx, link2) {
-    const pos2 = link2._pos;
+    const pos = link2._pos;
     ctx.fillStyle = "black";
     ctx.beginPath();
     if (this.linkMarkerShape === LinkMarkerShape.Arrow) {
       const transform2 = ctx.getTransform();
-      ctx.translate(pos2[0], pos2[1]);
+      ctx.translate(pos[0], pos[1]);
       if (Number.isFinite(link2._centreAngle)) ctx.rotate(link2._centreAngle);
       ctx.moveTo(-2, -3);
       ctx.lineTo(4, 0);
       ctx.lineTo(-2, 3);
       ctx.setTransform(transform2);
     } else if (this.linkMarkerShape == null || this.linkMarkerShape === LinkMarkerShape.Circle) {
-      ctx.arc(pos2[0], pos2[1], 3, 0, Math.PI * 2);
+      ctx.arc(pos[0], pos[1], 3, 0, Math.PI * 2);
     }
     ctx.fill();
     const data26 = link2.data;
@@ -62419,15 +63287,15 @@ class LGraphCanvas {
     ctx.shadowBlur = 3;
     ctx.fillStyle = "#454";
     ctx.beginPath();
-    ctx.roundRect(pos2[0] - w2 * 0.5, pos2[1] - 15 - h2, w2, h2, [3]);
-    ctx.moveTo(pos2[0] - 10, pos2[1] - 15);
-    ctx.lineTo(pos2[0] + 10, pos2[1] - 15);
-    ctx.lineTo(pos2[0], pos2[1] - 5);
+    ctx.roundRect(pos[0] - w2 * 0.5, pos[1] - 15 - h2, w2, h2, [3]);
+    ctx.moveTo(pos[0] - 10, pos[1] - 15);
+    ctx.lineTo(pos[0] + 10, pos[1] - 15);
+    ctx.lineTo(pos[0], pos[1] - 5);
     ctx.fill();
     ctx.shadowColor = "transparent";
     ctx.textAlign = "center";
     ctx.fillStyle = "#CEC";
-    ctx.fillText(text2, pos2[0], pos2[1] - 15 - h2 * 0.3);
+    ctx.fillText(text2, pos[0], pos[1] - 15 - h2 * 0.3);
   }
   /**
    * Draws the shape of the given node on the canvas
@@ -62442,10 +63310,10 @@ class LGraphCanvas {
     ctx.strokeStyle = fgcolor;
     ctx.fillStyle = LiteGraph.use_legacy_node_error_indicator ? "#F00" : bgcolor;
     const title_height = LiteGraph.NODE_TITLE_HEIGHT;
-    const low_quality = this.ds.scale < 0.5;
+    const low_quality = this.low_quality;
     const { collapsed: collapsed2 } = node22.flags;
-    const shape = node22._shape || node22.constructor.shape || LiteGraph.NODE_DEFAULT_SHAPE;
-    const { title_mode } = node22.constructor;
+    const shape = node22.renderingShape;
+    const title_mode = node22.title_mode;
     const render_title = title_mode == TitleMode.TRANSPARENT_TITLE || title_mode == TitleMode.NO_TITLE ? false : true;
     const area = LGraphCanvas.#tmp_area;
     node22.measure(area);
@@ -62461,14 +63329,14 @@ class LGraphCanvas {
         area[1],
         area[2],
         area[3],
-        shape == RenderShape.CARD ? [this.round_radius, this.round_radius, 0, 0] : [this.round_radius]
+        shape == RenderShape.CARD ? [LiteGraph.ROUND_RADIUS, LiteGraph.ROUND_RADIUS, 0, 0] : [LiteGraph.ROUND_RADIUS]
       );
     } else if (shape == RenderShape.CIRCLE) {
       ctx.arc(size[0] * 0.5, size[1] * 0.5, size[0] * 0.5, 0, Math.PI * 2);
     }
     ctx.fill();
     if (node22.has_errors && !LiteGraph.use_legacy_node_error_indicator) {
-      this.strokeShape(ctx, area, {
+      strokeShape(ctx, area, {
         shape,
         title_mode,
         title_height,
@@ -62484,161 +63352,29 @@ class LGraphCanvas {
       ctx.fillRect(0, -1, area[2], 2);
     }
     ctx.shadowColor = "transparent";
-    node22.onDrawBackground?.(ctx, this, this.canvas, this.graph_mouse);
+    node22.onDrawBackground?.(ctx);
     if (render_title || title_mode == TitleMode.TRANSPARENT_TITLE) {
-      if (node22.onDrawTitleBar) {
-        node22.onDrawTitleBar(ctx, title_height, size, this.ds.scale, fgcolor);
-      } else if (title_mode != TitleMode.TRANSPARENT_TITLE && (node22.constructor.title_color || this.render_title_colored)) {
-        const title_color = node22.constructor.title_color || fgcolor;
-        if (collapsed2) {
-          ctx.shadowColor = LiteGraph.DEFAULT_SHADOW_COLOR;
-        }
-        ctx.fillStyle = title_color;
-        ctx.beginPath();
-        if (shape == RenderShape.BOX || low_quality) {
-          ctx.rect(0, -title_height, size[0], title_height);
-        } else if (shape == RenderShape.ROUND || shape == RenderShape.CARD) {
-          ctx.roundRect(
-            0,
-            -title_height,
-            size[0],
-            title_height,
-            collapsed2 ? [this.round_radius] : [this.round_radius, this.round_radius, 0, 0]
-          );
-        }
-        ctx.fill();
-        ctx.shadowColor = "transparent";
-      }
-      let colState = LiteGraph.node_box_coloured_by_mode && LiteGraph.NODE_MODES_COLORS[node22.mode] ? LiteGraph.NODE_MODES_COLORS[node22.mode] : false;
-      if (LiteGraph.node_box_coloured_when_on) {
-        colState = node22.action_triggered ? "#FFF" : node22.execute_triggered ? "#AAA" : colState;
-      }
-      const box_size = 10;
-      if (node22.onDrawTitleBox) {
-        node22.onDrawTitleBox(ctx, title_height, size, this.ds.scale);
-      } else if (shape == RenderShape.ROUND || shape == RenderShape.CIRCLE || shape == RenderShape.CARD) {
-        if (low_quality) {
-          ctx.fillStyle = "black";
-          ctx.beginPath();
-          ctx.arc(
-            title_height * 0.5,
-            title_height * -0.5,
-            box_size * 0.5 + 1,
-            0,
-            Math.PI * 2
-          );
-          ctx.fill();
-        }
-        ctx.fillStyle = node22.boxcolor || colState || LiteGraph.NODE_DEFAULT_BOXCOLOR;
-        if (low_quality)
-          ctx.fillRect(
-            title_height * 0.5 - box_size * 0.5,
-            title_height * -0.5 - box_size * 0.5,
-            box_size,
-            box_size
-          );
-        else {
-          ctx.beginPath();
-          ctx.arc(
-            title_height * 0.5,
-            title_height * -0.5,
-            box_size * 0.5,
-            0,
-            Math.PI * 2
-          );
-          ctx.fill();
-        }
-      } else {
-        if (low_quality) {
-          ctx.fillStyle = "black";
-          ctx.fillRect(
-            (title_height - box_size) * 0.5 - 1,
-            (title_height + box_size) * -0.5 - 1,
-            box_size + 2,
-            box_size + 2
-          );
-        }
-        ctx.fillStyle = node22.boxcolor || colState || LiteGraph.NODE_DEFAULT_BOXCOLOR;
-        ctx.fillRect(
-          (title_height - box_size) * 0.5,
-          (title_height + box_size) * -0.5,
-          box_size,
-          box_size
-        );
-      }
+      node22.drawTitleBarBackground(ctx, {
+        scale: this.ds.scale,
+        low_quality
+      });
+      node22.drawTitleBox(ctx, {
+        scale: this.ds.scale,
+        low_quality,
+        box_size: 10
+      });
       ctx.globalAlpha = old_alpha;
-      if (node22.onDrawTitleText) {
-        node22.onDrawTitleText(
-          ctx,
-          title_height,
-          size,
-          this.ds.scale,
-          this.title_text_font,
-          selected2
-        );
-      }
-      if (!low_quality) {
-        ctx.font = this.title_text_font;
-        const rawTitle = node22.getTitle() ?? `❌ ${node22.type}`;
-        const title = String(rawTitle) + (node22.pinned ? "📌" : "");
-        if (title) {
-          if (selected2) {
-            ctx.fillStyle = LiteGraph.NODE_SELECTED_TITLE_COLOR;
-          } else {
-            ctx.fillStyle = node22.constructor.title_text_color || this.node_title_color;
-          }
-          if (collapsed2) {
-            ctx.textAlign = "left";
-            ctx.fillText(
-              title.substr(0, 20),
-              // avoid urls too long
-              title_height,
-              // + measure.width * 0.5,
-              LiteGraph.NODE_TITLE_TEXT_Y - title_height
-            );
-            ctx.textAlign = "left";
-          } else {
-            ctx.textAlign = "left";
-            ctx.fillText(
-              title,
-              title_height,
-              LiteGraph.NODE_TITLE_TEXT_Y - title_height
-            );
-          }
-        }
-      }
-      if (!collapsed2 && node22.subgraph && !node22.skip_subgraph_button) {
-        const w2 = LiteGraph.NODE_TITLE_HEIGHT;
-        const x2 = node22.size[0] - w2;
-        const over = LiteGraph.isInsideRectangle(
-          this.graph_mouse[0] - node22.pos[0],
-          this.graph_mouse[1] - node22.pos[1],
-          x2 + 2,
-          -w2 + 2,
-          w2 - 4,
-          w2 - 4
-        );
-        ctx.fillStyle = over ? "#888" : "#555";
-        if (shape == RenderShape.BOX || low_quality) {
-          ctx.fillRect(x2 + 2, -w2 + 2, w2 - 4, w2 - 4);
-        } else {
-          ctx.beginPath();
-          ctx.roundRect(x2 + 2, -w2 + 2, w2 - 4, w2 - 4, [4]);
-          ctx.fill();
-        }
-        ctx.fillStyle = "#333";
-        ctx.beginPath();
-        ctx.moveTo(x2 + w2 * 0.2, -w2 * 0.6);
-        ctx.lineTo(x2 + w2 * 0.8, -w2 * 0.6);
-        ctx.lineTo(x2 + w2 * 0.5, -w2 * 0.3);
-        ctx.fill();
-      }
+      node22.drawTitleText(ctx, {
+        scale: this.ds.scale,
+        default_title_color: this.node_title_color,
+        low_quality
+      });
       node22.onDrawTitle?.(ctx);
     }
     if (selected2) {
       node22.onBounding?.(area);
       const padding = node22.has_errors && !LiteGraph.use_legacy_node_error_indicator ? 20 : void 0;
-      this.strokeShape(ctx, area, {
+      strokeShape(ctx, area, {
         shape,
         title_height,
         title_mode,
@@ -62648,75 +63384,6 @@ class LGraphCanvas {
     }
     if (node22.execute_triggered > 0) node22.execute_triggered--;
     if (node22.action_triggered > 0) node22.action_triggered--;
-  }
-  /**
-   * Draws only the path of a shape on the canvas, without filling.
-   * Used to draw indicators for node status, e.g. "selected".
-   * @param ctx The 2D context to draw on
-   * @param area The position and size of the shape to render
-   */
-  strokeShape(ctx, area, {
-    /** The shape to render */
-    shape = RenderShape.BOX,
-    /** Shape will extend above the Y-axis 0 by this amount */
-    title_height = LiteGraph.NODE_TITLE_HEIGHT,
-    /** @deprecated This is node-specific: it should be removed entirely, and behaviour defined by the caller more explicitly */
-    title_mode = TitleMode.NORMAL_TITLE,
-    /** The colour that should be drawn */
-    colour = LiteGraph.NODE_BOX_OUTLINE_COLOR,
-    /** The distance between the edge of the {@link area} and the middle of the line */
-    padding = 6,
-    /** @deprecated This is node-specific: it should be removed entirely, and behaviour defined by the caller more explicitly */
-    collapsed: collapsed2 = false,
-    /** Thickness of the line drawn (`lineWidth`) */
-    thickness = 1
-  } = {}) {
-    if (title_mode === TitleMode.TRANSPARENT_TITLE) {
-      area[1] -= title_height;
-      area[3] += title_height;
-    }
-    const { lineWidth, strokeStyle } = ctx;
-    ctx.lineWidth = thickness;
-    ctx.globalAlpha = 0.8;
-    ctx.strokeStyle = colour;
-    ctx.beginPath();
-    const [x2, y2, width2, height] = area;
-    switch (shape) {
-      case RenderShape.BOX: {
-        ctx.rect(
-          x2 - padding,
-          y2 - padding,
-          width2 + 2 * padding,
-          height + 2 * padding
-        );
-        break;
-      }
-      case RenderShape.ROUND:
-      case RenderShape.CARD: {
-        const radius = this.round_radius + padding;
-        const isCollapsed = shape === RenderShape.CARD && collapsed2;
-        const cornerRadii = isCollapsed || shape === RenderShape.ROUND ? [radius] : [radius, 2, radius, 2];
-        ctx.roundRect(
-          x2 - padding,
-          y2 - padding,
-          width2 + 2 * padding,
-          height + 2 * padding,
-          cornerRadii
-        );
-        break;
-      }
-      case RenderShape.CIRCLE: {
-        const centerX = x2 + width2 / 2;
-        const centerY = y2 + height / 2;
-        const radius = Math.max(width2, height) / 2 + padding;
-        ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
-        break;
-      }
-    }
-    ctx.stroke();
-    ctx.lineWidth = lineWidth;
-    ctx.strokeStyle = strokeStyle;
-    ctx.globalAlpha = 1;
   }
   /**
    * Draws a snap guide for a {@link Positionable} item.
@@ -62732,9 +63399,9 @@ class LGraphCanvas {
   drawSnapGuide(ctx, item3, shape = RenderShape.ROUND) {
     const snapGuide = LGraphCanvas.#temp;
     snapGuide.set(item3.boundingRect);
-    const { pos: pos2 } = item3;
-    const offsetX = pos2[0] - snapGuide[0];
-    const offsetY = pos2[1] - snapGuide[1];
+    const { pos } = item3;
+    const offsetX = pos[0] - snapGuide[0];
+    const offsetY = pos[1] - snapGuide[1];
     snapGuide[0] += offsetX;
     snapGuide[1] += offsetY;
     snapPoint(snapGuide, this.#snapToGrid);
@@ -62806,8 +63473,8 @@ class LGraphCanvas {
         const start_slot = start_node.outputs[outputId];
         const end_slot = node22.inputs[i2];
         if (!start_slot || !end_slot) continue;
-        const start_dir = start_slot.dir || (start_node.horizontal ? LinkDirection.DOWN : LinkDirection.RIGHT);
-        const end_dir = end_slot.dir || (node22.horizontal ? LinkDirection.UP : LinkDirection.LEFT);
+        const start_dir = start_slot.dir || LinkDirection.RIGHT;
+        const end_dir = end_slot.dir || LinkDirection.LEFT;
         if (reroutes.length) {
           let startControl;
           const l22 = reroutes.length;
@@ -62916,7 +63583,7 @@ class LGraphCanvas {
     const startDir = start_dir || LinkDirection.RIGHT;
     const endDir = end_dir || LinkDirection.LEFT;
     const dist3 = this.links_render_mode == LinkRenderType.SPLINE_LINK && (!endControl || !startControl) ? distance(a2, b2) : null;
-    if (this.render_connections_border && this.ds.scale > 0.6) {
+    if (this.render_connections_border && !this.low_quality) {
       ctx.lineWidth = this.connections_width + 4;
     }
     ctx.lineJoin = "round";
@@ -62927,7 +63594,7 @@ class LGraphCanvas {
     if (linkSegment) linkSegment.path = path;
     const innerA = LGraphCanvas.#lTempA;
     const innerB = LGraphCanvas.#lTempB;
-    const pos2 = linkSegment?._pos ?? [0, 0];
+    const pos = linkSegment?._pos ?? [0, 0];
     for (let i2 = 0; i2 < num_sublines; i2 += 1) {
       const offsety = (i2 - (num_sublines - 1) * 0.5) * 5;
       innerA[0] = a2[0];
@@ -62956,13 +63623,13 @@ class LGraphCanvas {
           b2[0],
           b2[1] + offsety
         );
-        findPointOnCurve(pos2, a2, b2, innerA, innerB, 0.5);
+        findPointOnCurve(pos, a2, b2, innerA, innerB, 0.5);
         if (linkSegment && this.linkMarkerShape === LinkMarkerShape.Arrow) {
           const justPastCentre = LGraphCanvas.#lTempC;
           findPointOnCurve(justPastCentre, a2, b2, innerA, innerB, 0.51);
           linkSegment._centreAngle = Math.atan2(
-            justPastCentre[1] - pos2[1],
-            justPastCentre[0] - pos2[0]
+            justPastCentre[1] - pos[1],
+            justPastCentre[0] - pos[0]
           );
         }
       } else if (this.links_render_mode == LinkRenderType.LINEAR_LINK) {
@@ -62999,8 +63666,8 @@ class LGraphCanvas {
         path.lineTo(innerA[0], innerA[1] + offsety);
         path.lineTo(innerB[0], innerB[1] + offsety);
         path.lineTo(b2[0], b2[1] + offsety);
-        pos2[0] = (innerA[0] + innerB[0]) * 0.5;
-        pos2[1] = (innerA[1] + innerB[1]) * 0.5;
+        pos[0] = (innerA[0] + innerB[0]) * 0.5;
+        pos[1] = (innerA[1] + innerB[1]) * 0.5;
         if (linkSegment && this.linkMarkerShape === LinkMarkerShape.Arrow) {
           linkSegment._centreAngle = Math.atan2(
             innerB[1] - innerA[1],
@@ -63025,8 +63692,8 @@ class LGraphCanvas {
         path.lineTo(midX, innerB[1]);
         path.lineTo(innerB[0], innerB[1]);
         path.lineTo(b2[0], b2[1]);
-        pos2[0] = midX;
-        pos2[1] = (innerA[1] + innerB[1]) * 0.5;
+        pos[0] = midX;
+        pos[1] = (innerA[1] + innerB[1]) * 0.5;
         if (linkSegment && this.linkMarkerShape === LinkMarkerShape.Arrow) {
           const diff2 = innerB[1] - innerA[1];
           if (Math.abs(diff2) < 4) linkSegment._centreAngle = 0;
@@ -63037,7 +63704,7 @@ class LGraphCanvas {
         return;
       }
     }
-    if (this.render_connections_border && this.ds.scale > 0.6 && !skip_border) {
+    if (this.render_connections_border && !this.low_quality && !skip_border) {
       ctx.strokeStyle = "rgba(0,0,0,0.5)";
       ctx.stroke(path);
     }
@@ -63080,7 +63747,7 @@ class LGraphCanvas {
       ctx.beginPath();
       if (this.linkMarkerShape === LinkMarkerShape.Arrow) {
         const transform2 = ctx.getTransform();
-        ctx.translate(pos2[0], pos2[1]);
+        ctx.translate(pos[0], pos[1]);
         ctx.rotate(linkSegment._centreAngle);
         ctx.moveTo(-3.2, -5);
         ctx.lineTo(7, 0);
@@ -63088,7 +63755,7 @@ class LGraphCanvas {
         ctx.fill();
         ctx.setTransform(transform2);
       } else if (this.linkMarkerShape == null || this.linkMarkerShape === LinkMarkerShape.Circle) {
-        ctx.arc(pos2[0], pos2[1], 5, 0, Math.PI * 2);
+        ctx.arc(pos[0], pos[1], 5, 0, Math.PI * 2);
       }
       ctx.fill();
     }
@@ -63186,245 +63853,23 @@ class LGraphCanvas {
   }
   /**
    * draws the widgets stored inside a node
+   * @deprecated Use {@link LGraphNode.drawWidgets} instead.
+   * @note Currently there are extensions hijacking this function, so we cannot remove it.
    */
-  drawNodeWidgets(node22, posY, ctx, active_widget) {
-    if (!node22.widgets || !node22.widgets.length) return 0;
-    const width2 = node22.size[0];
-    const widgets = node22.widgets;
-    posY += 2;
-    const H = LiteGraph.NODE_WIDGET_HEIGHT;
-    const show_text = this.ds.scale > 0.5;
-    ctx.save();
-    ctx.globalAlpha = this.editor_alpha;
-    const background_color = LiteGraph.WIDGET_BGCOLOR;
-    const text_color = LiteGraph.WIDGET_TEXT_COLOR;
-    const secondary_text_color = LiteGraph.WIDGET_SECONDARY_TEXT_COLOR;
-    const margin = 15;
-    for (let i2 = 0; i2 < widgets.length; ++i2) {
-      const w2 = widgets[i2];
-      if (w2.hidden || w2.advanced && !node22.showAdvanced) continue;
-      const y2 = w2.y || posY;
-      const outline_color = w2.advanced ? LiteGraph.WIDGET_ADVANCED_OUTLINE_COLOR : LiteGraph.WIDGET_OUTLINE_COLOR;
-      if (w2 === this.link_over_widget) {
-        ctx.fillStyle = this.default_connection_color_byType[this.link_over_widget_type] || this.default_connection_color.input_on;
-        drawSlot(ctx, {}, [10, y2 + 10], {});
-      }
-      w2.last_y = y2;
-      ctx.strokeStyle = outline_color;
-      ctx.fillStyle = "#222";
-      ctx.textAlign = "left";
-      if (w2.disabled) ctx.globalAlpha *= 0.5;
-      const widget_width = w2.width || width2;
-      switch (w2.type) {
-        case "button":
-          ctx.fillStyle = background_color;
-          if (w2.clicked) {
-            ctx.fillStyle = "#AAA";
-            w2.clicked = false;
-            this.dirty_canvas = true;
-          }
-          ctx.fillRect(margin, y2, widget_width - margin * 2, H);
-          if (show_text && !w2.disabled)
-            ctx.strokeRect(margin, y2, widget_width - margin * 2, H);
-          if (show_text) {
-            ctx.textAlign = "center";
-            ctx.fillStyle = text_color;
-            ctx.fillText(w2.label || w2.name, widget_width * 0.5, y2 + H * 0.7);
-          }
-          break;
-        case "toggle":
-          ctx.textAlign = "left";
-          ctx.strokeStyle = outline_color;
-          ctx.fillStyle = background_color;
-          ctx.beginPath();
-          if (show_text)
-            ctx.roundRect(margin, y2, widget_width - margin * 2, H, [H * 0.5]);
-          else ctx.rect(margin, y2, widget_width - margin * 2, H);
-          ctx.fill();
-          if (show_text && !w2.disabled) ctx.stroke();
-          ctx.fillStyle = w2.value ? "#89A" : "#333";
-          ctx.beginPath();
-          ctx.arc(
-            widget_width - margin * 2,
-            y2 + H * 0.5,
-            H * 0.36,
-            0,
-            Math.PI * 2
-          );
-          ctx.fill();
-          if (show_text) {
-            ctx.fillStyle = secondary_text_color;
-            const label5 = w2.label || w2.name;
-            if (label5 != null) {
-              ctx.fillText(label5, margin * 2, y2 + H * 0.7);
-            }
-            ctx.fillStyle = w2.value ? text_color : secondary_text_color;
-            ctx.textAlign = "right";
-            ctx.fillText(
-              w2.value ? w2.options.on || "true" : w2.options.off || "false",
-              widget_width - 40,
-              y2 + H * 0.7
-            );
-          }
-          break;
-        case "slider": {
-          ctx.fillStyle = background_color;
-          ctx.fillRect(margin, y2, widget_width - margin * 2, H);
-          const range2 = w2.options.max - w2.options.min;
-          let nvalue = (w2.value - w2.options.min) / range2;
-          if (nvalue < 0) nvalue = 0;
-          if (nvalue > 1) nvalue = 1;
-          ctx.fillStyle = w2.options.hasOwnProperty("slider_color") ? w2.options.slider_color : active_widget == w2 ? "#89A" : "#678";
-          ctx.fillRect(margin, y2, nvalue * (widget_width - margin * 2), H);
-          if (show_text && !w2.disabled)
-            ctx.strokeRect(margin, y2, widget_width - margin * 2, H);
-          if (w2.marker) {
-            let marker_nvalue = (w2.marker - w2.options.min) / range2;
-            if (marker_nvalue < 0) marker_nvalue = 0;
-            if (marker_nvalue > 1) marker_nvalue = 1;
-            ctx.fillStyle = w2.options.hasOwnProperty("marker_color") ? w2.options.marker_color : "#AA9";
-            ctx.fillRect(
-              margin + marker_nvalue * (widget_width - margin * 2),
-              y2,
-              2,
-              H
-            );
-          }
-          if (show_text) {
-            ctx.textAlign = "center";
-            ctx.fillStyle = text_color;
-            ctx.fillText(
-              (w2.label || w2.name) + "  " + Number(w2.value).toFixed(
-                w2.options.precision != null ? w2.options.precision : 3
-              ),
-              widget_width * 0.5,
-              y2 + H * 0.7
-            );
-          }
-          break;
-        }
-        case "number":
-        case "combo":
-          ctx.textAlign = "left";
-          ctx.strokeStyle = outline_color;
-          ctx.fillStyle = background_color;
-          ctx.beginPath();
-          if (show_text)
-            ctx.roundRect(margin, y2, widget_width - margin * 2, H, [H * 0.5]);
-          else ctx.rect(margin, y2, widget_width - margin * 2, H);
-          ctx.fill();
-          if (show_text) {
-            if (!w2.disabled) ctx.stroke();
-            ctx.fillStyle = text_color;
-            if (!w2.disabled) {
-              ctx.beginPath();
-              ctx.moveTo(margin + 16, y2 + 5);
-              ctx.lineTo(margin + 6, y2 + H * 0.5);
-              ctx.lineTo(margin + 16, y2 + H - 5);
-              ctx.fill();
-              ctx.beginPath();
-              ctx.moveTo(widget_width - margin - 16, y2 + 5);
-              ctx.lineTo(widget_width - margin - 6, y2 + H * 0.5);
-              ctx.lineTo(widget_width - margin - 16, y2 + H - 5);
-              ctx.fill();
-            }
-            ctx.fillStyle = secondary_text_color;
-            ctx.fillText(w2.label || w2.name, margin * 2 + 5, y2 + H * 0.7);
-            ctx.fillStyle = text_color;
-            ctx.textAlign = "right";
-            if (w2.type == "number") {
-              ctx.fillText(
-                Number(w2.value).toFixed(
-                  w2.options.precision !== void 0 ? w2.options.precision : 3
-                ),
-                widget_width - margin * 2 - 20,
-                y2 + H * 0.7
-              );
-            } else {
-              let v2 = typeof w2.value === "number" ? String(w2.value) : w2.value;
-              if (w2.options.values) {
-                let values = w2.options.values;
-                if (typeof values === "function")
-                  values = values();
-                if (values && !Array.isArray(values))
-                  v2 = values[w2.value];
-              }
-              const labelWidth = ctx.measureText(w2.label || w2.name).width + margin * 2;
-              const inputWidth = widget_width - margin * 4;
-              const availableWidth = inputWidth - labelWidth;
-              const textWidth = ctx.measureText(v2).width;
-              if (textWidth > availableWidth) {
-                const ELLIPSIS = "…";
-                const ellipsisWidth = ctx.measureText(ELLIPSIS).width;
-                const charWidthAvg = ctx.measureText("a").width;
-                if (availableWidth <= ellipsisWidth) {
-                  v2 = "․";
-                } else {
-                  v2 = `${v2}`;
-                  const overflowWidth = textWidth + ellipsisWidth - availableWidth;
-                  if (overflowWidth + charWidthAvg * 3 > availableWidth) {
-                    const preciseRange = availableWidth + charWidthAvg * 3;
-                    const preTruncateCt = Math.floor((preciseRange - ellipsisWidth) / charWidthAvg);
-                    v2 = v2.substr(0, preTruncateCt);
-                  }
-                  while (ctx.measureText(v2).width + ellipsisWidth > availableWidth) {
-                    v2 = v2.substr(0, v2.length - 1);
-                  }
-                  v2 += ELLIPSIS;
-                }
-              }
-              ctx.fillText(
-                v2,
-                widget_width - margin * 2 - 20,
-                y2 + H * 0.7
-              );
-            }
-          }
-          break;
-        case "string":
-        case "text":
-          ctx.textAlign = "left";
-          ctx.strokeStyle = outline_color;
-          ctx.fillStyle = background_color;
-          ctx.beginPath();
-          if (show_text)
-            ctx.roundRect(margin, y2, widget_width - margin * 2, H, [H * 0.5]);
-          else
-            ctx.rect(margin, y2, widget_width - margin * 2, H);
-          ctx.fill();
-          if (show_text) {
-            if (!w2.disabled) ctx.stroke();
-            ctx.save();
-            ctx.beginPath();
-            ctx.rect(margin, y2, widget_width - margin * 2, H);
-            ctx.clip();
-            ctx.fillStyle = secondary_text_color;
-            const label5 = w2.label || w2.name;
-            if (label5 != null) ctx.fillText(label5, margin * 2, y2 + H * 0.7);
-            ctx.fillStyle = text_color;
-            ctx.textAlign = "right";
-            ctx.fillText(
-              String(w2.value).substr(0, 30),
-              widget_width - margin * 2,
-              y2 + H * 0.7
-            );
-            ctx.restore();
-          }
-          break;
-        default:
-          w2.draw?.(ctx, node22, widget_width, y2, H);
-          break;
-      }
-      posY += (w2.computeSize ? w2.computeSize(widget_width)[1] : H) + 4;
-      ctx.globalAlpha = this.editor_alpha;
-    }
-    ctx.restore();
-    ctx.textAlign = "left";
+  drawNodeWidgets(node22, posY, ctx) {
+    node22.drawWidgets(ctx, {
+      y: posY,
+      colorContext: this,
+      linkOverWidget: this.link_over_widget,
+      linkOverWidgetType: this.link_over_widget_type,
+      lowQuality: this.low_quality,
+      editorAlpha: this.editor_alpha
+    });
   }
   /**
    * draws every group area in the background
    */
-  drawGroups(canvas, ctx) {
+  drawGroups(canvas2, ctx) {
     if (!this.graph) return;
     const groups = this.graph._groups;
     ctx.save();
@@ -63477,18 +63922,18 @@ class LGraphCanvas {
     const { graph } = this;
     const node_left = graph.getNodeById(segment.origin_id);
     const fromType = node_left?.outputs?.[segment.origin_slot]?.type ?? "*";
-    const options4 = ["Add Node", null, "Delete", null];
-    if (this.reroutesEnabled) options4.splice(1, 0, "Add Reroute");
+    const options22 = ["Add Node", null, "Delete", null];
+    if (this.reroutesEnabled) options22.splice(1, 0, "Add Reroute");
     const title = "data" in segment && segment.data != null ? segment.data.constructor.name : null;
-    const menu2 = new LiteGraph.ContextMenu(options4, {
+    const menu2 = new LiteGraph.ContextMenu(options22, {
       event: e2,
       title,
       callback: inner_clicked.bind(this)
     });
-    function inner_clicked(v2, options22, e3) {
+    function inner_clicked(v2, options222, e22) {
       switch (v2) {
         case "Add Node":
-          LGraphCanvas.onMenuAdd(null, null, e3, menu2, function(node22) {
+          LGraphCanvas.onMenuAdd(null, null, e22, menu2, function(node22) {
             if (!node22.inputs?.length || !node22.outputs?.length) return;
             const options32 = this.reroutesEnabled ? { afterRerouteId: segment.parentId } : void 0;
             if (node_left.connectByType(segment.origin_slot, node22, fromType, options32)) {
@@ -63497,8 +63942,8 @@ class LGraphCanvas {
           });
           break;
         case "Add Reroute": {
-          this.adjustMouseEvent(e3);
-          graph.createReroute([e3.canvasX, e3.canvasY], segment);
+          this.adjustMouseEvent(e22);
+          graph.createReroute([e22.canvasX, e22.canvasY], segment);
           this.setDirty(false, true);
           break;
         }
@@ -63659,28 +64104,28 @@ class LGraphCanvas {
         console.warn("Cant get slot information " + slotX);
         return;
     }
-    const options4 = ["Add Node", null];
+    const options22 = ["Add Node", null];
     if (opts.allow_searchbox) {
-      options4.push("Search");
-      options4.push(null);
+      options22.push("Search");
+      options22.push(null);
     }
     const fromSlotType = slotX.type == LiteGraph.EVENT ? "_event_" : slotX.type;
     const slotTypesDefault = isFrom ? LiteGraph.slot_types_default_out : LiteGraph.slot_types_default_in;
     if (slotTypesDefault?.[fromSlotType]) {
       if (typeof slotTypesDefault[fromSlotType] == "object") {
         for (const typeX in slotTypesDefault[fromSlotType]) {
-          options4.push(slotTypesDefault[fromSlotType][typeX]);
+          options22.push(slotTypesDefault[fromSlotType][typeX]);
         }
       } else {
-        options4.push(slotTypesDefault[fromSlotType]);
+        options22.push(slotTypesDefault[fromSlotType]);
       }
     }
-    const menu2 = new LiteGraph.ContextMenu(options4, {
+    const menu2 = new LiteGraph.ContextMenu(options22, {
       event: opts.e,
       title: (slotX && slotX.name != "" ? slotX.name + (fromSlotType ? " | " : "") : "") + (slotX && fromSlotType ? fromSlotType : ""),
       callback: inner_clicked
     });
-    function inner_clicked(v2, options22, e2) {
+    function inner_clicked(v2, options222, e2) {
       switch (v2) {
         case "Add Node":
           LGraphCanvas.onMenuAdd(null, null, e2, menu2, function(node22) {
@@ -63725,8 +64170,8 @@ class LGraphCanvas {
       }
     };
     const graphcanvas = LGraphCanvas.active_canvas;
-    const canvas = graphcanvas.canvas;
-    canvas.parentNode.appendChild(dialog);
+    const canvas2 = graphcanvas.canvas;
+    canvas2.parentNode.appendChild(dialog);
     if (this.ds.scale > 1) dialog.style.transform = "scale(" + this.ds.scale + ")";
     let dialogCloseTimer = null;
     let prevent_timeout = 0;
@@ -63787,7 +64232,7 @@ class LGraphCanvas {
       that.setDirty(true);
       dialog.close();
     });
-    const rect = canvas.getBoundingClientRect();
+    const rect = canvas2.getBoundingClientRect();
     let offsetx = -20;
     let offsety = -20;
     if (rect) {
@@ -63798,26 +64243,26 @@ class LGraphCanvas {
       dialog.style.left = event.clientX + offsetx + "px";
       dialog.style.top = event.clientY + offsety + "px";
     } else {
-      dialog.style.left = canvas.width * 0.5 + offsetx + "px";
-      dialog.style.top = canvas.height * 0.5 + offsety + "px";
+      dialog.style.left = canvas2.width * 0.5 + offsetx + "px";
+      dialog.style.top = canvas2.height * 0.5 + offsety + "px";
     }
     setTimeout(function() {
       input.focus();
       const clickTime = Date.now();
       function handleOutsideClick(e2) {
-        if (e2.target === canvas && Date.now() - clickTime > 256) {
+        if (e2.target === canvas2 && Date.now() - clickTime > 256) {
           dialog.close();
-          canvas.parentNode.removeEventListener("click", handleOutsideClick);
-          canvas.parentNode.removeEventListener("touchend", handleOutsideClick);
+          canvas2.parentNode.removeEventListener("click", handleOutsideClick);
+          canvas2.parentNode.removeEventListener("touchend", handleOutsideClick);
         }
       }
       __name(handleOutsideClick, "handleOutsideClick");
-      canvas.parentNode.addEventListener("click", handleOutsideClick);
-      canvas.parentNode.addEventListener("touchend", handleOutsideClick);
+      canvas2.parentNode.addEventListener("click", handleOutsideClick);
+      canvas2.parentNode.addEventListener("touchend", handleOutsideClick);
     }, 10);
     return dialog;
   }
-  showSearchBox(event, options4) {
+  showSearchBox(event, options22) {
     const def_options = {
       slot_from: null,
       node_from: null,
@@ -63834,15 +64279,15 @@ class LGraphCanvas {
       show_all_if_empty: true,
       show_all_on_open: LiteGraph.search_show_all_on_open
     };
-    options4 = Object.assign(def_options, options4 || {});
+    options22 = Object.assign(def_options, options22 || {});
     const that = this;
     const graphcanvas = LGraphCanvas.active_canvas;
-    const canvas = graphcanvas.canvas;
-    const root_document = canvas.ownerDocument || document;
+    const canvas2 = graphcanvas.canvas;
+    const root_document = canvas2.ownerDocument || document;
     const dialog = document.createElement("div");
     dialog.className = "litegraph litesearchbox graphdialog rounded";
     dialog.innerHTML = "<span class='name'>Search</span> <input autofocus type='text' class='value rounded'/>";
-    if (options4.do_type_filter) {
+    if (options22.do_type_filter) {
       dialog.innerHTML += "<select class='slot_in_type_filter'><option value=''></option></select>";
       dialog.innerHTML += "<select class='slot_out_type_filter'><option value=''></option></select>";
     }
@@ -63855,14 +64300,14 @@ class LGraphCanvas {
     }
     let selIn;
     let selOut;
-    if (options4.do_type_filter) {
+    if (options22.do_type_filter) {
       selIn = dialog.querySelector(".slot_in_type_filter");
       selOut = dialog.querySelector(".slot_out_type_filter");
     }
     dialog.close = function() {
       that.search_box = null;
       this.blur();
-      canvas.focus();
+      canvas2.focus();
       root_document.body.style.overflow = "";
       setTimeout(function() {
         that.canvas.focus();
@@ -63872,7 +64317,7 @@ class LGraphCanvas {
     if (this.ds.scale > 1) {
       dialog.style.transform = "scale(" + this.ds.scale + ")";
     }
-    if (options4.hide_on_mouse_leave) {
+    if (options22.hide_on_mouse_leave) {
       let prevent_timeout = false;
       let timeout_close = null;
       LiteGraph.pointerListenerAdd(dialog, "enter", function() {
@@ -63886,9 +64331,9 @@ class LGraphCanvas {
           return;
         timeout_close = setTimeout(function() {
           dialog.close();
-        }, typeof options4.hide_on_mouse_leave === "number" ? options4.hide_on_mouse_leave : 500);
+        }, typeof options22.hide_on_mouse_leave === "number" ? options22.hide_on_mouse_leave : 500);
       });
-      if (options4.do_type_filter) {
+      if (options22.do_type_filter) {
         selIn.addEventListener("click", function() {
           prevent_timeout++;
         });
@@ -63948,12 +64393,12 @@ class LGraphCanvas {
         return true;
       });
     }
-    if (options4.do_type_filter) {
+    if (options22.do_type_filter) {
       if (selIn) {
         const aSlots = LiteGraph.slot_types_in;
         const nSlots = aSlots.length;
-        if (options4.type_filter_in == LiteGraph.EVENT || options4.type_filter_in == LiteGraph.ACTION)
-          options4.type_filter_in = "_event_";
+        if (options22.type_filter_in == LiteGraph.EVENT || options22.type_filter_in == LiteGraph.ACTION)
+          options22.type_filter_in = "_event_";
         for (let iK = 0; iK < nSlots; iK++) {
           const opt = document.createElement("option");
           opt.value = aSlots[iK];
@@ -63961,7 +64406,7 @@ class LGraphCanvas {
           selIn.appendChild(opt);
           if (
             // @ts-expect-error
-            options4.type_filter_in !== false && (options4.type_filter_in + "").toLowerCase() == (aSlots[iK] + "").toLowerCase()
+            options22.type_filter_in !== false && (options22.type_filter_in + "").toLowerCase() == (aSlots[iK] + "").toLowerCase()
           ) {
             opt.selected = true;
           }
@@ -63973,14 +64418,14 @@ class LGraphCanvas {
       if (selOut) {
         const aSlots = LiteGraph.slot_types_out;
         const nSlots = aSlots.length;
-        if (options4.type_filter_out == LiteGraph.EVENT || options4.type_filter_out == LiteGraph.ACTION)
-          options4.type_filter_out = "_event_";
+        if (options22.type_filter_out == LiteGraph.EVENT || options22.type_filter_out == LiteGraph.ACTION)
+          options22.type_filter_out = "_event_";
         for (let iK = 0; iK < nSlots; iK++) {
           const opt = document.createElement("option");
           opt.value = aSlots[iK];
           opt.innerHTML = aSlots[iK];
           selOut.appendChild(opt);
-          if (options4.type_filter_out !== false && (options4.type_filter_out + "").toLowerCase() == (aSlots[iK] + "").toLowerCase())
+          if (options22.type_filter_out !== false && (options22.type_filter_out + "").toLowerCase() == (aSlots[iK] + "").toLowerCase())
             opt.selected = true;
         }
         selOut.addEventListener("change", function() {
@@ -63988,7 +64433,7 @@ class LGraphCanvas {
         });
       }
     }
-    const rect = canvas.getBoundingClientRect();
+    const rect = canvas2.getBoundingClientRect();
     const left = (event ? event.clientX : rect.left + rect.width * 0.5) - 80;
     const top = (event ? event.clientY : rect.top + rect.height * 0.5) - 20;
     dialog.style.left = left + "px";
@@ -63998,7 +64443,7 @@ class LGraphCanvas {
     requestAnimationFrame(function() {
       input.focus();
     });
-    if (options4.show_all_on_open) refreshHelper();
+    if (options22.show_all_on_open) refreshHelper();
     function select(name2) {
       if (name2) {
         if (that.onSearchBoxSelection) {
@@ -64043,47 +64488,47 @@ class LGraphCanvas {
               node22.configure(extra.data.json);
             }
           }
-          if (options4.node_from) {
+          if (options22.node_from) {
             let iS = false;
-            switch (typeof options4.slot_from) {
+            switch (typeof options22.slot_from) {
               case "string":
-                iS = options4.node_from.findOutputSlot(options4.slot_from);
+                iS = options22.node_from.findOutputSlot(options22.slot_from);
                 break;
               case "object":
-                iS = options4.slot_from.name ? options4.node_from.findOutputSlot(options4.slot_from.name) : -1;
-                if (iS == -1 && typeof options4.slot_from.slot_index !== "undefined") iS = options4.slot_from.slot_index;
+                iS = options22.slot_from.name ? options22.node_from.findOutputSlot(options22.slot_from.name) : -1;
+                if (iS == -1 && typeof options22.slot_from.slot_index !== "undefined") iS = options22.slot_from.slot_index;
                 break;
               case "number":
-                iS = options4.slot_from;
+                iS = options22.slot_from;
                 break;
               default:
                 iS = 0;
             }
-            if (typeof options4.node_from.outputs[iS] !== "undefined") {
+            if (typeof options22.node_from.outputs[iS] !== "undefined") {
               if (iS !== false && iS > -1) {
-                options4.node_from.connectByType(iS, node22, options4.node_from.outputs[iS].type);
+                options22.node_from.connectByType(iS, node22, options22.node_from.outputs[iS].type);
               }
             }
           }
-          if (options4.node_to) {
+          if (options22.node_to) {
             let iS = false;
-            switch (typeof options4.slot_from) {
+            switch (typeof options22.slot_from) {
               case "string":
-                iS = options4.node_to.findInputSlot(options4.slot_from);
+                iS = options22.node_to.findInputSlot(options22.slot_from);
                 break;
               case "object":
-                iS = options4.slot_from.name ? options4.node_to.findInputSlot(options4.slot_from.name) : -1;
-                if (iS == -1 && typeof options4.slot_from.slot_index !== "undefined") iS = options4.slot_from.slot_index;
+                iS = options22.slot_from.name ? options22.node_to.findInputSlot(options22.slot_from.name) : -1;
+                if (iS == -1 && typeof options22.slot_from.slot_index !== "undefined") iS = options22.slot_from.slot_index;
                 break;
               case "number":
-                iS = options4.slot_from;
+                iS = options22.slot_from;
                 break;
               default:
                 iS = 0;
             }
-            if (typeof options4.node_to.inputs[iS] !== "undefined") {
+            if (typeof options22.node_to.inputs[iS] !== "undefined") {
               if (iS !== false && iS > -1) {
-                options4.node_to.connectByTypeOutput(iS, node22, options4.node_to.inputs[iS].type);
+                options22.node_to.connectByTypeOutput(iS, node22, options22.node_to.inputs[iS].type);
               }
             }
           }
@@ -64112,7 +64557,7 @@ class LGraphCanvas {
       let str = input.value;
       first2 = null;
       helper.innerHTML = "";
-      if (!str && !options4.show_all_if_empty) return;
+      if (!str && !options22.show_all_if_empty) return;
       if (that.onSearchBox) {
         const list2 = that.onSearchBox(helper, str, graphcanvas);
         if (list2) {
@@ -64131,9 +64576,9 @@ class LGraphCanvas {
           const opts = Object.assign(optsDef, optsIn);
           const ctor = LiteGraph.registered_node_types[type];
           if (filter4 && ctor.filter != filter4) return false;
-          if ((!options4.show_all_if_empty || str) && type.toLowerCase().indexOf(str) === -1 && (!ctor.title || ctor.title.toLowerCase().indexOf(str) === -1))
+          if ((!options22.show_all_if_empty || str) && type.toLowerCase().indexOf(str) === -1 && (!ctor.title || ctor.title.toLowerCase().indexOf(str) === -1))
             return false;
-          if (options4.do_type_filter && !opts.skipFilter) {
+          if (options22.do_type_filter && !opts.skipFilter) {
             const sType = type;
             let sV = opts.inTypeOverride !== false ? opts.inTypeOverride : sIn.value;
             if (sIn && sV && LiteGraph.registered_slot_in_types[sV]?.nodes) {
@@ -64154,13 +64599,13 @@ class LGraphCanvas {
         const filter4 = graphcanvas.filter || graphcanvas.graph.filter;
         let sIn = false;
         let sOut = false;
-        if (options4.do_type_filter && that.search_box) {
+        if (options22.do_type_filter && that.search_box) {
           sIn = that.search_box.querySelector(".slot_in_type_filter");
           sOut = that.search_box.querySelector(".slot_out_type_filter");
         }
         for (const i2 in LiteGraph.searchbox_extras) {
           const extra = LiteGraph.searchbox_extras[i2];
-          if ((!options4.show_all_if_empty || str) && extra.desc.toLowerCase().indexOf(str) === -1)
+          if ((!options22.show_all_if_empty || str) && extra.desc.toLowerCase().indexOf(str) === -1)
             continue;
           const ctor = LiteGraph.registered_node_types[extra.type];
           if (ctor && ctor.filter != filter4) continue;
@@ -64185,7 +64630,7 @@ class LGraphCanvas {
           if (LGraphCanvas.search_limit !== -1 && c2++ > LGraphCanvas.search_limit)
             break;
         }
-        if (options4.show_general_after_typefiltered && (sIn.value || sOut.value)) {
+        if (options22.show_general_after_typefiltered && (sIn.value || sOut.value)) {
           filtered_extra = [];
           for (const i2 in LiteGraph.registered_node_types) {
             if (inner_test_filter(i2, {
@@ -64200,7 +64645,7 @@ class LGraphCanvas {
               break;
           }
         }
-        if ((sIn.value || sOut.value) && helper.childNodes.length == 0 && options4.show_general_if_none_on_typefilter) {
+        if ((sIn.value || sOut.value) && helper.childNodes.length == 0 && options22.show_general_if_none_on_typefilter) {
           filtered_extra = [];
           for (const i2 in LiteGraph.registered_node_types) {
             if (inner_test_filter(i2, { skipFilter: true }))
@@ -64241,9 +64686,9 @@ class LGraphCanvas {
     __name(refreshHelper, "refreshHelper");
     return dialog;
   }
-  showEditPropertyValue(node22, property, options4) {
+  showEditPropertyValue(node22, property, options22) {
     if (!node22 || node22.properties[property] === void 0) return;
-    options4 = options4 || {};
+    options22 = options22 || {};
     const info = node22.getPropertyInfo(property);
     const type = info.type;
     let input_html = "";
@@ -64264,7 +64709,7 @@ class LGraphCanvas {
     }
     const dialog = this.createDialog(
       "<span class='name'>" + (info.label || property) + "</span>" + input_html + "<button>OK</button>",
-      options4
+      options22
     );
     let input;
     if ((type == "enum" || type == "combo") && info.values) {
@@ -64325,7 +64770,7 @@ class LGraphCanvas {
         node22.graph._version++;
       }
       node22.onPropertyChanged?.(property, value4);
-      options4.onclose?.();
+      options22.onclose?.();
       dialog.close();
       this.setDirty(true, true);
     }
@@ -64333,13 +64778,13 @@ class LGraphCanvas {
     return dialog;
   }
   // TODO refactor, theer are different dialog, some uses createDialog, some dont
-  createDialog(html, options4) {
+  createDialog(html, options22) {
     const def_options = {
       checkForInput: false,
       closeOnLeave: true,
       closeOnLeave_checkModified: true
     };
-    options4 = Object.assign(def_options, options4 || {});
+    options22 = Object.assign(def_options, options22 || {});
     const dialog = document.createElement("div");
     dialog.className = "graphdialog";
     dialog.innerHTML = html;
@@ -64351,12 +64796,12 @@ class LGraphCanvas {
       offsetx -= rect.left;
       offsety -= rect.top;
     }
-    if (options4.position) {
-      offsetx += options4.position[0];
-      offsety += options4.position[1];
-    } else if (options4.event) {
-      offsetx += options4.event.clientX;
-      offsety += options4.event.clientY;
+    if (options22.position) {
+      offsetx += options22.position[0];
+      offsety += options22.position[1];
+    } else if (options22.event) {
+      offsetx += options22.event.clientX;
+      offsety += options22.event.clientY;
     } else {
       offsetx += this.canvas.width * 0.5;
       offsety += this.canvas.height * 0.5;
@@ -64364,7 +64809,7 @@ class LGraphCanvas {
     dialog.style.left = offsetx + "px";
     dialog.style.top = offsety + "px";
     this.canvas.parentNode.appendChild(dialog);
-    if (options4.checkForInput) {
+    if (options22.checkForInput) {
       const aI = dialog.querySelectorAll("input");
       aI?.forEach(function(iX) {
         iX.addEventListener("keydown", function(e2) {
@@ -64397,7 +64842,7 @@ class LGraphCanvas {
         );
     });
     dialog.addEventListener("mouseenter", function() {
-      if (options4.closeOnLeave || LiteGraph.dialog_close_on_mouse_leave) {
+      if (options22.closeOnLeave || LiteGraph.dialog_close_on_mouse_leave) {
         if (dialogCloseTimer) clearTimeout(dialogCloseTimer);
       }
     });
@@ -64415,18 +64860,18 @@ class LGraphCanvas {
     });
     return dialog;
   }
-  createPanel(title, options4) {
-    options4 = options4 || {};
-    const ref_window = options4.window || window;
+  createPanel(title, options22) {
+    options22 = options22 || {};
+    const ref_window = options22.window || window;
     const root29 = document.createElement("div");
     root29.className = "litegraph dialog";
     root29.innerHTML = "<div class='dialog-header'><span class='dialog-title'></span></div><div class='dialog-content'></div><div style='display:none;' class='dialog-alt-content'></div><div class='dialog-footer'></div>";
     root29.header = root29.querySelector(".dialog-header");
-    if (options4.width)
-      root29.style.width = options4.width + (typeof options4.width === "number" ? "px" : "");
-    if (options4.height)
-      root29.style.height = options4.height + (typeof options4.height === "number" ? "px" : "");
-    if (options4.closable) {
+    if (options22.width)
+      root29.style.width = options22.width + (typeof options22.width === "number" ? "px" : "");
+    if (options22.height)
+      root29.style.height = options22.height + (typeof options22.height === "number" ? "px" : "");
+    if (options22.closable) {
       const close5 = document.createElement("span");
       close5.innerHTML = "&#10005;";
       close5.classList.add("close");
@@ -64478,10 +64923,10 @@ class LGraphCanvas {
       else root29.content.appendChild(elem);
       return elem;
     };
-    root29.addButton = function(name2, callback, options22) {
+    root29.addButton = function(name2, callback, options222) {
       const elem = document.createElement("button");
       elem.innerText = name2;
-      elem.options = options22;
+      elem.options = options222;
       elem.classList.add("btn");
       elem.addEventListener("click", callback);
       root29.footer.appendChild(elem);
@@ -64492,20 +64937,20 @@ class LGraphCanvas {
       elem.className = "separator";
       root29.content.appendChild(elem);
     };
-    root29.addWidget = function(type, name2, value4, options22, callback) {
-      options22 = options22 || {};
+    root29.addWidget = function(type, name2, value4, options222, callback) {
+      options222 = options222 || {};
       let str_value = String(value4);
       type = type.toLowerCase();
       if (type == "number") str_value = value4.toFixed(3);
       const elem = document.createElement("div");
       elem.className = "property";
       elem.innerHTML = "<span class='property_name'></span><span class='property_value'></span>";
-      elem.querySelector(".property_name").innerText = options22.label || name2;
+      elem.querySelector(".property_name").innerText = options222.label || name2;
       const value_element = elem.querySelector(".property_value");
       value_element.innerText = str_value;
       elem.dataset["property"] = name2;
-      elem.dataset["type"] = options22.type || type;
-      elem.options = options22;
+      elem.dataset["type"] = options222.type || type;
+      elem.options = options222;
       elem.value = value4;
       if (type == "code")
         elem.addEventListener("click", function() {
@@ -64537,10 +64982,10 @@ class LGraphCanvas {
           innerChange(propname, v2);
         });
       } else if (type == "enum" || type == "combo") {
-        const str_value2 = LGraphCanvas.getPropertyPrintableValue(value4, options22.values);
+        const str_value2 = LGraphCanvas.getPropertyPrintableValue(value4, options222.values);
         value_element.innerText = str_value2;
         value_element.addEventListener("click", function(event) {
-          const values = options22.values || [];
+          const values = options222.values || [];
           const propname = this.parentNode.dataset["property"];
           const elem_that = this;
           new LiteGraph.ContextMenu(
@@ -64563,8 +65008,8 @@ class LGraphCanvas {
       }
       root29.content.appendChild(elem);
       function innerChange(name22, value22) {
-        options22.callback?.(name22, value22, options22);
-        callback?.(name22, value22, options22);
+        options222.callback?.(name22, value22, options222);
+        callback?.(name22, value22, options222);
       }
       __name(innerChange, "innerChange");
       return elem;
@@ -64698,11 +65143,11 @@ class LGraphCanvas {
     }
   }
   getCanvasMenuOptions() {
-    let options4 = null;
+    let options22 = null;
     if (this.getMenuOptions) {
-      options4 = this.getMenuOptions();
+      options22 = this.getMenuOptions();
     } else {
-      options4 = [
+      options22 = [
         {
           content: "Add Node",
           has_submenu: true,
@@ -64714,23 +65159,23 @@ class LGraphCanvas {
         // {content:"Collapse All", callback: LGraphCanvas.onMenuCollapseAll }
       ];
       if (Object.keys(this.selected_nodes).length > 1) {
-        options4.push({
+        options22.push({
           content: "Align",
           has_submenu: true,
           callback: LGraphCanvas.onGroupAlign
         });
       }
     }
-    const extra = this.getExtraMenuOptions?.(this, options4);
-    return Array.isArray(extra) ? options4.concat(extra) : options4;
+    const extra = this.getExtraMenuOptions?.(this, options22);
+    return Array.isArray(extra) ? options22.concat(extra) : options22;
   }
   // called by processContextMenu to extract the menu list
   getNodeMenuOptions(node22) {
-    let options4 = null;
+    let options22 = null;
     if (node22.getMenuOptions) {
-      options4 = node22.getMenuOptions(this);
+      options22 = node22.getMenuOptions(this);
     } else {
-      options4 = [
+      options22 = [
         {
           content: "Inputs",
           has_submenu: true,
@@ -64751,8 +65196,8 @@ class LGraphCanvas {
         },
         {
           content: "Properties Panel",
-          callback: /* @__PURE__ */ __name(function(item3, options22, e2, menu2, node3) {
-            LGraphCanvas.active_canvas.showShowNodePanel(node3);
+          callback: /* @__PURE__ */ __name(function(item3, options222, e2, menu2, node222) {
+            LGraphCanvas.active_canvas.showShowNodePanel(node222);
           }, "callback")
         },
         null,
@@ -64767,31 +65212,31 @@ class LGraphCanvas {
         }
       ];
       if (node22.resizable !== false) {
-        options4.push({
+        options22.push({
           content: "Resize",
           callback: LGraphCanvas.onMenuResizeNode
         });
       }
       if (node22.collapsible) {
-        options4.push({
+        options22.push({
           content: node22.collapsed ? "Expand" : "Collapse",
           callback: LGraphCanvas.onMenuNodeCollapse
         });
       }
       if (node22.widgets?.some((w2) => w2.advanced)) {
-        options4.push({
+        options22.push({
           content: node22.showAdvanced ? "Hide Advanced" : "Show Advanced",
           callback: LGraphCanvas.onMenuToggleAdvanced
         });
       }
-      options4.push(
+      options22.push(
         {
           content: node22.pinned ? "Unpin" : "Pin",
           callback: /* @__PURE__ */ __name((...args) => {
             LGraphCanvas.onMenuNodePin(...args);
             for (const i2 in this.selected_nodes) {
-              const node3 = this.selected_nodes[i2];
-              node3.pin();
+              const node222 = this.selected_nodes[i2];
+              node222.pin();
             }
             this.setDirty(true, true);
           }, "callback")
@@ -64810,39 +65255,39 @@ class LGraphCanvas {
       );
     }
     const inputs = node22.onGetInputs?.();
-    if (inputs?.length) options4[0].disabled = false;
+    if (inputs?.length) options22[0].disabled = false;
     const outputs = node22.onGetOutputs?.();
-    if (outputs?.length) options4[1].disabled = false;
-    const extra = node22.getExtraMenuOptions?.(this, options4);
+    if (outputs?.length) options22[1].disabled = false;
+    const extra = node22.getExtraMenuOptions?.(this, options22);
     if (Array.isArray(extra) && extra.length > 0) {
       extra.push(null);
-      options4 = extra.concat(options4);
+      options22 = extra.concat(options22);
     }
     if (node22.clonable !== false) {
-      options4.push({
+      options22.push({
         content: "Clone",
         callback: LGraphCanvas.onMenuNodeClone
       });
     }
     if (Object.keys(this.selected_nodes).length > 1) {
-      options4.push({
+      options22.push({
         content: "Align Selected To",
         has_submenu: true,
         callback: LGraphCanvas.onNodeAlign
       });
-      options4.push({
+      options22.push({
         content: "Distribute Nodes",
         has_submenu: true,
         callback: LGraphCanvas.createDistributeMenu
       });
     }
-    options4.push(null, {
+    options22.push(null, {
       content: "Remove",
       disabled: !(node22.removable !== false && !node22.block_delete),
       callback: LGraphCanvas.onMenuNodeRemove
     });
-    node22.graph?.onGetNodeMenuOptions?.(options4, node22);
-    return options4;
+    node22.graph?.onGetNodeMenuOptions?.(options22, node22);
+    return options22;
   }
   getGroupMenuOptions(group) {
     console.warn("LGraphCanvas.getGroupMenuOptions is deprecated, use LGraphGroup.getMenuOptions instead");
@@ -64850,15 +65295,15 @@ class LGraphCanvas {
   }
   processContextMenu(node22, event) {
     const that = this;
-    const canvas = LGraphCanvas.active_canvas;
-    const ref_window = canvas.getCanvasWindow();
+    const canvas2 = LGraphCanvas.active_canvas;
+    const ref_window = canvas2.getCanvasWindow();
     let menu_info = null;
-    const options4 = {
+    const options22 = {
       event,
       callback: inner_option_clicked,
       extra: node22
     };
-    if (node22) options4.title = node22.type;
+    if (node22) options22.title = node22.type;
     let slot = null;
     if (node22) {
       slot = node22.getSlotInPosition(event.canvasX, event.canvasY);
@@ -64879,12 +65324,15 @@ class LGraphCanvas {
         }
         if (!_slot.nameLocked)
           menu_info.push({ content: "Rename Slot", slot });
+        if (node22.getExtraSlotMenuOptions) {
+          menu_info.push(...node22.getExtraSlotMenuOptions(slot));
+        }
       }
-      options4.title = (slot.input ? slot.input.type : slot.output.type) || "*";
+      options22.title = (slot.input ? slot.input.type : slot.output.type) || "*";
       if (slot.input && slot.input.type == LiteGraph.ACTION)
-        options4.title = "Action";
+        options22.title = "Action";
       if (slot.output && slot.output.type == LiteGraph.EVENT)
-        options4.title = "Event";
+        options22.title = "Event";
     } else if (node22) {
       menu_info = this.getNodeMenuOptions(node22);
     } else {
@@ -64915,8 +65363,8 @@ class LGraphCanvas {
       }
     }
     if (!menu_info) return;
-    new LiteGraph.ContextMenu(menu_info, options4, ref_window);
-    function inner_option_clicked(v2, options22) {
+    new LiteGraph.ContextMenu(menu_info, options22, ref_window);
+    function inner_option_clicked(v2, options222) {
       if (!v2) return;
       if (v2.content == "Remove Slot") {
         const info = v2.slot;
@@ -64943,7 +65391,7 @@ class LGraphCanvas {
         const slot_info = info.input ? node22.getInputInfo(info.slot) : node22.getOutputInfo(info.slot);
         const dialog = that.createDialog(
           "<span class='name'>Name</span><input autofocus type='text'/><button>OK</button>",
-          options22
+          options222
         );
         const input = dialog.querySelector("input");
         if (input && slot_info) {
@@ -65033,9 +65481,9 @@ class LGraphCanvas {
    * Fits the view to the selected nodes with animation.
    * If nothing is selected, the view is fitted around all items in the graph.
    */
-  fitViewToSelectionAnimated(options4 = {}) {
+  fitViewToSelectionAnimated(options22 = {}) {
     const items2 = this.selectedItems.size ? Array.from(this.selectedItems) : this.positionableItems;
-    this.animateToBounds(createBounds(items2), options4);
+    this.animateToBounds(createBounds(items2), options22);
   }
 }
 class MapProxyHandler {
@@ -65131,7 +65579,6 @@ let LGraph$1 = class LGraph2 {
   execution_time;
   _last_trigger_time;
   filter;
-  _subgraph_node;
   /** Must contain serialisable values, e.g. primitive types */
   config;
   vars;
@@ -65273,10 +65720,10 @@ let LGraph$1 = class LGraph2 {
    */
   detachCanvas(graphcanvas) {
     if (!this.list_of_graphcanvas) return;
-    const pos2 = this.list_of_graphcanvas.indexOf(graphcanvas);
-    if (pos2 == -1) return;
+    const pos = this.list_of_graphcanvas.indexOf(graphcanvas);
+    if (pos == -1) return;
     graphcanvas.graph = null;
-    this.list_of_graphcanvas.splice(pos2, 1);
+    this.list_of_graphcanvas.splice(pos, 1);
   }
   /**
    * Starts running this graph every interval milliseconds.
@@ -65572,12 +66019,6 @@ let LGraph$1 = class LGraph2 {
     if (!nodes) return;
     for (let j2 = 0, l2 = nodes.length; j2 < l2; ++j2) {
       const node22 = nodes[j2];
-      if (node22.constructor === LiteGraph.Subgraph && eventname != "onExecute") {
-        if (node22.mode == mode2) {
-          node22.sendEventToAllNodes(eventname, params, mode2);
-        }
-        continue;
-      }
       if (!node22[eventname] || node22.mode != mode2) continue;
       if (params === void 0) {
         node22[eventname]();
@@ -65691,13 +66132,13 @@ let LGraph$1 = class LGraph2 {
     this._version++;
     if (this.list_of_graphcanvas) {
       for (let i2 = 0; i2 < this.list_of_graphcanvas.length; ++i2) {
-        const canvas = this.list_of_graphcanvas[i2];
-        if (canvas.selected_nodes[node22.id])
-          delete canvas.selected_nodes[node22.id];
+        const canvas2 = this.list_of_graphcanvas[i2];
+        if (canvas2.selected_nodes[node22.id])
+          delete canvas2.selected_nodes[node22.id];
       }
     }
-    const pos2 = this._nodes.indexOf(node22);
-    if (pos2 != -1) this._nodes.splice(pos2, 1);
+    const pos = this._nodes.indexOf(node22);
+    if (pos != -1) this._nodes.splice(pos, 1);
     delete this._nodes_by_id[node22.id];
     this.onNodeRemoved?.(node22);
     this.canvasAction((c2) => c2.checkPanels());
@@ -65809,8 +66250,8 @@ let LGraph$1 = class LGraph2 {
    */
   getRerouteOnPos(x2, y2) {
     for (const reroute of this.reroutes.values()) {
-      const { pos: pos2 } = reroute;
-      if (isSortaInsideOctagon(x2 - pos2[0], y2 - pos2[1], 2 * Reroute.radius))
+      const { pos } = reroute;
+      if (isSortaInsideOctagon(x2 - pos[0], y2 - pos[1], 2 * Reroute.radius))
         return reroute;
     }
   }
@@ -65860,7 +66301,7 @@ let LGraph$1 = class LGraph2 {
     this.updateExecutionOrder();
   }
   // ********** GLOBALS *****************
-  onAction(action, param, options4) {
+  onAction(action, param, options22) {
     this._input_nodes = this.findNodesByClass(
       // @ts-expect-error Never impl.
       LiteGraph.GraphInput,
@@ -65869,7 +66310,7 @@ let LGraph$1 = class LGraph2 {
     for (let i2 = 0; i2 < this._input_nodes.length; ++i2) {
       const node22 = this._input_nodes[i2];
       if (node22.properties.name != action) continue;
-      node22.actionDo(action, param, options4);
+      node22.actionDo(action, param, options22);
       break;
     }
   }
@@ -66061,11 +66502,11 @@ let LGraph$1 = class LGraph2 {
    * Creates the object if it does not exist.
    * @param serialisedReroute See {@link SerialisableReroute}
    */
-  setReroute({ id: id3, parentId, pos: pos2, linkIds }) {
+  setReroute({ id: id3, parentId, pos, linkIds }) {
     id3 ??= ++this.state.lastRerouteId;
     if (id3 > this.state.lastRerouteId) this.state.lastRerouteId = id3;
     const reroute = this.reroutes.get(id3) ?? new Reroute(id3, this);
-    reroute.update(parentId, pos2, linkIds);
+    reroute.update(parentId, pos, linkIds);
     this.reroutes.set(id3, reroute);
     return reroute;
   }
@@ -66076,10 +66517,10 @@ let LGraph$1 = class LGraph2 {
    * going from the node output to input.
    * @returns The newly created reroute - typically ignored.
    */
-  createReroute(pos2, before) {
+  createReroute(pos, before) {
     const rerouteId = ++this.state.lastRerouteId;
     const linkIds = before instanceof Reroute ? before.linkIds : [before.id];
-    const reroute = new Reroute(rerouteId, this, pos2, before.parentId, linkIds);
+    const reroute = new Reroute(rerouteId, this, pos, before.parentId, linkIds);
     this.reroutes.set(rerouteId, reroute);
     for (const linkId of linkIds) {
       const link2 = this._links.get(linkId);
@@ -66150,9 +66591,9 @@ let LGraph$1 = class LGraph2 {
    * Mutating the properties of the return object may result in changes to your graph.
    * It is intended for use with {@link structuredClone} or {@link JSON.stringify}.
    */
-  asSerialisable(options4) {
+  asSerialisable(options22) {
     const { config: config2, state, extra } = this;
-    const nodeList = !LiteGraph.use_uuids && options4?.sortNodes ? [...this._nodes].sort((a2, b2) => a2.id - b2.id) : this._nodes;
+    const nodeList = !LiteGraph.use_uuids && options22?.sortNodes ? [...this._nodes].sort((a2, b2) => a2.id - b2.id) : this._nodes;
     const nodes = nodeList.map((node22) => node22.serialize());
     const groups = this._groups.map((x2) => x2.serialize());
     const links = [...this._links.values()].map((x2) => x2.asSerialisable());
@@ -66311,31 +66752,31 @@ class ContextMenu {
    * - ignore_item_callbacks: ignores the callback inside the item, it just calls the options.callback
    * - event: you can pass a MouseEvent, this way the ContextMenu appears in that position
    */
-  constructor(values, options4) {
-    options4 ||= {};
-    this.options = options4;
-    const parent = options4.parentMenu;
+  constructor(values, options22) {
+    options22 ||= {};
+    this.options = options22;
+    const parent = options22.parentMenu;
     if (parent) {
       if (!(parent instanceof ContextMenu)) {
         console.error("parentMenu must be of class ContextMenu, ignoring it");
-        options4.parentMenu = null;
+        options22.parentMenu = null;
       } else {
         this.parentMenu = parent;
         this.parentMenu.lock = true;
         this.parentMenu.current_submenu = this;
       }
       if (parent.options?.className === "dark") {
-        options4.className = "dark";
+        options22.className = "dark";
       }
     }
-    const eventClass = options4.event ? options4.event.constructor.name : null;
+    const eventClass = options22.event ? options22.event.constructor.name : null;
     if (eventClass !== "MouseEvent" && eventClass !== "CustomEvent" && eventClass !== "PointerEvent") {
       console.error(`Event passed to ContextMenu is not of type MouseEvent or CustomEvent. Ignoring it. (${eventClass})`);
-      options4.event = null;
+      options22.event = null;
     }
     const root29 = document.createElement("div");
     let classes2 = "litegraph litecontextmenu litemenubar-panel";
-    if (options4.className) classes2 += " " + options4.className;
+    if (options22.className) classes2 += " " + options22.className;
     root29.className = classes2;
     root29.style.minWidth = "100";
     root29.style.minHeight = "100";
@@ -66374,10 +66815,10 @@ class ContextMenu {
       true
     );
     this.root = root29;
-    if (options4.title) {
+    if (options22.title) {
       const element = document.createElement("div");
       element.className = "litemenu-title";
-      element.innerHTML = options4.title;
+      element.innerHTML = options22.title;
       root29.appendChild(element);
     }
     for (let i2 = 0; i2 < values.length; i2++) {
@@ -66386,25 +66827,25 @@ class ContextMenu {
       if (typeof name2 !== "string") {
         name2 = name2 != null ? name2.content === void 0 ? String(name2) : name2.content : name2;
       }
-      this.addItem(name2, value4, options4);
+      this.addItem(name2, value4, options22);
     }
     LiteGraph.pointerListenerAdd(root29, "enter", function() {
       if (root29.closing_timer) {
         clearTimeout(root29.closing_timer);
       }
     });
-    const ownerDocument = (options4.event?.target).ownerDocument;
+    const ownerDocument = (options22.event?.target).ownerDocument;
     const root_document = ownerDocument || document;
     if (root_document.fullscreenElement)
       root_document.fullscreenElement.appendChild(root29);
     else
       root_document.body.appendChild(root29);
-    let left = options4.left || 0;
-    let top = options4.top || 0;
-    if (options4.event) {
-      left = options4.event.clientX - 10;
-      top = options4.event.clientY - 10;
-      if (options4.title) top -= 20;
+    let left = options22.left || 0;
+    let top = options22.top || 0;
+    if (options22.event) {
+      left = options22.event.clientX - 10;
+      top = options22.event.clientY - 10;
+      if (options22.title) top -= 20;
       if (parent) {
         const rect = parent.root.getBoundingClientRect();
         left = rect.left + rect.width;
@@ -66420,12 +66861,12 @@ class ContextMenu {
     }
     root29.style.left = left + "px";
     root29.style.top = top + "px";
-    if (LiteGraph.context_menu_scaling && options4.scale) {
-      root29.style.transform = `scale(${Math.round(options4.scale * 4) * 0.25})`;
+    if (LiteGraph.context_menu_scaling && options22.scale) {
+      root29.style.transform = `scale(${Math.round(options22.scale * 4) * 0.25})`;
     }
   }
-  addItem(name2, value4, options4) {
-    options4 ||= {};
+  addItem(name2, value4, options22) {
+    options22 ||= {};
     const element = document.createElement("div");
     element.className = "litemenu-entry submenu";
     let disabled2 = false;
@@ -66459,7 +66900,7 @@ class ContextMenu {
     }
     this.root.appendChild(element);
     if (!disabled2) element.addEventListener("click", inner_onclick);
-    if (!disabled2 && options4.autoopen)
+    if (!disabled2 && options22.autoopen)
       LiteGraph.pointerListenerAdd(element, "enter", inner_over);
     const setAriaExpanded = /* @__PURE__ */ __name(() => {
       const entries = this.root.querySelectorAll("div.litemenu-entry.has_submenu");
@@ -66485,26 +66926,26 @@ class ContextMenu {
       if (value22?.has_submenu || value22?.submenu) {
         setAriaExpanded();
       }
-      if (options4.callback) {
-        const r2 = options4.callback.call(
+      if (options22.callback) {
+        const r2 = options22.callback.call(
           this,
           value22,
-          options4,
+          options22,
           e2,
           that,
-          options4.node
+          options22.node
         );
         if (r2 === true) close_parent = false;
       }
       if (typeof value22 === "object") {
-        if (value22.callback && !options4.ignore_item_callbacks && value22.disabled !== true) {
+        if (value22.callback && !options22.ignore_item_callbacks && value22.disabled !== true) {
           const r2 = value22.callback.call(
             this,
             value22,
-            options4,
+            options22,
             e2,
             that,
-            options4.extra
+            options22.extra
           );
           if (r2 === true) close_parent = false;
         }
@@ -66517,7 +66958,7 @@ class ContextMenu {
             ignore_item_callbacks: value22.submenu.ignore_item_callbacks,
             title: value22.submenu.title,
             extra: value22.submenu.extra,
-            autoopen: options4.autoopen
+            autoopen: options22.autoopen
           });
           close_parent = false;
         }
@@ -66648,9 +67089,9 @@ class CurveEditor {
     const h2 = this.size[1] - this.margin * 2;
     const x2 = localpos[0] - this.margin;
     const y2 = localpos[1] - this.margin;
-    const pos2 = [x2, y2];
+    const pos = [x2, y2];
     const max_dist = 30 / graphcanvas.ds.scale;
-    this.selected = this.getCloserPoint(pos2, max_dist);
+    this.selected = this.getCloserPoint(pos, max_dist);
     if (this.selected == -1) {
       const point = [x2 / w2, 1 - y2 / h2];
       points.push(point);
@@ -66698,7 +67139,7 @@ class CurveEditor {
     this.selected = -1;
     return false;
   }
-  getCloserPoint(pos2, max_dist) {
+  getCloserPoint(pos, max_dist) {
     const points = this.points;
     if (!points) return -1;
     max_dist = max_dist || 30;
@@ -66712,7 +67153,7 @@ class CurveEditor {
       const p3 = points[i2];
       p2[0] = p3[0] * w2;
       p2[1] = (1 - p3[1]) * h2;
-      const dist3 = distance(pos2, p2);
+      const dist3 = distance(pos, p2);
       if (dist3 > min_dist || dist3 > max_dist) continue;
       closest = i2;
       min_dist = dist3;
@@ -66771,6 +67212,7 @@ class LiteGraphGlobal {
   DEFAULT_POSITION = [100, 100];
   /** ,"circle" */
   VALID_SHAPES = ["default", "box", "round", "card"];
+  ROUND_RADIUS = 8;
   // shapes are used for nodes but also for slots
   BOX_SHAPE = RenderShape.BOX;
   ROUND_SHAPE = RenderShape.ROUND;
@@ -66969,8 +67411,8 @@ class LiteGraphGlobal {
     base_class.type = type;
     if (this.debug) console.log("Node registered: " + type);
     const classname = base_class.name;
-    const pos2 = type.lastIndexOf("/");
-    base_class.category = type.substring(0, pos2);
+    const pos = type.lastIndexOf("/");
+    base_class.category = type.substring(0, pos);
     base_class.title ||= classname;
     for (const i2 in LGraphNode.prototype) {
       base_class.prototype[i2] ||= LGraphNode.prototype[i2];
@@ -66978,44 +67420,6 @@ class LiteGraphGlobal {
     const prev2 = this.registered_node_types[type];
     if (prev2) {
       console.log("replacing node type: " + type);
-    }
-    if (!Object.prototype.hasOwnProperty.call(base_class.prototype, "shape")) {
-      Object.defineProperty(base_class.prototype, "shape", {
-        set(v2) {
-          switch (v2) {
-            case "default":
-              delete this._shape;
-              break;
-            case "box":
-              this._shape = RenderShape.BOX;
-              break;
-            case "round":
-              this._shape = RenderShape.ROUND;
-              break;
-            case "circle":
-              this._shape = RenderShape.CIRCLE;
-              break;
-            case "card":
-              this._shape = RenderShape.CARD;
-              break;
-            default:
-              this._shape = v2;
-          }
-        },
-        get() {
-          return this._shape;
-        },
-        enumerable: true,
-        configurable: true
-      });
-      if (base_class.supported_extensions) {
-        for (const i2 in base_class.supported_extensions) {
-          const ext = base_class.supported_extensions[i2];
-          if (ext && typeof ext === "string") {
-            this.node_types_by_file_extension[ext.toLowerCase()] = base_class;
-          }
-        }
-      }
     }
     this.registered_node_types[type] = base_class;
     if (base_class.constructor.name) this.Nodes[classname] = base_class;
@@ -67069,41 +67473,6 @@ class LiteGraphGlobal {
     }
   }
   /**
-   * Create a new nodetype by passing a function, it wraps it with a proper class and
-   * generates inputs according to the parameters of the function.
-   * Useful to wrap simple methods that do not require properties, and that only process some input to generate an output.
-   * @param name node name with namespace (p.e.: 'math/sum')
-   * @param func
-   * @param param_types [optional] an array containing the type of every parameter,
-   * otherwise parameters will accept any type
-   * @param return_type [optional] string with the return type, otherwise it will be generic
-   * @param properties [optional] properties to be configurable
-   */
-  wrapFunctionAsNode(name2, func, param_types, return_type, properties) {
-    const params = Array(func.length);
-    let code2 = "";
-    const names = this.getParameterNames(func);
-    for (let i2 = 0; i2 < names.length; ++i2) {
-      code2 += `this.addInput('${names[i2]}',${param_types && param_types[i2] ? `'${param_types[i2]}'` : "0"});
-`;
-    }
-    code2 += `this.addOutput('out',${return_type ? `'${return_type}'` : 0});
-`;
-    if (properties) code2 += `this.properties = ${JSON.stringify(properties)};
-`;
-    const classobj = Function(code2);
-    classobj.title = name2.split("/").pop();
-    classobj.desc = "Generated from " + func.name;
-    classobj.prototype.onExecute = /* @__PURE__ */ __name(function onExecute() {
-      for (let i2 = 0; i2 < params.length; ++i2) {
-        params[i2] = this.getInputData(i2);
-      }
-      const r2 = func.apply(this, params);
-      this.setOutputData(0, r2);
-    }, "onExecute");
-    this.registerNodeType(name2, classobj);
-  }
-  /**
    * Removes all previously registered node's types
    */
   clearRegisteredTypes() {
@@ -67131,7 +67500,7 @@ class LiteGraphGlobal {
    * @param title a name to distinguish from other nodes
    * @param options to set options
    */
-  createNode(type, title, options4) {
+  createNode(type, title, options22) {
     const base_class = this.registered_node_types[type];
     if (!base_class) {
       if (this.debug) console.log(`GraphNode type "${type}" not registered.`);
@@ -67157,9 +67526,9 @@ class LiteGraphGlobal {
     node22.size ||= node22.computeSize();
     node22.pos ||= this.DEFAULT_POSITION.concat();
     node22.mode ||= LGraphEventMode.ALWAYS;
-    if (options4) {
-      for (const i2 in options4) {
-        node22[i2] = options4[i2];
+    if (options22) {
+      for (const i2 in options22) {
+        node22[i2] = options22[i2];
       }
     }
     node22.onNodeCreated?.();
@@ -67298,54 +67667,6 @@ class LiteGraphGlobal {
       desc: description,
       data: data26
     };
-  }
-  /**
-   * Wrapper to load files (from url using fetch or from file using FileReader)
-   * @param url the url of the file (or the file itself)
-   * @param type an string to know how to fetch it: "text","arraybuffer","json","blob"
-   * @param on_complete callback(data)
-   * @param on_error in case of an error
-   * @returns returns the object used to
-   */
-  fetchFile(url, type, on_complete, on_error) {
-    if (!url) return null;
-    type = type || "text";
-    if (typeof url === "string") {
-      if (url.substr(0, 4) == "http" && this.proxy)
-        url = this.proxy + url.substr(url.indexOf(":") + 3);
-      return fetch(url).then(function(response) {
-        if (!response.ok)
-          throw new Error("File not found");
-        if (type == "arraybuffer")
-          return response.arrayBuffer();
-        else if (type == "text" || type == "string")
-          return response.text();
-        else if (type == "json")
-          return response.json();
-        else if (type == "blob")
-          return response.blob();
-      }).then(function(data26) {
-        on_complete?.(data26);
-      }).catch(function(error2) {
-        console.error("error fetching file:", url);
-        on_error?.(error2);
-      });
-    } else if (url instanceof File || url instanceof Blob) {
-      const reader = new FileReader();
-      reader.onload = function(e2) {
-        let v2 = e2.target.result;
-        if (type == "json")
-          v2 = JSON.parse(v2);
-        on_complete?.(v2);
-      };
-      if (type == "arraybuffer")
-        return reader.readAsArrayBuffer(url);
-      else if (type == "text" || type == "json")
-        return reader.readAsText(url);
-      else if (type == "blob")
-        return reader.readAsBinaryString(url);
-    }
-    return null;
   }
   // used to create nodes from wrapping functions
   getParameterNames(func) {
@@ -72536,6 +72857,16 @@ function inputSpec(spec, allowUpcast = true) {
   ]);
 }
 __name(inputSpec, "inputSpec");
+const zRemoteWidgetConfig = z.object({
+  route: z.string().url().or(z.string().startsWith("/")),
+  refresh: z.number().gte(128).safe().or(z.number().lte(0).safe()).optional(),
+  response_key: z.string().optional(),
+  query_params: z.record(z.string(), z.string()).optional(),
+  refresh_button: z.boolean().optional(),
+  control_after_refresh: z.enum(["first", "last"]).optional(),
+  timeout: z.number().gte(0).optional(),
+  max_retries: z.number().gte(0).optional()
+});
 const zBaseInputSpecValue = z.object({
   default: z.any().optional(),
   defaultInput: z.boolean().optional(),
@@ -72554,7 +72885,12 @@ const zIntInputSpec = inputSpec([
     step: z.number().optional(),
     // Note: Many node authors are using INT to pass list of INT.
     // TODO: Add list of ints type.
-    default: z.union([z.number(), z.array(z.number())]).optional()
+    default: z.union([z.number(), z.array(z.number())]).optional(),
+    /**
+     * If true, a linked widget will be added to the node to select the mode
+     * of `control_after_generate`.
+     */
+    control_after_generate: z.boolean().optional()
   })
 ]);
 const zFloatInputSpec = inputSpec([
@@ -72588,17 +72924,26 @@ const zStringInputSpec = inputSpec([
     placeholder: z.string().optional()
   })
 ]);
+const zComboInputProps = zBaseInputSpecValue.extend({
+  control_after_generate: z.boolean().optional(),
+  image_upload: z.boolean().optional(),
+  image_folder: z.enum(["input", "output", "temp"]).optional(),
+  remote: zRemoteWidgetConfig.optional()
+});
 const zComboInputSpec = inputSpec(
-  [
-    z.array(z.any()),
-    zBaseInputSpecValue.extend({
-      control_after_generate: z.boolean().optional(),
-      image_upload: z.boolean().optional()
-    })
-  ],
+  [z.array(z.any()), zComboInputProps],
   /* allowUpcast=*/
   false
 );
+const zComboInputSpecV2 = inputSpec(
+  [z.literal("COMBO"), zComboInputProps],
+  /* allowUpcast=*/
+  false
+);
+function isComboInputSpecV1(inputSpec2) {
+  return Array.isArray(inputSpec2[0]);
+}
+__name(isComboInputSpecV1, "isComboInputSpecV1");
 const excludedLiterals = /* @__PURE__ */ new Set(["INT", "FLOAT", "BOOLEAN", "STRING", "COMBO"]);
 const zCustomInputSpec = inputSpec([
   z.string().refine((value4) => !excludedLiterals.has(value4)),
@@ -72610,6 +72955,7 @@ const zInputSpec = z.union([
   zBooleanInputSpec,
   zStringInputSpec,
   zComboInputSpec,
+  zComboInputSpecV2,
   zCustomInputSpec
 ]);
 const zComfyInputsSpec = z.object({
@@ -72794,7 +73140,8 @@ const zSettings = z.record(z.any()).and(
     "Comfy.Server.LaunchArgs": z.record(z.string(), z.string()),
     "LiteGraph.Canvas.MaximumFps": z.number(),
     "Comfy.Workflow.ConfirmDelete": z.boolean(),
-    "Comfy.RerouteBeta": z.boolean()
+    "Comfy.RerouteBeta": z.boolean(),
+    "LiteGraph.Canvas.LowQualityRenderingZoomThreshold": z.number()
   }).optional()
 );
 class ComfyApi extends EventTarget {
@@ -73523,7 +73870,7 @@ const router = createRouter({
         {
           path: "",
           name: "GraphView",
-          component: /* @__PURE__ */ __name(() => __vitePreload(() => import("./GraphView-D9ZzDQZV.js"), true ? __vite__mapDeps([0,1,2,3,4,5]) : void 0, import.meta.url), "component"),
+          component: /* @__PURE__ */ __name(() => __vitePreload(() => import("./GraphView-CLFBgoGf.js"), true ? __vite__mapDeps([0,1,2,3,4,5,6]) : void 0, import.meta.url), "component"),
           beforeEnter: /* @__PURE__ */ __name(async (to, from2, next2) => {
             const userStore = useUserStore();
             await userStore.initialize();
@@ -73537,60 +73884,66 @@ const router = createRouter({
         {
           path: "user-select",
           name: "UserSelectView",
-          component: /* @__PURE__ */ __name(() => __vitePreload(() => import("./UserSelectView-wxa07xPk.js"), true ? __vite__mapDeps([6,7]) : void 0, import.meta.url), "component")
+          component: /* @__PURE__ */ __name(() => __vitePreload(() => import("./UserSelectView-CRPNAEVJ.js"), true ? __vite__mapDeps([7,8]) : void 0, import.meta.url), "component")
         },
         {
           path: "server-start",
           name: "ServerStartView",
-          component: /* @__PURE__ */ __name(() => __vitePreload(() => import("./ServerStartView-BpH4TXPO.js"), true ? __vite__mapDeps([8,7,9]) : void 0, import.meta.url), "component"),
+          component: /* @__PURE__ */ __name(() => __vitePreload(() => import("./ServerStartView-BENqs5bD.js"), true ? __vite__mapDeps([9,8,10]) : void 0, import.meta.url), "component"),
           beforeEnter: guardElectronAccess
         },
         {
           path: "install",
           name: "InstallView",
-          component: /* @__PURE__ */ __name(() => __vitePreload(() => import("./InstallView-CVZcZZXJ.js"), true ? __vite__mapDeps([10,11,12,7,13]) : void 0, import.meta.url), "component"),
+          component: /* @__PURE__ */ __name(() => __vitePreload(() => import("./InstallView-x9XCq0hC.js"), true ? __vite__mapDeps([11,12,13,8,14]) : void 0, import.meta.url), "component"),
           beforeEnter: guardElectronAccess
         },
         {
           path: "welcome",
           name: "WelcomeView",
-          component: /* @__PURE__ */ __name(() => __vitePreload(() => import("./WelcomeView-BrXELNIm.js"), true ? __vite__mapDeps([14,7,15]) : void 0, import.meta.url), "component"),
+          component: /* @__PURE__ */ __name(() => __vitePreload(() => import("./WelcomeView-Cvtvw05C.js"), true ? __vite__mapDeps([15,8,16]) : void 0, import.meta.url), "component"),
           beforeEnter: guardElectronAccess
         },
         {
           path: "not-supported",
           name: "NotSupportedView",
-          component: /* @__PURE__ */ __name(() => __vitePreload(() => import("./NotSupportedView-BUpntA4x.js"), true ? __vite__mapDeps([16,7,17]) : void 0, import.meta.url), "component"),
+          component: /* @__PURE__ */ __name(() => __vitePreload(() => import("./NotSupportedView-BzM0uuqA.js"), true ? __vite__mapDeps([17,8,18]) : void 0, import.meta.url), "component"),
           beforeEnter: guardElectronAccess
         },
         {
           path: "download-git",
           name: "DownloadGitView",
-          component: /* @__PURE__ */ __name(() => __vitePreload(() => import("./DownloadGitView-DVXUne-M.js"), true ? __vite__mapDeps([18,7]) : void 0, import.meta.url), "component"),
+          component: /* @__PURE__ */ __name(() => __vitePreload(() => import("./DownloadGitView-SPK8AXQU.js"), true ? __vite__mapDeps([19,8]) : void 0, import.meta.url), "component"),
           beforeEnter: guardElectronAccess
         },
         {
           path: "manual-configuration",
           name: "ManualConfigurationView",
-          component: /* @__PURE__ */ __name(() => __vitePreload(() => import("./ManualConfigurationView-Cz0_f_T-.js"), true ? __vite__mapDeps([19,7,20]) : void 0, import.meta.url), "component"),
+          component: /* @__PURE__ */ __name(() => __vitePreload(() => import("./ManualConfigurationView-D3on5kXY.js"), true ? __vite__mapDeps([20,8,21]) : void 0, import.meta.url), "component"),
           beforeEnter: guardElectronAccess
         },
         {
           path: "/metrics-consent",
           name: "MetricsConsentView",
-          component: /* @__PURE__ */ __name(() => __vitePreload(() => import("./MetricsConsentView-B5NlgqrS.js"), true ? __vite__mapDeps([21,7]) : void 0, import.meta.url), "component"),
+          component: /* @__PURE__ */ __name(() => __vitePreload(() => import("./MetricsConsentView-DK20ednB.js"), true ? __vite__mapDeps([22,8]) : void 0, import.meta.url), "component"),
           beforeEnter: guardElectronAccess
         },
         {
           path: "desktop-start",
           name: "DesktopStartView",
-          component: /* @__PURE__ */ __name(() => __vitePreload(() => import("./DesktopStartView-FKlxS2Lt.js"), true ? __vite__mapDeps([22,7]) : void 0, import.meta.url), "component"),
+          component: /* @__PURE__ */ __name(() => __vitePreload(() => import("./DesktopStartView-B2BMUZxW.js"), true ? __vite__mapDeps([23,8]) : void 0, import.meta.url), "component"),
           beforeEnter: guardElectronAccess
         },
         {
           path: "maintenance",
           name: "MaintenanceView",
-          component: /* @__PURE__ */ __name(() => __vitePreload(() => import("./MaintenanceView-Df7CHNWW.js"), true ? __vite__mapDeps([23,1,2,24,11,7,25]) : void 0, import.meta.url), "component"),
+          component: /* @__PURE__ */ __name(() => __vitePreload(() => import("./MaintenanceView-BUmTZX1d.js"), true ? __vite__mapDeps([24,3,1,2,25,26,12,8,27]) : void 0, import.meta.url), "component"),
+          beforeEnter: guardElectronAccess
+        },
+        {
+          path: "desktop-update",
+          name: "DesktopUpdateView",
+          component: /* @__PURE__ */ __name(() => __vitePreload(() => import("./DesktopUpdateView-DWsew03S.js"), true ? __vite__mapDeps([28,3,26,8,29]) : void 0, import.meta.url), "component"),
           beforeEnter: guardElectronAccess
         }
       ]
@@ -75201,9 +75554,9 @@ function watchTriggerable(source, cb, options4 = {}) {
     cleanupFn = callback;
   }
   __name(onCleanup, "onCleanup");
-  const _cb = /* @__PURE__ */ __name((value4, oldValue2) => {
+  const _cb = /* @__PURE__ */ __name((value4, oldValue) => {
     onEffect();
-    return cb(value4, oldValue2, onCleanup);
+    return cb(value4, oldValue, onCleanup);
   }, "_cb");
   const res = watchIgnorable(source, _cb, options4);
   const { ignoreUpdates } = res;
@@ -76320,12 +76673,12 @@ function useBase64(target2, options4) {
           const img = _target.cloneNode(false);
           img.crossOrigin = "Anonymous";
           imgLoaded(img).then(() => {
-            const canvas = document.createElement("canvas");
-            const ctx = canvas.getContext("2d");
-            canvas.width = img.width;
-            canvas.height = img.height;
-            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-            resolve2(canvas.toDataURL(options4 == null ? void 0 : options4.type, options4 == null ? void 0 : options4.quality));
+            const canvas2 = document.createElement("canvas");
+            const ctx = canvas2.getContext("2d");
+            canvas2.width = img.width;
+            canvas2.height = img.height;
+            ctx.drawImage(img, 0, 0, canvas2.width, canvas2.height);
+            resolve2(canvas2.toDataURL(options4 == null ? void 0 : options4.type, options4 == null ? void 0 : options4.quality));
           }).catch(reject3);
         } else if (typeof _target === "object") {
           const _serializeFn = (options4 == null ? void 0 : options4.serializer) || getDefaultSerialization(_target);
@@ -77040,12 +77393,12 @@ function useStorage(key, defaults2, storage, options4 = {}) {
   }
   if (!initOnMounted)
     update();
-  function dispatchWriteEvent(oldValue2, newValue2) {
+  function dispatchWriteEvent(oldValue, newValue2) {
     if (window2 && !(storage instanceof Storage)) {
       window2.dispatchEvent(new CustomEvent(customStorageEventName, {
         detail: {
           key,
-          oldValue: oldValue2,
+          oldValue,
           newValue: newValue2,
           storageArea: storage
         }
@@ -77055,15 +77408,15 @@ function useStorage(key, defaults2, storage, options4 = {}) {
   __name(dispatchWriteEvent, "dispatchWriteEvent");
   function write(v2) {
     try {
-      const oldValue2 = storage.getItem(key);
+      const oldValue = storage.getItem(key);
       if (v2 == null) {
-        dispatchWriteEvent(oldValue2, null);
+        dispatchWriteEvent(oldValue, null);
         storage.removeItem(key);
       } else {
         const serialized = serializer.write(v2);
-        if (oldValue2 !== serialized) {
+        if (oldValue !== serialized) {
           storage.setItem(key, serialized);
-          dispatchWriteEvent(oldValue2, serialized);
+          dispatchWriteEvent(oldValue, serialized);
         }
       }
     } catch (e2) {
@@ -77817,13 +78170,13 @@ function useDraggable(target2, options4 = {}) {
     const container = toValue$3(containerElement);
     const containerRect = (_a22 = container == null ? void 0 : container.getBoundingClientRect) == null ? void 0 : _a22.call(container);
     const targetRect = toValue$3(target2).getBoundingClientRect();
-    const pos2 = {
+    const pos = {
       x: e2.clientX - (container ? targetRect.left - containerRect.left + container.scrollLeft : targetRect.left),
       y: e2.clientY - (container ? targetRect.top - containerRect.top + container.scrollTop : targetRect.top)
     };
-    if ((onStart == null ? void 0 : onStart(pos2, e2)) === false)
+    if ((onStart == null ? void 0 : onStart(pos, e2)) === false)
       return;
-    pressedDelta.value = pos2;
+    pressedDelta.value = pos;
     handleEvent(e2);
   }, "start");
   const move = /* @__PURE__ */ __name((e2) => {
@@ -78544,13 +78897,13 @@ function useFetch(url, ...args) {
   const errorEvent = createEventHook();
   const finallyEvent = createEventHook();
   const isFinished = ref(false);
-  const isFetching = ref(false);
+  const isFetching2 = ref(false);
   const aborted = ref(false);
   const statusCode = ref(null);
   const response = shallowRef(null);
   const error2 = shallowRef(null);
   const data26 = shallowRef(initialData || null);
-  const canAbort = computed(() => supportsAbort && isFetching.value);
+  const canAbort = computed(() => supportsAbort && isFetching2.value);
   let controller;
   let timer;
   const abort = /* @__PURE__ */ __name(() => {
@@ -78565,7 +78918,7 @@ function useFetch(url, ...args) {
     }
   }, "abort");
   const loading2 = /* @__PURE__ */ __name((isLoading) => {
-    isFetching.value = isLoading;
+    isFetching2.value = isLoading;
     isFinished.value = !isLoading;
   }, "loading");
   if (timeout)
@@ -78675,7 +79028,7 @@ function useFetch(url, ...args) {
   );
   const shell = {
     isFinished: readonly(isFinished),
-    isFetching: readonly(isFetching),
+    isFetching: readonly(isFetching2),
     statusCode,
     response,
     error: error2,
@@ -78704,7 +79057,7 @@ function useFetch(url, ...args) {
   };
   function setMethod(method) {
     return (payload, payloadType) => {
-      if (!isFetching.value) {
+      if (!isFetching2.value) {
         config2.method = method;
         config2.payload = payload;
         config2.payloadType = payloadType;
@@ -78737,7 +79090,7 @@ function useFetch(url, ...args) {
   __name(waitUntilFinished, "waitUntilFinished");
   function setType2(type) {
     return () => {
-      if (!isFetching.value) {
+      if (!isFetching2.value) {
         config2.type = type;
         return {
           ...shell,
@@ -80049,10 +80402,10 @@ function useMouse(options4 = {}) {
   const scrollHandler = /* @__PURE__ */ __name(() => {
     if (!_prevMouseEvent || !window2)
       return;
-    const pos2 = extractor(_prevMouseEvent);
-    if (_prevMouseEvent instanceof MouseEvent && pos2) {
-      x2.value = pos2[0] + window2.scrollX;
-      y2.value = pos2[1] + window2.scrollY;
+    const pos = extractor(_prevMouseEvent);
+    if (_prevMouseEvent instanceof MouseEvent && pos) {
+      x2.value = pos[0] + window2.scrollX;
+      y2.value = pos[1] + window2.scrollY;
     }
   }, "scrollHandler");
   const reset2 = /* @__PURE__ */ __name(() => {
@@ -80774,8 +81127,8 @@ function usePrevious(value4, initialValue) {
   const previous = shallowRef(initialValue);
   watch(
     toRef(value4),
-    (_2, oldValue2) => {
-      previous.value = oldValue2;
+    (_2, oldValue) => {
+      previous.value = oldValue;
     },
     { flush: "sync" }
   );
@@ -84799,12 +85152,12 @@ var classes$B = {
   mask: /* @__PURE__ */ __name(function mask2(_ref3) {
     var props = _ref3.props;
     var positions = ["left", "right", "top", "topleft", "topright", "bottom", "bottomleft", "bottomright"];
-    var pos2 = positions.find(function(item3) {
+    var pos = positions.find(function(item3) {
       return item3 === props.position;
     });
     return ["p-dialog-mask", {
       "p-overlay-mask p-overlay-mask-enter": props.modal
-    }, pos2 ? "p-dialog-".concat(pos2) : ""];
+    }, pos ? "p-dialog-".concat(pos) : ""];
   }, "mask"),
   root: /* @__PURE__ */ __name(function root4(_ref4) {
     var props = _ref4.props, instance = _ref4.instance;
@@ -85608,7 +85961,7 @@ const _sfc_main$$ = /* @__PURE__ */ defineComponent({
 });
 const config$1 = {
   app_title: "ComfyUI",
-  app_version: "1.8.14"
+  app_version: "1.9.17"
 };
 /*!
   * shared v9.13.1
@@ -86016,12 +86369,12 @@ function createTokenizer(source, options4 = {}) {
   };
   const context = /* @__PURE__ */ __name(() => _context, "context");
   const { onError } = options4;
-  function emitError(code2, pos2, offset, ...args) {
+  function emitError(code2, pos, offset, ...args) {
     const ctx = context();
-    pos2.column += offset;
-    pos2.offset += offset;
+    pos.column += offset;
+    pos.offset += offset;
     if (onError) {
-      const loc = location2 ? createLocation(ctx.startLoc, pos2) : null;
+      const loc = location2 ? createLocation(ctx.startLoc, pos) : null;
       const err = createCompileError(code2, loc, {
         domain: ERROR_DOMAIN$3,
         args
@@ -86758,14 +87111,14 @@ function createParser(options4 = {}) {
     return node3;
   }
   __name(startNode, "startNode");
-  function endNode(node3, offset, pos2, type) {
+  function endNode(node3, offset, pos, type) {
     if (type) {
       node3.type = type;
     }
     if (location2) {
       node3.end = offset;
       if (node3.loc) {
-        node3.loc.end = pos2;
+        node3.loc.end = pos;
       }
     }
   }
@@ -91962,7 +92315,8 @@ const g$5 = {
   workflow: "Workflow",
   success: "Success",
   ok: "OK",
-  feedback: "Feedback"
+  feedback: "Feedback",
+  "continue": "Continue"
 };
 const issueReport$5 = {
   submitErrorReport: "Submit Error Report (Optional)",
@@ -91988,6 +92342,39 @@ const color$5 = {
   pink: "Pink",
   yellow: "Yellow",
   custom: "Custom"
+};
+const contextMenu$5 = {
+  Inputs: "Inputs",
+  Outputs: "Outputs",
+  Properties: "Properties",
+  "Properties Panel": "Properties Panel",
+  Title: "Title",
+  Mode: "Mode",
+  Resize: "Resize",
+  Collapse: "Collapse",
+  Expand: "Expand",
+  Pin: "Pin",
+  Unpin: "Unpin",
+  Clone: "Clone",
+  Remove: "Remove",
+  Colors: "Colors",
+  Shapes: "Shapes",
+  Bypass: "Bypass",
+  "Copy (Clipspace)": "Copy (Clipspace)",
+  "Convert Widget to Input": "Convert Widget to Input",
+  "Convert Input to Widget": "Convert Input to Widget",
+  "Add Node": "Add Node",
+  "Add Group": "Add Group",
+  "Convert to Group Node": "Convert to Group Node",
+  "Manage Group Nodes": "Manage Group Nodes",
+  "Add Group For Selected Nodes": "Add Group For Selected Nodes",
+  "Save Selected as Template": "Save Selected as Template",
+  "Node Templates": "Node Templates",
+  Manage: "Manage",
+  "Convert ": "Convert ",
+  " to input": " to input",
+  " to widget": " to widget",
+  Search: "Search"
 };
 const icon$5 = {
   bookmark: "Bookmark",
@@ -92170,6 +92557,7 @@ const sideToolbar$5 = {
     deleteFailed: "Attempt to delete the workflow failed.",
     dirtyCloseTitle: "Save Changes?",
     dirtyClose: "The files below have been changed.  Would you like to save them before closing?",
+    dirtyCloseHint: "Hold Shift to close without prompt",
     confirmOverwriteTitle: "Overwrite existing file?",
     confirmOverwrite: "The file below already exists. Would you like to overwrite it?",
     workflowTreeType: {
@@ -92591,6 +92979,7 @@ const dataTypes$5 = {
   WEBCAM: "WEBCAM"
 };
 const maintenance$5 = {
+  title: "Maintenance",
   allOk: "No issues were detected.",
   status: "Status",
   detected: "Detected",
@@ -92600,9 +92989,12 @@ const maintenance$5 = {
   Skipped: "Skipped",
   showManual: "Show maintenance tasks",
   confirmTitle: "Are you sure?",
+  terminalDefaultMessage: "When you run a troubleshooting command, any output will be shown here.",
+  consoleLogs: "Console Logs",
   error: {
     toastTitle: "Task error",
     taskFailed: "Task failed to run.",
+    cannotContinue: "Unable to continue - errors remain",
     defaultDescription: "An error occurred while running a maintenance task."
   }
 };
@@ -92611,10 +93003,29 @@ const missingModelsDialog$5 = {
   missingModels: "Missing Models",
   missingModelsMessage: "When loading the graph, the following models were not found"
 };
+const desktopUpdate$5 = {
+  title: "Updating ComfyUI Desktop",
+  description: "ComfyUI Desktop is installing new dependencies.  This may take a few minutes.",
+  terminalDefaultMessage: "Any console output from the update will be shown here."
+};
+const clipboard$5 = {
+  successMessage: "Copied to clipboard",
+  errorMessage: "Failed to copy to clipboard",
+  errorNotSupported: "Clipboard API not supported in your browser"
+};
+const load3d$5 = {
+  switchCamera: "Switch Camera",
+  showGrid: "Show Grid",
+  backgroundColor: "Background Color",
+  lightIntensity: "Light Intensity",
+  fov: "FOV",
+  previewOutput: "Preview Output"
+};
 const en = {
   g: g$5,
   issueReport: issueReport$5,
   color: color$5,
+  contextMenu: contextMenu$5,
   icon: icon$5,
   welcome: welcome$5,
   userSelect: userSelect$5,
@@ -92640,7 +93051,10 @@ const en = {
   nodeCategories: nodeCategories$5,
   dataTypes: dataTypes$5,
   maintenance: maintenance$5,
-  missingModelsDialog: missingModelsDialog$5
+  missingModelsDialog: missingModelsDialog$5,
+  desktopUpdate: desktopUpdate$5,
+  clipboard: clipboard$5,
+  load3d: load3d$5
 };
 const AddNoise$5 = {
   display_name: "AddNoise",
@@ -98766,12 +99180,19 @@ const Comfy_Workflow_WorkflowTabsPosition$5 = {
     "Topbar (2nd-row)": "Topbar (2nd-row)"
   }
 };
+const LiteGraph_Canvas_LowQualityRenderingZoomThreshold$5 = {
+  name: "Low quality rendering zoom threshold",
+  tooltip: "Render low quality shapes when zoomed out"
+};
 const LiteGraph_Canvas_MaximumFps$5 = {
-  name: "Maxium FPS",
+  name: "Maximum FPS",
   tooltip: "The maximum frames per second that the canvas is allowed to render. Caps GPU usage at the cost of smoothness. If 0, the screen refresh rate is used. Default: 0"
 };
 const LiteGraph_ContextMenu_Scaling$5 = {
   name: "Scale node combo widget menus (lists) when zoomed in"
+};
+const LiteGraph_Node_TooltipDelay$5 = {
+  name: "Tooltip Delay"
 };
 const pysssss_SnapToGrid$5 = {
   name: "Always snap to grid"
@@ -98870,8 +99291,10 @@ const enSettings = {
   Comfy_Workflow_ShowMissingNodesWarning: Comfy_Workflow_ShowMissingNodesWarning$5,
   Comfy_Workflow_SortNodeIdOnSave: Comfy_Workflow_SortNodeIdOnSave$5,
   Comfy_Workflow_WorkflowTabsPosition: Comfy_Workflow_WorkflowTabsPosition$5,
+  LiteGraph_Canvas_LowQualityRenderingZoomThreshold: LiteGraph_Canvas_LowQualityRenderingZoomThreshold$5,
   LiteGraph_Canvas_MaximumFps: LiteGraph_Canvas_MaximumFps$5,
   LiteGraph_ContextMenu_Scaling: LiteGraph_ContextMenu_Scaling$5,
+  LiteGraph_Node_TooltipDelay: LiteGraph_Node_TooltipDelay$5,
   pysssss_SnapToGrid: pysssss_SnapToGrid$5
 };
 const Comfy_BrowseTemplates$4 = {
@@ -99125,6 +99548,11 @@ const frCommands = {
   Workspace_ToggleSidebarTab_queue: Workspace_ToggleSidebarTab_queue$4,
   Workspace_ToggleSidebarTab_workflows: Workspace_ToggleSidebarTab_workflows$4
 };
+const clipboard$4 = {
+  errorMessage: "Échec de la copie dans le presse-papiers",
+  errorNotSupported: "L'API du presse-papiers n'est pas prise en charge par votre navigateur",
+  successMessage: "Copié dans le presse-papiers"
+};
 const color$4 = {
   blue: "Bleu",
   custom: "Personnalisé",
@@ -99133,6 +99561,39 @@ const color$4 = {
   pink: "Rose",
   red: "Rouge",
   yellow: "Jaune"
+};
+const contextMenu$4 = {
+  " to input": " en entrée",
+  " to widget": " en widget",
+  "Add Group": "Ajouter un Groupe",
+  "Add Group For Selected Nodes": "Ajouter un Groupe pour les Nœuds Sélectionnés",
+  "Add Node": "Ajouter un Nœud",
+  Bypass: "Contourner",
+  Clone: "Cloner",
+  Collapse: "Réduire",
+  Colors: "Couleurs",
+  "Convert ": "Convertir ",
+  "Convert Input to Widget": "Convertir l'Entrée en Widget",
+  "Convert Widget to Input": "Convertir le Widget en Entrée",
+  "Convert to Group Node": "Convertir en Nœud de Groupe",
+  "Copy (Clipspace)": "Copier (Clipspace)",
+  Expand: "Développer",
+  Inputs: "Entrées",
+  Manage: "Gérer",
+  "Manage Group Nodes": "Gérer les Nœuds de Groupe",
+  Mode: "Mode",
+  "Node Templates": "Modèles de Nœuds",
+  Outputs: "Sorties",
+  Pin: "Épingler",
+  Properties: "Propriétés",
+  "Properties Panel": "Panneau des Propriétés",
+  Remove: "Supprimer",
+  Resize: "Redimensionner",
+  "Save Selected as Template": "Enregistrer la Sélection comme Modèle",
+  Search: "Recherche",
+  Shapes: "Formes",
+  Title: "Titre",
+  Unpin: "Désépingler"
 };
 const dataTypes$4 = {
   AUDIO: "AUDIO",
@@ -99174,6 +99635,11 @@ const desktopMenu$4 = {
   quit: "Quitter",
   reinstall: "Réinstaller"
 };
+const desktopUpdate$4 = {
+  description: "ComfyUI Desktop installe de nouvelles dépendances. Cela peut prendre quelques minutes.",
+  terminalDefaultMessage: "Toute sortie de console de la mise à jour sera affichée ici.",
+  title: "Mise à jour de ComfyUI Desktop"
+};
 const downloadGit$4 = {
   gitWebsite: "Télécharger git",
   instructions: "Veuillez télécharger et installer la dernière version pour votre système d'exploitation. Le bouton Télécharger git ci-dessous ouvre la page de téléchargement de git-scm.com.",
@@ -99200,6 +99666,7 @@ const g$4 = {
   comingSoon: "Bientôt disponible",
   command: "Commande",
   confirm: "Confirmer",
+  "continue": "Continuer",
   copyToClipboard: "Copier dans le presse-papiers",
   currentUser: "Utilisateur actuel",
   customize: "Personnaliser",
@@ -99393,21 +99860,33 @@ const issueReport$4 = {
     maxLength: "Message trop long"
   }
 };
+const load3d$4 = {
+  backgroundColor: "Couleur de fond",
+  fov: "FOV",
+  lightIntensity: "Intensité de la lumière",
+  previewOutput: "Aperçu de la sortie",
+  showGrid: "Afficher la grille",
+  switchCamera: "Changer de caméra"
+};
 const maintenance$4 = {
   None: "Aucun",
   OK: "OK",
   Skipped: "Ignoré",
   allOk: "Aucun problème détecté.",
   confirmTitle: "Êtes-vous sûr ?",
+  consoleLogs: "Journaux de la console",
   detected: "Détecté",
   error: {
+    cannotContinue: "Impossible de continuer - des erreurs subsistent",
     defaultDescription: "Une erreur s'est produite lors de l'exécution d'une tâche de maintenance.",
     taskFailed: "La tâche a échoué.",
     toastTitle: "Erreur de tâche"
   },
   refreshing: "Actualisation",
   showManual: "Afficher les tâches de maintenance",
-  status: "Statut"
+  status: "Statut",
+  terminalDefaultMessage: "Lorsque vous exécutez une commande de dépannage, toute sortie sera affichée ici.",
+  title: "Maintenance"
 };
 const menu$4 = {
   autoQueue: "File d'attente automatique",
@@ -99805,6 +100284,7 @@ const sideToolbar$4 = {
     deleteFailedTitle: "Échec de la suppression",
     deleted: "Flux de travail supprimé",
     dirtyClose: "Les fichiers ci-dessous ont été modifiés. Souhaitez-vous les enregistrer avant de fermer ?",
+    dirtyCloseHint: "Maintenez Shift pour fermer sans invite",
     dirtyCloseTitle: "Enregistrer les modifications ?",
     workflowTreeType: {
       bookmarks: "Favoris",
@@ -99849,9 +100329,12 @@ const workflowService$4 = {
   saveWorkflow: "Enregistrer le flux de travail"
 };
 const fr = {
+  clipboard: clipboard$4,
   color: color$4,
+  contextMenu: contextMenu$4,
   dataTypes: dataTypes$4,
   desktopMenu: desktopMenu$4,
+  desktopUpdate: desktopUpdate$4,
   downloadGit: downloadGit$4,
   electronFileDownload: electronFileDownload$4,
   g: g$4,
@@ -99860,6 +100343,7 @@ const fr = {
   icon: icon$4,
   install: install$4,
   issueReport: issueReport$4,
+  load3d: load3d$4,
   maintenance: maintenance$4,
   menu: menu$4,
   menuLabels: menuLabels$4,
@@ -106003,12 +106487,19 @@ const Comfy_Workflow_WorkflowTabsPosition$4 = {
     "Topbar (2nd-row)": "Barre supérieure (2ème rangée)"
   }
 };
+const LiteGraph_Canvas_LowQualityRenderingZoomThreshold$4 = {
+  name: "Seuil de zoom pour le rendu de faible qualité",
+  tooltip: "Rendre des formes de faible qualité lorsqu'on est dézoomé"
+};
 const LiteGraph_Canvas_MaximumFps$4 = {
   name: "FPS maximum",
   tooltip: "Le nombre maximum d'images par seconde que le canevas est autorisé à rendre. Limite l'utilisation du GPU au détriment de la fluidité. Si 0, le taux de rafraîchissement de l'écran est utilisé. Par défaut : 0"
 };
 const LiteGraph_ContextMenu_Scaling$4 = {
   name: "Mise à l'échelle des menus de widgets combinés de nœuds (listes) lors du zoom"
+};
+const LiteGraph_Node_TooltipDelay$4 = {
+  name: "Délai d'infobulle"
 };
 const pysssss_SnapToGrid$4 = {
   name: "Toujours aligner sur la grille"
@@ -106107,8 +106598,10 @@ const frSettings = {
   Comfy_Workflow_ShowMissingNodesWarning: Comfy_Workflow_ShowMissingNodesWarning$4,
   Comfy_Workflow_SortNodeIdOnSave: Comfy_Workflow_SortNodeIdOnSave$4,
   Comfy_Workflow_WorkflowTabsPosition: Comfy_Workflow_WorkflowTabsPosition$4,
+  LiteGraph_Canvas_LowQualityRenderingZoomThreshold: LiteGraph_Canvas_LowQualityRenderingZoomThreshold$4,
   LiteGraph_Canvas_MaximumFps: LiteGraph_Canvas_MaximumFps$4,
   LiteGraph_ContextMenu_Scaling: LiteGraph_ContextMenu_Scaling$4,
+  LiteGraph_Node_TooltipDelay: LiteGraph_Node_TooltipDelay$4,
   pysssss_SnapToGrid: pysssss_SnapToGrid$4
 };
 const Comfy_BrowseTemplates$3 = {
@@ -106121,10 +106614,10 @@ const Comfy_Canvas_ResetView$3 = {
   label: "ビューをリセット"
 };
 const Comfy_Canvas_ToggleLinkVisibility$3 = {
-  label: "キャンバスのリンクの可視性を切り替え"
+  label: "キャンバスのリンク表示を切り替える"
 };
 const Comfy_Canvas_ToggleLock$3 = {
-  label: "キャンバスのロックを切り替え"
+  label: "キャンバスのロックを切り替える"
 };
 const Comfy_Canvas_ToggleSelectedNodes_Bypass$3 = {
   label: "選択したノードのバイパス/バイパス解除"
@@ -106202,7 +106695,7 @@ const Comfy_LoadDefaultWorkflow$3 = {
   label: "デフォルトのワークフローを読み込む"
 };
 const Comfy_NewBlankWorkflow$3 = {
-  label: "新しい空白のワークフロー"
+  label: "新しい空のワークフロー"
 };
 const Comfy_OpenClipspace$3 = {
   label: "クリップスペース"
@@ -106250,7 +106743,7 @@ const Workspace_SearchBox_Toggle$3 = {
   label: "検索ボックスの切り替え"
 };
 const Workspace_ToggleBottomPanel$3 = {
-  label: "ボトムパネルの切り替え"
+  label: "パネル下部の切り替え"
 };
 const Workspace_ToggleFocusMode$3 = {
   label: "フォーカスモードの切り替え"
@@ -106345,10 +106838,10 @@ const jaCommands = {
   Workspace_SearchBox_Toggle: Workspace_SearchBox_Toggle$3,
   Workspace_ToggleBottomPanel: Workspace_ToggleBottomPanel$3,
   "Workspace_ToggleBottomPanelTab_command-terminal": {
-    label: "ターミナルボトムパネルの切り替え"
+    label: "ターミナルパネル下部の切り替え"
   },
   "Workspace_ToggleBottomPanelTab_logs-terminal": {
-    label: "ログボトムパネルの切り替え"
+    label: "ログパネル下部の切り替え"
   },
   Workspace_ToggleFocusMode: Workspace_ToggleFocusMode$3,
   "Workspace_ToggleSidebarTab_model-library": {
@@ -106362,6 +106855,11 @@ const jaCommands = {
   Workspace_ToggleSidebarTab_queue: Workspace_ToggleSidebarTab_queue$3,
   Workspace_ToggleSidebarTab_workflows: Workspace_ToggleSidebarTab_workflows$3
 };
+const clipboard$3 = {
+  errorMessage: "クリップボードへのコピーに失敗しました",
+  errorNotSupported: "お使いのブラウザではクリップボードAPIがサポートされていません",
+  successMessage: "クリップボードにコピーしました"
+};
 const color$3 = {
   blue: "青",
   custom: "カスタム",
@@ -106370,6 +106868,39 @@ const color$3 = {
   pink: "ピンク",
   red: "赤",
   yellow: "黄色"
+};
+const contextMenu$3 = {
+  " to input": " 入力へ",
+  " to widget": " ウィジェットへ",
+  "Add Group": "グループを追加",
+  "Add Group For Selected Nodes": "選択したノードのグループを追加",
+  "Add Node": "ノードを追加",
+  Bypass: "バイパス",
+  Clone: "クローン",
+  Collapse: "折りたたむ",
+  Colors: "色",
+  "Convert ": "変換 ",
+  "Convert Input to Widget": "入力をウィジェットに変換",
+  "Convert Widget to Input": "ウィジェットを入力に変換",
+  "Convert to Group Node": "グループノードに変換",
+  "Copy (Clipspace)": "コピー (Clipspace)",
+  Expand: "展開",
+  Inputs: "入力",
+  Manage: "管理",
+  "Manage Group Nodes": "グループノードを管理",
+  Mode: "モード",
+  "Node Templates": "ノードテンプレート",
+  Outputs: "出力",
+  Pin: "ピン",
+  Properties: "プロパティ",
+  "Properties Panel": "プロパティパネル",
+  Remove: "削除",
+  Resize: "リサイズ",
+  "Save Selected as Template": "選択したものをテンプレートとして保存",
+  Search: "検索",
+  Shapes: "形",
+  Title: "タイトル",
+  Unpin: "ピンを解除"
 };
 const dataTypes$3 = {
   AUDIO: "オーディオ",
@@ -106400,20 +106931,25 @@ const dataTypes$3 = {
   SIGMAS: "シグマ",
   STRING: "文字列",
   STYLE_MODEL: "スタイルモデル",
-  TIMESTEPS_RANGE: "タイムステップ範囲",
+  TIMESTEPS_RANGE: "タイムステップの範囲",
   UPSCALE_MODEL: "アップスケールモデル",
   VAE: "VAE",
   WEBCAM: "ウェブカメラ"
 };
 const desktopMenu$3 = {
-  confirmQuit: "保存されていないワークフローが開いています。保存されていない変更はすべて失われます。これを無視して終了しますか？",
+  confirmQuit: "保存されていないワークフローを終了しようとしています。保存されていない変更はすべて失われます。これを無視して終了しますか？",
   confirmReinstall: "これにより、extra_models_config.yamlファイルがクリアされ、再インストールが開始されます。本当によろしいですか？",
   quit: "終了",
   reinstall: "再インストール"
 };
+const desktopUpdate$3 = {
+  description: "ComfyUIデスクトップは新しい依存関係をインストールしています。これには数分かかる場合があります。",
+  terminalDefaultMessage: "更新からの任意のコンソール出力はここに表示されます。",
+  title: "ComfyUIデスクトップの更新"
+};
 const downloadGit$3 = {
   gitWebsite: "Gitをダウンロード",
-  instructions: "お使いのオペレーティングシステムに最新バージョンをダウンロードしてインストールしてください。以下の「Gitをダウンロード」ボタンをクリックすると、git-scm.comのダウンロードページが開きます。",
+  instructions: "お使いのオペレーティングシステムに最新のバージョンをダウンロードしてインストールしてください。以下の「Gitをダウンロード」ボタンをクリックすると、git-scm.comのダウンロードページが開きます。",
   message: "Gitを見つけることができません。正常に動作するためには、Gitの作業コピーが必要です。",
   skip: "スキップ",
   title: "Gitをダウンロード",
@@ -106437,6 +106973,7 @@ const g$3 = {
   comingSoon: "近日公開",
   command: "コマンド",
   confirm: "確認",
+  "continue": "続ける",
   copyToClipboard: "クリップボードにコピー",
   currentUser: "現在のユーザー",
   customize: "カスタマイズ",
@@ -106454,7 +106991,7 @@ const g$3 = {
   extensionName: "拡張機能名",
   feedback: "フィードバック",
   findIssues: "問題を見つける",
-  firstTimeUIMessage: "新しいUIを初めて使用しています。「メニュー > 新しいメニューを使用 > 無効」を選択して古いUIに戻してください。",
+  firstTimeUIMessage: "新しいUIを初めて使用しています。「メニュー > 新しいメニューを使用 > 無効」を選択することで古いUIに戻すことが可能です。",
   goToNode: "ノードに移動",
   icon: "アイコン",
   imageFailedToLoad: "画像の読み込みに失敗しました",
@@ -106488,7 +107025,7 @@ const g$3 = {
   resetKeybindingsTooltip: "キーバインディングをデフォルトにリセット",
   save: "保存",
   searchExtensions: "拡張機能を検索",
-  searchFailedMessage: "検索に一致する設定が見つかりませんでした。検索用語を調整してみてください。",
+  searchFailedMessage: "検索に一致する設定が見つかりませんでした。検索キーワードを調整してみてください。",
   searchKeybindings: "キーバインディングを検索",
   searchModels: "モデルを検索",
   searchNodes: "ノードを検索",
@@ -106541,7 +107078,7 @@ const install$3 = {
   gpu: "GPU",
   gpuSelection: {
     cpuMode: "CPUモード",
-    cpuModeDescription: "CPUモードは開発者やまれなエッジケースのみを対象としています。",
+    cpuModeDescription: "CPUモードは開発者や、まれなエッジケースのみを対象としています。",
     cpuModeDescription2: "これが絶対に必要であることが確定していない場合は、このボックスを無視して上でGPUを選択してください。",
     customComfyNeedsPython: "ComfyUIはpythonがセットアップされるまで動作しません",
     customInstallRequirements: "すべての要件と依存関係をインストールする（例：カスタムtorch）",
@@ -106566,13 +107103,13 @@ const install$3 = {
     title: "マニュアル設定",
     virtualEnvironmentPath: "仮想環境のパス"
   },
-  metricsDisabled: "メトリクス無効",
-  metricsEnabled: "メトリクス有効",
+  metricsDisabled: "メトリクスを無効にする",
+  metricsEnabled: "メトリクスを有効にする",
   migrateFromExistingInstallation: "既存のインストールから移行",
   migration: "移行",
   migrationOptional: "移行は任意です。既存のインストールがない場合、このステップをスキップできます。",
   migrationSourcePathDescription: "既存のComfyUIインストールがある場合、既存のユーザーファイルとモデルを新しいインストールにコピー/リンクすることができます。既存のComfyUIインストールは影響を受けません。",
-  moreInfo: "詳細は、私たちの",
+  moreInfo: "詳しくはこちらをご覧ください",
   parentMissing: "パスが存在しません - 最初に含まれるディレクトリを作成してください",
   pathExists: "ディレクトリはすでに存在します - すべてのデータをバックアップしたことを確認してください",
   pathValidationFailed: "パスの検証に失敗しました",
@@ -106612,7 +107149,7 @@ const install$3 = {
   },
   systemLocations: "システムの場所",
   unhandledError: "未知のエラー",
-  updateConsent: "以前はクラッシュの報告に同意していました。現在、バグの特定とアプリの改善を助けるためにイベントベースのメトリクスを追跡しています。個人を特定できる情報は収集されません。"
+  updateConsent: "以前、クラッシュレポートを報告することに同意していました。現在、バグの特定とアプリの改善を助けるためにイベントベースのメトリクスを追跡しています。個人を特定できる情報は収集されません。"
 };
 const issueReport$3 = {
   contactFollowUp: "フォローアップのために私に連絡する",
@@ -106630,21 +107167,33 @@ const issueReport$3 = {
     maxLength: "メッセージが長すぎます"
   }
 };
+const load3d$3 = {
+  backgroundColor: "背景色",
+  fov: "FOV",
+  lightIntensity: "光の強度",
+  previewOutput: "出力のプレビュー",
+  showGrid: "グリッドを表示",
+  switchCamera: "カメラを切り替える"
+};
 const maintenance$3 = {
   None: "なし",
   OK: "OK",
   Skipped: "スキップされました",
   allOk: "問題は検出されませんでした。",
   confirmTitle: "よろしいですか？",
+  consoleLogs: "コンソールログ",
   detected: "検出されました",
   error: {
+    cannotContinue: "続行できません - エラーが残っています",
     defaultDescription: "メンテナンスタスクの実行中にエラーが発生しました。",
     taskFailed: "タスクの実行に失敗しました。",
     toastTitle: "タスクエラー"
   },
   refreshing: "更新中",
   showManual: "メンテナンスタスクを表示",
-  status: "ステータス"
+  status: "ステータス",
+  terminalDefaultMessage: "トラブルシューティングコマンドを実行すると、出力はここに表示されます。",
+  title: "メンテナンス"
 };
 const menu$3 = {
   autoQueue: "自動キュー",
@@ -106725,12 +107274,12 @@ const menuLabels$3 = {
   "Show Settings Dialog": "設定ダイアログを表示",
   "Toggle Bottom Panel": "下部パネルの切り替え",
   "Toggle Focus Mode": "フォーカスモードの切り替え",
-  "Toggle Logs Bottom Panel": "ログボトムパネルを切り替え",
+  "Toggle Logs Bottom Panel": "ログパネル下部を切り替え",
   "Toggle Model Library Sidebar": "モデルライブラリサイドバーを切り替え",
   "Toggle Node Library Sidebar": "ノードライブラリサイドバーを切り替え",
   "Toggle Queue Sidebar": "キューサイドバーを切り替え",
   "Toggle Search Box": "検索ボックスの切り替え",
-  "Toggle Terminal Bottom Panel": "ターミナルボトムパネルを切り替え",
+  "Toggle Terminal Bottom Panel": "ターミナルパネル下部を切り替え",
   "Toggle Theme (Dark/Light)": "テーマを切り替え（ダーク/ライト）",
   "Toggle Workflows Sidebar": "ワークフローサイドバーを切り替え",
   Undo: "元に戻す",
@@ -106749,7 +107298,7 @@ const nodeCategories$3 = {
   "3d_models": "3Dモデル",
   DevTools: "デブツール",
   _for_testing: "_テスト用",
-  advanced: "高度な",
+  advanced: "高度な機能",
   animation: "アニメーション",
   api: "API",
   attention_experiments: "アテンション実験",
@@ -107042,6 +107591,7 @@ const sideToolbar$3 = {
     deleteFailedTitle: "削除に失敗しました",
     deleted: "ワークフローが削除されました",
     dirtyClose: "以下のファイルが変更されました。閉じる前に保存しますか？",
+    dirtyCloseHint: "Shiftキーを押しながら閉じると、プロンプトなしで閉じます",
     dirtyCloseTitle: "変更を保存しますか？",
     workflowTreeType: {
       bookmarks: "ブックマーク",
@@ -107086,9 +107636,12 @@ const workflowService$3 = {
   saveWorkflow: "ワークフローを保存"
 };
 const ja = {
+  clipboard: clipboard$3,
   color: color$3,
+  contextMenu: contextMenu$3,
   dataTypes: dataTypes$3,
   desktopMenu: desktopMenu$3,
+  desktopUpdate: desktopUpdate$3,
   downloadGit: downloadGit$3,
   electronFileDownload: electronFileDownload$3,
   g: g$3,
@@ -107097,6 +107650,7 @@ const ja = {
   icon: icon$3,
   install: install$3,
   issueReport: issueReport$3,
+  load3d: load3d$3,
   maintenance: maintenance$3,
   menu: menu$3,
   menuLabels: menuLabels$3,
@@ -113240,12 +113794,19 @@ const Comfy_Workflow_WorkflowTabsPosition$3 = {
     "Topbar (2nd-row)": "トップバー（2行目）"
   }
 };
+const LiteGraph_Canvas_LowQualityRenderingZoomThreshold$3 = {
+  name: "低品質レンダリングズーム閾値",
+  tooltip: "ズームアウト時に低品質の形状をレンダリングする"
+};
 const LiteGraph_Canvas_MaximumFps$3 = {
   name: "最大FPS",
   tooltip: "キャンバスがレンダリングできる最大フレーム数です。スムーズさの代わりにGPU使用量を制限します。0の場合、画面のリフレッシュレートが使用されます。デフォルト：0"
 };
 const LiteGraph_ContextMenu_Scaling$3 = {
   name: "ズームイン時にノードコンボウィジェットメニュー（リスト）をスケーリングする"
+};
+const LiteGraph_Node_TooltipDelay$3 = {
+  name: "ツールチップ遅延"
 };
 const pysssss_SnapToGrid$3 = {
   name: "常にグリッドにスナップ"
@@ -113344,8 +113905,10 @@ const jaSettings = {
   Comfy_Workflow_ShowMissingNodesWarning: Comfy_Workflow_ShowMissingNodesWarning$3,
   Comfy_Workflow_SortNodeIdOnSave: Comfy_Workflow_SortNodeIdOnSave$3,
   Comfy_Workflow_WorkflowTabsPosition: Comfy_Workflow_WorkflowTabsPosition$3,
+  LiteGraph_Canvas_LowQualityRenderingZoomThreshold: LiteGraph_Canvas_LowQualityRenderingZoomThreshold$3,
   LiteGraph_Canvas_MaximumFps: LiteGraph_Canvas_MaximumFps$3,
   LiteGraph_ContextMenu_Scaling: LiteGraph_ContextMenu_Scaling$3,
+  LiteGraph_Node_TooltipDelay: LiteGraph_Node_TooltipDelay$3,
   pysssss_SnapToGrid: pysssss_SnapToGrid$3
 };
 const Comfy_BrowseTemplates$2 = {
@@ -113599,6 +114162,11 @@ const koCommands = {
   Workspace_ToggleSidebarTab_queue: Workspace_ToggleSidebarTab_queue$2,
   Workspace_ToggleSidebarTab_workflows: Workspace_ToggleSidebarTab_workflows$2
 };
+const clipboard$2 = {
+  errorMessage: "클립보드에 복사하지 못했습니다",
+  errorNotSupported: "브라우저가 클립보드 API를 지원하지 않습니다.",
+  successMessage: "클립보드에 복사됨"
+};
 const color$2 = {
   blue: "파란색",
   custom: "사용자 정의",
@@ -113607,6 +114175,39 @@ const color$2 = {
   pink: "분홍색",
   red: "빨간색",
   yellow: "노란색"
+};
+const contextMenu$2 = {
+  " to input": " 위젯을 입력으로",
+  " to widget": " 입력을 위젯으로",
+  "Add Group": "그룹 추가",
+  "Add Group For Selected Nodes": "선택한 노드 그룹 추가",
+  "Add Node": "노드 추가",
+  Bypass: "실행 건너뛰기",
+  Clone: "복제",
+  Collapse: "접기",
+  Colors: "색상",
+  "Convert ": "[변환] ",
+  "Convert Input to Widget": "입력을 위젯으로 변환",
+  "Convert Widget to Input": "위젯을 입력으로 변환",
+  "Convert to Group Node": "그룹 노드로 변환",
+  "Copy (Clipspace)": "복사 (Clipspace)",
+  Expand: "확장",
+  Inputs: "입력",
+  Manage: "관리",
+  "Manage Group Nodes": "그룹 노드 관리",
+  Mode: "모드",
+  "Node Templates": "노드 템플릿",
+  Outputs: "출력",
+  Pin: "고정",
+  Properties: "속성",
+  "Properties Panel": "속성 패널",
+  Remove: "제거",
+  Resize: "크기 조정",
+  "Save Selected as Template": "선택된 부분을 템플릿으로 저장",
+  Search: "검색",
+  Shapes: "형태",
+  Title: "제목",
+  Unpin: "고정 해제"
 };
 const dataTypes$2 = {
   AUDIO: "오디오",
@@ -113648,6 +114249,11 @@ const desktopMenu$2 = {
   quit: "종료",
   reinstall: "재설치"
 };
+const desktopUpdate$2 = {
+  description: "ComfyUI 데스크톱이 새로운 종속성을 설치하고 있습니다. 이 작업은 몇 분 정도 걸릴 수 있습니다.",
+  terminalDefaultMessage: "업데이트 콘솔 출력은 여기에 표시됩니다.",
+  title: "ComfyUI 데스크톱 업데이트 중"
+};
 const downloadGit$2 = {
   gitWebsite: "git 프로그램 다운로드",
   instructions: "운영 체제에 맞는 최신 버전을 다운로드하여 설치하십시오. 아래의 'git 프로그램 다운로드' 버튼을 클릭하면 git-scm.com 다운로드 페이지가 열립니다.",
@@ -113674,6 +114280,7 @@ const g$2 = {
   comingSoon: "곧 출시 예정",
   command: "명령",
   confirm: "확인",
+  "continue": "계속",
   copyToClipboard: "클립보드에 복사",
   currentUser: "현재 사용자",
   customize: "사용자 정의",
@@ -113867,21 +114474,33 @@ const issueReport$2 = {
     maxLength: "메시지가 너무 깁니다"
   }
 };
+const load3d$2 = {
+  backgroundColor: "배경색",
+  fov: "FOV",
+  lightIntensity: "조명 강도",
+  previewOutput: "출력 미리보기",
+  showGrid: "그리드 표시",
+  switchCamera: "카메라 전환"
+};
 const maintenance$2 = {
   None: "없음",
   OK: "확인",
   Skipped: "건너뜀",
   allOk: "문제가 발견되지 않았습니다.",
   confirmTitle: "확실합니까?",
+  consoleLogs: "콘솔 로그",
   detected: "감지됨",
   error: {
+    cannotContinue: "계속할 수 없습니다 - 오류가 남아 있습니다",
     defaultDescription: "유지 보수 작업을 실행하는 동안 오류가 발생했습니다.",
     taskFailed: "작업 실행에 실패했습니다.",
     toastTitle: "작업 오류"
   },
   refreshing: "새로 고침 중",
   showManual: "유지 보수 작업 보기",
-  status: "상태"
+  status: "상태",
+  terminalDefaultMessage: "문제 해결 명령을 실행하면 출력이 여기에 표시됩니다.",
+  title: "유지 보수"
 };
 const menu$2 = {
   autoQueue: "자동 실행 큐",
@@ -114279,6 +114898,7 @@ const sideToolbar$2 = {
     deleteFailedTitle: "삭제 실패",
     deleted: "워크플로가 삭제되었습니다.",
     dirtyClose: "아래 파일들이 변경되었습니다. 닫기 전에 저장하시겠습니까?",
+    dirtyCloseHint: "프롬프트 없이 닫으려면 Shift를 누르세요",
     dirtyCloseTitle: "변경 사항 저장",
     workflowTreeType: {
       bookmarks: "북마크",
@@ -114323,9 +114943,12 @@ const workflowService$2 = {
   saveWorkflow: "워크플로 저장"
 };
 const ko = {
+  clipboard: clipboard$2,
   color: color$2,
+  contextMenu: contextMenu$2,
   dataTypes: dataTypes$2,
   desktopMenu: desktopMenu$2,
+  desktopUpdate: desktopUpdate$2,
   downloadGit: downloadGit$2,
   electronFileDownload: electronFileDownload$2,
   g: g$2,
@@ -114334,6 +114957,7 @@ const ko = {
   icon: icon$2,
   install: install$2,
   issueReport: issueReport$2,
+  load3d: load3d$2,
   maintenance: maintenance$2,
   menu: menu$2,
   menuLabels: menuLabels$2,
@@ -120477,12 +121101,19 @@ const Comfy_Workflow_WorkflowTabsPosition$2 = {
     "Topbar (2nd-row)": "상단바 (2번째 행)"
   }
 };
+const LiteGraph_Canvas_LowQualityRenderingZoomThreshold$2 = {
+  name: "저품질 렌더링 줌 임계값",
+  tooltip: "줌 아웃시 저품질 도형 렌더링"
+};
 const LiteGraph_Canvas_MaximumFps$2 = {
   name: "최대 FPS",
   tooltip: "캔버스가 렌더링할 수 있는 최대 프레임 수입니다. 부드럽게 동작하도록 GPU 사용률을 제한 합니다. 0이면 화면 주사율로 작동 합니다. 기본값: 0"
 };
 const LiteGraph_ContextMenu_Scaling$2 = {
   name: "확대시 노드 콤보 위젯 메뉴 (목록) 스케일링"
+};
+const LiteGraph_Node_TooltipDelay$2 = {
+  name: "툴팁 지연"
 };
 const pysssss_SnapToGrid$2 = {
   name: "항상 그리드에 스냅"
@@ -120581,8 +121212,10 @@ const koSettings = {
   Comfy_Workflow_ShowMissingNodesWarning: Comfy_Workflow_ShowMissingNodesWarning$2,
   Comfy_Workflow_SortNodeIdOnSave: Comfy_Workflow_SortNodeIdOnSave$2,
   Comfy_Workflow_WorkflowTabsPosition: Comfy_Workflow_WorkflowTabsPosition$2,
+  LiteGraph_Canvas_LowQualityRenderingZoomThreshold: LiteGraph_Canvas_LowQualityRenderingZoomThreshold$2,
   LiteGraph_Canvas_MaximumFps: LiteGraph_Canvas_MaximumFps$2,
   LiteGraph_ContextMenu_Scaling: LiteGraph_ContextMenu_Scaling$2,
+  LiteGraph_Node_TooltipDelay: LiteGraph_Node_TooltipDelay$2,
   pysssss_SnapToGrid: pysssss_SnapToGrid$2
 };
 const Comfy_BrowseTemplates$1 = {
@@ -120836,6 +121469,11 @@ const ruCommands = {
   Workspace_ToggleSidebarTab_queue: Workspace_ToggleSidebarTab_queue$1,
   Workspace_ToggleSidebarTab_workflows: Workspace_ToggleSidebarTab_workflows$1
 };
+const clipboard$1 = {
+  errorMessage: "Не удалось скопировать в буфер обмена",
+  errorNotSupported: "API буфера обмена не поддерживается в вашем браузере",
+  successMessage: "Скопировано в буфер обмена"
+};
 const color$1 = {
   blue: "Синий",
   custom: "Пользовательский",
@@ -120844,6 +121482,39 @@ const color$1 = {
   pink: "Розовый",
   red: "Красный",
   yellow: "Жёлтый"
+};
+const contextMenu$1 = {
+  " to input": " во вход",
+  " to widget": " в виджет",
+  "Add Group": "Добавить группу",
+  "Add Group For Selected Nodes": "Добавить группу для выбранных узлов",
+  "Add Node": "Добавить узел",
+  Bypass: "Обход",
+  Clone: "Клонировать",
+  Collapse: "Свернуть",
+  Colors: "Цвета",
+  "Convert ": "Преобразовать ",
+  "Convert Input to Widget": "Преобразовать вход в виджет",
+  "Convert Widget to Input": "Преобразовать виджет во вход",
+  "Convert to Group Node": "Преобразовать в групповой узел",
+  "Copy (Clipspace)": "Копировать (Clipspace)",
+  Expand: "Развернуть",
+  Inputs: "Входы",
+  Manage: "Управлять",
+  "Manage Group Nodes": "Управление групповыми узлами",
+  Mode: "Режим",
+  "Node Templates": "Шаблоны узлов",
+  Outputs: "Выходы",
+  Pin: "Закрепить",
+  Properties: "Свойства",
+  "Properties Panel": "Панель свойств",
+  Remove: "Удалить",
+  Resize: "Изменить размер",
+  "Save Selected as Template": "Сохранить выбранное как шаблон",
+  Search: "Поиск",
+  Shapes: "Формы",
+  Title: "Заголовок",
+  Unpin: "Открепить"
 };
 const dataTypes$1 = {
   AUDIO: "АУДИО",
@@ -120885,6 +121556,11 @@ const desktopMenu$1 = {
   quit: "Выйти",
   reinstall: "Переустановить"
 };
+const desktopUpdate$1 = {
+  description: "ComfyUI Desktop устанавливает новые зависимости. Это может занять несколько минут.",
+  terminalDefaultMessage: "Любой вывод консоли из обновления будет отображаться здесь.",
+  title: "Обновление ComfyUI Desktop"
+};
 const downloadGit$1 = {
   gitWebsite: "Скачать git",
   instructions: "Пожалуйста, скачайте и установите последнюю версию для вашей операционной системы. Кнопка «Скачать git» ниже открывает страницу загрузок git-scm.com.",
@@ -120911,6 +121587,7 @@ const g$1 = {
   comingSoon: "Скоро будет",
   command: "Команда",
   confirm: "Подтвердить",
+  "continue": "Продолжить",
   copyToClipboard: "Скопировать в буфер обмена",
   currentUser: "Текущий пользователь",
   customize: "Настроить",
@@ -121104,21 +121781,33 @@ const issueReport$1 = {
     maxLength: "Сообщение слишком длинное"
   }
 };
+const load3d$1 = {
+  backgroundColor: "Цвет фона",
+  fov: "Угол обзора",
+  lightIntensity: "Интенсивность света",
+  previewOutput: "Предварительный просмотр",
+  showGrid: "Показать сетку",
+  switchCamera: "Переключить камеру"
+};
 const maintenance$1 = {
   None: "Нет",
   OK: "OK",
   Skipped: "Пропущено",
   allOk: "Проблем не обнаружено.",
   confirmTitle: "Вы уверены?",
+  consoleLogs: "Консольные журналы",
   detected: "Обнаружено",
   error: {
+    cannotContinue: "Невозможно продолжить - остались ошибки",
     defaultDescription: "Произошла ошибка при выполнении задачи по обслуживанию.",
     taskFailed: "Не удалось выполнить задачу.",
     toastTitle: "Ошибка задачи"
   },
   refreshing: "Обновление",
   showManual: "Показать задачи по обслуживанию",
-  status: "Статус"
+  status: "Статус",
+  terminalDefaultMessage: "Когда вы запускаете команду для устранения неполадок, любой вывод будет отображаться здесь.",
+  title: "Обслуживание"
 };
 const menu$1 = {
   autoQueue: "Автоочередь",
@@ -121516,6 +122205,7 @@ const sideToolbar$1 = {
     deleteFailedTitle: "Не удалось удалить",
     deleted: "Рабочий процесс удалён",
     dirtyClose: "Файлы ниже были изменены. Вы хотите сохранить их перед закрытием?",
+    dirtyCloseHint: "Удерживайте Shift, чтобы закрыть без подсказки",
     dirtyCloseTitle: "Сохранить изменения?",
     workflowTreeType: {
       bookmarks: "Закладки",
@@ -121560,9 +122250,12 @@ const workflowService$1 = {
   saveWorkflow: "Сохранить рабочий процесс"
 };
 const ru = {
+  clipboard: clipboard$1,
   color: color$1,
+  contextMenu: contextMenu$1,
   dataTypes: dataTypes$1,
   desktopMenu: desktopMenu$1,
+  desktopUpdate: desktopUpdate$1,
   downloadGit: downloadGit$1,
   electronFileDownload: electronFileDownload$1,
   g: g$1,
@@ -121571,6 +122264,7 @@ const ru = {
   icon: icon$1,
   install: install$1,
   issueReport: issueReport$1,
+  load3d: load3d$1,
   maintenance: maintenance$1,
   menu: menu$1,
   menuLabels: menuLabels$1,
@@ -127714,12 +128408,19 @@ const Comfy_Workflow_WorkflowTabsPosition$1 = {
     "Topbar (2nd-row)": "Топбар (2-й ряд)"
   }
 };
+const LiteGraph_Canvas_LowQualityRenderingZoomThreshold$1 = {
+  name: "Порог масштабирования для рендеринга низкого качества",
+  tooltip: "Рендеринг фигур низкого качества при уменьшении масштаба"
+};
 const LiteGraph_Canvas_MaximumFps$1 = {
   name: "Максимум FPS",
   tooltip: "Максимальное количество кадров в секунду, которое холст может рендерить. Ограничивает использование GPU за счёт плавности. Если 0, используется частота обновления экрана. По умолчанию: 0"
 };
 const LiteGraph_ContextMenu_Scaling$1 = {
   name: "Масштабирование комбинированных виджетов меню узлов (списков) при увеличении"
+};
+const LiteGraph_Node_TooltipDelay$1 = {
+  name: "Задержка всплывающей подсказки"
 };
 const pysssss_SnapToGrid$1 = {
   name: "Всегда привязываться к сетке"
@@ -127818,8 +128519,10 @@ const ruSettings = {
   Comfy_Workflow_ShowMissingNodesWarning: Comfy_Workflow_ShowMissingNodesWarning$1,
   Comfy_Workflow_SortNodeIdOnSave: Comfy_Workflow_SortNodeIdOnSave$1,
   Comfy_Workflow_WorkflowTabsPosition: Comfy_Workflow_WorkflowTabsPosition$1,
+  LiteGraph_Canvas_LowQualityRenderingZoomThreshold: LiteGraph_Canvas_LowQualityRenderingZoomThreshold$1,
   LiteGraph_Canvas_MaximumFps: LiteGraph_Canvas_MaximumFps$1,
   LiteGraph_ContextMenu_Scaling: LiteGraph_ContextMenu_Scaling$1,
+  LiteGraph_Node_TooltipDelay: LiteGraph_Node_TooltipDelay$1,
   pysssss_SnapToGrid: pysssss_SnapToGrid$1
 };
 const Comfy_BrowseTemplates = {
@@ -128073,6 +128776,11 @@ const zhCommands = {
   Workspace_ToggleSidebarTab_queue,
   Workspace_ToggleSidebarTab_workflows
 };
+const clipboard = {
+  errorMessage: "复制到剪贴板失败",
+  errorNotSupported: "您的浏览器不支持剪贴板API",
+  successMessage: "已复制到剪贴板"
+};
 const color = {
   blue: "蓝色",
   custom: "自定义",
@@ -128081,6 +128789,39 @@ const color = {
   pink: "粉色",
   red: "红色",
   yellow: "黄色"
+};
+const contextMenu = {
+  " to input": " 为输入",
+  " to widget": " 为控件",
+  "Add Group": "添加组",
+  "Add Group For Selected Nodes": "为选定节点添加组",
+  "Add Node": "添加节点",
+  Bypass: "绕过",
+  Clone: "克隆",
+  Collapse: "折叠",
+  Colors: "颜色",
+  "Convert ": "转换 ",
+  "Convert Input to Widget": "将输入转换为控件",
+  "Convert Widget to Input": "将控件转换为输入",
+  "Convert to Group Node": "转换为组节点",
+  "Copy (Clipspace)": "复制 (Clipspace)",
+  Expand: "展开",
+  Inputs: "输入",
+  Manage: "管理",
+  "Manage Group Nodes": "管理组节点",
+  Mode: "模式",
+  "Node Templates": "节点模板",
+  Outputs: "输出",
+  Pin: "固定",
+  Properties: "属性",
+  "Properties Panel": "属性面板",
+  Remove: "删除",
+  Resize: "调整大小",
+  "Save Selected as Template": "将选定节点另存为模板",
+  Search: "搜索",
+  Shapes: "形状",
+  Title: "标题",
+  Unpin: "取消固定"
 };
 const dataTypes = {
   AUDIO: "音频",
@@ -128122,6 +128863,11 @@ const desktopMenu = {
   quit: "退出",
   reinstall: "重新安装"
 };
+const desktopUpdate = {
+  description: "ComfyUI桌面正在安装新的依赖项。这可能需要几分钟的时间。",
+  terminalDefaultMessage: "更新过程中的任何控制台输出都将在这里显示。",
+  title: "正在更新ComfyUI桌面"
+};
 const downloadGit = {
   gitWebsite: "下载 git",
   instructions: "请下载并安装适合您操作系统的最新版本。下面的下载 git 按钮将打开 git-scm.com 下载页面。",
@@ -128148,6 +128894,7 @@ const g = {
   comingSoon: "即将推出",
   command: "指令",
   confirm: "确认",
+  "continue": "继续",
   copyToClipboard: "复制到剪贴板",
   currentUser: "当前用户",
   customize: "自定义",
@@ -128341,21 +129088,33 @@ const issueReport = {
     maxLength: "消息过长"
   }
 };
+const load3d = {
+  backgroundColor: "背景颜色",
+  fov: "视场",
+  lightIntensity: "光照强度",
+  previewOutput: "预览输出",
+  showGrid: "显示网格",
+  switchCamera: "切换摄像头"
+};
 const maintenance = {
   None: "无",
   OK: "确定",
   Skipped: "跳过",
   allOk: "未检测到任何问题。",
   confirmTitle: "你确定吗？",
+  consoleLogs: "控制台日志",
   detected: "检测到",
   error: {
+    cannotContinue: "无法继续 - 仍有错误",
     defaultDescription: "运行维护任务时发生错误。",
     taskFailed: "任务运行失败。",
     toastTitle: "任务错误"
   },
   refreshing: "刷新中",
   showManual: "显示维护任务",
-  status: "状态"
+  status: "状态",
+  terminalDefaultMessage: "当你运行一个故障排除命令时，任何输出都会在这里显示。",
+  title: "维护"
 };
 const menu = {
   autoQueue: "自动执行",
@@ -128753,6 +129512,7 @@ const sideToolbar = {
     deleteFailedTitle: "删除失败",
     deleted: "工作流已删除",
     dirtyClose: "以下文件已被更改。您想在关闭之前保存它们吗？",
+    dirtyCloseHint: "按住 Shift 关闭而不提示",
     dirtyCloseTitle: "保存更改？",
     workflowTreeType: {
       bookmarks: "书签",
@@ -128797,9 +129557,12 @@ const workflowService = {
   saveWorkflow: "保存工作流"
 };
 const zh = {
+  clipboard,
   color,
+  contextMenu,
   dataTypes,
   desktopMenu,
+  desktopUpdate,
   downloadGit,
   electronFileDownload,
   g,
@@ -128808,6 +129571,7 @@ const zh = {
   icon,
   install,
   issueReport,
+  load3d,
   maintenance,
   menu,
   menuLabels,
@@ -134951,12 +135715,19 @@ const Comfy_Workflow_WorkflowTabsPosition = {
     "Topbar (2nd-row)": "顶部栏 (第二行)"
   }
 };
+const LiteGraph_Canvas_LowQualityRenderingZoomThreshold = {
+  name: "低质量渲染缩放阈值",
+  tooltip: "在缩小时渲染低质量形状"
+};
 const LiteGraph_Canvas_MaximumFps = {
   name: "最大FPS",
   tooltip: "画布允许渲染的最大帧数。限制GPU使用以换取流畅度。如果为0，则使用屏幕刷新率。默认值：0"
 };
 const LiteGraph_ContextMenu_Scaling = {
   name: "放大时缩放节点组合部件菜单（列表）"
+};
+const LiteGraph_Node_TooltipDelay = {
+  name: "工具提示延迟"
 };
 const pysssss_SnapToGrid = {
   name: "始终吸附到网格"
@@ -135055,8 +135826,10 @@ const zhSettings = {
   Comfy_Workflow_ShowMissingNodesWarning,
   Comfy_Workflow_SortNodeIdOnSave,
   Comfy_Workflow_WorkflowTabsPosition,
+  LiteGraph_Canvas_LowQualityRenderingZoomThreshold,
   LiteGraph_Canvas_MaximumFps,
   LiteGraph_ContextMenu_Scaling,
+  LiteGraph_Node_TooltipDelay,
   pysssss_SnapToGrid
 };
 function buildLocale(main, nodes, commands2, settings) {
@@ -141171,7 +141944,219 @@ var lodash = lodash$1.exports;
 })(lodash$1, lodash$1.exports);
 var lodashExports = lodash$1.exports;
 const _ = /* @__PURE__ */ getDefaultExportFromCjs(lodashExports);
-const _hoisted_1$17 = { class: "prompt-dialog-content flex flex-col gap-6 m-2 mt-4" };
+var theme$w = /* @__PURE__ */ __name(function theme10(_ref) {
+  var dt2 = _ref.dt;
+  return "\n.p-message {\n    border-radius: ".concat(dt2("message.border.radius"), ";\n    outline-width: ").concat(dt2("message.border.width"), ";\n    outline-style: solid;\n}\n\n.p-message-content {\n    display: flex;\n    align-items: center;\n    padding: ").concat(dt2("message.content.padding"), ";\n    gap: ").concat(dt2("message.content.gap"), ";\n    height: 100%;\n}\n\n.p-message-icon {\n    flex-shrink: 0;\n}\n\n.p-message-close-button {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    flex-shrink: 0;\n    margin-inline-start: auto;\n    overflow: hidden;\n    position: relative;\n    width: ").concat(dt2("message.close.button.width"), ";\n    height: ").concat(dt2("message.close.button.height"), ";\n    border-radius: ").concat(dt2("message.close.button.border.radius"), ";\n    background: transparent;\n    transition: background ").concat(dt2("message.transition.duration"), ", color ").concat(dt2("message.transition.duration"), ", outline-color ").concat(dt2("message.transition.duration"), ", box-shadow ").concat(dt2("message.transition.duration"), ", opacity 0.3s;\n    outline-color: transparent;\n    color: inherit;\n    padding: 0;\n    border: none;\n    cursor: pointer;\n    user-select: none;\n}\n\n.p-message-close-icon {\n    font-size: ").concat(dt2("message.close.icon.size"), ";\n    width: ").concat(dt2("message.close.icon.size"), ";\n    height: ").concat(dt2("message.close.icon.size"), ";\n}\n\n.p-message-close-button:focus-visible {\n    outline-width: ").concat(dt2("message.close.button.focus.ring.width"), ";\n    outline-style: ").concat(dt2("message.close.button.focus.ring.style"), ";\n    outline-offset: ").concat(dt2("message.close.button.focus.ring.offset"), ";\n}\n\n.p-message-info {\n    background: ").concat(dt2("message.info.background"), ";\n    outline-color: ").concat(dt2("message.info.border.color"), ";\n    color: ").concat(dt2("message.info.color"), ";\n    box-shadow: ").concat(dt2("message.info.shadow"), ";\n}\n\n.p-message-info .p-message-close-button:focus-visible {\n    outline-color: ").concat(dt2("message.info.close.button.focus.ring.color"), ";\n    box-shadow: ").concat(dt2("message.info.close.button.focus.ring.shadow"), ";\n}\n\n.p-message-info .p-message-close-button:hover {\n    background: ").concat(dt2("message.info.close.button.hover.background"), ";\n}\n\n.p-message-info.p-message-outlined {\n    color: ").concat(dt2("message.info.outlined.color"), ";\n    outline-color: ").concat(dt2("message.info.outlined.border.color"), ";\n}\n\n.p-message-info.p-message-simple {\n    color: ").concat(dt2("message.info.simple.color"), ";\n}\n\n.p-message-success {\n    background: ").concat(dt2("message.success.background"), ";\n    outline-color: ").concat(dt2("message.success.border.color"), ";\n    color: ").concat(dt2("message.success.color"), ";\n    box-shadow: ").concat(dt2("message.success.shadow"), ";\n}\n\n.p-message-success .p-message-close-button:focus-visible {\n    outline-color: ").concat(dt2("message.success.close.button.focus.ring.color"), ";\n    box-shadow: ").concat(dt2("message.success.close.button.focus.ring.shadow"), ";\n}\n\n.p-message-success .p-message-close-button:hover {\n    background: ").concat(dt2("message.success.close.button.hover.background"), ";\n}\n\n.p-message-success.p-message-outlined {\n    color: ").concat(dt2("message.success.outlined.color"), ";\n    outline-color: ").concat(dt2("message.success.outlined.border.color"), ";\n}\n\n.p-message-success.p-message-simple {\n    color: ").concat(dt2("message.success.simple.color"), ";\n}\n\n.p-message-warn {\n    background: ").concat(dt2("message.warn.background"), ";\n    outline-color: ").concat(dt2("message.warn.border.color"), ";\n    color: ").concat(dt2("message.warn.color"), ";\n    box-shadow: ").concat(dt2("message.warn.shadow"), ";\n}\n\n.p-message-warn .p-message-close-button:focus-visible {\n    outline-color: ").concat(dt2("message.warn.close.button.focus.ring.color"), ";\n    box-shadow: ").concat(dt2("message.warn.close.button.focus.ring.shadow"), ";\n}\n\n.p-message-warn .p-message-close-button:hover {\n    background: ").concat(dt2("message.warn.close.button.hover.background"), ";\n}\n\n.p-message-warn.p-message-outlined {\n    color: ").concat(dt2("message.warn.outlined.color"), ";\n    outline-color: ").concat(dt2("message.warn.outlined.border.color"), ";\n}\n\n.p-message-warn.p-message-simple {\n    color: ").concat(dt2("message.warn.simple.color"), ";\n}\n\n.p-message-error {\n    background: ").concat(dt2("message.error.background"), ";\n    outline-color: ").concat(dt2("message.error.border.color"), ";\n    color: ").concat(dt2("message.error.color"), ";\n    box-shadow: ").concat(dt2("message.error.shadow"), ";\n}\n\n.p-message-error .p-message-close-button:focus-visible {\n    outline-color: ").concat(dt2("message.error.close.button.focus.ring.color"), ";\n    box-shadow: ").concat(dt2("message.error.close.button.focus.ring.shadow"), ";\n}\n\n.p-message-error .p-message-close-button:hover {\n    background: ").concat(dt2("message.error.close.button.hover.background"), ";\n}\n\n.p-message-error.p-message-outlined {\n    color: ").concat(dt2("message.error.outlined.color"), ";\n    outline-color: ").concat(dt2("message.error.outlined.border.color"), ";\n}\n\n.p-message-error.p-message-simple {\n    color: ").concat(dt2("message.error.simple.color"), ";\n}\n\n.p-message-secondary {\n    background: ").concat(dt2("message.secondary.background"), ";\n    outline-color: ").concat(dt2("message.secondary.border.color"), ";\n    color: ").concat(dt2("message.secondary.color"), ";\n    box-shadow: ").concat(dt2("message.secondary.shadow"), ";\n}\n\n.p-message-secondary .p-message-close-button:focus-visible {\n    outline-color: ").concat(dt2("message.secondary.close.button.focus.ring.color"), ";\n    box-shadow: ").concat(dt2("message.secondary.close.button.focus.ring.shadow"), ";\n}\n\n.p-message-secondary .p-message-close-button:hover {\n    background: ").concat(dt2("message.secondary.close.button.hover.background"), ";\n}\n\n.p-message-secondary.p-message-outlined {\n    color: ").concat(dt2("message.secondary.outlined.color"), ";\n    outline-color: ").concat(dt2("message.secondary.outlined.border.color"), ";\n}\n\n.p-message-secondary.p-message-simple {\n    color: ").concat(dt2("message.secondary.simple.color"), ";\n}\n\n.p-message-contrast {\n    background: ").concat(dt2("message.contrast.background"), ";\n    outline-color: ").concat(dt2("message.contrast.border.color"), ";\n    color: ").concat(dt2("message.contrast.color"), ";\n    box-shadow: ").concat(dt2("message.contrast.shadow"), ";\n}\n\n.p-message-contrast .p-message-close-button:focus-visible {\n    outline-color: ").concat(dt2("message.contrast.close.button.focus.ring.color"), ";\n    box-shadow: ").concat(dt2("message.contrast.close.button.focus.ring.shadow"), ";\n}\n\n.p-message-contrast .p-message-close-button:hover {\n    background: ").concat(dt2("message.contrast.close.button.hover.background"), ";\n}\n\n.p-message-contrast.p-message-outlined {\n    color: ").concat(dt2("message.contrast.outlined.color"), ";\n    outline-color: ").concat(dt2("message.contrast.outlined.border.color"), ";\n}\n\n.p-message-contrast.p-message-simple {\n    color: ").concat(dt2("message.contrast.simple.color"), ";\n}\n\n.p-message-text {\n    font-size: ").concat(dt2("message.text.font.size"), ";\n    font-weight: ").concat(dt2("message.text.font.weight"), ";\n}\n\n.p-message-icon {\n    font-size: ").concat(dt2("message.icon.size"), ";\n    width: ").concat(dt2("message.icon.size"), ";\n    height: ").concat(dt2("message.icon.size"), ";\n}\n\n.p-message-enter-from {\n    opacity: 0;\n}\n\n.p-message-enter-active {\n    transition: opacity 0.3s;\n}\n\n.p-message.p-message-leave-from {\n    max-height: 1000px;\n}\n\n.p-message.p-message-leave-to {\n    max-height: 0;\n    opacity: 0;\n    margin: 0;\n}\n\n.p-message-leave-active {\n    overflow: hidden;\n    transition: max-height 0.45s cubic-bezier(0, 1, 0, 1), opacity 0.3s, margin 0.3s;\n}\n\n.p-message-leave-active .p-message-close-button {\n    opacity: 0;\n}\n\n.p-message-sm .p-message-content {\n    padding: ").concat(dt2("message.content.sm.padding"), ";\n}\n\n.p-message-sm .p-message-text {\n    font-size: ").concat(dt2("message.text.sm.font.size"), ";\n}\n\n.p-message-sm .p-message-icon {\n    font-size: ").concat(dt2("message.icon.sm.size"), ";\n    width: ").concat(dt2("message.icon.sm.size"), ";\n    height: ").concat(dt2("message.icon.sm.size"), ";\n}\n\n.p-message-sm .p-message-close-icon {\n    font-size: ").concat(dt2("message.close.icon.sm.size"), ";\n    width: ").concat(dt2("message.close.icon.sm.size"), ";\n    height: ").concat(dt2("message.close.icon.sm.size"), ";\n}\n\n.p-message-lg .p-message-content {\n    padding: ").concat(dt2("message.content.lg.padding"), ";\n}\n\n.p-message-lg .p-message-text {\n    font-size: ").concat(dt2("message.text.lg.font.size"), ";\n}\n\n.p-message-lg .p-message-icon {\n    font-size: ").concat(dt2("message.icon.lg.size"), ";\n    width: ").concat(dt2("message.icon.lg.size"), ";\n    height: ").concat(dt2("message.icon.lg.size"), ";\n}\n\n.p-message-lg .p-message-close-icon {\n    font-size: ").concat(dt2("message.close.icon.lg.size"), ";\n    width: ").concat(dt2("message.close.icon.lg.size"), ";\n    height: ").concat(dt2("message.close.icon.lg.size"), ";\n}\n\n.p-message-outlined {\n    background: transparent;\n    outline-width: ").concat(dt2("message.outlined.border.width"), ";\n}\n\n.p-message-simple {\n    background: transparent;\n    outline-color: transparent;\n    box-shadow: none;\n}\n\n.p-message-simple .p-message-content {\n    padding: ").concat(dt2("message.simple.content.padding"), ";\n}\n\n.p-message-outlined .p-message-close-button:hover,\n.p-message-simple .p-message-close-button:hover {\n    background: transparent;\n}\n");
+}, "theme");
+var classes$A = {
+  root: /* @__PURE__ */ __name(function root5(_ref2) {
+    var props = _ref2.props;
+    return ["p-message p-component p-message-" + props.severity, {
+      "p-message-outlined": props.variant === "outlined",
+      "p-message-simple": props.variant === "simple",
+      "p-message-sm": props.size === "small",
+      "p-message-lg": props.size === "large"
+    }];
+  }, "root"),
+  content: "p-message-content",
+  icon: "p-message-icon",
+  text: "p-message-text",
+  closeButton: "p-message-close-button",
+  closeIcon: "p-message-close-icon"
+};
+var MessageStyle = BaseStyle$1.extend({
+  name: "message",
+  theme: theme$w,
+  classes: classes$A
+});
+var script$1$A = {
+  name: "BaseMessage",
+  "extends": script$14,
+  props: {
+    severity: {
+      type: String,
+      "default": "info"
+    },
+    closable: {
+      type: Boolean,
+      "default": false
+    },
+    life: {
+      type: Number,
+      "default": null
+    },
+    icon: {
+      type: String,
+      "default": void 0
+    },
+    closeIcon: {
+      type: String,
+      "default": void 0
+    },
+    closeButtonProps: {
+      type: null,
+      "default": null
+    },
+    size: {
+      type: String,
+      "default": null
+    },
+    variant: {
+      type: String,
+      "default": null
+    }
+  },
+  style: MessageStyle,
+  provide: /* @__PURE__ */ __name(function provide9() {
+    return {
+      $pcMessage: this,
+      $parentInstance: this
+    };
+  }, "provide")
+};
+var script$S = {
+  name: "Message",
+  "extends": script$1$A,
+  inheritAttrs: false,
+  emits: ["close", "life-end"],
+  timeout: null,
+  data: /* @__PURE__ */ __name(function data5() {
+    return {
+      visible: true
+    };
+  }, "data"),
+  mounted: /* @__PURE__ */ __name(function mounted6() {
+    var _this = this;
+    if (this.life) {
+      setTimeout(function() {
+        _this.visible = false;
+        _this.$emit("life-end");
+      }, this.life);
+    }
+  }, "mounted"),
+  methods: {
+    close: /* @__PURE__ */ __name(function close3(event) {
+      this.visible = false;
+      this.$emit("close", event);
+    }, "close")
+  },
+  computed: {
+    closeAriaLabel: /* @__PURE__ */ __name(function closeAriaLabel2() {
+      return this.$primevue.config.locale.aria ? this.$primevue.config.locale.aria.close : void 0;
+    }, "closeAriaLabel")
+  },
+  directives: {
+    ripple: Ripple
+  },
+  components: {
+    TimesIcon: script$_
+  }
+};
+function _typeof$g(o2) {
+  "@babel/helpers - typeof";
+  return _typeof$g = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o3) {
+    return typeof o3;
+  } : function(o3) {
+    return o3 && "function" == typeof Symbol && o3.constructor === Symbol && o3 !== Symbol.prototype ? "symbol" : typeof o3;
+  }, _typeof$g(o2);
+}
+__name(_typeof$g, "_typeof$g");
+function ownKeys$i(e2, r2) {
+  var t2 = Object.keys(e2);
+  if (Object.getOwnPropertySymbols) {
+    var o2 = Object.getOwnPropertySymbols(e2);
+    r2 && (o2 = o2.filter(function(r3) {
+      return Object.getOwnPropertyDescriptor(e2, r3).enumerable;
+    })), t2.push.apply(t2, o2);
+  }
+  return t2;
+}
+__name(ownKeys$i, "ownKeys$i");
+function _objectSpread$i(e2) {
+  for (var r2 = 1; r2 < arguments.length; r2++) {
+    var t2 = null != arguments[r2] ? arguments[r2] : {};
+    r2 % 2 ? ownKeys$i(Object(t2), true).forEach(function(r3) {
+      _defineProperty$i(e2, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e2, Object.getOwnPropertyDescriptors(t2)) : ownKeys$i(Object(t2)).forEach(function(r3) {
+      Object.defineProperty(e2, r3, Object.getOwnPropertyDescriptor(t2, r3));
+    });
+  }
+  return e2;
+}
+__name(_objectSpread$i, "_objectSpread$i");
+function _defineProperty$i(e2, r2, t2) {
+  return (r2 = _toPropertyKey$f(r2)) in e2 ? Object.defineProperty(e2, r2, { value: t2, enumerable: true, configurable: true, writable: true }) : e2[r2] = t2, e2;
+}
+__name(_defineProperty$i, "_defineProperty$i");
+function _toPropertyKey$f(t2) {
+  var i2 = _toPrimitive$f(t2, "string");
+  return "symbol" == _typeof$g(i2) ? i2 : i2 + "";
+}
+__name(_toPropertyKey$f, "_toPropertyKey$f");
+function _toPrimitive$f(t2, r2) {
+  if ("object" != _typeof$g(t2) || !t2) return t2;
+  var e2 = t2[Symbol.toPrimitive];
+  if (void 0 !== e2) {
+    var i2 = e2.call(t2, r2 || "default");
+    if ("object" != _typeof$g(i2)) return i2;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return ("string" === r2 ? String : Number)(t2);
+}
+__name(_toPrimitive$f, "_toPrimitive$f");
+var _hoisted_1$17 = ["aria-label"];
+function render$Q(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_TimesIcon = resolveComponent("TimesIcon");
+  var _directive_ripple = resolveDirective("ripple");
+  return openBlock(), createBlock(Transition, mergeProps$2({
+    name: "p-message",
+    appear: ""
+  }, _ctx.ptmi("transition")), {
+    "default": withCtx(function() {
+      return [withDirectives(createBaseVNode("div", mergeProps$2({
+        "class": _ctx.cx("root"),
+        role: "alert",
+        "aria-live": "assertive",
+        "aria-atomic": "true"
+      }, _ctx.ptm("root")), [_ctx.$slots.container ? renderSlot(_ctx.$slots, "container", {
+        key: 0,
+        closeCallback: $options.close
+      }) : (openBlock(), createElementBlock("div", mergeProps$2({
+        key: 1,
+        "class": _ctx.cx("content")
+      }, _ctx.ptm("content")), [renderSlot(_ctx.$slots, "icon", {
+        "class": normalizeClass(_ctx.cx("icon"))
+      }, function() {
+        return [(openBlock(), createBlock(resolveDynamicComponent(_ctx.icon ? "span" : null), mergeProps$2({
+          "class": [_ctx.cx("icon"), _ctx.icon]
+        }, _ctx.ptm("icon")), null, 16, ["class"]))];
+      }), _ctx.$slots["default"] ? (openBlock(), createElementBlock("div", mergeProps$2({
+        key: 0,
+        "class": _ctx.cx("text")
+      }, _ctx.ptm("text")), [renderSlot(_ctx.$slots, "default")], 16)) : createCommentVNode("", true), _ctx.closable ? withDirectives((openBlock(), createElementBlock("button", mergeProps$2({
+        key: 1,
+        "class": _ctx.cx("closeButton"),
+        "aria-label": $options.closeAriaLabel,
+        type: "button",
+        onClick: _cache[0] || (_cache[0] = function($event) {
+          return $options.close($event);
+        })
+      }, _objectSpread$i(_objectSpread$i({}, _ctx.closeButtonProps), _ctx.ptm("closeButton"))), [renderSlot(_ctx.$slots, "closeicon", {}, function() {
+        return [_ctx.closeIcon ? (openBlock(), createElementBlock("i", mergeProps$2({
+          key: 0,
+          "class": [_ctx.cx("closeIcon"), _ctx.closeIcon]
+        }, _ctx.ptm("closeIcon")), null, 16)) : (openBlock(), createBlock(_component_TimesIcon, mergeProps$2({
+          key: 1,
+          "class": [_ctx.cx("closeIcon"), _ctx.closeIcon]
+        }, _ctx.ptm("closeIcon")), null, 16, ["class"]))];
+      })], 16, _hoisted_1$17)), [[_directive_ripple]]) : createCommentVNode("", true)], 16))], 16), [[vShow, $data.visible]])];
+    }),
+    _: 3
+  }, 16);
+}
+__name(render$Q, "render$Q");
+script$S.render = render$Q;
+const _hoisted_1$16 = { class: "prompt-dialog-content flex flex-col gap-6 m-2 mt-4" };
 const _hoisted_2$L = {
   key: 0,
   class: "pl-4 m-0 flex flex-col gap-2"
@@ -141183,7 +142168,8 @@ const _sfc_main$_ = /* @__PURE__ */ defineComponent({
     message: {},
     type: {},
     onConfirm: { type: Function },
-    itemList: {}
+    itemList: {},
+    hint: {}
   },
   setup(__props) {
     const props = __props;
@@ -141197,13 +142183,25 @@ const _sfc_main$_ = /* @__PURE__ */ defineComponent({
       useDialogStore().closeDialog();
     }, "onConfirm");
     return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("section", _hoisted_1$17, [
+      return openBlock(), createElementBlock("section", _hoisted_1$16, [
         createBaseVNode("span", null, toDisplayString$1(_ctx.message), 1),
         _ctx.itemList?.length ? (openBlock(), createElementBlock("ul", _hoisted_2$L, [
           (openBlock(true), createElementBlock(Fragment$1, null, renderList(_ctx.itemList, (item3) => {
             return openBlock(), createElementBlock("li", { key: item3 }, toDisplayString$1(item3), 1);
           }), 128))
         ])) : createCommentVNode("", true),
+        _ctx.hint ? (openBlock(), createBlock(unref(script$S), {
+          key: 1,
+          icon: "pi pi-info-circle",
+          severity: "secondary",
+          size: "small",
+          variant: "simple"
+        }, {
+          default: withCtx(() => [
+            createTextVNode(toDisplayString$1(_ctx.hint), 1)
+          ]),
+          _: 1
+        })) : createCommentVNode("", true),
         createBaseVNode("div", _hoisted_3$u, [
           createVNode(unref(script$V), {
             label: _ctx.$t("g.cancel"),
@@ -141260,13 +142258,13 @@ const _sfc_main$_ = /* @__PURE__ */ defineComponent({
     };
   }
 });
-const ConfirmationDialogContent = /* @__PURE__ */ _export_sfc(_sfc_main$_, [["__scopeId", "data-v-3df70997"]]);
-var theme$w = /* @__PURE__ */ __name(function theme10(_ref) {
+const ConfirmationDialogContent = /* @__PURE__ */ _export_sfc(_sfc_main$_, [["__scopeId", "data-v-4f1e3bbe"]]);
+var theme$v = /* @__PURE__ */ __name(function theme11(_ref) {
   var dt2 = _ref.dt;
   return "\n.p-divider-horizontal {\n    display: flex;\n    width: 100%;\n    position: relative;\n    align-items: center;\n    margin: ".concat(dt2("divider.horizontal.margin"), ";\n    padding: ").concat(dt2("divider.horizontal.padding"), ';\n}\n\n.p-divider-horizontal:before {\n    position: absolute;\n    display: block;\n    inset-block-start: 50%;\n    inset-inline-start: 0;\n    width: 100%;\n    content: "";\n    border-block-start: 1px solid ').concat(dt2("divider.border.color"), ";\n}\n\n.p-divider-horizontal .p-divider-content {\n    padding: ").concat(dt2("divider.horizontal.content.padding"), ";\n}\n\n.p-divider-vertical {\n    min-height: 100%;\n    display: flex;\n    position: relative;\n    justify-content: center;\n    margin: ").concat(dt2("divider.vertical.margin"), ";\n    padding: ").concat(dt2("divider.vertical.padding"), ';\n}\n\n.p-divider-vertical:before {\n    position: absolute;\n    display: block;\n    inset-block-start: 0;\n    inset-inline-start: 50%;\n    height: 100%;\n    content: "";\n    border-inline-start: 1px solid ').concat(dt2("divider.border.color"), ";\n}\n\n.p-divider.p-divider-vertical .p-divider-content {\n    padding: ").concat(dt2("divider.vertical.content.padding"), ";\n}\n\n.p-divider-content {\n    z-index: 1;\n    background: ").concat(dt2("divider.content.background"), ";\n    color: ").concat(dt2("divider.content.color"), ";\n}\n\n.p-divider-solid.p-divider-horizontal:before {\n    border-block-start-style: solid;\n}\n\n.p-divider-solid.p-divider-vertical:before {\n    border-inline-start-style: solid;\n}\n\n.p-divider-dashed.p-divider-horizontal:before {\n    border-block-start-style: dashed;\n}\n\n.p-divider-dashed.p-divider-vertical:before {\n    border-inline-start-style: dashed;\n}\n\n.p-divider-dotted.p-divider-horizontal:before {\n    border-block-start-style: dotted;\n}\n\n.p-divider-dotted.p-divider-vertical:before {\n    border-inline-start-style: dotted;\n}\n\n.p-divider-left:dir(rtl),\n.p-divider-right:dir(rtl) {\n    flex-direction: row-reverse;\n}\n");
 }, "theme");
 var inlineStyles$3 = {
-  root: /* @__PURE__ */ __name(function root5(_ref2) {
+  root: /* @__PURE__ */ __name(function root6(_ref2) {
     var props = _ref2.props;
     return {
       justifyContent: props.layout === "horizontal" ? props.align === "center" || props.align === null ? "center" : props.align === "left" ? "flex-start" : props.align === "right" ? "flex-end" : null : null,
@@ -141274,8 +142272,8 @@ var inlineStyles$3 = {
     };
   }, "root")
 };
-var classes$A = {
-  root: /* @__PURE__ */ __name(function root6(_ref3) {
+var classes$z = {
+  root: /* @__PURE__ */ __name(function root7(_ref3) {
     var props = _ref3.props;
     return ["p-divider p-component", "p-divider-" + props.layout, "p-divider-" + props.type, {
       "p-divider-left": props.layout === "horizontal" && (!props.align || props.align === "left")
@@ -141295,11 +142293,11 @@ var classes$A = {
 };
 var DividerStyle = BaseStyle$1.extend({
   name: "divider",
-  theme: theme$w,
-  classes: classes$A,
+  theme: theme$v,
+  classes: classes$z,
   inlineStyles: inlineStyles$3
 });
-var script$1$A = {
+var script$1$z = {
   name: "BaseDivider",
   "extends": script$14,
   props: {
@@ -141317,20 +142315,20 @@ var script$1$A = {
     }
   },
   style: DividerStyle,
-  provide: /* @__PURE__ */ __name(function provide9() {
+  provide: /* @__PURE__ */ __name(function provide10() {
     return {
       $pcDivider: this,
       $parentInstance: this
     };
   }, "provide")
 };
-var script$S = {
+var script$R = {
   name: "Divider",
-  "extends": script$1$A,
+  "extends": script$1$z,
   inheritAttrs: false
 };
-var _hoisted_1$16 = ["aria-orientation"];
-function render$Q(_ctx, _cache, $props, $setup, $data, $options) {
+var _hoisted_1$15 = ["aria-orientation"];
+function render$P(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", mergeProps$2({
     "class": _ctx.cx("root"),
     style: _ctx.sx("root"),
@@ -141339,15 +142337,15 @@ function render$Q(_ctx, _cache, $props, $setup, $data, $options) {
   }, _ctx.ptmi("root")), [_ctx.$slots["default"] ? (openBlock(), createElementBlock("div", mergeProps$2({
     key: 0,
     "class": _ctx.cx("content")
-  }, _ctx.ptm("content")), [renderSlot(_ctx.$slots, "default")], 16)) : createCommentVNode("", true)], 16, _hoisted_1$16);
+  }, _ctx.ptm("content")), [renderSlot(_ctx.$slots, "default")], 16)) : createCommentVNode("", true)], 16, _hoisted_1$15);
 }
-__name(render$Q, "render$Q");
-script$S.render = render$Q;
-var theme$v = /* @__PURE__ */ __name(function theme11(_ref) {
+__name(render$P, "render$P");
+script$R.render = render$P;
+var theme$u = /* @__PURE__ */ __name(function theme12(_ref) {
   var dt2 = _ref.dt;
   return "\n.p-scrollpanel-content-container {\n    overflow: hidden;\n    width: 100%;\n    height: 100%;\n    position: relative;\n    z-index: 1;\n    float: left;\n}\n\n.p-scrollpanel-content {\n    height: calc(100% + calc(2 * ".concat(dt2("scrollpanel.bar.size"), "));\n    width: calc(100% + calc(2 * ").concat(dt2("scrollpanel.bar.size"), "));\n    padding-inline: 0 calc(2 * ").concat(dt2("scrollpanel.bar.size"), ");\n    padding-block: 0 calc(2 * ").concat(dt2("scrollpanel.bar.size"), ");\n    position: relative;\n    overflow: auto;\n    box-sizing: border-box;\n    scrollbar-width: none;\n}\n\n.p-scrollpanel-content::-webkit-scrollbar {\n    display: none;\n}\n\n.p-scrollpanel-bar {\n    position: relative;\n    border-radius: ").concat(dt2("scrollpanel.bar.border.radius"), ";\n    z-index: 2;\n    cursor: pointer;\n    opacity: 0;\n    outline-color: transparent;\n    background: ").concat(dt2("scrollpanel.bar.background"), ";\n    border: 0 none;\n    transition: outline-color ").concat(dt2("scrollpanel.transition.duration"), ", opacity ").concat(dt2("scrollpanel.transition.duration"), ";\n}\n\n.p-scrollpanel-bar:focus-visible {\n    box-shadow: ").concat(dt2("scrollpanel.bar.focus.ring.shadow"), ";\n    outline: ").concat(dt2("scrollpanel.barfocus.ring.width"), " ").concat(dt2("scrollpanel.bar.focus.ring.style"), " ").concat(dt2("scrollpanel.bar.focus.ring.color"), ";\n    outline-offset: ").concat(dt2("scrollpanel.barfocus.ring.offset"), ";\n}\n\n.p-scrollpanel-bar-y {\n    width: ").concat(dt2("scrollpanel.bar.size"), ";\n    inset-block-start: 0;\n}\n\n.p-scrollpanel-bar-x {\n    height: ").concat(dt2("scrollpanel.bar.size"), ";\n    inset-block-end: 0;\n}\n\n.p-scrollpanel-hidden {\n    visibility: hidden;\n}\n\n.p-scrollpanel:hover .p-scrollpanel-bar,\n.p-scrollpanel:active .p-scrollpanel-bar {\n    opacity: 1;\n}\n\n.p-scrollpanel-grabbed {\n    user-select: none;\n}\n");
 }, "theme");
-var classes$z = {
+var classes$y = {
   root: "p-scrollpanel p-component",
   contentContainer: "p-scrollpanel-content-container",
   content: "p-scrollpanel-content",
@@ -141356,10 +142354,10 @@ var classes$z = {
 };
 var ScrollPanelStyle = BaseStyle$1.extend({
   name: "scrollpanel",
-  theme: theme$v,
-  classes: classes$z
+  theme: theme$u,
+  classes: classes$y
 });
-var script$1$z = {
+var script$1$y = {
   name: "BaseScrollPanel",
   "extends": script$14,
   props: {
@@ -141369,16 +142367,16 @@ var script$1$z = {
     }
   },
   style: ScrollPanelStyle,
-  provide: /* @__PURE__ */ __name(function provide10() {
+  provide: /* @__PURE__ */ __name(function provide11() {
     return {
       $pcScrollPanel: this,
       $parentInstance: this
     };
   }, "provide")
 };
-var script$R = {
+var script$Q = {
   name: "ScrollPanel",
-  "extends": script$1$z,
+  "extends": script$1$y,
   inheritAttrs: false,
   initialized: false,
   documentResizeListener: null,
@@ -141393,7 +142391,7 @@ var script$R = {
   lastPageY: null,
   timer: null,
   outsideClickListener: null,
-  data: /* @__PURE__ */ __name(function data5() {
+  data: /* @__PURE__ */ __name(function data6() {
     return {
       id: this.$attrs.id,
       orientation: "vertical",
@@ -141406,7 +142404,7 @@ var script$R = {
       this.id = newValue2 || UniqueComponentId();
     }, "$attrsId")
   },
-  mounted: /* @__PURE__ */ __name(function mounted6() {
+  mounted: /* @__PURE__ */ __name(function mounted7() {
     this.id = this.id || UniqueComponentId();
     if (this.$el.offsetParent) {
       this.initialize();
@@ -141675,10 +142673,10 @@ var script$R = {
     }, "contentId")
   }
 };
-var _hoisted_1$15 = ["id"];
+var _hoisted_1$14 = ["id"];
 var _hoisted_2$K = ["aria-controls", "aria-valuenow"];
 var _hoisted_3$t = ["aria-controls", "aria-valuenow"];
-function render$P(_ctx, _cache, $props, $setup, $data, $options) {
+function render$O(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", mergeProps$2({
     "class": _ctx.cx("root")
   }, _ctx.ptmi("root")), [createBaseVNode("div", mergeProps$2({
@@ -141693,7 +142691,7 @@ function render$P(_ctx, _cache, $props, $setup, $data, $options) {
     onMouseenter: _cache[1] || (_cache[1] = function() {
       return $options.moveBar && $options.moveBar.apply($options, arguments);
     })
-  }, _ctx.ptm("content")), [renderSlot(_ctx.$slots, "default")], 16, _hoisted_1$15)], 16), createBaseVNode("div", mergeProps$2({
+  }, _ctx.ptm("content")), [renderSlot(_ctx.$slots, "default")], 16, _hoisted_1$14)], 16), createBaseVNode("div", mergeProps$2({
     ref: "xBar",
     "class": _ctx.cx("barx"),
     tabindex: "0",
@@ -141742,13 +142740,13 @@ function render$P(_ctx, _cache, $props, $setup, $data, $options) {
     "data-pc-group-section": "bar"
   }), null, 16, _hoisted_3$t)], 16);
 }
-__name(render$P, "render$P");
-script$R.render = render$P;
-var theme$u = /* @__PURE__ */ __name(function theme12(_ref) {
+__name(render$O, "render$O");
+script$Q.render = render$O;
+var theme$t = /* @__PURE__ */ __name(function theme13(_ref) {
   var dt2 = _ref.dt;
   return "\n.p-card {\n    background: ".concat(dt2("card.background"), ";\n    color: ").concat(dt2("card.color"), ";\n    box-shadow: ").concat(dt2("card.shadow"), ";\n    border-radius: ").concat(dt2("card.border.radius"), ";\n    display: flex;\n    flex-direction: column;\n}\n\n.p-card-caption {\n    display: flex;\n    flex-direction: column;\n    gap: ").concat(dt2("card.caption.gap"), ";\n}\n\n.p-card-body {\n    padding: ").concat(dt2("card.body.padding"), ";\n    display: flex;\n    flex-direction: column;\n    gap: ").concat(dt2("card.body.gap"), ";\n}\n\n.p-card-title {\n    font-size: ").concat(dt2("card.title.font.size"), ";\n    font-weight: ").concat(dt2("card.title.font.weight"), ";\n}\n\n.p-card-subtitle {\n    color: ").concat(dt2("card.subtitle.color"), ";\n}\n");
 }, "theme");
-var classes$y = {
+var classes$x = {
   root: "p-card p-component",
   header: "p-card-header",
   body: "p-card-body",
@@ -141760,26 +142758,26 @@ var classes$y = {
 };
 var CardStyle = BaseStyle$1.extend({
   name: "card",
-  theme: theme$u,
-  classes: classes$y
+  theme: theme$t,
+  classes: classes$x
 });
-var script$1$y = {
+var script$1$x = {
   name: "BaseCard",
   "extends": script$14,
   style: CardStyle,
-  provide: /* @__PURE__ */ __name(function provide11() {
+  provide: /* @__PURE__ */ __name(function provide12() {
     return {
       $pcCard: this,
       $parentInstance: this
     };
   }, "provide")
 };
-var script$Q = {
+var script$P = {
   name: "Card",
-  "extends": script$1$y,
+  "extends": script$1$x,
   inheritAttrs: false
 };
-function render$O(_ctx, _cache, $props, $setup, $data, $options) {
+function render$N(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", mergeProps$2({
     "class": _ctx.cx("root")
   }, _ctx.ptmi("root")), [_ctx.$slots.header ? (openBlock(), createElementBlock("div", mergeProps$2({
@@ -141803,9 +142801,9 @@ function render$O(_ctx, _cache, $props, $setup, $data, $options) {
     "class": _ctx.cx("footer")
   }, _ctx.ptm("footer")), [renderSlot(_ctx.$slots, "footer")], 16)) : createCommentVNode("", true)], 16)], 16);
 }
-__name(render$O, "render$O");
-script$Q.render = render$O;
-const _hoisted_1$14 = { class: "flex flex-col items-center" };
+__name(render$N, "render$N");
+script$P.render = render$N;
+const _hoisted_1$13 = { class: "flex flex-col items-center" };
 const _hoisted_2$J = { class: "whitespace-pre-line text-center" };
 const _sfc_main$Z = /* @__PURE__ */ defineComponent({
   __name: "NoResultsPlaceholder",
@@ -141823,9 +142821,9 @@ const _sfc_main$Z = /* @__PURE__ */ defineComponent({
       return openBlock(), createElementBlock("div", {
         class: normalizeClass(["no-results-placeholder p-8 h-full", props.class])
       }, [
-        createVNode(unref(script$Q), null, {
+        createVNode(unref(script$P), null, {
           content: withCtx(() => [
-            createBaseVNode("div", _hoisted_1$14, [
+            createBaseVNode("div", _hoisted_1$13, [
               createBaseVNode("i", {
                 class: normalizeClass(_ctx.icon),
                 style: { "font-size": "3rem", "margin-bottom": "1rem" }
@@ -141881,22 +142879,22 @@ function useCopyToClipboard() {
         await copy2(text2);
         toast.add({
           severity: "success",
-          summary: "Success",
-          detail: "Copied to clipboard",
+          summary: t("g.success"),
+          detail: t("clipboard.successMessage"),
           life: 3e3
         });
       } catch (err) {
         toast.add({
           severity: "error",
-          summary: "Error",
-          detail: "Failed to copy report"
+          summary: t("g.error"),
+          detail: t("clipboard.errorMessage")
         });
       }
     } else {
       toast.add({
         severity: "error",
-        summary: "Error",
-        detail: "Clipboard API not supported in your browser"
+        summary: t("g.error"),
+        detail: t("clipboard.errorNotSupported")
       });
     }
   }, "copyToClipboard");
@@ -143351,15 +144349,15 @@ function handler() {
 }
 __name(handler, "handler");
 var ZIndex = handler();
-function _typeof$g(o2) {
+function _typeof$f(o2) {
   "@babel/helpers - typeof";
-  return _typeof$g = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o3) {
+  return _typeof$f = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o3) {
     return typeof o3;
   } : function(o3) {
     return o3 && "function" == typeof Symbol && o3.constructor === Symbol && o3 !== Symbol.prototype ? "symbol" : typeof o3;
-  }, _typeof$g(o2);
+  }, _typeof$f(o2);
 }
-__name(_typeof$g, "_typeof$g");
+__name(_typeof$f, "_typeof$f");
 function _slicedToArray$4(r2, e2) {
   return _arrayWithHoles$4(r2) || _iterableToArrayLimit$4(r2, e2) || _unsupportedIterableToArray$g(r2, e2) || _nonIterableRest$4();
 }
@@ -143406,7 +144404,7 @@ function _arrayWithHoles$4(r2) {
   if (Array.isArray(r2)) return r2;
 }
 __name(_arrayWithHoles$4, "_arrayWithHoles$4");
-function ownKeys$i(e2, r2) {
+function ownKeys$h(e2, r2) {
   var t2 = Object.keys(e2);
   if (Object.getOwnPropertySymbols) {
     var o2 = Object.getOwnPropertySymbols(e2);
@@ -143416,39 +144414,39 @@ function ownKeys$i(e2, r2) {
   }
   return t2;
 }
-__name(ownKeys$i, "ownKeys$i");
-function _objectSpread$i(e2) {
+__name(ownKeys$h, "ownKeys$h");
+function _objectSpread$h(e2) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$i(Object(t2), true).forEach(function(r3) {
-      _defineProperty$i(e2, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e2, Object.getOwnPropertyDescriptors(t2)) : ownKeys$i(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$h(Object(t2), true).forEach(function(r3) {
+      _defineProperty$h(e2, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e2, Object.getOwnPropertyDescriptors(t2)) : ownKeys$h(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e2, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e2;
 }
-__name(_objectSpread$i, "_objectSpread$i");
-function _defineProperty$i(e2, r2, t2) {
-  return (r2 = _toPropertyKey$f(r2)) in e2 ? Object.defineProperty(e2, r2, { value: t2, enumerable: true, configurable: true, writable: true }) : e2[r2] = t2, e2;
+__name(_objectSpread$h, "_objectSpread$h");
+function _defineProperty$h(e2, r2, t2) {
+  return (r2 = _toPropertyKey$e(r2)) in e2 ? Object.defineProperty(e2, r2, { value: t2, enumerable: true, configurable: true, writable: true }) : e2[r2] = t2, e2;
 }
-__name(_defineProperty$i, "_defineProperty$i");
-function _toPropertyKey$f(t2) {
-  var i2 = _toPrimitive$f(t2, "string");
-  return "symbol" == _typeof$g(i2) ? i2 : i2 + "";
+__name(_defineProperty$h, "_defineProperty$h");
+function _toPropertyKey$e(t2) {
+  var i2 = _toPrimitive$e(t2, "string");
+  return "symbol" == _typeof$f(i2) ? i2 : i2 + "";
 }
-__name(_toPropertyKey$f, "_toPropertyKey$f");
-function _toPrimitive$f(t2, r2) {
-  if ("object" != _typeof$g(t2) || !t2) return t2;
+__name(_toPropertyKey$e, "_toPropertyKey$e");
+function _toPrimitive$e(t2, r2) {
+  if ("object" != _typeof$f(t2) || !t2) return t2;
   var e2 = t2[Symbol.toPrimitive];
   if (void 0 !== e2) {
     var i2 = e2.call(t2, r2 || "default");
-    if ("object" != _typeof$g(i2)) return i2;
+    if ("object" != _typeof$f(i2)) return i2;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return ("string" === r2 ? String : Number)(t2);
 }
-__name(_toPrimitive$f, "_toPrimitive$f");
+__name(_toPrimitive$e, "_toPrimitive$e");
 function _regeneratorRuntime() {
   /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
   _regeneratorRuntime = /* @__PURE__ */ __name(function _regeneratorRuntime2() {
@@ -143512,7 +144510,7 @@ function _regeneratorRuntime() {
       var c3 = tryCatch(t3[r4], t3, o3);
       if ("throw" !== c3.type) {
         var u3 = c3.arg, h3 = u3.value;
-        return h3 && "object" == _typeof$g(h3) && n2.call(h3, "__await") ? e3.resolve(h3.__await).then(function(t4) {
+        return h3 && "object" == _typeof$f(h3) && n2.call(h3, "__await") ? e3.resolve(h3.__await).then(function(t4) {
           invoke2("next", t4, i3, a3);
         }, function(t4) {
           invoke2("throw", t4, i3, a3);
@@ -143606,7 +144604,7 @@ function _regeneratorRuntime() {
         return i3.next = i3;
       }
     }
-    throw new TypeError(_typeof$g(e3) + " is not iterable");
+    throw new TypeError(_typeof$f(e3) + " is not iterable");
   }
   __name(values, "values");
   return GeneratorFunction.prototype = GeneratorFunctionPrototype, o2(g2, "constructor", { value: GeneratorFunctionPrototype, configurable: true }), o2(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: true }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u2, "GeneratorFunction"), e2.isGeneratorFunction = function(t3) {
@@ -143852,11 +144850,11 @@ var useForm = /* @__PURE__ */ __name(function useForm2() {
     };
     watch(function() {
       return states[field2].value;
-    }, function(newValue2, oldValue2) {
+    }, function(newValue2, oldValue) {
       if (states[field2].pristine) {
         states[field2].pristine = false;
       }
-      if (newValue2 !== oldValue2) {
+      if (newValue2 !== oldValue) {
         states[field2].dirty = true;
       }
       validateFieldOn(field2, fieldOptions, "validateOnValueUpdate", true);
@@ -143874,7 +144872,7 @@ var useForm = /* @__PURE__ */ __name(function useForm2() {
               return validateOn("validateOnSubmit", true);
             case 2:
               results = _context2.sent;
-              return _context2.abrupt("return", callback(_objectSpread$i({
+              return _context2.abrupt("return", callback(_objectSpread$h({
                 originalEvent: event,
                 valid: toValue$4(valid),
                 states: toValue$4(states),
@@ -143974,7 +144972,7 @@ var useForm = /* @__PURE__ */ __name(function useForm2() {
             _context3.t5 = {};
           case 33:
             fieldResult = _context3.t5;
-            isArray$7(fieldResult.errors) && (fieldResult.errors = _defineProperty$i({}, fieldName, fieldResult.errors));
+            isArray$7(fieldResult.errors) && (fieldResult.errors = _defineProperty$h({}, fieldName, fieldResult.errors));
             result = mergeKeys$1(result, fieldResult);
           case 36:
             errors2 = (_result$errors$fieldN = result.errors[fieldName]) !== null && _result$errors$fieldN !== void 0 ? _result$errors$fieldN : [];
@@ -144746,16 +145744,16 @@ var Base = {
     this._loadedStyleNames.clear();
   }, "clearLoadedStyleNames")
 };
-function _typeof$f(o2) {
+function _typeof$e(o2) {
   "@babel/helpers - typeof";
-  return _typeof$f = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o3) {
+  return _typeof$e = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o3) {
     return typeof o3;
   } : function(o3) {
     return o3 && "function" == typeof Symbol && o3.constructor === Symbol && o3 !== Symbol.prototype ? "symbol" : typeof o3;
-  }, _typeof$f(o2);
+  }, _typeof$e(o2);
 }
-__name(_typeof$f, "_typeof$f");
-function ownKeys$h(e2, r2) {
+__name(_typeof$e, "_typeof$e");
+function ownKeys$g(e2, r2) {
   var t2 = Object.keys(e2);
   if (Object.getOwnPropertySymbols) {
     var o2 = Object.getOwnPropertySymbols(e2);
@@ -144765,39 +145763,39 @@ function ownKeys$h(e2, r2) {
   }
   return t2;
 }
-__name(ownKeys$h, "ownKeys$h");
-function _objectSpread$h(e2) {
+__name(ownKeys$g, "ownKeys$g");
+function _objectSpread$g(e2) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$h(Object(t2), true).forEach(function(r3) {
-      _defineProperty$h(e2, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e2, Object.getOwnPropertyDescriptors(t2)) : ownKeys$h(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$g(Object(t2), true).forEach(function(r3) {
+      _defineProperty$g(e2, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e2, Object.getOwnPropertyDescriptors(t2)) : ownKeys$g(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e2, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e2;
 }
-__name(_objectSpread$h, "_objectSpread$h");
-function _defineProperty$h(e2, r2, t2) {
-  return (r2 = _toPropertyKey$e(r2)) in e2 ? Object.defineProperty(e2, r2, { value: t2, enumerable: true, configurable: true, writable: true }) : e2[r2] = t2, e2;
+__name(_objectSpread$g, "_objectSpread$g");
+function _defineProperty$g(e2, r2, t2) {
+  return (r2 = _toPropertyKey$d(r2)) in e2 ? Object.defineProperty(e2, r2, { value: t2, enumerable: true, configurable: true, writable: true }) : e2[r2] = t2, e2;
 }
-__name(_defineProperty$h, "_defineProperty$h");
-function _toPropertyKey$e(t2) {
-  var i2 = _toPrimitive$e(t2, "string");
-  return "symbol" == _typeof$f(i2) ? i2 : i2 + "";
+__name(_defineProperty$g, "_defineProperty$g");
+function _toPropertyKey$d(t2) {
+  var i2 = _toPrimitive$d(t2, "string");
+  return "symbol" == _typeof$e(i2) ? i2 : i2 + "";
 }
-__name(_toPropertyKey$e, "_toPropertyKey$e");
-function _toPrimitive$e(t2, r2) {
-  if ("object" != _typeof$f(t2) || !t2) return t2;
+__name(_toPropertyKey$d, "_toPropertyKey$d");
+function _toPrimitive$d(t2, r2) {
+  if ("object" != _typeof$e(t2) || !t2) return t2;
   var e2 = t2[Symbol.toPrimitive];
   if (void 0 !== e2) {
     var i2 = e2.call(t2, r2 || "default");
-    if ("object" != _typeof$f(i2)) return i2;
+    if ("object" != _typeof$e(i2)) return i2;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return ("string" === r2 ? String : Number)(t2);
 }
-__name(_toPrimitive$e, "_toPrimitive$e");
+__name(_toPrimitive$d, "_toPrimitive$d");
 function tryOnMounted(fn) {
   var sync = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : true;
   if (getCurrentInstance()) onMounted(fn);
@@ -144818,7 +145816,7 @@ function useStyle(css4) {
   var load3 = /* @__PURE__ */ __name(function load4(_css) {
     var _props = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
     if (!document2) return;
-    var _styleProps = _objectSpread$h(_objectSpread$h({}, props), _props);
+    var _styleProps = _objectSpread$g(_objectSpread$g({}, props), _props);
     var _name = _styleProps.name || name2, _id2 = _styleProps.id || id3, _nonce = _styleProps.nonce || nonce;
     styleRef.value = document2.querySelector('style[data-primevue-style-id="'.concat(_name, '"]')) || document2.getElementById(_id2) || document2.createElement("style");
     if (!styleRef.value.isConnected) {
@@ -144866,15 +145864,15 @@ function useStyle(css4) {
   };
 }
 __name(useStyle, "useStyle");
-function _typeof$e(o2) {
+function _typeof$d(o2) {
   "@babel/helpers - typeof";
-  return _typeof$e = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o3) {
+  return _typeof$d = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o3) {
     return typeof o3;
   } : function(o3) {
     return o3 && "function" == typeof Symbol && o3.constructor === Symbol && o3 !== Symbol.prototype ? "symbol" : typeof o3;
-  }, _typeof$e(o2);
+  }, _typeof$d(o2);
 }
-__name(_typeof$e, "_typeof$e");
+__name(_typeof$d, "_typeof$d");
 function _slicedToArray$3(r2, e2) {
   return _arrayWithHoles$3(r2) || _iterableToArrayLimit$3(r2, e2) || _unsupportedIterableToArray$f(r2, e2) || _nonIterableRest$3();
 }
@@ -144921,7 +145919,7 @@ function _arrayWithHoles$3(r2) {
   if (Array.isArray(r2)) return r2;
 }
 __name(_arrayWithHoles$3, "_arrayWithHoles$3");
-function ownKeys$g(e2, r2) {
+function ownKeys$f(e2, r2) {
   var t2 = Object.keys(e2);
   if (Object.getOwnPropertySymbols) {
     var o2 = Object.getOwnPropertySymbols(e2);
@@ -144931,40 +145929,40 @@ function ownKeys$g(e2, r2) {
   }
   return t2;
 }
-__name(ownKeys$g, "ownKeys$g");
-function _objectSpread$g(e2) {
+__name(ownKeys$f, "ownKeys$f");
+function _objectSpread$f(e2) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$g(Object(t2), true).forEach(function(r3) {
-      _defineProperty$g(e2, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e2, Object.getOwnPropertyDescriptors(t2)) : ownKeys$g(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$f(Object(t2), true).forEach(function(r3) {
+      _defineProperty$f(e2, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e2, Object.getOwnPropertyDescriptors(t2)) : ownKeys$f(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e2, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e2;
 }
-__name(_objectSpread$g, "_objectSpread$g");
-function _defineProperty$g(e2, r2, t2) {
-  return (r2 = _toPropertyKey$d(r2)) in e2 ? Object.defineProperty(e2, r2, { value: t2, enumerable: true, configurable: true, writable: true }) : e2[r2] = t2, e2;
+__name(_objectSpread$f, "_objectSpread$f");
+function _defineProperty$f(e2, r2, t2) {
+  return (r2 = _toPropertyKey$c(r2)) in e2 ? Object.defineProperty(e2, r2, { value: t2, enumerable: true, configurable: true, writable: true }) : e2[r2] = t2, e2;
 }
-__name(_defineProperty$g, "_defineProperty$g");
-function _toPropertyKey$d(t2) {
-  var i2 = _toPrimitive$d(t2, "string");
-  return "symbol" == _typeof$e(i2) ? i2 : i2 + "";
+__name(_defineProperty$f, "_defineProperty$f");
+function _toPropertyKey$c(t2) {
+  var i2 = _toPrimitive$c(t2, "string");
+  return "symbol" == _typeof$d(i2) ? i2 : i2 + "";
 }
-__name(_toPropertyKey$d, "_toPropertyKey$d");
-function _toPrimitive$d(t2, r2) {
-  if ("object" != _typeof$e(t2) || !t2) return t2;
+__name(_toPropertyKey$c, "_toPropertyKey$c");
+function _toPrimitive$c(t2, r2) {
+  if ("object" != _typeof$d(t2) || !t2) return t2;
   var e2 = t2[Symbol.toPrimitive];
   if (void 0 !== e2) {
     var i2 = e2.call(t2, r2 || "default");
-    if ("object" != _typeof$e(i2)) return i2;
+    if ("object" != _typeof$d(i2)) return i2;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return ("string" === r2 ? String : Number)(t2);
 }
-__name(_toPrimitive$d, "_toPrimitive$d");
-var theme$t = /* @__PURE__ */ __name(function theme13(_ref) {
+__name(_toPrimitive$c, "_toPrimitive$c");
+var theme$s = /* @__PURE__ */ __name(function theme14(_ref) {
   var dt2 = _ref.dt;
   return "\n*,\n::before,\n::after {\n    box-sizing: border-box;\n}\n\n/* Non vue overlay animations */\n.p-connected-overlay {\n    opacity: 0;\n    transform: scaleY(0.8);\n    transition: transform 0.12s cubic-bezier(0, 0, 0.2, 1),\n        opacity 0.12s cubic-bezier(0, 0, 0.2, 1);\n}\n\n.p-connected-overlay-visible {\n    opacity: 1;\n    transform: scaleY(1);\n}\n\n.p-connected-overlay-hidden {\n    opacity: 0;\n    transform: scaleY(1);\n    transition: opacity 0.1s linear;\n}\n\n/* Vue based overlay animations */\n.p-connected-overlay-enter-from {\n    opacity: 0;\n    transform: scaleY(0.8);\n}\n\n.p-connected-overlay-leave-to {\n    opacity: 0;\n}\n\n.p-connected-overlay-enter-active {\n    transition: transform 0.12s cubic-bezier(0, 0, 0.2, 1),\n        opacity 0.12s cubic-bezier(0, 0, 0.2, 1);\n}\n\n.p-connected-overlay-leave-active {\n    transition: opacity 0.1s linear;\n}\n\n/* Toggleable Content */\n.p-toggleable-content-enter-from,\n.p-toggleable-content-leave-to {\n    max-height: 0;\n}\n\n.p-toggleable-content-enter-to,\n.p-toggleable-content-leave-from {\n    max-height: 1000px;\n}\n\n.p-toggleable-content-leave-active {\n    overflow: hidden;\n    transition: max-height 0.45s cubic-bezier(0, 1, 0, 1);\n}\n\n.p-toggleable-content-enter-active {\n    overflow: hidden;\n    transition: max-height 1s ease-in-out;\n}\n\n.p-disabled,\n.p-disabled * {\n    cursor: default;\n    pointer-events: none;\n    user-select: none;\n}\n\n.p-disabled,\n.p-component:disabled {\n    opacity: ".concat(dt2("disabled.opacity"), ";\n}\n\n.pi {\n    font-size: ").concat(dt2("icon.size"), ";\n}\n\n.p-icon {\n    width: ").concat(dt2("icon.size"), ";\n    height: ").concat(dt2("icon.size"), ";\n}\n\n.p-overlay-mask {\n    background: ").concat(dt2("mask.background"), ";\n    color: ").concat(dt2("mask.color"), ";\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n}\n\n.p-overlay-mask-enter {\n    animation: p-overlay-mask-enter-animation ").concat(dt2("mask.transition.duration"), " forwards;\n}\n\n.p-overlay-mask-leave {\n    animation: p-overlay-mask-leave-animation ").concat(dt2("mask.transition.duration"), " forwards;\n}\n\n@keyframes p-overlay-mask-enter-animation {\n    from {\n        background: transparent;\n    }\n    to {\n        background: ").concat(dt2("mask.background"), ";\n    }\n}\n@keyframes p-overlay-mask-leave-animation {\n    from {\n        background: ").concat(dt2("mask.background"), ";\n    }\n    to {\n        background: transparent;\n    }\n}\n");
 }, "theme");
@@ -144972,13 +145970,13 @@ var css$1 = /* @__PURE__ */ __name(function css3(_ref2) {
   var dt2 = _ref2.dt;
   return "\n.p-hidden-accessible {\n    border: 0;\n    clip: rect(0 0 0 0);\n    height: 1px;\n    margin: -1px;\n    overflow: hidden;\n    padding: 0;\n    position: absolute;\n    width: 1px;\n}\n\n.p-hidden-accessible input,\n.p-hidden-accessible select {\n    transform: scale(0);\n}\n\n.p-overflow-hidden {\n    overflow: hidden;\n    padding-right: ".concat(dt2("scrollbar.width"), ";\n}\n");
 }, "css");
-var classes$x = {};
+var classes$w = {};
 var inlineStyles$2 = {};
 var BaseStyle = {
   name: "base",
   css: css$1,
-  theme: theme$t,
-  classes: classes$x,
+  theme: theme$s,
+  classes: classes$w,
   inlineStyles: inlineStyles$2,
   load: /* @__PURE__ */ __name(function load2(style2) {
     var options4 = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
@@ -144988,7 +145986,7 @@ var BaseStyle = {
     var computedStyle = transform2(resolve$1(style2, {
       dt
     }));
-    return isNotEmpty$1(computedStyle) ? useStyle(minifyCSS$1(computedStyle), _objectSpread$g({
+    return isNotEmpty$1(computedStyle) ? useStyle(minifyCSS$1(computedStyle), _objectSpread$f({
       name: this.name
     }, options4)) : {};
   }, "load"),
@@ -145058,7 +146056,7 @@ var BaseStyle = {
     return css4.join("");
   }, "getThemeStyleSheet"),
   extend: /* @__PURE__ */ __name(function extend4(style2) {
-    return _objectSpread$g(_objectSpread$g({}, this), {}, {
+    return _objectSpread$f(_objectSpread$f({}, this), {}, {
       css: void 0,
       theme: void 0
     }, style2);
@@ -145067,15 +146065,15 @@ var BaseStyle = {
 var BaseComponentStyle = BaseStyle.extend({
   name: "common"
 });
-function _typeof$d(o2) {
+function _typeof$c(o2) {
   "@babel/helpers - typeof";
-  return _typeof$d = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o3) {
+  return _typeof$c = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o3) {
     return typeof o3;
   } : function(o3) {
     return o3 && "function" == typeof Symbol && o3.constructor === Symbol && o3 !== Symbol.prototype ? "symbol" : typeof o3;
-  }, _typeof$d(o2);
+  }, _typeof$c(o2);
 }
-__name(_typeof$d, "_typeof$d");
+__name(_typeof$c, "_typeof$c");
 function _toArray(r2) {
   return _arrayWithHoles$2(r2) || _iterableToArray$b(r2) || _unsupportedIterableToArray$e(r2) || _nonIterableRest$2();
 }
@@ -145132,7 +146130,7 @@ function _arrayWithHoles$2(r2) {
   if (Array.isArray(r2)) return r2;
 }
 __name(_arrayWithHoles$2, "_arrayWithHoles$2");
-function ownKeys$f(e2, r2) {
+function ownKeys$e(e2, r2) {
   var t2 = Object.keys(e2);
   if (Object.getOwnPropertySymbols) {
     var o2 = Object.getOwnPropertySymbols(e2);
@@ -145142,40 +146140,40 @@ function ownKeys$f(e2, r2) {
   }
   return t2;
 }
-__name(ownKeys$f, "ownKeys$f");
-function _objectSpread$f(e2) {
+__name(ownKeys$e, "ownKeys$e");
+function _objectSpread$e(e2) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$f(Object(t2), true).forEach(function(r3) {
-      _defineProperty$f(e2, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e2, Object.getOwnPropertyDescriptors(t2)) : ownKeys$f(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$e(Object(t2), true).forEach(function(r3) {
+      _defineProperty$e(e2, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e2, Object.getOwnPropertyDescriptors(t2)) : ownKeys$e(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e2, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e2;
 }
-__name(_objectSpread$f, "_objectSpread$f");
-function _defineProperty$f(e2, r2, t2) {
-  return (r2 = _toPropertyKey$c(r2)) in e2 ? Object.defineProperty(e2, r2, { value: t2, enumerable: true, configurable: true, writable: true }) : e2[r2] = t2, e2;
+__name(_objectSpread$e, "_objectSpread$e");
+function _defineProperty$e(e2, r2, t2) {
+  return (r2 = _toPropertyKey$b(r2)) in e2 ? Object.defineProperty(e2, r2, { value: t2, enumerable: true, configurable: true, writable: true }) : e2[r2] = t2, e2;
 }
-__name(_defineProperty$f, "_defineProperty$f");
-function _toPropertyKey$c(t2) {
-  var i2 = _toPrimitive$c(t2, "string");
-  return "symbol" == _typeof$d(i2) ? i2 : i2 + "";
+__name(_defineProperty$e, "_defineProperty$e");
+function _toPropertyKey$b(t2) {
+  var i2 = _toPrimitive$b(t2, "string");
+  return "symbol" == _typeof$c(i2) ? i2 : i2 + "";
 }
-__name(_toPropertyKey$c, "_toPropertyKey$c");
-function _toPrimitive$c(t2, r2) {
-  if ("object" != _typeof$d(t2) || !t2) return t2;
+__name(_toPropertyKey$b, "_toPropertyKey$b");
+function _toPrimitive$b(t2, r2) {
+  if ("object" != _typeof$c(t2) || !t2) return t2;
   var e2 = t2[Symbol.toPrimitive];
   if (void 0 !== e2) {
     var i2 = e2.call(t2, r2 || "default");
-    if ("object" != _typeof$d(i2)) return i2;
+    if ("object" != _typeof$c(i2)) return i2;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return ("string" === r2 ? String : Number)(t2);
 }
-__name(_toPrimitive$c, "_toPrimitive$c");
-var script$P = {
+__name(_toPrimitive$b, "_toPrimitive$b");
+var script$O = {
   name: "BaseComponent",
   props: {
     pt: {
@@ -145247,7 +146245,7 @@ var script$P = {
     this.rootEl = findSingle(this.$el, '[data-pc-name="'.concat(toFlatCase$1(this.$.type.name), '"]'));
     if (this.rootEl) {
       this.$attrSelector && !this.rootEl.hasAttribute(this.$attrSelector) && this.rootEl.setAttribute(this.$attrSelector, "");
-      this.rootEl.$pc = _objectSpread$f({
+      this.rootEl.$pc = _objectSpread$e({
         name: this.$.type.name,
         attrSelector: this.$attrSelector
       }, this.$params);
@@ -145255,7 +146253,7 @@ var script$P = {
     this._loadStyles();
     this._hook("onBeforeMount");
   }, "beforeMount"),
-  mounted: /* @__PURE__ */ __name(function mounted7() {
+  mounted: /* @__PURE__ */ __name(function mounted8() {
     this._hook("onMounted");
   }, "mounted"),
   beforeUpdate: /* @__PURE__ */ __name(function beforeUpdate2() {
@@ -145309,7 +146307,7 @@ var script$P = {
     }, "_loadCoreStyles"),
     _loadGlobalStyles: /* @__PURE__ */ __name(function _loadGlobalStyles2() {
       var globalCSS = this._useGlobalPT(this._getOptionValue, "global.css", this.$params);
-      isNotEmpty$1(globalCSS) && BaseStyle.load(globalCSS, _objectSpread$f({
+      isNotEmpty$1(globalCSS) && BaseStyle.load(globalCSS, _objectSpread$e({
         name: "global"
       }, this.$styleOptions));
     }, "_loadGlobalStyles"),
@@ -145319,16 +146317,16 @@ var script$P = {
       if (!config_default.isStyleNameLoaded("common")) {
         var _this$$style3, _this$$style3$getComm;
         var _ref3 = ((_this$$style3 = this.$style) === null || _this$$style3 === void 0 || (_this$$style3$getComm = _this$$style3.getCommonTheme) === null || _this$$style3$getComm === void 0 ? void 0 : _this$$style3$getComm.call(_this$$style3)) || {}, primitive = _ref3.primitive, semantic = _ref3.semantic, global2 = _ref3.global, style2 = _ref3.style;
-        BaseStyle.load(primitive === null || primitive === void 0 ? void 0 : primitive.css, _objectSpread$f({
+        BaseStyle.load(primitive === null || primitive === void 0 ? void 0 : primitive.css, _objectSpread$e({
           name: "primitive-variables"
         }, this.$styleOptions));
-        BaseStyle.load(semantic === null || semantic === void 0 ? void 0 : semantic.css, _objectSpread$f({
+        BaseStyle.load(semantic === null || semantic === void 0 ? void 0 : semantic.css, _objectSpread$e({
           name: "semantic-variables"
         }, this.$styleOptions));
-        BaseStyle.load(global2 === null || global2 === void 0 ? void 0 : global2.css, _objectSpread$f({
+        BaseStyle.load(global2 === null || global2 === void 0 ? void 0 : global2.css, _objectSpread$e({
           name: "global-variables"
         }, this.$styleOptions));
-        BaseStyle.loadTheme(_objectSpread$f({
+        BaseStyle.loadTheme(_objectSpread$e({
           name: "global-style"
         }, this.$styleOptions), style2);
         config_default.setLoadedStyleName("common");
@@ -145336,10 +146334,10 @@ var script$P = {
       if (!config_default.isStyleNameLoaded((_this$$style4 = this.$style) === null || _this$$style4 === void 0 ? void 0 : _this$$style4.name) && (_this$$style5 = this.$style) !== null && _this$$style5 !== void 0 && _this$$style5.name) {
         var _this$$style6, _this$$style6$getComp, _this$$style7, _this$$style8;
         var _ref4 = ((_this$$style6 = this.$style) === null || _this$$style6 === void 0 || (_this$$style6$getComp = _this$$style6.getComponentTheme) === null || _this$$style6$getComp === void 0 ? void 0 : _this$$style6$getComp.call(_this$$style6)) || {}, css4 = _ref4.css, _style = _ref4.style;
-        (_this$$style7 = this.$style) === null || _this$$style7 === void 0 || _this$$style7.load(css4, _objectSpread$f({
+        (_this$$style7 = this.$style) === null || _this$$style7 === void 0 || _this$$style7.load(css4, _objectSpread$e({
           name: "".concat(this.$style.name, "-variables")
         }, this.$styleOptions));
-        (_this$$style8 = this.$style) === null || _this$$style8 === void 0 || _this$$style8.loadTheme(_objectSpread$f({
+        (_this$$style8 = this.$style) === null || _this$$style8 === void 0 || _this$$style8.loadTheme(_objectSpread$e({
           name: "".concat(this.$style.name, "-style")
         }, this.$styleOptions), _style);
         config_default.setLoadedStyleName(this.$style.name);
@@ -145347,7 +146345,7 @@ var script$P = {
       if (!config_default.isStyleNameLoaded("layer-order")) {
         var _this$$style9, _this$$style9$getLaye;
         var layerOrder = (_this$$style9 = this.$style) === null || _this$$style9 === void 0 || (_this$$style9$getLaye = _this$$style9.getLayerOrderThemeCSS) === null || _this$$style9$getLaye === void 0 ? void 0 : _this$$style9$getLaye.call(_this$$style9);
-        BaseStyle.load(layerOrder, _objectSpread$f({
+        BaseStyle.load(layerOrder, _objectSpread$e({
           name: "layer-order",
           first: true
         }, this.$styleOptions));
@@ -145357,7 +146355,7 @@ var script$P = {
     _loadScopedThemeStyles: /* @__PURE__ */ __name(function _loadScopedThemeStyles3(preset) {
       var _this$$style10, _this$$style10$getPre, _this$$style11;
       var _ref5 = ((_this$$style10 = this.$style) === null || _this$$style10 === void 0 || (_this$$style10$getPre = _this$$style10.getPresetTheme) === null || _this$$style10$getPre === void 0 ? void 0 : _this$$style10$getPre.call(_this$$style10, preset, "[".concat(this.$attrSelector, "]"))) || {}, css4 = _ref5.css;
-      var scopedStyle = (_this$$style11 = this.$style) === null || _this$$style11 === void 0 ? void 0 : _this$$style11.load(css4, _objectSpread$f({
+      var scopedStyle = (_this$$style11 = this.$style) === null || _this$$style11 === void 0 ? void 0 : _this$$style11.load(css4, _objectSpread$e({
         name: "".concat(this.$attrSelector, "-").concat(this.$style.name)
       }, this.$styleOptions));
       this.scopedStyleEl = scopedStyle.el;
@@ -145393,11 +146391,11 @@ var script$P = {
       var searchOut = /./g.test(key) && !!params[key.split(".")[0]];
       var _ref6 = this._getPropValue("ptOptions") || ((_this$$primevueConfig2 = this.$primevueConfig) === null || _this$$primevueConfig2 === void 0 ? void 0 : _this$$primevueConfig2.ptOptions) || {}, _ref6$mergeSections = _ref6.mergeSections, mergeSections = _ref6$mergeSections === void 0 ? true : _ref6$mergeSections, _ref6$mergeProps = _ref6.mergeProps, useMergeProps = _ref6$mergeProps === void 0 ? false : _ref6$mergeProps;
       var global2 = searchInDefaultPT ? searchOut ? this._useGlobalPT(this._getPTClassValue, key, params) : this._useDefaultPT(this._getPTClassValue, key, params) : void 0;
-      var self2 = searchOut ? void 0 : this._getPTSelf(obj, this._getPTClassValue, key, _objectSpread$f(_objectSpread$f({}, params), {}, {
+      var self2 = searchOut ? void 0 : this._getPTSelf(obj, this._getPTClassValue, key, _objectSpread$e(_objectSpread$e({}, params), {}, {
         global: global2 || {}
       }));
       var datasets = this._getPTDatasets(key);
-      return mergeSections || !mergeSections && self2 ? useMergeProps ? this._mergeProps(useMergeProps, global2, self2, datasets) : _objectSpread$f(_objectSpread$f(_objectSpread$f({}, global2), self2), datasets) : _objectSpread$f(_objectSpread$f({}, self2), datasets);
+      return mergeSections || !mergeSections && self2 ? useMergeProps ? this._mergeProps(useMergeProps, global2, self2, datasets) : _objectSpread$e(_objectSpread$e(_objectSpread$e({}, global2), self2), datasets) : _objectSpread$e(_objectSpread$e({}, self2), datasets);
     }, "_getPTValue"),
     _getPTSelf: /* @__PURE__ */ __name(function _getPTSelf2() {
       var obj = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
@@ -145416,7 +146414,7 @@ var script$P = {
       var key = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : "";
       var datasetPrefix = "data-pc-";
       var isExtended = key === "root" && isNotEmpty$1((_this$pt4 = this.pt) === null || _this$pt4 === void 0 ? void 0 : _this$pt4["data-pc-section"]);
-      return key !== "transition" && _objectSpread$f(_objectSpread$f({}, key === "root" && _objectSpread$f(_objectSpread$f(_defineProperty$f({}, "".concat(datasetPrefix, "name"), toFlatCase$1(isExtended ? (_this$pt5 = this.pt) === null || _this$pt5 === void 0 ? void 0 : _this$pt5["data-pc-section"] : this.$.type.name)), isExtended && _defineProperty$f({}, "".concat(datasetPrefix, "extend"), toFlatCase$1(this.$.type.name))), isClient() && _defineProperty$f({}, "".concat(this.$attrSelector), ""))), {}, _defineProperty$f({}, "".concat(datasetPrefix, "section"), toFlatCase$1(key)));
+      return key !== "transition" && _objectSpread$e(_objectSpread$e({}, key === "root" && _objectSpread$e(_objectSpread$e(_defineProperty$e({}, "".concat(datasetPrefix, "name"), toFlatCase$1(isExtended ? (_this$pt5 = this.pt) === null || _this$pt5 === void 0 ? void 0 : _this$pt5["data-pc-section"] : this.$.type.name)), isExtended && _defineProperty$e({}, "".concat(datasetPrefix, "extend"), toFlatCase$1(this.$.type.name))), isClient() && _defineProperty$e({}, "".concat(this.$attrSelector), ""))), {}, _defineProperty$e({}, "".concat(datasetPrefix, "section"), toFlatCase$1(key)));
     }, "_getPTDatasets"),
     _getPTClassValue: /* @__PURE__ */ __name(function _getPTClassValue2() {
       var value4 = this._getOptionValue.apply(this, arguments);
@@ -145454,7 +146452,7 @@ var script$P = {
         if (originalValue === void 0 && value4 === void 0) return void 0;
         else if (isString$5(value4)) return value4;
         else if (isString$5(originalValue)) return originalValue;
-        return mergeSections || !mergeSections && value4 ? useMergeProps ? this._mergeProps(useMergeProps, originalValue, value4) : _objectSpread$f(_objectSpread$f({}, originalValue), value4) : value4;
+        return mergeSections || !mergeSections && value4 ? useMergeProps ? this._mergeProps(useMergeProps, originalValue, value4) : _objectSpread$e(_objectSpread$e({}, originalValue), value4) : value4;
       }
       return fn(pt);
     }, "_usePT"),
@@ -145467,7 +146465,7 @@ var script$P = {
     ptm: /* @__PURE__ */ __name(function ptm2() {
       var key = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : "";
       var params = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-      return this._getPTValue(this.pt, key, _objectSpread$f(_objectSpread$f({}, this.$params), params));
+      return this._getPTValue(this.pt, key, _objectSpread$e(_objectSpread$e({}, this.$params), params));
     }, "ptm"),
     ptmi: /* @__PURE__ */ __name(function ptmi2() {
       var key = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : "";
@@ -145478,22 +146476,22 @@ var script$P = {
       var obj = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
       var key = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "";
       var params = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
-      return this._getPTValue(obj, key, _objectSpread$f({
+      return this._getPTValue(obj, key, _objectSpread$e({
         instance: this
       }, params), false);
     }, "ptmo"),
     cx: /* @__PURE__ */ __name(function cx2() {
       var key = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : "";
       var params = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-      return !this.isUnstyled ? this._getOptionValue(this.$style.classes, key, _objectSpread$f(_objectSpread$f({}, this.$params), params)) : void 0;
+      return !this.isUnstyled ? this._getOptionValue(this.$style.classes, key, _objectSpread$e(_objectSpread$e({}, this.$params), params)) : void 0;
     }, "cx"),
     sx: /* @__PURE__ */ __name(function sx2() {
       var key = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : "";
       var when = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : true;
       var params = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
       if (when) {
-        var self2 = this._getOptionValue(this.$style.inlineStyles, key, _objectSpread$f(_objectSpread$f({}, this.$params), params));
-        var base2 = this._getOptionValue(BaseComponentStyle.inlineStyles, key, _objectSpread$f(_objectSpread$f({}, this.$params), params));
+        var self2 = this._getOptionValue(this.$style.inlineStyles, key, _objectSpread$e(_objectSpread$e({}, this.$params), params));
+        var base2 = this._getOptionValue(BaseComponentStyle.inlineStyles, key, _objectSpread$e(_objectSpread$e({}, this.$params), params));
         return [base2, self2];
       }
       return void 0;
@@ -145511,7 +146509,7 @@ var script$P = {
     defaultPT: /* @__PURE__ */ __name(function defaultPT2() {
       var _this$$primevueConfig5, _this5 = this;
       return this._getPT((_this$$primevueConfig5 = this.$primevueConfig) === null || _this$$primevueConfig5 === void 0 ? void 0 : _this$$primevueConfig5.pt, void 0, function(value4) {
-        return _this5._getOptionValue(value4, _this5.$name, _objectSpread$f({}, _this5.$params)) || resolve$1(value4, _objectSpread$f({}, _this5.$params));
+        return _this5._getOptionValue(value4, _this5.$name, _objectSpread$e({}, _this5.$params)) || resolve$1(value4, _objectSpread$e({}, _this5.$params));
       });
     }, "defaultPT"),
     isUnstyled: /* @__PURE__ */ __name(function isUnstyled2() {
@@ -145531,7 +146529,7 @@ var script$P = {
       return (_this$$primevueConfig7 = this.$primevueConfig) === null || _this$$primevueConfig7 === void 0 ? void 0 : _this$$primevueConfig7.theme;
     }, "$theme"),
     $style: /* @__PURE__ */ __name(function $style2() {
-      return _objectSpread$f(_objectSpread$f({
+      return _objectSpread$e(_objectSpread$e({
         classes: void 0,
         inlineStyles: void 0,
         load: /* @__PURE__ */ __name(function load3() {
@@ -145596,16 +146594,16 @@ var script$P = {
     }, "$_attrsWithoutPT")
   }
 };
-var classes$w = {
+var classes$v = {
   root: "p-form p-component"
 };
 var FormStyle = BaseStyle.extend({
   name: "form",
-  classes: classes$w
+  classes: classes$v
 });
-var script$1$x = {
+var script$1$w = {
   name: "BaseForm",
-  "extends": script$P,
+  "extends": script$O,
   style: FormStyle,
   props: {
     resolver: {
@@ -145633,198 +146631,9 @@ var script$1$x = {
       "default": true
     }
   },
-  provide: /* @__PURE__ */ __name(function provide12() {
-    return {
-      $pcForm: this,
-      $parentInstance: this
-    };
-  }, "provide")
-};
-function _typeof$c(o2) {
-  "@babel/helpers - typeof";
-  return _typeof$c = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o3) {
-    return typeof o3;
-  } : function(o3) {
-    return o3 && "function" == typeof Symbol && o3.constructor === Symbol && o3 !== Symbol.prototype ? "symbol" : typeof o3;
-  }, _typeof$c(o2);
-}
-__name(_typeof$c, "_typeof$c");
-function ownKeys$e(e2, r2) {
-  var t2 = Object.keys(e2);
-  if (Object.getOwnPropertySymbols) {
-    var o2 = Object.getOwnPropertySymbols(e2);
-    r2 && (o2 = o2.filter(function(r3) {
-      return Object.getOwnPropertyDescriptor(e2, r3).enumerable;
-    })), t2.push.apply(t2, o2);
-  }
-  return t2;
-}
-__name(ownKeys$e, "ownKeys$e");
-function _objectSpread$e(e2) {
-  for (var r2 = 1; r2 < arguments.length; r2++) {
-    var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$e(Object(t2), true).forEach(function(r3) {
-      _defineProperty$e(e2, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e2, Object.getOwnPropertyDescriptors(t2)) : ownKeys$e(Object(t2)).forEach(function(r3) {
-      Object.defineProperty(e2, r3, Object.getOwnPropertyDescriptor(t2, r3));
-    });
-  }
-  return e2;
-}
-__name(_objectSpread$e, "_objectSpread$e");
-function _defineProperty$e(e2, r2, t2) {
-  return (r2 = _toPropertyKey$b(r2)) in e2 ? Object.defineProperty(e2, r2, { value: t2, enumerable: true, configurable: true, writable: true }) : e2[r2] = t2, e2;
-}
-__name(_defineProperty$e, "_defineProperty$e");
-function _toPropertyKey$b(t2) {
-  var i2 = _toPrimitive$b(t2, "string");
-  return "symbol" == _typeof$c(i2) ? i2 : i2 + "";
-}
-__name(_toPropertyKey$b, "_toPropertyKey$b");
-function _toPrimitive$b(t2, r2) {
-  if ("object" != _typeof$c(t2) || !t2) return t2;
-  var e2 = t2[Symbol.toPrimitive];
-  if (void 0 !== e2) {
-    var i2 = e2.call(t2, r2 || "default");
-    if ("object" != _typeof$c(i2)) return i2;
-    throw new TypeError("@@toPrimitive must return a primitive value.");
-  }
-  return ("string" === r2 ? String : Number)(t2);
-}
-__name(_toPrimitive$b, "_toPrimitive$b");
-function _slicedToArray$1(r2, e2) {
-  return _arrayWithHoles$1(r2) || _iterableToArrayLimit$1(r2, e2) || _unsupportedIterableToArray$d(r2, e2) || _nonIterableRest$1();
-}
-__name(_slicedToArray$1, "_slicedToArray$1");
-function _nonIterableRest$1() {
-  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-}
-__name(_nonIterableRest$1, "_nonIterableRest$1");
-function _unsupportedIterableToArray$d(r2, a2) {
-  if (r2) {
-    if ("string" == typeof r2) return _arrayLikeToArray$d(r2, a2);
-    var t2 = {}.toString.call(r2).slice(8, -1);
-    return "Object" === t2 && r2.constructor && (t2 = r2.constructor.name), "Map" === t2 || "Set" === t2 ? Array.from(r2) : "Arguments" === t2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t2) ? _arrayLikeToArray$d(r2, a2) : void 0;
-  }
-}
-__name(_unsupportedIterableToArray$d, "_unsupportedIterableToArray$d");
-function _arrayLikeToArray$d(r2, a2) {
-  (null == a2 || a2 > r2.length) && (a2 = r2.length);
-  for (var e2 = 0, n2 = Array(a2); e2 < a2; e2++) n2[e2] = r2[e2];
-  return n2;
-}
-__name(_arrayLikeToArray$d, "_arrayLikeToArray$d");
-function _iterableToArrayLimit$1(r2, l2) {
-  var t2 = null == r2 ? null : "undefined" != typeof Symbol && r2[Symbol.iterator] || r2["@@iterator"];
-  if (null != t2) {
-    var e2, n2, i2, u2, a2 = [], f2 = true, o2 = false;
-    try {
-      if (i2 = (t2 = t2.call(r2)).next, 0 === l2) ;
-      else for (; !(f2 = (e2 = i2.call(t2)).done) && (a2.push(e2.value), a2.length !== l2); f2 = true) ;
-    } catch (r3) {
-      o2 = true, n2 = r3;
-    } finally {
-      try {
-        if (!f2 && null != t2["return"] && (u2 = t2["return"](), Object(u2) !== u2)) return;
-      } finally {
-        if (o2) throw n2;
-      }
-    }
-    return a2;
-  }
-}
-__name(_iterableToArrayLimit$1, "_iterableToArrayLimit$1");
-function _arrayWithHoles$1(r2) {
-  if (Array.isArray(r2)) return r2;
-}
-__name(_arrayWithHoles$1, "_arrayWithHoles$1");
-var script$O = {
-  name: "Form",
-  "extends": script$1$x,
-  inheritAttrs: false,
-  emits: ["submit"],
-  setup: /* @__PURE__ */ __name(function setup2(props, _ref) {
-    var emit2 = _ref.emit;
-    var $form = useForm(props);
-    var register3 = /* @__PURE__ */ __name(function register4(field2, options4) {
-      var _$form$defineField = $form.defineField(field2, options4), _$form$defineField2 = _slicedToArray$1(_$form$defineField, 2), fieldProps = _$form$defineField2[1];
-      return fieldProps;
-    }, "register");
-    var onSubmit = $form.handleSubmit(function(e2) {
-      emit2("submit", e2);
-    });
-    return _objectSpread$e({
-      register: register3,
-      onSubmit
-    }, omit$1($form, ["handleSubmit"]));
-  }, "setup")
-};
-function render$N(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("form", mergeProps$2({
-    onSubmit: _cache[0] || (_cache[0] = withModifiers(function() {
-      return $setup.onSubmit && $setup.onSubmit.apply($setup, arguments);
-    }, ["prevent"])),
-    "class": _ctx.cx("root")
-  }, _ctx.ptmi("root")), [renderSlot(_ctx.$slots, "default", mergeProps$2({
-    register: $setup.register,
-    valid: _ctx.valid,
-    reset: _ctx.reset
-  }, _ctx.states))], 16);
-}
-__name(render$N, "render$N");
-script$O.render = render$N;
-var classes$v = {
-  root: "p-formfield p-component"
-};
-var FormFieldStyle = BaseStyle.extend({
-  name: "formfield",
-  classes: classes$v
-});
-var script$1$w = {
-  name: "BaseFormField",
-  "extends": script$P,
-  style: FormFieldStyle,
-  props: {
-    name: {
-      type: String,
-      "default": void 0
-    },
-    resolver: {
-      type: Function,
-      "default": void 0
-    },
-    initialValue: {
-      type: null,
-      "default": void 0
-    },
-    validateOnValueUpdate: {
-      type: Boolean,
-      "default": void 0
-    },
-    validateOnBlur: {
-      type: Boolean,
-      "default": void 0
-    },
-    validateOnMount: {
-      type: Boolean,
-      "default": void 0
-    },
-    validateOnSubmit: {
-      type: Boolean,
-      "default": void 0
-    },
-    as: {
-      type: [String, Object],
-      "default": "DIV"
-    },
-    asChild: {
-      type: Boolean,
-      "default": false
-    }
-  },
   provide: /* @__PURE__ */ __name(function provide13() {
     return {
-      $pcFormField: this,
+      $pcForm: this,
       $parentInstance: this
     };
   }, "provide")
@@ -145881,9 +146690,198 @@ function _toPrimitive$a(t2, r2) {
   return ("string" === r2 ? String : Number)(t2);
 }
 __name(_toPrimitive$a, "_toPrimitive$a");
+function _slicedToArray$1(r2, e2) {
+  return _arrayWithHoles$1(r2) || _iterableToArrayLimit$1(r2, e2) || _unsupportedIterableToArray$d(r2, e2) || _nonIterableRest$1();
+}
+__name(_slicedToArray$1, "_slicedToArray$1");
+function _nonIterableRest$1() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+__name(_nonIterableRest$1, "_nonIterableRest$1");
+function _unsupportedIterableToArray$d(r2, a2) {
+  if (r2) {
+    if ("string" == typeof r2) return _arrayLikeToArray$d(r2, a2);
+    var t2 = {}.toString.call(r2).slice(8, -1);
+    return "Object" === t2 && r2.constructor && (t2 = r2.constructor.name), "Map" === t2 || "Set" === t2 ? Array.from(r2) : "Arguments" === t2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t2) ? _arrayLikeToArray$d(r2, a2) : void 0;
+  }
+}
+__name(_unsupportedIterableToArray$d, "_unsupportedIterableToArray$d");
+function _arrayLikeToArray$d(r2, a2) {
+  (null == a2 || a2 > r2.length) && (a2 = r2.length);
+  for (var e2 = 0, n2 = Array(a2); e2 < a2; e2++) n2[e2] = r2[e2];
+  return n2;
+}
+__name(_arrayLikeToArray$d, "_arrayLikeToArray$d");
+function _iterableToArrayLimit$1(r2, l2) {
+  var t2 = null == r2 ? null : "undefined" != typeof Symbol && r2[Symbol.iterator] || r2["@@iterator"];
+  if (null != t2) {
+    var e2, n2, i2, u2, a2 = [], f2 = true, o2 = false;
+    try {
+      if (i2 = (t2 = t2.call(r2)).next, 0 === l2) ;
+      else for (; !(f2 = (e2 = i2.call(t2)).done) && (a2.push(e2.value), a2.length !== l2); f2 = true) ;
+    } catch (r3) {
+      o2 = true, n2 = r3;
+    } finally {
+      try {
+        if (!f2 && null != t2["return"] && (u2 = t2["return"](), Object(u2) !== u2)) return;
+      } finally {
+        if (o2) throw n2;
+      }
+    }
+    return a2;
+  }
+}
+__name(_iterableToArrayLimit$1, "_iterableToArrayLimit$1");
+function _arrayWithHoles$1(r2) {
+  if (Array.isArray(r2)) return r2;
+}
+__name(_arrayWithHoles$1, "_arrayWithHoles$1");
 var script$N = {
-  name: "FormField",
+  name: "Form",
   "extends": script$1$w,
+  inheritAttrs: false,
+  emits: ["submit"],
+  setup: /* @__PURE__ */ __name(function setup2(props, _ref) {
+    var emit2 = _ref.emit;
+    var $form = useForm(props);
+    var register3 = /* @__PURE__ */ __name(function register4(field2, options4) {
+      var _$form$defineField = $form.defineField(field2, options4), _$form$defineField2 = _slicedToArray$1(_$form$defineField, 2), fieldProps = _$form$defineField2[1];
+      return fieldProps;
+    }, "register");
+    var onSubmit = $form.handleSubmit(function(e2) {
+      emit2("submit", e2);
+    });
+    return _objectSpread$d({
+      register: register3,
+      onSubmit
+    }, omit$1($form, ["handleSubmit"]));
+  }, "setup")
+};
+function render$M(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("form", mergeProps$2({
+    onSubmit: _cache[0] || (_cache[0] = withModifiers(function() {
+      return $setup.onSubmit && $setup.onSubmit.apply($setup, arguments);
+    }, ["prevent"])),
+    "class": _ctx.cx("root")
+  }, _ctx.ptmi("root")), [renderSlot(_ctx.$slots, "default", mergeProps$2({
+    register: $setup.register,
+    valid: _ctx.valid,
+    reset: _ctx.reset
+  }, _ctx.states))], 16);
+}
+__name(render$M, "render$M");
+script$N.render = render$M;
+var classes$u = {
+  root: "p-formfield p-component"
+};
+var FormFieldStyle = BaseStyle.extend({
+  name: "formfield",
+  classes: classes$u
+});
+var script$1$v = {
+  name: "BaseFormField",
+  "extends": script$O,
+  style: FormFieldStyle,
+  props: {
+    name: {
+      type: String,
+      "default": void 0
+    },
+    resolver: {
+      type: Function,
+      "default": void 0
+    },
+    initialValue: {
+      type: null,
+      "default": void 0
+    },
+    validateOnValueUpdate: {
+      type: Boolean,
+      "default": void 0
+    },
+    validateOnBlur: {
+      type: Boolean,
+      "default": void 0
+    },
+    validateOnMount: {
+      type: Boolean,
+      "default": void 0
+    },
+    validateOnSubmit: {
+      type: Boolean,
+      "default": void 0
+    },
+    as: {
+      type: [String, Object],
+      "default": "DIV"
+    },
+    asChild: {
+      type: Boolean,
+      "default": false
+    }
+  },
+  provide: /* @__PURE__ */ __name(function provide14() {
+    return {
+      $pcFormField: this,
+      $parentInstance: this
+    };
+  }, "provide")
+};
+function _typeof$a(o2) {
+  "@babel/helpers - typeof";
+  return _typeof$a = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o3) {
+    return typeof o3;
+  } : function(o3) {
+    return o3 && "function" == typeof Symbol && o3.constructor === Symbol && o3 !== Symbol.prototype ? "symbol" : typeof o3;
+  }, _typeof$a(o2);
+}
+__name(_typeof$a, "_typeof$a");
+function ownKeys$c(e2, r2) {
+  var t2 = Object.keys(e2);
+  if (Object.getOwnPropertySymbols) {
+    var o2 = Object.getOwnPropertySymbols(e2);
+    r2 && (o2 = o2.filter(function(r3) {
+      return Object.getOwnPropertyDescriptor(e2, r3).enumerable;
+    })), t2.push.apply(t2, o2);
+  }
+  return t2;
+}
+__name(ownKeys$c, "ownKeys$c");
+function _objectSpread$c(e2) {
+  for (var r2 = 1; r2 < arguments.length; r2++) {
+    var t2 = null != arguments[r2] ? arguments[r2] : {};
+    r2 % 2 ? ownKeys$c(Object(t2), true).forEach(function(r3) {
+      _defineProperty$c(e2, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e2, Object.getOwnPropertyDescriptors(t2)) : ownKeys$c(Object(t2)).forEach(function(r3) {
+      Object.defineProperty(e2, r3, Object.getOwnPropertyDescriptor(t2, r3));
+    });
+  }
+  return e2;
+}
+__name(_objectSpread$c, "_objectSpread$c");
+function _defineProperty$c(e2, r2, t2) {
+  return (r2 = _toPropertyKey$9(r2)) in e2 ? Object.defineProperty(e2, r2, { value: t2, enumerable: true, configurable: true, writable: true }) : e2[r2] = t2, e2;
+}
+__name(_defineProperty$c, "_defineProperty$c");
+function _toPropertyKey$9(t2) {
+  var i2 = _toPrimitive$9(t2, "string");
+  return "symbol" == _typeof$a(i2) ? i2 : i2 + "";
+}
+__name(_toPropertyKey$9, "_toPropertyKey$9");
+function _toPrimitive$9(t2, r2) {
+  if ("object" != _typeof$a(t2) || !t2) return t2;
+  var e2 = t2[Symbol.toPrimitive];
+  if (void 0 !== e2) {
+    var i2 = e2.call(t2, r2 || "default");
+    if ("object" != _typeof$a(i2)) return i2;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return ("string" === r2 ? String : Number)(t2);
+}
+__name(_toPrimitive$9, "_toPrimitive$9");
+var script$M = {
+  name: "FormField",
+  "extends": script$1$v,
   inheritAttrs: false,
   inject: {
     $pcForm: {
@@ -145916,11 +146914,11 @@ var script$N = {
       return ((_this$$pcForm2 = this.$pcForm) === null || _this$$pcForm2 === void 0 || (_this$$pcForm2 = _this$$pcForm2.fields) === null || _this$$pcForm2 === void 0 ? void 0 : _this$$pcForm2[this.name]) || {};
     }, "field"),
     fieldAttrs: /* @__PURE__ */ __name(function fieldAttrs() {
-      return _objectSpread$d(_objectSpread$d({}, this.field.props), this.field.states);
+      return _objectSpread$c(_objectSpread$c({}, this.field.props), this.field.states);
     }, "fieldAttrs")
   }
 };
-function render$M(_ctx, _cache, $props, $setup, $data, $options) {
+function render$L(_ctx, _cache, $props, $setup, $data, $options) {
   return !_ctx.asChild ? (openBlock(), createBlock(resolveDynamicComponent(_ctx.as), mergeProps$2({
     key: 0,
     "class": _ctx.cx("root")
@@ -145937,8 +146935,8 @@ function render$M(_ctx, _cache, $props, $setup, $data, $options) {
     props: $options.field.props
   }, $options.fieldAttrs));
 }
-__name(render$M, "render$M");
-script$N.render = render$M;
+__name(render$L, "render$L");
+script$M.render = render$L;
 var __defProp$1 = Object.defineProperty;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
@@ -146836,9 +147834,9 @@ var defineProperty$1 = function() {
   } catch (e2) {
   }
 }();
-var _defineProperty$b = defineProperty$1;
-const _defineProperty$c = /* @__PURE__ */ getDefaultExportFromCjs(_defineProperty$b);
-var defineProperty = _defineProperty$b;
+var _defineProperty$a = defineProperty$1;
+const _defineProperty$b = /* @__PURE__ */ getDefaultExportFromCjs(_defineProperty$a);
+var defineProperty = _defineProperty$a;
 function baseAssignValue$2(object, key, value4) {
   if (key == "__proto__" && defineProperty) {
     defineProperty(object, key, {
@@ -147533,11 +148531,11 @@ function cloneDeep(value4) {
 __name(cloneDeep, "cloneDeep");
 var cloneDeep_1 = cloneDeep;
 const cloneDeep$1 = /* @__PURE__ */ getDefaultExportFromCjs(cloneDeep_1);
-var script$M = {
+var script$L = {
   name: "CheckIcon",
   "extends": script$$
 };
-function render$L(_ctx, _cache, $props, $setup, $data, $options) {
+function render$K(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("svg", mergeProps$2({
     width: "14",
     height: "14",
@@ -147549,13 +148547,13 @@ function render$L(_ctx, _cache, $props, $setup, $data, $options) {
     fill: "currentColor"
   }, null, -1)]), 16);
 }
-__name(render$L, "render$L");
-script$M.render = render$L;
-var script$L = {
+__name(render$K, "render$K");
+script$L.render = render$K;
+var script$K = {
   name: "MinusIcon",
   "extends": script$$
 };
-function render$K(_ctx, _cache, $props, $setup, $data, $options) {
+function render$J(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("svg", mergeProps$2({
     width: "14",
     height: "14",
@@ -147567,14 +148565,14 @@ function render$K(_ctx, _cache, $props, $setup, $data, $options) {
     fill: "currentColor"
   }, null, -1)]), 16);
 }
-__name(render$K, "render$K");
-script$L.render = render$K;
-var theme$s = /* @__PURE__ */ __name(function theme14(_ref) {
+__name(render$J, "render$J");
+script$K.render = render$J;
+var theme$r = /* @__PURE__ */ __name(function theme15(_ref) {
   var dt2 = _ref.dt;
   return "\n.p-checkbox {\n    position: relative;\n    display: inline-flex;\n    user-select: none;\n    vertical-align: bottom;\n    width: ".concat(dt2("checkbox.width"), ";\n    height: ").concat(dt2("checkbox.height"), ";\n}\n\n.p-checkbox-input {\n    cursor: pointer;\n    appearance: none;\n    position: absolute;\n    inset-block-start: 0;\n    inset-inline-start: 0;\n    width: 100%;\n    height: 100%;\n    padding: 0;\n    margin: 0;\n    opacity: 0;\n    z-index: 1;\n    outline: 0 none;\n    border: 1px solid transparent;\n    border-radius: ").concat(dt2("checkbox.border.radius"), ";\n}\n\n.p-checkbox-box {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    border-radius: ").concat(dt2("checkbox.border.radius"), ";\n    border: 1px solid ").concat(dt2("checkbox.border.color"), ";\n    background: ").concat(dt2("checkbox.background"), ";\n    width: ").concat(dt2("checkbox.width"), ";\n    height: ").concat(dt2("checkbox.height"), ";\n    transition: background ").concat(dt2("checkbox.transition.duration"), ", color ").concat(dt2("checkbox.transition.duration"), ", border-color ").concat(dt2("checkbox.transition.duration"), ", box-shadow ").concat(dt2("checkbox.transition.duration"), ", outline-color ").concat(dt2("checkbox.transition.duration"), ";\n    outline-color: transparent;\n    box-shadow: ").concat(dt2("checkbox.shadow"), ";\n}\n\n.p-checkbox-icon {\n    transition-duration: ").concat(dt2("checkbox.transition.duration"), ";\n    color: ").concat(dt2("checkbox.icon.color"), ";\n    font-size: ").concat(dt2("checkbox.icon.size"), ";\n    width: ").concat(dt2("checkbox.icon.size"), ";\n    height: ").concat(dt2("checkbox.icon.size"), ";\n}\n\n.p-checkbox:not(.p-disabled):has(.p-checkbox-input:hover) .p-checkbox-box {\n    border-color: ").concat(dt2("checkbox.hover.border.color"), ";\n}\n\n.p-checkbox-checked .p-checkbox-box {\n    border-color: ").concat(dt2("checkbox.checked.border.color"), ";\n    background: ").concat(dt2("checkbox.checked.background"), ";\n}\n\n.p-checkbox-checked .p-checkbox-icon {\n    color: ").concat(dt2("checkbox.icon.checked.color"), ";\n}\n\n.p-checkbox-checked:not(.p-disabled):has(.p-checkbox-input:hover) .p-checkbox-box {\n    background: ").concat(dt2("checkbox.checked.hover.background"), ";\n    border-color: ").concat(dt2("checkbox.checked.hover.border.color"), ";\n}\n\n.p-checkbox-checked:not(.p-disabled):has(.p-checkbox-input:hover) .p-checkbox-icon {\n    color: ").concat(dt2("checkbox.icon.checked.hover.color"), ";\n}\n\n.p-checkbox:not(.p-disabled):has(.p-checkbox-input:focus-visible) .p-checkbox-box {\n    border-color: ").concat(dt2("checkbox.focus.border.color"), ";\n    box-shadow: ").concat(dt2("checkbox.focus.ring.shadow"), ";\n    outline: ").concat(dt2("checkbox.focus.ring.width"), " ").concat(dt2("checkbox.focus.ring.style"), " ").concat(dt2("checkbox.focus.ring.color"), ";\n    outline-offset: ").concat(dt2("checkbox.focus.ring.offset"), ";\n}\n\n.p-checkbox-checked:not(.p-disabled):has(.p-checkbox-input:focus-visible) .p-checkbox-box {\n    border-color: ").concat(dt2("checkbox.checked.focus.border.color"), ";\n}\n\n.p-checkbox.p-invalid > .p-checkbox-box {\n    border-color: ").concat(dt2("checkbox.invalid.border.color"), ";\n}\n\n.p-checkbox.p-variant-filled .p-checkbox-box {\n    background: ").concat(dt2("checkbox.filled.background"), ";\n}\n\n.p-checkbox-checked.p-variant-filled .p-checkbox-box {\n    background: ").concat(dt2("checkbox.checked.background"), ";\n}\n\n.p-checkbox-checked.p-variant-filled:not(.p-disabled):has(.p-checkbox-input:hover) .p-checkbox-box {\n    background: ").concat(dt2("checkbox.checked.hover.background"), ";\n}\n\n.p-checkbox.p-disabled {\n    opacity: 1;\n}\n\n.p-checkbox.p-disabled .p-checkbox-box {\n    background: ").concat(dt2("checkbox.disabled.background"), ";\n    border-color: ").concat(dt2("checkbox.checked.disabled.border.color"), ";\n}\n\n.p-checkbox.p-disabled .p-checkbox-box .p-checkbox-icon {\n    color: ").concat(dt2("checkbox.icon.disabled.color"), ";\n}\n\n.p-checkbox-sm,\n.p-checkbox-sm .p-checkbox-box {\n    width: ").concat(dt2("checkbox.sm.width"), ";\n    height: ").concat(dt2("checkbox.sm.height"), ";\n}\n\n.p-checkbox-sm .p-checkbox-icon {\n    font-size: ").concat(dt2("checkbox.icon.sm.size"), ";\n    width: ").concat(dt2("checkbox.icon.sm.size"), ";\n    height: ").concat(dt2("checkbox.icon.sm.size"), ";\n}\n\n.p-checkbox-lg,\n.p-checkbox-lg .p-checkbox-box {\n    width: ").concat(dt2("checkbox.lg.width"), ";\n    height: ").concat(dt2("checkbox.lg.height"), ";\n}\n\n.p-checkbox-lg .p-checkbox-icon {\n    font-size: ").concat(dt2("checkbox.icon.lg.size"), ";\n    width: ").concat(dt2("checkbox.icon.lg.size"), ";\n    height: ").concat(dt2("checkbox.icon.lg.size"), ";\n}\n");
 }, "theme");
-var classes$u = {
-  root: /* @__PURE__ */ __name(function root7(_ref2) {
+var classes$t = {
+  root: /* @__PURE__ */ __name(function root8(_ref2) {
     var instance = _ref2.instance, props = _ref2.props;
     return ["p-checkbox p-component", {
       "p-checkbox-checked": instance.checked,
@@ -147591,10 +148589,10 @@ var classes$u = {
 };
 var CheckboxStyle = BaseStyle$1.extend({
   name: "checkbox",
-  theme: theme$s,
-  classes: classes$u
+  theme: theme$r,
+  classes: classes$t
 });
-var script$1$v = {
+var script$1$u = {
   name: "BaseCheckbox",
   "extends": script$10,
   props: {
@@ -147646,7 +148644,7 @@ var script$1$v = {
     }
   },
   style: CheckboxStyle,
-  provide: /* @__PURE__ */ __name(function provide14() {
+  provide: /* @__PURE__ */ __name(function provide15() {
     return {
       $pcCheckbox: this,
       $parentInstance: this
@@ -147683,9 +148681,9 @@ function _arrayLikeToArray$c(r2, a2) {
   return n2;
 }
 __name(_arrayLikeToArray$c, "_arrayLikeToArray$c");
-var script$K = {
+var script$J = {
   name: "Checkbox",
-  "extends": script$1$v,
+  "extends": script$1$u,
   inheritAttrs: false,
   emits: ["change", "focus", "blur", "update:indeterminate"],
   inject: {
@@ -147693,7 +148691,7 @@ var script$K = {
       "default": void 0
     }
   },
-  data: /* @__PURE__ */ __name(function data6() {
+  data: /* @__PURE__ */ __name(function data7() {
     return {
       d_indeterminate: this.indeterminate
     };
@@ -147754,13 +148752,13 @@ var script$K = {
     }, "checked")
   },
   components: {
-    CheckIcon: script$M,
-    MinusIcon: script$L
+    CheckIcon: script$L,
+    MinusIcon: script$K
   }
 };
-var _hoisted_1$13 = ["data-p-checked", "data-p-indeterminate", "data-p-disabled"];
+var _hoisted_1$12 = ["data-p-checked", "data-p-indeterminate", "data-p-disabled"];
 var _hoisted_2$I = ["id", "value", "name", "checked", "tabindex", "disabled", "readonly", "required", "aria-labelledby", "aria-label", "aria-invalid", "aria-checked"];
-function render$J(_ctx, _cache, $props, $setup, $data, $options) {
+function render$I(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_CheckIcon = resolveComponent("CheckIcon");
   var _component_MinusIcon = resolveComponent("MinusIcon");
   return openBlock(), createElementBlock("div", mergeProps$2({
@@ -147808,16 +148806,16 @@ function render$J(_ctx, _cache, $props, $setup, $data, $options) {
       key: 1,
       "class": _ctx.cx("icon")
     }, $options.getPTOptions("icon")), null, 16, ["class"])) : createCommentVNode("", true)];
-  })], 16)], 16, _hoisted_1$13);
+  })], 16)], 16, _hoisted_1$12);
 }
-__name(render$J, "render$J");
-script$K.render = render$J;
-var theme$r = /* @__PURE__ */ __name(function theme15(_ref) {
+__name(render$I, "render$I");
+script$J.render = render$I;
+var theme$q = /* @__PURE__ */ __name(function theme16(_ref) {
   var dt2 = _ref.dt;
   return "\n.p-inputtext {\n    font-family: inherit;\n    font-feature-settings: inherit;\n    font-size: 1rem;\n    color: ".concat(dt2("inputtext.color"), ";\n    background: ").concat(dt2("inputtext.background"), ";\n    padding-block: ").concat(dt2("inputtext.padding.y"), ";\n    padding-inline: ").concat(dt2("inputtext.padding.x"), ";\n    border: 1px solid ").concat(dt2("inputtext.border.color"), ";\n    transition: background ").concat(dt2("inputtext.transition.duration"), ", color ").concat(dt2("inputtext.transition.duration"), ", border-color ").concat(dt2("inputtext.transition.duration"), ", outline-color ").concat(dt2("inputtext.transition.duration"), ", box-shadow ").concat(dt2("inputtext.transition.duration"), ";\n    appearance: none;\n    border-radius: ").concat(dt2("inputtext.border.radius"), ";\n    outline-color: transparent;\n    box-shadow: ").concat(dt2("inputtext.shadow"), ";\n}\n\n.p-inputtext:enabled:hover {\n    border-color: ").concat(dt2("inputtext.hover.border.color"), ";\n}\n\n.p-inputtext:enabled:focus {\n    border-color: ").concat(dt2("inputtext.focus.border.color"), ";\n    box-shadow: ").concat(dt2("inputtext.focus.ring.shadow"), ";\n    outline: ").concat(dt2("inputtext.focus.ring.width"), " ").concat(dt2("inputtext.focus.ring.style"), " ").concat(dt2("inputtext.focus.ring.color"), ";\n    outline-offset: ").concat(dt2("inputtext.focus.ring.offset"), ";\n}\n\n.p-inputtext.p-invalid {\n    border-color: ").concat(dt2("inputtext.invalid.border.color"), ";\n}\n\n.p-inputtext.p-variant-filled {\n    background: ").concat(dt2("inputtext.filled.background"), ";\n}\n\n.p-inputtext.p-variant-filled:enabled:hover {\n    background: ").concat(dt2("inputtext.filled.hover.background"), ";\n}\n\n.p-inputtext.p-variant-filled:enabled:focus {\n    background: ").concat(dt2("inputtext.filled.focus.background"), ";\n}\n\n.p-inputtext:disabled {\n    opacity: 1;\n    background: ").concat(dt2("inputtext.disabled.background"), ";\n    color: ").concat(dt2("inputtext.disabled.color"), ";\n}\n\n.p-inputtext::placeholder {\n    color: ").concat(dt2("inputtext.placeholder.color"), ";\n}\n\n.p-inputtext.p-invalid::placeholder {\n    color: ").concat(dt2("inputtext.invalid.placeholder.color"), ";\n}\n\n.p-inputtext-sm {\n    font-size: ").concat(dt2("inputtext.sm.font.size"), ";\n    padding-block: ").concat(dt2("inputtext.sm.padding.y"), ";\n    padding-inline: ").concat(dt2("inputtext.sm.padding.x"), ";\n}\n\n.p-inputtext-lg {\n    font-size: ").concat(dt2("inputtext.lg.font.size"), ";\n    padding-block: ").concat(dt2("inputtext.lg.padding.y"), ";\n    padding-inline: ").concat(dt2("inputtext.lg.padding.x"), ";\n}\n\n.p-inputtext-fluid {\n    width: 100%;\n}\n");
 }, "theme");
-var classes$t = {
-  root: /* @__PURE__ */ __name(function root8(_ref2) {
+var classes$s = {
+  root: /* @__PURE__ */ __name(function root9(_ref2) {
     var instance = _ref2.instance, props = _ref2.props;
     return ["p-inputtext p-component", {
       "p-filled": instance.$filled,
@@ -147831,23 +148829,23 @@ var classes$t = {
 };
 var InputTextStyle = BaseStyle$1.extend({
   name: "inputtext",
-  theme: theme$r,
-  classes: classes$t
+  theme: theme$q,
+  classes: classes$s
 });
-var script$1$u = {
+var script$1$t = {
   name: "BaseInputText",
   "extends": script$10,
   style: InputTextStyle,
-  provide: /* @__PURE__ */ __name(function provide15() {
+  provide: /* @__PURE__ */ __name(function provide16() {
     return {
       $pcInputText: this,
       $parentInstance: this
     };
   }, "provide")
 };
-var script$J = {
+var script$I = {
   name: "InputText",
-  "extends": script$1$u,
+  "extends": script$1$t,
   inheritAttrs: false,
   methods: {
     onInput: /* @__PURE__ */ __name(function onInput(event) {
@@ -147865,8 +148863,8 @@ var script$J = {
     }, "attrs")
   }
 };
-var _hoisted_1$12 = ["value", "disabled", "aria-invalid"];
-function render$I(_ctx, _cache, $props, $setup, $data, $options) {
+var _hoisted_1$11 = ["value", "disabled", "aria-invalid"];
+function render$H(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("input", mergeProps$2({
     type: "text",
     "class": _ctx.cx("root"),
@@ -147876,219 +148874,7 @@ function render$I(_ctx, _cache, $props, $setup, $data, $options) {
     onInput: _cache[0] || (_cache[0] = function() {
       return $options.onInput && $options.onInput.apply($options, arguments);
     })
-  }, $options.attrs), null, 16, _hoisted_1$12);
-}
-__name(render$I, "render$I");
-script$J.render = render$I;
-var theme$q = /* @__PURE__ */ __name(function theme16(_ref) {
-  var dt2 = _ref.dt;
-  return "\n.p-message {\n    border-radius: ".concat(dt2("message.border.radius"), ";\n    outline-width: ").concat(dt2("message.border.width"), ";\n    outline-style: solid;\n}\n\n.p-message-content {\n    display: flex;\n    align-items: center;\n    padding: ").concat(dt2("message.content.padding"), ";\n    gap: ").concat(dt2("message.content.gap"), ";\n    height: 100%;\n}\n\n.p-message-icon {\n    flex-shrink: 0;\n}\n\n.p-message-close-button {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    flex-shrink: 0;\n    margin-inline-start: auto;\n    overflow: hidden;\n    position: relative;\n    width: ").concat(dt2("message.close.button.width"), ";\n    height: ").concat(dt2("message.close.button.height"), ";\n    border-radius: ").concat(dt2("message.close.button.border.radius"), ";\n    background: transparent;\n    transition: background ").concat(dt2("message.transition.duration"), ", color ").concat(dt2("message.transition.duration"), ", outline-color ").concat(dt2("message.transition.duration"), ", box-shadow ").concat(dt2("message.transition.duration"), ", opacity 0.3s;\n    outline-color: transparent;\n    color: inherit;\n    padding: 0;\n    border: none;\n    cursor: pointer;\n    user-select: none;\n}\n\n.p-message-close-icon {\n    font-size: ").concat(dt2("message.close.icon.size"), ";\n    width: ").concat(dt2("message.close.icon.size"), ";\n    height: ").concat(dt2("message.close.icon.size"), ";\n}\n\n.p-message-close-button:focus-visible {\n    outline-width: ").concat(dt2("message.close.button.focus.ring.width"), ";\n    outline-style: ").concat(dt2("message.close.button.focus.ring.style"), ";\n    outline-offset: ").concat(dt2("message.close.button.focus.ring.offset"), ";\n}\n\n.p-message-info {\n    background: ").concat(dt2("message.info.background"), ";\n    outline-color: ").concat(dt2("message.info.border.color"), ";\n    color: ").concat(dt2("message.info.color"), ";\n    box-shadow: ").concat(dt2("message.info.shadow"), ";\n}\n\n.p-message-info .p-message-close-button:focus-visible {\n    outline-color: ").concat(dt2("message.info.close.button.focus.ring.color"), ";\n    box-shadow: ").concat(dt2("message.info.close.button.focus.ring.shadow"), ";\n}\n\n.p-message-info .p-message-close-button:hover {\n    background: ").concat(dt2("message.info.close.button.hover.background"), ";\n}\n\n.p-message-info.p-message-outlined {\n    color: ").concat(dt2("message.info.outlined.color"), ";\n    outline-color: ").concat(dt2("message.info.outlined.border.color"), ";\n}\n\n.p-message-info.p-message-simple {\n    color: ").concat(dt2("message.info.simple.color"), ";\n}\n\n.p-message-success {\n    background: ").concat(dt2("message.success.background"), ";\n    outline-color: ").concat(dt2("message.success.border.color"), ";\n    color: ").concat(dt2("message.success.color"), ";\n    box-shadow: ").concat(dt2("message.success.shadow"), ";\n}\n\n.p-message-success .p-message-close-button:focus-visible {\n    outline-color: ").concat(dt2("message.success.close.button.focus.ring.color"), ";\n    box-shadow: ").concat(dt2("message.success.close.button.focus.ring.shadow"), ";\n}\n\n.p-message-success .p-message-close-button:hover {\n    background: ").concat(dt2("message.success.close.button.hover.background"), ";\n}\n\n.p-message-success.p-message-outlined {\n    color: ").concat(dt2("message.success.outlined.color"), ";\n    outline-color: ").concat(dt2("message.success.outlined.border.color"), ";\n}\n\n.p-message-success.p-message-simple {\n    color: ").concat(dt2("message.success.simple.color"), ";\n}\n\n.p-message-warn {\n    background: ").concat(dt2("message.warn.background"), ";\n    outline-color: ").concat(dt2("message.warn.border.color"), ";\n    color: ").concat(dt2("message.warn.color"), ";\n    box-shadow: ").concat(dt2("message.warn.shadow"), ";\n}\n\n.p-message-warn .p-message-close-button:focus-visible {\n    outline-color: ").concat(dt2("message.warn.close.button.focus.ring.color"), ";\n    box-shadow: ").concat(dt2("message.warn.close.button.focus.ring.shadow"), ";\n}\n\n.p-message-warn .p-message-close-button:hover {\n    background: ").concat(dt2("message.warn.close.button.hover.background"), ";\n}\n\n.p-message-warn.p-message-outlined {\n    color: ").concat(dt2("message.warn.outlined.color"), ";\n    outline-color: ").concat(dt2("message.warn.outlined.border.color"), ";\n}\n\n.p-message-warn.p-message-simple {\n    color: ").concat(dt2("message.warn.simple.color"), ";\n}\n\n.p-message-error {\n    background: ").concat(dt2("message.error.background"), ";\n    outline-color: ").concat(dt2("message.error.border.color"), ";\n    color: ").concat(dt2("message.error.color"), ";\n    box-shadow: ").concat(dt2("message.error.shadow"), ";\n}\n\n.p-message-error .p-message-close-button:focus-visible {\n    outline-color: ").concat(dt2("message.error.close.button.focus.ring.color"), ";\n    box-shadow: ").concat(dt2("message.error.close.button.focus.ring.shadow"), ";\n}\n\n.p-message-error .p-message-close-button:hover {\n    background: ").concat(dt2("message.error.close.button.hover.background"), ";\n}\n\n.p-message-error.p-message-outlined {\n    color: ").concat(dt2("message.error.outlined.color"), ";\n    outline-color: ").concat(dt2("message.error.outlined.border.color"), ";\n}\n\n.p-message-error.p-message-simple {\n    color: ").concat(dt2("message.error.simple.color"), ";\n}\n\n.p-message-secondary {\n    background: ").concat(dt2("message.secondary.background"), ";\n    outline-color: ").concat(dt2("message.secondary.border.color"), ";\n    color: ").concat(dt2("message.secondary.color"), ";\n    box-shadow: ").concat(dt2("message.secondary.shadow"), ";\n}\n\n.p-message-secondary .p-message-close-button:focus-visible {\n    outline-color: ").concat(dt2("message.secondary.close.button.focus.ring.color"), ";\n    box-shadow: ").concat(dt2("message.secondary.close.button.focus.ring.shadow"), ";\n}\n\n.p-message-secondary .p-message-close-button:hover {\n    background: ").concat(dt2("message.secondary.close.button.hover.background"), ";\n}\n\n.p-message-secondary.p-message-outlined {\n    color: ").concat(dt2("message.secondary.outlined.color"), ";\n    outline-color: ").concat(dt2("message.secondary.outlined.border.color"), ";\n}\n\n.p-message-secondary.p-message-simple {\n    color: ").concat(dt2("message.secondary.simple.color"), ";\n}\n\n.p-message-contrast {\n    background: ").concat(dt2("message.contrast.background"), ";\n    outline-color: ").concat(dt2("message.contrast.border.color"), ";\n    color: ").concat(dt2("message.contrast.color"), ";\n    box-shadow: ").concat(dt2("message.contrast.shadow"), ";\n}\n\n.p-message-contrast .p-message-close-button:focus-visible {\n    outline-color: ").concat(dt2("message.contrast.close.button.focus.ring.color"), ";\n    box-shadow: ").concat(dt2("message.contrast.close.button.focus.ring.shadow"), ";\n}\n\n.p-message-contrast .p-message-close-button:hover {\n    background: ").concat(dt2("message.contrast.close.button.hover.background"), ";\n}\n\n.p-message-contrast.p-message-outlined {\n    color: ").concat(dt2("message.contrast.outlined.color"), ";\n    outline-color: ").concat(dt2("message.contrast.outlined.border.color"), ";\n}\n\n.p-message-contrast.p-message-simple {\n    color: ").concat(dt2("message.contrast.simple.color"), ";\n}\n\n.p-message-text {\n    font-size: ").concat(dt2("message.text.font.size"), ";\n    font-weight: ").concat(dt2("message.text.font.weight"), ";\n}\n\n.p-message-icon {\n    font-size: ").concat(dt2("message.icon.size"), ";\n    width: ").concat(dt2("message.icon.size"), ";\n    height: ").concat(dt2("message.icon.size"), ";\n}\n\n.p-message-enter-from {\n    opacity: 0;\n}\n\n.p-message-enter-active {\n    transition: opacity 0.3s;\n}\n\n.p-message.p-message-leave-from {\n    max-height: 1000px;\n}\n\n.p-message.p-message-leave-to {\n    max-height: 0;\n    opacity: 0;\n    margin: 0;\n}\n\n.p-message-leave-active {\n    overflow: hidden;\n    transition: max-height 0.45s cubic-bezier(0, 1, 0, 1), opacity 0.3s, margin 0.3s;\n}\n\n.p-message-leave-active .p-message-close-button {\n    opacity: 0;\n}\n\n.p-message-sm .p-message-content {\n    padding: ").concat(dt2("message.content.sm.padding"), ";\n}\n\n.p-message-sm .p-message-text {\n    font-size: ").concat(dt2("message.text.sm.font.size"), ";\n}\n\n.p-message-sm .p-message-icon {\n    font-size: ").concat(dt2("message.icon.sm.size"), ";\n    width: ").concat(dt2("message.icon.sm.size"), ";\n    height: ").concat(dt2("message.icon.sm.size"), ";\n}\n\n.p-message-sm .p-message-close-icon {\n    font-size: ").concat(dt2("message.close.icon.sm.size"), ";\n    width: ").concat(dt2("message.close.icon.sm.size"), ";\n    height: ").concat(dt2("message.close.icon.sm.size"), ";\n}\n\n.p-message-lg .p-message-content {\n    padding: ").concat(dt2("message.content.lg.padding"), ";\n}\n\n.p-message-lg .p-message-text {\n    font-size: ").concat(dt2("message.text.lg.font.size"), ";\n}\n\n.p-message-lg .p-message-icon {\n    font-size: ").concat(dt2("message.icon.lg.size"), ";\n    width: ").concat(dt2("message.icon.lg.size"), ";\n    height: ").concat(dt2("message.icon.lg.size"), ";\n}\n\n.p-message-lg .p-message-close-icon {\n    font-size: ").concat(dt2("message.close.icon.lg.size"), ";\n    width: ").concat(dt2("message.close.icon.lg.size"), ";\n    height: ").concat(dt2("message.close.icon.lg.size"), ";\n}\n\n.p-message-outlined {\n    background: transparent;\n    outline-width: ").concat(dt2("message.outlined.border.width"), ";\n}\n\n.p-message-simple {\n    background: transparent;\n    outline-color: transparent;\n    box-shadow: none;\n}\n\n.p-message-simple .p-message-content {\n    padding: ").concat(dt2("message.simple.content.padding"), ";\n}\n\n.p-message-outlined .p-message-close-button:hover,\n.p-message-simple .p-message-close-button:hover {\n    background: transparent;\n}\n");
-}, "theme");
-var classes$s = {
-  root: /* @__PURE__ */ __name(function root9(_ref2) {
-    var props = _ref2.props;
-    return ["p-message p-component p-message-" + props.severity, {
-      "p-message-outlined": props.variant === "outlined",
-      "p-message-simple": props.variant === "simple",
-      "p-message-sm": props.size === "small",
-      "p-message-lg": props.size === "large"
-    }];
-  }, "root"),
-  content: "p-message-content",
-  icon: "p-message-icon",
-  text: "p-message-text",
-  closeButton: "p-message-close-button",
-  closeIcon: "p-message-close-icon"
-};
-var MessageStyle = BaseStyle$1.extend({
-  name: "message",
-  theme: theme$q,
-  classes: classes$s
-});
-var script$1$t = {
-  name: "BaseMessage",
-  "extends": script$14,
-  props: {
-    severity: {
-      type: String,
-      "default": "info"
-    },
-    closable: {
-      type: Boolean,
-      "default": false
-    },
-    life: {
-      type: Number,
-      "default": null
-    },
-    icon: {
-      type: String,
-      "default": void 0
-    },
-    closeIcon: {
-      type: String,
-      "default": void 0
-    },
-    closeButtonProps: {
-      type: null,
-      "default": null
-    },
-    size: {
-      type: String,
-      "default": null
-    },
-    variant: {
-      type: String,
-      "default": null
-    }
-  },
-  style: MessageStyle,
-  provide: /* @__PURE__ */ __name(function provide16() {
-    return {
-      $pcMessage: this,
-      $parentInstance: this
-    };
-  }, "provide")
-};
-var script$I = {
-  name: "Message",
-  "extends": script$1$t,
-  inheritAttrs: false,
-  emits: ["close", "life-end"],
-  timeout: null,
-  data: /* @__PURE__ */ __name(function data7() {
-    return {
-      visible: true
-    };
-  }, "data"),
-  mounted: /* @__PURE__ */ __name(function mounted8() {
-    var _this = this;
-    if (this.life) {
-      setTimeout(function() {
-        _this.visible = false;
-        _this.$emit("life-end");
-      }, this.life);
-    }
-  }, "mounted"),
-  methods: {
-    close: /* @__PURE__ */ __name(function close3(event) {
-      this.visible = false;
-      this.$emit("close", event);
-    }, "close")
-  },
-  computed: {
-    closeAriaLabel: /* @__PURE__ */ __name(function closeAriaLabel2() {
-      return this.$primevue.config.locale.aria ? this.$primevue.config.locale.aria.close : void 0;
-    }, "closeAriaLabel")
-  },
-  directives: {
-    ripple: Ripple
-  },
-  components: {
-    TimesIcon: script$_
-  }
-};
-function _typeof$a(o2) {
-  "@babel/helpers - typeof";
-  return _typeof$a = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o3) {
-    return typeof o3;
-  } : function(o3) {
-    return o3 && "function" == typeof Symbol && o3.constructor === Symbol && o3 !== Symbol.prototype ? "symbol" : typeof o3;
-  }, _typeof$a(o2);
-}
-__name(_typeof$a, "_typeof$a");
-function ownKeys$c(e2, r2) {
-  var t2 = Object.keys(e2);
-  if (Object.getOwnPropertySymbols) {
-    var o2 = Object.getOwnPropertySymbols(e2);
-    r2 && (o2 = o2.filter(function(r3) {
-      return Object.getOwnPropertyDescriptor(e2, r3).enumerable;
-    })), t2.push.apply(t2, o2);
-  }
-  return t2;
-}
-__name(ownKeys$c, "ownKeys$c");
-function _objectSpread$c(e2) {
-  for (var r2 = 1; r2 < arguments.length; r2++) {
-    var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$c(Object(t2), true).forEach(function(r3) {
-      _defineProperty$a(e2, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e2, Object.getOwnPropertyDescriptors(t2)) : ownKeys$c(Object(t2)).forEach(function(r3) {
-      Object.defineProperty(e2, r3, Object.getOwnPropertyDescriptor(t2, r3));
-    });
-  }
-  return e2;
-}
-__name(_objectSpread$c, "_objectSpread$c");
-function _defineProperty$a(e2, r2, t2) {
-  return (r2 = _toPropertyKey$9(r2)) in e2 ? Object.defineProperty(e2, r2, { value: t2, enumerable: true, configurable: true, writable: true }) : e2[r2] = t2, e2;
-}
-__name(_defineProperty$a, "_defineProperty$a");
-function _toPropertyKey$9(t2) {
-  var i2 = _toPrimitive$9(t2, "string");
-  return "symbol" == _typeof$a(i2) ? i2 : i2 + "";
-}
-__name(_toPropertyKey$9, "_toPropertyKey$9");
-function _toPrimitive$9(t2, r2) {
-  if ("object" != _typeof$a(t2) || !t2) return t2;
-  var e2 = t2[Symbol.toPrimitive];
-  if (void 0 !== e2) {
-    var i2 = e2.call(t2, r2 || "default");
-    if ("object" != _typeof$a(i2)) return i2;
-    throw new TypeError("@@toPrimitive must return a primitive value.");
-  }
-  return ("string" === r2 ? String : Number)(t2);
-}
-__name(_toPrimitive$9, "_toPrimitive$9");
-var _hoisted_1$11 = ["aria-label"];
-function render$H(_ctx, _cache, $props, $setup, $data, $options) {
-  var _component_TimesIcon = resolveComponent("TimesIcon");
-  var _directive_ripple = resolveDirective("ripple");
-  return openBlock(), createBlock(Transition, mergeProps$2({
-    name: "p-message",
-    appear: ""
-  }, _ctx.ptmi("transition")), {
-    "default": withCtx(function() {
-      return [withDirectives(createBaseVNode("div", mergeProps$2({
-        "class": _ctx.cx("root"),
-        role: "alert",
-        "aria-live": "assertive",
-        "aria-atomic": "true"
-      }, _ctx.ptm("root")), [_ctx.$slots.container ? renderSlot(_ctx.$slots, "container", {
-        key: 0,
-        closeCallback: $options.close
-      }) : (openBlock(), createElementBlock("div", mergeProps$2({
-        key: 1,
-        "class": _ctx.cx("content")
-      }, _ctx.ptm("content")), [renderSlot(_ctx.$slots, "icon", {
-        "class": normalizeClass(_ctx.cx("icon"))
-      }, function() {
-        return [(openBlock(), createBlock(resolveDynamicComponent(_ctx.icon ? "span" : null), mergeProps$2({
-          "class": [_ctx.cx("icon"), _ctx.icon]
-        }, _ctx.ptm("icon")), null, 16, ["class"]))];
-      }), _ctx.$slots["default"] ? (openBlock(), createElementBlock("div", mergeProps$2({
-        key: 0,
-        "class": _ctx.cx("text")
-      }, _ctx.ptm("text")), [renderSlot(_ctx.$slots, "default")], 16)) : createCommentVNode("", true), _ctx.closable ? withDirectives((openBlock(), createElementBlock("button", mergeProps$2({
-        key: 1,
-        "class": _ctx.cx("closeButton"),
-        "aria-label": $options.closeAriaLabel,
-        type: "button",
-        onClick: _cache[0] || (_cache[0] = function($event) {
-          return $options.close($event);
-        })
-      }, _objectSpread$c(_objectSpread$c({}, _ctx.closeButtonProps), _ctx.ptm("closeButton"))), [renderSlot(_ctx.$slots, "closeicon", {}, function() {
-        return [_ctx.closeIcon ? (openBlock(), createElementBlock("i", mergeProps$2({
-          key: 0,
-          "class": [_ctx.cx("closeIcon"), _ctx.closeIcon]
-        }, _ctx.ptm("closeIcon")), null, 16)) : (openBlock(), createBlock(_component_TimesIcon, mergeProps$2({
-          key: 1,
-          "class": [_ctx.cx("closeIcon"), _ctx.closeIcon]
-        }, _ctx.ptm("closeIcon")), null, 16, ["class"]))];
-      })], 16, _hoisted_1$11)), [[_directive_ripple]]) : createCommentVNode("", true)], 16))], 16), [[vShow, $data.visible]])];
-    }),
-    _: 3
-  }, 16);
+  }, $options.attrs), null, 16, _hoisted_1$11);
 }
 __name(render$H, "render$H");
 script$I.render = render$H;
@@ -148205,7 +148991,7 @@ var script$G = {
   },
   components: {
     PlusIcon: script$H,
-    MinusIcon: script$L,
+    MinusIcon: script$K,
     Button: script$V
   },
   directives: {
@@ -148391,7 +149177,7 @@ const _hoisted_1$_ = { class: "flex items-center gap-2" };
 const _hoisted_2$G = { class: "font-bold" };
 const _hoisted_3$s = { class: "flex justify-end gap-4" };
 const _hoisted_4$k = { class: "p-4 mt-2 border border-round surface-border shadow-1" };
-const _hoisted_5$f = { class: "flex flex-row gap-3 mb-2" };
+const _hoisted_5$g = { class: "flex flex-row gap-3 mb-2" };
 const _hoisted_6$a = ["for"];
 const _hoisted_7$4 = { class: "flex flex-row gap-3 mt-2" };
 const _hoisted_8$3 = ["for"];
@@ -148507,7 +149293,7 @@ const _sfc_main$X = /* @__PURE__ */ defineComponent({
     }, "submit");
     return (_ctx, _cache) => {
       const _directive_tooltip = resolveDirective("tooltip");
-      return openBlock(), createBlock(unref(script$O), {
+      return openBlock(), createBlock(unref(script$N), {
         onSubmit: submit,
         resolver: unref(zodResolver)(unref(issueReportSchema))
       }, {
@@ -148535,18 +149321,18 @@ const _sfc_main$X = /* @__PURE__ */ defineComponent({
             ]),
             default: withCtx(() => [
               createBaseVNode("div", _hoisted_4$k, [
-                createBaseVNode("div", _hoisted_5$f, [
+                createBaseVNode("div", _hoisted_5$g, [
                   (openBlock(true), createElementBlock(Fragment$1, null, renderList(fields.value, (field2) => {
                     return openBlock(), createElementBlock("div", {
                       key: field2.value
                     }, [
-                      field2.optIn ? (openBlock(), createBlock(unref(script$N), {
+                      field2.optIn ? (openBlock(), createBlock(unref(script$M), {
                         key: 0,
                         name: field2.value,
                         class: "flex space-x-1"
                       }, {
                         default: withCtx(($field) => [
-                          createVNode(unref(script$K), mergeProps$2({ ref_for: true }, $field, {
+                          createVNode(unref(script$J), mergeProps$2({ ref_for: true }, $field, {
                             inputId: field2.value,
                             value: field2.value,
                             modelValue: selection.value,
@@ -148561,7 +149347,7 @@ const _sfc_main$X = /* @__PURE__ */ defineComponent({
                     ]);
                   }), 128))
                 ]),
-                createVNode(unref(script$N), {
+                createVNode(unref(script$M), {
                   class: "mb-4",
                   name: "details"
                 }, {
@@ -148572,7 +149358,7 @@ const _sfc_main$X = /* @__PURE__ */ defineComponent({
                       placeholder: _ctx.$t("issueReport.provideAdditionalDetails"),
                       "aria-label": _ctx.$t("issueReport.provideAdditionalDetails")
                     }), null, 16, ["placeholder", "aria-label"]),
-                    $field?.error && $field.touched && $field.value ? (openBlock(), createBlock(unref(script$I), {
+                    $field?.error && $field.touched && $field.value ? (openBlock(), createBlock(unref(script$S), {
                       key: 0,
                       severity: "error",
                       size: "small",
@@ -148586,13 +149372,13 @@ const _sfc_main$X = /* @__PURE__ */ defineComponent({
                   ]),
                   _: 1
                 }),
-                createVNode(unref(script$N), { name: "contactInfo" }, {
+                createVNode(unref(script$M), { name: "contactInfo" }, {
                   default: withCtx(($field) => [
-                    createVNode(unref(script$J), mergeProps$2($field, {
+                    createVNode(unref(script$I), mergeProps$2($field, {
                       class: "w-full",
                       placeholder: _ctx.$t("issueReport.provideEmail")
                     }), null, 16, ["placeholder"]),
-                    $field?.error && $field.touched && $field.value !== "" ? (openBlock(), createBlock(unref(script$I), {
+                    $field?.error && $field.touched && $field.value !== "" ? (openBlock(), createBlock(unref(script$S), {
                       key: 0,
                       severity: "error",
                       size: "small",
@@ -148611,12 +149397,12 @@ const _sfc_main$X = /* @__PURE__ */ defineComponent({
                     return createBaseVNode("div", {
                       key: checkbox.value
                     }, [
-                      createVNode(unref(script$N), {
+                      createVNode(unref(script$M), {
                         name: checkbox.value,
                         class: "flex space-x-1"
                       }, {
                         default: withCtx(($field) => [
-                          createVNode(unref(script$K), mergeProps$2({ ref_for: true }, $field, {
+                          createVNode(unref(script$J), mergeProps$2({ ref_for: true }, $field, {
                             inputId: checkbox.value,
                             value: checkbox.value,
                             modelValue: contactPrefs.value,
@@ -148781,14 +149567,14 @@ ${workflowText}
             ])
           ]),
           reportOpen.value ? (openBlock(), createElementBlock(Fragment$1, { key: 0 }, [
-            createVNode(unref(script$S)),
-            createVNode(unref(script$R), { style: { "width": "100%", "height": "400px", "max-width": "80vw" } }, {
+            createVNode(unref(script$R)),
+            createVNode(unref(script$Q), { style: { "width": "100%", "height": "400px", "max-width": "80vw" } }, {
               default: withCtx(() => [
                 createBaseVNode("pre", _hoisted_3$r, toDisplayString$1(reportContent.value), 1)
               ]),
               _: 1
             }),
-            createVNode(unref(script$S))
+            createVNode(unref(script$R))
           ], 64)) : createCommentVNode("", true),
           sendReportOpen.value ? (openBlock(), createBlock(_sfc_main$X, {
             key: 1,
@@ -148815,7 +149601,7 @@ ${workflowText}
     };
   }
 });
-const ExecutionErrorDialogContent = /* @__PURE__ */ _export_sfc(_sfc_main$W, [["__scopeId", "data-v-3faf7785"]]);
+const ExecutionErrorDialogContent = /* @__PURE__ */ _export_sfc(_sfc_main$W, [["__scopeId", "data-v-e5000be2"]]);
 const _hoisted_1$Y = {
   class: "p-2 h-full",
   "aria-labelledby": "issue-report-title"
@@ -149184,13 +149970,13 @@ var script$A = {
     numToleratedItems: /* @__PURE__ */ __name(function numToleratedItems(newValue2) {
       this.d_numToleratedItems = newValue2;
     }, "numToleratedItems"),
-    loading: /* @__PURE__ */ __name(function loading(newValue2, oldValue2) {
-      if (this.lazy && newValue2 !== oldValue2 && newValue2 !== this.d_loading) {
+    loading: /* @__PURE__ */ __name(function loading(newValue2, oldValue) {
+      if (this.lazy && newValue2 !== oldValue && newValue2 !== this.d_loading) {
         this.d_loading = newValue2;
       }
     }, "loading"),
-    items: /* @__PURE__ */ __name(function items(newValue2, oldValue2) {
-      if (!oldValue2 || oldValue2.length !== (newValue2 || []).length) {
+    items: /* @__PURE__ */ __name(function items(newValue2, oldValue) {
+      if (!oldValue || oldValue.length !== (newValue2 || []).length) {
         this.init();
         this.calculateAutoSize();
       }
@@ -149347,8 +150133,8 @@ var script$A = {
               }
             } else {
               if (viewport.first - first2 > index2) {
-                var pos2 = (viewport.first - 1) * this.itemSize;
-                horizontal2 ? scrollTo3(pos2, 0) : scrollTo3(0, pos2);
+                var pos = (viewport.first - 1) * this.itemSize;
+                horizontal2 ? scrollTo3(pos, 0) : scrollTo3(0, pos);
               }
             }
           } else if (isToEnd) {
@@ -149559,12 +150345,12 @@ var script$A = {
         }
       }
     }, "setSpacerSize"),
-    setContentPosition: /* @__PURE__ */ __name(function setContentPosition(pos2) {
+    setContentPosition: /* @__PURE__ */ __name(function setContentPosition(pos) {
       var _this7 = this;
       if (this.content && !this.appendOnly) {
         var both = this.isBoth();
         var horizontal2 = this.isHorizontal();
-        var first2 = pos2 ? pos2.first : this.first;
+        var first2 = pos ? pos.first : this.first;
         var calculateTranslateVal = /* @__PURE__ */ __name(function calculateTranslateVal2(_first, _size) {
           return _first * _size;
         }, "calculateTranslateVal");
@@ -150722,12 +151508,12 @@ var script$z = {
     ripple: Ripple
   },
   components: {
-    InputText: script$J,
+    InputText: script$I,
     VirtualScroller: script$A,
     InputIcon: script$B,
     IconField: script$C,
     SearchIcon: script$D,
-    CheckIcon: script$M,
+    CheckIcon: script$L,
     BlankIcon: script$E
   }
 };
@@ -150735,7 +151521,7 @@ var _hoisted_1$W = ["id"];
 var _hoisted_2$D = ["tabindex"];
 var _hoisted_3$p = ["id", "aria-multiselectable", "aria-label", "aria-labelledby", "aria-activedescendant", "aria-disabled"];
 var _hoisted_4$h = ["id"];
-var _hoisted_5$e = ["id", "aria-label", "aria-selected", "aria-disabled", "aria-setsize", "aria-posinset", "onClick", "onMousedown", "onMousemove", "onDblclick", "data-p-selected", "data-p-focused", "data-p-disabled"];
+var _hoisted_5$f = ["id", "aria-label", "aria-selected", "aria-disabled", "aria-setsize", "aria-posinset", "onClick", "onMousedown", "onMousemove", "onDblclick", "data-p-selected", "data-p-focused", "data-p-disabled"];
 var _hoisted_6$9 = ["tabindex"];
 function render$y(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_InputText = resolveComponent("InputText");
@@ -150932,7 +151718,7 @@ function render$y(_ctx, _cache, $props, $setup, $data, $options) {
           index: $options.getOptionIndex(i2, getItemOptions)
         }, function() {
           return [createTextVNode(toDisplayString$1($options.getOptionLabel(option3)), 1)];
-        })], 16, _hoisted_5$e)), [[_directive_ripple]])], 64);
+        })], 16, _hoisted_5$f)), [[_directive_ripple]])], 64);
       }), 128)), $data.filterValue && (!items2 || items2 && items2.length === 0) ? (openBlock(), createElementBlock("li", mergeProps$2({
         key: 0,
         "class": _ctx.cx("emptyMessage"),
@@ -151487,7 +152273,7 @@ const _hoisted_3$n = {
   class: "pi pi-check text-green-500"
 };
 const _hoisted_4$g = { class: "file-info" };
-const _hoisted_5$d = { class: "file-details" };
+const _hoisted_5$e = { class: "file-details" };
 const _hoisted_6$8 = ["title"];
 const _hoisted_7$3 = {
   key: 0,
@@ -151542,7 +152328,7 @@ const _sfc_main$T = /* @__PURE__ */ defineComponent({
         createBaseVNode("div", _hoisted_2$B, [
           status.value === "completed" ? (openBlock(), createElementBlock("i", _hoisted_3$n)) : createCommentVNode("", true),
           createBaseVNode("div", _hoisted_4$g, [
-            createBaseVNode("div", _hoisted_5$d, [
+            createBaseVNode("div", _hoisted_5$e, [
               createBaseVNode("span", {
                 class: "file-type",
                 title: hint.value
@@ -151626,7 +152412,7 @@ const _hoisted_1$S = { class: "flex flex-row items-center gap-2" };
 const _hoisted_2$A = { class: "file-info" };
 const _hoisted_3$m = { class: "file-details" };
 const _hoisted_4$f = ["title"];
-const _hoisted_5$c = {
+const _hoisted_5$d = {
   key: 0,
   class: "file-error"
 };
@@ -151656,7 +152442,7 @@ const _sfc_main$S = /* @__PURE__ */ defineComponent({
               title: hint.value
             }, toDisplayString$1(label5.value), 9, _hoisted_4$f)
           ]),
-          props.error ? (openBlock(), createElementBlock("div", _hoisted_5$c, toDisplayString$1(props.error), 1)) : createCommentVNode("", true)
+          props.error ? (openBlock(), createElementBlock("div", _hoisted_5$d, toDisplayString$1(props.error), 1)) : createCommentVNode("", true)
         ]),
         createBaseVNode("div", _hoisted_6$7, [
           createVNode(unref(script$V), {
@@ -151780,11 +152566,11 @@ function tryMigrateDeprecatedValue(setting, value4) {
   return setting?.migrateDeprecatedValue?.(value4) ?? value4;
 }
 __name(tryMigrateDeprecatedValue, "tryMigrateDeprecatedValue");
-function onChange(setting, newValue2, oldValue2) {
+function onChange(setting, newValue2, oldValue) {
   if (setting?.onChange) {
-    setting.onChange(newValue2, oldValue2);
+    setting.onChange(newValue2, oldValue);
   }
-  app$1.ui.settings.dispatchChange(setting.id, newValue2, oldValue2);
+  app$1.ui.settings.dispatchChange(setting.id, newValue2, oldValue);
 }
 __name(onChange, "onChange");
 const useSettingStore = /* @__PURE__ */ defineStore("setting", () => {
@@ -151819,9 +152605,9 @@ const useSettingStore = /* @__PURE__ */ defineStore("setting", () => {
       settingsById.value[key],
       clonedValue
     );
-    const oldValue2 = get3(key);
-    if (newValue2 === oldValue2) return;
-    onChange(settingsById.value[key], newValue2, oldValue2);
+    const oldValue = get3(key);
+    if (newValue2 === oldValue) return;
+    onChange(settingsById.value[key], newValue2, oldValue);
     settingValues.value[key] = newValue2;
     await api.storeSetting(key, newValue2);
   }
@@ -151956,7 +152742,7 @@ const _sfc_main$R = /* @__PURE__ */ defineComponent({
           message: unref(t2)("missingModelsDialog.missingModelsMessage")
         }, null, 8, ["title", "message"]),
         createBaseVNode("div", _hoisted_1$R, [
-          createVNode(unref(script$K), {
+          createVNode(unref(script$J), {
             modelValue: doNotAskAgain.value,
             "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => doNotAskAgain.value = $event),
             binary: "",
@@ -152066,7 +152852,7 @@ const _sfc_main$Q = /* @__PURE__ */ defineComponent({
       return openBlock(), createElementBlock("div", _hoisted_1$Q, [
         createVNode(unref(script$x), null, {
           default: withCtx(() => [
-            createVNode(unref(script$J), {
+            createVNode(unref(script$I), {
               ref_key: "inputRef",
               ref: inputRef,
               modelValue: inputValue.value,
@@ -152420,7 +153206,7 @@ const _sfc_main$O = /* @__PURE__ */ defineComponent({
               severity: "contrast",
               onClick: _cache[0] || (_cache[0] = ($event) => _ctx.$emit("showFilter", $event))
             }, null, 8, ["icon"])) : createCommentVNode("", true),
-            createVNode(unref(script$J), {
+            createVNode(unref(script$I), {
               class: "search-box-input w-full",
               onInput: handleInput,
               modelValue: _ctx.modelValue,
@@ -152844,15 +153630,15 @@ var script$o = {
     onPrevButtonClick: /* @__PURE__ */ __name(function onPrevButtonClick() {
       var content2 = this.$refs.content;
       var width2 = getWidth$1(content2);
-      var pos2 = content2.scrollLeft - width2;
-      content2.scrollLeft = pos2 <= 0 ? 0 : pos2;
+      var pos = content2.scrollLeft - width2;
+      content2.scrollLeft = pos <= 0 ? 0 : pos;
     }, "onPrevButtonClick"),
     onNextButtonClick: /* @__PURE__ */ __name(function onNextButtonClick() {
       var content2 = this.$refs.content;
       var width2 = getWidth$1(content2) - this.getVisibleButtonWidths();
-      var pos2 = content2.scrollLeft + width2;
+      var pos = content2.scrollLeft + width2;
       var lastPos = content2.scrollWidth - width2;
-      content2.scrollLeft = pos2 >= lastPos ? lastPos : pos2;
+      content2.scrollLeft = pos >= lastPos ? lastPos : pos;
     }, "onNextButtonClick"),
     onTabClick: /* @__PURE__ */ __name(function onTabClick(event, tab, index2) {
       this.changeActiveIndex(event, tab, index2);
@@ -153081,7 +153867,7 @@ var _hoisted_1$N = ["tabindex", "aria-label"];
 var _hoisted_2$x = ["data-p-active", "data-p-disabled", "data-pc-index"];
 var _hoisted_3$l = ["id", "tabindex", "aria-disabled", "aria-selected", "aria-controls", "onClick", "onKeydown"];
 var _hoisted_4$e = ["tabindex", "aria-label"];
-var _hoisted_5$b = ["id", "aria-labelledby", "data-pc-index", "data-p-active"];
+var _hoisted_5$c = ["id", "aria-labelledby", "data-pc-index", "data-p-active"];
 function render$n(_ctx, _cache, $props, $setup, $data, $options) {
   var _directive_ripple = resolveDirective("ripple");
   return openBlock(), createElementBlock("div", mergeProps$2({
@@ -153193,7 +153979,7 @@ function render$n(_ctx, _cache, $props, $setup, $data, $options) {
       "data-pc-name": "tabpanel",
       "data-pc-index": index2,
       "data-p-active": $data.d_activeIndex === index2
-    }), [(openBlock(), createBlock(resolveDynamicComponent(tab)))], 16, _hoisted_5$b)), [[vShow, _ctx.lazy ? true : $options.isTabActive(index2)]]) : createCommentVNode("", true)], 64);
+    }), [(openBlock(), createBlock(resolveDynamicComponent(tab)))], 16, _hoisted_5$c)), [[vShow, _ctx.lazy ? true : $options.isTabActive(index2)]]) : createCommentVNode("", true)], 64);
   }), 128))], 16)], 16);
 }
 __name(render$n, "render$n");
@@ -153241,7 +154027,7 @@ const _hoisted_1$L = { class: "system-stats" };
 const _hoisted_2$v = { class: "mb-6" };
 const _hoisted_3$k = { class: "text-2xl font-semibold mb-4" };
 const _hoisted_4$d = { class: "grid grid-cols-2 gap-2" };
-const _hoisted_5$a = { class: "font-medium" };
+const _hoisted_5$b = { class: "font-medium" };
 const _hoisted_6$6 = { class: "text-2xl font-semibold mb-4" };
 const _sfc_main$M = /* @__PURE__ */ defineComponent({
   __name: "SystemStatsPanel",
@@ -153278,13 +154064,13 @@ const _sfc_main$M = /* @__PURE__ */ defineComponent({
               return openBlock(), createElementBlock(Fragment$1, {
                 key: col.field
               }, [
-                createBaseVNode("div", _hoisted_5$a, toDisplayString$1(col.header), 1),
+                createBaseVNode("div", _hoisted_5$b, toDisplayString$1(col.header), 1),
                 createBaseVNode("div", null, toDisplayString$1(formatValue2(systemInfo.value[col.field], col.field)), 1)
               ], 64);
             }), 64))
           ])
         ]),
-        createVNode(unref(script$S)),
+        createVNode(unref(script$R)),
         createBaseVNode("div", null, [
           createBaseVNode("h2", _hoisted_6$6, toDisplayString$1(_ctx.$t("g.devices")), 1),
           props.stats.devices.length > 1 ? (openBlock(), createBlock(unref(script$o), { key: 0 }, {
@@ -153413,7 +154199,7 @@ const useSystemStatsStore = /* @__PURE__ */ defineStore("systemStats", () => {
   };
 });
 const useAboutPanelStore = /* @__PURE__ */ defineStore("aboutPanel", () => {
-  const frontendVersion = "1.8.14";
+  const frontendVersion = "1.9.17";
   const extensionStore = useExtensionStore();
   const systemStatsStore = useSystemStatsStore();
   const coreVersion = computed(
@@ -153464,7 +154250,7 @@ const _sfc_main$L = /* @__PURE__ */ defineComponent({
         default: withCtx(() => [
           createBaseVNode("div", _hoisted_1$K, [
             renderSlot(_ctx.$slots, "header"),
-            createVNode(unref(script$R), { class: "flex-grow h-0 pr-2" }, {
+            createVNode(unref(script$Q), { class: "flex-grow h-0 pr-2" }, {
               default: withCtx(() => [
                 renderSlot(_ctx.$slots, "default")
               ]),
@@ -153522,7 +154308,7 @@ const _sfc_main$K = /* @__PURE__ */ defineComponent({
               ], 8, _hoisted_3$j);
             }), 128))
           ]),
-          createVNode(unref(script$S)),
+          createVNode(unref(script$R)),
           unref(systemStatsStore).systemStats ? (openBlock(), createBlock(_sfc_main$M, {
             key: 0,
             stats: unref(systemStatsStore).systemStats
@@ -154632,7 +155418,7 @@ var script$m = {
     ripple: Ripple
   },
   components: {
-    InputText: script$J,
+    InputText: script$I,
     VirtualScroller: script$A,
     Portal: script$U,
     InputIcon: script$B,
@@ -154641,7 +155427,7 @@ var script$m = {
     ChevronDownIcon: script$n,
     SpinnerIcon: script$X,
     SearchIcon: script$D,
-    CheckIcon: script$M,
+    CheckIcon: script$L,
     BlankIcon: script$E
   }
 };
@@ -154649,7 +155435,7 @@ var _hoisted_1$I = ["id"];
 var _hoisted_2$t = ["id", "value", "placeholder", "tabindex", "disabled", "aria-label", "aria-labelledby", "aria-expanded", "aria-controls", "aria-activedescendant", "aria-invalid"];
 var _hoisted_3$i = ["id", "tabindex", "aria-label", "aria-labelledby", "aria-expanded", "aria-controls", "aria-activedescendant", "aria-disabled"];
 var _hoisted_4$c = ["id"];
-var _hoisted_5$9 = ["id"];
+var _hoisted_5$a = ["id"];
 var _hoisted_6$5 = ["id", "aria-label", "aria-selected", "aria-disabled", "aria-setsize", "aria-posinset", "onClick", "onMousemove", "data-p-selected", "data-p-focused", "data-p-disabled"];
 function render$l(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_SpinnerIcon = resolveComponent("SpinnerIcon");
@@ -154901,7 +155687,7 @@ function render$l(_ctx, _cache, $props, $setup, $data, $options) {
                     "class": _ctx.cx("optionGroupLabel"),
                     ref_for: true
                   }, _ctx.ptm("optionGroupLabel")), toDisplayString$1($options.getOptionGroupLabel(option3.optionGroup)), 17)];
-                })], 16, _hoisted_5$9)) : withDirectives((openBlock(), createElementBlock("li", mergeProps$2({
+                })], 16, _hoisted_5$a)) : withDirectives((openBlock(), createElementBlock("li", mergeProps$2({
                   key: 1,
                   id: $data.id + "_" + $options.getOptionIndex(i2, getItemOptions),
                   "class": _ctx.cx("option", {
@@ -155563,7 +156349,7 @@ const _sfc_main$J = /* @__PURE__ */ defineComponent({
       }
     }, "importCustomPalette");
     return (_ctx, _cache) => {
-      return openBlock(), createBlock(unref(script$I), {
+      return openBlock(), createBlock(unref(script$S), {
         severity: "info",
         icon: "pi pi-palette",
         "pt:text": "w-full"
@@ -155618,7 +156404,7 @@ const _sfc_main$I = /* @__PURE__ */ defineComponent({
       window.location.reload();
     }, "logout");
     return (_ctx, _cache) => {
-      return unref(userStore).isMultiUserServer ? (openBlock(), createBlock(unref(script$I), {
+      return unref(userStore).isMultiUserServer ? (openBlock(), createBlock(unref(script$S), {
         key: 0,
         severity: "info",
         icon: "pi pi-user",
@@ -155649,7 +156435,7 @@ const _sfc_main$H = /* @__PURE__ */ defineComponent({
       settingStore.set("Comfy.UseNewMenu", currentValue);
     }, "handleClose");
     return (_ctx, _cache) => {
-      return show5.value ? (openBlock(), createBlock(unref(script$I), {
+      return show5.value ? (openBlock(), createBlock(unref(script$S), {
         key: 0,
         class: "first-time-ui-message",
         severity: "info",
@@ -155997,35 +156783,35 @@ var script$j = {
     d_value: /* @__PURE__ */ __name(function d_value(newValue2) {
       this.d_modelValue = newValue2;
     }, "d_value"),
-    locale: /* @__PURE__ */ __name(function locale(newValue2, oldValue2) {
-      this.updateConstructParser(newValue2, oldValue2);
+    locale: /* @__PURE__ */ __name(function locale(newValue2, oldValue) {
+      this.updateConstructParser(newValue2, oldValue);
     }, "locale"),
-    localeMatcher: /* @__PURE__ */ __name(function localeMatcher(newValue2, oldValue2) {
-      this.updateConstructParser(newValue2, oldValue2);
+    localeMatcher: /* @__PURE__ */ __name(function localeMatcher(newValue2, oldValue) {
+      this.updateConstructParser(newValue2, oldValue);
     }, "localeMatcher"),
-    mode: /* @__PURE__ */ __name(function mode(newValue2, oldValue2) {
-      this.updateConstructParser(newValue2, oldValue2);
+    mode: /* @__PURE__ */ __name(function mode(newValue2, oldValue) {
+      this.updateConstructParser(newValue2, oldValue);
     }, "mode"),
-    currency: /* @__PURE__ */ __name(function currency(newValue2, oldValue2) {
-      this.updateConstructParser(newValue2, oldValue2);
+    currency: /* @__PURE__ */ __name(function currency(newValue2, oldValue) {
+      this.updateConstructParser(newValue2, oldValue);
     }, "currency"),
-    currencyDisplay: /* @__PURE__ */ __name(function currencyDisplay(newValue2, oldValue2) {
-      this.updateConstructParser(newValue2, oldValue2);
+    currencyDisplay: /* @__PURE__ */ __name(function currencyDisplay(newValue2, oldValue) {
+      this.updateConstructParser(newValue2, oldValue);
     }, "currencyDisplay"),
-    useGrouping: /* @__PURE__ */ __name(function useGrouping(newValue2, oldValue2) {
-      this.updateConstructParser(newValue2, oldValue2);
+    useGrouping: /* @__PURE__ */ __name(function useGrouping(newValue2, oldValue) {
+      this.updateConstructParser(newValue2, oldValue);
     }, "useGrouping"),
-    minFractionDigits: /* @__PURE__ */ __name(function minFractionDigits(newValue2, oldValue2) {
-      this.updateConstructParser(newValue2, oldValue2);
+    minFractionDigits: /* @__PURE__ */ __name(function minFractionDigits(newValue2, oldValue) {
+      this.updateConstructParser(newValue2, oldValue);
     }, "minFractionDigits"),
-    maxFractionDigits: /* @__PURE__ */ __name(function maxFractionDigits(newValue2, oldValue2) {
-      this.updateConstructParser(newValue2, oldValue2);
+    maxFractionDigits: /* @__PURE__ */ __name(function maxFractionDigits(newValue2, oldValue) {
+      this.updateConstructParser(newValue2, oldValue);
     }, "maxFractionDigits"),
-    suffix: /* @__PURE__ */ __name(function suffix(newValue2, oldValue2) {
-      this.updateConstructParser(newValue2, oldValue2);
+    suffix: /* @__PURE__ */ __name(function suffix(newValue2, oldValue) {
+      this.updateConstructParser(newValue2, oldValue);
     }, "suffix"),
-    prefix: /* @__PURE__ */ __name(function prefix(newValue2, oldValue2) {
-      this.updateConstructParser(newValue2, oldValue2);
+    prefix: /* @__PURE__ */ __name(function prefix(newValue2, oldValue) {
+      this.updateConstructParser(newValue2, oldValue);
     }, "prefix")
   },
   created: /* @__PURE__ */ __name(function created3() {
@@ -156063,8 +156849,8 @@ var script$j = {
         return index2.get(d2);
       };
     }, "constructParser"),
-    updateConstructParser: /* @__PURE__ */ __name(function updateConstructParser(newValue2, oldValue2) {
-      if (newValue2 !== oldValue2) {
+    updateConstructParser: /* @__PURE__ */ __name(function updateConstructParser(newValue2, oldValue) {
+      if (newValue2 !== oldValue) {
         this.constructParser();
       }
     }, "updateConstructParser"),
@@ -156799,7 +157585,7 @@ var script$j = {
     }, "getFormatter")
   },
   components: {
-    InputText: script$J,
+    InputText: script$I,
     AngleUpIcon: script$k,
     AngleDownIcon: script$l
   }
@@ -157825,6 +158611,9 @@ __name(render$g, "render$g");
 script$h.render = render$g;
 const _hoisted_1$C = { class: "color-picker-wrapper flex items-center gap-2" };
 const _sfc_main$F = /* @__PURE__ */ defineComponent({
+  ...{
+    inheritAttrs: false
+  },
   __name: "FormColorPicker",
   props: /* @__PURE__ */ mergeModels({
     defaultValue: {},
@@ -157838,11 +158627,11 @@ const _sfc_main$F = /* @__PURE__ */ defineComponent({
     const modelValue3 = useModel(__props, "modelValue");
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1$C, [
-        createVNode(unref(script$h), {
+        createVNode(unref(script$h), mergeProps$2({
           modelValue: modelValue3.value,
           "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => modelValue3.value = $event)
-        }, null, 8, ["modelValue"]),
-        createVNode(unref(script$J), {
+        }, _ctx.$attrs), null, 16, ["modelValue"]),
+        createVNode(unref(script$I), {
           modelValue: modelValue3.value,
           "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => modelValue3.value = $event),
           class: "w-28",
@@ -157859,7 +158648,7 @@ const _hoisted_4$a = {
   key: 1,
   class: "pi pi-image text-gray-400 text-xl"
 };
-const _hoisted_5$8 = { class: "flex flex-col gap-2" };
+const _hoisted_5$9 = { class: "flex flex-col gap-2" };
 const _sfc_main$E = /* @__PURE__ */ defineComponent({
   __name: "FormImageUpload",
   props: {
@@ -157902,7 +158691,7 @@ const _sfc_main$E = /* @__PURE__ */ defineComponent({
               class: "max-w-full max-h-full object-contain"
             }, null, 8, _hoisted_3$g)) : (openBlock(), createElementBlock("i", _hoisted_4$a))
           ], 2),
-          createBaseVNode("div", _hoisted_5$8, [
+          createBaseVNode("div", _hoisted_5$9, [
             createVNode(unref(script$V), {
               icon: "pi pi-upload",
               label: _ctx.$t("g.upload"),
@@ -158077,10 +158866,10 @@ var script$g = {
       }
       var newValue2 = (this.max - this.min) * (handleValue / 100) + this.min;
       if (this.step) {
-        var oldValue2 = this.range ? this.value[this.handleIndex] : this.value;
-        var diff2 = newValue2 - oldValue2;
-        if (diff2 < 0) newValue2 = oldValue2 + Math.ceil(newValue2 / this.step - oldValue2 / this.step) * this.step;
-        else if (diff2 > 0) newValue2 = oldValue2 + Math.floor(newValue2 / this.step - oldValue2 / this.step) * this.step;
+        var oldValue = this.range ? this.value[this.handleIndex] : this.value;
+        var diff2 = newValue2 - oldValue;
+        if (diff2 < 0) newValue2 = oldValue + Math.ceil(newValue2 / this.step - oldValue / this.step) * this.step;
+        else if (diff2 > 0) newValue2 = oldValue + Math.floor(newValue2 / this.step - oldValue / this.step) * this.step;
       } else {
         newValue2 = Math.floor(newValue2);
       }
@@ -158438,6 +159227,9 @@ __name(render$f, "render$f");
 script$g.render = render$f;
 const _hoisted_1$z = { class: "input-slider flex flex-row items-center gap-2" };
 const _sfc_main$D = /* @__PURE__ */ defineComponent({
+  ...{
+    inheritAttrs: false
+  },
   __name: "InputSlider",
   props: {
     modelValue: {},
@@ -158472,14 +159264,14 @@ const _sfc_main$D = /* @__PURE__ */ defineComponent({
     }, "updateValue");
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1$z, [
-        createVNode(unref(script$g), {
+        createVNode(unref(script$g), mergeProps$2({
           modelValue: _ctx.modelValue,
           "onUpdate:modelValue": updateValue3,
-          class: normalizeClass(["slider-part", _ctx.sliderClass]),
+          class: ["slider-part", _ctx.sliderClass],
           min: _ctx.min,
           max: _ctx.max,
           step: _ctx.step
-        }, null, 8, ["modelValue", "class", "min", "max", "step"]),
+        }, _ctx.$attrs), null, 16, ["modelValue", "class", "min", "max", "step"]),
         createVNode(unref(script$j), {
           modelValue: _ctx.modelValue,
           "onUpdate:modelValue": updateValue3,
@@ -158506,6 +159298,38 @@ const checkUrlReachable = /* @__PURE__ */ __name(async (url) => {
 const checkMirrorReachable = /* @__PURE__ */ __name(async (mirror2) => {
   return isValidUrl(mirror2) && await electronAPI().NetWork.canAccessUrl(mirror2);
 }, "checkMirrorReachable");
+async function isInChina() {
+  const isChineseLocale = navigator.language.toLowerCase().startsWith("zh-cn");
+  try {
+    const googleTest = await Promise.race([
+      fetch("https://www.google.com", {
+        mode: "no-cors",
+        cache: "no-cache"
+      }),
+      new Promise((_2, reject3) => setTimeout(() => reject3(), 2e3))
+    ]);
+    if (googleTest) {
+      return false;
+    }
+  } catch {
+    if (isChineseLocale) {
+      return true;
+    }
+    try {
+      const start2 = performance.now();
+      await fetch("https://www.baidu.com", {
+        mode: "no-cors",
+        cache: "no-cache"
+      });
+      const latency = performance.now() - start2;
+      return latency < 150;
+    } catch {
+      return isChineseLocale;
+    }
+  }
+  return false;
+}
+__name(isInChina, "isInChina");
 var ValidationState = /* @__PURE__ */ ((ValidationState2) => {
   ValidationState2["IDLE"] = "IDLE";
   ValidationState2["LOADING"] = "LOADING";
@@ -158593,7 +159417,7 @@ const _sfc_main$C = /* @__PURE__ */ defineComponent({
     return (_ctx, _cache) => {
       return openBlock(), createBlock(unref(script$C), { class: "w-full" }, {
         default: withCtx(() => [
-          createVNode(unref(script$J), mergeProps$2(_ctx.$attrs, {
+          createVNode(unref(script$I), mergeProps$2(_ctx.$attrs, {
             "model-value": internalValue.value,
             class: "w-full",
             invalid: validationState.value === unref(ValidationState).INVALID,
@@ -158616,11 +159440,12 @@ const _sfc_main$C = /* @__PURE__ */ defineComponent({
 });
 const _hoisted_1$y = { class: "flex flex-row items-center gap-2" };
 const _hoisted_2$n = { class: "form-label flex flex-grow items-center" };
-const _hoisted_3$e = {
+const _hoisted_3$e = ["id"];
+const _hoisted_4$9 = {
   key: 0,
   class: "pi pi-info-circle bg-transparent"
 };
-const _hoisted_4$9 = { class: "form-input flex justify-end" };
+const _hoisted_5$8 = { class: "form-input flex justify-end" };
 const _sfc_main$B = /* @__PURE__ */ defineComponent({
   __name: "FormItem",
   props: /* @__PURE__ */ mergeModels({
@@ -158682,7 +159507,7 @@ const _sfc_main$B = /* @__PURE__ */ defineComponent({
         case "url":
           return _sfc_main$C;
         default:
-          return script$J;
+          return script$I;
       }
     }
     __name(getFormComponent, "getFormComponent");
@@ -158691,28 +159516,30 @@ const _sfc_main$B = /* @__PURE__ */ defineComponent({
       return openBlock(), createElementBlock("div", _hoisted_1$y, [
         createBaseVNode("div", _hoisted_2$n, [
           createBaseVNode("span", {
-            class: normalizeClass(["text-muted", props.labelClass])
+            class: normalizeClass(["text-muted", props.labelClass]),
+            id: `${props.id}-label`
           }, [
             renderSlot(_ctx.$slots, "name-prefix", {}, void 0, true),
             createTextVNode(" " + toDisplayString$1(props.item.name) + " ", 1),
-            props.item.tooltip ? withDirectives((openBlock(), createElementBlock("i", _hoisted_3$e, null, 512)), [
+            props.item.tooltip ? withDirectives((openBlock(), createElementBlock("i", _hoisted_4$9, null, 512)), [
               [_directive_tooltip, props.item.tooltip]
             ]) : createCommentVNode("", true),
             renderSlot(_ctx.$slots, "name-suffix", {}, void 0, true)
-          ], 2)
+          ], 10, _hoisted_3$e)
         ]),
-        createBaseVNode("div", _hoisted_4$9, [
+        createBaseVNode("div", _hoisted_5$8, [
           (openBlock(), createBlock(resolveDynamicComponent(markRaw(getFormComponent(props.item))), mergeProps$2({
             id: props.id,
+            "aria-labelledby": `${props.id}-label`,
             modelValue: formValue.value,
             "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => formValue.value = $event)
-          }, getFormAttrs(props.item)), null, 16, ["id", "modelValue"]))
+          }, getFormAttrs(props.item)), null, 16, ["id", "aria-labelledby", "modelValue"]))
         ])
       ]);
     };
   }
 });
-const FormItem = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["__scopeId", "data-v-1451da7b"]]);
+const FormItem = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["__scopeId", "data-v-a29c257f"]]);
 const _sfc_main$A = /* @__PURE__ */ defineComponent({
   __name: "SettingItem",
   props: {
@@ -158782,7 +159609,7 @@ const _sfc_main$z = /* @__PURE__ */ defineComponent({
   setup(__props) {
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1$x, [
-        _ctx.divider ? (openBlock(), createBlock(unref(script$S), { key: 0 })) : createCommentVNode("", true),
+        _ctx.divider ? (openBlock(), createBlock(unref(script$R), { key: 0 })) : createCommentVNode("", true),
         createBaseVNode("h3", null, toDisplayString$1(_ctx.$t(`settingsCategories.${unref(normalizeI18nKey)(_ctx.group.label)}`, _ctx.group.label)), 1),
         (openBlock(true), createElementBlock(Fragment$1, null, renderList(_ctx.group.settings, (setting) => {
           return openBlock(), createElementBlock("div", {
@@ -158831,13 +159658,13 @@ const _sfc_main$x = /* @__PURE__ */ defineComponent({
   setup(__props) {
     const props = __props;
     const KeybindingPanel = /* @__PURE__ */ defineAsyncComponent(
-      () => __vitePreload(() => import("./KeybindingPanel-CeHhC2F4.js"), true ? __vite__mapDeps([26,24,2,3,27]) : void 0, import.meta.url)
+      () => __vitePreload(() => import("./KeybindingPanel-BIrxefrS.js"), true ? __vite__mapDeps([30,25,2,4,31]) : void 0, import.meta.url)
     );
     const ExtensionPanel = /* @__PURE__ */ defineAsyncComponent(
-      () => __vitePreload(() => import("./ExtensionPanel-iPOrhDVM.js"), true ? __vite__mapDeps([28,24,2]) : void 0, import.meta.url)
+      () => __vitePreload(() => import("./ExtensionPanel-1HZtMFvH.js"), true ? __vite__mapDeps([32,25,2]) : void 0, import.meta.url)
     );
     const ServerConfigPanel = /* @__PURE__ */ defineAsyncComponent(
-      () => __vitePreload(() => import("./ServerConfigPanel-B1lI5M9c.js"), true ? __vite__mapDeps([29,4]) : void 0, import.meta.url)
+      () => __vitePreload(() => import("./ServerConfigPanel-D0jTW_iX.js"), true ? __vite__mapDeps([33,5]) : void 0, import.meta.url)
     );
     const aboutPanelNode = {
       key: "about",
@@ -158960,14 +159787,14 @@ const _sfc_main$x = /* @__PURE__ */ defineComponent({
     const tabValue = computed(
       () => inSearch.value ? "Search Results" : activeCategory.value?.label
     );
-    watch(activeCategory, (_2, oldValue2) => {
+    watch(activeCategory, (_2, oldValue) => {
       if (!tabValue.value) {
-        activeCategory.value = oldValue2;
+        activeCategory.value = oldValue;
       }
     });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1$v, [
-        createVNode(unref(script$R), { class: "settings-sidebar flex-shrink-0 p-2 w-48 2xl:w-64" }, {
+        createVNode(unref(script$Q), { class: "settings-sidebar flex-shrink-0 p-2 w-48 2xl:w-64" }, {
           default: withCtx(() => [
             createVNode(SearchBox, {
               class: "settings-search-box w-full mb-2",
@@ -158989,11 +159816,11 @@ const _sfc_main$x = /* @__PURE__ */ defineComponent({
           ]),
           _: 1
         }),
-        createVNode(unref(script$S), {
+        createVNode(unref(script$R), {
           layout: "vertical",
           class: "mx-1 2xl:mx-4 hidden md:flex"
         }),
-        createVNode(unref(script$S), {
+        createVNode(unref(script$R), {
           layout: "horizontal",
           class: "flex md:hidden"
         }),
@@ -159295,16 +160122,16 @@ var script$e = {
     circular: /* @__PURE__ */ __name(function circular(newValue2) {
       this.d_circular = newValue2;
     }, "circular"),
-    numVisible: /* @__PURE__ */ __name(function numVisible(newValue2, oldValue2) {
+    numVisible: /* @__PURE__ */ __name(function numVisible(newValue2, oldValue) {
       this.d_numVisible = newValue2;
-      this.d_oldNumVisible = oldValue2;
+      this.d_oldNumVisible = oldValue;
     }, "numVisible"),
-    numScroll: /* @__PURE__ */ __name(function numScroll(newValue2, oldValue2) {
-      this.d_oldNumScroll = oldValue2;
+    numScroll: /* @__PURE__ */ __name(function numScroll(newValue2, oldValue) {
+      this.d_oldNumScroll = oldValue;
       this.d_numScroll = newValue2;
     }, "numScroll"),
-    value: /* @__PURE__ */ __name(function value3(oldValue2) {
-      this.d_oldValue = oldValue2;
+    value: /* @__PURE__ */ __name(function value3(oldValue) {
+      this.d_oldValue = oldValue;
     }, "value")
   },
   mounted: /* @__PURE__ */ __name(function mounted17() {
@@ -159921,7 +160748,7 @@ const _sfc_main$v = /* @__PURE__ */ defineComponent({
     const props = __props;
     const imageError = ref(false);
     return (_ctx, _cache) => {
-      return openBlock(), createBlock(unref(script$Q), {
+      return openBlock(), createBlock(unref(script$P), {
         "data-testid": `template-workflow-${props.workflowName}`
       }, {
         header: withCtx(() => [
@@ -160201,7 +161028,8 @@ const useDialogService = /* @__PURE__ */ __name(() => {
     title,
     message: message3,
     type = "default",
-    itemList = []
+    itemList = [],
+    hint
   }) {
     return new Promise((resolve2) => {
       const options4 = {
@@ -160212,7 +161040,8 @@ const useDialogService = /* @__PURE__ */ __name(() => {
           message: message3,
           type,
           itemList,
-          onConfirm: resolve2
+          onConfirm: resolve2,
+          hint
         },
         dialogComponentProps: {
           onClose: /* @__PURE__ */ __name(() => resolve2(null), "onClose")
@@ -160234,6 +161063,41 @@ const useDialogService = /* @__PURE__ */ __name(() => {
     confirm: confirm2
   };
 }, "useDialogService");
+const RESERVED_BY_TEXT_INPUT = /* @__PURE__ */ new Set([
+  "Ctrl + a",
+  "Ctrl + c",
+  "Ctrl + v",
+  "Ctrl + x",
+  "Ctrl + z",
+  "Ctrl + y",
+  "Ctrl + p",
+  "Enter",
+  "Shift + Enter",
+  "Ctrl + Backspace",
+  "Ctrl + Delete",
+  "Home",
+  "Ctrl + Home",
+  "Ctrl + Shift + Home",
+  "End",
+  "Ctrl + End",
+  "Ctrl + Shift + End",
+  "PageUp",
+  "PageDown",
+  "Shift + PageUp",
+  "Shift + PageDown",
+  "ArrowLeft",
+  "Ctrl + ArrowLeft",
+  "Shift + ArrowLeft",
+  "Ctrl + Shift + ArrowLeft",
+  "ArrowRight",
+  "Ctrl + ArrowRight",
+  "Shift + ArrowRight",
+  "Ctrl + Shift + ArrowRight",
+  "ArrowUp",
+  "Shift + ArrowUp",
+  "ArrowDown",
+  "Shift + ArrowDown"
+]);
 class KeybindingImpl {
   static {
     __name(this, "KeybindingImpl");
@@ -160289,6 +161153,16 @@ class KeyComboImpl {
   }
   get isModifier() {
     return ["Control", "Meta", "Alt", "Shift"].includes(this.key);
+  }
+  get modifierCount() {
+    const modifiers2 = [this.ctrl, this.alt, this.shift];
+    return modifiers2.reduce((acc, cur) => acc + Number(cur), 0);
+  }
+  get isShiftOnly() {
+    return this.shift && this.modifierCount === 1;
+  }
+  get isReservedByTextInput() {
+    return !this.hasModifier || this.isShiftOnly || RESERVED_BY_TEXT_INPUT.has(this.toString());
   }
   getKeySequences() {
     const sequences = [];
@@ -160617,6 +161491,437 @@ const useMenuItemStore = /* @__PURE__ */ defineStore("menuItem", () => {
     registerCoreMenuCommands
   };
 });
+const useBooleanWidget = /* @__PURE__ */ __name(() => {
+  const widgetConstructor = /* @__PURE__ */ __name((node3, inputName, inputData) => {
+    const inputOptions = inputData[1];
+    const defaultVal = inputOptions?.default ?? false;
+    const options4 = {
+      on: inputOptions?.label_on,
+      off: inputOptions?.label_off
+    };
+    return {
+      widget: node3.addWidget("toggle", inputName, defaultVal, () => {
+      }, options4)
+    };
+  }, "widgetConstructor");
+  return widgetConstructor;
+}, "useBooleanWidget");
+const MAX_RETRIES = 5;
+const TIMEOUT = 4096;
+const dataCache = /* @__PURE__ */ new Map();
+const createCacheKey = /* @__PURE__ */ __name((config2) => {
+  const { route, query_params = {}, refresh: refresh2 = 0 } = config2;
+  const paramsKey = Object.entries(query_params).sort(([a2], [b2]) => a2.localeCompare(b2)).map(([k2, v2]) => `${k2}=${v2}`).join("&");
+  return [route, `r=${refresh2}`, paramsKey].join(";");
+}, "createCacheKey");
+const getBackoff = /* @__PURE__ */ __name((retryCount) => Math.min(1e3 * Math.pow(2, retryCount), 512), "getBackoff");
+const isInitialized = /* @__PURE__ */ __name((entry) => entry?.data && entry?.timestamp && entry.timestamp > 0, "isInitialized");
+const isStale = /* @__PURE__ */ __name((entry, ttl) => entry?.timestamp && Date.now() - entry.timestamp >= ttl, "isStale");
+const isFetching = /* @__PURE__ */ __name((entry) => entry?.fetchPromise !== void 0, "isFetching");
+const isFailed = /* @__PURE__ */ __name((entry) => entry?.failed === true, "isFailed");
+const isBackingOff = /* @__PURE__ */ __name((entry) => entry?.error && entry?.lastErrorTime && Date.now() - entry.lastErrorTime < getBackoff(entry.retryCount || 0), "isBackingOff");
+const fetchData = /* @__PURE__ */ __name(async (config2, controller) => {
+  const { route, response_key, query_params, timeout = TIMEOUT } = config2;
+  const res = await axios.get(route, {
+    params: query_params,
+    signal: controller.signal,
+    timeout
+  });
+  return response_key ? res.data[response_key] : res.data;
+}, "fetchData");
+function useRemoteWidget(options4) {
+  const { inputData, defaultValue: defaultValue2, node: node3, widget } = options4;
+  const config2 = inputData[1].remote;
+  const { refresh: refresh2 = 0, max_retries = MAX_RETRIES } = config2;
+  const isPermanent = refresh2 <= 0;
+  const cacheKey = createCacheKey(config2);
+  let isLoaded = false;
+  const setSuccess = /* @__PURE__ */ __name((entry, data26) => {
+    entry.retryCount = 0;
+    entry.lastErrorTime = 0;
+    entry.error = null;
+    entry.timestamp = Date.now();
+    entry.data = data26 ?? defaultValue2;
+  }, "setSuccess");
+  const setError = /* @__PURE__ */ __name((entry, error2) => {
+    entry.retryCount = (entry.retryCount || 0) + 1;
+    entry.lastErrorTime = Date.now();
+    entry.error = error2 instanceof Error ? error2 : new Error(String(error2));
+    entry.data ??= defaultValue2;
+    entry.fetchPromise = void 0;
+    if (entry.retryCount >= max_retries) {
+      setFailed(entry);
+    }
+  }, "setError");
+  const setFailed = /* @__PURE__ */ __name((entry) => {
+    dataCache.set(cacheKey, {
+      data: entry.data ?? defaultValue2,
+      failed: true
+    });
+  }, "setFailed");
+  const isFirstLoad = /* @__PURE__ */ __name(() => {
+    return !isLoaded && isInitialized(dataCache.get(cacheKey));
+  }, "isFirstLoad");
+  const onFirstLoad = /* @__PURE__ */ __name((data26) => {
+    isLoaded = true;
+    widget.value = data26[0];
+    widget.callback?.(widget.value);
+    node3.graph?.setDirtyCanvas(true);
+  }, "onFirstLoad");
+  const fetchValue = /* @__PURE__ */ __name(async () => {
+    const entry = dataCache.get(cacheKey);
+    if (isFailed(entry)) return entry.data;
+    const isValid2 = isInitialized(entry) && (isPermanent || !isStale(entry, refresh2));
+    if (isValid2 || isBackingOff(entry) || isFetching(entry)) return entry.data;
+    const currentEntry = entry || { data: defaultValue2 };
+    dataCache.set(cacheKey, currentEntry);
+    try {
+      currentEntry.controller = new AbortController();
+      currentEntry.fetchPromise = fetchData(config2, currentEntry.controller);
+      const data26 = await currentEntry.fetchPromise;
+      setSuccess(currentEntry, data26);
+      return currentEntry.data;
+    } catch (err) {
+      setError(currentEntry, err);
+      return currentEntry.data;
+    } finally {
+      currentEntry.fetchPromise = void 0;
+      currentEntry.controller = void 0;
+    }
+  }, "fetchValue");
+  const onRefresh = /* @__PURE__ */ __name(() => {
+    if (config2.control_after_refresh) {
+      const data26 = getCachedValue();
+      if (!Array.isArray(data26)) return;
+      switch (config2.control_after_refresh) {
+        case "first":
+          widget.value = data26[0] ?? defaultValue2;
+          break;
+        case "last":
+          widget.value = data26.at(-1) ?? defaultValue2;
+          break;
+      }
+      widget.callback?.(widget.value);
+      node3.graph?.setDirtyCanvas(true);
+    }
+  }, "onRefresh");
+  const clearCachedValue = /* @__PURE__ */ __name(() => {
+    const entry = dataCache.get(cacheKey);
+    if (!entry) return;
+    if (entry.fetchPromise) entry.controller?.abort();
+    dataCache.delete(cacheKey);
+  }, "clearCachedValue");
+  function getCachedValue() {
+    return dataCache.get(cacheKey)?.data;
+  }
+  __name(getCachedValue, "getCachedValue");
+  function getValue2(onFulfilled) {
+    fetchValue().then((data26) => {
+      if (isFirstLoad()) onFirstLoad(data26);
+      onFulfilled?.();
+    });
+    return getCachedValue() ?? defaultValue2;
+  }
+  __name(getValue2, "getValue");
+  function refreshValue() {
+    clearCachedValue();
+    getValue2(onRefresh);
+  }
+  __name(refreshValue, "refreshValue");
+  function addRefreshButton() {
+    node3.addWidget("button", "refresh", "refresh", refreshValue);
+  }
+  __name(addRefreshButton, "addRefreshButton");
+  return {
+    getCachedValue,
+    getValue: getValue2,
+    refreshValue,
+    addRefreshButton,
+    getCacheEntry: /* @__PURE__ */ __name(() => dataCache.get(cacheKey), "getCacheEntry"),
+    cacheKey
+  };
+}
+__name(useRemoteWidget, "useRemoteWidget");
+const useComboWidget = /* @__PURE__ */ __name(() => {
+  const widgetConstructor = /* @__PURE__ */ __name((node3, inputName, inputData) => {
+    const widgetStore = useWidgetStore();
+    const { remote, options: options4 } = inputData[1] || {};
+    const defaultValue2 = widgetStore.getDefaultValue(inputData);
+    const res = {
+      widget: node3.addWidget("combo", inputName, defaultValue2, () => {
+      }, {
+        values: options4 ?? inputData[0]
+      })
+    };
+    if (remote) {
+      const remoteWidget = useRemoteWidget({
+        inputData,
+        defaultValue: defaultValue2,
+        node: node3,
+        widget: res.widget
+      });
+      if (remote.refresh_button) remoteWidget.addRefreshButton();
+      const origOptions = res.widget.options;
+      res.widget.options = new Proxy(
+        origOptions,
+        {
+          get(target2, prop2) {
+            if (prop2 !== "values") return target2[prop2];
+            return remoteWidget.getValue();
+          }
+        }
+      );
+    }
+    if (inputData[1]?.control_after_generate) {
+      res.widget.linkedWidgets = addValueControlWidgets(
+        node3,
+        res.widget,
+        void 0,
+        void 0,
+        inputData
+      );
+    }
+    return res;
+  }, "widgetConstructor");
+  return widgetConstructor;
+}, "useComboWidget");
+function getNumberDefaults(inputOptions, options4) {
+  const { defaultStep } = options4;
+  const {
+    default: defaultVal = 0,
+    min = 0,
+    max = 2048,
+    step: step3 = defaultStep
+  } = inputOptions;
+  const { precision = Math.max(-Math.floor(Math.log10(step3)), 0) } = options4;
+  let round = inputOptions.round;
+  if (options4.enableRounding && (round == void 0 || round === true)) {
+    round = Math.round(1e6 * Math.pow(0.1, precision)) / 1e6;
+  }
+  return {
+    val: defaultVal,
+    config: { min, max, step: 10 * step3, round, precision }
+  };
+}
+__name(getNumberDefaults, "getNumberDefaults");
+const useFloatWidget = /* @__PURE__ */ __name(() => {
+  const widgetConstructor = /* @__PURE__ */ __name((node3, inputName, inputData) => {
+    const settingStore = useSettingStore();
+    const sliderEnabled = !settingStore.get("Comfy.DisableSliders");
+    const inputOptions = inputData[1];
+    const widgetType = sliderEnabled ? inputOptions?.display === "slider" ? "slider" : "number" : "number";
+    const precision = settingStore.get("Comfy.FloatRoundingPrecision") || void 0;
+    const enableRounding = !settingStore.get("Comfy.DisableFloatRounding");
+    const { val, config: config2 } = getNumberDefaults(inputOptions, {
+      defaultStep: 0.5,
+      precision,
+      enableRounding
+    });
+    return {
+      widget: node3.addWidget(
+        widgetType,
+        inputName,
+        val,
+        function(v2) {
+          if (config2.round) {
+            this.value = Math.round((v2 + Number.EPSILON) / config2.round) * config2.round;
+            if (this.value > config2.max) this.value = config2.max;
+            if (this.value < config2.min) this.value = config2.min;
+          } else {
+            this.value = v2;
+          }
+        },
+        config2
+      )
+    };
+  }, "widgetConstructor");
+  return widgetConstructor;
+}, "useFloatWidget");
+const useImageUploadWidget = /* @__PURE__ */ __name(() => {
+  const widgetConstructor = /* @__PURE__ */ __name((node3, inputName, inputData, app2) => {
+    const imageWidget = node3.widgets?.find(
+      (w2) => w2.name === (inputData[1]?.widget ?? "image")
+    );
+    const { image_folder = "input" } = inputData[1] ?? {};
+    function showImage(name2) {
+      const img = new Image();
+      img.onload = () => {
+        node3.imgs = [img];
+        app2.graph.setDirtyCanvas(true);
+      };
+      const folder_separator = name2.lastIndexOf("/");
+      let subfolder = "";
+      if (folder_separator > -1) {
+        subfolder = name2.substring(0, folder_separator);
+        name2 = name2.substring(folder_separator + 1);
+      }
+      img.src = api.apiURL(
+        `/view?filename=${encodeURIComponent(name2)}&type=${image_folder}&subfolder=${subfolder}${app2.getPreviewFormatParam()}${app2.getRandParam()}`
+      );
+      node3.setSizeForImage?.();
+    }
+    __name(showImage, "showImage");
+    const default_value = imageWidget.value;
+    Object.defineProperty(imageWidget, "value", {
+      set: /* @__PURE__ */ __name(function(value4) {
+        this._real_value = value4;
+      }, "set"),
+      get: /* @__PURE__ */ __name(function() {
+        if (!this._real_value) {
+          return default_value;
+        }
+        let value4 = this._real_value;
+        if (value4.filename) {
+          const real_value = value4;
+          value4 = "";
+          if (real_value.subfolder) {
+            value4 = real_value.subfolder + "/";
+          }
+          value4 += real_value.filename;
+          if (real_value.type && real_value.type !== "input")
+            value4 += ` [${real_value.type}]`;
+        }
+        return value4;
+      }, "get")
+    });
+    const cb = node3.callback;
+    imageWidget.callback = function(...args) {
+      showImage(imageWidget.value);
+      if (cb) {
+        return cb.apply(this, args);
+      }
+    };
+    requestAnimationFrame(() => {
+      if (imageWidget.value) {
+        showImage(imageWidget.value);
+      }
+    });
+    async function uploadFile2(file, updateNode, pasted = false) {
+      try {
+        const body = new FormData();
+        body.append("image", file);
+        if (pasted) body.append("subfolder", "pasted");
+        const resp = await api.fetchApi("/upload/image", {
+          method: "POST",
+          body
+        });
+        if (resp.status === 200) {
+          const data26 = await resp.json();
+          let path = data26.name;
+          if (data26.subfolder) path = data26.subfolder + "/" + path;
+          if (!imageWidget.options) {
+            imageWidget.options = { values: [] };
+          }
+          if (!imageWidget.options.values) {
+            imageWidget.options.values = [];
+          }
+          if (!imageWidget.options.values.includes(path)) {
+            imageWidget.options.values.push(path);
+          }
+          if (updateNode) {
+            showImage(path);
+            imageWidget.value = path;
+          }
+        } else {
+          useToastStore().addAlert(resp.status + " - " + resp.statusText);
+        }
+      } catch (error2) {
+        useToastStore().addAlert(String(error2));
+      }
+    }
+    __name(uploadFile2, "uploadFile");
+    const fileInput2 = document.createElement("input");
+    Object.assign(fileInput2, {
+      type: "file",
+      accept: "image/jpeg,image/png,image/webp",
+      style: "display: none",
+      onchange: /* @__PURE__ */ __name(async () => {
+        if (fileInput2.files && fileInput2.files.length) {
+          await uploadFile2(fileInput2.files[0], true);
+        }
+      }, "onchange")
+    });
+    document.body.append(fileInput2);
+    const uploadWidget = node3.addWidget("button", inputName, "image", () => {
+      fileInput2.click();
+    });
+    uploadWidget.label = "choose file to upload";
+    uploadWidget.serialize = false;
+    node3.onDragOver = function(e2) {
+      if (e2.dataTransfer && e2.dataTransfer.items) {
+        const image2 = [...e2.dataTransfer.items].find((f2) => f2.kind === "file");
+        return !!image2;
+      }
+      return false;
+    };
+    node3.onDragDrop = function(e2) {
+      console.log("onDragDrop called");
+      let handled = false;
+      if (e2.dataTransfer?.files) {
+        for (const file of e2.dataTransfer.files) {
+          if (file.type.startsWith("image/")) {
+            uploadFile2(file, !handled);
+            handled = true;
+          }
+        }
+      }
+      return handled;
+    };
+    node3.pasteFile = function(file) {
+      if (file.type.startsWith("image/")) {
+        const is_pasted = file.name === "image.png" && file.lastModified - Date.now() < 2e3;
+        uploadFile2(file, true, is_pasted);
+        return true;
+      }
+      return false;
+    };
+    return { widget: uploadWidget };
+  }, "widgetConstructor");
+  return widgetConstructor;
+}, "useImageUploadWidget");
+const useIntWidget = /* @__PURE__ */ __name(() => {
+  const widgetConstructor = /* @__PURE__ */ __name((node3, inputName, inputData, app2, widgetName) => {
+    const settingStore = useSettingStore();
+    const sliderEnabled = !settingStore.get("Comfy.DisableSliders");
+    const inputOptions = inputData[1];
+    const widgetType = sliderEnabled ? inputOptions?.display === "slider" ? "slider" : "number" : "number";
+    const { val, config: config2 } = getNumberDefaults(inputOptions, {
+      defaultStep: 1,
+      precision: 0,
+      enableRounding: true
+    });
+    config2.precision = 0;
+    const result = {
+      widget: node3.addWidget(
+        widgetType,
+        inputName,
+        val,
+        function(v2) {
+          const s2 = (this.options.step ?? 1) / 10;
+          let sh = (this.options.min ?? 0) % s2;
+          if (isNaN(sh)) {
+            sh = 0;
+          }
+          this.value = Math.round((v2 - sh) / s2) * s2 + sh;
+        },
+        config2
+      )
+    };
+    if (inputData[1]?.control_after_generate) {
+      const seedControl = addValueControlWidget(
+        node3,
+        result.widget,
+        "randomize",
+        void 0,
+        widgetName,
+        inputData
+      );
+      result.widget.linkedWidgets = [seedControl];
+    }
+    return result;
+  }, "widgetConstructor");
+  return widgetConstructor;
+}, "useIntWidget");
 function OrderedMap(content2) {
   this.content = content2;
 }
@@ -160734,28 +162039,28 @@ OrderedMap.from = function(value4) {
   if (value4) for (var prop2 in value4) content2.push(prop2, value4[prop2]);
   return new OrderedMap(content2);
 };
-function findDiffStart(a2, b2, pos2) {
+function findDiffStart(a2, b2, pos) {
   for (let i2 = 0; ; i2++) {
     if (i2 == a2.childCount || i2 == b2.childCount)
-      return a2.childCount == b2.childCount ? null : pos2;
+      return a2.childCount == b2.childCount ? null : pos;
     let childA = a2.child(i2), childB = b2.child(i2);
     if (childA == childB) {
-      pos2 += childA.nodeSize;
+      pos += childA.nodeSize;
       continue;
     }
     if (!childA.sameMarkup(childB))
-      return pos2;
+      return pos;
     if (childA.isText && childA.text != childB.text) {
       for (let j2 = 0; childA.text[j2] == childB.text[j2]; j2++)
-        pos2++;
-      return pos2;
+        pos++;
+      return pos;
     }
     if (childA.content.size || childB.content.size) {
-      let inner = findDiffStart(childA.content, childB.content, pos2 + 1);
+      let inner = findDiffStart(childA.content, childB.content, pos + 1);
       if (inner != null)
         return inner;
     }
-    pos2 += childA.nodeSize;
+    pos += childA.nodeSize;
   }
 }
 __name(findDiffStart, "findDiffStart");
@@ -160810,13 +162115,13 @@ class Fragment {
   into a node when the callback returns `false`.
   */
   nodesBetween(from2, to, f2, nodeStart = 0, parent) {
-    for (let i2 = 0, pos2 = 0; pos2 < to; i2++) {
-      let child = this.content[i2], end = pos2 + child.nodeSize;
-      if (end > from2 && f2(child, nodeStart + pos2, parent || null, i2) !== false && child.content.size) {
-        let start2 = pos2 + 1;
+    for (let i2 = 0, pos = 0; pos < to; i2++) {
+      let child = this.content[i2], end = pos + child.nodeSize;
+      if (end > from2 && f2(child, nodeStart + pos, parent || null, i2) !== false && child.content.size) {
+        let start2 = pos + 1;
         child.nodesBetween(Math.max(0, from2 - start2), Math.min(child.content.size, to - start2), f2, nodeStart + start2);
       }
-      pos2 = end;
+      pos = end;
     }
   }
   /**
@@ -160833,8 +162138,8 @@ class Fragment {
   */
   textBetween(from2, to, blockSeparator, leafText) {
     let text2 = "", first2 = true;
-    this.nodesBetween(from2, to, (node3, pos2) => {
-      let nodeText = node3.isText ? node3.text.slice(Math.max(from2, pos2) - pos2, to - pos2) : !node3.isLeaf ? "" : leafText ? typeof leafText === "function" ? leafText(node3) : leafText : node3.type.spec.leafText ? node3.type.spec.leafText(node3) : "";
+    this.nodesBetween(from2, to, (node3, pos) => {
+      let nodeText = node3.isText ? node3.text.slice(Math.max(from2, pos) - pos, to - pos) : !node3.isLeaf ? "" : leafText ? typeof leafText === "function" ? leafText(node3) : leafText : node3.type.spec.leafText ? node3.type.spec.leafText(node3) : "";
       if (node3.isBlock && (node3.isLeaf && nodeText || node3.isTextblock) && blockSeparator) {
         if (first2)
           first2 = false;
@@ -160871,19 +162176,19 @@ class Fragment {
       return this;
     let result = [], size = 0;
     if (to > from2)
-      for (let i2 = 0, pos2 = 0; pos2 < to; i2++) {
-        let child = this.content[i2], end = pos2 + child.nodeSize;
+      for (let i2 = 0, pos = 0; pos < to; i2++) {
+        let child = this.content[i2], end = pos + child.nodeSize;
         if (end > from2) {
-          if (pos2 < from2 || end > to) {
+          if (pos < from2 || end > to) {
             if (child.isText)
-              child = child.cut(Math.max(0, from2 - pos2), Math.min(child.text.length, to - pos2));
+              child = child.cut(Math.max(0, from2 - pos), Math.min(child.text.length, to - pos));
             else
-              child = child.cut(Math.max(0, from2 - pos2 - 1), Math.min(child.content.size, to - pos2 - 1));
+              child = child.cut(Math.max(0, from2 - pos - 1), Math.min(child.content.size, to - pos - 1));
           }
           result.push(child);
           size += child.nodeSize;
         }
-        pos2 = end;
+        pos = end;
       }
     return new Fragment(result, size);
   }
@@ -160984,8 +162289,8 @@ class Fragment {
   Find the first position at which this fragment and another
   fragment differ, or `null` if they are the same.
   */
-  findDiffStart(other, pos2 = 0) {
-    return findDiffStart(this, other, pos2);
+  findDiffStart(other, pos = 0) {
+    return findDiffStart(this, other, pos);
   }
   /**
   Find the first position, searching from the end, at which this
@@ -160993,25 +162298,25 @@ class Fragment {
   the same. Since this position will not be the same in both
   nodes, an object with two separate positions is returned.
   */
-  findDiffEnd(other, pos2 = this.size, otherPos = other.size) {
-    return findDiffEnd(this, other, pos2, otherPos);
+  findDiffEnd(other, pos = this.size, otherPos = other.size) {
+    return findDiffEnd(this, other, pos, otherPos);
   }
   /**
   Find the index and inner offset corresponding to a given relative
   position in this fragment. The result object will be reused
   (overwritten) the next time the function is called. @internal
   */
-  findIndex(pos2, round = -1) {
-    if (pos2 == 0)
-      return retIndex(0, pos2);
-    if (pos2 == this.size)
-      return retIndex(this.content.length, pos2);
-    if (pos2 > this.size || pos2 < 0)
-      throw new RangeError(`Position ${pos2} outside of fragment (${this})`);
+  findIndex(pos, round = -1) {
+    if (pos == 0)
+      return retIndex(0, pos);
+    if (pos == this.size)
+      return retIndex(this.content.length, pos);
+    if (pos > this.size || pos < 0)
+      throw new RangeError(`Position ${pos} outside of fragment (${this})`);
     for (let i2 = 0, curPos = 0; ; i2++) {
       let cur = this.child(i2), end = curPos + cur.nodeSize;
-      if (end >= pos2) {
-        if (end == pos2 || round > 0)
+      if (end >= pos) {
+        if (end == pos || round > 0)
           return retIndex(i2 + 1, end);
         return retIndex(i2, curPos);
       }
@@ -161277,8 +162582,8 @@ class Slice {
   /**
   @internal
   */
-  insertAt(pos2, fragment) {
-    let content2 = insertInto(this.content, pos2 + this.openStart, fragment);
+  insertAt(pos, fragment) {
+    let content2 = insertInto(this.content, pos + this.openStart, fragment);
     return content2 && new Slice(content2, this.openStart, this.openEnd);
   }
   /**
@@ -161475,8 +162780,8 @@ class ResolvedPos {
   /**
   @internal
   */
-  constructor(pos2, path, parentOffset) {
-    this.pos = pos2;
+  constructor(pos, path, parentOffset) {
+    this.pos = pos;
     this.path = path;
     this.parentOffset = parentOffset;
     this.depth = path.length / 3 - 1;
@@ -161603,10 +162908,10 @@ class ResolvedPos {
   */
   posAtIndex(index2, depth) {
     depth = this.resolveDepth(depth);
-    let node3 = this.path[depth * 3], pos2 = depth == 0 ? 0 : this.path[depth * 3 - 1] + 1;
+    let node3 = this.path[depth * 3], pos = depth == 0 ? 0 : this.path[depth * 3 - 1] + 1;
     for (let i2 = 0; i2 < index2; i2++)
-      pos2 += node3.child(i2).nodeSize;
-    return pos2;
+      pos += node3.child(i2).nodeSize;
+    return pos;
   }
   /**
   Get the marks at this position, factoring in the surrounding
@@ -161654,9 +162959,9 @@ class ResolvedPos {
   The depth up to which this position and the given (non-resolved)
   position share the same parent nodes.
   */
-  sharedDepth(pos2) {
+  sharedDepth(pos) {
     for (let depth = this.depth; depth > 0; depth--)
-      if (this.start(depth) <= pos2 && this.end(depth) >= pos2)
+      if (this.start(depth) <= pos && this.end(depth) >= pos)
         return depth;
     return 0;
   }
@@ -161707,11 +163012,11 @@ class ResolvedPos {
   /**
   @internal
   */
-  static resolve(doc2, pos2) {
-    if (!(pos2 >= 0 && pos2 <= doc2.content.size))
-      throw new RangeError("Position " + pos2 + " out of range");
+  static resolve(doc2, pos) {
+    if (!(pos >= 0 && pos <= doc2.content.size))
+      throw new RangeError("Position " + pos + " out of range");
     let path = [];
-    let start2 = 0, parentOffset = pos2;
+    let start2 = 0, parentOffset = pos;
     for (let node3 = doc2; ; ) {
       let { index: index2, offset } = node3.content.findIndex(parentOffset);
       let rem = parentOffset - offset;
@@ -161724,23 +163029,23 @@ class ResolvedPos {
       parentOffset = rem - 1;
       start2 += offset + 1;
     }
-    return new ResolvedPos(pos2, path, parentOffset);
+    return new ResolvedPos(pos, path, parentOffset);
   }
   /**
   @internal
   */
-  static resolveCached(doc2, pos2) {
+  static resolveCached(doc2, pos) {
     let cache2 = resolveCache.get(doc2);
     if (cache2) {
       for (let i2 = 0; i2 < cache2.elts.length; i2++) {
         let elt = cache2.elts[i2];
-        if (elt.pos == pos2)
+        if (elt.pos == pos)
           return elt;
       }
     } else {
       resolveCache.set(doc2, cache2 = new ResolveCache());
     }
-    let result = cache2.elts[cache2.i] = ResolvedPos.resolve(doc2, pos2);
+    let result = cache2.elts[cache2.i] = ResolvedPos.resolve(doc2, pos);
     cache2.i = (cache2.i + 1) % resolveCacheSize;
     return result;
   }
@@ -161980,15 +163285,15 @@ let Node$2 = class Node2 {
   /**
   Find the node directly after the given position.
   */
-  nodeAt(pos2) {
+  nodeAt(pos) {
     for (let node3 = this; ; ) {
-      let { index: index2, offset } = node3.content.findIndex(pos2);
+      let { index: index2, offset } = node3.content.findIndex(pos);
       node3 = node3.maybeChild(index2);
       if (!node3)
         return null;
-      if (offset == pos2 || node3.isText)
+      if (offset == pos || node3.isText)
         return node3;
-      pos2 -= offset + 1;
+      pos -= offset + 1;
     }
   }
   /**
@@ -161996,8 +163301,8 @@ let Node$2 = class Node2 {
   and return it along with its index and offset relative to this
   node.
   */
-  childAfter(pos2) {
-    let { index: index2, offset } = this.content.findIndex(pos2);
+  childAfter(pos) {
+    let { index: index2, offset } = this.content.findIndex(pos);
     return { node: this.content.maybeChild(index2), index: index2, offset };
   }
   /**
@@ -162005,11 +163310,11 @@ let Node$2 = class Node2 {
   and return it along with its index and offset relative to this
   node.
   */
-  childBefore(pos2) {
-    if (pos2 == 0)
+  childBefore(pos) {
+    if (pos == 0)
       return { node: null, index: 0, offset: 0 };
-    let { index: index2, offset } = this.content.findIndex(pos2);
-    if (offset < pos2)
+    let { index: index2, offset } = this.content.findIndex(pos);
+    if (offset < pos)
       return { node: this.content.child(index2), index: index2, offset };
     let node3 = this.content.child(index2 - 1);
     return { node: node3, index: index2 - 1, offset: offset - node3.nodeSize };
@@ -162018,14 +163323,14 @@ let Node$2 = class Node2 {
   Resolve the given position in the document, returning an
   [object](https://prosemirror.net/docs/ref/#model.ResolvedPos) with information about its context.
   */
-  resolve(pos2) {
-    return ResolvedPos.resolveCached(this, pos2);
+  resolve(pos) {
+    return ResolvedPos.resolveCached(this, pos);
   }
   /**
   @internal
   */
-  resolveNoCache(pos2) {
-    return ResolvedPos.resolve(this, pos2);
+  resolveNoCache(pos) {
+    return ResolvedPos.resolve(this, pos);
   }
   /**
   Test whether a given mark or mark type occurs in this document
@@ -163691,15 +164996,15 @@ class ParseContext {
   }
   get currentPos() {
     this.closeExtra();
-    let pos2 = 0;
+    let pos = 0;
     for (let i2 = this.open; i2 >= 0; i2--) {
       let content2 = this.nodes[i2].content;
       for (let j2 = content2.length - 1; j2 >= 0; j2--)
-        pos2 += content2[j2].nodeSize;
+        pos += content2[j2].nodeSize;
       if (i2)
-        pos2++;
+        pos++;
     }
-    return pos2;
+    return pos;
   }
   findAtPoint(parent, offset) {
     if (this.find)
@@ -163719,8 +165024,8 @@ class ParseContext {
     if (parent != content2 && this.find)
       for (let i2 = 0; i2 < this.find.length; i2++) {
         if (this.find[i2].pos == null && parent.nodeType == 1 && parent.contains(this.find[i2].node)) {
-          let pos2 = content2.compareDocumentPosition(this.find[i2].node);
-          if (pos2 & (before ? 2 : 4))
+          let pos = content2.compareDocumentPosition(this.find[i2].node);
+          if (pos & (before ? 2 : 4))
             this.find[i2].pos = this.currentPos;
         }
       }
@@ -164061,8 +165366,8 @@ class MapResult {
   /**
   @internal
   */
-  constructor(pos2, delInfo, recover) {
-    this.pos = pos2;
+  constructor(pos, delInfo, recover) {
+    this.pos = pos;
     this.delInfo = delInfo;
     this.recover = recover;
   }
@@ -164120,49 +165425,49 @@ class StepMap {
         diff2 += this.ranges[i2 * 3 + 2] - this.ranges[i2 * 3 + 1];
     return this.ranges[index2 * 3] + diff2 + recoverOffset(value4);
   }
-  mapResult(pos2, assoc = 1) {
-    return this._map(pos2, assoc, false);
+  mapResult(pos, assoc = 1) {
+    return this._map(pos, assoc, false);
   }
-  map(pos2, assoc = 1) {
-    return this._map(pos2, assoc, true);
+  map(pos, assoc = 1) {
+    return this._map(pos, assoc, true);
   }
   /**
   @internal
   */
-  _map(pos2, assoc, simple) {
+  _map(pos, assoc, simple) {
     let diff2 = 0, oldIndex = this.inverted ? 2 : 1, newIndex = this.inverted ? 1 : 2;
     for (let i2 = 0; i2 < this.ranges.length; i2 += 3) {
       let start2 = this.ranges[i2] - (this.inverted ? diff2 : 0);
-      if (start2 > pos2)
+      if (start2 > pos)
         break;
       let oldSize = this.ranges[i2 + oldIndex], newSize = this.ranges[i2 + newIndex], end = start2 + oldSize;
-      if (pos2 <= end) {
-        let side = !oldSize ? assoc : pos2 == start2 ? -1 : pos2 == end ? 1 : assoc;
+      if (pos <= end) {
+        let side = !oldSize ? assoc : pos == start2 ? -1 : pos == end ? 1 : assoc;
         let result = start2 + diff2 + (side < 0 ? 0 : newSize);
         if (simple)
           return result;
-        let recover = pos2 == (assoc < 0 ? start2 : end) ? null : makeRecover(i2 / 3, pos2 - start2);
-        let del2 = pos2 == start2 ? DEL_AFTER : pos2 == end ? DEL_BEFORE : DEL_ACROSS;
-        if (assoc < 0 ? pos2 != start2 : pos2 != end)
+        let recover = pos == (assoc < 0 ? start2 : end) ? null : makeRecover(i2 / 3, pos - start2);
+        let del2 = pos == start2 ? DEL_AFTER : pos == end ? DEL_BEFORE : DEL_ACROSS;
+        if (assoc < 0 ? pos != start2 : pos != end)
           del2 |= DEL_SIDE;
         return new MapResult(result, del2, recover);
       }
       diff2 += newSize - oldSize;
     }
-    return simple ? pos2 + diff2 : new MapResult(pos2 + diff2, 0, null);
+    return simple ? pos + diff2 : new MapResult(pos + diff2, 0, null);
   }
   /**
   @internal
   */
-  touches(pos2, recover) {
+  touches(pos, recover) {
     let diff2 = 0, index2 = recoverIndex(recover);
     let oldIndex = this.inverted ? 2 : 1, newIndex = this.inverted ? 1 : 2;
     for (let i2 = 0; i2 < this.ranges.length; i2 += 3) {
       let start2 = this.ranges[i2] - (this.inverted ? diff2 : 0);
-      if (start2 > pos2)
+      if (start2 > pos)
         break;
       let oldSize = this.ranges[i2 + oldIndex], end = start2 + oldSize;
-      if (pos2 <= end && i2 == index2 * 3)
+      if (pos <= end && i2 == index2 * 3)
         return true;
       diff2 += this.ranges[i2 + newIndex] - oldSize;
     }
@@ -164289,39 +165594,39 @@ class Mapping {
   /**
   Map a position through this mapping.
   */
-  map(pos2, assoc = 1) {
+  map(pos, assoc = 1) {
     if (this.mirror)
-      return this._map(pos2, assoc, true);
+      return this._map(pos, assoc, true);
     for (let i2 = this.from; i2 < this.to; i2++)
-      pos2 = this.maps[i2].map(pos2, assoc);
-    return pos2;
+      pos = this.maps[i2].map(pos, assoc);
+    return pos;
   }
   /**
   Map a position through this mapping, returning a mapping
   result.
   */
-  mapResult(pos2, assoc = 1) {
-    return this._map(pos2, assoc, false);
+  mapResult(pos, assoc = 1) {
+    return this._map(pos, assoc, false);
   }
   /**
   @internal
   */
-  _map(pos2, assoc, simple) {
+  _map(pos, assoc, simple) {
     let delInfo = 0;
     for (let i2 = this.from; i2 < this.to; i2++) {
-      let map3 = this.maps[i2], result = map3.mapResult(pos2, assoc);
+      let map3 = this.maps[i2], result = map3.mapResult(pos, assoc);
       if (result.recover != null) {
         let corr = this.getMirror(i2);
         if (corr != null && corr > i2 && corr < this.to) {
           i2 = corr;
-          pos2 = this.maps[corr].recover(result.recover);
+          pos = this.maps[corr].recover(result.recover);
           continue;
         }
       }
       delInfo |= result.delInfo;
-      pos2 = result.pos;
+      pos = result.pos;
     }
-    return simple ? pos2 : new MapResult(pos2, delInfo, null);
+    return simple ? pos : new MapResult(pos, delInfo, null);
   }
 }
 const stepsByID = /* @__PURE__ */ Object.create(null);
@@ -164536,9 +165841,9 @@ class AddNodeMarkStep extends Step {
   /**
   Create a node mark step.
   */
-  constructor(pos2, mark2) {
+  constructor(pos, mark2) {
     super();
-    this.pos = pos2;
+    this.pos = pos;
     this.mark = mark2;
   }
   apply(doc2) {
@@ -164562,8 +165867,8 @@ class AddNodeMarkStep extends Step {
     return new RemoveNodeMarkStep(this.pos, this.mark);
   }
   map(mapping) {
-    let pos2 = mapping.mapResult(this.pos, 1);
-    return pos2.deletedAfter ? null : new AddNodeMarkStep(pos2.pos, this.mark);
+    let pos = mapping.mapResult(this.pos, 1);
+    return pos.deletedAfter ? null : new AddNodeMarkStep(pos.pos, this.mark);
   }
   toJSON() {
     return { stepType: "addNodeMark", pos: this.pos, mark: this.mark.toJSON() };
@@ -164585,9 +165890,9 @@ class RemoveNodeMarkStep extends Step {
   /**
   Create a mark-removing step.
   */
-  constructor(pos2, mark2) {
+  constructor(pos, mark2) {
     super();
-    this.pos = pos2;
+    this.pos = pos;
     this.mark = mark2;
   }
   apply(doc2) {
@@ -164604,8 +165909,8 @@ class RemoveNodeMarkStep extends Step {
     return new AddNodeMarkStep(this.pos, this.mark);
   }
   map(mapping) {
-    let pos2 = mapping.mapResult(this.pos, 1);
-    return pos2.deletedAfter ? null : new RemoveNodeMarkStep(pos2.pos, this.mark);
+    let pos = mapping.mapResult(this.pos, 1);
+    return pos.deletedAfter ? null : new RemoveNodeMarkStep(pos.pos, this.mark);
   }
   toJSON() {
     return { stepType: "removeNodeMark", pos: this.pos, mark: this.mark.toJSON() };
@@ -164787,12 +166092,12 @@ __name(contentBetween, "contentBetween");
 function addMark(tr2, from2, to, mark2) {
   let removed = [], added = [];
   let removing, adding;
-  tr2.doc.nodesBetween(from2, to, (node3, pos2, parent) => {
+  tr2.doc.nodesBetween(from2, to, (node3, pos, parent) => {
     if (!node3.isInline)
       return;
     let marks = node3.marks;
     if (!mark2.isInSet(marks) && parent.type.allowsMarkType(mark2.type)) {
-      let start2 = Math.max(pos2, from2), end = Math.min(pos2 + node3.nodeSize, to);
+      let start2 = Math.max(pos, from2), end = Math.min(pos + node3.nodeSize, to);
       let newSet = mark2.addToSet(marks);
       for (let i2 = 0; i2 < marks.length; i2++) {
         if (!marks[i2].isInSet(newSet)) {
@@ -164814,7 +166119,7 @@ function addMark(tr2, from2, to, mark2) {
 __name(addMark, "addMark");
 function removeMark(tr2, from2, to, mark2) {
   let matched = [], step3 = 0;
-  tr2.doc.nodesBetween(from2, to, (node3, pos2) => {
+  tr2.doc.nodesBetween(from2, to, (node3, pos) => {
     if (!node3.isInline)
       return;
     step3++;
@@ -164832,7 +166137,7 @@ function removeMark(tr2, from2, to, mark2) {
       toRemove = node3.marks;
     }
     if (toRemove && toRemove.length) {
-      let end = Math.min(pos2 + node3.nodeSize, to);
+      let end = Math.min(pos + node3.nodeSize, to);
       for (let i2 = 0; i2 < toRemove.length; i2++) {
         let style2 = toRemove[i2], found2;
         for (let j2 = 0; j2 < matched.length; j2++) {
@@ -164844,7 +166149,7 @@ function removeMark(tr2, from2, to, mark2) {
           found2.to = end;
           found2.step = step3;
         } else {
-          matched.push({ style: style2, from: Math.max(pos2, from2), to: end, step: step3 });
+          matched.push({ style: style2, from: Math.max(pos, from2), to: end, step: step3 });
         }
       }
     }
@@ -164852,9 +166157,9 @@ function removeMark(tr2, from2, to, mark2) {
   matched.forEach((m2) => tr2.step(new RemoveMarkStep(m2.from, m2.to, m2.style)));
 }
 __name(removeMark, "removeMark");
-function clearIncompatible(tr2, pos2, parentType, match2 = parentType.contentMatch, clearNewlines = true) {
-  let node3 = tr2.doc.nodeAt(pos2);
-  let replSteps = [], cur = pos2 + 1;
+function clearIncompatible(tr2, pos, parentType, match2 = parentType.contentMatch, clearNewlines = true) {
+  let node3 = tr2.doc.nodeAt(pos);
+  let replSteps = [], cur = pos + 1;
   for (let i2 = 0; i2 < node3.childCount; i2++) {
     let child = node3.child(i2), end = cur + child.nodeSize;
     let allowed = match2.matchType(child.type);
@@ -164981,9 +166286,9 @@ function setBlockType$1(tr2, from2, to, type, attrs6) {
   if (!type.isTextblock)
     throw new RangeError("Type given to setBlockType should be a textblock");
   let mapFrom = tr2.steps.length;
-  tr2.doc.nodesBetween(from2, to, (node3, pos2) => {
+  tr2.doc.nodesBetween(from2, to, (node3, pos) => {
     let attrsHere = typeof attrs6 == "function" ? attrs6(node3) : attrs6;
-    if (node3.isTextblock && !node3.hasMarkup(type, attrsHere) && canChangeType(tr2.doc, tr2.mapping.slice(mapFrom).map(pos2), type)) {
+    if (node3.isTextblock && !node3.hasMarkup(type, attrsHere) && canChangeType(tr2.doc, tr2.mapping.slice(mapFrom).map(pos), type)) {
       let convertNewlines = null;
       if (type.schema.linebreakReplacement) {
         let pre = type.whitespace == "pre", supportLinebreak = !!type.contentMatch.matchType(type.schema.linebreakReplacement);
@@ -164993,60 +166298,60 @@ function setBlockType$1(tr2, from2, to, type, attrs6) {
           convertNewlines = true;
       }
       if (convertNewlines === false)
-        replaceLinebreaks(tr2, node3, pos2, mapFrom);
-      clearIncompatible(tr2, tr2.mapping.slice(mapFrom).map(pos2, 1), type, void 0, convertNewlines === null);
+        replaceLinebreaks(tr2, node3, pos, mapFrom);
+      clearIncompatible(tr2, tr2.mapping.slice(mapFrom).map(pos, 1), type, void 0, convertNewlines === null);
       let mapping = tr2.mapping.slice(mapFrom);
-      let startM = mapping.map(pos2, 1), endM = mapping.map(pos2 + node3.nodeSize, 1);
+      let startM = mapping.map(pos, 1), endM = mapping.map(pos + node3.nodeSize, 1);
       tr2.step(new ReplaceAroundStep(startM, endM, startM + 1, endM - 1, new Slice(Fragment.from(type.create(attrsHere, null, node3.marks)), 0, 0), 1, true));
       if (convertNewlines === true)
-        replaceNewlines(tr2, node3, pos2, mapFrom);
+        replaceNewlines(tr2, node3, pos, mapFrom);
       return false;
     }
   });
 }
 __name(setBlockType$1, "setBlockType$1");
-function replaceNewlines(tr2, node3, pos2, mapFrom) {
+function replaceNewlines(tr2, node3, pos, mapFrom) {
   node3.forEach((child, offset) => {
     if (child.isText) {
       let m2, newline2 = /\r?\n|\r/g;
       while (m2 = newline2.exec(child.text)) {
-        let start2 = tr2.mapping.slice(mapFrom).map(pos2 + 1 + offset + m2.index);
+        let start2 = tr2.mapping.slice(mapFrom).map(pos + 1 + offset + m2.index);
         tr2.replaceWith(start2, start2 + 1, node3.type.schema.linebreakReplacement.create());
       }
     }
   });
 }
 __name(replaceNewlines, "replaceNewlines");
-function replaceLinebreaks(tr2, node3, pos2, mapFrom) {
+function replaceLinebreaks(tr2, node3, pos, mapFrom) {
   node3.forEach((child, offset) => {
     if (child.type == child.type.schema.linebreakReplacement) {
-      let start2 = tr2.mapping.slice(mapFrom).map(pos2 + 1 + offset);
+      let start2 = tr2.mapping.slice(mapFrom).map(pos + 1 + offset);
       tr2.replaceWith(start2, start2 + 1, node3.type.schema.text("\n"));
     }
   });
 }
 __name(replaceLinebreaks, "replaceLinebreaks");
-function canChangeType(doc2, pos2, type) {
-  let $pos = doc2.resolve(pos2), index2 = $pos.index();
+function canChangeType(doc2, pos, type) {
+  let $pos = doc2.resolve(pos), index2 = $pos.index();
   return $pos.parent.canReplaceWith(index2, index2 + 1, type);
 }
 __name(canChangeType, "canChangeType");
-function setNodeMarkup(tr2, pos2, type, attrs6, marks) {
-  let node3 = tr2.doc.nodeAt(pos2);
+function setNodeMarkup(tr2, pos, type, attrs6, marks) {
+  let node3 = tr2.doc.nodeAt(pos);
   if (!node3)
     throw new RangeError("No node at given position");
   if (!type)
     type = node3.type;
   let newNode = type.create(attrs6, null, marks || node3.marks);
   if (node3.isLeaf)
-    return tr2.replaceWith(pos2, pos2 + node3.nodeSize, newNode);
+    return tr2.replaceWith(pos, pos + node3.nodeSize, newNode);
   if (!type.validContent(node3.content))
     throw new RangeError("Invalid content for node type " + type.name);
-  tr2.step(new ReplaceAroundStep(pos2, pos2 + node3.nodeSize, pos2 + 1, pos2 + node3.nodeSize - 1, new Slice(Fragment.from(newNode), 0, 0), 1, true));
+  tr2.step(new ReplaceAroundStep(pos, pos + node3.nodeSize, pos + 1, pos + node3.nodeSize - 1, new Slice(Fragment.from(newNode), 0, 0), 1, true));
 }
 __name(setNodeMarkup, "setNodeMarkup");
-function canSplit(doc2, pos2, depth = 1, typesAfter) {
-  let $pos = doc2.resolve(pos2), base2 = $pos.depth - depth;
+function canSplit(doc2, pos, depth = 1, typesAfter) {
+  let $pos = doc2.resolve(pos), base2 = $pos.depth - depth;
   let innerType = typesAfter && typesAfter[typesAfter.length - 1] || $pos.parent;
   if (base2 < 0 || $pos.parent.type.spec.isolating || !$pos.parent.canReplace($pos.index(), $pos.parent.childCount) || !innerType.type.validContent($pos.parent.content.cutByIndex($pos.index(), $pos.parent.childCount)))
     return false;
@@ -165067,18 +166372,18 @@ function canSplit(doc2, pos2, depth = 1, typesAfter) {
   return $pos.node(base2).canReplaceWith(index2, index2, baseType ? baseType.type : $pos.node(base2 + 1).type);
 }
 __name(canSplit, "canSplit");
-function split(tr2, pos2, depth = 1, typesAfter) {
-  let $pos = tr2.doc.resolve(pos2), before = Fragment.empty, after = Fragment.empty;
+function split(tr2, pos, depth = 1, typesAfter) {
+  let $pos = tr2.doc.resolve(pos), before = Fragment.empty, after = Fragment.empty;
   for (let d2 = $pos.depth, e2 = $pos.depth - depth, i2 = depth - 1; d2 > e2; d2--, i2--) {
     before = Fragment.from($pos.node(d2).copy(before));
     let typeAfter = typesAfter && typesAfter[i2];
     after = Fragment.from(typeAfter ? typeAfter.type.create(typeAfter.attrs, after) : $pos.node(d2).copy(after));
   }
-  tr2.step(new ReplaceStep(pos2, pos2, new Slice(before.append(after), depth, depth), true));
+  tr2.step(new ReplaceStep(pos, pos, new Slice(before.append(after), depth, depth), true));
 }
 __name(split, "split");
-function canJoin(doc2, pos2) {
-  let $pos = doc2.resolve(pos2), index2 = $pos.index();
+function canJoin(doc2, pos) {
+  let $pos = doc2.resolve(pos), index2 = $pos.index();
   return joinable($pos.nodeBefore, $pos.nodeAfter) && $pos.parent.canReplace(index2, index2 + 1);
 }
 __name(canJoin, "canJoin");
@@ -165103,8 +166408,8 @@ function joinable(a2, b2) {
   return !!(a2 && b2 && !a2.isLeaf && canAppendWithSubstitutedLinebreaks(a2, b2));
 }
 __name(joinable, "joinable");
-function joinPoint(doc2, pos2, dir = -1) {
-  let $pos = doc2.resolve(pos2);
+function joinPoint(doc2, pos, dir = -1) {
+  let $pos = doc2.resolve(pos);
   for (let d2 = $pos.depth; ; d2--) {
     let before, after, index2 = $pos.index(d2);
     if (d2 == $pos.depth) {
@@ -165119,17 +166424,17 @@ function joinPoint(doc2, pos2, dir = -1) {
       after = $pos.node(d2 + 1);
     }
     if (before && !before.isTextblock && joinable(before, after) && $pos.node(d2).canReplace(index2, index2 + 1))
-      return pos2;
+      return pos;
     if (d2 == 0)
       break;
-    pos2 = dir < 0 ? $pos.before(d2) : $pos.after(d2);
+    pos = dir < 0 ? $pos.before(d2) : $pos.after(d2);
   }
 }
 __name(joinPoint, "joinPoint");
-function join(tr2, pos2, depth) {
+function join(tr2, pos, depth) {
   let convertNewlines = null;
   let { linebreakReplacement } = tr2.doc.type.schema;
-  let $before = tr2.doc.resolve(pos2 - depth), beforeType = $before.node().type;
+  let $before = tr2.doc.resolve(pos - depth), beforeType = $before.node().type;
   if (linebreakReplacement && beforeType.inlineContent) {
     let pre = beforeType.whitespace == "pre";
     let supportLinebreak = !!beforeType.contentMatch.matchType(linebreakReplacement);
@@ -165140,13 +166445,13 @@ function join(tr2, pos2, depth) {
   }
   let mapFrom = tr2.steps.length;
   if (convertNewlines === false) {
-    let $after = tr2.doc.resolve(pos2 + depth);
+    let $after = tr2.doc.resolve(pos + depth);
     replaceLinebreaks(tr2, $after.node(), $after.before(), mapFrom);
   }
   if (beforeType.inlineContent)
-    clearIncompatible(tr2, pos2 + depth - 1, beforeType, $before.node().contentMatchAt($before.index()), convertNewlines == null);
-  let mapping = tr2.mapping.slice(mapFrom), start2 = mapping.map(pos2 - depth);
-  tr2.step(new ReplaceStep(start2, mapping.map(pos2 + depth, -1), Slice.empty, true));
+    clearIncompatible(tr2, pos + depth - 1, beforeType, $before.node().contentMatchAt($before.index()), convertNewlines == null);
+  let mapping = tr2.mapping.slice(mapFrom), start2 = mapping.map(pos - depth);
+  tr2.step(new ReplaceStep(start2, mapping.map(pos + depth, -1), Slice.empty, true));
   if (convertNewlines === true) {
     let $full = tr2.doc.resolve(start2);
     replaceNewlines(tr2, $full.node(), $full.before(), tr2.steps.length);
@@ -165154,10 +166459,10 @@ function join(tr2, pos2, depth) {
   return tr2;
 }
 __name(join, "join");
-function insertPoint(doc2, pos2, nodeType) {
-  let $pos = doc2.resolve(pos2);
+function insertPoint(doc2, pos, nodeType) {
+  let $pos = doc2.resolve(pos);
   if ($pos.parent.canReplaceWith($pos.index(), $pos.index(), nodeType))
-    return pos2;
+    return pos;
   if ($pos.parentOffset == 0)
     for (let d2 = $pos.depth - 1; d2 >= 0; d2--) {
       let index2 = $pos.index(d2);
@@ -165177,10 +166482,10 @@ function insertPoint(doc2, pos2, nodeType) {
   return null;
 }
 __name(insertPoint, "insertPoint");
-function dropPoint(doc2, pos2, slice2) {
-  let $pos = doc2.resolve(pos2);
+function dropPoint(doc2, pos, slice2) {
+  let $pos = doc2.resolve(pos);
   if (!slice2.content.size)
-    return pos2;
+    return pos;
   let content2 = slice2.content;
   for (let i2 = 0; i2 < slice2.openStart; i2++)
     content2 = content2.firstChild.content;
@@ -165478,13 +166783,13 @@ function replaceRange(tr2, from2, to, slice2) {
     targetDepths.pop();
   let preferredTarget = -($from.depth + 1);
   targetDepths.unshift(preferredTarget);
-  for (let d2 = $from.depth, pos2 = $from.pos - 1; d2 > 0; d2--, pos2--) {
+  for (let d2 = $from.depth, pos = $from.pos - 1; d2 > 0; d2--, pos--) {
     let spec = $from.node(d2).type.spec;
     if (spec.defining || spec.definingAsContext || spec.isolating)
       break;
     if (targetDepths.indexOf(d2) > -1)
       preferredTarget = d2;
-    else if ($from.before(d2) == pos2)
+    else if ($from.before(d2) == pos)
       targetDepths.splice(1, 0, -d2);
   }
   let preferredTargetIndex = targetDepths.indexOf(preferredTarget);
@@ -165590,9 +166895,9 @@ class AttrStep extends Step {
   /**
   Construct an attribute step.
   */
-  constructor(pos2, attr, value4) {
+  constructor(pos, attr, value4) {
     super();
-    this.pos = pos2;
+    this.pos = pos;
     this.attr = attr;
     this.value = value4;
   }
@@ -165614,8 +166919,8 @@ class AttrStep extends Step {
     return new AttrStep(this.pos, this.attr, doc2.nodeAt(this.pos).attrs[this.attr]);
   }
   map(mapping) {
-    let pos2 = mapping.mapResult(this.pos, 1);
-    return pos2.deletedAfter ? null : new AttrStep(pos2.pos, this.attr, this.value);
+    let pos = mapping.mapResult(this.pos, 1);
+    return pos.deletedAfter ? null : new AttrStep(pos.pos, this.attr, this.value);
   }
   toJSON() {
     return { stepType: "attr", pos: this.pos, attr: this.attr, value: this.value };
@@ -165760,8 +167065,8 @@ class Transform {
   /**
   Insert the given content at the given position.
   */
-  insert(pos2, content2) {
-    return this.replaceWith(pos2, pos2, content2);
+  insert(pos, content2) {
+    return this.replaceWith(pos, pos, content2);
   }
   /**
   Replace a range of the document with a given slice, using
@@ -165822,8 +167127,8 @@ class Transform {
   Join the blocks around the given position. If depth is 2, their
   last and first siblings are also joined, and so on.
   */
-  join(pos2, depth = 1) {
-    join(this, pos2, depth);
+  join(pos, depth = 1) {
+    join(this, pos, depth);
     return this;
   }
   /**
@@ -165847,8 +167152,8 @@ class Transform {
   Change the type, attributes, and/or marks of the node at `pos`.
   When `type` isn't given, the existing node type is preserved,
   */
-  setNodeMarkup(pos2, type, attrs6 = null, marks) {
-    setNodeMarkup(this, pos2, type, attrs6, marks);
+  setNodeMarkup(pos, type, attrs6 = null, marks) {
+    setNodeMarkup(this, pos, type, attrs6, marks);
     return this;
   }
   /**
@@ -165856,8 +167161,8 @@ class Transform {
   The `pos` addresses the document content. Use `setDocAttribute`
   to set attributes on the document itself.
   */
-  setNodeAttribute(pos2, attr, value4) {
-    this.step(new AttrStep(pos2, attr, value4));
+  setNodeAttribute(pos, attr, value4) {
+    this.step(new AttrStep(pos, attr, value4));
     return this;
   }
   /**
@@ -165870,24 +167175,24 @@ class Transform {
   /**
   Add a mark to the node at position `pos`.
   */
-  addNodeMark(pos2, mark2) {
-    this.step(new AddNodeMarkStep(pos2, mark2));
+  addNodeMark(pos, mark2) {
+    this.step(new AddNodeMarkStep(pos, mark2));
     return this;
   }
   /**
   Remove a mark (or a mark of the given type) from the node at
   position `pos`.
   */
-  removeNodeMark(pos2, mark2) {
+  removeNodeMark(pos, mark2) {
     if (!(mark2 instanceof Mark$1)) {
-      let node3 = this.doc.nodeAt(pos2);
+      let node3 = this.doc.nodeAt(pos);
       if (!node3)
-        throw new RangeError("No node at position " + pos2);
+        throw new RangeError("No node at position " + pos);
       mark2 = mark2.isInSet(node3.marks);
       if (!mark2)
         return this;
     }
-    this.step(new RemoveNodeMarkStep(pos2, mark2));
+    this.step(new RemoveNodeMarkStep(pos, mark2));
     return this;
   }
   /**
@@ -165897,8 +167202,8 @@ class Transform {
   This can be changed by passing an array of types and attributes to
   use after the split.
   */
-  split(pos2, depth = 1, typesAfter) {
-    split(this, pos2, depth, typesAfter);
+  split(pos, depth = 1, typesAfter) {
+    split(this, pos, depth, typesAfter);
     return this;
   }
   /**
@@ -165924,8 +167229,8 @@ class Transform {
   an optional starting [content match](https://prosemirror.net/docs/ref/#model.ContentMatch) as
   third argument.
   */
-  clearIncompatible(pos2, parentType, match2) {
-    clearIncompatible(this, pos2, parentType, match2);
+  clearIncompatible(pos, parentType, match2) {
+    clearIncompatible(this, pos, parentType, match2);
     return this;
   }
 }
@@ -166252,8 +167557,8 @@ class NodeSelection extends Selection {
     this.node = node3;
   }
   map(doc2, mapping) {
-    let { deleted, pos: pos2 } = mapping.mapResult(this.anchor);
-    let $pos = doc2.resolve(pos2);
+    let { deleted, pos } = mapping.mapResult(this.anchor);
+    let $pos = doc2.resolve(pos);
     if (deleted)
       return Selection.near($pos);
     return new NodeSelection($pos);
@@ -166302,8 +167607,8 @@ class NodeBookmark {
     this.anchor = anchor;
   }
   map(mapping) {
-    let { deleted, pos: pos2 } = mapping.mapResult(this.anchor);
-    return deleted ? new TextBookmark(pos2, pos2) : new NodeBookmark(pos2);
+    let { deleted, pos } = mapping.mapResult(this.anchor);
+    return deleted ? new TextBookmark(pos, pos) : new NodeBookmark(pos);
   }
   resolve(doc2) {
     let $pos = doc2.resolve(this.anchor), node3 = $pos.nodeAfter;
@@ -166360,19 +167665,19 @@ const AllBookmark = {
     return new AllSelection(doc2);
   }
 };
-function findSelectionIn(doc2, node3, pos2, index2, dir, text2 = false) {
+function findSelectionIn(doc2, node3, pos, index2, dir, text2 = false) {
   if (node3.inlineContent)
-    return TextSelection.create(doc2, pos2);
+    return TextSelection.create(doc2, pos);
   for (let i2 = index2 - (dir > 0 ? 0 : 1); dir > 0 ? i2 < node3.childCount : i2 >= 0; i2 += dir) {
     let child = node3.child(i2);
     if (!child.isAtom) {
-      let inner = findSelectionIn(doc2, child, pos2 + dir, dir < 0 ? child.childCount : 0, dir, text2);
+      let inner = findSelectionIn(doc2, child, pos + dir, dir < 0 ? child.childCount : 0, dir, text2);
       if (inner)
         return inner;
     } else if (!text2 && NodeSelection.isSelectable(child)) {
-      return NodeSelection.create(doc2, pos2 - (dir < 0 ? child.nodeSize : 0));
+      return NodeSelection.create(doc2, pos - (dir < 0 ? child.nodeSize : 0));
     }
-    pos2 += child.nodeSize * dir;
+    pos += child.nodeSize * dir;
   }
   return null;
 }
@@ -167025,9 +168330,9 @@ __name(deepActiveElement, "deepActiveElement");
 function caretFromPoint(doc2, x2, y2) {
   if (doc2.caretPositionFromPoint) {
     try {
-      let pos2 = doc2.caretPositionFromPoint(x2, y2);
-      if (pos2)
-        return { node: pos2.offsetNode, offset: Math.min(nodeSize(pos2.offsetNode), pos2.offset) };
+      let pos = doc2.caretPositionFromPoint(x2, y2);
+      if (pos)
+        return { node: pos.offsetNode, offset: Math.min(nodeSize(pos.offsetNode), pos.offset) };
     } catch (_2) {
     }
   }
@@ -167327,7 +168632,7 @@ function posAtCoords(view, coords) {
   if (caret)
     ({ node: node3, offset } = caret);
   let elt = (view.root.elementFromPoint ? view.root : doc2).elementFromPoint(coords.left, coords.top);
-  let pos2;
+  let pos;
   if (!elt || !view.dom.contains(elt.nodeType != 1 ? elt.parentNode : elt)) {
     let box = view.dom.getBoundingClientRect();
     if (!inRect(coords, box))
@@ -167355,14 +168660,14 @@ function posAtCoords(view, coords) {
     if (webkit && offset && node3.nodeType == 1 && (prev2 = node3.childNodes[offset - 1]).nodeType == 1 && prev2.contentEditable == "false" && prev2.getBoundingClientRect().top >= coords.top)
       offset--;
     if (node3 == view.dom && offset == node3.childNodes.length - 1 && node3.lastChild.nodeType == 1 && coords.top > node3.lastChild.getBoundingClientRect().bottom)
-      pos2 = view.state.doc.content.size;
+      pos = view.state.doc.content.size;
     else if (offset == 0 || node3.nodeType != 1 || node3.childNodes[offset - 1].nodeName != "BR")
-      pos2 = posFromCaret(view, node3, offset, coords);
+      pos = posFromCaret(view, node3, offset, coords);
   }
-  if (pos2 == null)
-    pos2 = posFromElement(view, elt, coords);
+  if (pos == null)
+    pos = posFromElement(view, elt, coords);
   let desc = view.docView.nearestDesc(elt, true);
-  return { pos: pos2, inside: desc ? desc.posAtStart - desc.border : -1 };
+  return { pos, inside: desc ? desc.posAtStart - desc.border : -1 };
 }
 __name(posAtCoords, "posAtCoords");
 function nonZero(rect) {
@@ -167380,8 +168685,8 @@ function singleRect(target2, bias) {
 }
 __name(singleRect, "singleRect");
 const BIDI = /[\u0590-\u05f4\u0600-\u06ff\u0700-\u08ac]/;
-function coordsAtPos(view, pos2, side) {
-  let { node: node3, offset, atom } = view.docView.domFromPos(pos2, side < 0 ? -1 : 1);
+function coordsAtPos(view, pos, side) {
+  let { node: node3, offset, atom } = view.docView.domFromPos(pos, side < 0 ? -1 : 1);
   let supportEmptyRange = webkit || gecko;
   if (node3.nodeType == 3) {
     if (supportEmptyRange && (BIDI.test(node3.nodeValue) || (side < 0 ? !offset : offset == node3.nodeValue.length))) {
@@ -167411,7 +168716,7 @@ function coordsAtPos(view, pos2, side) {
       return flattenV(singleRect(textRange(node3, from2, to), takeSide), takeSide < 0);
     }
   }
-  let $dom = view.state.doc.resolve(pos2 - (atom || 0));
+  let $dom = view.state.doc.resolve(pos - (atom || 0));
   if (!$dom.parent.inlineContent) {
     if (atom == null && offset && (side < 0 || offset == nodeSize(node3))) {
       let before = node3.childNodes[offset - 1];
@@ -167562,7 +168867,7 @@ class ViewDesc {
   }
   // Used to check whether a given description corresponds to a
   // widget/mark/node.
-  matchesWidget(widget2) {
+  matchesWidget(widget) {
     return false;
   }
   matchesMark(mark2) {
@@ -167605,11 +168910,11 @@ class ViewDesc {
       this.children[i2].destroy();
   }
   posBeforeChild(child) {
-    for (let i2 = 0, pos2 = this.posAtStart; ; i2++) {
+    for (let i2 = 0, pos = this.posAtStart; ; i2++) {
       let cur = this.children[i2];
       if (cur == child)
-        return pos2;
-      pos2 += cur.size;
+        return pos;
+      pos += cur.size;
     }
   }
   get posBefore() {
@@ -167706,27 +169011,27 @@ class ViewDesc {
   }
   // Find the desc for the node after the given pos, if any. (When a
   // parent node overrode rendering, there might not be one.)
-  descAt(pos2) {
+  descAt(pos) {
     for (let i2 = 0, offset = 0; i2 < this.children.length; i2++) {
       let child = this.children[i2], end = offset + child.size;
-      if (offset == pos2 && end != offset) {
+      if (offset == pos && end != offset) {
         while (!child.border && child.children.length)
           child = child.children[0];
         return child;
       }
-      if (pos2 < end)
-        return child.descAt(pos2 - offset - child.border);
+      if (pos < end)
+        return child.descAt(pos - offset - child.border);
       offset = end;
     }
   }
-  domFromPos(pos2, side) {
+  domFromPos(pos, side) {
     if (!this.contentDOM)
-      return { node: this.dom, offset: 0, atom: pos2 + 1 };
+      return { node: this.dom, offset: 0, atom: pos + 1 };
     let i2 = 0, offset = 0;
     for (let curPos = 0; i2 < this.children.length; i2++) {
       let child = this.children[i2], end = curPos + child.size;
-      if (end > pos2 || child instanceof TrailingHackViewDesc) {
-        offset = pos2 - curPos;
+      if (end > pos || child instanceof TrailingHackViewDesc) {
+        offset = pos - curPos;
         break;
       }
       curPos = end;
@@ -167805,10 +169110,10 @@ class ViewDesc {
     let child = this.children[side < 0 ? 0 : this.children.length - 1];
     return child.size == 0 || child.emptyChildAt(side);
   }
-  domAfterPos(pos2) {
-    let { node: node3, offset } = this.domFromPos(pos2, 0);
+  domAfterPos(pos) {
+    let { node: node3, offset } = this.domFromPos(pos, 0);
     if (node3.nodeType != 1 || offset == node3.childNodes.length)
-      throw new RangeError("No node after pos " + pos2);
+      throw new RangeError("No node after pos " + pos);
     return node3.childNodes[offset];
   }
   // View descs are responsible for setting any selection that falls
@@ -167930,16 +169235,16 @@ class WidgetViewDesc extends ViewDesc {
   static {
     __name(this, "WidgetViewDesc");
   }
-  constructor(parent, widget2, view, pos2) {
-    let self2, dom = widget2.type.toDOM;
+  constructor(parent, widget, view, pos) {
+    let self2, dom = widget.type.toDOM;
     if (typeof dom == "function")
       dom = dom(view, () => {
         if (!self2)
-          return pos2;
+          return pos;
         if (self2.parent)
           return self2.parent.posBeforeChild(self2);
       });
-    if (!widget2.type.spec.raw) {
+    if (!widget.type.spec.raw) {
       if (dom.nodeType != 1) {
         let wrap2 = document.createElement("span");
         wrap2.appendChild(dom);
@@ -167949,12 +169254,12 @@ class WidgetViewDesc extends ViewDesc {
       dom.classList.add("ProseMirror-widget");
     }
     super(parent, [], dom, null);
-    this.widget = widget2;
-    this.widget = widget2;
+    this.widget = widget;
+    this.widget = widget;
     self2 = this;
   }
-  matchesWidget(widget2) {
-    return this.dirty == NOT_DIRTY && widget2.type.eq(this.widget.type);
+  matchesWidget(widget) {
+    return this.dirty == NOT_DIRTY && widget.type.eq(this.widget.type);
   }
   parseRule() {
     return { ignore: true };
@@ -167994,8 +169299,8 @@ class CompositionViewDesc extends ViewDesc {
       return this.posAtStart + (offset ? this.size : 0);
     return this.posAtStart + offset;
   }
-  domFromPos(pos2) {
-    return { node: this.textDOM, offset: pos2 };
+  domFromPos(pos) {
+    return { node: this.textDOM, offset: pos };
   }
   ignoreMutation(mut) {
     return mut.type === "characterData" && mut.target.nodeValue == mut.oldValue;
@@ -168061,7 +169366,7 @@ class NodeViewDesc extends ViewDesc {
   static {
     __name(this, "NodeViewDesc");
   }
-  constructor(parent, node3, outerDeco, innerDeco, dom, contentDOM, nodeDOM, view, pos2) {
+  constructor(parent, node3, outerDeco, innerDeco, dom, contentDOM, nodeDOM, view, pos) {
     super(parent, [], dom, contentDOM);
     this.node = node3;
     this.outerDeco = outerDeco;
@@ -168077,11 +169382,11 @@ class NodeViewDesc extends ViewDesc {
   // since it'd require exposing a whole slew of finicky
   // implementation details to the user code that they probably will
   // never need.)
-  static create(parent, node3, outerDeco, innerDeco, view, pos2) {
+  static create(parent, node3, outerDeco, innerDeco, view, pos) {
     let custom2 = view.nodeViews[node3.type.name], descObj;
     let spec = custom2 && custom2(node3, view, () => {
       if (!descObj)
-        return pos2;
+        return pos;
       if (descObj.parent)
         return descObj.parent.posBeforeChild(descObj);
     }, outerDeco, innerDeco);
@@ -168104,11 +169409,11 @@ class NodeViewDesc extends ViewDesc {
     let nodeDOM = dom;
     dom = applyOuterDeco(dom, outerDeco, node3);
     if (spec)
-      return descObj = new CustomNodeViewDesc(parent, node3, outerDeco, innerDeco, dom, contentDOM || null, nodeDOM, spec, view, pos2 + 1);
+      return descObj = new CustomNodeViewDesc(parent, node3, outerDeco, innerDeco, dom, contentDOM || null, nodeDOM, spec, view, pos + 1);
     else if (node3.isText)
       return new TextViewDesc(parent, node3, outerDeco, innerDeco, dom, nodeDOM, view);
     else
-      return new NodeViewDesc(parent, node3, outerDeco, innerDeco, dom, contentDOM || null, nodeDOM, view, pos2 + 1);
+      return new NodeViewDesc(parent, node3, outerDeco, innerDeco, dom, contentDOM || null, nodeDOM, view, pos + 1);
   }
   parseRule() {
     if (this.node.type.spec.reparseInView)
@@ -168146,18 +169451,18 @@ class NodeViewDesc extends ViewDesc {
   // decorations, possibly introducing nesting for marks. Then, in a
   // separate step, syncs the DOM inside `this.contentDOM` to
   // `this.children`.
-  updateChildren(view, pos2) {
-    let inline3 = this.node.inlineContent, off = pos2;
-    let composition = view.composing ? this.localCompositionInfo(view, pos2) : null;
+  updateChildren(view, pos) {
+    let inline3 = this.node.inlineContent, off = pos;
+    let composition = view.composing ? this.localCompositionInfo(view, pos) : null;
     let localComposition = composition && composition.pos > -1 ? composition : null;
     let compositionInChild = composition && composition.pos < 0;
     let updater = new ViewTreeUpdater(this, localComposition && localComposition.node, view);
-    iterDeco(this.node, this.innerDeco, (widget2, i2, insideNode) => {
-      if (widget2.spec.marks)
-        updater.syncToMarks(widget2.spec.marks, inline3, view);
-      else if (widget2.type.side >= 0 && !insideNode)
+    iterDeco(this.node, this.innerDeco, (widget, i2, insideNode) => {
+      if (widget.spec.marks)
+        updater.syncToMarks(widget.spec.marks, inline3, view);
+      else if (widget.type.side >= 0 && !insideNode)
         updater.syncToMarks(i2 == this.node.childCount ? Mark$1.none : this.node.child(i2).marks, inline3, view);
-      updater.placeWidget(widget2, view, off);
+      updater.placeWidget(widget, view, off);
     }, (child, outerDeco, innerDeco, i2) => {
       updater.syncToMarks(child.marks, inline3, view);
       let compIndex;
@@ -168181,22 +169486,22 @@ class NodeViewDesc extends ViewDesc {
         iosHacks(this.dom);
     }
   }
-  localCompositionInfo(view, pos2) {
+  localCompositionInfo(view, pos) {
     let { from: from2, to } = view.state.selection;
-    if (!(view.state.selection instanceof TextSelection) || from2 < pos2 || to > pos2 + this.node.content.size)
+    if (!(view.state.selection instanceof TextSelection) || from2 < pos || to > pos + this.node.content.size)
       return null;
     let textNode = view.input.compositionNode;
     if (!textNode || !this.dom.contains(textNode.parentNode))
       return null;
     if (this.node.inlineContent) {
       let text2 = textNode.nodeValue;
-      let textPos = findTextInFragment(this.node.content, text2, from2 - pos2, to - pos2);
+      let textPos = findTextInFragment(this.node.content, text2, from2 - pos, to - pos);
       return textPos < 0 ? null : { node: textNode, pos: textPos, text: text2 };
     } else {
       return { node: textNode, pos: -1, text: "" };
     }
   }
-  protectLocalComposition(view, { node: node3, pos: pos2, text: text2 }) {
+  protectLocalComposition(view, { node: node3, pos, text: text2 }) {
     if (this.getDesc(node3))
       return;
     let topNode = node3;
@@ -168212,7 +169517,7 @@ class NodeViewDesc extends ViewDesc {
     }
     let desc = new CompositionViewDesc(this, topNode, node3, text2);
     view.input.compositionNodes.push(desc);
-    this.children = replaceNodes(this.children, pos2, pos2 + text2.length, view, desc);
+    this.children = replaceNodes(this.children, pos, pos + text2.length, view, desc);
   }
   // If this desc must be updated to match the given node decoration,
   // do so and return true.
@@ -168302,8 +169607,8 @@ class TextViewDesc extends NodeViewDesc {
         return true;
     return false;
   }
-  domFromPos(pos2) {
-    return { node: this.nodeDOM, offset: pos2 };
+  domFromPos(pos) {
+    return { node: this.nodeDOM, offset: pos };
   }
   localPosFromDOM(dom, offset, bias) {
     if (dom == this.nodeDOM)
@@ -168350,8 +169655,8 @@ class CustomNodeViewDesc extends NodeViewDesc {
   static {
     __name(this, "CustomNodeViewDesc");
   }
-  constructor(parent, node3, outerDeco, innerDeco, dom, contentDOM, nodeDOM, spec, view, pos2) {
-    super(parent, node3, outerDeco, innerDeco, dom, contentDOM, nodeDOM, view, pos2);
+  constructor(parent, node3, outerDeco, innerDeco, dom, contentDOM, nodeDOM, spec, view, pos) {
+    super(parent, node3, outerDeco, innerDeco, dom, contentDOM, nodeDOM, view, pos);
     this.spec = spec;
   }
   // A custom `update` method gets to decide whether the update goes
@@ -168407,9 +169712,9 @@ function renderDescs(parentDOM, descs, view) {
       parentDOM.insertBefore(childDOM, dom);
     }
     if (desc instanceof MarkViewDesc) {
-      let pos2 = dom ? dom.previousSibling : parentDOM.lastChild;
+      let pos = dom ? dom.previousSibling : parentDOM.lastChild;
       renderDescs(desc.contentDOM, desc.children, view);
-      dom = pos2 ? pos2.nextSibling : parentDOM.firstChild;
+      dom = pos ? pos.nextSibling : parentDOM.firstChild;
     }
   }
   while (dom) {
@@ -168642,7 +169947,7 @@ class ViewTreeUpdater {
   }
   // Try to update the next node, if any, to the given data. Checks
   // pre-matches to avoid overwriting nodes that could still be used.
-  updateNextNode(node3, outerDeco, innerDeco, view, index2, pos2) {
+  updateNextNode(node3, outerDeco, innerDeco, view, index2, pos) {
     for (let i2 = this.index; i2 < this.top.children.length; i2++) {
       let next2 = this.top.children[i2];
       if (next2 instanceof NodeViewDesc) {
@@ -168657,12 +169962,12 @@ class ViewTreeUpdater {
             this.changed = true;
           this.index++;
           return true;
-        } else if (!locked && (updated15 = this.recreateWrapper(next2, node3, outerDeco, innerDeco, view, pos2))) {
+        } else if (!locked && (updated15 = this.recreateWrapper(next2, node3, outerDeco, innerDeco, view, pos))) {
           this.destroyBetween(this.index, i2);
           this.top.children[this.index] = updated15;
           if (updated15.contentDOM) {
             updated15.dirty = CONTENT_DIRTY;
-            updated15.updateChildren(view, pos2 + 1);
+            updated15.updateChildren(view, pos + 1);
             updated15.dirty = NOT_DIRTY;
           }
           this.changed = true;
@@ -168676,10 +169981,10 @@ class ViewTreeUpdater {
   }
   // When a node with content is replaced by a different node with
   // identical content, move over its children.
-  recreateWrapper(next2, node3, outerDeco, innerDeco, view, pos2) {
+  recreateWrapper(next2, node3, outerDeco, innerDeco, view, pos) {
     if (next2.dirty || node3.isAtom || !next2.children.length || !next2.node.content.eq(node3.content) || !sameOuterDeco(outerDeco, next2.outerDeco) || !innerDeco.eq(next2.innerDeco))
       return null;
-    let wrapper = NodeViewDesc.create(this.top, node3, outerDeco, innerDeco, view, pos2);
+    let wrapper = NodeViewDesc.create(this.top, node3, outerDeco, innerDeco, view, pos);
     if (wrapper.contentDOM) {
       wrapper.children = next2.children;
       next2.children = [];
@@ -168690,19 +169995,19 @@ class ViewTreeUpdater {
     return wrapper;
   }
   // Insert the node as a newly created node desc.
-  addNode(node3, outerDeco, innerDeco, view, pos2) {
-    let desc = NodeViewDesc.create(this.top, node3, outerDeco, innerDeco, view, pos2);
+  addNode(node3, outerDeco, innerDeco, view, pos) {
+    let desc = NodeViewDesc.create(this.top, node3, outerDeco, innerDeco, view, pos);
     if (desc.contentDOM)
-      desc.updateChildren(view, pos2 + 1);
+      desc.updateChildren(view, pos + 1);
     this.top.children.splice(this.index++, 0, desc);
     this.changed = true;
   }
-  placeWidget(widget2, view, pos2) {
+  placeWidget(widget, view, pos) {
     let next2 = this.index < this.top.children.length ? this.top.children[this.index] : null;
-    if (next2 && next2.matchesWidget(widget2) && (widget2 == next2.widget || !next2.widget.type.toDOM.parentNode)) {
+    if (next2 && next2.matchesWidget(widget) && (widget == next2.widget || !next2.widget.type.toDOM.parentNode)) {
       this.index++;
     } else {
-      let desc = new WidgetViewDesc(this.top, widget2, view, pos2);
+      let desc = new WidgetViewDesc(this.top, widget, view, pos);
       this.top.children.splice(this.index++, 0, desc);
       this.changed = true;
     }
@@ -168796,23 +170101,23 @@ function iterDeco(parent, deco, onWidget, onNode) {
   }
   let decoIndex = 0, active3 = [], restNode = null;
   for (let parentIndex = 0; ; ) {
-    let widget2, widgets;
+    let widget, widgets;
     while (decoIndex < locals.length && locals[decoIndex].to == offset) {
       let next2 = locals[decoIndex++];
       if (next2.widget) {
-        if (!widget2)
-          widget2 = next2;
+        if (!widget)
+          widget = next2;
         else
-          (widgets || (widgets = [widget2])).push(next2);
+          (widgets || (widgets = [widget])).push(next2);
       }
     }
-    if (widget2) {
+    if (widget) {
       if (widgets) {
         widgets.sort(compareSide);
         for (let i2 = 0; i2 < widgets.length; i2++)
           onWidget(widgets[i2], parentIndex, !!restNode);
       } else {
-        onWidget(widget2, parentIndex, !!restNode);
+        onWidget(widget, parentIndex, !!restNode);
       }
     }
     let child, index2;
@@ -168865,21 +170170,21 @@ function iosHacks(dom) {
 }
 __name(iosHacks, "iosHacks");
 function findTextInFragment(frag, text2, from2, to) {
-  for (let i2 = 0, pos2 = 0; i2 < frag.childCount && pos2 <= to; ) {
-    let child = frag.child(i2++), childStart = pos2;
-    pos2 += child.nodeSize;
+  for (let i2 = 0, pos = 0; i2 < frag.childCount && pos <= to; ) {
+    let child = frag.child(i2++), childStart = pos;
+    pos += child.nodeSize;
     if (!child.isText)
       continue;
     let str = child.text;
     while (i2 < frag.childCount) {
       let next2 = frag.child(i2++);
-      pos2 += next2.nodeSize;
+      pos += next2.nodeSize;
       if (!next2.isText)
         break;
       str += next2.text;
     }
-    if (pos2 >= from2) {
-      if (pos2 >= to && str.slice(to - text2.length - childStart, to - childStart) == text2)
+    if (pos >= from2) {
+      if (pos >= to && str.slice(to - text2.length - childStart, to - childStart) == text2)
         return to - text2.length;
       let found2 = childStart < to ? str.lastIndexOf(text2, to - childStart - 1) : -1;
       if (found2 >= 0 && found2 + text2.length + childStart >= from2)
@@ -168926,8 +170231,8 @@ function selectionFromDOM(view, origin2 = null) {
       nearestDesc = nearestDesc.parent;
     let nearestDescNode = nearestDesc.node;
     if (nearestDesc && nearestDescNode.isAtom && NodeSelection.isSelectable(nearestDescNode) && nearestDesc.parent && !(nearestDescNode.isInline && isOnEdge(domSel.focusNode, domSel.focusOffset, nearestDesc.dom))) {
-      let pos2 = nearestDesc.posBefore;
-      selection = new NodeSelection(head == pos2 ? $head : doc2.resolve(pos2));
+      let pos = nearestDesc.posBefore;
+      selection = new NodeSelection(head == pos ? $head : doc2.resolve(pos));
     }
   } else {
     if (domSel instanceof view.dom.ownerDocument.defaultView.Selection && domSel.rangeCount > 1) {
@@ -169003,8 +170308,8 @@ function selectionToDOM(view, force = false) {
 }
 __name(selectionToDOM, "selectionToDOM");
 const brokenSelectBetweenUneditable = safari || chrome && chrome_version < 63;
-function temporarilyEditableNear(view, pos2) {
-  let { node: node3, offset } = view.docView.domFromPos(pos2, 0);
+function temporarilyEditableNear(view, pos) {
+  let { node: node3, offset } = view.docView.domFromPos(pos, 0);
   let after = offset < node3.childNodes.length ? node3.childNodes[offset] : null;
   let before = offset ? node3.childNodes[offset - 1] : null;
   if (safari && after && after.contentEditable == "false")
@@ -169342,18 +170647,18 @@ function setSelFocus(view, node3, offset) {
   }, 50);
 }
 __name(setSelFocus, "setSelFocus");
-function findDirection(view, pos2) {
-  let $pos = view.state.doc.resolve(pos2);
+function findDirection(view, pos) {
+  let $pos = view.state.doc.resolve(pos);
   if (!(chrome || windows) && $pos.parent.inlineContent) {
-    let coords = view.coordsAtPos(pos2);
-    if (pos2 > $pos.start()) {
-      let before = view.coordsAtPos(pos2 - 1);
+    let coords = view.coordsAtPos(pos);
+    if (pos > $pos.start()) {
+      let before = view.coordsAtPos(pos - 1);
       let mid = (before.top + before.bottom) / 2;
       if (mid > coords.top && mid < coords.bottom && Math.abs(before.left - coords.left) > 1)
         return before.left < coords.left ? "ltr" : "rtl";
     }
-    if (pos2 < $pos.end()) {
-      let after = view.coordsAtPos(pos2 + 1);
+    if (pos < $pos.end()) {
+      let after = view.coordsAtPos(pos + 1);
       let mid = (after.top + after.bottom) / 2;
       if (mid > coords.top && mid < coords.bottom && Math.abs(after.left - coords.left) > 1)
         return after.left > coords.left ? "ltr" : "rtl";
@@ -169858,12 +171163,12 @@ function isNear(event, click2) {
   return dx * dx + dy * dy < 100;
 }
 __name(isNear, "isNear");
-function runHandlerOnContext(view, propName, pos2, inside, event) {
+function runHandlerOnContext(view, propName, pos, inside, event) {
   if (inside == -1)
     return false;
   let $pos = view.state.doc.resolve(inside);
   for (let i2 = $pos.depth + 1; i2 > 0; i2--) {
-    if (view.someProp(propName, (f2) => i2 > $pos.depth ? f2(view, pos2, $pos.nodeAfter, $pos.before(i2), event, true) : f2(view, pos2, $pos.node(i2), $pos.before(i2), event, false)))
+    if (view.someProp(propName, (f2) => i2 > $pos.depth ? f2(view, pos, $pos.nodeAfter, $pos.before(i2), event, true) : f2(view, pos, $pos.node(i2), $pos.before(i2), event, false)))
       return true;
   }
   return false;
@@ -169916,16 +171221,16 @@ function selectClickedNode(view, inside) {
   }
 }
 __name(selectClickedNode, "selectClickedNode");
-function handleSingleClick(view, pos2, inside, event, selectNode) {
-  return runHandlerOnContext(view, "handleClickOn", pos2, inside, event) || view.someProp("handleClick", (f2) => f2(view, pos2, event)) || (selectNode ? selectClickedNode(view, inside) : selectClickedLeaf(view, inside));
+function handleSingleClick(view, pos, inside, event, selectNode) {
+  return runHandlerOnContext(view, "handleClickOn", pos, inside, event) || view.someProp("handleClick", (f2) => f2(view, pos, event)) || (selectNode ? selectClickedNode(view, inside) : selectClickedLeaf(view, inside));
 }
 __name(handleSingleClick, "handleSingleClick");
-function handleDoubleClick(view, pos2, inside, event) {
-  return runHandlerOnContext(view, "handleDoubleClickOn", pos2, inside, event) || view.someProp("handleDoubleClick", (f2) => f2(view, pos2, event));
+function handleDoubleClick(view, pos, inside, event) {
+  return runHandlerOnContext(view, "handleDoubleClickOn", pos, inside, event) || view.someProp("handleDoubleClick", (f2) => f2(view, pos, event));
 }
 __name(handleDoubleClick, "handleDoubleClick");
-function handleTripleClick$1(view, pos2, inside, event) {
-  return runHandlerOnContext(view, "handleTripleClickOn", pos2, inside, event) || view.someProp("handleTripleClick", (f2) => f2(view, pos2, event)) || defaultTripleClick(view, inside, event);
+function handleTripleClick$1(view, pos, inside, event) {
+  return runHandlerOnContext(view, "handleTripleClickOn", pos, inside, event) || view.someProp("handleTripleClick", (f2) => f2(view, pos, event)) || defaultTripleClick(view, inside, event);
 }
 __name(handleTripleClick$1, "handleTripleClick$1");
 function defaultTripleClick(view, inside, event) {
@@ -169970,14 +171275,14 @@ handlers.mousedown = (view, _event) => {
       type = "tripleClick";
   }
   view.input.lastClick = { time: now2, x: event.clientX, y: event.clientY, type };
-  let pos2 = view.posAtCoords(eventCoords(event));
-  if (!pos2)
+  let pos = view.posAtCoords(eventCoords(event));
+  if (!pos)
     return;
   if (type == "singleClick") {
     if (view.input.mouseDown)
       view.input.mouseDown.done();
-    view.input.mouseDown = new MouseDown(view, pos2, event, !!flushed);
-  } else if ((type == "doubleClick" ? handleDoubleClick : handleTripleClick$1)(view, pos2.pos, pos2.inside, event)) {
+    view.input.mouseDown = new MouseDown(view, pos, event, !!flushed);
+  } else if ((type == "doubleClick" ? handleDoubleClick : handleTripleClick$1)(view, pos.pos, pos.inside, event)) {
     event.preventDefault();
   } else {
     setSelectionOrigin(view, "pointer");
@@ -169987,9 +171292,9 @@ class MouseDown {
   static {
     __name(this, "MouseDown");
   }
-  constructor(view, pos2, event, flushed) {
+  constructor(view, pos, event, flushed) {
     this.view = view;
-    this.pos = pos2;
+    this.pos = pos;
     this.event = event;
     this.flushed = flushed;
     this.delayedSelectionSync = false;
@@ -169998,11 +171303,11 @@ class MouseDown {
     this.selectNode = !!event[selectNodeModifier];
     this.allowDefault = event.shiftKey;
     let targetNode, targetPos;
-    if (pos2.inside > -1) {
-      targetNode = view.state.doc.nodeAt(pos2.inside);
-      targetPos = pos2.inside;
+    if (pos.inside > -1) {
+      targetNode = view.state.doc.nodeAt(pos.inside);
+      targetPos = pos.inside;
     } else {
-      let $pos = view.state.doc.resolve(pos2.pos);
+      let $pos = view.state.doc.resolve(pos.pos);
       targetNode = $pos.parent;
       targetPos = $pos.depth ? $pos.before() : 0;
     }
@@ -170051,13 +171356,13 @@ class MouseDown {
     this.done();
     if (!this.view.dom.contains(event.target))
       return;
-    let pos2 = this.pos;
+    let pos = this.pos;
     if (this.view.state.doc != this.startDoc)
-      pos2 = this.view.posAtCoords(eventCoords(event));
+      pos = this.view.posAtCoords(eventCoords(event));
     this.updateAllowDefault(event);
-    if (this.allowDefault || !pos2) {
+    if (this.allowDefault || !pos) {
       setSelectionOrigin(this.view, "pointer");
-    } else if (handleSingleClick(this.view, pos2.pos, pos2.inside, event, this.selectNode)) {
+    } else if (handleSingleClick(this.view, pos.pos, pos.inside, event, this.selectNode)) {
       event.preventDefault();
     } else if (event.button == 0 && (this.flushed || // Safari ignores clicks on draggable elements
     safari && this.mightDrag && !this.mightDrag.node.isAtom || // Chrome will sometimes treat a node selection as a
@@ -170067,8 +171372,8 @@ class MouseDown {
     // (hidden) cursor is doesn't change the selection, and
     // thus doesn't get a reaction from ProseMirror. This
     // works around that.
-    chrome && !this.view.state.selection.visible && Math.min(Math.abs(pos2.pos - this.view.state.selection.from), Math.abs(pos2.pos - this.view.state.selection.to)) <= 2)) {
-      updateSelection(this.view, Selection.near(this.view.state.doc.resolve(pos2.pos)), "pointer");
+    chrome && !this.view.state.selection.visible && Math.min(Math.abs(pos.pos - this.view.state.selection.from), Math.abs(pos.pos - this.view.state.selection.to)) <= 2)) {
+      updateSelection(this.view, Selection.near(this.view.state.doc.resolve(pos.pos)), "pointer");
       event.preventDefault();
     } else {
       setSelectionOrigin(this.view, "pointer");
@@ -170322,9 +171627,9 @@ handlers.dragstart = (view, _event) => {
   if (!event.dataTransfer)
     return;
   let sel = view.state.selection;
-  let pos2 = sel.empty ? null : view.posAtCoords(eventCoords(event));
+  let pos = sel.empty ? null : view.posAtCoords(eventCoords(event));
   let node3;
-  if (pos2 && pos2.pos >= sel.from && pos2.pos <= (sel instanceof NodeSelection ? sel.to - 1 : sel.to)) ;
+  if (pos && pos.pos >= sel.from && pos.pos <= (sel instanceof NodeSelection ? sel.to - 1 : sel.to)) ;
   else if (mouseDown && mouseDown.mightDrag) {
     node3 = NodeSelection.create(view.state.doc, mouseDown.mightDrag.pos);
   } else if (event.target && event.target.nodeType == 1) {
@@ -170387,16 +171692,16 @@ editHandlers.drop = (view, _event) => {
     else
       tr2.deleteSelection();
   }
-  let pos2 = tr2.mapping.map(insertPos);
+  let pos = tr2.mapping.map(insertPos);
   let isNode = slice2.openStart == 0 && slice2.openEnd == 0 && slice2.content.childCount == 1;
   let beforeInsert = tr2.doc;
   if (isNode)
-    tr2.replaceRangeWith(pos2, pos2, slice2.content.firstChild);
+    tr2.replaceRangeWith(pos, pos, slice2.content.firstChild);
   else
-    tr2.replaceRange(pos2, pos2, slice2);
+    tr2.replaceRange(pos, pos, slice2);
   if (tr2.doc.eq(beforeInsert))
     return;
-  let $pos = tr2.doc.resolve(pos2);
+  let $pos = tr2.doc.resolve(pos);
   if (isNode && NodeSelection.isSelectable(slice2.content.firstChild) && $pos.nodeAfter && $pos.nodeAfter.sameMarkup(slice2.content.firstChild)) {
     tr2.setSelection(new NodeSelection($pos));
   } else {
@@ -170473,8 +171778,8 @@ class WidgetType {
     this.side = this.spec.side || 0;
   }
   map(mapping, span, offset, oldOffset) {
-    let { pos: pos2, deleted } = mapping.mapResult(span.from + oldOffset, this.side < 0 ? -1 : 1);
-    return deleted ? null : new Decoration(pos2 - offset, pos2 - offset, this);
+    let { pos, deleted } = mapping.mapResult(span.from + oldOffset, this.side < 0 ? -1 : 1);
+    return deleted ? null : new Decoration(pos - offset, pos - offset, this);
   }
   valid() {
     return true;
@@ -170577,8 +171882,8 @@ class Decoration {
   also directly pass a DOM node. `getPos` can be used to find the
   widget's current document position.
   */
-  static widget(pos2, toDOM, spec) {
-    return new Decoration(pos2, pos2, new WidgetType(toDOM, spec));
+  static widget(pos, toDOM, spec) {
+    return new Decoration(pos, pos, new WidgetType(toDOM, spec));
   }
   /**
   Creates an inline decoration, which adds the given attributes to
@@ -171681,11 +172986,11 @@ function skipClosingAndOpening($pos, fromEnd, mayOpen) {
   return end;
 }
 __name(skipClosingAndOpening, "skipClosingAndOpening");
-function findDiff(a2, b2, pos2, preferredPos, preferredSide) {
-  let start2 = a2.findDiffStart(b2, pos2);
+function findDiff(a2, b2, pos, preferredPos, preferredSide) {
+  let start2 = a2.findDiffStart(b2, pos);
   if (start2 == null)
     return null;
-  let { a: endA, b: endB } = a2.findDiffEnd(b2, pos2 + a2.size, pos2 + b2.size);
+  let { a: endA, b: endB } = a2.findDiffEnd(b2, pos + a2.size, pos + b2.size);
   if (preferredSide == "end") {
     let adjust = Math.max(0, start2 - Math.min(endA, endB));
     preferredPos -= endA + adjust - start2;
@@ -172028,8 +173333,8 @@ class EditorView {
   is used. When < 0, the element before the position is used,
   otherwise the element after.
   */
-  coordsAtPos(pos2, side = 1) {
-    return coordsAtPos(this, pos2, side);
+  coordsAtPos(pos, side = 1) {
+    return coordsAtPos(this, pos, side);
   }
   /**
   Find the DOM position that corresponds to the given document
@@ -172041,8 +173346,8 @@ class EditorView {
   Note that you should **not** mutate the editor's internal DOM,
   only inspect it (and even that is usually not necessary).
   */
-  domAtPos(pos2, side = 0) {
-    return this.docView.domFromPos(pos2, side);
+  domAtPos(pos, side = 0) {
+    return this.docView.domFromPos(pos, side);
   }
   /**
   Find the DOM node that represents the document node after the
@@ -172054,8 +173359,8 @@ class EditorView {
   editor DOM directly, or add styling this way, since that will be
   immediately overriden by the editor as it redraws the node.
   */
-  nodeDOM(pos2) {
-    let desc = this.docView.descAt(pos2);
+  nodeDOM(pos) {
+    let desc = this.docView.descAt(pos);
     return desc ? desc.nodeDOM : null;
   }
   /**
@@ -172069,10 +173374,10 @@ class EditorView {
   node to use when the position is inside a leaf node.
   */
   posAtDOM(node3, offset, bias = -1) {
-    let pos2 = this.docView.posFromDOM(node3, offset, bias);
-    if (pos2 == null)
+    let pos = this.docView.posFromDOM(node3, offset, bias);
+    if (pos == null)
       throw new RangeError("DOM position not inside the editor");
-    return pos2;
+    return pos;
   }
   /**
   Find out whether the selection is at the end of a textblock when
@@ -172682,8 +173987,8 @@ const exitCode$1 = /* @__PURE__ */ __name((state, dispatch) => {
   if (!type || !above.canReplaceWith(after, after, type))
     return false;
   if (dispatch) {
-    let pos2 = $head.after(), tr2 = state.tr.replaceWith(pos2, pos2, type.createAndFill());
-    tr2.setSelection(Selection.near(tr2.doc.resolve(pos2), 1));
+    let pos = $head.after(), tr2 = state.tr.replaceWith(pos, pos, type.createAndFill());
+    tr2.setSelection(Selection.near(tr2.doc.resolve(pos), 1));
     dispatch(tr2.scrollIntoView());
   }
   return true;
@@ -172783,13 +174088,13 @@ const splitBlockKeepMarks = /* @__PURE__ */ __name((state, dispatch) => {
   }));
 }, "splitBlockKeepMarks");
 const selectParentNode$1 = /* @__PURE__ */ __name((state, dispatch) => {
-  let { $from, to } = state.selection, pos2;
+  let { $from, to } = state.selection, pos;
   let same = $from.sharedDepth(to);
   if (same == 0)
     return false;
-  pos2 = $from.before(same);
+  pos = $from.before(same);
   if (dispatch)
-    dispatch(state.tr.setSelection(NodeSelection.create(state.doc, pos2)));
+    dispatch(state.tr.setSelection(NodeSelection.create(state.doc, pos)));
   return true;
 }, "selectParentNode$1");
 const selectAll$1 = /* @__PURE__ */ __name((state, dispatch) => {
@@ -172901,7 +174206,7 @@ function setBlockType(nodeType, attrs6 = null) {
     let applicable = false;
     for (let i2 = 0; i2 < state.selection.ranges.length && !applicable; i2++) {
       let { $from: { pos: from2 }, $to: { pos: to } } = state.selection.ranges[i2];
-      state.doc.nodesBetween(from2, to, (node3, pos2) => {
+      state.doc.nodesBetween(from2, to, (node3, pos) => {
         if (applicable)
           return false;
         if (!node3.isTextblock || node3.hasMarkup(nodeType, attrs6))
@@ -172909,7 +174214,7 @@ function setBlockType(nodeType, attrs6 = null) {
         if (node3.type == nodeType) {
           applicable = true;
         } else {
-          let $pos = state.doc.resolve(pos2), index2 = $pos.index();
+          let $pos = state.doc.resolve(pos), index2 = $pos.index();
           applicable = $pos.parent.canReplaceWith(index2, index2 + 1, nodeType);
         }
       });
@@ -172932,8 +174237,8 @@ function markApplies(doc2, ranges, type, enterAtoms) {
   for (let i2 = 0; i2 < ranges.length; i2++) {
     let { $from, $to } = ranges[i2];
     let can = $from.depth == 0 ? doc2.inlineContent && doc2.type.allowsMarkType(type) : false;
-    doc2.nodesBetween($from.pos, $to.pos, (node3, pos2) => {
-      if (can || !enterAtoms && node3.isAtom && node3.isInline && pos2 >= $from.pos && pos2 + node3.nodeSize <= $to.pos)
+    doc2.nodesBetween($from.pos, $to.pos, (node3, pos) => {
+      if (can || !enterAtoms && node3.isAtom && node3.isInline && pos >= $from.pos && pos + node3.nodeSize <= $to.pos)
         return false;
       can = node3.inlineContent && node3.type.allowsMarkType(type);
     });
@@ -172947,11 +174252,11 @@ function removeInlineAtoms(ranges) {
   let result = [];
   for (let i2 = 0; i2 < ranges.length; i2++) {
     let { $from, $to } = ranges[i2];
-    $from.doc.nodesBetween($from.pos, $to.pos, (node3, pos2) => {
-      if (node3.isAtom && node3.content.size && node3.isInline && pos2 >= $from.pos && pos2 + node3.nodeSize <= $to.pos) {
-        if (pos2 + 1 > $from.pos)
-          result.push(new SelectionRange($from, $from.doc.resolve(pos2 + 1)));
-        $from = $from.doc.resolve(pos2 + 1 + node3.content.size);
+    $from.doc.nodesBetween($from.pos, $to.pos, (node3, pos) => {
+      if (node3.isAtom && node3.content.size && node3.isInline && pos >= $from.pos && pos + node3.nodeSize <= $to.pos) {
+        if (pos + 1 > $from.pos)
+          result.push(new SelectionRange($from, $from.doc.resolve(pos + 1)));
+        $from = $from.doc.resolve(pos + 1 + node3.content.size);
         return false;
       }
     });
@@ -172983,10 +174288,10 @@ function toggleMark$1(markType, attrs6 = null, options4) {
         } else {
           add3 = !ranges.every((r2) => {
             let missing = false;
-            tr2.doc.nodesBetween(r2.$from.pos, r2.$to.pos, (node3, pos2, parent) => {
+            tr2.doc.nodesBetween(r2.$from.pos, r2.$to.pos, (node3, pos, parent) => {
               if (missing)
                 return false;
-              missing = !markType.isInSet(node3.marks) && !!parent && parent.type.allowsMarkType(markType) && !(node3.isText && /^\s*$/.test(node3.textBetween(Math.max(0, r2.$from.pos - pos2), Math.min(node3.nodeSize, r2.$to.pos - pos2))));
+              missing = !markType.isInSet(node3.marks) && !!parent && parent.type.allowsMarkType(markType) && !(node3.isText && /^\s*$/.test(node3.textBetween(Math.max(0, r2.$from.pos - pos), Math.min(node3.nodeSize, r2.$to.pos - pos))));
             });
             return !missing;
           });
@@ -173028,16 +174333,16 @@ function wrapDispatchForJoin(dispatch, isJoinable) {
     for (let i2 = 0; i2 < ranges.length; i2 += 2) {
       let from2 = ranges[i2], to = ranges[i2 + 1];
       let $from = tr2.doc.resolve(from2), depth = $from.sharedDepth(to), parent = $from.node(depth);
-      for (let index2 = $from.indexAfter(depth), pos2 = $from.after(depth + 1); pos2 <= to; ++index2) {
+      for (let index2 = $from.indexAfter(depth), pos = $from.after(depth + 1); pos <= to; ++index2) {
         let after = parent.maybeChild(index2);
         if (!after)
           break;
-        if (index2 && joinable2.indexOf(pos2) == -1) {
+        if (index2 && joinable2.indexOf(pos) == -1) {
           let before = parent.child(index2 - 1);
           if (before.type == after.type && isJoinable(before, after))
-            joinable2.push(pos2);
+            joinable2.push(pos);
         }
-        pos2 += after.nodeSize;
+        pos += after.nodeSize;
       }
     }
     joinable2.sort((a2, b2) => a2 - b2);
@@ -173205,11 +174510,11 @@ function splitListItem$1(itemType, itemAttrs) {
         let start2 = $from.before($from.depth - (depthBefore - 1));
         let tr3 = state.tr.replace(start2, $from.after(-depthAfter), new Slice(wrap2, 4 - depthBefore, 0));
         let sel = -1;
-        tr3.doc.nodesBetween(start2, tr3.doc.content.size, (node4, pos2) => {
+        tr3.doc.nodesBetween(start2, tr3.doc.content.size, (node4, pos) => {
           if (sel > -1)
             return false;
           if (node4.isTextblock && node4.content.size == 0)
-            sel = pos2 + 1;
+            sel = pos + 1;
         });
         if (sel > -1)
           tr3.setSelection(Selection.near(tr3.doc.resolve(sel)));
@@ -173274,9 +174579,9 @@ function liftToOuterList(state, dispatch, itemType, range2) {
 __name(liftToOuterList, "liftToOuterList");
 function liftOutOfList(state, dispatch, range2) {
   let tr2 = state.tr, list2 = range2.parent;
-  for (let pos2 = range2.end, i2 = range2.endIndex - 1, e2 = range2.startIndex; i2 > e2; i2--) {
-    pos2 -= list2.child(i2).nodeSize;
-    tr2.delete(pos2 - 1, pos2 + 1);
+  for (let pos = range2.end, i2 = range2.endIndex - 1, e2 = range2.startIndex; i2 > e2; i2--) {
+    pos -= list2.child(i2).nodeSize;
+    tr2.delete(pos - 1, pos + 1);
   }
   let $start = tr2.doc.resolve(range2.start), item3 = $start.nodeAfter;
   if (tr2.mapping.map(range2.end) != range2.start + $start.nodeAfter.nodeSize)
@@ -173839,15 +175144,15 @@ __name(getHTMLFromFragment, "getHTMLFromFragment");
 const getTextContentFromNodes = /* @__PURE__ */ __name(($from, maxMatch = 500) => {
   let textBefore = "";
   const sliceEndPos = $from.parentOffset;
-  $from.parent.nodesBetween(Math.max(0, sliceEndPos - maxMatch), sliceEndPos, (node3, pos2, parent, index2) => {
+  $from.parent.nodesBetween(Math.max(0, sliceEndPos - maxMatch), sliceEndPos, (node3, pos, parent, index2) => {
     var _a2, _b;
     const chunk = ((_b = (_a2 = node3.type.spec).toText) === null || _b === void 0 ? void 0 : _b.call(_a2, {
       node: node3,
-      pos: pos2,
+      pos,
       parent,
       index: index2
     })) || node3.textContent || "%leaf%";
-    textBefore += node3.isAtom && !node3.isText ? chunk : chunk.slice(0, Math.max(0, sliceEndPos - pos2));
+    textBefore += node3.isAtom && !node3.isText ? chunk : chunk.slice(0, Math.max(0, sliceEndPos - pos));
   });
   return textBefore;
 }, "getTextContentFromNodes");
@@ -174187,13 +175492,13 @@ function run$2(config2) {
     state
   });
   const handlers2 = [];
-  state.doc.nodesBetween(from2, to, (node3, pos2) => {
+  state.doc.nodesBetween(from2, to, (node3, pos) => {
     if (!node3.isTextblock || node3.type.spec.code) {
       return;
     }
-    const resolvedFrom = Math.max(from2, pos2);
-    const resolvedTo = Math.min(to, pos2 + node3.content.size);
-    const textToMatch = node3.textBetween(resolvedFrom - pos2, resolvedTo - pos2, void 0, "￼");
+    const resolvedFrom = Math.max(from2, pos);
+    const resolvedTo = Math.min(to, pos + node3.content.size);
+    const textToMatch = node3.textBetween(resolvedFrom - pos, resolvedTo - pos, void 0, "￼");
     const matches2 = pasteRuleMatcherHandler(textToMatch, rule.find, pasteEvent);
     matches2.forEach((match2) => {
       if (match2.index === void 0) {
@@ -174662,9 +175967,9 @@ function getTextBetween(startNode, range2, options4) {
   const { from: from2, to } = range2;
   const { blockSeparator = "\n\n", textSerializers = {} } = options4 || {};
   let text2 = "";
-  startNode.nodesBetween(from2, to, (node3, pos2, parent, index2) => {
+  startNode.nodesBetween(from2, to, (node3, pos, parent, index2) => {
     var _a2;
-    if (node3.isBlock && pos2 > from2) {
+    if (node3.isBlock && pos > from2) {
       text2 += blockSeparator;
     }
     const textSerializer = textSerializers === null || textSerializers === void 0 ? void 0 : textSerializers[node3.type.name];
@@ -174672,7 +175977,7 @@ function getTextBetween(startNode, range2, options4) {
       if (parent) {
         text2 += textSerializer({
           node: node3,
-          pos: pos2,
+          pos,
           parent,
           index: index2,
           range: range2
@@ -174681,7 +175986,7 @@ function getTextBetween(startNode, range2, options4) {
       return false;
     }
     if (node3.isText) {
-      text2 += (_a2 = node3 === null || node3 === void 0 ? void 0 : node3.text) === null || _a2 === void 0 ? void 0 : _a2.slice(Math.max(from2, pos2) - pos2, to - pos2);
+      text2 += (_a2 = node3 === null || node3 === void 0 ? void 0 : node3.text) === null || _a2 === void 0 ? void 0 : _a2.slice(Math.max(from2, pos) - pos, to - pos);
     }
   });
   return text2;
@@ -174742,13 +176047,13 @@ const clearNodes = /* @__PURE__ */ __name(() => ({ state, tr: tr2, dispatch }) =
     return true;
   }
   ranges.forEach(({ $from, $to }) => {
-    state.doc.nodesBetween($from.pos, $to.pos, (node3, pos2) => {
+    state.doc.nodesBetween($from.pos, $to.pos, (node3, pos) => {
       if (node3.type.isText) {
         return;
       }
       const { doc: doc2, mapping } = tr2;
-      const $mappedFrom = doc2.resolve(mapping.map(pos2));
-      const $mappedTo = doc2.resolve(mapping.map(pos2 + node3.nodeSize));
+      const $mappedFrom = doc2.resolve(mapping.map(pos));
+      const $mappedTo = doc2.resolve(mapping.map(pos + node3.nodeSize));
       const nodeRange = $mappedFrom.blockRange($mappedTo);
       if (!nodeRange) {
         return;
@@ -175332,12 +176637,12 @@ function isNodeActive(state, typeOrName, attributes = {}) {
   const { from: from2, to, empty: empty3 } = state.selection;
   const type = typeOrName ? getNodeType(typeOrName, state.schema) : null;
   const nodeRanges = [];
-  state.doc.nodesBetween(from2, to, (node3, pos2) => {
+  state.doc.nodesBetween(from2, to, (node3, pos) => {
     if (node3.isText) {
       return;
     }
-    const relativeFrom = Math.max(from2, pos2);
-    const relativeTo = Math.min(to, pos2 + node3.nodeSize);
+    const relativeFrom = Math.max(from2, pos);
+    const relativeTo = Math.min(to, pos + node3.nodeSize);
     nodeRanges.push({
       node: node3,
       from: relativeFrom,
@@ -175411,14 +176716,14 @@ const resetAttributes = /* @__PURE__ */ __name((typeOrName, attributes) => ({ tr
   }
   if (dispatch) {
     tr2.selection.ranges.forEach((range2) => {
-      state.doc.nodesBetween(range2.$from.pos, range2.$to.pos, (node3, pos2) => {
+      state.doc.nodesBetween(range2.$from.pos, range2.$to.pos, (node3, pos) => {
         if (nodeType && nodeType === node3.type) {
-          tr2.setNodeMarkup(pos2, void 0, deleteProps(node3.attrs, attributes));
+          tr2.setNodeMarkup(pos, void 0, deleteProps(node3.attrs, attributes));
         }
         if (markType && node3.marks.length) {
           node3.marks.forEach((mark2) => {
             if (markType === mark2.type) {
-              tr2.addMark(pos2, pos2 + node3.nodeSize, markType.create(deleteProps(mark2.attrs, attributes)));
+              tr2.addMark(pos, pos + node3.nodeSize, markType.create(deleteProps(mark2.attrs, attributes)));
             }
           });
         }
@@ -175525,11 +176830,11 @@ function defaultBlockAt(match2) {
 __name(defaultBlockAt, "defaultBlockAt");
 function findChildren(node3, predicate) {
   const nodesWithPos = [];
-  node3.descendants((child, pos2) => {
+  node3.descendants((child, pos) => {
     if (predicate(child)) {
       nodesWithPos.push({
         node: child,
-        pos: pos2
+        pos
       });
     }
   });
@@ -175538,11 +176843,11 @@ function findChildren(node3, predicate) {
 __name(findChildren, "findChildren");
 function findChildrenInRange(node3, range2, predicate) {
   const nodesWithPos = [];
-  node3.nodesBetween(range2.from, range2.to, (child, pos2) => {
+  node3.nodesBetween(range2.from, range2.to, (child, pos) => {
     if (predicate(child)) {
       nodesWithPos.push({
         node: child,
-        pos: pos2
+        pos
       });
     }
   });
@@ -175738,13 +177043,13 @@ function getMarksBetween(from2, to, doc2) {
       });
     });
   } else {
-    doc2.nodesBetween(from2, to, (node3, pos2) => {
+    doc2.nodesBetween(from2, to, (node3, pos) => {
       if (!node3 || (node3 === null || node3 === void 0 ? void 0 : node3.nodeSize) === void 0) {
         return;
       }
       marks.push(...node3.marks.map((mark2) => ({
-        from: pos2,
-        to: pos2 + node3.nodeSize,
+        from: pos,
+        to: pos + node3.nodeSize,
         mark: mark2
       })));
     });
@@ -175752,8 +177057,8 @@ function getMarksBetween(from2, to, doc2) {
   return marks;
 }
 __name(getMarksBetween, "getMarksBetween");
-const getNodeAtPosition = /* @__PURE__ */ __name((state, typeOrName, pos2, maxDepth = 20) => {
-  const $pos = state.doc.resolve(pos2);
+const getNodeAtPosition = /* @__PURE__ */ __name((state, typeOrName, pos, maxDepth = 20) => {
+  const $pos = state.doc.resolve(pos);
   let currentDepth = maxDepth;
   let node3 = null;
   while (currentDepth > 0 && node3 === null) {
@@ -175794,12 +177099,12 @@ function isMarkActive(state, typeOrName, attributes = {}) {
   ranges.forEach(({ $from, $to }) => {
     const from2 = $from.pos;
     const to = $to.pos;
-    state.doc.nodesBetween(from2, to, (node3, pos2) => {
+    state.doc.nodesBetween(from2, to, (node3, pos) => {
       if (!node3.isText && !node3.marks.length) {
         return;
       }
-      const relativeFrom = Math.max(from2, pos2);
-      const relativeTo = Math.min(to, pos2 + node3.nodeSize);
+      const relativeFrom = Math.max(from2, pos);
+      const relativeTo = Math.min(to, pos + node3.nodeSize);
       const range3 = relativeTo - relativeFrom;
       selectionRange += range3;
       markRanges.push(...node3.marks.map((mark2) => ({
@@ -175998,9 +177303,9 @@ const setMark = /* @__PURE__ */ __name((typeOrName, attributes = {}) => ({ tr: t
       ranges.forEach((range2) => {
         const from2 = range2.$from.pos;
         const to = range2.$to.pos;
-        state.doc.nodesBetween(from2, to, (node3, pos2) => {
-          const trimmedFrom = Math.max(pos2, from2);
-          const trimmedTo = Math.min(pos2 + node3.nodeSize, to);
+        state.doc.nodesBetween(from2, to, (node3, pos) => {
+          const trimmedFrom = Math.max(pos, from2);
+          const trimmedTo = Math.min(pos + node3.nodeSize, to);
           const someHasMark = node3.marks.find((mark2) => mark2.type === type);
           if (someHasMark) {
             node3.marks.forEach((mark2) => {
@@ -176170,12 +177475,12 @@ const splitListItem = /* @__PURE__ */ __name((typeOrName, overrideAttrs = {}) =>
       const start2 = $from.before($from.depth - (depthBefore - 1));
       tr2.replace(start2, $from.after(-depthAfter), new Slice(wrap2, 4 - depthBefore, 0));
       let sel = -1;
-      tr2.doc.nodesBetween(start2, tr2.doc.content.size, (n2, pos2) => {
+      tr2.doc.nodesBetween(start2, tr2.doc.content.size, (n2, pos) => {
         if (sel > -1) {
           return false;
         }
         if (n2.isTextblock && n2.content.size === 0) {
-          sel = pos2 + 1;
+          sel = pos + 1;
         }
       });
       if (sel > -1) {
@@ -176406,25 +177711,25 @@ const updateAttributes = /* @__PURE__ */ __name((typeOrName, attributes = {}) =>
       let trimmedFrom;
       let trimmedTo;
       if (tr2.selection.empty) {
-        state.doc.nodesBetween(from2, to, (node3, pos2) => {
+        state.doc.nodesBetween(from2, to, (node3, pos) => {
           if (nodeType && nodeType === node3.type) {
-            trimmedFrom = Math.max(pos2, from2);
-            trimmedTo = Math.min(pos2 + node3.nodeSize, to);
-            lastPos = pos2;
+            trimmedFrom = Math.max(pos, from2);
+            trimmedTo = Math.min(pos + node3.nodeSize, to);
+            lastPos = pos;
             lastNode = node3;
           }
         });
       } else {
-        state.doc.nodesBetween(from2, to, (node3, pos2) => {
-          if (pos2 < from2 && nodeType && nodeType === node3.type) {
-            trimmedFrom = Math.max(pos2, from2);
-            trimmedTo = Math.min(pos2 + node3.nodeSize, to);
-            lastPos = pos2;
+        state.doc.nodesBetween(from2, to, (node3, pos) => {
+          if (pos < from2 && nodeType && nodeType === node3.type) {
+            trimmedFrom = Math.max(pos, from2);
+            trimmedTo = Math.min(pos + node3.nodeSize, to);
+            lastPos = pos;
             lastNode = node3;
           }
-          if (pos2 >= from2 && pos2 <= to) {
+          if (pos >= from2 && pos <= to) {
             if (nodeType && nodeType === node3.type) {
-              tr2.setNodeMarkup(pos2, void 0, {
+              tr2.setNodeMarkup(pos, void 0, {
                 ...node3.attrs,
                 ...attributes
               });
@@ -176432,8 +177737,8 @@ const updateAttributes = /* @__PURE__ */ __name((typeOrName, attributes = {}) =>
             if (markType && node3.marks.length) {
               node3.marks.forEach((mark2) => {
                 if (markType === mark2.type) {
-                  const trimmedFrom2 = Math.max(pos2, from2);
-                  const trimmedTo2 = Math.min(pos2 + node3.nodeSize, to);
+                  const trimmedFrom2 = Math.max(pos, from2);
+                  const trimmedTo2 = Math.min(pos + node3.nodeSize, to);
                   tr2.addMark(trimmedFrom2, trimmedTo2, markType.create({
                     ...mark2.attrs,
                     ...attributes
@@ -176612,11 +177917,11 @@ const Keymap = Extension.create({
       () => commands2.command(({ tr: tr2 }) => {
         const { selection, doc: doc2 } = tr2;
         const { empty: empty3, $anchor } = selection;
-        const { pos: pos2, parent } = $anchor;
-        const $parentPos = $anchor.parent.isTextblock && pos2 > 0 ? tr2.doc.resolve(pos2 - 1) : $anchor;
+        const { pos, parent } = $anchor;
+        const $parentPos = $anchor.parent.isTextblock && pos > 0 ? tr2.doc.resolve(pos - 1) : $anchor;
         const parentIsIsolating = $parentPos.parent.type.spec.isolating;
         const parentPos = $anchor.pos - $anchor.parentOffset;
-        const isAtStart = parentIsIsolating && $parentPos.parent.childCount === 1 ? parentPos === $anchor.pos : Selection.atStart(doc2).from === pos2;
+        const isAtStart = parentIsIsolating && $parentPos.parent.childCount === 1 ? parentPos === $anchor.pos : Selection.atStart(doc2).from === pos;
         if (!empty3 || !parent.type.isTextblock || parent.textContent.length || !isAtStart || isAtStart && $anchor.parent.type.name === "paragraph") {
           return false;
         }
@@ -176762,11 +178067,11 @@ class NodePos {
   get name() {
     return this.node.type.name;
   }
-  constructor(pos2, editor, isBlock = false, node3 = null) {
+  constructor(pos, editor, isBlock = false, node3 = null) {
     this.currentNode = null;
     this.actualDepth = null;
     this.isBlock = isBlock;
-    this.resolvedPos = pos2;
+    this.resolvedPos = pos;
     this.editor = editor;
     this.currentNode = node3;
   }
@@ -177452,8 +178757,8 @@ class Editor extends EventEmitter {
     var _a2;
     return ((_a2 = this.$doc) === null || _a2 === void 0 ? void 0 : _a2.querySelectorAll(selector, attributes)) || null;
   }
-  $pos(pos2) {
-    const $pos = this.state.doc.resolve(pos2);
+  $pos(pos) {
+    const $pos = this.state.doc.resolve(pos);
     return new NodePos($pos, this);
   }
   get $doc() {
@@ -177713,11 +179018,11 @@ class NodeView {
       y2 = handleBox.y - domBox.y + offsetY;
     }
     (_g = event.dataTransfer) === null || _g === void 0 ? void 0 : _g.setDragImage(this.dom, x2, y2);
-    const pos2 = this.getPos();
-    if (typeof pos2 !== "number") {
+    const pos = this.getPos();
+    if (typeof pos !== "number") {
       return;
     }
-    const selection = NodeSelection.create(view.state.doc, pos2);
+    const selection = NodeSelection.create(view.state.doc, pos);
     const transaction = view.state.tr.setSelection(selection);
     view.dispatch(transaction);
   }
@@ -177816,11 +179121,11 @@ class NodeView {
    */
   updateAttributes(attributes) {
     this.editor.commands.command(({ tr: tr2 }) => {
-      const pos2 = this.getPos();
-      if (typeof pos2 !== "number") {
+      const pos = this.getPos();
+      if (typeof pos !== "number") {
         return false;
       }
-      tr2.setNodeMarkup(pos2, void 0, {
+      tr2.setNodeMarkup(pos, void 0, {
         ...this.node.attrs,
         ...attributes
       });
@@ -179268,7 +180573,7 @@ function clickHandler(options4) {
   return new Plugin({
     key: new PluginKey("handleClickLink"),
     props: {
-      handleClick: /* @__PURE__ */ __name((view, pos2, event) => {
+      handleClick: /* @__PURE__ */ __name((view, pos, event) => {
         var _a2, _b;
         if (event.button !== 0) {
           return false;
@@ -179578,10 +180883,10 @@ var TableMap = class {
     this.problems = problems;
   }
   // Find the dimensions of the cell at the given position.
-  findCell(pos2) {
+  findCell(pos) {
     for (let i2 = 0; i2 < this.map.length; i2++) {
       const curPos = this.map[i2];
-      if (curPos != pos2)
+      if (curPos != pos)
         continue;
       const left = i2 % this.width;
       const top = i2 / this.width | 0;
@@ -179595,21 +180900,21 @@ var TableMap = class {
       }
       return { left, top, right, bottom };
     }
-    throw new RangeError(`No cell with offset ${pos2} found`);
+    throw new RangeError(`No cell with offset ${pos} found`);
   }
   // Find the left side of the cell at the given position.
-  colCount(pos2) {
+  colCount(pos) {
     for (let i2 = 0; i2 < this.map.length; i2++) {
-      if (this.map[i2] == pos2) {
+      if (this.map[i2] == pos) {
         return i2 % this.width;
       }
     }
-    throw new RangeError(`No cell with offset ${pos2} found`);
+    throw new RangeError(`No cell with offset ${pos} found`);
   }
   // Find the next cell in the given direction, starting from the cell
   // at `pos`, if any.
-  nextCell(pos2, axis, dir) {
-    const { left, right, top, bottom } = this.findCell(pos2);
+  nextCell(pos, axis, dir) {
+    const { left, right, top, bottom } = this.findCell(pos);
     if (axis == "horiz") {
       if (dir < 0 ? left == 0 : right == this.width)
         return null;
@@ -179649,14 +180954,14 @@ var TableMap = class {
     for (let row = rect.top; row < rect.bottom; row++) {
       for (let col = rect.left; col < rect.right; col++) {
         const index2 = row * this.width + col;
-        const pos2 = this.map[index2];
-        if (seen2[pos2])
+        const pos = this.map[index2];
+        if (seen2[pos])
           continue;
-        seen2[pos2] = true;
-        if (col == rect.left && col && this.map[index2 - 1] == pos2 || row == rect.top && row && this.map[index2 - this.width] == pos2) {
+        seen2[pos] = true;
+        if (col == rect.left && col && this.map[index2 - 1] == pos || row == rect.top && row && this.map[index2 - this.width] == pos) {
           continue;
         }
-        result.push(pos2);
+        result.push(pos);
       }
     }
     return result;
@@ -179691,9 +180996,9 @@ function computeMap(table2) {
   const colWidths = [];
   for (let i2 = 0, e2 = width2 * height; i2 < e2; i2++)
     map3[i2] = 0;
-  for (let row = 0, pos2 = 0; row < height; row++) {
+  for (let row = 0, pos = 0; row < height; row++) {
     const rowNode = table2.child(row);
-    pos2++;
+    pos++;
     for (let i2 = 0; ; i2++) {
       while (mapPos < map3.length && map3[mapPos] != 0)
         mapPos++;
@@ -179705,7 +181010,7 @@ function computeMap(table2) {
         if (h2 + row >= height) {
           (problems || (problems = [])).push({
             type: "overlong_rowspan",
-            pos: pos2,
+            pos,
             n: rowspan - h2
           });
           break;
@@ -179713,12 +181018,12 @@ function computeMap(table2) {
         const start2 = mapPos + h2 * width2;
         for (let w2 = 0; w2 < colspan; w2++) {
           if (map3[start2 + w2] == 0)
-            map3[start2 + w2] = pos2;
+            map3[start2 + w2] = pos;
           else
             (problems || (problems = [])).push({
               type: "collision",
               row,
-              pos: pos2,
+              pos,
               n: colspan - w2
             });
           const colW = colwidth && colwidth[w2];
@@ -179734,7 +181039,7 @@ function computeMap(table2) {
         }
       }
       mapPos += colspan;
-      pos2 += cellNode.nodeSize;
+      pos += cellNode.nodeSize;
     }
     const expectedPos = (row + 1) * width2;
     let missing = 0;
@@ -179743,7 +181048,7 @@ function computeMap(table2) {
         missing++;
     if (missing)
       (problems || (problems = [])).push({ type: "missing", row, n: missing });
-    pos2++;
+    pos++;
   }
   const tableMap = new TableMap(width2, height, map3, problems);
   let badWidths = false;
@@ -179789,13 +181094,13 @@ function findBadColWidths(map3, colWidths, table2) {
     map3.problems = [];
   const seen2 = {};
   for (let i2 = 0; i2 < map3.map.length; i2++) {
-    const pos2 = map3.map[i2];
-    if (seen2[pos2])
+    const pos = map3.map[i2];
+    if (seen2[pos])
       continue;
-    seen2[pos2] = true;
-    const node3 = table2.nodeAt(pos2);
+    seen2[pos] = true;
+    const node3 = table2.nodeAt(pos);
     if (!node3) {
-      throw new RangeError(`No cell with offset ${pos2} found`);
+      throw new RangeError(`No cell with offset ${pos} found`);
     }
     let updated15 = null;
     const attrs6 = node3.attrs;
@@ -179808,7 +181113,7 @@ function findBadColWidths(map3, colWidths, table2) {
     if (updated15)
       map3.problems.unshift({
         type: "colwidth mismatch",
-        pos: pos2,
+        pos,
         colwidth: updated15
       });
   }
@@ -179969,15 +181274,15 @@ function selectionCell(state) {
 }
 __name(selectionCell, "selectionCell");
 function cellNear($pos) {
-  for (let after = $pos.nodeAfter, pos2 = $pos.pos; after; after = after.firstChild, pos2++) {
+  for (let after = $pos.nodeAfter, pos = $pos.pos; after; after = after.firstChild, pos++) {
     const role = after.type.spec.tableRole;
     if (role == "cell" || role == "header_cell")
-      return $pos.doc.resolve(pos2);
+      return $pos.doc.resolve(pos);
   }
-  for (let before = $pos.nodeBefore, pos2 = $pos.pos; before; before = before.lastChild, pos2--) {
+  for (let before = $pos.nodeBefore, pos = $pos.pos; before; before = before.lastChild, pos--) {
     const role = before.type.spec.tableRole;
     if (role == "cell" || role == "header_cell")
-      return $pos.doc.resolve(pos2 - before.nodeSize);
+      return $pos.doc.resolve(pos - before.nodeSize);
   }
 }
 __name(cellNear, "cellNear");
@@ -180009,23 +181314,23 @@ function nextCell($pos, axis, dir) {
   return moved == null ? null : $pos.node(0).resolve(tableStart + moved);
 }
 __name(nextCell, "nextCell");
-function removeColSpan(attrs6, pos2, n2 = 1) {
+function removeColSpan(attrs6, pos, n2 = 1) {
   const result = { ...attrs6, colspan: attrs6.colspan - n2 };
   if (result.colwidth) {
     result.colwidth = result.colwidth.slice();
-    result.colwidth.splice(pos2, n2);
+    result.colwidth.splice(pos, n2);
     if (!result.colwidth.some((w2) => w2 > 0))
       result.colwidth = null;
   }
   return result;
 }
 __name(removeColSpan, "removeColSpan");
-function addColSpan(attrs6, pos2, n2 = 1) {
+function addColSpan(attrs6, pos, n2 = 1) {
   const result = { ...attrs6, colspan: attrs6.colspan + n2 };
   if (result.colwidth) {
     result.colwidth = result.colwidth.slice();
     for (let i2 = 0; i2 < n2; i2++)
-      result.colwidth.splice(pos2, 0, 0);
+      result.colwidth.splice(pos, 0, 0);
   }
   return result;
 }
@@ -180057,12 +181362,12 @@ var CellSelection = class _CellSelection extends Selection {
     const doc2 = $anchorCell.node(0);
     const cells = map3.cellsInRect(rect).filter((p2) => p2 != $headCell.pos - tableStart);
     cells.unshift($headCell.pos - tableStart);
-    const ranges = cells.map((pos2) => {
-      const cell = table2.nodeAt(pos2);
+    const ranges = cells.map((pos) => {
+      const cell = table2.nodeAt(pos);
       if (!cell) {
-        throw RangeError(`No cell with offset ${pos2} found`);
+        throw RangeError(`No cell with offset ${pos} found`);
       }
-      const from2 = tableStart + pos2 + 1;
+      const from2 = tableStart + pos + 1;
       return new SelectionRange(
         doc2.resolve(from2),
         doc2.resolve(from2 + cell.content.size)
@@ -180101,14 +181406,14 @@ var CellSelection = class _CellSelection extends Selection {
     for (let row = rect.top; row < rect.bottom; row++) {
       const rowContent = [];
       for (let index2 = row * map3.width + rect.left, col = rect.left; col < rect.right; col++, index2++) {
-        const pos2 = map3.map[index2];
-        if (seen2[pos2])
+        const pos = map3.map[index2];
+        if (seen2[pos])
           continue;
-        seen2[pos2] = true;
-        const cellRect = map3.findCell(pos2);
-        let cell = table2.nodeAt(pos2);
+        seen2[pos] = true;
+        const cellRect = map3.findCell(pos);
+        let cell = table2.nodeAt(pos);
         if (!cell) {
-          throw RangeError(`No cell with offset ${pos2} found`);
+          throw RangeError(`No cell with offset ${pos} found`);
         }
         const extraLeft = rect.left - cellRect.left;
         const extraRight = cellRect.right - rect.right;
@@ -180311,9 +181616,9 @@ function drawCellSelection(state) {
   if (!(state.selection instanceof CellSelection))
     return null;
   const cells = [];
-  state.selection.forEachCell((node3, pos2) => {
+  state.selection.forEachCell((node3, pos) => {
     cells.push(
-      Decoration.node(pos2, pos2 + node3.nodeSize, { class: "selectedCell" })
+      Decoration.node(pos, pos + node3.nodeSize, { class: "selectedCell" })
     );
   });
   return DecorationSet.create(state.doc, cells);
@@ -180405,9 +181710,9 @@ function changedDescendants(old, cur, offset, f2) {
 __name(changedDescendants, "changedDescendants");
 function fixTables(state, oldState) {
   let tr2;
-  const check = /* @__PURE__ */ __name((node3, pos2) => {
+  const check = /* @__PURE__ */ __name((node3, pos) => {
     if (node3.type.spec.tableRole == "table")
-      tr2 = fixTable(state, node3, pos2, tr2);
+      tr2 = fixTable(state, node3, pos, tr2);
   }, "check");
   if (!oldState)
     state.doc.descendants(check);
@@ -180466,9 +181771,9 @@ function fixTable(state, table2, tablePos, tr2) {
         first2 = i2;
       last = i2;
     }
-  for (let i2 = 0, pos2 = tablePos + 1; i2 < map3.height; i2++) {
+  for (let i2 = 0, pos = tablePos + 1; i2 < map3.height; i2++) {
     const row = table2.child(i2);
-    const end = pos2 + row.nodeSize;
+    const end = pos + row.nodeSize;
     const add3 = mustAdd[i2];
     if (add3 > 0) {
       let role = "cell";
@@ -180481,10 +181786,10 @@ function fixTable(state, table2, tablePos, tr2) {
         if (node3)
           nodes.push(node3);
       }
-      const side = (i2 == 0 || first2 == i2 - 1) && last == i2 ? pos2 + 1 : end - 1;
+      const side = (i2 == 0 || first2 == i2 - 1) && last == i2 ? pos + 1 : end - 1;
       tr2.insert(tr2.mapping.map(side), nodes);
     }
-    pos2 = end;
+    pos = end;
   }
   return tr2.setMeta(fixTablesKey, { fixTables: true });
 }
@@ -180510,18 +181815,18 @@ function addColumn(tr2, { map: map3, tableStart, table: table2 }, col) {
   for (let row = 0; row < map3.height; row++) {
     const index2 = row * map3.width + col;
     if (col > 0 && col < map3.width && map3.map[index2 - 1] == map3.map[index2]) {
-      const pos2 = map3.map[index2];
-      const cell = table2.nodeAt(pos2);
+      const pos = map3.map[index2];
+      const cell = table2.nodeAt(pos);
       tr2.setNodeMarkup(
-        tr2.mapping.map(tableStart + pos2),
+        tr2.mapping.map(tableStart + pos),
         null,
-        addColSpan(cell.attrs, col - map3.colCount(pos2))
+        addColSpan(cell.attrs, col - map3.colCount(pos))
       );
       row += cell.attrs.rowspan - 1;
     } else {
       const type = refColumn == null ? tableNodeTypes(table2.type.schema).cell : table2.nodeAt(map3.map[index2 + refColumn]).type;
-      const pos2 = map3.positionAt(row, col, table2);
-      tr2.insert(tr2.mapping.map(tableStart + pos2), type.createAndFill());
+      const pos = map3.positionAt(row, col, table2);
+      tr2.insert(tr2.mapping.map(tableStart + pos), type.createAndFill());
     }
   }
   return tr2;
@@ -180551,17 +181856,17 @@ function removeColumn(tr2, { map: map3, table: table2, tableStart }, col) {
   const mapStart = tr2.mapping.maps.length;
   for (let row = 0; row < map3.height; ) {
     const index2 = row * map3.width + col;
-    const pos2 = map3.map[index2];
-    const cell = table2.nodeAt(pos2);
+    const pos = map3.map[index2];
+    const cell = table2.nodeAt(pos);
     const attrs6 = cell.attrs;
-    if (col > 0 && map3.map[index2 - 1] == pos2 || col < map3.width - 1 && map3.map[index2 + 1] == pos2) {
+    if (col > 0 && map3.map[index2 - 1] == pos || col < map3.width - 1 && map3.map[index2 + 1] == pos) {
       tr2.setNodeMarkup(
-        tr2.mapping.slice(mapStart).map(tableStart + pos2),
+        tr2.mapping.slice(mapStart).map(tableStart + pos),
         null,
-        removeColSpan(attrs6, col - map3.colCount(pos2))
+        removeColSpan(attrs6, col - map3.colCount(pos))
       );
     } else {
-      const start2 = tr2.mapping.slice(mapStart).map(tableStart + pos2);
+      const start2 = tr2.mapping.slice(mapStart).map(tableStart + pos);
       tr2.delete(start2, start2 + cell.nodeSize);
     }
     row += attrs6.rowspan;
@@ -180612,9 +181917,9 @@ function addRow(tr2, { map: map3, tableStart, table: table2 }, row) {
     refRow = row == 0 || row == map3.height ? null : 0;
   for (let col = 0, index2 = map3.width * row; col < map3.width; col++, index2++) {
     if (row > 0 && row < map3.height && map3.map[index2] == map3.map[index2 - map3.width]) {
-      const pos2 = map3.map[index2];
-      const attrs6 = table2.nodeAt(pos2).attrs;
-      tr2.setNodeMarkup(tableStart + pos2, null, {
+      const pos = map3.map[index2];
+      const attrs6 = table2.nodeAt(pos).attrs;
+      tr2.setNodeMarkup(tableStart + pos, null, {
         ...attrs6,
         rowspan: attrs6.rowspan + 1
       });
@@ -180659,19 +181964,19 @@ function removeRow(tr2, { map: map3, table: table2, tableStart }, row) {
   tr2.delete(rowPos + tableStart, nextRow + tableStart);
   const seen2 = /* @__PURE__ */ new Set();
   for (let col = 0, index2 = row * map3.width; col < map3.width; col++, index2++) {
-    const pos2 = map3.map[index2];
-    if (seen2.has(pos2))
+    const pos = map3.map[index2];
+    if (seen2.has(pos))
       continue;
-    seen2.add(pos2);
-    if (row > 0 && pos2 == map3.map[index2 - map3.width]) {
-      const attrs6 = table2.nodeAt(pos2).attrs;
-      tr2.setNodeMarkup(tr2.mapping.slice(mapFrom).map(pos2 + tableStart), null, {
+    seen2.add(pos);
+    if (row > 0 && pos == map3.map[index2 - map3.width]) {
+      const attrs6 = table2.nodeAt(pos).attrs;
+      tr2.setNodeMarkup(tr2.mapping.slice(mapFrom).map(pos + tableStart), null, {
         ...attrs6,
         rowspan: attrs6.rowspan - 1
       });
       col += attrs6.colspan - 1;
-    } else if (row < map3.height && pos2 == map3.map[index2 + map3.width]) {
-      const cell = table2.nodeAt(pos2);
+    } else if (row < map3.height && pos == map3.map[index2 + map3.width]) {
+      const cell = table2.nodeAt(pos);
       const attrs6 = cell.attrs;
       const copy2 = cell.type.create(
         { ...attrs6, rowspan: cell.attrs.rowspan - 1 },
@@ -180833,14 +182138,14 @@ function splitCellWithType(getCellType) {
         );
       let lastCell;
       for (let row = rect.top; row < rect.bottom; row++) {
-        let pos2 = rect.map.positionAt(row, rect.left, rect.table);
+        let pos = rect.map.positionAt(row, rect.left, rect.table);
         if (row == rect.top)
-          pos2 += cellNode.nodeSize;
+          pos += cellNode.nodeSize;
         for (let col = rect.left, i2 = 0; col < rect.right; col++, i2++) {
           if (col == rect.left && row == rect.top)
             continue;
           tr2.insert(
-            lastCell = tr2.mapping.map(pos2 + rect.tableStart, 1),
+            lastCell = tr2.mapping.map(pos + rect.tableStart, 1),
             getCellType({ node: cellNode, row, col }).createAndFill(attrs6[i2])
           );
         }
@@ -180873,9 +182178,9 @@ function setCellAttr(name2, value4) {
     if (dispatch) {
       const tr2 = state.tr;
       if (state.selection instanceof CellSelection)
-        state.selection.forEachCell((node3, pos2) => {
+        state.selection.forEachCell((node3, pos) => {
           if (node3.attrs[name2] !== value4)
-            tr2.setNodeMarkup(pos2, null, {
+            tr2.setNodeMarkup(pos, null, {
               ...node3.attrs,
               [name2]: value4
             });
@@ -180911,7 +182216,7 @@ function deprecated_toggleHeader(type) {
           bottom: rect.bottom
         } : rect
       );
-      const nodes = cells.map((pos2) => rect.table.nodeAt(pos2));
+      const nodes = cells.map((pos) => rect.table.nodeAt(pos));
       for (let i2 = 0; i2 < cells.length; i2++)
         if (nodes[i2].type == types.header_cell)
           tr2.setNodeMarkup(
@@ -181067,11 +182372,11 @@ function deleteCellSelection(state, dispatch) {
   if (dispatch) {
     const tr2 = state.tr;
     const baseContent = tableNodeTypes(state.schema).cell.createAndFill().content;
-    sel.forEachCell((cell, pos2) => {
+    sel.forEachCell((cell, pos) => {
       if (!cell.content.eq(baseContent))
         tr2.replace(
-          tr2.mapping.map(pos2 + 1),
-          tr2.mapping.map(pos2 + cell.nodeSize - 1),
+          tr2.mapping.map(pos + 1),
+          tr2.mapping.map(pos + cell.nodeSize - 1),
           new Slice(baseContent, 0, 0)
         );
     });
@@ -181244,12 +182549,12 @@ function isolateHorizontal(tr2, map3, table2, start2, left, right, top, mapFrom)
     return false;
   let found2 = false;
   for (let col = left; col < right; col++) {
-    const index2 = top * map3.width + col, pos2 = map3.map[index2];
-    if (map3.map[index2 - map3.width] == pos2) {
+    const index2 = top * map3.width + col, pos = map3.map[index2];
+    if (map3.map[index2 - map3.width] == pos) {
       found2 = true;
-      const cell = table2.nodeAt(pos2);
-      const { top: cellTop, left: cellLeft } = map3.findCell(pos2);
-      tr2.setNodeMarkup(tr2.mapping.slice(mapFrom).map(pos2 + start2), null, {
+      const cell = table2.nodeAt(pos);
+      const { top: cellTop, left: cellLeft } = map3.findCell(pos);
+      tr2.setNodeMarkup(tr2.mapping.slice(mapFrom).map(pos + start2), null, {
         ...cell.attrs,
         rowspan: top - cellTop
       });
@@ -181271,12 +182576,12 @@ function isolateVertical(tr2, map3, table2, start2, top, bottom, left, mapFrom) 
     return false;
   let found2 = false;
   for (let row = top; row < bottom; row++) {
-    const index2 = row * map3.width + left, pos2 = map3.map[index2];
-    if (map3.map[index2 - 1] == pos2) {
+    const index2 = row * map3.width + left, pos = map3.map[index2];
+    if (map3.map[index2 - 1] == pos) {
       found2 = true;
-      const cell = table2.nodeAt(pos2);
-      const cellLeft = map3.colCount(pos2);
-      const updatePos = tr2.mapping.slice(mapFrom).map(pos2 + start2);
+      const cell = table2.nodeAt(pos);
+      const cellLeft = map3.colCount(pos);
+      const updatePos = tr2.mapping.slice(mapFrom).map(pos + start2);
       tr2.setNodeMarkup(
         updatePos,
         null,
@@ -181430,8 +182735,8 @@ function shiftArrow(axis, dir) {
   };
 }
 __name(shiftArrow, "shiftArrow");
-function handleTripleClick(view, pos2) {
-  const doc2 = view.state.doc, $cell = cellAround(doc2.resolve(pos2));
+function handleTripleClick(view, pos) {
+  const doc2 = view.state.doc, $cell = cellAround(doc2.resolve(pos));
   if (!$cell)
     return false;
   view.dispatch(view.state.tr.setSelection(new CellSelection($cell)));
@@ -181858,8 +183163,8 @@ function edgeCell(view, event, side, handleWidth) {
   });
   if (!found2)
     return -1;
-  const { pos: pos2 } = found2;
-  const $cell = cellAround(view.state.doc.resolve(pos2));
+  const { pos } = found2;
+  const $cell = cellAround(view.state.doc.resolve(pos));
   if (!$cell)
     return -1;
   if (side == "right")
@@ -181889,14 +183194,14 @@ function updateColumnWidth(view, cell, width2) {
     const mapIndex = row * map3.width + col;
     if (row && map3.map[mapIndex] == map3.map[mapIndex - map3.width])
       continue;
-    const pos2 = map3.map[mapIndex];
-    const attrs6 = table2.nodeAt(pos2).attrs;
-    const index2 = attrs6.colspan == 1 ? 0 : col - map3.colCount(pos2);
+    const pos = map3.map[mapIndex];
+    const attrs6 = table2.nodeAt(pos).attrs;
+    const index2 = attrs6.colspan == 1 ? 0 : col - map3.colCount(pos);
     if (attrs6.colwidth && attrs6.colwidth[index2] == width2)
       continue;
     const colwidth = attrs6.colwidth ? attrs6.colwidth.slice() : zeroes(attrs6.colspan);
     colwidth[index2] = width2;
-    tr2.setNodeMarkup(start2 + pos2, null, { ...attrs6, colwidth });
+    tr2.setNodeMarkup(start2 + pos, null, { ...attrs6, colwidth });
   }
   if (tr2.docChanged)
     view.dispatch(tr2);
@@ -181941,7 +183246,7 @@ function handleDecorations(state, cell) {
     const index2 = col + row * map3.width;
     if ((col == map3.width - 1 || map3.map[index2] != map3.map[index2 + 1]) && (row == 0 || map3.map[index2] != map3.map[index2 - map3.width])) {
       const cellPos = map3.map[index2];
-      const pos2 = start2 + cellPos + table2.nodeAt(cellPos).nodeSize - 1;
+      const pos = start2 + cellPos + table2.nodeAt(cellPos).nodeSize - 1;
       const dom = document.createElement("div");
       dom.className = "column-resize-handle";
       if ((_a2 = columnResizingPluginKey.getState(state)) == null ? void 0 : _a2.dragging) {
@@ -181955,7 +183260,7 @@ function handleDecorations(state, cell) {
           )
         );
       }
-      decorations.push(Decoration.widget(pos2, dom));
+      decorations.push(Decoration.widget(pos, dom));
     }
   }
   return DecorationSet.create(state.doc, decorations);
@@ -181979,8 +183284,8 @@ function tableEditing({
           return set3 == -1 ? null : set3;
         if (cur == null || !tr2.docChanged)
           return cur;
-        const { deleted, pos: pos2 } = tr2.mapping.mapResult(cur);
-        return deleted ? null : pos2;
+        const { deleted, pos } = tr2.mapping.mapResult(cur);
+        return deleted ? null : pos;
       }
     },
     props: {
@@ -182906,11 +184211,11 @@ class DropCursorView {
         this.updateOverlay();
     }
   }
-  setCursor(pos2) {
-    if (pos2 == this.cursorPos)
+  setCursor(pos) {
+    if (pos == this.cursorPos)
       return;
-    this.cursorPos = pos2;
-    if (pos2 == null) {
+    this.cursorPos = pos;
+    if (pos == null) {
       this.element.parentNode.removeChild(this.element);
       this.element = null;
     } else {
@@ -182970,12 +184275,12 @@ class DropCursorView {
   dragover(event) {
     if (!this.editorView.editable)
       return;
-    let pos2 = this.editorView.posAtCoords({ left: event.clientX, top: event.clientY });
-    let node3 = pos2 && pos2.inside >= 0 && this.editorView.state.doc.nodeAt(pos2.inside);
+    let pos = this.editorView.posAtCoords({ left: event.clientX, top: event.clientY });
+    let node3 = pos && pos.inside >= 0 && this.editorView.state.doc.nodeAt(pos.inside);
     let disableDropCursor = node3 && node3.type.spec.disableDropCursor;
-    let disabled2 = typeof disableDropCursor == "function" ? disableDropCursor(this.editorView, pos2, event) : disableDropCursor;
-    if (pos2 && !disabled2) {
-      let target2 = pos2.pos;
+    let disabled2 = typeof disableDropCursor == "function" ? disableDropCursor(this.editorView, pos, event) : disableDropCursor;
+    if (pos && !disabled2) {
+      let target2 = pos.pos;
       if (this.editorView.dragging && this.editorView.dragging.slice) {
         let point = dropPoint(this.editorView.state.doc, target2, this.editorView.dragging.slice);
         if (point != null)
@@ -183068,7 +184373,7 @@ class GapCursor extends Selection {
     search: for (; ; ) {
       if (!mustMove && GapCursor.valid($pos))
         return $pos;
-      let pos2 = $pos.pos, next2 = null;
+      let pos = $pos.pos, next2 = null;
       for (let d2 = $pos.depth; ; d2--) {
         let parent = $pos.node(d2);
         if (dir > 0 ? $pos.indexAfter(d2) < parent.childCount : $pos.index(d2) > 0) {
@@ -183077,8 +184382,8 @@ class GapCursor extends Selection {
         } else if (d2 == 0) {
           return null;
         }
-        pos2 += dir;
-        let $cur = $pos.doc.resolve(pos2);
+        pos += dir;
+        let $cur = $pos.doc.resolve(pos);
         if (GapCursor.valid($cur))
           return $cur;
       }
@@ -183086,15 +184391,15 @@ class GapCursor extends Selection {
         let inside = dir > 0 ? next2.firstChild : next2.lastChild;
         if (!inside) {
           if (next2.isAtom && !next2.isText && !NodeSelection.isSelectable(next2)) {
-            $pos = $pos.doc.resolve(pos2 + next2.nodeSize * dir);
+            $pos = $pos.doc.resolve(pos + next2.nodeSize * dir);
             mustMove = false;
             continue search;
           }
           break;
         }
         next2 = inside;
-        pos2 += dir;
-        let $cur = $pos.doc.resolve(pos2);
+        pos += dir;
+        let $cur = $pos.doc.resolve(pos);
         if (GapCursor.valid($cur))
           return $cur;
       }
@@ -183109,8 +184414,8 @@ class GapBookmark {
   static {
     __name(this, "GapBookmark");
   }
-  constructor(pos2) {
-    this.pos = pos2;
+  constructor(pos) {
+    this.pos = pos;
   }
   map(mapping) {
     return new GapBookmark(mapping.map(this.pos));
@@ -183196,10 +184501,10 @@ function arrow(axis, dir) {
   };
 }
 __name(arrow, "arrow");
-function handleClick(view, pos2, event) {
+function handleClick(view, pos, event) {
   if (!view || !view.editable)
     return false;
-  let $pos = view.state.doc.resolve(pos2);
+  let $pos = view.state.doc.resolve(pos);
   if (!GapCursor.valid($pos))
     return false;
   let clickPos = view.posAtCoords({ left: event.clientX, top: event.clientY });
@@ -183675,14 +184980,14 @@ class Branch {
     }, start2);
     let iRebased = rebasedCount;
     this.items.forEach((item3) => {
-      let pos2 = mapping.getMirror(--iRebased);
-      if (pos2 == null)
+      let pos = mapping.getMirror(--iRebased);
+      if (pos == null)
         return;
-      newUntil = Math.min(newUntil, pos2);
-      let map3 = mapping.maps[pos2];
+      newUntil = Math.min(newUntil, pos);
+      let map3 = mapping.maps[pos];
       if (item3.step) {
-        let step3 = rebasedTransform.steps[pos2].invert(rebasedTransform.docs[pos2]);
-        let selection = item3.selection && item3.selection.map(mapping.slice(iRebased + 1, pos2));
+        let step3 = rebasedTransform.steps[pos].invert(rebasedTransform.docs[pos]);
+        let selection = item3.selection && item3.selection.map(mapping.slice(iRebased + 1, pos));
         if (selection)
           eventCount++;
         rebasedItems.push(new Item(map3, step3, selection));
@@ -185393,8 +186698,8 @@ function assign$1(obj) {
   return obj;
 }
 __name(assign$1, "assign$1");
-function arrayReplaceAt(src, pos2, newElements) {
-  return [].concat(src.slice(0, pos2), newElements, src.slice(pos2 + 1));
+function arrayReplaceAt(src, pos, newElements) {
+  return [].concat(src.slice(0, pos), newElements, src.slice(pos + 1));
 }
 __name(arrayReplaceAt, "arrayReplaceAt");
 function isValidEntityCode(c2) {
@@ -185635,16 +186940,16 @@ function parseLinkLabel(state, start2, disableNested) {
 __name(parseLinkLabel, "parseLinkLabel");
 function parseLinkDestination(str, start2, max) {
   let code2;
-  let pos2 = start2;
+  let pos = start2;
   const result = {
     ok: false,
     pos: 0,
     str: ""
   };
-  if (str.charCodeAt(pos2) === 60) {
-    pos2++;
-    while (pos2 < max) {
-      code2 = str.charCodeAt(pos2);
+  if (str.charCodeAt(pos) === 60) {
+    pos++;
+    while (pos < max) {
+      code2 = str.charCodeAt(pos);
       if (code2 === 10) {
         return result;
       }
@@ -185652,33 +186957,33 @@ function parseLinkDestination(str, start2, max) {
         return result;
       }
       if (code2 === 62) {
-        result.pos = pos2 + 1;
-        result.str = unescapeAll(str.slice(start2 + 1, pos2));
+        result.pos = pos + 1;
+        result.str = unescapeAll(str.slice(start2 + 1, pos));
         result.ok = true;
         return result;
       }
-      if (code2 === 92 && pos2 + 1 < max) {
-        pos2 += 2;
+      if (code2 === 92 && pos + 1 < max) {
+        pos += 2;
         continue;
       }
-      pos2++;
+      pos++;
     }
     return result;
   }
   let level = 0;
-  while (pos2 < max) {
-    code2 = str.charCodeAt(pos2);
+  while (pos < max) {
+    code2 = str.charCodeAt(pos);
     if (code2 === 32) {
       break;
     }
     if (code2 < 32 || code2 === 127) {
       break;
     }
-    if (code2 === 92 && pos2 + 1 < max) {
-      if (str.charCodeAt(pos2 + 1) === 32) {
+    if (code2 === 92 && pos + 1 < max) {
+      if (str.charCodeAt(pos + 1) === 32) {
         break;
       }
-      pos2 += 2;
+      pos += 2;
       continue;
     }
     if (code2 === 40) {
@@ -185693,23 +186998,23 @@ function parseLinkDestination(str, start2, max) {
       }
       level--;
     }
-    pos2++;
+    pos++;
   }
-  if (start2 === pos2) {
+  if (start2 === pos) {
     return result;
   }
   if (level !== 0) {
     return result;
   }
-  result.str = unescapeAll(str.slice(start2, pos2));
-  result.pos = pos2;
+  result.str = unescapeAll(str.slice(start2, pos));
+  result.pos = pos;
   result.ok = true;
   return result;
 }
 __name(parseLinkDestination, "parseLinkDestination");
 function parseLinkTitle(str, start2, max, prev_state) {
   let code2;
-  let pos2 = start2;
+  let pos = start2;
   const state = {
     // if `true`, this is a valid link title
     ok: false,
@@ -185726,36 +187031,36 @@ function parseLinkTitle(str, start2, max, prev_state) {
     state.str = prev_state.str;
     state.marker = prev_state.marker;
   } else {
-    if (pos2 >= max) {
+    if (pos >= max) {
       return state;
     }
-    let marker = str.charCodeAt(pos2);
+    let marker = str.charCodeAt(pos);
     if (marker !== 34 && marker !== 39 && marker !== 40) {
       return state;
     }
     start2++;
-    pos2++;
+    pos++;
     if (marker === 40) {
       marker = 41;
     }
     state.marker = marker;
   }
-  while (pos2 < max) {
-    code2 = str.charCodeAt(pos2);
+  while (pos < max) {
+    code2 = str.charCodeAt(pos);
     if (code2 === state.marker) {
-      state.pos = pos2 + 1;
-      state.str += unescapeAll(str.slice(start2, pos2));
+      state.pos = pos + 1;
+      state.str += unescapeAll(str.slice(start2, pos));
       state.ok = true;
       return state;
     } else if (code2 === 40 && state.marker === 41) {
       return state;
-    } else if (code2 === 92 && pos2 + 1 < max) {
-      pos2++;
+    } else if (code2 === 92 && pos + 1 < max) {
+      pos++;
     }
-    pos2++;
+    pos++;
   }
   state.can_continue = true;
-  state.str += unescapeAll(str.slice(start2, pos2));
+  state.str += unescapeAll(str.slice(start2, pos));
   return state;
 }
 __name(parseLinkTitle, "parseLinkTitle");
@@ -186232,10 +187537,10 @@ function linkify$1(state) {
           } else {
             urlText = state.md.normalizeLinkText(urlText);
           }
-          const pos2 = links[ln].index;
-          if (pos2 > lastPos) {
+          const pos = links[ln].index;
+          if (pos > lastPos) {
             const token = new state.Token("text", "", 0);
-            token.content = text2.slice(lastPos, pos2);
+            token.content = text2.slice(lastPos, pos);
             token.level = level;
             nodes.push(token);
           }
@@ -186355,18 +187660,18 @@ function process_inlines(tokens, state) {
       continue;
     }
     let text2 = token.content;
-    let pos2 = 0;
+    let pos = 0;
     let max = text2.length;
     OUTER:
-      while (pos2 < max) {
-        QUOTE_RE.lastIndex = pos2;
+      while (pos < max) {
+        QUOTE_RE.lastIndex = pos;
         const t2 = QUOTE_RE.exec(text2);
         if (!t2) {
           break;
         }
         let canOpen = true;
         let canClose = true;
-        pos2 = t2.index + 1;
+        pos = t2.index + 1;
         const isSingle = t2[0] === "'";
         let lastChar = 32;
         if (t2.index - 1 >= 0) {
@@ -186380,8 +187685,8 @@ function process_inlines(tokens, state) {
           }
         }
         let nextChar = 32;
-        if (pos2 < max) {
-          nextChar = text2.charCodeAt(pos2);
+        if (pos < max) {
+          nextChar = text2.charCodeAt(pos);
         } else {
           for (j2 = i2 + 1; j2 < tokens.length; j2++) {
             if (tokens[j2].type === "softbreak" || tokens[j2].type === "hardbreak") break;
@@ -186446,9 +187751,9 @@ function process_inlines(tokens, state) {
                 item3.pos,
                 openQuote
               );
-              pos2 += closeQuote.length - 1;
+              pos += closeQuote.length - 1;
               if (item3.token === i2) {
-                pos2 += openQuote.length - 1;
+                pos += openQuote.length - 1;
               }
               text2 = token.content;
               max = text2.length;
@@ -186556,8 +187861,8 @@ function StateBlock(src, md2, env, tokens) {
   this.parentType = "root";
   this.level = 0;
   const s2 = this.src;
-  for (let start2 = 0, pos2 = 0, indent = 0, offset = 0, len = s2.length, indent_found = false; pos2 < len; pos2++) {
-    const ch = s2.charCodeAt(pos2);
+  for (let start2 = 0, pos = 0, indent = 0, offset = 0, len = s2.length, indent_found = false; pos < len; pos++) {
+    const ch = s2.charCodeAt(pos);
     if (!indent_found) {
       if (isSpace(ch)) {
         indent++;
@@ -186571,19 +187876,19 @@ function StateBlock(src, md2, env, tokens) {
         indent_found = true;
       }
     }
-    if (ch === 10 || pos2 === len - 1) {
+    if (ch === 10 || pos === len - 1) {
       if (ch !== 10) {
-        pos2++;
+        pos++;
       }
       this.bMarks.push(start2);
-      this.eMarks.push(pos2);
+      this.eMarks.push(pos);
       this.tShift.push(indent);
       this.sCount.push(offset);
       this.bsCount.push(0);
       indent_found = false;
       indent = 0;
       offset = 0;
-      start2 = pos2 + 1;
+      start2 = pos + 1;
     }
   }
   this.bMarks.push(s2.length);
@@ -186614,44 +187919,44 @@ StateBlock.prototype.skipEmptyLines = /* @__PURE__ */ __name(function skipEmptyL
   }
   return from2;
 }, "skipEmptyLines");
-StateBlock.prototype.skipSpaces = /* @__PURE__ */ __name(function skipSpaces(pos2) {
-  for (let max = this.src.length; pos2 < max; pos2++) {
-    const ch = this.src.charCodeAt(pos2);
+StateBlock.prototype.skipSpaces = /* @__PURE__ */ __name(function skipSpaces(pos) {
+  for (let max = this.src.length; pos < max; pos++) {
+    const ch = this.src.charCodeAt(pos);
     if (!isSpace(ch)) {
       break;
     }
   }
-  return pos2;
+  return pos;
 }, "skipSpaces");
-StateBlock.prototype.skipSpacesBack = /* @__PURE__ */ __name(function skipSpacesBack(pos2, min) {
-  if (pos2 <= min) {
-    return pos2;
+StateBlock.prototype.skipSpacesBack = /* @__PURE__ */ __name(function skipSpacesBack(pos, min) {
+  if (pos <= min) {
+    return pos;
   }
-  while (pos2 > min) {
-    if (!isSpace(this.src.charCodeAt(--pos2))) {
-      return pos2 + 1;
+  while (pos > min) {
+    if (!isSpace(this.src.charCodeAt(--pos))) {
+      return pos + 1;
     }
   }
-  return pos2;
+  return pos;
 }, "skipSpacesBack");
-StateBlock.prototype.skipChars = /* @__PURE__ */ __name(function skipChars(pos2, code2) {
-  for (let max = this.src.length; pos2 < max; pos2++) {
-    if (this.src.charCodeAt(pos2) !== code2) {
+StateBlock.prototype.skipChars = /* @__PURE__ */ __name(function skipChars(pos, code2) {
+  for (let max = this.src.length; pos < max; pos++) {
+    if (this.src.charCodeAt(pos) !== code2) {
       break;
     }
   }
-  return pos2;
+  return pos;
 }, "skipChars");
-StateBlock.prototype.skipCharsBack = /* @__PURE__ */ __name(function skipCharsBack(pos2, code2, min) {
-  if (pos2 <= min) {
-    return pos2;
+StateBlock.prototype.skipCharsBack = /* @__PURE__ */ __name(function skipCharsBack(pos, code2, min) {
+  if (pos <= min) {
+    return pos;
   }
-  while (pos2 > min) {
-    if (code2 !== this.src.charCodeAt(--pos2)) {
-      return pos2 + 1;
+  while (pos > min) {
+    if (code2 !== this.src.charCodeAt(--pos)) {
+      return pos + 1;
     }
   }
-  return pos2;
+  return pos;
 }, "skipCharsBack");
 StateBlock.prototype.getLines = /* @__PURE__ */ __name(function getLines(begin, end, indent, keepLastLF) {
   if (begin >= end) {
@@ -186694,33 +187999,33 @@ StateBlock.prototype.getLines = /* @__PURE__ */ __name(function getLines(begin, 
 StateBlock.prototype.Token = Token;
 const MAX_AUTOCOMPLETED_CELLS = 65536;
 function getLine(state, line) {
-  const pos2 = state.bMarks[line] + state.tShift[line];
+  const pos = state.bMarks[line] + state.tShift[line];
   const max = state.eMarks[line];
-  return state.src.slice(pos2, max);
+  return state.src.slice(pos, max);
 }
 __name(getLine, "getLine");
 function escapedSplit(str) {
   const result = [];
   const max = str.length;
-  let pos2 = 0;
-  let ch = str.charCodeAt(pos2);
+  let pos = 0;
+  let ch = str.charCodeAt(pos);
   let isEscaped = false;
   let lastPos = 0;
   let current = "";
-  while (pos2 < max) {
+  while (pos < max) {
     if (ch === 124) {
       if (!isEscaped) {
-        result.push(current + str.substring(lastPos, pos2));
+        result.push(current + str.substring(lastPos, pos));
         current = "";
-        lastPos = pos2 + 1;
+        lastPos = pos + 1;
       } else {
-        current += str.substring(lastPos, pos2 - 1);
-        lastPos = pos2;
+        current += str.substring(lastPos, pos - 1);
+        lastPos = pos;
       }
     }
     isEscaped = ch === 92;
-    pos2++;
-    ch = str.charCodeAt(pos2);
+    pos++;
+    ch = str.charCodeAt(pos);
   }
   result.push(current + str.substring(lastPos));
   return result;
@@ -186737,30 +188042,30 @@ function table(state, startLine, endLine, silent) {
   if (state.sCount[nextLine] - state.blkIndent >= 4) {
     return false;
   }
-  let pos2 = state.bMarks[nextLine] + state.tShift[nextLine];
-  if (pos2 >= state.eMarks[nextLine]) {
+  let pos = state.bMarks[nextLine] + state.tShift[nextLine];
+  if (pos >= state.eMarks[nextLine]) {
     return false;
   }
-  const firstCh = state.src.charCodeAt(pos2++);
+  const firstCh = state.src.charCodeAt(pos++);
   if (firstCh !== 124 && firstCh !== 45 && firstCh !== 58) {
     return false;
   }
-  if (pos2 >= state.eMarks[nextLine]) {
+  if (pos >= state.eMarks[nextLine]) {
     return false;
   }
-  const secondCh = state.src.charCodeAt(pos2++);
+  const secondCh = state.src.charCodeAt(pos++);
   if (secondCh !== 124 && secondCh !== 45 && secondCh !== 58 && !isSpace(secondCh)) {
     return false;
   }
   if (firstCh === 45 && isSpace(secondCh)) {
     return false;
   }
-  while (pos2 < state.eMarks[nextLine]) {
-    const ch = state.src.charCodeAt(pos2);
+  while (pos < state.eMarks[nextLine]) {
+    const ch = state.src.charCodeAt(pos);
     if (ch !== 124 && ch !== 45 && ch !== 58 && !isSpace(ch)) {
       return false;
     }
-    pos2++;
+    pos++;
   }
   let lineText = getLine(state, startLine + 1);
   let columns = lineText.split("|");
@@ -186909,26 +188214,26 @@ function code(state, startLine, endLine) {
 }
 __name(code, "code");
 function fence(state, startLine, endLine, silent) {
-  let pos2 = state.bMarks[startLine] + state.tShift[startLine];
+  let pos = state.bMarks[startLine] + state.tShift[startLine];
   let max = state.eMarks[startLine];
   if (state.sCount[startLine] - state.blkIndent >= 4) {
     return false;
   }
-  if (pos2 + 3 > max) {
+  if (pos + 3 > max) {
     return false;
   }
-  const marker = state.src.charCodeAt(pos2);
+  const marker = state.src.charCodeAt(pos);
   if (marker !== 126 && marker !== 96) {
     return false;
   }
-  let mem = pos2;
-  pos2 = state.skipChars(pos2, marker);
-  let len = pos2 - mem;
+  let mem = pos;
+  pos = state.skipChars(pos, marker);
+  let len = pos - mem;
   if (len < 3) {
     return false;
   }
-  const markup = state.src.slice(mem, pos2);
-  const params = state.src.slice(pos2, max);
+  const markup = state.src.slice(mem, pos);
+  const params = state.src.slice(pos, max);
   if (marker === 96) {
     if (params.indexOf(String.fromCharCode(marker)) >= 0) {
       return false;
@@ -186944,23 +188249,23 @@ function fence(state, startLine, endLine, silent) {
     if (nextLine >= endLine) {
       break;
     }
-    pos2 = mem = state.bMarks[nextLine] + state.tShift[nextLine];
+    pos = mem = state.bMarks[nextLine] + state.tShift[nextLine];
     max = state.eMarks[nextLine];
-    if (pos2 < max && state.sCount[nextLine] < state.blkIndent) {
+    if (pos < max && state.sCount[nextLine] < state.blkIndent) {
       break;
     }
-    if (state.src.charCodeAt(pos2) !== marker) {
+    if (state.src.charCodeAt(pos) !== marker) {
       continue;
     }
     if (state.sCount[nextLine] - state.blkIndent >= 4) {
       continue;
     }
-    pos2 = state.skipChars(pos2, marker);
-    if (pos2 - mem < len) {
+    pos = state.skipChars(pos, marker);
+    if (pos - mem < len) {
       continue;
     }
-    pos2 = state.skipSpaces(pos2);
-    if (pos2 < max) {
+    pos = state.skipSpaces(pos);
+    if (pos < max) {
       continue;
     }
     haveEndMarker = true;
@@ -186977,13 +188282,13 @@ function fence(state, startLine, endLine, silent) {
 }
 __name(fence, "fence");
 function blockquote(state, startLine, endLine, silent) {
-  let pos2 = state.bMarks[startLine] + state.tShift[startLine];
+  let pos = state.bMarks[startLine] + state.tShift[startLine];
   let max = state.eMarks[startLine];
   const oldLineMax = state.lineMax;
   if (state.sCount[startLine] - state.blkIndent >= 4) {
     return false;
   }
-  if (state.src.charCodeAt(pos2) !== 62) {
+  if (state.src.charCodeAt(pos) !== 62) {
     return false;
   }
   if (silent) {
@@ -187000,24 +188305,24 @@ function blockquote(state, startLine, endLine, silent) {
   let nextLine;
   for (nextLine = startLine; nextLine < endLine; nextLine++) {
     const isOutdented = state.sCount[nextLine] < state.blkIndent;
-    pos2 = state.bMarks[nextLine] + state.tShift[nextLine];
+    pos = state.bMarks[nextLine] + state.tShift[nextLine];
     max = state.eMarks[nextLine];
-    if (pos2 >= max) {
+    if (pos >= max) {
       break;
     }
-    if (state.src.charCodeAt(pos2++) === 62 && !isOutdented) {
+    if (state.src.charCodeAt(pos++) === 62 && !isOutdented) {
       let initial = state.sCount[nextLine] + 1;
       let spaceAfterMarker;
       let adjustTab;
-      if (state.src.charCodeAt(pos2) === 32) {
-        pos2++;
+      if (state.src.charCodeAt(pos) === 32) {
+        pos++;
         initial++;
         adjustTab = false;
         spaceAfterMarker = true;
-      } else if (state.src.charCodeAt(pos2) === 9) {
+      } else if (state.src.charCodeAt(pos) === 9) {
         spaceAfterMarker = true;
         if ((state.bsCount[nextLine] + initial) % 4 === 3) {
-          pos2++;
+          pos++;
           initial++;
           adjustTab = false;
         } else {
@@ -187028,9 +188333,9 @@ function blockquote(state, startLine, endLine, silent) {
       }
       let offset = initial;
       oldBMarks.push(state.bMarks[nextLine]);
-      state.bMarks[nextLine] = pos2;
-      while (pos2 < max) {
-        const ch = state.src.charCodeAt(pos2);
+      state.bMarks[nextLine] = pos;
+      while (pos < max) {
+        const ch = state.src.charCodeAt(pos);
         if (isSpace(ch)) {
           if (ch === 9) {
             offset += 4 - (offset + state.bsCount[nextLine] + (adjustTab ? 1 : 0)) % 4;
@@ -187040,15 +188345,15 @@ function blockquote(state, startLine, endLine, silent) {
         } else {
           break;
         }
-        pos2++;
+        pos++;
       }
-      lastLineEmpty = pos2 >= max;
+      lastLineEmpty = pos >= max;
       oldBSCount.push(state.bsCount[nextLine]);
       state.bsCount[nextLine] = state.sCount[nextLine] + 1 + (spaceAfterMarker ? 1 : 0);
       oldSCount.push(state.sCount[nextLine]);
       state.sCount[nextLine] = offset - initial;
       oldTShift.push(state.tShift[nextLine]);
-      state.tShift[nextLine] = pos2 - state.bMarks[nextLine];
+      state.tShift[nextLine] = pos - state.bMarks[nextLine];
       continue;
     }
     if (lastLineEmpty) {
@@ -187105,14 +188410,14 @@ function hr(state, startLine, endLine, silent) {
   if (state.sCount[startLine] - state.blkIndent >= 4) {
     return false;
   }
-  let pos2 = state.bMarks[startLine] + state.tShift[startLine];
-  const marker = state.src.charCodeAt(pos2++);
+  let pos = state.bMarks[startLine] + state.tShift[startLine];
+  const marker = state.src.charCodeAt(pos++);
   if (marker !== 42 && marker !== 45 && marker !== 95) {
     return false;
   }
   let cnt = 1;
-  while (pos2 < max) {
-    const ch = state.src.charCodeAt(pos2++);
+  while (pos < max) {
+    const ch = state.src.charCodeAt(pos++);
     if (ch !== marker && !isSpace(ch)) {
       return false;
     }
@@ -187135,38 +188440,38 @@ function hr(state, startLine, endLine, silent) {
 __name(hr, "hr");
 function skipBulletListMarker(state, startLine) {
   const max = state.eMarks[startLine];
-  let pos2 = state.bMarks[startLine] + state.tShift[startLine];
-  const marker = state.src.charCodeAt(pos2++);
+  let pos = state.bMarks[startLine] + state.tShift[startLine];
+  const marker = state.src.charCodeAt(pos++);
   if (marker !== 42 && marker !== 45 && marker !== 43) {
     return -1;
   }
-  if (pos2 < max) {
-    const ch = state.src.charCodeAt(pos2);
+  if (pos < max) {
+    const ch = state.src.charCodeAt(pos);
     if (!isSpace(ch)) {
       return -1;
     }
   }
-  return pos2;
+  return pos;
 }
 __name(skipBulletListMarker, "skipBulletListMarker");
 function skipOrderedListMarker(state, startLine) {
   const start2 = state.bMarks[startLine] + state.tShift[startLine];
   const max = state.eMarks[startLine];
-  let pos2 = start2;
-  if (pos2 + 1 >= max) {
+  let pos = start2;
+  if (pos + 1 >= max) {
     return -1;
   }
-  let ch = state.src.charCodeAt(pos2++);
+  let ch = state.src.charCodeAt(pos++);
   if (ch < 48 || ch > 57) {
     return -1;
   }
   for (; ; ) {
-    if (pos2 >= max) {
+    if (pos >= max) {
       return -1;
     }
-    ch = state.src.charCodeAt(pos2++);
+    ch = state.src.charCodeAt(pos++);
     if (ch >= 48 && ch <= 57) {
-      if (pos2 - start2 >= 10) {
+      if (pos - start2 >= 10) {
         return -1;
       }
       continue;
@@ -187176,13 +188481,13 @@ function skipOrderedListMarker(state, startLine) {
     }
     return -1;
   }
-  if (pos2 < max) {
-    ch = state.src.charCodeAt(pos2);
+  if (pos < max) {
+    ch = state.src.charCodeAt(pos);
     if (!isSpace(ch)) {
       return -1;
     }
   }
-  return pos2;
+  return pos;
 }
 __name(skipOrderedListMarker, "skipOrderedListMarker");
 function markTightParagraphs(state, idx) {
@@ -187197,7 +188502,7 @@ function markTightParagraphs(state, idx) {
 }
 __name(markTightParagraphs, "markTightParagraphs");
 function list(state, startLine, endLine, silent) {
-  let max, pos2, start2, token;
+  let max, pos, start2, token;
   let nextLine = startLine;
   let tight = true;
   if (state.sCount[nextLine] - state.blkIndent >= 4) {
@@ -187249,12 +188554,12 @@ function list(state, startLine, endLine, silent) {
   const oldParentType = state.parentType;
   state.parentType = "list";
   while (nextLine < endLine) {
-    pos2 = posAfterMarker;
+    pos = posAfterMarker;
     max = state.eMarks[nextLine];
     const initial = state.sCount[nextLine] + posAfterMarker - (state.bMarks[nextLine] + state.tShift[nextLine]);
     let offset = initial;
-    while (pos2 < max) {
-      const ch = state.src.charCodeAt(pos2);
+    while (pos < max) {
+      const ch = state.src.charCodeAt(pos);
       if (ch === 9) {
         offset += 4 - (offset + state.bsCount[nextLine]) % 4;
       } else if (ch === 32) {
@@ -187262,9 +188567,9 @@ function list(state, startLine, endLine, silent) {
       } else {
         break;
       }
-      pos2++;
+      pos++;
     }
-    const contentStart = pos2;
+    const contentStart = pos;
     let indentAfterMarker;
     if (contentStart >= max) {
       indentAfterMarker = 1;
@@ -187360,13 +188665,13 @@ function list(state, startLine, endLine, silent) {
 }
 __name(list, "list");
 function reference(state, startLine, _endLine, silent) {
-  let pos2 = state.bMarks[startLine] + state.tShift[startLine];
+  let pos = state.bMarks[startLine] + state.tShift[startLine];
   let max = state.eMarks[startLine];
   let nextLine = startLine + 1;
   if (state.sCount[startLine] - state.blkIndent >= 4) {
     return false;
   }
-  if (state.src.charCodeAt(pos2) !== 91) {
+  if (state.src.charCodeAt(pos) !== 91) {
     return false;
   }
   function getNextLine(nextLine2) {
@@ -187397,20 +188702,20 @@ function reference(state, startLine, _endLine, silent) {
         return null;
       }
     }
-    const pos3 = state.bMarks[nextLine2] + state.tShift[nextLine2];
+    const pos2 = state.bMarks[nextLine2] + state.tShift[nextLine2];
     const max2 = state.eMarks[nextLine2];
-    return state.src.slice(pos3, max2 + 1);
+    return state.src.slice(pos2, max2 + 1);
   }
   __name(getNextLine, "getNextLine");
-  let str = state.src.slice(pos2, max + 1);
+  let str = state.src.slice(pos, max + 1);
   max = str.length;
   let labelEnd = -1;
-  for (pos2 = 1; pos2 < max; pos2++) {
-    const ch = str.charCodeAt(pos2);
+  for (pos = 1; pos < max; pos++) {
+    const ch = str.charCodeAt(pos);
     if (ch === 91) {
       return false;
     } else if (ch === 93) {
-      labelEnd = pos2;
+      labelEnd = pos;
       break;
     } else if (ch === 10) {
       const lineContent = getNextLine(nextLine);
@@ -187420,8 +188725,8 @@ function reference(state, startLine, _endLine, silent) {
         nextLine++;
       }
     } else if (ch === 92) {
-      pos2++;
-      if (pos2 < max && str.charCodeAt(pos2) === 10) {
+      pos++;
+      if (pos < max && str.charCodeAt(pos) === 10) {
         const lineContent = getNextLine(nextLine);
         if (lineContent !== null) {
           str += lineContent;
@@ -187434,8 +188739,8 @@ function reference(state, startLine, _endLine, silent) {
   if (labelEnd < 0 || str.charCodeAt(labelEnd + 1) !== 58) {
     return false;
   }
-  for (pos2 = labelEnd + 2; pos2 < max; pos2++) {
-    const ch = str.charCodeAt(pos2);
+  for (pos = labelEnd + 2; pos < max; pos++) {
+    const ch = str.charCodeAt(pos);
     if (ch === 10) {
       const lineContent = getNextLine(nextLine);
       if (lineContent !== null) {
@@ -187448,7 +188753,7 @@ function reference(state, startLine, _endLine, silent) {
       break;
     }
   }
-  const destRes = state.md.helpers.parseLinkDestination(str, pos2, max);
+  const destRes = state.md.helpers.parseLinkDestination(str, pos, max);
   if (!destRes.ok) {
     return false;
   }
@@ -187456,12 +188761,12 @@ function reference(state, startLine, _endLine, silent) {
   if (!state.md.validateLink(href)) {
     return false;
   }
-  pos2 = destRes.pos;
-  const destEndPos = pos2;
+  pos = destRes.pos;
+  const destEndPos = pos;
   const destEndLineNo = nextLine;
-  const start2 = pos2;
-  for (; pos2 < max; pos2++) {
-    const ch = str.charCodeAt(pos2);
+  const start2 = pos;
+  for (; pos < max; pos++) {
+    const ch = str.charCodeAt(pos);
     if (ch === 10) {
       const lineContent = getNextLine(nextLine);
       if (lineContent !== null) {
@@ -187474,47 +188779,47 @@ function reference(state, startLine, _endLine, silent) {
       break;
     }
   }
-  let titleRes = state.md.helpers.parseLinkTitle(str, pos2, max);
+  let titleRes = state.md.helpers.parseLinkTitle(str, pos, max);
   while (titleRes.can_continue) {
     const lineContent = getNextLine(nextLine);
     if (lineContent === null) break;
     str += lineContent;
-    pos2 = max;
+    pos = max;
     max = str.length;
     nextLine++;
-    titleRes = state.md.helpers.parseLinkTitle(str, pos2, max, titleRes);
+    titleRes = state.md.helpers.parseLinkTitle(str, pos, max, titleRes);
   }
   let title;
-  if (pos2 < max && start2 !== pos2 && titleRes.ok) {
+  if (pos < max && start2 !== pos && titleRes.ok) {
     title = titleRes.str;
-    pos2 = titleRes.pos;
+    pos = titleRes.pos;
   } else {
     title = "";
-    pos2 = destEndPos;
+    pos = destEndPos;
     nextLine = destEndLineNo;
   }
-  while (pos2 < max) {
-    const ch = str.charCodeAt(pos2);
+  while (pos < max) {
+    const ch = str.charCodeAt(pos);
     if (!isSpace(ch)) {
       break;
     }
-    pos2++;
+    pos++;
   }
-  if (pos2 < max && str.charCodeAt(pos2) !== 10) {
+  if (pos < max && str.charCodeAt(pos) !== 10) {
     if (title) {
       title = "";
-      pos2 = destEndPos;
+      pos = destEndPos;
       nextLine = destEndLineNo;
-      while (pos2 < max) {
-        const ch = str.charCodeAt(pos2);
+      while (pos < max) {
+        const ch = str.charCodeAt(pos);
         if (!isSpace(ch)) {
           break;
         }
-        pos2++;
+        pos++;
       }
     }
   }
-  if (pos2 < max && str.charCodeAt(pos2) !== 10) {
+  if (pos < max && str.charCodeAt(pos) !== 10) {
     return false;
   }
   const label5 = normalizeReference(str.slice(1, labelEnd));
@@ -187622,7 +188927,7 @@ const HTML_SEQUENCES = [
   [new RegExp(HTML_OPEN_CLOSE_TAG_RE.source + "\\s*$"), /^$/, false]
 ];
 function html_block(state, startLine, endLine, silent) {
-  let pos2 = state.bMarks[startLine] + state.tShift[startLine];
+  let pos = state.bMarks[startLine] + state.tShift[startLine];
   let max = state.eMarks[startLine];
   if (state.sCount[startLine] - state.blkIndent >= 4) {
     return false;
@@ -187630,10 +188935,10 @@ function html_block(state, startLine, endLine, silent) {
   if (!state.md.options.html) {
     return false;
   }
-  if (state.src.charCodeAt(pos2) !== 60) {
+  if (state.src.charCodeAt(pos) !== 60) {
     return false;
   }
-  let lineText = state.src.slice(pos2, max);
+  let lineText = state.src.slice(pos, max);
   let i2 = 0;
   for (; i2 < HTML_SEQUENCES.length; i2++) {
     if (HTML_SEQUENCES[i2][0].test(lineText)) {
@@ -187652,9 +188957,9 @@ function html_block(state, startLine, endLine, silent) {
       if (state.sCount[nextLine] < state.blkIndent) {
         break;
       }
-      pos2 = state.bMarks[nextLine] + state.tShift[nextLine];
+      pos = state.bMarks[nextLine] + state.tShift[nextLine];
       max = state.eMarks[nextLine];
-      lineText = state.src.slice(pos2, max);
+      lineText = state.src.slice(pos, max);
       if (HTML_SEQUENCES[i2][1].test(lineText)) {
         if (lineText.length !== 0) {
           nextLine++;
@@ -187671,30 +188976,30 @@ function html_block(state, startLine, endLine, silent) {
 }
 __name(html_block, "html_block");
 function heading(state, startLine, endLine, silent) {
-  let pos2 = state.bMarks[startLine] + state.tShift[startLine];
+  let pos = state.bMarks[startLine] + state.tShift[startLine];
   let max = state.eMarks[startLine];
   if (state.sCount[startLine] - state.blkIndent >= 4) {
     return false;
   }
-  let ch = state.src.charCodeAt(pos2);
-  if (ch !== 35 || pos2 >= max) {
+  let ch = state.src.charCodeAt(pos);
+  if (ch !== 35 || pos >= max) {
     return false;
   }
   let level = 1;
-  ch = state.src.charCodeAt(++pos2);
-  while (ch === 35 && pos2 < max && level <= 6) {
+  ch = state.src.charCodeAt(++pos);
+  while (ch === 35 && pos < max && level <= 6) {
     level++;
-    ch = state.src.charCodeAt(++pos2);
+    ch = state.src.charCodeAt(++pos);
   }
-  if (level > 6 || pos2 < max && !isSpace(ch)) {
+  if (level > 6 || pos < max && !isSpace(ch)) {
     return false;
   }
   if (silent) {
     return true;
   }
-  max = state.skipSpacesBack(max, pos2);
-  const tmp = state.skipCharsBack(max, 35, pos2);
-  if (tmp > pos2 && isSpace(state.src.charCodeAt(tmp - 1))) {
+  max = state.skipSpacesBack(max, pos);
+  const tmp = state.skipCharsBack(max, 35, pos);
+  if (tmp > pos && isSpace(state.src.charCodeAt(tmp - 1))) {
     max = tmp;
   }
   state.line = startLine + 1;
@@ -187702,7 +189007,7 @@ function heading(state, startLine, endLine, silent) {
   token_o.markup = "########".slice(0, level);
   token_o.map = [startLine, state.line];
   const token_i = state.push("inline", "", 0);
-  token_i.content = state.src.slice(pos2, max).trim();
+  token_i.content = state.src.slice(pos, max).trim();
   token_i.map = [startLine, state.line];
   token_i.children = [];
   const token_c = state.push("heading_close", "h" + String(level), -1);
@@ -187725,14 +189030,14 @@ function lheading(state, startLine, endLine) {
       continue;
     }
     if (state.sCount[nextLine] >= state.blkIndent) {
-      let pos2 = state.bMarks[nextLine] + state.tShift[nextLine];
+      let pos = state.bMarks[nextLine] + state.tShift[nextLine];
       const max = state.eMarks[nextLine];
-      if (pos2 < max) {
-        marker = state.src.charCodeAt(pos2);
+      if (pos < max) {
+        marker = state.src.charCodeAt(pos);
         if (marker === 45 || marker === 61) {
-          pos2 = state.skipChars(pos2, marker);
-          pos2 = state.skipSpaces(pos2);
-          if (pos2 >= max) {
+          pos = state.skipChars(pos, marker);
+          pos = state.skipSpaces(pos);
+          if (pos >= max) {
             level = marker === 61 ? 1 : 2;
             break;
           }
@@ -187932,12 +189237,12 @@ StateInline.prototype.scanDelims = function(start2, canSplitWord) {
   const max = this.posMax;
   const marker = this.src.charCodeAt(start2);
   const lastChar = start2 > 0 ? this.src.charCodeAt(start2 - 1) : 32;
-  let pos2 = start2;
-  while (pos2 < max && this.src.charCodeAt(pos2) === marker) {
-    pos2++;
+  let pos = start2;
+  while (pos < max && this.src.charCodeAt(pos) === marker) {
+    pos++;
   }
-  const count = pos2 - start2;
-  const nextChar = pos2 < max ? this.src.charCodeAt(pos2) : 32;
+  const count = pos - start2;
+  const nextChar = pos < max ? this.src.charCodeAt(pos) : 32;
   const isLastPunctChar = isMdAsciiPunct(lastChar) || isPunctChar(String.fromCharCode(lastChar));
   const isNextPunctChar = isMdAsciiPunct(nextChar) || isPunctChar(String.fromCharCode(nextChar));
   const isLastWhiteSpace = isWhiteSpace(lastChar);
@@ -187981,17 +189286,17 @@ function isTerminatorChar(ch) {
 }
 __name(isTerminatorChar, "isTerminatorChar");
 function text(state, silent) {
-  let pos2 = state.pos;
-  while (pos2 < state.posMax && !isTerminatorChar(state.src.charCodeAt(pos2))) {
-    pos2++;
+  let pos = state.pos;
+  while (pos < state.posMax && !isTerminatorChar(state.src.charCodeAt(pos))) {
+    pos++;
   }
-  if (pos2 === state.pos) {
+  if (pos === state.pos) {
     return false;
   }
   if (!silent) {
-    state.pending += state.src.slice(state.pos, pos2);
+    state.pending += state.src.slice(state.pos, pos);
   }
-  state.pos = pos2;
+  state.pos = pos;
   return true;
 }
 __name(text, "text");
@@ -187999,16 +189304,16 @@ const SCHEME_RE = /(?:^|[^a-z0-9.+-])([a-z][a-z0-9.+-]*)$/i;
 function linkify(state, silent) {
   if (!state.md.options.linkify) return false;
   if (state.linkLevel > 0) return false;
-  const pos2 = state.pos;
+  const pos = state.pos;
   const max = state.posMax;
-  if (pos2 + 3 > max) return false;
-  if (state.src.charCodeAt(pos2) !== 58) return false;
-  if (state.src.charCodeAt(pos2 + 1) !== 47) return false;
-  if (state.src.charCodeAt(pos2 + 2) !== 47) return false;
+  if (pos + 3 > max) return false;
+  if (state.src.charCodeAt(pos) !== 58) return false;
+  if (state.src.charCodeAt(pos + 1) !== 47) return false;
+  if (state.src.charCodeAt(pos + 2) !== 47) return false;
   const match2 = state.pending.match(SCHEME_RE);
   if (!match2) return false;
   const proto = match2[1];
-  const link2 = state.md.linkify.matchAtStart(state.src.slice(pos2 - proto.length));
+  const link2 = state.md.linkify.matchAtStart(state.src.slice(pos - proto.length));
   if (!link2) return false;
   let url = link2.url;
   if (url.length <= proto.length) return false;
@@ -188032,8 +189337,8 @@ function linkify(state, silent) {
 }
 __name(linkify, "linkify");
 function newline(state, silent) {
-  let pos2 = state.pos;
-  if (state.src.charCodeAt(pos2) !== 10) {
+  let pos = state.pos;
+  if (state.src.charCodeAt(pos) !== 10) {
     return false;
   }
   const pmax = state.pending.length - 1;
@@ -188053,11 +189358,11 @@ function newline(state, silent) {
       state.push("softbreak", "br", 0);
     }
   }
-  pos2++;
-  while (pos2 < max && isSpace(state.src.charCodeAt(pos2))) {
-    pos2++;
+  pos++;
+  while (pos < max && isSpace(state.src.charCodeAt(pos))) {
+    pos++;
   }
-  state.pos = pos2;
+  state.pos = pos;
   return true;
 }
 __name(newline, "newline");
@@ -188069,31 +189374,31 @@ for (let i2 = 0; i2 < 256; i2++) {
   ESCAPED[ch.charCodeAt(0)] = 1;
 });
 function escape$1(state, silent) {
-  let pos2 = state.pos;
+  let pos = state.pos;
   const max = state.posMax;
-  if (state.src.charCodeAt(pos2) !== 92) return false;
-  pos2++;
-  if (pos2 >= max) return false;
-  let ch1 = state.src.charCodeAt(pos2);
+  if (state.src.charCodeAt(pos) !== 92) return false;
+  pos++;
+  if (pos >= max) return false;
+  let ch1 = state.src.charCodeAt(pos);
   if (ch1 === 10) {
     if (!silent) {
       state.push("hardbreak", "br", 0);
     }
-    pos2++;
-    while (pos2 < max) {
-      ch1 = state.src.charCodeAt(pos2);
+    pos++;
+    while (pos < max) {
+      ch1 = state.src.charCodeAt(pos);
       if (!isSpace(ch1)) break;
-      pos2++;
+      pos++;
     }
-    state.pos = pos2;
+    state.pos = pos;
     return true;
   }
-  let escapedStr = state.src[pos2];
-  if (ch1 >= 55296 && ch1 <= 56319 && pos2 + 1 < max) {
-    const ch2 = state.src.charCodeAt(pos2 + 1);
+  let escapedStr = state.src[pos];
+  if (ch1 >= 55296 && ch1 <= 56319 && pos + 1 < max) {
+    const ch2 = state.src.charCodeAt(pos + 1);
     if (ch2 >= 56320 && ch2 <= 57343) {
-      escapedStr += state.src[pos2 + 1];
-      pos2++;
+      escapedStr += state.src[pos + 1];
+      pos++;
     }
   }
   const origStr = "\\" + escapedStr;
@@ -188107,30 +189412,30 @@ function escape$1(state, silent) {
     token.markup = origStr;
     token.info = "escape";
   }
-  state.pos = pos2 + 1;
+  state.pos = pos + 1;
   return true;
 }
 __name(escape$1, "escape$1");
 function backtick(state, silent) {
-  let pos2 = state.pos;
-  const ch = state.src.charCodeAt(pos2);
+  let pos = state.pos;
+  const ch = state.src.charCodeAt(pos);
   if (ch !== 96) {
     return false;
   }
-  const start2 = pos2;
-  pos2++;
+  const start2 = pos;
+  pos++;
   const max = state.posMax;
-  while (pos2 < max && state.src.charCodeAt(pos2) === 96) {
-    pos2++;
+  while (pos < max && state.src.charCodeAt(pos) === 96) {
+    pos++;
   }
-  const marker = state.src.slice(start2, pos2);
+  const marker = state.src.slice(start2, pos);
   const openerLength = marker.length;
   if (state.backticksScanned && (state.backticks[openerLength] || 0) <= start2) {
     if (!silent) state.pending += marker;
     state.pos += openerLength;
     return true;
   }
-  let matchEnd = pos2;
+  let matchEnd = pos;
   let matchStart;
   while ((matchStart = state.src.indexOf("`", matchEnd)) !== -1) {
     matchEnd = matchStart + 1;
@@ -188142,7 +189447,7 @@ function backtick(state, silent) {
       if (!silent) {
         const token = state.push("code_inline", "code", 0);
         token.markup = marker;
-        token.content = state.src.slice(pos2, matchStart).replace(/\n/g, " ").replace(/^ (.+) $/, "$1");
+        token.content = state.src.slice(pos, matchStart).replace(/\n/g, " ").replace(/^ (.+) $/, "$1");
       }
       state.pos = matchEnd;
       return true;
@@ -188356,66 +189661,66 @@ function link(state, silent) {
   if (labelEnd < 0) {
     return false;
   }
-  let pos2 = labelEnd + 1;
-  if (pos2 < max && state.src.charCodeAt(pos2) === 40) {
+  let pos = labelEnd + 1;
+  if (pos < max && state.src.charCodeAt(pos) === 40) {
     parseReference = false;
-    pos2++;
-    for (; pos2 < max; pos2++) {
-      code2 = state.src.charCodeAt(pos2);
+    pos++;
+    for (; pos < max; pos++) {
+      code2 = state.src.charCodeAt(pos);
       if (!isSpace(code2) && code2 !== 10) {
         break;
       }
     }
-    if (pos2 >= max) {
+    if (pos >= max) {
       return false;
     }
-    start2 = pos2;
-    res = state.md.helpers.parseLinkDestination(state.src, pos2, state.posMax);
+    start2 = pos;
+    res = state.md.helpers.parseLinkDestination(state.src, pos, state.posMax);
     if (res.ok) {
       href = state.md.normalizeLink(res.str);
       if (state.md.validateLink(href)) {
-        pos2 = res.pos;
+        pos = res.pos;
       } else {
         href = "";
       }
-      start2 = pos2;
-      for (; pos2 < max; pos2++) {
-        code2 = state.src.charCodeAt(pos2);
+      start2 = pos;
+      for (; pos < max; pos++) {
+        code2 = state.src.charCodeAt(pos);
         if (!isSpace(code2) && code2 !== 10) {
           break;
         }
       }
-      res = state.md.helpers.parseLinkTitle(state.src, pos2, state.posMax);
-      if (pos2 < max && start2 !== pos2 && res.ok) {
+      res = state.md.helpers.parseLinkTitle(state.src, pos, state.posMax);
+      if (pos < max && start2 !== pos && res.ok) {
         title = res.str;
-        pos2 = res.pos;
-        for (; pos2 < max; pos2++) {
-          code2 = state.src.charCodeAt(pos2);
+        pos = res.pos;
+        for (; pos < max; pos++) {
+          code2 = state.src.charCodeAt(pos);
           if (!isSpace(code2) && code2 !== 10) {
             break;
           }
         }
       }
     }
-    if (pos2 >= max || state.src.charCodeAt(pos2) !== 41) {
+    if (pos >= max || state.src.charCodeAt(pos) !== 41) {
       parseReference = true;
     }
-    pos2++;
+    pos++;
   }
   if (parseReference) {
     if (typeof state.env.references === "undefined") {
       return false;
     }
-    if (pos2 < max && state.src.charCodeAt(pos2) === 91) {
-      start2 = pos2 + 1;
-      pos2 = state.md.helpers.parseLinkLabel(state, pos2);
-      if (pos2 >= 0) {
-        label5 = state.src.slice(start2, pos2++);
+    if (pos < max && state.src.charCodeAt(pos) === 91) {
+      start2 = pos + 1;
+      pos = state.md.helpers.parseLinkLabel(state, pos);
+      if (pos >= 0) {
+        label5 = state.src.slice(start2, pos++);
       } else {
-        pos2 = labelEnd + 1;
+        pos = labelEnd + 1;
       }
     } else {
-      pos2 = labelEnd + 1;
+      pos = labelEnd + 1;
     }
     if (!label5) {
       label5 = state.src.slice(labelStart, labelEnd);
@@ -188442,13 +189747,13 @@ function link(state, silent) {
     state.linkLevel--;
     state.push("link_close", "a", -1);
   }
-  state.pos = pos2;
+  state.pos = pos;
   state.posMax = max;
   return true;
 }
 __name(link, "link");
 function image(state, silent) {
-  let code2, content2, label5, pos2, ref2, res, title, start2;
+  let code2, content2, label5, pos, ref2, res, title, start2;
   let href = "";
   const oldPos = state.pos;
   const max = state.posMax;
@@ -188463,41 +189768,41 @@ function image(state, silent) {
   if (labelEnd < 0) {
     return false;
   }
-  pos2 = labelEnd + 1;
-  if (pos2 < max && state.src.charCodeAt(pos2) === 40) {
-    pos2++;
-    for (; pos2 < max; pos2++) {
-      code2 = state.src.charCodeAt(pos2);
+  pos = labelEnd + 1;
+  if (pos < max && state.src.charCodeAt(pos) === 40) {
+    pos++;
+    for (; pos < max; pos++) {
+      code2 = state.src.charCodeAt(pos);
       if (!isSpace(code2) && code2 !== 10) {
         break;
       }
     }
-    if (pos2 >= max) {
+    if (pos >= max) {
       return false;
     }
-    start2 = pos2;
-    res = state.md.helpers.parseLinkDestination(state.src, pos2, state.posMax);
+    start2 = pos;
+    res = state.md.helpers.parseLinkDestination(state.src, pos, state.posMax);
     if (res.ok) {
       href = state.md.normalizeLink(res.str);
       if (state.md.validateLink(href)) {
-        pos2 = res.pos;
+        pos = res.pos;
       } else {
         href = "";
       }
     }
-    start2 = pos2;
-    for (; pos2 < max; pos2++) {
-      code2 = state.src.charCodeAt(pos2);
+    start2 = pos;
+    for (; pos < max; pos++) {
+      code2 = state.src.charCodeAt(pos);
       if (!isSpace(code2) && code2 !== 10) {
         break;
       }
     }
-    res = state.md.helpers.parseLinkTitle(state.src, pos2, state.posMax);
-    if (pos2 < max && start2 !== pos2 && res.ok) {
+    res = state.md.helpers.parseLinkTitle(state.src, pos, state.posMax);
+    if (pos < max && start2 !== pos && res.ok) {
       title = res.str;
-      pos2 = res.pos;
-      for (; pos2 < max; pos2++) {
-        code2 = state.src.charCodeAt(pos2);
+      pos = res.pos;
+      for (; pos < max; pos++) {
+        code2 = state.src.charCodeAt(pos);
         if (!isSpace(code2) && code2 !== 10) {
           break;
         }
@@ -188505,25 +189810,25 @@ function image(state, silent) {
     } else {
       title = "";
     }
-    if (pos2 >= max || state.src.charCodeAt(pos2) !== 41) {
+    if (pos >= max || state.src.charCodeAt(pos) !== 41) {
       state.pos = oldPos;
       return false;
     }
-    pos2++;
+    pos++;
   } else {
     if (typeof state.env.references === "undefined") {
       return false;
     }
-    if (pos2 < max && state.src.charCodeAt(pos2) === 91) {
-      start2 = pos2 + 1;
-      pos2 = state.md.helpers.parseLinkLabel(state, pos2);
-      if (pos2 >= 0) {
-        label5 = state.src.slice(start2, pos2++);
+    if (pos < max && state.src.charCodeAt(pos) === 91) {
+      start2 = pos + 1;
+      pos = state.md.helpers.parseLinkLabel(state, pos);
+      if (pos >= 0) {
+        label5 = state.src.slice(start2, pos++);
       } else {
-        pos2 = labelEnd + 1;
+        pos = labelEnd + 1;
       }
     } else {
-      pos2 = labelEnd + 1;
+      pos = labelEnd + 1;
     }
     if (!label5) {
       label5 = state.src.slice(labelStart, labelEnd);
@@ -188554,7 +189859,7 @@ function image(state, silent) {
       attrs6.push(["title", title]);
     }
   }
-  state.pos = pos2;
+  state.pos = pos;
   state.posMax = max;
   return true;
 }
@@ -188562,19 +189867,19 @@ __name(image, "image");
 const EMAIL_RE = /^([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*)$/;
 const AUTOLINK_RE = /^([a-zA-Z][a-zA-Z0-9+.-]{1,31}):([^<>\x00-\x20]*)$/;
 function autolink(state, silent) {
-  let pos2 = state.pos;
-  if (state.src.charCodeAt(pos2) !== 60) {
+  let pos = state.pos;
+  if (state.src.charCodeAt(pos) !== 60) {
     return false;
   }
   const start2 = state.pos;
   const max = state.posMax;
   for (; ; ) {
-    if (++pos2 >= max) return false;
-    const ch = state.src.charCodeAt(pos2);
+    if (++pos >= max) return false;
+    const ch = state.src.charCodeAt(pos);
     if (ch === 60) return false;
     if (ch === 62) break;
   }
-  const url = state.src.slice(start2 + 1, pos2);
+  const url = state.src.slice(start2 + 1, pos);
   if (AUTOLINK_RE.test(url)) {
     const fullUrl = state.md.normalizeLink(url);
     if (!state.md.validateLink(fullUrl)) {
@@ -188634,15 +189939,15 @@ function html_inline(state, silent) {
     return false;
   }
   const max = state.posMax;
-  const pos2 = state.pos;
-  if (state.src.charCodeAt(pos2) !== 60 || pos2 + 2 >= max) {
+  const pos = state.pos;
+  if (state.src.charCodeAt(pos) !== 60 || pos + 2 >= max) {
     return false;
   }
-  const ch = state.src.charCodeAt(pos2 + 1);
+  const ch = state.src.charCodeAt(pos + 1);
   if (ch !== 33 && ch !== 63 && ch !== 47 && !isLetter(ch)) {
     return false;
   }
-  const match2 = state.src.slice(pos2).match(HTML_TAG_RE);
+  const match2 = state.src.slice(pos).match(HTML_TAG_RE);
   if (!match2) {
     return false;
   }
@@ -188659,13 +189964,13 @@ __name(html_inline, "html_inline");
 const DIGITAL_RE = /^&#((?:x[a-f0-9]{1,6}|[0-9]{1,7}));/i;
 const NAMED_RE = /^&([a-z][a-z0-9]{1,31});/i;
 function entity(state, silent) {
-  const pos2 = state.pos;
+  const pos = state.pos;
   const max = state.posMax;
-  if (state.src.charCodeAt(pos2) !== 38) return false;
-  if (pos2 + 1 >= max) return false;
-  const ch = state.src.charCodeAt(pos2 + 1);
+  if (state.src.charCodeAt(pos) !== 38) return false;
+  if (pos + 1 >= max) return false;
+  const ch = state.src.charCodeAt(pos + 1);
   if (ch === 35) {
-    const match2 = state.src.slice(pos2).match(DIGITAL_RE);
+    const match2 = state.src.slice(pos).match(DIGITAL_RE);
     if (match2) {
       if (!silent) {
         const code2 = match2[1][0].toLowerCase() === "x" ? parseInt(match2[1].slice(1), 16) : parseInt(match2[1], 10);
@@ -188678,7 +189983,7 @@ function entity(state, silent) {
       return true;
     }
   } else {
-    const match2 = state.src.slice(pos2).match(NAMED_RE);
+    const match2 = state.src.slice(pos).match(NAMED_RE);
     if (match2) {
       const decoded = decodeHTML(match2[0]);
       if (decoded !== match2[0]) {
@@ -188817,13 +190122,13 @@ function ParserInline() {
 }
 __name(ParserInline, "ParserInline");
 ParserInline.prototype.skipToken = function(state) {
-  const pos2 = state.pos;
+  const pos = state.pos;
   const rules = this.ruler.getRules("");
   const len = rules.length;
   const maxNesting = state.md.options.maxNesting;
   const cache2 = state.cache;
-  if (typeof cache2[pos2] !== "undefined") {
-    state.pos = cache2[pos2];
+  if (typeof cache2[pos] !== "undefined") {
+    state.pos = cache2[pos];
     return;
   }
   let ok = false;
@@ -188833,7 +190138,7 @@ ParserInline.prototype.skipToken = function(state) {
       ok = rules[i2](state, true);
       state.level--;
       if (ok) {
-        if (pos2 >= state.pos) {
+        if (pos >= state.pos) {
           throw new Error("inline rule didn't increment state.pos");
         }
         break;
@@ -188845,7 +190150,7 @@ ParserInline.prototype.skipToken = function(state) {
   if (!ok) {
     state.pos++;
   }
-  cache2[pos2] = state.pos;
+  cache2[pos] = state.pos;
 };
 ParserInline.prototype.tokenize = function(state) {
   const rules = this.ruler.getRules("");
@@ -188979,8 +190284,8 @@ function isOptionsObj(obj) {
 __name(isOptionsObj, "isOptionsObj");
 const defaultSchemas = {
   "http:": {
-    validate: /* @__PURE__ */ __name(function(text2, pos2, self2) {
-      const tail = text2.slice(pos2);
+    validate: /* @__PURE__ */ __name(function(text2, pos, self2) {
+      const tail = text2.slice(pos);
       if (!self2.re.http) {
         self2.re.http = new RegExp(
           "^\\/\\/" + self2.re.src_auth + self2.re.src_host_port_strict + self2.re.src_path,
@@ -188996,8 +190301,8 @@ const defaultSchemas = {
   "https:": "http:",
   "ftp:": "http:",
   "//": {
-    validate: /* @__PURE__ */ __name(function(text2, pos2, self2) {
-      const tail = text2.slice(pos2);
+    validate: /* @__PURE__ */ __name(function(text2, pos, self2) {
+      const tail = text2.slice(pos);
       if (!self2.re.no_http) {
         self2.re.no_http = new RegExp(
           "^" + self2.re.src_auth + // Don't allow single-level domains, because of false positives like '//test'
@@ -189007,10 +190312,10 @@ const defaultSchemas = {
         );
       }
       if (self2.re.no_http.test(tail)) {
-        if (pos2 >= 3 && text2[pos2 - 3] === ":") {
+        if (pos >= 3 && text2[pos - 3] === ":") {
           return 0;
         }
-        if (pos2 >= 3 && text2[pos2 - 3] === "/") {
+        if (pos >= 3 && text2[pos - 3] === "/") {
           return 0;
         }
         return tail.match(self2.re.no_http)[0].length;
@@ -189019,8 +190324,8 @@ const defaultSchemas = {
     }, "validate")
   },
   "mailto:": {
-    validate: /* @__PURE__ */ __name(function(text2, pos2, self2) {
-      const tail = text2.slice(pos2);
+    validate: /* @__PURE__ */ __name(function(text2, pos, self2) {
+      const tail = text2.slice(pos);
       if (!self2.re.mailto) {
         self2.re.mailto = new RegExp(
           "^" + self2.re.src_email_name + "@" + self2.re.src_host_strict,
@@ -189042,8 +190347,8 @@ function resetScanCache(self2) {
 }
 __name(resetScanCache, "resetScanCache");
 function createValidator(re) {
-  return function(text2, pos2) {
-    const tail = text2.slice(pos2);
+  return function(text2, pos) {
+    const tail = text2.slice(pos);
     if (re.test(tail)) {
       return tail.match(re)[0].length;
     }
@@ -189235,11 +190540,11 @@ LinkifyIt.prototype.test = /* @__PURE__ */ __name(function test2(text2) {
 LinkifyIt.prototype.pretest = /* @__PURE__ */ __name(function pretest(text2) {
   return this.re.pretest.test(text2);
 }, "pretest");
-LinkifyIt.prototype.testSchemaAt = /* @__PURE__ */ __name(function testSchemaAt(text2, schema2, pos2) {
+LinkifyIt.prototype.testSchemaAt = /* @__PURE__ */ __name(function testSchemaAt(text2, schema2, pos) {
   if (!this.__compiled__[schema2.toLowerCase()]) {
     return 0;
   }
-  return this.__compiled__[schema2.toLowerCase()].validate(text2, pos2, this);
+  return this.__compiled__[schema2.toLowerCase()].validate(text2, pos, this);
 }, "testSchemaAt");
 LinkifyIt.prototype.match = /* @__PURE__ */ __name(function match(text2) {
   const result = [];
@@ -190821,13 +192126,13 @@ const MarkdownTightLists = Extension.create({
   }
 });
 const md = MarkdownIt();
-function scanDelims(text2, pos2) {
+function scanDelims(text2, pos) {
   md.inline.State.prototype.scanDelims.call({
     src: text2,
     posMax: text2.length
   });
   const state = new md.inline.State(text2, null, null, []);
-  return state.scanDelims(pos2, true);
+  return state.scanDelims(pos, true);
 }
 __name(scanDelims, "scanDelims");
 function shiftDelim(text2, delim, start2, offset) {
@@ -190837,34 +192142,34 @@ function shiftDelim(text2, delim, start2, offset) {
 }
 __name(shiftDelim, "shiftDelim");
 function trimStart(text2, delim, from2, to) {
-  let pos2 = from2, res = text2;
-  while (pos2 < to) {
-    if (scanDelims(res, pos2).can_open) {
+  let pos = from2, res = text2;
+  while (pos < to) {
+    if (scanDelims(res, pos).can_open) {
       break;
     }
-    res = shiftDelim(res, delim, pos2, 1);
-    pos2++;
+    res = shiftDelim(res, delim, pos, 1);
+    pos++;
   }
   return {
     text: res,
-    from: pos2,
+    from: pos,
     to
   };
 }
 __name(trimStart, "trimStart");
 function trimEnd(text2, delim, from2, to) {
-  let pos2 = to, res = text2;
-  while (pos2 > from2) {
-    if (scanDelims(res, pos2).can_close) {
+  let pos = to, res = text2;
+  while (pos > from2) {
+    if (scanDelims(res, pos).can_close) {
       break;
     }
-    res = shiftDelim(res, delim, pos2, -1);
-    pos2--;
+    res = shiftDelim(res, delim, pos, -1);
+    pos--;
   }
   return {
     text: res,
     from: from2,
-    to: pos2
+    to: pos
   };
 }
 __name(trimEnd, "trimEnd");
@@ -191794,6 +193099,202 @@ const Markdown = Extension.create({
     })];
   }
 });
+function addMarkdownWidget(node3, name2, opts, app2) {
+  Markdown.configure({
+    html: false,
+    breaks: true,
+    transformPastedText: true
+  });
+  const editor = new Editor({
+    extensions: [
+      StarterKit,
+      Markdown,
+      Link$2,
+      Table$2,
+      TableCell,
+      TableHeader,
+      TableRow
+    ],
+    content: opts.defaultVal,
+    editable: false
+  });
+  const inputEl = editor.options.element;
+  inputEl.classList.add("comfy-markdown");
+  const textarea = document.createElement("textarea");
+  inputEl.append(textarea);
+  const widget = node3.addDOMWidget(name2, "MARKDOWN", inputEl, {
+    getValue() {
+      return textarea.value;
+    },
+    setValue(v2) {
+      textarea.value = v2;
+      editor.commands.setContent(v2);
+    }
+  });
+  widget.inputEl = inputEl;
+  inputEl.addEventListener("pointerdown", (event) => {
+    if (event.button !== 0) {
+      app2.canvas.processMouseDown(event);
+      return;
+    }
+    if (event.target instanceof HTMLAnchorElement) {
+      return;
+    }
+    inputEl.classList.add("editing");
+    setTimeout(() => {
+      textarea.focus();
+    }, 0);
+  });
+  textarea.addEventListener("blur", () => {
+    inputEl.classList.remove("editing");
+  });
+  textarea.addEventListener("change", () => {
+    editor.commands.setContent(textarea.value);
+    widget.callback?.(widget.value);
+  });
+  inputEl.addEventListener("keydown", (event) => {
+    event.stopPropagation();
+  });
+  inputEl.addEventListener("pointerdown", (event) => {
+    if (event.button === 1) {
+      app2.canvas.processMouseDown(event);
+    }
+  });
+  inputEl.addEventListener("pointermove", (event) => {
+    if ((event.buttons & 4) === 4) {
+      app2.canvas.processMouseMove(event);
+    }
+  });
+  inputEl.addEventListener("pointerup", (event) => {
+    if (event.button === 1) {
+      app2.canvas.processMouseUp(event);
+    }
+  });
+  return { minWidth: 400, minHeight: 200, widget };
+}
+__name(addMarkdownWidget, "addMarkdownWidget");
+const useMarkdownWidget = /* @__PURE__ */ __name(() => {
+  const widgetConstructor = /* @__PURE__ */ __name((node3, inputName, inputData, app2) => {
+    const defaultVal = inputData[1]?.default || "";
+    return addMarkdownWidget(
+      node3,
+      inputName,
+      { defaultVal, ...inputData[1] },
+      app2
+    );
+  }, "widgetConstructor");
+  return widgetConstructor;
+}, "useMarkdownWidget");
+const useSeedWidget = /* @__PURE__ */ __name(() => {
+  const IntWidget = useIntWidget();
+  const widgetConstructor = /* @__PURE__ */ __name((node3, inputName, inputData, app2, widgetName) => {
+    inputData[1] = {
+      ...inputData[1],
+      control_after_generate: true
+    };
+    return IntWidget(node3, inputName, inputData, app2, widgetName);
+  }, "widgetConstructor");
+  return widgetConstructor;
+}, "useSeedWidget");
+function addMultilineWidget(node3, name2, opts, app2) {
+  const inputEl = document.createElement("textarea");
+  inputEl.className = "comfy-multiline-input";
+  inputEl.value = opts.defaultVal;
+  inputEl.placeholder = opts.placeholder || name2;
+  if (app2.vueAppReady) {
+    inputEl.spellcheck = useSettingStore().get(
+      "Comfy.TextareaWidget.Spellcheck"
+    );
+  }
+  const widget = node3.addDOMWidget(name2, "customtext", inputEl, {
+    getValue() {
+      return inputEl.value;
+    },
+    setValue(v2) {
+      inputEl.value = v2;
+    }
+  });
+  widget.inputEl = inputEl;
+  inputEl.addEventListener("input", () => {
+    widget.callback?.(widget.value);
+  });
+  inputEl.addEventListener("pointerdown", (event) => {
+    if (event.button === 1) {
+      app2.canvas.processMouseDown(event);
+    }
+  });
+  inputEl.addEventListener("pointermove", (event) => {
+    if ((event.buttons & 4) === 4) {
+      app2.canvas.processMouseMove(event);
+    }
+  });
+  inputEl.addEventListener("pointerup", (event) => {
+    if (event.button === 1) {
+      app2.canvas.processMouseUp(event);
+    }
+  });
+  return { minWidth: 400, minHeight: 200, widget };
+}
+__name(addMultilineWidget, "addMultilineWidget");
+const useStringWidget = /* @__PURE__ */ __name(() => {
+  const widgetConstructor = /* @__PURE__ */ __name((node3, inputName, inputData, app2) => {
+    const defaultVal = inputData[1]?.default || "";
+    const multiline = !!inputData[1]?.multiline;
+    let res;
+    if (multiline) {
+      res = addMultilineWidget(
+        node3,
+        inputName,
+        { defaultVal, ...inputData[1] },
+        app2
+      );
+    } else {
+      res = {
+        widget: node3.addWidget("text", inputName, defaultVal, () => {
+        }, {})
+      };
+    }
+    if (inputData[1]?.dynamicPrompts != void 0)
+      res.widget.dynamicPrompts = inputData[1].dynamicPrompts;
+    return res;
+  }, "widgetConstructor");
+  return widgetConstructor;
+}, "useStringWidget");
+function distributeSpace(totalSpace, requests) {
+  if (requests.length === 0) return [];
+  const totalMinSize = requests.reduce((sum, req) => sum + req.minSize, 0);
+  if (totalSpace < totalMinSize) {
+    return requests.map((req) => req.minSize);
+  }
+  let allocations = requests.map((req) => ({
+    computedSize: req.minSize,
+    maxSize: req.maxSize ?? Infinity,
+    remaining: (req.maxSize ?? Infinity) - req.minSize
+  }));
+  let remainingSpace = totalSpace - totalMinSize;
+  while (remainingSpace > 0 && allocations.some((alloc) => alloc.remaining > 0)) {
+    const growableItems = allocations.filter(
+      (alloc) => alloc.remaining > 0
+    ).length;
+    if (growableItems === 0) break;
+    const sharePerItem = remainingSpace / growableItems;
+    let spaceUsedThisRound = 0;
+    allocations = allocations.map((alloc) => {
+      if (alloc.remaining <= 0) return alloc;
+      const growth = Math.min(sharePerItem, alloc.remaining);
+      spaceUsedThisRound += growth;
+      return {
+        ...alloc,
+        computedSize: alloc.computedSize + growth,
+        remaining: alloc.remaining - growth
+      };
+    });
+    remainingSpace -= spaceUsedThisRound;
+    if (spaceUsedThisRound === 0) break;
+  }
+  return allocations.map(({ computedSize }) => computedSize);
+}
+__name(distributeSpace, "distributeSpace");
 const SIZE = Symbol();
 function intersect(a2, b2) {
   const x2 = Math.max(a2.x, b2.x);
@@ -191806,7 +193307,7 @@ function intersect(a2, b2) {
 __name(intersect, "intersect");
 function getClipPath(node3, element, canvasRect) {
   const selectedNode = Object.values(
-    app$1.canvas.selected_nodes
+    app$1.canvas.selected_nodes ?? {}
   )[0];
   if (selectedNode && selectedNode !== node3) {
     const elRect = element.getBoundingClientRect();
@@ -191841,95 +193342,44 @@ function getClipPath(node3, element, canvasRect) {
 }
 __name(getClipPath, "getClipPath");
 function computeSize(size) {
-  if (this.widgets?.[0]?.last_y == null) return;
+  if (!this.widgets?.[0]?.last_y) return;
   let y2 = this.widgets[0].last_y;
   let freeSpace = size[1] - y2;
-  let widgetHeight = 0;
-  let dom = [];
+  let fixedWidgetHeight = 0;
+  const layoutWidgets = [];
   for (const w2 of this.widgets) {
     if (w2.type === "converted-widget") {
       delete w2.computedHeight;
-    } else if (w2.computeSize) {
-      widgetHeight += w2.computeSize()[1] + 4;
-    } else if (w2.element) {
-      const styles = getComputedStyle(w2.element);
-      let minHeight = w2.options.getMinHeight?.() ?? parseInt(styles.getPropertyValue("--comfy-widget-min-height"));
-      let maxHeight = w2.options.getMaxHeight?.() ?? parseInt(styles.getPropertyValue("--comfy-widget-max-height"));
-      let prefHeight = w2.options.getHeight?.() ?? styles.getPropertyValue("--comfy-widget-height");
-      if (prefHeight.endsWith?.("%")) {
-        prefHeight = size[1] * (parseFloat(prefHeight.substring(0, prefHeight.length - 1)) / 100);
-      } else {
-        prefHeight = parseInt(prefHeight);
-        if (isNaN(minHeight)) {
-          minHeight = prefHeight;
-        }
-      }
-      if (isNaN(minHeight)) {
-        minHeight = 50;
-      }
-      if (!isNaN(maxHeight)) {
-        if (!isNaN(prefHeight)) {
-          prefHeight = Math.min(prefHeight, maxHeight);
-        } else {
-          prefHeight = maxHeight;
-        }
-      }
-      dom.push({
+    } else if (w2.computeLayoutSize) {
+      const { minHeight, maxHeight } = w2.computeLayoutSize(this);
+      layoutWidgets.push({
         minHeight,
-        prefHeight,
+        prefHeight: maxHeight,
         w: w2
       });
+    } else if (w2.computeSize) {
+      fixedWidgetHeight += w2.computeSize()[1] + 4;
     } else {
-      widgetHeight += LiteGraph.NODE_WIDGET_HEIGHT + 4;
+      fixedWidgetHeight += LiteGraph.NODE_WIDGET_HEIGHT + 4;
     }
   }
-  freeSpace -= widgetHeight;
-  const prefGrow = [];
-  const canGrow = [];
-  let growBy = 0;
-  for (const d2 of dom) {
-    freeSpace -= d2.minHeight;
-    if (isNaN(d2.prefHeight)) {
-      canGrow.push(d2);
-      d2.w.computedHeight = d2.minHeight;
-    } else {
-      const diff2 = d2.prefHeight - d2.minHeight;
-      if (diff2 > 0) {
-        prefGrow.push(d2);
-        growBy += diff2;
-        d2.diff = diff2;
-      } else {
-        d2.w.computedHeight = d2.minHeight;
-      }
-    }
+  if (this.imgs && !this.widgets?.find((w2) => w2.name === ANIM_PREVIEW_WIDGET)) {
+    fixedWidgetHeight += 220;
   }
-  if (this.imgs && !this.widgets.find((w2) => w2.name === ANIM_PREVIEW_WIDGET)) {
-    freeSpace -= 220;
-  }
+  freeSpace -= fixedWidgetHeight;
   this.freeWidgetSpace = freeSpace;
-  if (freeSpace < 0) {
-    size[1] -= freeSpace;
-    this.graph.setDirtyCanvas(true);
-  } else {
-    const growDiff = freeSpace - growBy;
-    if (growDiff > 0) {
-      freeSpace = growDiff;
-      for (const d2 of prefGrow) {
-        d2.w.computedHeight = d2.prefHeight;
-      }
-    } else {
-      const shared = -growDiff / prefGrow.length;
-      for (const d2 of prefGrow) {
-        d2.w.computedHeight = d2.prefHeight - shared;
-      }
-      freeSpace = 0;
-    }
-    if (freeSpace > 0 && canGrow.length) {
-      const shared = freeSpace / canGrow.length;
-      for (const d2 of canGrow) {
-        d2.w.computedHeight += shared;
-      }
-    }
+  const spaceRequests = layoutWidgets.map((d2) => ({
+    minSize: d2.minHeight,
+    maxSize: d2.prefHeight
+  }));
+  const allocations = distributeSpace(Math.max(0, freeSpace), spaceRequests);
+  layoutWidgets.forEach((d2, i2) => {
+    d2.w.computedHeight = allocations[i2];
+  });
+  const totalNeeded = fixedWidgetHeight + allocations.reduce((sum, h2) => sum + h2, 0);
+  if (totalNeeded > size[1] - this.widgets[0].last_y) {
+    size[1] = totalNeeded + this.widgets[0].last_y;
+    this.graph?.setDirtyCanvas(true);
   }
   for (const w2 of this.widgets) {
     w2.y = y2;
@@ -191945,12 +193395,12 @@ function computeSize(size) {
 __name(computeSize, "computeSize");
 const elementWidgets = /* @__PURE__ */ new Set();
 const computeVisibleNodes = LGraphCanvas.prototype.computeVisibleNodes;
-LGraphCanvas.prototype.computeVisibleNodes = function() {
-  const visibleNodes = computeVisibleNodes.apply(this, arguments);
+LGraphCanvas.prototype.computeVisibleNodes = function(nodes, out) {
+  const visibleNodes = computeVisibleNodes.call(this, nodes, out);
   for (const node3 of app$1.graph.nodes) {
     if (elementWidgets.has(node3)) {
       const hidden = visibleNodes.indexOf(node3) === -1;
-      for (const w2 of node3.widgets) {
+      for (const w2 of node3.widgets ?? []) {
         if (w2.element) {
           w2.element.dataset.isInVisibleNodes = hidden ? "false" : "true";
           const shouldOtherwiseHide = w2.element.dataset.shouldHide === "true";
@@ -191958,7 +193408,7 @@ LGraphCanvas.prototype.computeVisibleNodes = function() {
           const wasHidden = w2.element.hidden;
           const actualHidden = hidden || shouldOtherwiseHide || isCollapsed;
           w2.element.hidden = actualHidden;
-          w2.element.style.display = actualHidden ? "none" : null;
+          w2.element.style.display = actualHidden ? "none" : "";
           if (actualHidden && !wasHidden) {
             w2.options.onHide?.(w2);
           }
@@ -191968,6 +193418,108 @@ LGraphCanvas.prototype.computeVisibleNodes = function() {
   }
   return visibleNodes;
 };
+class DOMWidgetImpl {
+  static {
+    __name(this, "DOMWidgetImpl");
+  }
+  type;
+  name;
+  element;
+  options;
+  computedHeight;
+  callback;
+  mouseDownHandler;
+  constructor(name2, type, element, options4 = {}) {
+    this.type = type;
+    this.name = name2;
+    this.element = element;
+    this.options = options4;
+    if (element.blur) {
+      this.mouseDownHandler = (event) => {
+        if (!element.contains(event.target)) {
+          element.blur();
+        }
+      };
+      document.addEventListener("mousedown", this.mouseDownHandler);
+    }
+  }
+  get value() {
+    return this.options.getValue?.() ?? "";
+  }
+  set value(v2) {
+    this.options.setValue?.(v2);
+    this.callback?.(this.value);
+  }
+  /** Extract DOM widget size info */
+  computeLayoutSize(node3) {
+    const styles = getComputedStyle(this.element);
+    let minHeight = this.options.getMinHeight?.() ?? parseInt(styles.getPropertyValue("--comfy-widget-min-height"));
+    let maxHeight = this.options.getMaxHeight?.() ?? parseInt(styles.getPropertyValue("--comfy-widget-max-height"));
+    let prefHeight = this.options.getHeight?.() ?? styles.getPropertyValue("--comfy-widget-height");
+    if (typeof prefHeight === "string" && prefHeight.endsWith?.("%")) {
+      prefHeight = node3.size[1] * (parseFloat(prefHeight.substring(0, prefHeight.length - 1)) / 100);
+    } else {
+      prefHeight = typeof prefHeight === "number" ? prefHeight : parseInt(prefHeight);
+      if (isNaN(minHeight)) {
+        minHeight = prefHeight;
+      }
+    }
+    return {
+      minHeight: isNaN(minHeight) ? 50 : minHeight,
+      maxHeight: isNaN(maxHeight) ? void 0 : maxHeight,
+      minWidth: 0
+    };
+  }
+  draw(ctx, node3, widgetWidth, y2) {
+    if (this.computedHeight == null) {
+      computeSize.call(node3, node3.size);
+    }
+    const { offset, scale } = app$1.canvas.ds;
+    const hidden = !!this.options.hideOnZoom && app$1.canvas.low_quality || (this.computedHeight ?? 0) <= 0 || // @ts-expect-error custom widget type
+    this.type === "converted-widget" || // @ts-expect-error custom widget type
+    this.type === "hidden";
+    this.element.dataset.shouldHide = hidden ? "true" : "false";
+    const isInVisibleNodes = this.element.dataset.isInVisibleNodes === "true";
+    const isCollapsed = this.element.dataset.collapsed === "true";
+    const actualHidden = hidden || !isInVisibleNodes || isCollapsed;
+    const wasHidden = this.element.hidden;
+    this.element.hidden = actualHidden;
+    this.element.style.display = actualHidden ? "none" : "";
+    if (actualHidden && !wasHidden) {
+      this.options.onHide?.(this);
+    }
+    if (actualHidden) {
+      return;
+    }
+    const elRect = ctx.canvas.getBoundingClientRect();
+    const margin = 10;
+    const top = node3.pos[0] + offset[0] + margin;
+    const left = node3.pos[1] + offset[1] + margin + y2;
+    Object.assign(this.element.style, {
+      transformOrigin: "0 0",
+      transform: `scale(${scale})`,
+      left: `${top * scale}px`,
+      top: `${left * scale}px`,
+      width: `${widgetWidth - margin * 2}px`,
+      height: `${(this.computedHeight ?? 50) - margin * 2}px`,
+      position: "absolute",
+      zIndex: app$1.graph.nodes.indexOf(node3),
+      pointerEvents: app$1.canvas.read_only ? "none" : "auto"
+    });
+    if (useSettingStore().get("Comfy.DOMClippingEnabled")) {
+      const clipPath = getClipPath(node3, this.element, elRect);
+      this.element.style.clipPath = clipPath ?? "none";
+      this.element.style.willChange = "clip-path";
+    }
+    this.options.onDraw?.(this);
+  }
+  onRemove() {
+    if (this.mouseDownHandler) {
+      document.removeEventListener("mousedown", this.mouseDownHandler);
+    }
+    this.element.remove();
+  }
+}
 LGraphNode.prototype.addDOMWidget = function(name2, type, element, options4 = {}) {
   options4 = { hideOnZoom: true, selectOn: ["focus", "click"], ...options4 };
   if (!element.parentElement) {
@@ -191975,167 +193527,90 @@ LGraphNode.prototype.addDOMWidget = function(name2, type, element, options4 = {}
   }
   element.hidden = true;
   element.style.display = "none";
-  let mouseDownHandler;
-  if (element.blur) {
-    mouseDownHandler = /* @__PURE__ */ __name((event) => {
-      if (!element.contains(event.target)) {
-        element.blur();
-      }
-    }, "mouseDownHandler");
-    document.addEventListener("mousedown", mouseDownHandler);
-  }
   const { nodeData } = this.constructor;
   const tooltip = (nodeData?.input.required?.[name2] ?? nodeData?.input.optional?.[name2])?.[1]?.tooltip;
   if (tooltip && !element.title) {
     element.title = tooltip;
   }
-  const widget2 = {
-    // @ts-expect-error All unrecognized types will be treated the same way as 'custom'
-    // in litegraph internally.
-    type,
-    name: name2,
-    get value() {
-      return options4.getValue?.() ?? void 0;
+  const widget = new DOMWidgetImpl(name2, type, element, options4);
+  Object.defineProperty(widget, "value", {
+    get() {
+      return this.options.getValue?.() ?? "";
     },
-    set value(v2) {
-      options4.setValue?.(v2);
-      widget2.callback?.(widget2.value);
-    },
-    draw: /* @__PURE__ */ __name(function(ctx, node3, widgetWidth, y2, widgetHeight) {
-      if (widget2.computedHeight == null) {
-        computeSize.call(node3, node3.size);
-      }
-      const { offset, scale } = app$1.canvas.ds;
-      const hidden = !!options4.hideOnZoom && scale < 0.5 || widget2.computedHeight <= 0 || // @ts-expect-error Used by widgetInputs.ts
-      widget2.type === "converted-widget" || // @ts-expect-error Used by groupNode.ts
-      widget2.type === "hidden";
-      element.dataset.shouldHide = hidden ? "true" : "false";
-      const isInVisibleNodes = element.dataset.isInVisibleNodes === "true";
-      const isCollapsed = element.dataset.collapsed === "true";
-      const actualHidden = hidden || !isInVisibleNodes || isCollapsed;
-      const wasHidden = element.hidden;
-      element.hidden = actualHidden;
-      element.style.display = actualHidden ? "none" : null;
-      if (actualHidden && !wasHidden) {
-        widget2.options.onHide?.(widget2);
-      }
-      if (actualHidden) {
-        return;
-      }
-      const elRect = ctx.canvas.getBoundingClientRect();
-      const margin = 10;
-      const top = node3.pos[0] + offset[0] + margin;
-      const left = node3.pos[1] + offset[1] + margin + y2;
-      Object.assign(element.style, {
-        transformOrigin: "0 0",
-        transform: `scale(${scale})`,
-        left: `${top * scale}px`,
-        top: `${left * scale}px`,
-        width: `${widgetWidth - margin * 2}px`,
-        height: `${(widget2.computedHeight ?? 50) - margin * 2}px`,
-        position: "absolute",
-        zIndex: app$1.graph.nodes.indexOf(node3),
-        pointerEvents: app$1.canvas.read_only ? "none" : "auto"
-      });
-      if (useSettingStore().get("Comfy.DOMClippingEnabled")) {
-        element.style.clipPath = getClipPath(node3, element, elRect);
-        element.style.willChange = "clip-path";
-      }
-      this.options.onDraw?.(widget2);
-    }, "draw"),
-    element,
-    options: options4,
-    onRemove() {
-      if (mouseDownHandler) {
-        document.removeEventListener("mousedown", mouseDownHandler);
-      }
-      element.remove();
+    set(v2) {
+      this.options.setValue?.(v2);
+      this.callback?.(this.value);
     }
-  };
-  for (const evt of options4.selectOn) {
+  });
+  const selectEvents = options4.selectOn ?? ["focus", "click"];
+  for (const evt of selectEvents) {
     element.addEventListener(evt, () => {
       app$1.canvas.selectNode(this);
       app$1.canvas.bringToFront(this);
     });
   }
-  this.addCustomWidget(widget2);
+  this.addCustomWidget(widget);
   elementWidgets.add(this);
   const collapse = this.collapse;
-  this.collapse = function() {
-    collapse.apply(this, arguments);
-    if (this.flags?.collapsed) {
+  this.collapse = function(force) {
+    collapse.call(this, force);
+    if (this.collapsed) {
       element.hidden = true;
       element.style.display = "none";
     }
-    element.dataset.collapsed = this.flags?.collapsed ? "true" : "false";
+    element.dataset.collapsed = this.collapsed ? "true" : "false";
   };
   const { onConfigure } = this;
-  this.onConfigure = function() {
-    onConfigure?.apply(this, arguments);
-    element.dataset.collapsed = this.flags?.collapsed ? "true" : "false";
+  this.onConfigure = function(serializedNode) {
+    onConfigure?.call(this, serializedNode);
+    element.dataset.collapsed = this.collapsed ? "true" : "false";
   };
   const onRemoved = this.onRemoved;
   this.onRemoved = function() {
     element.remove();
     elementWidgets.delete(this);
-    onRemoved?.apply(this, arguments);
+    onRemoved?.call(this);
   };
   if (!this[SIZE]) {
     this[SIZE] = true;
     const onResize2 = this.onResize;
     this.onResize = function(size) {
-      options4.beforeResize?.call(widget2, this);
+      options4.beforeResize?.call(widget, this);
       computeSize.call(this, size);
-      onResize2?.apply(this, arguments);
-      options4.afterResize?.call(widget2, this);
+      onResize2?.call(this, size);
+      options4.afterResize?.call(widget, this);
     };
   }
-  return widget2;
+  return widget;
 };
+window.comfyAPI = window.comfyAPI || {};
+window.comfyAPI.domWidget = window.comfyAPI.domWidget || {};
+window.comfyAPI.domWidget.DOMWidgetImpl = DOMWidgetImpl;
 function controlValueRunBefore() {
   return useSettingStore().get("Comfy.WidgetControlMode") === "before";
 }
 __name(controlValueRunBefore, "controlValueRunBefore");
-function updateControlWidgetLabel(widget2) {
+function updateControlWidgetLabel(widget) {
   let replacement = "after";
   let find2 = "before";
   if (controlValueRunBefore()) {
     ;
     [find2, replacement] = [replacement, find2];
   }
-  widget2.label = (widget2.label ?? widget2.name).replace(find2, replacement);
+  widget.label = (widget.label ?? widget.name ?? "").replace(find2, replacement);
 }
 __name(updateControlWidgetLabel, "updateControlWidgetLabel");
 const IS_CONTROL_WIDGET = Symbol();
 const HAS_EXECUTED = Symbol();
-function getNumberDefaults(inputData, defaultStep, precision, enable_rounding) {
-  let defaultVal = inputData[1]["default"];
-  let { min, max, step: step3, round } = inputData[1];
-  if (defaultVal == void 0) defaultVal = 0;
-  if (min == void 0) min = 0;
-  if (max == void 0) max = 2048;
-  if (step3 == void 0) step3 = defaultStep;
-  if (precision == void 0) {
-    precision = Math.max(-Math.floor(Math.log10(step3)), 0);
-  }
-  if (enable_rounding && (round == void 0 || round === true)) {
-    round = Math.round(1e6 * Math.pow(0.1, precision)) / 1e6;
-  }
-  return {
-    val: defaultVal,
-    config: { min, max, step: 10 * step3, round, precision }
-  };
-}
-__name(getNumberDefaults, "getNumberDefaults");
-function addValueControlWidget(node3, targetWidget, defaultValue2 = "randomize", values, widgetName, inputData) {
-  let name2 = inputData[1]?.control_after_generate;
+function addValueControlWidget(node3, targetWidget, defaultValue2, values, widgetName, inputData) {
+  let name2 = inputData?.[1]?.control_after_generate;
   if (typeof name2 !== "string") {
     name2 = widgetName;
   }
   const widgets = addValueControlWidgets(
     node3,
     targetWidget,
-    defaultValue2,
+    defaultValue2 ?? "randomize",
     {
       addFilterList: false,
       controlAfterGenerateName: name2
@@ -192145,7 +193620,7 @@ function addValueControlWidget(node3, targetWidget, defaultValue2 = "randomize",
   return widgets[0];
 }
 __name(addValueControlWidget, "addValueControlWidget");
-function addValueControlWidgets(node3, targetWidget, defaultValue2 = "randomize", options4, inputData) {
+function addValueControlWidgets(node3, targetWidget, defaultValue2, options4, inputData) {
   if (!defaultValue2) defaultValue2 = "randomize";
   if (!options4) options4 = {};
   const getName = /* @__PURE__ */ __name((defaultName, optionName) => {
@@ -192178,7 +193653,7 @@ function addValueControlWidgets(node3, targetWidget, defaultValue2 = "randomize"
   widgets.push(valueControl);
   const isCombo = targetWidget.type === "combo";
   let comboFilter;
-  if (isCombo) {
+  if (isCombo && valueControl.options.values) {
     valueControl.options.values.push("increment-wrap");
   }
   if (isCombo && options4.addFilterList !== false) {
@@ -192200,7 +193675,7 @@ function addValueControlWidgets(node3, targetWidget, defaultValue2 = "randomize"
   const applyWidgetControl = /* @__PURE__ */ __name(() => {
     var v2 = valueControl.value;
     if (isCombo && v2 !== "fixed") {
-      let values = targetWidget.options.values;
+      let values = targetWidget.options.values ?? [];
       const filter4 = comboFilter?.value;
       if (filter4) {
         let check;
@@ -192221,7 +193696,7 @@ function addValueControlWidgets(node3, targetWidget, defaultValue2 = "randomize"
           check = /* @__PURE__ */ __name((item3) => item3.toLocaleLowerCase().includes(lower), "check");
         }
         values = values.filter((item3) => check(item3));
-        if (!values.length && targetWidget.options.values.length) {
+        if (!values.length && targetWidget.options.values?.length) {
           console.warn(
             "Filter for node " + node3.id + " has filtered out all items",
             filter4
@@ -192254,32 +193729,31 @@ function addValueControlWidgets(node3, targetWidget, defaultValue2 = "randomize"
       if (current_index >= 0) {
         let value4 = values[current_index];
         targetWidget.value = value4;
-        targetWidget.callback(value4);
+        targetWidget.callback?.(value4);
       }
     } else {
-      let min = targetWidget.options.min;
-      let max = targetWidget.options.max;
+      let { min = 0, max = 1, step: step3 = 1 } = targetWidget.options;
       max = Math.min(1125899906842624, max);
       min = Math.max(-1125899906842624, min);
-      let range2 = (max - min) / (targetWidget.options.step / 10);
+      let range2 = (max - min) / (step3 / 10);
       switch (v2) {
         case "fixed":
           break;
         case "increment":
-          targetWidget.value += targetWidget.options.step / 10;
+          targetWidget.value += step3 / 10;
           break;
         case "decrement":
-          targetWidget.value -= targetWidget.options.step / 10;
+          targetWidget.value -= step3 / 10;
           break;
         case "randomize":
-          targetWidget.value = Math.floor(Math.random() * range2) * (targetWidget.options.step / 10) + min;
+          targetWidget.value = Math.floor(Math.random() * range2) * (step3 / 10) + min;
           break;
         default:
           break;
       }
       if (targetWidget.value < min) targetWidget.value = min;
       if (targetWidget.value > max) targetWidget.value = max;
-      targetWidget.callback(targetWidget.value);
+      targetWidget.callback?.(targetWidget.value);
     }
   }, "applyWidgetControl");
   valueControl.beforeQueued = () => {
@@ -192298,414 +193772,17 @@ function addValueControlWidgets(node3, targetWidget, defaultValue2 = "randomize"
   return widgets;
 }
 __name(addValueControlWidgets, "addValueControlWidgets");
-function seedWidget(node3, inputName, inputData, app2, widgetName) {
-  const seed = createIntWidget(node3, inputName, inputData, app2, true);
-  const seedControl = addValueControlWidget(
-    node3,
-    seed.widget,
-    "randomize",
-    void 0,
-    widgetName,
-    inputData
-  );
-  seed.widget.linkedWidgets = [seedControl];
-  return seed;
-}
-__name(seedWidget, "seedWidget");
-function createIntWidget(node3, inputName, inputData, app2, isSeedInput = false) {
-  const control = inputData[1]?.control_after_generate;
-  if (!isSeedInput && control) {
-    return seedWidget(
-      node3,
-      inputName,
-      inputData,
-      app2,
-      typeof control === "string" ? control : void 0
-    );
-  }
-  let widgetType = isSlider(inputData[1]["display"], app2);
-  const { val, config: config2 } = getNumberDefaults(inputData, 1, 0, true);
-  Object.assign(config2, { precision: 0 });
-  return {
-    widget: node3.addWidget(
-      widgetType,
-      inputName,
-      val,
-      function(v2) {
-        const s2 = this.options.step / 10;
-        let sh = this.options.min % s2;
-        if (isNaN(sh)) {
-          sh = 0;
-        }
-        this.value = Math.round((v2 - sh) / s2) * s2 + sh;
-      },
-      config2
-    )
-  };
-}
-__name(createIntWidget, "createIntWidget");
-function addMultilineWidget(node3, name2, opts, app2) {
-  const inputEl = document.createElement("textarea");
-  inputEl.className = "comfy-multiline-input";
-  inputEl.value = opts.defaultVal;
-  inputEl.placeholder = opts.placeholder || name2;
-  if (app2.vueAppReady) {
-    inputEl.spellcheck = useSettingStore().get(
-      "Comfy.TextareaWidget.Spellcheck"
-    );
-  }
-  const widget2 = node3.addDOMWidget(name2, "customtext", inputEl, {
-    getValue() {
-      return inputEl.value;
-    },
-    setValue(v2) {
-      inputEl.value = v2;
-    }
-  });
-  widget2.inputEl = inputEl;
-  inputEl.addEventListener("input", () => {
-    widget2.callback?.(widget2.value);
-  });
-  inputEl.addEventListener("pointerdown", (event) => {
-    if (event.button === 1) {
-      app2.canvas.processMouseDown(event);
-    }
-  });
-  inputEl.addEventListener("pointermove", (event) => {
-    if ((event.buttons & 4) === 4) {
-      app2.canvas.processMouseMove(event);
-    }
-  });
-  inputEl.addEventListener("pointerup", (event) => {
-    if (event.button === 1) {
-      app2.canvas.processMouseUp(event);
-    }
-  });
-  return { minWidth: 400, minHeight: 200, widget: widget2 };
-}
-__name(addMultilineWidget, "addMultilineWidget");
-function addMarkdownWidget(node3, name2, opts, app2) {
-  Markdown.configure({
-    html: false,
-    breaks: true,
-    transformPastedText: true
-  });
-  const editor = new Editor({
-    extensions: [
-      StarterKit,
-      Markdown,
-      Link$2,
-      Table$2,
-      TableCell,
-      TableHeader,
-      TableRow
-    ],
-    content: opts.defaultVal,
-    editable: false
-  });
-  const inputEl = editor.options.element;
-  inputEl.classList.add("comfy-markdown");
-  const textarea = document.createElement("textarea");
-  inputEl.append(textarea);
-  const widget2 = node3.addDOMWidget(name2, "MARKDOWN", inputEl, {
-    getValue() {
-      return textarea.value;
-    },
-    setValue(v2) {
-      textarea.value = v2;
-      editor.commands.setContent(v2);
-    }
-  });
-  widget2.inputEl = inputEl;
-  editor.options.element.addEventListener(
-    "pointerdown",
-    (event) => {
-      if (event.button !== 0) {
-        app2.canvas.processMouseDown(event);
-        return;
-      }
-      if (event.target instanceof HTMLAnchorElement) {
-        return;
-      }
-      inputEl.classList.add("editing");
-      setTimeout(() => {
-        textarea.focus();
-      }, 0);
-    }
-  );
-  textarea.addEventListener("blur", () => {
-    inputEl.classList.remove("editing");
-  });
-  textarea.addEventListener("change", () => {
-    editor.commands.setContent(textarea.value);
-    widget2.callback?.(widget2.value);
-  });
-  inputEl.addEventListener("keydown", (event) => {
-    event.stopPropagation();
-  });
-  inputEl.addEventListener("pointerdown", (event) => {
-    if (event.button === 1) {
-      app2.canvas.processMouseDown(event);
-    }
-  });
-  inputEl.addEventListener("pointermove", (event) => {
-    if ((event.buttons & 4) === 4) {
-      app2.canvas.processMouseMove(event);
-    }
-  });
-  inputEl.addEventListener("pointerup", (event) => {
-    if (event.button === 1) {
-      app2.canvas.processMouseUp(event);
-    }
-  });
-  return { minWidth: 400, minHeight: 200, widget: widget2 };
-}
-__name(addMarkdownWidget, "addMarkdownWidget");
-function isSlider(display, app2) {
-  if (app2.ui.settings.getSettingValue("Comfy.DisableSliders")) {
-    return "number";
-  }
-  return display === "slider" ? "slider" : "number";
-}
-__name(isSlider, "isSlider");
+const SeedWidget = useSeedWidget();
 const ComfyWidgets = {
-  "INT:seed": seedWidget,
-  "INT:noise_seed": seedWidget,
-  FLOAT(node3, inputName, inputData, app2) {
-    let widgetType = isSlider(inputData[1]["display"], app2);
-    let precision = app2.ui.settings.getSettingValue(
-      "Comfy.FloatRoundingPrecision"
-    );
-    let disable_rounding = app2.ui.settings.getSettingValue(
-      "Comfy.DisableFloatRounding"
-    );
-    if (precision == 0) precision = void 0;
-    const { val, config: config2 } = getNumberDefaults(
-      inputData,
-      0.5,
-      precision,
-      !disable_rounding
-    );
-    return {
-      widget: node3.addWidget(
-        widgetType,
-        inputName,
-        val,
-        function(v2) {
-          if (config2.round) {
-            this.value = Math.round((v2 + Number.EPSILON) / config2.round) * config2.round;
-            if (this.value > config2.max) this.value = config2.max;
-            if (this.value < config2.min) this.value = config2.min;
-          } else {
-            this.value = v2;
-          }
-        },
-        config2
-      )
-    };
-  },
-  INT(node3, inputName, inputData, app2) {
-    return createIntWidget(node3, inputName, inputData, app2);
-  },
-  BOOLEAN(node3, inputName, inputData) {
-    let defaultVal = false;
-    let options4 = {};
-    if (inputData[1]) {
-      if (inputData[1].default) defaultVal = inputData[1].default;
-      if (inputData[1].label_on) options4["on"] = inputData[1].label_on;
-      if (inputData[1].label_off) options4["off"] = inputData[1].label_off;
-    }
-    return {
-      widget: node3.addWidget("toggle", inputName, defaultVal, () => {
-      }, options4)
-    };
-  },
-  STRING(node3, inputName, inputData, app2) {
-    const defaultVal = inputData[1].default || "";
-    const multiline = !!inputData[1].multiline;
-    let res;
-    if (multiline) {
-      res = addMultilineWidget(
-        node3,
-        inputName,
-        { defaultVal, ...inputData[1] },
-        app2
-      );
-    } else {
-      res = {
-        widget: node3.addWidget("text", inputName, defaultVal, () => {
-        }, {})
-      };
-    }
-    if (inputData[1].dynamicPrompts != void 0)
-      res.widget.dynamicPrompts = inputData[1].dynamicPrompts;
-    return res;
-  },
-  MARKDOWN(node3, inputName, inputData, app2) {
-    const defaultVal = inputData[1].default || "";
-    let res;
-    res = addMarkdownWidget(
-      node3,
-      inputName,
-      { defaultVal, ...inputData[1] },
-      app2
-    );
-    return res;
-  },
-  COMBO(node3, inputName, inputData) {
-    const type = inputData[0];
-    let defaultValue2 = type[0];
-    if (inputData[1] && inputData[1].default) {
-      defaultValue2 = inputData[1].default;
-    }
-    const res = {
-      widget: node3.addWidget("combo", inputName, defaultValue2, () => {
-      }, {
-        values: type
-      })
-    };
-    if (inputData[1]?.control_after_generate) {
-      res.widget.linkedWidgets = addValueControlWidgets(
-        node3,
-        res.widget,
-        void 0,
-        void 0,
-        inputData
-      );
-    }
-    return res;
-  },
-  IMAGEUPLOAD(node3, inputName, inputData, app2) {
-    const imageWidget = node3.widgets.find(
-      (w2) => w2.name === (inputData[1]?.widget ?? "image")
-    );
-    let uploadWidget;
-    function showImage(name2) {
-      const img = new Image();
-      img.onload = () => {
-        node3.imgs = [img];
-        app2.graph.setDirtyCanvas(true);
-      };
-      let folder_separator = name2.lastIndexOf("/");
-      let subfolder = "";
-      if (folder_separator > -1) {
-        subfolder = name2.substring(0, folder_separator);
-        name2 = name2.substring(folder_separator + 1);
-      }
-      img.src = api.apiURL(
-        `/view?filename=${encodeURIComponent(name2)}&type=input&subfolder=${subfolder}${app2.getPreviewFormatParam()}${app2.getRandParam()}`
-      );
-      node3.setSizeForImage?.();
-    }
-    __name(showImage, "showImage");
-    var default_value = imageWidget.value;
-    Object.defineProperty(imageWidget, "value", {
-      set: /* @__PURE__ */ __name(function(value4) {
-        this._real_value = value4;
-      }, "set"),
-      get: /* @__PURE__ */ __name(function() {
-        if (!this._real_value) {
-          return default_value;
-        }
-        let value4 = this._real_value;
-        if (value4.filename) {
-          let real_value = value4;
-          value4 = "";
-          if (real_value.subfolder) {
-            value4 = real_value.subfolder + "/";
-          }
-          value4 += real_value.filename;
-          if (real_value.type && real_value.type !== "input")
-            value4 += ` [${real_value.type}]`;
-        }
-        return value4;
-      }, "get")
-    });
-    const cb = node3.callback;
-    imageWidget.callback = function() {
-      showImage(imageWidget.value);
-      if (cb) {
-        return cb.apply(this, arguments);
-      }
-    };
-    requestAnimationFrame(() => {
-      if (imageWidget.value) {
-        showImage(imageWidget.value);
-      }
-    });
-    async function uploadFile2(file, updateNode, pasted = false) {
-      try {
-        const body = new FormData();
-        body.append("image", file);
-        if (pasted) body.append("subfolder", "pasted");
-        const resp = await api.fetchApi("/upload/image", {
-          method: "POST",
-          body
-        });
-        if (resp.status === 200) {
-          const data26 = await resp.json();
-          let path = data26.name;
-          if (data26.subfolder) path = data26.subfolder + "/" + path;
-          if (!imageWidget.options.values.includes(path)) {
-            imageWidget.options.values.push(path);
-          }
-          if (updateNode) {
-            showImage(path);
-            imageWidget.value = path;
-          }
-        } else {
-          useToastStore().addAlert(resp.status + " - " + resp.statusText);
-        }
-      } catch (error2) {
-        useToastStore().addAlert(error2);
-      }
-    }
-    __name(uploadFile2, "uploadFile");
-    const fileInput2 = document.createElement("input");
-    Object.assign(fileInput2, {
-      type: "file",
-      accept: "image/jpeg,image/png,image/webp",
-      style: "display: none",
-      onchange: /* @__PURE__ */ __name(async () => {
-        if (fileInput2.files.length) {
-          await uploadFile2(fileInput2.files[0], true);
-        }
-      }, "onchange")
-    });
-    document.body.append(fileInput2);
-    uploadWidget = node3.addWidget("button", inputName, "image", () => {
-      fileInput2.click();
-    });
-    uploadWidget.label = "choose file to upload";
-    uploadWidget.serialize = false;
-    node3.onDragOver = function(e2) {
-      if (e2.dataTransfer && e2.dataTransfer.items) {
-        const image2 = [...e2.dataTransfer.items].find((f2) => f2.kind === "file");
-        return !!image2;
-      }
-      return false;
-    };
-    node3.onDragDrop = function(e2) {
-      console.log("onDragDrop called");
-      let handled = false;
-      for (const file of e2.dataTransfer.files) {
-        if (file.type.startsWith("image/")) {
-          uploadFile2(file, !handled);
-          handled = true;
-        }
-      }
-      return handled;
-    };
-    node3.pasteFile = function(file) {
-      if (file.type.startsWith("image/")) {
-        const is_pasted = file.name === "image.png" && file.lastModified - Date.now() < 2e3;
-        uploadFile2(file, true, is_pasted);
-        return true;
-      }
-      return false;
-    };
-    return { widget: uploadWidget };
-  }
+  "INT:seed": SeedWidget,
+  "INT:noise_seed": SeedWidget,
+  INT: useIntWidget(),
+  FLOAT: useFloatWidget(),
+  BOOLEAN: useBooleanWidget(),
+  STRING: useStringWidget(),
+  MARKDOWN: useMarkdownWidget(),
+  COMBO: useComboWidget(),
+  IMAGEUPLOAD: useImageUploadWidget()
 };
 window.comfyAPI = window.comfyAPI || {};
 window.comfyAPI.widgets = window.comfyAPI.widgets || {};
@@ -192744,11 +193821,33 @@ const useWidgetStore = /* @__PURE__ */ defineStore("widget", () => {
     };
   }
   __name(registerCustomWidgets, "registerCustomWidgets");
+  function getDefaultValue(inputData) {
+    if (Array.isArray(inputData[0]))
+      return getDefaultValue(transformComboInput(inputData));
+    const widgetType = getWidgetType(inputData[0], inputData[1]?.name);
+    const [_2, props] = inputData;
+    if (!props) return void 0;
+    if (props.default) return props.default;
+    if (widgetType === "COMBO" && props.options?.length) return props.options[0];
+    if (props.remote) return "Loading...";
+    return void 0;
+  }
+  __name(getDefaultValue, "getDefaultValue");
+  const transformComboInput = /* @__PURE__ */ __name((inputData) => {
+    return isComboInputSpecV1(inputData) ? [
+      "COMBO",
+      {
+        options: inputData[0],
+        ...Object(inputData[1] || {})
+      }
+    ] : inputData;
+  }, "transformComboInput");
   return {
     widgets,
     getWidgetType,
     inputIsWidget,
-    registerCustomWidgets
+    registerCustomWidgets,
+    getDefaultValue
   };
 });
 var addonFit$2 = { exports: {} };
@@ -199050,12 +200149,13 @@ __name(useTerminal, "useTerminal");
 const _hoisted_1$q = { class: "p-terminal rounded-none h-full w-full p-2" };
 const _sfc_main$t = /* @__PURE__ */ defineComponent({
   __name: "BaseTerminal",
-  emits: ["created"],
+  emits: ["created", "unmounted"],
   setup(__props, { emit: __emit }) {
     const emit2 = __emit;
     const terminalEl = ref();
     const rootEl = ref();
     emit2("created", useTerminal(terminalEl), rootEl);
+    onUnmounted(() => emit2("unmounted"));
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", {
         class: "relative overflow-hidden h-full w-full bg-black",
@@ -199073,7 +200173,7 @@ const _sfc_main$t = /* @__PURE__ */ defineComponent({
     };
   }
 });
-const BaseTerminal = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["__scopeId", "data-v-250ab9af"]]);
+const BaseTerminal = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["__scopeId", "data-v-873a313f"]]);
 const _sfc_main$s = /* @__PURE__ */ defineComponent({
   __name: "CommandTerminal",
   setup(__props) {
@@ -199115,7 +200215,7 @@ const _sfc_main$s = /* @__PURE__ */ defineComponent({
     };
   }
 });
-const CommandTerminal = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["__scopeId", "data-v-90a7f075"]]);
+const CommandTerminal = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["__scopeId", "data-v-14fef2e4"]]);
 const useExecutionStore = /* @__PURE__ */ defineStore("execution", () => {
   const clientId = ref(null);
   const activePromptId = ref(null);
@@ -199331,7 +200431,7 @@ const _sfc_main$r = /* @__PURE__ */ defineComponent({
     };
   }
 });
-const LogsTerminal = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["__scopeId", "data-v-03daf1c8"]]);
+const LogsTerminal = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["__scopeId", "data-v-cf0c7d52"]]);
 const useLogsTerminalTab = /* @__PURE__ */ __name(() => {
   const { t: t2 } = useI18n();
   return {
@@ -199422,7 +200522,7 @@ const useExtensionService = /* @__PURE__ */ __name(() => {
       settingStore.get("Comfy.Extension.Disabled")
     );
     const extensions = await api.getExtensions();
-    await __vitePreload(() => import("./index-BYzwFNH3.js"), true ? __vite__mapDeps([30,12,31]) : void 0, import.meta.url);
+    await __vitePreload(() => import("./index-D9D9jjLT.js"), true ? __vite__mapDeps([34,13,35]) : void 0, import.meta.url);
     extensionStore.captureCoreExtensions();
     await Promise.all(
       extensions.filter((extension) => !extension.includes("extensions/core")).map(async (ext) => {
@@ -199555,12 +200655,12 @@ class ComfySettingsDialog extends ComfyDialog$1 {
     super();
     this.app = app2;
   }
-  dispatchChange(id3, value4, oldValue2) {
+  dispatchChange(id3, value4, oldValue) {
     this.dispatchEvent(
       new CustomEvent(id3 + ".change", {
         detail: {
           value: value4,
-          oldValue: oldValue2
+          oldValue
         }
       })
     );
@@ -199799,9 +200899,9 @@ function dragElement(dragEl, settings) {
   function restorePos() {
     let posString = localStorage.getItem("Comfy.MenuPosition");
     if (posString) {
-      const pos2 = JSON.parse(posString);
-      newPosX = pos2.x;
-      newPosY = pos2.y;
+      const pos = JSON.parse(posString);
+      newPosX = pos.x;
+      newPosY = pos.y;
       positionElement();
       ensureInBounds();
     }
@@ -200197,7 +201297,7 @@ class ComfyUI {
             if (!useSettingStore().get("Comfy.ConfirmClear") || confirm("Clear workflow?")) {
               app$1.clean();
               app$1.graph.clear();
-              app$1.resetView();
+              useLitegraphService().resetView();
               api.dispatchCustomEvent("graphCleared");
             }
           }, "onclick")
@@ -200207,7 +201307,7 @@ class ComfyUI {
           textContent: "Load Default",
           onclick: /* @__PURE__ */ __name(async () => {
             if (!useSettingStore().get("Comfy.ConfirmClear") || confirm("Load default workflow?")) {
-              app$1.resetView();
+              useLitegraphService().resetView();
               await app$1.loadGraphData();
             }
           }, "onclick")
@@ -200216,7 +201316,7 @@ class ComfyUI {
           id: "comfy-reset-view-button",
           textContent: "Reset View",
           onclick: /* @__PURE__ */ __name(async () => {
-            app$1.resetView();
+            useLitegraphService().resetView();
           }, "onclick")
         })
       ]
@@ -200337,9 +201437,26 @@ window.comfyAPI = window.comfyAPI || {};
 window.comfyAPI.imagePreview = window.comfyAPI.imagePreview || {};
 window.comfyAPI.imagePreview.calculateImageGrid = calculateImageGrid;
 window.comfyAPI.imagePreview.createImageHost = createImageHost;
+const useTitleEditorStore = /* @__PURE__ */ defineStore("titleEditor", () => {
+  const titleEditorTarget = shallowRef(null);
+  return {
+    titleEditorTarget
+  };
+});
+const useCanvasStore = /* @__PURE__ */ defineStore("canvas", () => {
+  const canvas2 = shallowRef(null);
+  return {
+    canvas: canvas2
+  };
+});
+function isImageNode(node3) {
+  return node3.imgs || node3 && node3.widgets && node3.widgets.findIndex((obj) => obj.name === "image") >= 0;
+}
+__name(isImageNode, "isImageNode");
 const useLitegraphService = /* @__PURE__ */ __name(() => {
   const extensionService = useExtensionService();
   const toastStore = useToastStore();
+  const canvasStore = useCanvasStore();
   async function registerNodeDef(nodeId, nodeData) {
     const node3 = class ComfyNode extends LGraphNode {
       static {
@@ -200499,11 +201616,11 @@ const useLitegraphService = /* @__PURE__ */ __name(() => {
                 await writeImage(blob);
               } catch (error2) {
                 if (blob.type !== "image/png") {
-                  const canvas = $el("canvas", {
+                  const canvas2 = $el("canvas", {
                     width: img.naturalWidth,
                     height: img.naturalHeight
                   });
-                  const ctx = canvas.getContext("2d");
+                  const ctx = canvas2.getContext("2d");
                   let image2;
                   if (typeof window.createImageBitmap === "undefined") {
                     image2 = new Image();
@@ -200520,7 +201637,7 @@ const useLitegraphService = /* @__PURE__ */ __name(() => {
                   }
                   try {
                     ctx.drawImage(image2, 0, 0);
-                    canvas.toBlob(writeImage, "image/png");
+                    canvas2.toBlob(writeImage, "image/png");
                   } finally {
                     if (typeof image2.close === "function") {
                       image2.close();
@@ -200603,7 +201720,7 @@ const useLitegraphService = /* @__PURE__ */ __name(() => {
             }, "callback")
           });
         }
-        if (ComfyApp.isImageNode(this)) {
+        if (isImageNode(this)) {
           options4.push({
             content: "Open in MaskEditor",
             callback: /* @__PURE__ */ __name((obj) => {
@@ -200712,12 +201829,12 @@ const useLitegraphService = /* @__PURE__ */ __name(() => {
       );
       if (this.animatedImages) {
         if (widgetIdx > -1) {
-          const widget2 = this.widgets[widgetIdx];
-          widget2.options.host.updateImages(this.imgs);
+          const widget = this.widgets[widgetIdx];
+          widget.options.host.updateImages(this.imgs);
         } else {
           const host = createImageHost(this);
           this.setSizeForImage(true);
-          const widget2 = this.addDOMWidget(
+          const widget = this.addDOMWidget(
             ANIM_PREVIEW_WIDGET,
             "img",
             host.el,
@@ -200728,8 +201845,8 @@ const useLitegraphService = /* @__PURE__ */ __name(() => {
               hideOnZoom: false
             }
           );
-          widget2.serializeValue = () => void 0;
-          widget2.options.host.updateImages(this.imgs);
+          widget.serializeValue = () => void 0;
+          widget.options.host.updateImages(this.imgs);
         }
         return;
       }
@@ -200737,9 +201854,9 @@ const useLitegraphService = /* @__PURE__ */ __name(() => {
         this.widgets[widgetIdx].onRemove?.();
         this.widgets.splice(widgetIdx, 1);
       }
-      const canvas = app$1.graph.list_of_graphcanvas[0];
-      const mouse = canvas.graph_mouse;
-      if (!canvas.pointer_is_down && this.pointerDown) {
+      const canvas2 = app$1.graph.list_of_graphcanvas[0];
+      const mouse = canvas2.graph_mouse;
+      if (!canvas2.pointer_is_down && this.pointerDown) {
         if (mouse[0] === this.pointerDown.pos[0] && mouse[1] === this.pointerDown.pos[1]) {
           this.imageIndex = this.pointerDown.index;
         }
@@ -200805,14 +201922,14 @@ const useLitegraphService = /* @__PURE__ */ __name(() => {
             if (anyHovered) {
               this.overIndex = i2;
               let value4 = 110;
-              if (canvas.pointer_is_down) {
+              if (canvas2.pointer_is_down) {
                 if (!this.pointerDown || this.pointerDown.index !== i2) {
                   this.pointerDown = { index: i2, pos: [...mouse] };
                 }
                 value4 = 125;
               }
               ctx.filter = `contrast(${value4}%) brightness(${value4}%)`;
-              canvas.canvas.style.cursor = "pointer";
+              canvas2.canvas.style.cursor = "pointer";
             }
           }
           this.imageRects.push([x22, y22, cellWidth, cellHeight]);
@@ -200871,8 +201988,8 @@ const useLitegraphService = /* @__PURE__ */ __name(() => {
         let textFill = "#fff";
         let isClicking = false;
         if (hovered) {
-          canvas.canvas.style.cursor = "pointer";
-          if (canvas.pointer_is_down) {
+          canvas2.canvas.style.cursor = "pointer";
+          if (canvas2.pointer_is_down) {
             fill2 = "#1e90ff";
             isClicking = true;
           } else {
@@ -200970,11 +202087,20 @@ const useLitegraphService = /* @__PURE__ */ __name(() => {
     app$1.canvas.animateToBounds(graphNode.boundingRect);
   }
   __name(goToNode, "goToNode");
+  function resetView() {
+    const canvas2 = canvasStore.canvas;
+    if (!canvas2) return;
+    canvas2.ds.scale = 1;
+    canvas2.ds.offset = [0, 0];
+    canvas2.setDirty(true, true);
+  }
+  __name(resetView, "resetView");
   return {
     registerNodeDef,
     addNodeOnGraph,
     getCanvasCenter,
-    goToNode
+    goToNode,
+    resetView
   };
 }, "useLitegraphService");
 const defaultGraph = {
@@ -201093,7 +202219,7 @@ const defaultGraph = {
         { name: "VAE", type: "VAE", links: [8], slot_index: 2 }
       ],
       properties: {},
-      widgets_values: ["v1-5-pruned-emaonly.ckpt"]
+      widgets_values: ["v1-5-pruned-emaonly-fp16.safetensors"]
     }
   ],
   links: [
@@ -201184,12 +202310,12 @@ function applyTextReplacements(app2, value4) {
       console.warn("Multiple nodes matched", split2[0], "using first match");
     }
     const node3 = nodes[0];
-    const widget2 = node3.widgets?.find((w2) => w2.name === split2[1]);
-    if (!widget2) {
+    const widget = node3.widgets?.find((w2) => w2.name === split2[1]);
+    if (!widget) {
       console.warn("Unable to find widget", split2[1], "on node", split2[0], node3);
       return match2;
     }
-    return ((widget2.value ?? "") + "").replaceAll(/\/|\\/g, "_");
+    return ((widget.value ?? "") + "").replaceAll(/\/|\\/g, "_");
   });
 }
 __name(applyTextReplacements, "applyTextReplacements");
@@ -203630,13 +204756,16 @@ const useWorkflowService = /* @__PURE__ */ __name(() => {
       }
     );
   }, "openWorkflow");
-  const closeWorkflow = /* @__PURE__ */ __name(async (workflow, options4 = { warnIfUnsaved: true }) => {
+  const closeWorkflow = /* @__PURE__ */ __name(async (workflow, options4 = {
+    warnIfUnsaved: true
+  }) => {
     if (workflow.isModified && options4.warnIfUnsaved) {
       const confirmed = await dialogService.confirm({
         title: t("sideToolbar.workflowTab.dirtyCloseTitle"),
         type: "dirtyClose",
         message: t("sideToolbar.workflowTab.dirtyClose"),
-        itemList: [workflow.path]
+        itemList: [workflow.path],
+        hint: options4.hint
       });
       if (confirmed === null) return false;
       if (confirmed === true) {
@@ -203716,20 +204845,20 @@ const useWorkflowService = /* @__PURE__ */ __name(() => {
     loadedWorkflow.changeTracker.reset(workflowData);
     loadedWorkflow.changeTracker.restore();
   }, "afterLoadNewGraph");
-  const insertWorkflow = /* @__PURE__ */ __name(async (workflow) => {
+  const insertWorkflow = /* @__PURE__ */ __name(async (workflow, options4 = {}) => {
     const loadedWorkflow = await workflow.load();
     const data26 = loadedWorkflow.initialState;
     const old = localStorage.getItem("litegrapheditor_clipboard");
     const graph = new LGraph(data26);
     const canvasElement = document.createElement("canvas");
-    const canvas = new LGraphCanvas(canvasElement, graph, {
+    const canvas2 = new LGraphCanvas(canvasElement, graph, {
       skip_events: true,
       skip_render: true
     });
-    canvas.reroutesEnabled = app$1.canvas.reroutesEnabled;
-    canvas.selectItems();
-    canvas.copyToClipboard();
-    app$1.canvas.pasteFromClipboard();
+    canvas2.reroutesEnabled = app$1.canvas.reroutesEnabled;
+    canvas2.selectItems();
+    canvas2.copyToClipboard();
+    app$1.canvas.pasteFromClipboard(options4);
     if (old !== null) {
       localStorage.setItem("litegrapheditor_clipboard", old);
     }
@@ -206074,17 +207203,17 @@ function serialise(nodes, graph) {
   return JSON.stringify(serialisable);
 }
 __name(serialise, "serialise");
-function deserialiseAndCreate(data26, canvas) {
+function deserialiseAndCreate(data26, canvas2) {
   if (!data26) return;
-  const { graph, graph_mouse } = canvas;
-  canvas.emitBeforeChange();
+  const { graph, graph_mouse } = canvas2;
+  canvas2.emitBeforeChange();
   try {
     graph.beforeChange();
     const deserialised = JSON.parse(data26);
     const topLeft = [Infinity, Infinity];
-    for (const { pos: pos2 } of deserialised.nodes) {
-      if (topLeft[0] > pos2[0]) topLeft[0] = pos2[0];
-      if (topLeft[1] > pos2[1]) topLeft[1] = pos2[1];
+    for (const { pos } of deserialised.nodes) {
+      if (topLeft[0] > pos[0]) topLeft[0] = pos[0];
+      if (topLeft[1] > pos[1]) topLeft[1] = pos[1];
     }
     if (!Number.isFinite(topLeft[0]) || !Number.isFinite(topLeft[1])) {
       topLeft[0] = graph_mouse[0];
@@ -206107,10 +207236,10 @@ function deserialiseAndCreate(data26, canvas) {
       if (outNode && inNode) outNode.connect(info[1], inNode, info[3]);
       else console.warn("Warning, nodes missing on pasting");
     }
-    canvas.selectNodes(nodes);
+    canvas2.selectNodes(nodes);
     graph.afterChange();
   } finally {
-    canvas.emitAfterChange();
+    canvas2.emitAfterChange();
   }
 }
 __name(deserialiseAndCreate, "deserialiseAndCreate");
@@ -206384,7 +207513,7 @@ async function importA1111(graph, parameters) {
       const getWidget = /* @__PURE__ */ __name((node3, name2) => {
         return node3.widgets.find((w2) => w2.name === name2);
       }, "getWidget");
-      const setWidgetValue2 = /* @__PURE__ */ __name((node3, name2, value4, isOptionPrefix) => {
+      const setWidgetValue = /* @__PURE__ */ __name((node3, name2, value4, isOptionPrefix) => {
         const w2 = getWidget(node3, name2);
         if (isOptionPrefix) {
           const o2 = w2.options.values.find((w22) => w22.startsWith(value4));
@@ -206413,9 +207542,9 @@ async function importA1111(graph, parameters) {
         for (const l2 of loras) {
           const loraNode = LiteGraph.createNode("LoraLoader");
           graph.add(loraNode);
-          setWidgetValue2(loraNode, "lora_name", l2.name, true);
-          setWidgetValue2(loraNode, "strength_model", l2.weight);
-          setWidgetValue2(loraNode, "strength_clip", l2.weight);
+          setWidgetValue(loraNode, "lora_name", l2.name, true);
+          setWidgetValue(loraNode, "strength_model", l2.weight);
+          setWidgetValue(loraNode, "strength_clip", l2.weight);
           prevModel.node.connect(prevModel.index, loraNode, 0);
           prevClip.node.connect(prevClip.index, loraNode, 1);
           prevModel = { node: loraNode, index: 0 };
@@ -206465,31 +207594,31 @@ async function importA1111(graph, parameters) {
       vaeLoaderNode.connect(0, vaeNode, 1);
       const handlers2 = {
         model(v2) {
-          setWidgetValue2(ckptNode, "ckpt_name", v2, true);
+          setWidgetValue(ckptNode, "ckpt_name", v2, true);
         },
         vae(v2) {
-          setWidgetValue2(vaeLoaderNode, "vae_name", v2, true);
+          setWidgetValue(vaeLoaderNode, "vae_name", v2, true);
         },
         "cfg scale"(v2) {
-          setWidgetValue2(samplerNode, "cfg", +v2);
+          setWidgetValue(samplerNode, "cfg", +v2);
         },
         "clip skip"(v2) {
-          setWidgetValue2(clipSkipNode, "stop_at_clip_layer", -v2);
+          setWidgetValue(clipSkipNode, "stop_at_clip_layer", -v2);
         },
         sampler(v2) {
           let name2 = v2.toLowerCase().replace("++", "pp").replaceAll(" ", "_");
           if (name2.includes("karras")) {
             name2 = name2.replace("karras", "").replace(/_+$/, "");
-            setWidgetValue2(samplerNode, "scheduler", "karras");
+            setWidgetValue(samplerNode, "scheduler", "karras");
           } else {
-            setWidgetValue2(samplerNode, "scheduler", "normal");
+            setWidgetValue(samplerNode, "scheduler", "normal");
           }
           const w2 = getWidget(samplerNode, "sampler_name");
           const o2 = w2.options.values.find(
             (w22) => w22 === name2 || w22 === "sample_" + name2
           );
           if (o2) {
-            setWidgetValue2(samplerNode, "sampler_name", o2);
+            setWidgetValue(samplerNode, "sampler_name", o2);
           }
         },
         size(v2) {
@@ -206500,8 +207629,8 @@ async function importA1111(graph, parameters) {
           const hrSz = popOpt("hires resize");
           hrSteps = popOpt("hires steps");
           let hrMethod = popOpt("hires upscaler");
-          setWidgetValue2(imageNode, "width", w2);
-          setWidgetValue2(imageNode, "height", h2);
+          setWidgetValue(imageNode, "width", w2);
+          setWidgetValue(imageNode, "height", h2);
           if (hrUp || hrSz) {
             let uw, uh;
             if (hrUp) {
@@ -206523,7 +207652,7 @@ async function importA1111(graph, parameters) {
                   hrMethod = "nearest-exact";
                   break;
               }
-              setWidgetValue2(upscaleNode, "upscale_method", hrMethod, true);
+              setWidgetValue(upscaleNode, "upscale_method", hrMethod, true);
             } else {
               const decode2 = LiteGraph.createNode("VAEDecodeTiled");
               graph.add(decode2);
@@ -206531,7 +207660,7 @@ async function importA1111(graph, parameters) {
               vaeLoaderNode.connect(0, decode2, 1);
               const upscaleLoaderNode = LiteGraph.createNode("UpscaleModelLoader");
               graph.add(upscaleLoaderNode);
-              setWidgetValue2(upscaleLoaderNode, "model_name", hrMethod, true);
+              setWidgetValue(upscaleLoaderNode, "model_name", hrMethod, true);
               const modelUpscaleNode = LiteGraph.createNode(
                 "ImageUpscaleWithModel"
               );
@@ -206546,8 +207675,8 @@ async function importA1111(graph, parameters) {
               upscaleNode.connect(0, vaeEncodeNode, 0);
               vaeLoaderNode.connect(0, vaeEncodeNode, 1);
             }
-            setWidgetValue2(upscaleNode, "width", ceil64(uw));
-            setWidgetValue2(upscaleNode, "height", ceil64(uh));
+            setWidgetValue(upscaleNode, "width", ceil64(uw));
+            setWidgetValue(upscaleNode, "height", ceil64(uh));
             hrSamplerNode = LiteGraph.createNode("KSampler");
             graph.add(hrSamplerNode);
             ckptNode.connect(0, hrSamplerNode, 0);
@@ -206558,10 +207687,10 @@ async function importA1111(graph, parameters) {
           }
         },
         steps(v2) {
-          setWidgetValue2(samplerNode, "steps", +v2);
+          setWidgetValue(samplerNode, "steps", +v2);
         },
         seed(v2) {
-          setWidgetValue2(samplerNode, "seed", +v2);
+          setWidgetValue(samplerNode, "seed", +v2);
         }
       };
       for (const opt in opts) {
@@ -206570,27 +207699,27 @@ async function importA1111(graph, parameters) {
         }
       }
       if (hrSamplerNode) {
-        setWidgetValue2(
+        setWidgetValue(
           hrSamplerNode,
           "steps",
           hrSteps ? +hrSteps : getWidget(samplerNode, "steps").value
         );
-        setWidgetValue2(
+        setWidgetValue(
           hrSamplerNode,
           "cfg",
           getWidget(samplerNode, "cfg").value
         );
-        setWidgetValue2(
+        setWidgetValue(
           hrSamplerNode,
           "scheduler",
           getWidget(samplerNode, "scheduler").value
         );
-        setWidgetValue2(
+        setWidgetValue(
           hrSamplerNode,
           "sampler_name",
           getWidget(samplerNode, "sampler_name").value
         );
-        setWidgetValue2(
+        setWidgetValue(
           hrSamplerNode,
           "denoise",
           +(popOpt("denoising strength") || "1")
@@ -206605,8 +207734,8 @@ async function importA1111(graph, parameters) {
       positive = n2.text;
       n2 = createLoraNodes(negativeNode, negative, n2.prevClip, n2.prevModel);
       negative = n2.text;
-      setWidgetValue2(positiveNode, "text", replaceEmbeddings(positive));
-      setWidgetValue2(negativeNode, "text", replaceEmbeddings(negative));
+      setWidgetValue(positiveNode, "text", replaceEmbeddings(positive));
+      setWidgetValue(negativeNode, "text", replaceEmbeddings(negative));
       graph.arrange();
       for (const opt of [
         "model hash",
@@ -207403,8 +208532,6 @@ class ComfyApp {
   canvas;
   dragOverNode;
   canvasEl;
-  // x, y, scale
-  zoom_drag_start;
   lastNodeErrors;
   /** @type {ExecutionErrorWsMessage} */
   lastExecutionError;
@@ -207467,17 +208594,28 @@ class ComfyApp {
   get progress() {
     return useExecutionStore()._executingNodeProgress;
   }
+  /**
+   * @deprecated Use {@link isImageNode} from @/utils/litegraphUtil instead
+   */
+  static isImageNode(node3) {
+    return isImageNode(node3);
+  }
+  /**
+   * Resets the canvas view to the default
+   * @deprecated Use {@link useLitegraphService().resetView} instead
+   */
+  resetView() {
+    useLitegraphService().resetView();
+  }
   constructor() {
     this.vueAppReady = false;
     this.ui = new ComfyUI(this);
     this.api = api;
-    this.bodyTop = $el("div.comfyui-body-top", { parent: document.body });
-    this.bodyLeft = $el("div.comfyui-body-left", { parent: document.body });
-    this.bodyRight = $el("div.comfyui-body-right", { parent: document.body });
-    this.bodyBottom = $el("div.comfyui-body-bottom", { parent: document.body });
-    this.canvasContainer = $el("div.graph-canvas-container", {
-      parent: document.body
-    });
+    this.bodyTop = $el("div.comfyui-body-top");
+    this.bodyLeft = $el("div.comfyui-body-left");
+    this.bodyRight = $el("div.comfyui-body-right");
+    this.bodyBottom = $el("div.comfyui-body-bottom");
+    this.canvasContainer = $el("div.graph-canvas-container");
     this.menu = new ComfyAppMenu(this);
     this.bypassBgColor = "#FF00FF";
     this.nodeOutputs = {};
@@ -207498,9 +208636,6 @@ class ComfyApp {
   }
   getRandParam() {
     return "&rand=" + Math.random();
-  }
-  static isImageNode(node3) {
-    return node3.imgs || node3 && node3.widgets && node3.widgets.findIndex((obj) => obj.name === "image") >= 0;
   }
   static onClipspaceEditorSave() {
     if (ComfyApp.clipspace_return_node) {
@@ -207686,113 +208821,6 @@ class ComfyApp {
     );
   }
   /**
-   * Adds a handler on paste that extracts and loads images or workflows from pasted JSON data
-   */
-  #addPasteHandler() {
-    document.addEventListener("paste", async (e2) => {
-      if (this.shiftDown) return;
-      let data26 = e2.clipboardData || window.clipboardData;
-      const items2 = data26.items;
-      for (const item3 of items2) {
-        if (item3.type.startsWith("image/")) {
-          var imageNode = null;
-          if (this.canvas.current_node && this.canvas.current_node.is_selected && ComfyApp.isImageNode(this.canvas.current_node)) {
-            imageNode = this.canvas.current_node;
-          }
-          if (!imageNode) {
-            const newNode = LiteGraph.createNode("LoadImage");
-            newNode.pos = [...this.canvas.graph_mouse];
-            imageNode = this.graph.add(newNode);
-            this.graph.change();
-          }
-          const blob = item3.getAsFile();
-          imageNode.pasteFile(blob);
-          return;
-        }
-      }
-      data26 = data26.getData("text/plain");
-      let workflow = null;
-      try {
-        data26 = data26.slice(data26.indexOf("{"));
-        workflow = JSON.parse(data26);
-      } catch (err) {
-        try {
-          data26 = data26.slice(data26.indexOf("workflow\n"));
-          data26 = data26.slice(data26.indexOf("{"));
-          workflow = JSON.parse(data26);
-        } catch (error2) {
-          workflow = null;
-        }
-      }
-      if (workflow && workflow.version && workflow.nodes && workflow.extra) {
-        await this.loadGraphData(workflow);
-      } else {
-        if (e2.target instanceof HTMLTextAreaElement && e2.target.type === "textarea" || e2.target instanceof HTMLInputElement && e2.target.type === "text") {
-          return;
-        }
-        this.canvas.pasteFromClipboard();
-      }
-    });
-  }
-  /**
-   * Adds a handler on copy that serializes selected nodes to JSON
-   */
-  #addCopyHandler() {
-    document.addEventListener("copy", (e2) => {
-      if (!(e2.target instanceof Element)) {
-        return;
-      }
-      if (e2.target instanceof HTMLTextAreaElement && e2.target.type === "textarea" || e2.target instanceof HTMLInputElement && e2.target.type === "text") {
-        return;
-      }
-      const isTargetInGraph = e2.target.classList.contains("litegraph") || e2.target.classList.contains("graph-canvas-container") || e2.target.id === "graph-canvas";
-      if (isTargetInGraph && this.canvas.selected_nodes) {
-        this.canvas.copyToClipboard();
-        e2.clipboardData.setData("text", " ");
-        e2.preventDefault();
-        e2.stopImmediatePropagation();
-        return false;
-      }
-    });
-  }
-  /**
-   * Handle mouse
-   *
-   * Move group by header
-   */
-  #addProcessMouseHandler() {
-    const self2 = this;
-    const origProcessMouseDown = LGraphCanvas.prototype.processMouseDown;
-    LGraphCanvas.prototype.processMouseDown = function(e2) {
-      const useFastZoom = useSettingStore().get("Comfy.Graph.CtrlShiftZoom");
-      if (useFastZoom && e2.ctrlKey && e2.shiftKey && !e2.altKey && e2.buttons) {
-        self2.zoom_drag_start = [e2.x, e2.y, this.ds.scale];
-        return;
-      }
-      const res = origProcessMouseDown.apply(this, arguments);
-      return res;
-    };
-    const origProcessMouseMove = LGraphCanvas.prototype.processMouseMove;
-    LGraphCanvas.prototype.processMouseMove = function(e2) {
-      if (e2.ctrlKey && e2.shiftKey && self2.zoom_drag_start) {
-        if (!e2.buttons) {
-          self2.zoom_drag_start = null;
-          return;
-        }
-        let deltaY = e2.y - self2.zoom_drag_start[1];
-        let startScale = self2.zoom_drag_start[2];
-        let scale = startScale - deltaY / 100;
-        this.ds.changeScale(scale, [
-          self2.zoom_drag_start[0],
-          self2.zoom_drag_start[1]
-        ]);
-        this.graph.change();
-        return;
-      }
-      return origProcessMouseMove.apply(this, arguments);
-    };
-  }
-  /**
    * Handle keypress
    */
   #addProcessKeyHandler() {
@@ -207830,40 +208858,6 @@ class ComfyApp {
     };
   }
   /**
-   * Draws group header bar
-   */
-  #addDrawGroupsHandler() {
-    const self2 = this;
-    const origDrawGroups = LGraphCanvas.prototype.drawGroups;
-    LGraphCanvas.prototype.drawGroups = function(canvas, ctx) {
-      if (!this.graph) {
-        return;
-      }
-      var groups = this.graph.groups;
-      ctx.save();
-      ctx.globalAlpha = 0.7 * this.editor_alpha;
-      for (var i2 = 0; i2 < groups.length; ++i2) {
-        var group = groups[i2];
-        if (!LiteGraph.overlapBounding(this.visible_area, group._bounding)) {
-          continue;
-        }
-        ctx.fillStyle = group.color || "#335";
-        ctx.strokeStyle = group.color || "#335";
-        var pos2 = group._pos;
-        var size = group._size;
-        ctx.globalAlpha = 0.25 * this.editor_alpha;
-        ctx.beginPath();
-        var font_size = group.font_size || LiteGraph.DEFAULT_GROUP_FONT_SIZE;
-        ctx.rect(pos2[0] + 0.5, pos2[1] + 0.5, size[0], font_size * 1.4);
-        ctx.fill();
-        ctx.globalAlpha = this.editor_alpha;
-      }
-      ctx.restore();
-      const res = origDrawGroups.apply(this, arguments);
-      return res;
-    };
-  }
-  /**
    * Draws node highlights (executing, drag drop) and progress bar
    */
   #addDrawNodeHandler() {
@@ -207886,45 +208880,19 @@ class ComfyApp {
         lineWidth = 2;
       }
       if (color2) {
-        const shape = node3._shape || node3.constructor.shape || LiteGraph.ROUND_SHAPE;
-        ctx.lineWidth = lineWidth;
-        ctx.globalAlpha = 0.8;
-        ctx.beginPath();
-        if (shape == LiteGraph.BOX_SHAPE)
-          ctx.rect(
-            -6,
-            -6 - LiteGraph.NODE_TITLE_HEIGHT,
-            12 + size[0] + 1,
-            12 + size[1] + LiteGraph.NODE_TITLE_HEIGHT
-          );
-        else if (shape == LiteGraph.ROUND_SHAPE || shape == LiteGraph.CARD_SHAPE && node3.flags.collapsed)
-          ctx.roundRect(
-            -6,
-            -6 - LiteGraph.NODE_TITLE_HEIGHT,
-            12 + size[0] + 1,
-            12 + size[1] + LiteGraph.NODE_TITLE_HEIGHT,
-            this.round_radius * 2
-          );
-        else if (shape == LiteGraph.CARD_SHAPE)
-          ctx.roundRect(
-            -6,
-            -6 - LiteGraph.NODE_TITLE_HEIGHT,
-            12 + size[0] + 1,
-            12 + size[1] + LiteGraph.NODE_TITLE_HEIGHT,
-            [this.round_radius * 2, this.round_radius * 2, 2, 2]
-          );
-        else if (shape == LiteGraph.CIRCLE_SHAPE)
-          ctx.arc(
-            size[0] * 0.5,
-            size[1] * 0.5,
-            size[0] * 0.5 + 6,
-            0,
-            Math.PI * 2
-          );
-        ctx.strokeStyle = color2;
-        ctx.stroke();
-        ctx.strokeStyle = fgcolor;
-        ctx.globalAlpha = 1;
+        const area = [
+          0,
+          -LiteGraph.NODE_TITLE_HEIGHT,
+          size[0],
+          size[1] + LiteGraph.NODE_TITLE_HEIGHT
+        ];
+        strokeShape(ctx, area, {
+          shape: node3._shape || node3.constructor.shape || LiteGraph.ROUND_SHAPE,
+          thickness: lineWidth,
+          colour: color2,
+          title_height: LiteGraph.NODE_TITLE_HEIGHT,
+          collapsed: node3.collapsed
+        });
       }
       if (self2.progress && node3.id === +self2.runningNodeId) {
         ctx.fillStyle = "green";
@@ -207943,11 +208911,11 @@ class ComfyApp {
           if (error2.extra_info && error2.extra_info.input_name) {
             const inputIndex = node3.findInputSlot(error2.extra_info.input_name);
             if (inputIndex !== -1) {
-              let pos2 = node3.getConnectionPos(true, inputIndex);
+              let pos = node3.getConnectionPos(true, inputIndex);
               ctx.beginPath();
               ctx.arc(
-                pos2[0] - node3.pos[0],
-                pos2[1] - node3.pos[1],
+                pos[0] - node3.pos[0],
+                pos[1] - node3.pos[1],
                 12,
                 0,
                 2 * Math.PI,
@@ -208077,11 +209045,15 @@ class ComfyApp {
    * Set up the app on the page
    */
   async setup(canvasEl) {
+    this.bodyTop = document.getElementById("comfyui-body-top");
+    this.bodyLeft = document.getElementById("comfyui-body-left");
+    this.bodyRight = document.getElementById("comfyui-body-right");
+    this.bodyBottom = document.getElementById("comfyui-body-bottom");
+    this.canvasContainer = document.getElementById("graph-canvas-container");
     this.canvasEl = canvasEl;
     this.resizeCanvas();
     await useWorkspaceStore().workflow.syncWorkflows();
     await useExtensionService().loadExtensions();
-    this.#addProcessMouseHandler();
     this.#addProcessKeyHandler();
     this.#addConfigureHandler();
     this.#addApiUpdateHandlers();
@@ -208103,10 +209075,7 @@ class ComfyApp {
     await useExtensionService().invokeExtensionsAsync("init");
     await this.registerNodes();
     this.#addDrawNodeHandler();
-    this.#addDrawGroupsHandler();
     this.#addDropHandler();
-    this.#addCopyHandler();
-    this.#addPasteHandler();
     await useExtensionService().invokeExtensionsAsync("setup");
   }
   resizeCanvas() {
@@ -208310,8 +209279,8 @@ class ComfyApp {
     } catch (error2) {
       let errorHint = [];
       const filename = error2.fileName || (error2.stack || "").match(/(\/extensions\/.*\.js)/)?.[1];
-      const pos2 = (filename || "").indexOf("/extensions/");
-      if (pos2 > -1) {
+      const pos = (filename || "").indexOf("/extensions/");
+      if (pos > -1) {
         errorHint.push(
           $el("span", {
             textContent: "This may be due to the following script:"
@@ -208321,7 +209290,7 @@ class ComfyApp {
             style: {
               fontWeight: "bold"
             },
-            textContent: filename.substring(pos2)
+            textContent: filename.substring(pos)
           })
         );
       }
@@ -208356,27 +209325,27 @@ class ComfyApp {
       size[1] = Math.max(node3.size[1], size[1]);
       node3.size = size;
       if (node3.widgets) {
-        for (let widget2 of node3.widgets) {
+        for (let widget of node3.widgets) {
           if (node3.type == "KSampler" || node3.type == "KSamplerAdvanced") {
-            if (widget2.name == "sampler_name") {
-              if (typeof widget2.value === "string" && widget2.value.startsWith("sample_")) {
-                widget2.value = widget2.value.slice(7);
+            if (widget.name == "sampler_name") {
+              if (typeof widget.value === "string" && widget.value.startsWith("sample_")) {
+                widget.value = widget.value.slice(7);
               }
             }
           }
           if (node3.type == "KSampler" || node3.type == "KSamplerAdvanced" || node3.type == "PrimitiveNode") {
-            if (widget2.name == "control_after_generate") {
-              if (widget2.value === true) {
-                widget2.value = "randomize";
-              } else if (widget2.value === false) {
-                widget2.value = "fixed";
+            if (widget.name == "control_after_generate") {
+              if (widget.value === true) {
+                widget.value = "randomize";
+              } else if (widget.value === false) {
+                widget.value = "fixed";
               }
             }
           }
           if (reset_invalid_values) {
-            if (widget2.type == "combo") {
-              if (!widget2.options.values.includes(widget2.value) && widget2.options.values.length > 0) {
-                widget2.value = widget2.options.values[0];
+            if (widget.type == "combo") {
+              if (!widget.options.values.includes(widget.value) && widget.options.values.length > 0) {
+                widget.value = widget.options.values[0];
               }
             }
           }
@@ -208421,8 +209390,8 @@ class ComfyApp {
   async graphToPrompt(graph = this.graph, clean = true) {
     for (const outerNode of graph.computeExecutionOrder(false)) {
       if (outerNode.widgets) {
-        for (const widget2 of outerNode.widgets) {
-          widget2.beforeQueued?.();
+        for (const widget of outerNode.widgets) {
+          widget.beforeQueued?.();
         }
       }
       const innerNodes = outerNode.getInnerNodes ? outerNode.getInnerNodes() : [outerNode];
@@ -208457,14 +209426,14 @@ class ComfyApp {
         const inputs = {};
         const widgets = node3.widgets;
         if (widgets) {
-          for (const i2 in widgets) {
-            const widget2 = widgets[i2];
-            if (!widget2.options || widget2.options.serialize !== false) {
-              inputs[widget2.name] = widget2.serializeValue ? await widget2.serializeValue(node3, i2) : widget2.value;
+          for (let i2 = 0; i2 < widgets.length; i2++) {
+            const widget = widgets[i2];
+            if (!widget.options || widget.options.serialize !== false) {
+              inputs[widget.name] = widget.serializeValue ? await widget.serializeValue(node3, i2) : widget.value;
             }
           }
         }
-        for (let i2 in node3.inputs) {
+        for (let i2 = 0; i2 < node3.inputs.length; i2++) {
           let parent = node3.getInputNode(i2);
           if (parent) {
             let link2 = node3.getInputLink(i2);
@@ -208506,6 +209475,7 @@ class ComfyApp {
               if (link2) {
                 inputs[node3.inputs[i2].name] = [
                   String(link2.origin_id),
+                  // @ts-expect-error link.origin_slot is already number.
                   parseInt(link2.origin_slot)
                 ];
               }
@@ -208596,9 +209566,9 @@ class ComfyApp {
           for (const n2 of p2.workflow.nodes) {
             const node3 = this.graph.getNodeById(n2.id);
             if (node3.widgets) {
-              for (const widget2 of node3.widgets) {
-                if (widget2.afterQueued) {
-                  widget2.afterQueued();
+              for (const widget of node3.widgets) {
+                if (widget.afterQueued) {
+                  widget.afterQueued();
                 }
               }
             }
@@ -208746,8 +209716,8 @@ class ComfyApp {
           let toSlot = node3.inputs?.findIndex((inp) => inp.name === input);
           if (toSlot == null || toSlot === -1) {
             try {
-              const widget2 = node3.widgets?.find((w2) => w2.name === input);
-              if (widget2 && node3.convertWidgetToInput?.(widget2)) {
+              const widget = node3.widgets?.find((w2) => w2.name === input);
+              if (widget && node3.convertWidgetToInput?.(widget)) {
                 toSlot = node3.inputs?.length - 1;
               }
             } catch (error2) {
@@ -208757,10 +209727,10 @@ class ComfyApp {
             fromNode.connect(fromSlot, node3, toSlot);
           }
         } else {
-          const widget2 = node3.widgets?.find((w2) => w2.name === input);
-          if (widget2) {
-            widget2.value = value4;
-            widget2.callback?.(value4);
+          const widget = node3.widgets?.find((w2) => w2.name === input);
+          if (widget) {
+            widget.value = value4;
+            widget.callback?.(value4);
           }
         }
       }
@@ -208777,8 +209747,8 @@ class ComfyApp {
           let toSlot = node3.inputs?.findIndex((inp) => inp.name === input);
           if (toSlot == null || toSlot === -1) {
             try {
-              const widget2 = node3.widgets?.find((w2) => w2.name === input);
-              if (widget2 && node3.convertWidgetToInput?.(widget2)) {
+              const widget = node3.widgets?.find((w2) => w2.name === input);
+              if (widget && node3.convertWidgetToInput?.(widget)) {
                 toSlot = node3.inputs?.length - 1;
               }
             } catch (error2) {
@@ -208788,10 +209758,10 @@ class ComfyApp {
             fromNode.connect(fromSlot, node3, toSlot);
           }
         } else {
-          const widget2 = node3.widgets?.find((w2) => w2.name === input);
-          if (widget2) {
-            widget2.value = value4;
-            widget2.callback?.(value4);
+          const widget = node3.widgets?.find((w2) => w2.name === input);
+          if (widget) {
+            widget.value = value4;
+            widget.callback?.(value4);
           }
         }
       }
@@ -208829,9 +209799,9 @@ class ComfyApp {
       node3.refreshComboInNode?.(defs);
       if (!def2) continue;
       for (const widgetNum in node3.widgets) {
-        const widget2 = node3.widgets[widgetNum];
-        if (widget2.type == "combo" && def2["input"]["required"][widget2.name] !== void 0) {
-          widget2.options.values = def2["input"]["required"][widget2.name][0];
+        const widget = node3.widgets[widgetNum];
+        if (widget.type == "combo" && def2["input"]["required"][widget.name] !== void 0) {
+          widget.options.values = def2["input"]["required"][widget.name][0];
         }
       }
     }
@@ -208849,11 +209819,6 @@ class ComfyApp {
         life: 1e3
       });
     }
-  }
-  resetView() {
-    app$1.canvas.ds.scale = 1;
-    app$1.canvas.ds.offset = [0, 0];
-    app$1.graph.setDirtyCanvas(true, true);
   }
   /**
    * Frees memory allocated to image preview blobs for a specific node, by revoking the URLs associated with them.
@@ -208877,17 +209842,17 @@ class ComfyApp {
     this.lastNodeErrors = null;
     this.lastExecutionError = null;
   }
-  clientPosToCanvasPos(pos2) {
+  clientPosToCanvasPos(pos) {
     const rect = this.canvasContainer.getBoundingClientRect();
     const containerOffsets = [rect.left, rect.top];
-    return _.zip(pos2, this.canvas.ds.offset, containerOffsets).map(
+    return _.zip(pos, this.canvas.ds.offset, containerOffsets).map(
       ([p2, o1, o2]) => (p2 - o2) / this.canvas.ds.scale - o1
     );
   }
-  canvasPosToClientPos(pos2) {
+  canvasPosToClientPos(pos) {
     const rect = this.canvasContainer.getBoundingClientRect();
     const containerOffsets = [rect.left, rect.top];
-    return _.zip(pos2, this.canvas.ds.offset, containerOffsets).map(
+    return _.zip(pos, this.canvas.ds.offset, containerOffsets).map(
       ([p2, o1, o2]) => (p2 + o1) * this.canvas.ds.scale + o2
     );
   }
@@ -210998,11 +211963,11 @@ var script$1$7 = {
     }, "ariaSelected")
   },
   components: {
-    Checkbox: script$K,
+    Checkbox: script$J,
     ChevronDownIcon: script$n,
     ChevronRightIcon: script$p,
-    CheckIcon: script$M,
-    MinusIcon: script$L,
+    CheckIcon: script$L,
+    MinusIcon: script$K,
     SpinnerIcon: script$X
   },
   directives: {
@@ -211455,7 +212420,7 @@ var script$b = {
   },
   components: {
     TreeNode: script$1$7,
-    InputText: script$J,
+    InputText: script$I,
     InputIcon: script$B,
     IconField: script$C,
     SearchIcon: script$D,
@@ -213411,7 +214376,7 @@ const _sfc_main$q = /* @__PURE__ */ defineComponent({
     };
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1$m, [
-        !props.isEditing ? (openBlock(), createElementBlock("span", _hoisted_2$g, toDisplayString$1(_ctx.modelValue), 1)) : withDirectives((openBlock(), createBlock(unref(script$J), {
+        !props.isEditing ? (openBlock(), createElementBlock("span", _hoisted_2$g, toDisplayString$1(_ctx.modelValue), 1)) : withDirectives((openBlock(), createBlock(unref(script$I), {
           key: 1,
           type: "text",
           size: "small",
@@ -213502,7 +214467,7 @@ const _sfc_main$p = /* @__PURE__ */ defineComponent({
     const errorHandling = useErrorHandling();
     const handleRename = errorHandling.wrapWithErrorHandlingAsync(
       async (newName) => {
-        await props.node.handleRename(props.node, newName);
+        await props.node.handleRename(newName);
       },
       props.node.handleError,
       () => {
@@ -213525,7 +214490,7 @@ const _sfc_main$p = /* @__PURE__ */ defineComponent({
         onGenerateDragPreview: props.node.renderDragPreview ? ({ nativeSetDragImage }) => {
           setCustomNativeDragPreview({
             render: /* @__PURE__ */ __name(({ container: container2 }) => {
-              return props.node.renderDragPreview(props.node, container2);
+              return props.node.renderDragPreview(container2);
             }, "render"),
             nativeSetDragImage
           });
@@ -213537,7 +214502,7 @@ const _sfc_main$p = /* @__PURE__ */ defineComponent({
         onDrop: /* @__PURE__ */ __name(async (event) => {
           const dndData = event.source.data;
           if (dndData.type === "tree-explorer-node") {
-            await props.node.handleDrop?.(props.node, dndData);
+            await props.node.handleDrop?.(dndData);
             canDrop.value = false;
             emit2("itemDropped", props.node, dndData.data);
           }
@@ -213596,7 +214561,7 @@ const _sfc_main$p = /* @__PURE__ */ defineComponent({
     };
   }
 });
-const TreeExplorerTreeNode = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["__scopeId", "data-v-654109c7"]]);
+const TreeExplorerTreeNode = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["__scopeId", "data-v-a945b5a8"]]);
 const _sfc_main$o = /* @__PURE__ */ defineComponent({
   __name: "TreeExplorer",
   props: /* @__PURE__ */ mergeModels({
@@ -213622,7 +214587,7 @@ const _sfc_main$o = /* @__PURE__ */ defineComponent({
     });
     const getTreeNodeIcon = /* @__PURE__ */ __name((node3) => {
       if (node3.getIcon) {
-        const icon3 = node3.getIcon(node3);
+        const icon3 = node3.getIcon();
         if (icon3) {
           return icon3;
         }
@@ -213644,7 +214609,7 @@ const _sfc_main$o = /* @__PURE__ */ defineComponent({
         children,
         type: node3.leaf ? "node" : "folder",
         totalLeaves,
-        badgeText: node3.getBadgeText ? node3.getBadgeText(node3) : null
+        badgeText: node3.getBadgeText ? node3.getBadgeText() : null
       };
     }, "fillNodeInfo");
     const onNodeContentClick = /* @__PURE__ */ __name(async (e2, node3) => {
@@ -213652,7 +214617,7 @@ const _sfc_main$o = /* @__PURE__ */ defineComponent({
         selectionKeys.value = {};
       }
       if (node3.handleClick) {
-        await node3.handleClick(node3, e2);
+        await node3.handleClick(e2);
       }
       emit2("nodeClick", node3, e2);
     }, "onNodeContentClick");
@@ -213669,7 +214634,7 @@ const _sfc_main$o = /* @__PURE__ */ defineComponent({
       renameEditingNode.value = node3;
     }, "renameCommand");
     const deleteCommand = /* @__PURE__ */ __name(async (node3) => {
-      await node3.handleDelete?.(node3);
+      await node3.handleDelete?.();
       emit2("nodeDelete", node3);
     }, "deleteCommand");
     const menuItems = computed(
@@ -213762,7 +214727,7 @@ const _sfc_main$o = /* @__PURE__ */ defineComponent({
     };
   }
 });
-const TreeExplorer = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["__scopeId", "data-v-976a6d58"]]);
+const TreeExplorer = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["__scopeId", "data-v-e3a237e6"]]);
 var theme$6 = /* @__PURE__ */ __name(function theme36(_ref) {
   var dt2 = _ref.dt;
   return "\n.p-toolbar {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    flex-wrap: wrap;\n    padding: ".concat(dt2("toolbar.padding"), ";\n    background: ").concat(dt2("toolbar.background"), ";\n    border: 1px solid ").concat(dt2("toolbar.border.color"), ";\n    color: ").concat(dt2("toolbar.color"), ";\n    border-radius: ").concat(dt2("toolbar.border.radius"), ";\n    gap: ").concat(dt2("toolbar.gap"), ";\n}\n\n.p-toolbar-start,\n.p-toolbar-center,\n.p-toolbar-end {\n    display: flex;\n    align-items: center;\n}\n");
@@ -213848,7 +214813,7 @@ const _sfc_main$n = /* @__PURE__ */ defineComponent({
           }),
           renderSlot(_ctx.$slots, "header", {}, void 0, true)
         ]),
-        createVNode(unref(script$R), { class: "comfy-vue-side-bar-body flex-grow h-0" }, {
+        createVNode(unref(script$Q), { class: "comfy-vue-side-bar-body flex-grow h-0" }, {
           default: withCtx(() => [
             renderSlot(_ctx.$slots, "body", {}, void 0, true)
           ]),
@@ -214331,7 +215296,7 @@ const _sfc_main$i = /* @__PURE__ */ defineComponent({
           label: model ? nameFormat === "title" ? model.title : model.simplified_file_name : node3.label,
           leaf: node3.leaf,
           data: node3.data,
-          getIcon: /* @__PURE__ */ __name(() => {
+          getIcon() {
             if (model) {
               return model.image ? "pi pi-image" : "pi pi-file";
             }
@@ -214339,31 +215304,31 @@ const _sfc_main$i = /* @__PURE__ */ defineComponent({
               return folder.state === ResourceState.Loading ? "pi pi-spin pi-spinner" : "pi pi-folder";
             }
             return "pi pi-folder";
-          }, "getIcon"),
-          getBadgeText: /* @__PURE__ */ __name(() => {
+          },
+          getBadgeText() {
             if (!folder) {
               return null;
             }
             return folder.state === ResourceState.Loaded ? null : "";
-          }, "getBadgeText"),
+          },
           children,
           draggable: node3.leaf,
-          handleClick: /* @__PURE__ */ __name((node22, e2) => {
-            if (node22.leaf) {
+          handleClick(e2) {
+            if (this.leaf) {
               const provider = modelToNodeStore.getNodeProvider(model.directory);
               if (provider) {
-                const node32 = useLitegraphService().addNodeOnGraph(provider.nodeDef);
-                const widget2 = node32.widgets.find(
-                  (widget22) => widget22.name === provider.key
+                const node22 = useLitegraphService().addNodeOnGraph(provider.nodeDef);
+                const widget = node22.widgets.find(
+                  (widget2) => widget2.name === provider.key
                 );
-                if (widget2) {
-                  widget2.value = model.file_name;
+                if (widget) {
+                  widget.value = model.file_name;
                 }
               }
             } else {
-              toggleNodeOnEvent(e2, node22);
+              toggleNodeOnEvent(e2, node3);
             }
-          }, "handleClick")
+          }
         };
       }, "fillNodeInfo");
       return fillNodeInfo(root29.value);
@@ -214452,7 +215417,7 @@ const _sfc_main$i = /* @__PURE__ */ defineComponent({
     };
   }
 });
-const ModelLibrarySidebarTab = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["__scopeId", "data-v-0bb2ac55"]]);
+const ModelLibrarySidebarTab = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["__scopeId", "data-v-3be51840"]]);
 const useModelLibrarySidebarTab = /* @__PURE__ */ __name(() => {
   const { t: t2 } = useI18n();
   return {
@@ -215779,7 +216744,7 @@ const _sfc_main$e = /* @__PURE__ */ defineComponent({
                 _: 1
               }, 8, ["modelValue"])
             ]),
-            createVNode(unref(script$S)),
+            createVNode(unref(script$R)),
             createBaseVNode("div", _hoisted_4$3, [
               createBaseVNode("label", _hoisted_5$3, toDisplayString$1(_ctx.$t("g.color")), 1),
               createBaseVNode("div", _hoisted_6$2, [
@@ -215950,38 +216915,49 @@ const _sfc_main$c = /* @__PURE__ */ defineComponent({
             label: node3.leaf ? node3.data.display_name : node3.label,
             leaf: node3.leaf,
             data: node3.data,
-            getIcon: /* @__PURE__ */ __name((node22) => {
-              if (node22.leaf) {
+            getIcon() {
+              if (this.leaf) {
                 return "pi pi-circle-fill";
               }
-              const customization = nodeBookmarkStore.bookmarksCustomization[node22.data?.nodePath];
+              const customization = nodeBookmarkStore.bookmarksCustomization[node3.data?.nodePath];
               return customization?.icon ? "pi " + customization.icon : "pi pi-bookmark-fill";
-            }, "getIcon"),
+            },
             children: sortedChildren,
             draggable: node3.leaf,
+            renderDragPreview(container) {
+              const vnode = h(NodePreview, { nodeDef: node3.data });
+              render$$(vnode, container);
+              return () => {
+                render$$(null, container);
+              };
+            },
             droppable: !node3.leaf,
-            handleDrop: /* @__PURE__ */ __name((node22, data26) => {
+            handleDrop(data26) {
               const nodeDefToAdd = data26.data.data;
               if (nodeBookmarkStore.isBookmarked(nodeDefToAdd)) {
                 nodeBookmarkStore.toggleBookmark(nodeDefToAdd);
               }
-              const folderNodeDef = node22.data;
+              const folderNodeDef = node3.data;
               const nodePath = folderNodeDef.category + "/" + nodeDefToAdd.name;
               nodeBookmarkStore.addBookmark(nodePath);
-            }, "handleDrop"),
-            handleClick: /* @__PURE__ */ __name((node22, e2) => {
-              if (node22.leaf) {
-                useLitegraphService().addNodeOnGraph(node22.data);
+            },
+            handleClick(e2) {
+              if (this.leaf) {
+                useLitegraphService().addNodeOnGraph(this.data);
               } else {
-                toggleNodeOnEvent(e2, node22);
+                toggleNodeOnEvent(e2, node3);
               }
-            }, "handleClick"),
+            },
             contextMenuItems: extraMenuItems,
             ...node3.leaf ? {} : {
-              handleRename,
-              handleDelete: /* @__PURE__ */ __name((node22) => {
-                nodeBookmarkStore.deleteBookmarkFolder(node22.data);
-              }, "handleDelete")
+              handleRename(newName) {
+                if (this.data && this.data.isDummyFolder) {
+                  nodeBookmarkStore.renameBookmarkFolder(this.data, newName);
+                }
+              },
+              handleDelete() {
+                nodeBookmarkStore.deleteBookmarkFolder(this.data);
+              }
             }
           };
         }, "fillNodeInfo");
@@ -216006,11 +216982,6 @@ const _sfc_main$c = /* @__PURE__ */ defineComponent({
     __expose({
       addNewBookmarkFolder
     });
-    const handleRename = /* @__PURE__ */ __name((node3, newName) => {
-      if (node3.data && node3.data.isDummyFolder) {
-        nodeBookmarkStore.renameBookmarkFolder(node3.data, newName);
-      }
-    }, "handleRename");
     const showCustomizationDialog = ref(false);
     const initialIcon = ref(nodeBookmarkStore.defaultBookmarkIcon);
     const initialColor = ref(nodeBookmarkStore.defaultBookmarkColor);
@@ -216074,27 +217045,27 @@ const _sfc_main$b = /* @__PURE__ */ defineComponent({
           label: node3.leaf ? node3.data.display_name : node3.label,
           leaf: node3.leaf,
           data: node3.data,
-          getIcon: /* @__PURE__ */ __name((node22) => {
-            if (node22.leaf) {
+          getIcon() {
+            if (this.leaf) {
               return "pi pi-circle-fill";
             }
-          }, "getIcon"),
+          },
           children,
           draggable: node3.leaf,
-          renderDragPreview: /* @__PURE__ */ __name((node22, container) => {
-            const vnode = h(NodePreview, { nodeDef: node22.data });
+          renderDragPreview(container) {
+            const vnode = h(NodePreview, { nodeDef: node3.data });
             render$$(vnode, container);
             return () => {
               render$$(null, container);
             };
-          }, "renderDragPreview"),
-          handleClick: /* @__PURE__ */ __name((node22, e2) => {
-            if (node22.leaf) {
-              useLitegraphService().addNodeOnGraph(node22.data);
+          },
+          handleClick(e2) {
+            if (this.leaf) {
+              useLitegraphService().addNodeOnGraph(this.data);
             } else {
-              toggleNodeOnEvent(e2, node22);
+              toggleNodeOnEvent(e2, this);
             }
-          }, "handleClick")
+          }
         };
       }, "fillNodeInfo");
       return fillNodeInfo(root29.value);
@@ -216211,7 +217182,7 @@ const _sfc_main$b = /* @__PURE__ */ defineComponent({
               ref: nodeBookmarkTreeExplorerRef,
               "filtered-node-defs": filteredNodeDefs.value
             }, null, 8, ["filtered-node-defs"]),
-            withDirectives(createVNode(unref(script$S), {
+            withDirectives(createVNode(unref(script$R), {
               type: "dashed",
               class: "m-2"
             }, null, 512), [
@@ -217371,13 +218342,13 @@ var script$2 = {
     };
   }, "data"),
   watch: {
-    numVisible: /* @__PURE__ */ __name(function numVisible2(newValue2, oldValue2) {
+    numVisible: /* @__PURE__ */ __name(function numVisible2(newValue2, oldValue) {
       this.d_numVisible = newValue2;
-      this.d_oldNumVisible = oldValue2;
+      this.d_oldNumVisible = oldValue;
     }, "numVisible"),
-    activeIndex: /* @__PURE__ */ __name(function activeIndex2(newValue2, oldValue2) {
+    activeIndex: /* @__PURE__ */ __name(function activeIndex2(newValue2, oldValue) {
       this.d_activeIndex = newValue2;
-      this.d_oldActiveItemIndex = oldValue2;
+      this.d_oldActiveItemIndex = oldValue;
     }, "activeIndex")
   },
   mounted: /* @__PURE__ */ __name(function mounted23() {
@@ -217970,10 +218941,10 @@ var script$1$1 = {
     }, "stopSlideShow"),
     getPositionClass: /* @__PURE__ */ __name(function getPositionClass(preClassName, position3) {
       var positions = ["top", "left", "bottom", "right"];
-      var pos2 = positions.find(function(item3) {
+      var pos = positions.find(function(item3) {
         return item3 === position3;
       });
-      return pos2 ? "".concat(preClassName, "-").concat(pos2) : "";
+      return pos ? "".concat(preClassName, "-").concat(pos) : "";
     }, "getPositionClass"),
     isVertical: /* @__PURE__ */ __name(function isVertical4() {
       return this.$attrs.thumbnailsPosition === "left" || this.$attrs.thumbnailsPosition === "right";
@@ -219236,7 +220207,7 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
         class: normalizeClass(["flex items-center", props.class])
       }, [
         _ctx.position === "left" ? (openBlock(), createElementBlock("span", _hoisted_1$1, toDisplayString$1(_ctx.text), 1)) : createCommentVNode("", true),
-        createVNode(unref(script$S), {
+        createVNode(unref(script$R), {
           align: _ctx.align,
           type: _ctx.type,
           layout: _ctx.layout,
@@ -219356,34 +220327,36 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
     const renderTreeNode = /* @__PURE__ */ __name((node3, type) => {
       const children = node3.children?.map((child) => renderTreeNode(child, type));
       const workflow = node3.data;
-      const handleClick2 = /* @__PURE__ */ __name((node22, e2) => {
-        if (node22.leaf) {
+      function handleClick2(e2) {
+        if (this.leaf) {
           workflowService2.openWorkflow(workflow);
         } else {
-          toggleNodeOnEvent(e2, node22);
+          toggleNodeOnEvent(e2, this);
         }
-      }, "handleClick");
+      }
+      __name(handleClick2, "handleClick");
       const actions = node3.leaf ? {
         handleClick: handleClick2,
-        handleRename: /* @__PURE__ */ __name(async (node22, newName) => {
+        async handleRename(newName) {
           const newPath = type === "Browse" ? workflow.directory + "/" + appendJsonExt(newName) : ComfyWorkflow.basePath + appendJsonExt(newName);
           await workflowService2.renameWorkflow(workflow, newPath);
-        }, "handleRename"),
-        handleDelete: workflow.isTemporary ? void 0 : async () => {
+        },
+        handleDelete: workflow.isTemporary ? void 0 : async function() {
           await workflowService2.deleteWorkflow(workflow);
         },
-        contextMenuItems: /* @__PURE__ */ __name((node22) => {
+        contextMenuItems() {
           return [
             {
               label: t2("g.insert"),
               icon: "pi pi-file-export",
               command: /* @__PURE__ */ __name(() => {
-                const workflow2 = node22.data;
+                const workflow2 = node3.data;
                 workflowService2.insertWorkflow(workflow2);
               }, "command")
             }
           ];
-        }, "contextMenuItems")
+        },
+        draggable: true
       } : { handleClick: handleClick2 };
       return {
         key: node3.key,
@@ -219659,6 +220632,7 @@ const useWorkspaceStore = /* @__PURE__ */ defineStore("workspace", () => {
   const workflow = computed(() => useWorkflowStore());
   const colorPalette = useColorPaletteService();
   const dialog = useDialogService();
+  const bottomPanel = useBottomPanelStore();
   function registerSidebarTab(tab) {
     sidebarTab.value.registerSidebarTab(tab);
   }
@@ -219686,6 +220660,7 @@ const useWorkspaceStore = /* @__PURE__ */ defineStore("workspace", () => {
     workflow,
     colorPalette,
     dialog,
+    bottomPanel,
     registerSidebarTab,
     unregisterSidebarTab,
     getSidebarTabs
@@ -219745,7 +220720,7 @@ init$3({
   app,
   dsn: "https://e2d0c0bd392ffdce48e856c2a055f437@o4507954455314432.ingest.us.sentry.io/4508621568475136",
   enabled: true,
-  release: "1.8.14",
+  release: "1.9.17",
   integrations: [],
   autoSessionTracking: false,
   defaultIntegrations: false,
@@ -219778,195 +220753,195 @@ export {
   Fragment$1 as F,
   script$v as G,
   markRaw as H,
-  defineStore as I,
-  shallowRef as J,
-  useI18n as K,
-  useCommandStore as L,
-  LiteGraph as M,
-  useColorPaletteStore as N,
-  watch as O,
-  useNodeDefStore as P,
-  BadgePosition as Q,
-  LGraphBadge as R,
-  _ as S,
-  NodeBadgeMode as T,
-  ref as U,
-  useEventListener as V,
-  nextTick as W,
-  st as X,
-  normalizeI18nKey as Y,
+  useI18n as I,
+  useCommandStore as J,
+  useCanvasStore as K,
+  LiteGraph as L,
+  useColorPaletteStore as M,
+  watch as N,
+  useNodeDefStore as O,
+  BadgePosition as P,
+  LGraphBadge as Q,
+  _ as R,
+  NodeBadgeMode as S,
+  ref as T,
+  useEventListener as U,
+  nextTick as V,
+  st as W,
+  normalizeI18nKey as X,
+  useTitleEditorStore as Y,
   LGraphGroup as Z,
   _export_sfc as _,
   useSettingStore as a,
-  script$G as a$,
+  useDraggable as a$,
   EditableText as a0,
-  useNodeFrequencyStore as a1,
-  useNodeBookmarkStore as a2,
-  highlightQuery as a3,
-  script$s as a4,
-  formatNumberWithSuffix as a5,
-  NodeSourceType as a6,
-  createTextVNode as a7,
-  script$t as a8,
-  NodePreview as a9,
+  defineStore as a1,
+  useNodeFrequencyStore as a2,
+  useNodeBookmarkStore as a3,
+  highlightQuery as a4,
+  script$s as a5,
+  formatNumberWithSuffix as a6,
+  NodeSourceType as a7,
+  createTextVNode as a8,
+  script$t as a9,
   ComfyNodeDefImpl as aA,
   ComfyModelDef as aB,
-  LGraph$1 as aC,
-  LLink as aD,
-  DragAndScale as aE,
-  LGraphCanvas as aF,
-  ContextMenu as aG,
-  api as aH,
-  getStorageValue as aI,
-  useModelStore as aJ,
-  setStorageValue as aK,
-  CanvasPointer as aL,
-  IS_CONTROL_WIDGET as aM,
-  updateControlWidgetLabel as aN,
-  useColorPaletteService as aO,
-  ChangeTracker as aP,
-  i18n as aQ,
-  useToast as aR,
-  useToastStore as aS,
-  useQueueSettingsStore as aT,
-  script$j as aU,
-  useQueuePendingTaskCountStore as aV,
-  useLocalStorage as aW,
-  useDraggable as aX,
-  watchDebounced as aY,
-  inject as aZ,
-  useElementBounding as a_,
-  NodeSearchFilter as aa,
-  script$T as ab,
-  SearchFilterChip as ac,
-  useLitegraphService as ad,
-  storeToRefs as ae,
-  isRef as af,
-  toRaw as ag,
-  LinkReleaseTriggerAction as ah,
-  normalizeClass as ai,
-  useUserStore as aj,
-  useDialogStore as ak,
-  SettingDialogHeader as al,
-  SettingDialogContent as am,
-  useKeybindingStore as an,
-  Teleport as ao,
-  usePragmaticDraggable as ap,
-  usePragmaticDroppable as aq,
-  withModifiers as ar,
-  mergeProps$2 as as,
-  useWorkflowService as at,
-  useWorkflowBookmarkStore as au,
-  script$7 as av,
-  script$R as aw,
-  script$c as ax,
-  LinkMarkerShape as ay,
+  ComfyWorkflow as aC,
+  LGraphCanvas as aD,
+  te as aE,
+  LGraph$1 as aF,
+  LLink as aG,
+  DragAndScale as aH,
+  ContextMenu as aI,
+  CanvasPointer as aJ,
+  isImageNode as aK,
+  api as aL,
+  getStorageValue as aM,
+  useModelStore as aN,
+  setStorageValue as aO,
+  LinkMarkerShape as aP,
+  IS_CONTROL_WIDGET as aQ,
+  updateControlWidgetLabel as aR,
+  useColorPaletteService as aS,
+  ChangeTracker as aT,
+  i18n as aU,
+  useToast as aV,
+  useToastStore as aW,
+  useQueueSettingsStore as aX,
+  script$j as aY,
+  useQueuePendingTaskCountStore as aZ,
+  useLocalStorage as a_,
+  NodePreview as aa,
+  NodeSearchFilter as ab,
+  script$T as ac,
+  SearchFilterChip as ad,
+  useLitegraphService as ae,
+  storeToRefs as af,
+  isRef as ag,
+  toRaw as ah,
+  LinkReleaseTriggerAction as ai,
+  normalizeClass as aj,
+  useUserStore as ak,
+  useDialogStore as al,
+  SettingDialogHeader as am,
+  SettingDialogContent as an,
+  useKeybindingStore as ao,
+  Teleport as ap,
+  usePragmaticDraggable as aq,
+  usePragmaticDroppable as ar,
+  withModifiers as as,
+  mergeProps$2 as at,
+  useWorkflowService as au,
+  useWorkflowBookmarkStore as av,
+  script$7 as aw,
+  script$Q as ax,
+  script$c as ay,
   useModelToNodeStore as az,
   useWorkflowStore as b,
-  addStyle$1 as b$,
-  lodashExports as b0,
-  useEventBus as b1,
-  useMenuItemStore as b2,
-  provide as b3,
-  isElectron as b4,
-  electronAPI as b5,
-  isNativeWindow as b6,
-  useDialogService as b7,
-  LGraphEventMode as b8,
-  useQueueStore as b9,
-  BaseStyle$1 as bA,
-  script$14 as bB,
-  ZIndex$1 as bC,
-  addClass$1 as bD,
-  focus$2 as bE,
-  blockBodyScroll$1 as bF,
-  unblockBodyScroll$1 as bG,
-  FocusTrap as bH,
-  script$U as bI,
-  script$_ as bJ,
-  resolveComponent as bK,
-  Transition as bL,
-  script$12 as bM,
-  PrimeIcons as bN,
-  findSingle$1 as bO,
-  getAttribute$1 as bP,
-  script$f as bQ,
-  script$n as bR,
-  Ripple as bS,
-  UniqueComponentId as bT,
-  script$p as bU,
-  BaseDirective as bV,
-  removeClass$1 as bW,
-  createElement$1 as bX,
-  hasClass$1 as bY,
-  script$$ as bZ,
-  script$10 as b_,
-  DEFAULT_DARK_COLOR_PALETTE as ba,
-  DEFAULT_LIGHT_COLOR_PALETTE as bb,
-  t as bc,
-  useErrorHandling as bd,
-  useRouter as be,
-  withKeys as bf,
-  script$J as bg,
-  script$S as bh,
-  script$m as bi,
-  script$I as bj,
-  ProgressStatus as bk,
-  BaseTerminal as bl,
-  useModel as bm,
-  script$i as bn,
-  script$B as bo,
-  script$C as bp,
-  MigrationItems as bq,
-  script$K as br,
-  mergeModels as bs,
-  ValidationState as bt,
-  checkMirrorReachable as bu,
-  _sfc_main$C as bv,
-  mergeValidationStates as bw,
-  CUDA_TORCH_URL as bx,
-  NIGHTLY_CPU_TORCH_URL as by,
-  script$y as bz,
+  ConnectedOverlayScrollHandler as b$,
+  watchDebounced as b0,
+  inject as b1,
+  useElementBounding as b2,
+  script$G as b3,
+  lodashExports as b4,
+  useEventBus as b5,
+  useMenuItemStore as b6,
+  provide as b7,
+  isElectron as b8,
+  electronAPI as b9,
+  isInChina as bA,
+  mergeValidationStates as bB,
+  CUDA_TORCH_URL as bC,
+  NIGHTLY_CPU_TORCH_URL as bD,
+  script$12 as bE,
+  PrimeIcons as bF,
+  BaseStyle$1 as bG,
+  script$14 as bH,
+  Transition as bI,
+  findSingle$1 as bJ,
+  getAttribute$1 as bK,
+  focus$2 as bL,
+  script$f as bM,
+  script$n as bN,
+  Ripple as bO,
+  UniqueComponentId as bP,
+  script$p as bQ,
+  resolveComponent as bR,
+  BaseDirective as bS,
+  removeClass$1 as bT,
+  addClass$1 as bU,
+  createElement$1 as bV,
+  hasClass$1 as bW,
+  script$$ as bX,
+  script$10 as bY,
+  ZIndex$1 as bZ,
+  addStyle$1 as b_,
+  isNativeWindow as ba,
+  useDialogService as bb,
+  LGraphEventMode as bc,
+  useQueueStore as bd,
+  DEFAULT_DARK_COLOR_PALETTE as be,
+  DEFAULT_LIGHT_COLOR_PALETTE as bf,
+  t as bg,
+  useErrorHandling as bh,
+  useRouter as bi,
+  withKeys as bj,
+  script$I as bk,
+  script$R as bl,
+  script$m as bm,
+  script$S as bn,
+  ProgressStatus as bo,
+  BaseTerminal as bp,
+  useModel as bq,
+  script$i as br,
+  script$B as bs,
+  script$C as bt,
+  MigrationItems as bu,
+  script$J as bv,
+  mergeModels as bw,
+  ValidationState as bx,
+  checkMirrorReachable as by,
+  _sfc_main$C as bz,
   computed as c,
-  useTimeout as c$,
-  ConnectedOverlayScrollHandler as c0,
-  isTouchDevice$1 as c1,
-  relativePosition$1 as c2,
-  getOuterWidth$1 as c3,
-  absolutePosition$1 as c4,
-  find$2 as c5,
-  getIndex$1 as c6,
-  getFocusableElements$1 as c7,
-  OverlayEventBus as c8,
-  setAttribute$1 as c9,
-  script$M as cA,
-  script$u as cB,
-  getUserAgent$1 as cC,
-  script$l as cD,
-  getFirstFocusableElement$1 as cE,
-  getLastFocusableElement$1 as cF,
-  FilterService as cG,
-  script$A as cH,
-  script$D as cI,
-  findIndexInList$2 as cJ,
-  scrollInView$1 as cK,
-  script$z as cL,
-  script$k as cM,
-  script$9 as cN,
-  findLast$3 as cO,
-  getWindowScrollTop$1 as cP,
-  getWidth$1 as cQ,
-  getOffset$1 as cR,
-  vModelText as cS,
-  script$b as cT,
-  getVNodeProp as cU,
-  getNextElementSibling$1 as cV,
-  getPreviousElementSibling$1 as cW,
-  isClickable$1 as cX,
-  _default as cY,
-  clearSelection$1 as cZ,
-  isRTL$1 as c_,
-  localeComparator$2 as ca,
+  getPreviousElementSibling$1 as c$,
+  isTouchDevice$1 as c0,
+  relativePosition$1 as c1,
+  getOuterWidth$1 as c2,
+  absolutePosition$1 as c3,
+  find$2 as c4,
+  getIndex$1 as c5,
+  getFocusableElements$1 as c6,
+  OverlayEventBus as c7,
+  setAttribute$1 as c8,
+  localeComparator$2 as c9,
+  unblockBodyScroll$1 as cA,
+  FocusTrap as cB,
+  guardReactiveProps as cC,
+  setCSSProperty$1 as cD,
+  $dt$1 as cE,
+  script$L as cF,
+  script$u as cG,
+  getUserAgent$1 as cH,
+  script$l as cI,
+  getFirstFocusableElement$1 as cJ,
+  getLastFocusableElement$1 as cK,
+  FilterService as cL,
+  script$A as cM,
+  script$D as cN,
+  findIndexInList$2 as cO,
+  scrollInView$1 as cP,
+  script$z as cQ,
+  script$k as cR,
+  script$9 as cS,
+  findLast$3 as cT,
+  getWindowScrollTop$1 as cU,
+  getWidth$1 as cV,
+  getOffset$1 as cW,
+  vModelText as cX,
+  script$b as cY,
+  getVNodeProp as cZ,
+  getNextElementSibling$1 as c_,
+  script$U as ca,
   script$q as cb,
   resolveFieldData$2 as cc,
   isNotEmpty$2 as cd,
@@ -219977,57 +220952,68 @@ export {
   isEmpty$3 as ci,
   findLastIndex$2 as cj,
   script$X as ck,
-  script$11 as cl,
-  uuid$1 as cm,
-  sort$2 as cn,
-  createSlots as co,
-  EventBus$1 as cp,
-  resolve$4 as cq,
-  Tooltip as cr,
-  script$H as cs,
-  script$L as ct,
-  script$W as cu,
-  normalizeProps as cv,
-  isAttributeEquals$1 as cw,
-  guardReactiveProps as cx,
-  setCSSProperty$1 as cy,
-  $dt$1 as cz,
+  script$_ as cl,
+  script$11 as cm,
+  uuid$1 as cn,
+  sort$2 as co,
+  createSlots as cp,
+  EventBus$1 as cq,
+  resolve$4 as cr,
+  Tooltip as cs,
+  script$H as ct,
+  script$K as cu,
+  script$W as cv,
+  script$y as cw,
+  normalizeProps as cx,
+  blockBodyScroll$1 as cy,
+  isAttributeEquals$1 as cz,
   defineComponent as d,
-  script$Q as d0,
-  useConfirm as d1,
-  script$6 as d2,
-  onUnmounted as d3,
-  getHeight$1 as d4,
-  getOuterHeight$1 as d5,
-  isArray$c as d6,
-  ToastEventBus as d7,
-  TransitionGroup as d8,
-  nestedPosition$1 as d9,
-  ComfyDialog as da,
-  $el as db,
-  ComfyApp as dc,
-  useExtensionService as dd,
-  processDynamicPrompt as de,
-  DraggableList as df,
-  applyTextReplacements as dg,
-  ComfyWidgets as dh,
-  addValueControlWidgets as di,
-  serialise as dj,
-  deserialiseAndCreate as dk,
-  FilterMatchMode as dl,
-  SearchBox as dm,
-  _sfc_main$L as dn,
-  KeyComboImpl as dp,
-  KeybindingImpl as dq,
-  useExtensionStore as dr,
-  invokeElementMethod$1 as ds,
-  FilterOperator as dt,
-  exportCSV$1 as du,
-  getHiddenElementOuterWidth$1 as dv,
-  getHiddenElementOuterHeight$1 as dw,
-  reorderArray$2 as dx,
-  useCopyToClipboard as dy,
-  FormItem as dz,
+  isClickable$1 as d0,
+  _default as d1,
+  clearSelection$1 as d2,
+  isRTL$1 as d3,
+  useTimeout as d4,
+  script$P as d5,
+  useConfirm as d6,
+  script$6 as d7,
+  onUnmounted as d8,
+  getHeight$1 as d9,
+  KeyComboImpl as dA,
+  KeybindingImpl as dB,
+  useExtensionStore as dC,
+  invokeElementMethod$1 as dD,
+  FilterOperator as dE,
+  exportCSV$1 as dF,
+  getHiddenElementOuterWidth$1 as dG,
+  getHiddenElementOuterHeight$1 as dH,
+  reorderArray$2 as dI,
+  useCopyToClipboard as dJ,
+  FormItem as dK,
+  getOuterHeight$1 as da,
+  isArray$c as db,
+  nestedPosition$1 as dc,
+  commonjsGlobal as dd,
+  getDefaultExportFromCjs as de,
+  xtermExports as df,
+  ToastEventBus as dg,
+  TransitionGroup as dh,
+  ComfyDialog as di,
+  $el as dj,
+  ComfyApp as dk,
+  useExtensionService as dl,
+  processDynamicPrompt as dm,
+  DraggableList as dn,
+  applyTextReplacements as dp,
+  ComfyWidgets as dq,
+  addValueControlWidgets as dr,
+  serialise as ds,
+  deserialiseAndCreate as dt,
+  script$g as du,
+  createApp as dv,
+  PrimeVue as dw,
+  FilterMatchMode as dx,
+  SearchBox as dy,
+  _sfc_main$L as dz,
   useTitle as e,
   createElementBlock as f,
   useWorkspaceStore as g,
@@ -220051,4 +221037,4 @@ export {
   createBlock as y,
   withCtx as z
 };
-//# sourceMappingURL=index-DqqhYDnY.js.map
+//# sourceMappingURL=index-DqXp9vW4.js.map

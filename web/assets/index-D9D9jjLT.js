@@ -1,6 +1,6 @@
 var __defProp = Object.defineProperty;
 var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
-import { da as ComfyDialog, db as $el, dc as ComfyApp, h as app, M as LiteGraph, aF as LGraphCanvas, dd as useExtensionService, de as processDynamicPrompt, b4 as isElectron, b5 as electronAPI, b as useWorkflowStore, bu as checkMirrorReachable, b7 as useDialogService, bc as t, df as DraggableList, aS as useToastStore, $ as LGraphNode, dg as applyTextReplacements, dh as ComfyWidgets, di as addValueControlWidgets, P as useNodeDefStore, dj as serialise, dk as deserialiseAndCreate, aH as api, a as useSettingStore, Z as LGraphGroup, W as nextTick, b0 as lodashExports, aK as setStorageValue, aI as getStorageValue } from "./index-DqqhYDnY.js";
+import { di as ComfyDialog, dj as $el, dk as ComfyApp, h as app, L as LiteGraph, aD as LGraphCanvas, dl as useExtensionService, dm as processDynamicPrompt, b8 as isElectron, b9 as electronAPI, b as useWorkflowStore, by as checkMirrorReachable, bb as useDialogService, bg as t, dn as DraggableList, aW as useToastStore, $ as LGraphNode, dp as applyTextReplacements, dq as ComfyWidgets, dr as addValueControlWidgets, O as useNodeDefStore, a as useSettingStore, ds as serialise, dt as deserialiseAndCreate, aL as api, Z as LGraphGroup, d as defineComponent, T as ref, p as onMounted, d8 as onUnmounted, r as resolveDirective, o as openBlock, f as createElementBlock, k as createVNode, j as unref, l as script, z as withCtx, i as withDirectives, m as createBaseVNode, y as createBlock, aj as normalizeClass, du as script$1, v as vShow, B as createCommentVNode, dv as createApp, cs as Tooltip, N as watch, bm as script$2, dw as PrimeVue, V as nextTick, b4 as lodashExports, aO as setStorageValue, aM as getStorageValue } from "./index-DqXp9vW4.js";
 import { P as PYTHON_MIRROR } from "./uvMirrors-B-HKMf6X.js";
 class ClipspaceDialog extends ComfyDialog {
   static {
@@ -289,7 +289,7 @@ useExtensionService().registerExtension({
   name: "Comfy.DynamicPrompts",
   nodeCreated(node) {
     if (node.widgets) {
-      const widgets = node.widgets.filter((n) => n.dynamicPrompts);
+      const widgets = node.widgets.filter((w) => w.dynamicPrompts);
       for (const widget of widgets) {
         widget.serializeValue = (workflowNode, widgetIndex) => {
           if (typeof widget.value !== "string") return widget.value;
@@ -1627,17 +1627,16 @@ function mergeIfValid(output, config2, forceUpdate, recreateWidget, config1) {
   return { customConfig };
 }
 __name(mergeIfValid, "mergeIfValid");
-let useConversionSubmenusSetting;
 app.registerExtension({
   name: "Comfy.WidgetInputs",
-  init() {
-    useConversionSubmenusSetting = app.ui.settings.addSetting({
+  settings: [
+    {
       id: "Comfy.NodeInputConversionSubmenus",
       name: "In the node context menu, place the entries that convert between input/widget in sub-menus.",
       type: "boolean",
       defaultValue: true
-    });
-  },
+    }
+  ],
   setup() {
     app.canvas.getWidgetLinkType = function(widget, node) {
       const nodeDefStore = useNodeDefStore();
@@ -1678,6 +1677,17 @@ app.registerExtension({
       if (widget.type?.startsWith(CONVERTED_TYPE)) return false;
       convertToInput(this, widget, config);
       return true;
+    };
+    nodeType.prototype.getExtraSlotMenuOptions = function(slot) {
+      if (!slot.input || !slot.input.widget) return [];
+      const widget = this.widgets.find((w) => w.name === slot.input.widget.name);
+      if (!widget) return [];
+      return [
+        {
+          content: `Convert to widget`,
+          callback: /* @__PURE__ */ __name(() => convertToWidget(this, widget), "callback")
+        }
+      ];
     };
     nodeType.prototype.getExtraMenuOptions = function(_, options) {
       const r = origGetExtraMenuOptions ? origGetExtraMenuOptions.apply(this, arguments) : void 0;
@@ -1726,7 +1736,7 @@ app.registerExtension({
           }
         }
         if (toInput.length) {
-          if (useConversionSubmenusSetting.value) {
+          if (useSettingStore().get("Comfy.NodeInputConversionSubmenus")) {
             options.push({
               content: "Convert Widget to Input",
               submenu: {
@@ -1738,7 +1748,7 @@ app.registerExtension({
           }
         }
         if (toWidget.length) {
-          if (useConversionSubmenusSetting.value) {
+          if (useSettingStore().get("Comfy.NodeInputConversionSubmenus")) {
             options.push({
               content: "Convert Input to Widget",
               submenu: {
@@ -1801,10 +1811,7 @@ app.registerExtension({
       if (!app2.configuringGraph && this.inputs) {
         for (const input of this.inputs) {
           if (input.widget && !input.widget[GET_CONFIG]) {
-            input.widget[GET_CONFIG] = () => (
-              // @ts-expect-error input.widget has unknown type
-              getConfig.call(this, input.widget.name)
-            );
+            input.widget[GET_CONFIG] = () => getConfig.call(this, input.widget.name);
             const w = this.widgets.find((w2) => w2.name === input.widget.name);
             if (w) {
               hideWidget(this, w);
@@ -3415,7 +3422,7 @@ class Load3DConfiguration {
   constructor(load3d) {
     this.load3d = load3d;
   }
-  configure(loadFolder, modelWidget, material, lightIntensity, upDirection, fov2, cameraState, postModelUpdateFunc) {
+  configure(loadFolder, modelWidget, material, upDirection, cameraState, width = null, height = null, postModelUpdateFunc) {
     this.setupModelHandling(
       modelWidget,
       loadFolder,
@@ -3423,10 +3430,20 @@ class Load3DConfiguration {
       postModelUpdateFunc
     );
     this.setupMaterial(material);
-    this.setupLighting(lightIntensity);
     this.setupDirection(upDirection);
-    this.setupCamera(fov2);
+    this.setupTargetSize(width, height);
     this.setupDefaultProperties();
+  }
+  setupTargetSize(width, height) {
+    if (width && height) {
+      this.load3d.setTargetSize(width.value, height.value);
+      width.callback = (value) => {
+        this.load3d.setTargetSize(value, height.value);
+      };
+      height.callback = (value) => {
+        this.load3d.setTargetSize(width.value, value);
+      };
+    }
   }
   setupModelHandling(modelWidget, loadFolder, cameraState, postModelUpdateFunc) {
     const onModelWidgetUpdate = this.createModelUpdateHandler(
@@ -3447,12 +3464,6 @@ class Load3DConfiguration {
       material.value
     );
   }
-  setupLighting(lightIntensity) {
-    lightIntensity.callback = (value) => {
-      this.load3d.setLightIntensity(value);
-    };
-    this.load3d.setLightIntensity(lightIntensity.value);
-  }
   setupDirection(upDirection) {
     upDirection.callback = (value) => {
       this.load3d.setUpDirection(value);
@@ -3460,12 +3471,6 @@ class Load3DConfiguration {
     this.load3d.setUpDirection(
       upDirection.value
     );
-  }
-  setupCamera(fov2) {
-    fov2.callback = (value) => {
-      this.load3d.setFOV(value);
-    };
-    this.load3d.setFOV(fov2.value);
   }
   setupDefaultProperties() {
     const cameraType = this.load3d.loadNodeProperty(
@@ -3477,6 +3482,10 @@ class Load3DConfiguration {
     this.load3d.toggleGrid(showGrid);
     const bgColor = this.load3d.loadNodeProperty("Background Color", "#282828");
     this.load3d.setBackgroundColor(bgColor);
+    const lightIntensity = this.load3d.loadNodeProperty("Light Intensity", "5");
+    this.load3d.setLightIntensity(lightIntensity);
+    const fov2 = this.load3d.loadNodeProperty("FOV", "75");
+    this.load3d.setFOV(fov2);
   }
   createModelUpdateHandler(loadFolder, cameraState, postModelUpdateFunc) {
     let isFirstLoad = true;
@@ -44141,7 +44150,7 @@ class GLTFParser {
   /** Returns a reference to a shared resource, cloning it if necessary. */
   _getNodeRef(cache, index, object) {
     if (cache.refs[index] <= 1) return object;
-    const ref = object.clone();
+    const ref2 = object.clone();
     const updateMappings = /* @__PURE__ */ __name((original, clone) => {
       const mappings = this.associations.get(original);
       if (mappings != null) {
@@ -44151,9 +44160,9 @@ class GLTFParser {
         updateMappings(child, clone.children[i]);
       }
     }, "updateMappings");
-    updateMappings(object, ref);
-    ref.name += "_instance_" + cache.uses[index]++;
-    return ref;
+    updateMappings(object, ref2);
+    ref2.name += "_instance_" + cache.uses[index]++;
+    return ref2;
   }
   _invokeOne(func) {
     const extensions = Object.values(this.plugins);
@@ -46206,6 +46215,259 @@ class STLLoader extends Loader {
     return isBinary(binData) ? parseBinary(binData) : parseASCII(ensureString(data));
   }
 }
+const _hoisted_1$1 = { class: "absolute top-2 left-2 flex flex-col gap-2 z-20" };
+const _hoisted_2$1 = { class: "pi pi-camera text-white text-lg" };
+const _hoisted_3 = { class: "pi pi-palette text-white text-lg" };
+const _hoisted_4 = ["value"];
+const _hoisted_5 = {
+  key: 0,
+  class: "relative"
+};
+const _hoisted_6 = { class: "pi pi-sun text-white text-lg" };
+const _hoisted_7 = {
+  class: "absolute left-12 top-0 bg-black bg-opacity-50 p-4 rounded-lg shadow-lg",
+  style: { "width": "150px" }
+};
+const _hoisted_8 = {
+  key: 1,
+  class: "relative"
+};
+const _hoisted_9 = { class: "pi pi-expand text-white text-lg" };
+const _hoisted_10 = {
+  class: "absolute left-12 top-0 bg-black bg-opacity-50 p-4 rounded-lg shadow-lg",
+  style: { "width": "150px" }
+};
+const _hoisted_11 = { key: 2 };
+const _sfc_main$1 = /* @__PURE__ */ defineComponent({
+  __name: "Load3DControls",
+  props: {
+    backgroundColor: {},
+    showGrid: { type: Boolean },
+    showPreview: { type: Boolean },
+    lightIntensity: {},
+    showLightIntensityButton: { type: Boolean },
+    fov: {},
+    showFOVButton: { type: Boolean },
+    showPreviewButton: { type: Boolean }
+  },
+  emits: ["toggleCamera", "toggleGrid", "updateBackgroundColor", "updateLightIntensity", "updateFOV", "togglePreview"],
+  setup(__props, { expose: __expose, emit: __emit }) {
+    const props = __props;
+    const emit = __emit;
+    const backgroundColor = ref(props.backgroundColor);
+    const showGrid = ref(props.showGrid);
+    const showPreview = ref(props.showPreview);
+    const colorPickerRef = ref(null);
+    const lightIntensity = ref(props.lightIntensity);
+    const showLightIntensity = ref(false);
+    const showLightIntensityButton = ref(props.showLightIntensityButton);
+    const fov2 = ref(props.fov);
+    const showFOV = ref(false);
+    const showFOVButton = ref(props.showFOVButton);
+    const showPreviewButton = ref(props.showPreviewButton);
+    const toggleCamera = /* @__PURE__ */ __name(() => {
+      emit("toggleCamera");
+    }, "toggleCamera");
+    const toggleGrid = /* @__PURE__ */ __name(() => {
+      showGrid.value = !showGrid.value;
+      emit("toggleGrid", showGrid.value);
+    }, "toggleGrid");
+    const togglePreview = /* @__PURE__ */ __name(() => {
+      showPreview.value = !showPreview.value;
+      emit("togglePreview", showPreview.value);
+    }, "togglePreview");
+    const updateBackgroundColor = /* @__PURE__ */ __name((color) => {
+      emit("updateBackgroundColor", color);
+    }, "updateBackgroundColor");
+    const openColorPicker = /* @__PURE__ */ __name(() => {
+      colorPickerRef.value?.click();
+    }, "openColorPicker");
+    const toggleLightIntensity = /* @__PURE__ */ __name(() => {
+      showLightIntensity.value = !showLightIntensity.value;
+    }, "toggleLightIntensity");
+    const updateLightIntensity = /* @__PURE__ */ __name(() => {
+      emit("updateLightIntensity", lightIntensity.value);
+    }, "updateLightIntensity");
+    const toggleFOV = /* @__PURE__ */ __name(() => {
+      showFOV.value = !showFOV.value;
+    }, "toggleFOV");
+    const updateFOV = /* @__PURE__ */ __name(() => {
+      emit("updateFOV", fov2.value);
+    }, "updateFOV");
+    const closeSlider = /* @__PURE__ */ __name((e) => {
+      const target = e.target;
+      if (!target.closest(".relative")) {
+        showLightIntensity.value = false;
+        showFOV.value = false;
+      }
+    }, "closeSlider");
+    onMounted(() => {
+      document.addEventListener("click", closeSlider);
+    });
+    onUnmounted(() => {
+      document.removeEventListener("click", closeSlider);
+    });
+    __expose({
+      backgroundColor,
+      showGrid,
+      lightIntensity,
+      showLightIntensityButton,
+      fov: fov2,
+      showFOVButton,
+      showPreviewButton
+    });
+    return (_ctx, _cache2) => {
+      const _directive_tooltip = resolveDirective("tooltip");
+      return openBlock(), createElementBlock("div", _hoisted_1$1, [
+        createVNode(unref(script), {
+          class: "p-button-rounded p-button-text",
+          onClick: toggleCamera
+        }, {
+          default: withCtx(() => [
+            withDirectives(createBaseVNode("i", _hoisted_2$1, null, 512), [
+              [
+                _directive_tooltip,
+                { value: unref(t)("load3d.switchCamera"), showDelay: 300 },
+                void 0,
+                { right: true }
+              ]
+            ])
+          ]),
+          _: 1
+        }),
+        withDirectives((openBlock(), createBlock(unref(script), {
+          class: normalizeClass(["p-button-rounded p-button-text", { "p-button-outlined": showGrid.value }]),
+          onClick: toggleGrid
+        }, {
+          default: withCtx(() => _cache2[3] || (_cache2[3] = [
+            createBaseVNode("i", { class: "pi pi-table text-white text-lg" }, null, -1)
+          ])),
+          _: 1
+        }, 8, ["class"])), [
+          [
+            _directive_tooltip,
+            { value: unref(t)("load3d.showGrid"), showDelay: 300 },
+            void 0,
+            { right: true }
+          ]
+        ]),
+        createVNode(unref(script), {
+          class: "p-button-rounded p-button-text",
+          onClick: openColorPicker
+        }, {
+          default: withCtx(() => [
+            withDirectives(createBaseVNode("i", _hoisted_3, null, 512), [
+              [
+                _directive_tooltip,
+                { value: unref(t)("load3d.backgroundColor"), showDelay: 300 },
+                void 0,
+                { right: true }
+              ]
+            ]),
+            createBaseVNode("input", {
+              type: "color",
+              ref_key: "colorPickerRef",
+              ref: colorPickerRef,
+              value: backgroundColor.value,
+              onInput: _cache2[0] || (_cache2[0] = ($event) => updateBackgroundColor($event.target.value)),
+              class: "absolute opacity-0 w-0 h-0 p-0 m-0 pointer-events-none"
+            }, null, 40, _hoisted_4)
+          ]),
+          _: 1
+        }),
+        showLightIntensityButton.value ? (openBlock(), createElementBlock("div", _hoisted_5, [
+          createVNode(unref(script), {
+            class: "p-button-rounded p-button-text",
+            onClick: toggleLightIntensity
+          }, {
+            default: withCtx(() => [
+              withDirectives(createBaseVNode("i", _hoisted_6, null, 512), [
+                [
+                  _directive_tooltip,
+                  {
+                    value: unref(t)("load3d.lightIntensity"),
+                    showDelay: 300
+                  },
+                  void 0,
+                  { right: true }
+                ]
+              ])
+            ]),
+            _: 1
+          }),
+          withDirectives(createBaseVNode("div", _hoisted_7, [
+            createVNode(unref(script$1), {
+              modelValue: lightIntensity.value,
+              "onUpdate:modelValue": _cache2[1] || (_cache2[1] = ($event) => lightIntensity.value = $event),
+              class: "w-full",
+              onChange: updateLightIntensity,
+              min: 1,
+              max: 20,
+              step: 1
+            }, null, 8, ["modelValue"])
+          ], 512), [
+            [vShow, showLightIntensity.value]
+          ])
+        ])) : createCommentVNode("", true),
+        showFOVButton.value ? (openBlock(), createElementBlock("div", _hoisted_8, [
+          createVNode(unref(script), {
+            class: "p-button-rounded p-button-text",
+            onClick: toggleFOV
+          }, {
+            default: withCtx(() => [
+              withDirectives(createBaseVNode("i", _hoisted_9, null, 512), [
+                [
+                  _directive_tooltip,
+                  { value: unref(t)("load3d.fov"), showDelay: 300 },
+                  void 0,
+                  { right: true }
+                ]
+              ])
+            ]),
+            _: 1
+          }),
+          withDirectives(createBaseVNode("div", _hoisted_10, [
+            createVNode(unref(script$1), {
+              modelValue: fov2.value,
+              "onUpdate:modelValue": _cache2[2] || (_cache2[2] = ($event) => fov2.value = $event),
+              class: "w-full",
+              onChange: updateFOV,
+              min: 10,
+              max: 150,
+              step: 1
+            }, null, 8, ["modelValue"])
+          ], 512), [
+            [vShow, showFOV.value]
+          ])
+        ])) : createCommentVNode("", true),
+        showPreviewButton.value ? (openBlock(), createElementBlock("div", _hoisted_11, [
+          createVNode(unref(script), {
+            class: "p-button-rounded p-button-text",
+            onClick: togglePreview
+          }, {
+            default: withCtx(() => [
+              withDirectives(createBaseVNode("i", {
+                class: normalizeClass([
+                  "pi",
+                  showPreview.value ? "pi-eye" : "pi-eye-slash",
+                  "text-white text-lg"
+                ])
+              }, null, 2), [
+                [
+                  _directive_tooltip,
+                  { value: unref(t)("load3d.previewOutput"), showDelay: 300 },
+                  void 0,
+                  { right: true }
+                ]
+              ])
+            ]),
+            _: 1
+          })
+        ])) : createCommentVNode("", true)
+      ]);
+    };
+  }
+});
 class Load3d {
   static {
     __name(this, "Load3d");
@@ -46237,11 +46499,16 @@ class Load3d {
   originalRotation = null;
   viewHelper = {};
   viewHelperContainer = {};
-  cameraSwitcherContainer = {};
-  gridSwitcherContainer = {};
+  previewRenderer = null;
+  previewCamera = null;
+  previewContainer = {};
+  targetWidth = 1024;
+  targetHeight = 1024;
+  showPreview = true;
   node = {};
-  bgColorInput = {};
-  constructor(container) {
+  controlsApp = null;
+  controlsContainer;
+  constructor(container, options = {}) {
     this.scene = new Scene();
     this.perspectiveCamera = new PerspectiveCamera(75, 1, 0.1, 1e3);
     this.perspectiveCamera.position.set(5, 5, 5);
@@ -46301,11 +46568,44 @@ class Load3d {
     });
     this.standardMaterial = this.createSTLMaterial();
     this.createViewHelper(container);
-    this.createGridSwitcher(container);
-    this.createCameraSwitcher(container);
-    this.createColorPicker(container);
+    if (options && options.createPreview) {
+      this.createCapturePreview(container);
+    }
+    this.controlsContainer = document.createElement("div");
+    this.controlsContainer.style.position = "absolute";
+    this.controlsContainer.style.top = "0";
+    this.controlsContainer.style.left = "0";
+    this.controlsContainer.style.width = "100%";
+    this.controlsContainer.style.height = "100%";
+    this.controlsContainer.style.pointerEvents = "none";
+    this.controlsContainer.style.zIndex = "1";
+    container.appendChild(this.controlsContainer);
+    this.mountControls(options);
     this.handleResize();
     this.startAnimation();
+  }
+  mountControls(options = {}) {
+    const controlsMount = document.createElement("div");
+    controlsMount.style.pointerEvents = "auto";
+    this.controlsContainer.appendChild(controlsMount);
+    this.controlsApp = createApp(_sfc_main$1, {
+      backgroundColor: "#282828",
+      showGrid: true,
+      showPreview: options.createPreview,
+      lightIntensity: 5,
+      showLightIntensityButton: true,
+      fov: 75,
+      showFOVButton: true,
+      showPreviewButton: options.createPreview,
+      onToggleCamera: /* @__PURE__ */ __name(() => this.toggleCamera(), "onToggleCamera"),
+      onToggleGrid: /* @__PURE__ */ __name((show) => this.toggleGrid(show), "onToggleGrid"),
+      onTogglePreview: /* @__PURE__ */ __name((show) => this.togglePreview(show), "onTogglePreview"),
+      onUpdateBackgroundColor: /* @__PURE__ */ __name((color) => this.setBackgroundColor(color), "onUpdateBackgroundColor"),
+      onUpdateLightIntensity: /* @__PURE__ */ __name((lightIntensity) => this.setLightIntensity(lightIntensity), "onUpdateLightIntensity"),
+      onUpdateFOV: /* @__PURE__ */ __name((fov2) => this.setFOV(fov2), "onUpdateFOV")
+    });
+    this.controlsApp.directive("tooltip", Tooltip);
+    this.controlsApp.mount(controlsMount);
   }
   setNode(node) {
     this.node = node;
@@ -46320,6 +46620,79 @@ class Load3d {
       return defaultValue;
     }
     return this.node.properties[name];
+  }
+  createCapturePreview(container) {
+    this.previewRenderer = new WebGLRenderer({
+      alpha: true,
+      antialias: true
+    });
+    this.previewRenderer.setSize(this.targetWidth, this.targetHeight);
+    this.previewRenderer.setClearColor(2631720);
+    this.previewContainer = document.createElement("div");
+    this.previewContainer.style.cssText = `
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+      background: rgba(0, 0, 0, 0.2);
+      display: block;
+    `;
+    this.previewContainer.appendChild(this.previewRenderer.domElement);
+    this.previewContainer.style.display = this.showPreview ? "block" : "none";
+    container.appendChild(this.previewContainer);
+  }
+  updatePreviewRender() {
+    if (!this.previewRenderer || !this.previewContainer || !this.showPreview)
+      return;
+    if (!this.previewCamera || this.activeCamera instanceof PerspectiveCamera && !(this.previewCamera instanceof PerspectiveCamera) || this.activeCamera instanceof OrthographicCamera && !(this.previewCamera instanceof OrthographicCamera)) {
+      this.previewCamera = this.activeCamera.clone();
+    }
+    this.previewCamera.position.copy(this.activeCamera.position);
+    this.previewCamera.rotation.copy(this.activeCamera.rotation);
+    const aspect2 = this.targetWidth / this.targetHeight;
+    if (this.activeCamera instanceof OrthographicCamera) {
+      const activeOrtho = this.activeCamera;
+      const previewOrtho = this.previewCamera;
+      const frustumHeight = (activeOrtho.top - activeOrtho.bottom) / activeOrtho.zoom;
+      const frustumWidth = frustumHeight * aspect2;
+      previewOrtho.top = frustumHeight / 2;
+      previewOrtho.left = -frustumWidth / 2;
+      previewOrtho.right = frustumWidth / 2;
+      previewOrtho.bottom = -frustumHeight / 2;
+      previewOrtho.zoom = 1;
+      previewOrtho.updateProjectionMatrix();
+    } else {
+      ;
+      this.previewCamera.aspect = aspect2;
+      this.previewCamera.fov = this.activeCamera.fov;
+    }
+    this.previewCamera.lookAt(this.controls.target);
+    const previewWidth = 120;
+    const previewHeight = previewWidth * this.targetHeight / this.targetWidth;
+    this.previewRenderer.setSize(previewWidth, previewHeight, false);
+    this.previewRenderer.render(this.scene, this.previewCamera);
+  }
+  updatePreviewSize() {
+    if (!this.previewContainer) return;
+    const previewWidth = 120;
+    const previewHeight = previewWidth * this.targetHeight / this.targetWidth;
+    this.previewRenderer?.setSize(previewWidth, previewHeight, false);
+  }
+  setTargetSize(width, height) {
+    this.targetWidth = width;
+    this.targetHeight = height;
+    this.updatePreviewSize();
+    if (this.previewRenderer && this.previewCamera) {
+      if (this.previewCamera instanceof PerspectiveCamera) {
+        this.previewCamera.aspect = width / height;
+        this.previewCamera.updateProjectionMatrix();
+      } else if (this.previewCamera instanceof OrthographicCamera) {
+        const frustumSize = 10;
+        const aspect2 = width / height;
+        this.previewCamera.left = -frustumSize * aspect2 / 2;
+        this.previewCamera.right = frustumSize * aspect2 / 2;
+        this.previewCamera.updateProjectionMatrix();
+      }
+    }
   }
   createViewHelper(container) {
     this.viewHelperContainer = document.createElement("div");
@@ -46342,127 +46715,17 @@ class Load3d {
     );
     this.viewHelper.center = this.controls.target;
   }
-  createGridSwitcher(container) {
-    this.gridSwitcherContainer = document.createElement("div");
-    this.gridSwitcherContainer.style.position = "absolute";
-    this.gridSwitcherContainer.style.top = "28px";
-    this.gridSwitcherContainer.style.left = "3px";
-    this.gridSwitcherContainer.style.width = "20px";
-    this.gridSwitcherContainer.style.height = "20px";
-    this.gridSwitcherContainer.style.cursor = "pointer";
-    this.gridSwitcherContainer.style.alignItems = "center";
-    this.gridSwitcherContainer.style.justifyContent = "center";
-    this.gridSwitcherContainer.style.transition = "background-color 0.2s";
-    const gridIcon = document.createElement("div");
-    gridIcon.innerHTML = `
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-      <path d="M3 3h18v18H3z"/>
-      <path d="M3 9h18"/>
-      <path d="M3 15h18"/>
-      <path d="M9 3v18"/>
-      <path d="M15 3v18"/>
-    </svg>
-  `;
-    const updateButtonState = /* @__PURE__ */ __name(() => {
-      if (this.gridHelper.visible) {
-        this.gridSwitcherContainer.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
-      } else {
-        this.gridSwitcherContainer.style.backgroundColor = "transparent";
-      }
-    }, "updateButtonState");
-    updateButtonState();
-    this.gridSwitcherContainer.addEventListener("mouseenter", () => {
-      if (!this.gridHelper.visible) {
-        this.gridSwitcherContainer.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-      }
-    });
-    this.gridSwitcherContainer.addEventListener("mouseleave", () => {
-      if (!this.gridHelper.visible) {
-        this.gridSwitcherContainer.style.backgroundColor = "transparent";
-      }
-    });
-    this.gridSwitcherContainer.title = "Toggle Grid";
-    this.gridSwitcherContainer.addEventListener("click", (event) => {
-      event.stopPropagation();
-      this.toggleGrid(!this.gridHelper.visible);
-      updateButtonState();
-    });
-    this.gridSwitcherContainer.appendChild(gridIcon);
-    container.appendChild(this.gridSwitcherContainer);
-  }
-  createCameraSwitcher(container) {
-    this.cameraSwitcherContainer = document.createElement("div");
-    this.cameraSwitcherContainer.style.position = "absolute";
-    this.cameraSwitcherContainer.style.top = "3px";
-    this.cameraSwitcherContainer.style.left = "3px";
-    this.cameraSwitcherContainer.style.width = "20px";
-    this.cameraSwitcherContainer.style.height = "20px";
-    this.cameraSwitcherContainer.style.cursor = "pointer";
-    this.cameraSwitcherContainer.style.alignItems = "center";
-    this.cameraSwitcherContainer.style.justifyContent = "center";
-    const cameraIcon = document.createElement("div");
-    cameraIcon.innerHTML = `
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-        <path d="M18 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Z"/>
-        <path d="m12 12 4-2.4"/>
-        <circle cx="12" cy="12" r="3"/>
-      </svg>
-    `;
-    this.cameraSwitcherContainer.addEventListener("mouseenter", () => {
-      this.cameraSwitcherContainer.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-    });
-    this.cameraSwitcherContainer.addEventListener("mouseleave", () => {
-      this.cameraSwitcherContainer.style.backgroundColor = "rgba(0, 0, 0, 0.3)";
-    });
-    this.cameraSwitcherContainer.title = "Switch Camera (Perspective/Orthographic)";
-    this.cameraSwitcherContainer.addEventListener("click", (event) => {
-      event.stopPropagation();
-      this.toggleCamera();
-    });
-    this.cameraSwitcherContainer.appendChild(cameraIcon);
-    container.appendChild(this.cameraSwitcherContainer);
-  }
-  createColorPicker(container) {
-    const colorPickerContainer = document.createElement("div");
-    colorPickerContainer.style.position = "absolute";
-    colorPickerContainer.style.top = "53px";
-    colorPickerContainer.style.left = "3px";
-    colorPickerContainer.style.width = "20px";
-    colorPickerContainer.style.height = "20px";
-    colorPickerContainer.style.cursor = "pointer";
-    colorPickerContainer.style.alignItems = "center";
-    colorPickerContainer.style.justifyContent = "center";
-    colorPickerContainer.title = "Background Color";
-    const colorInput = document.createElement("input");
-    colorInput.type = "color";
-    colorInput.style.opacity = "0";
-    colorInput.style.position = "absolute";
-    colorInput.style.width = "100%";
-    colorInput.style.height = "100%";
-    colorInput.style.cursor = "pointer";
-    const colorIcon = document.createElement("div");
-    colorIcon.innerHTML = `
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-        <rect x="3" y="3" width="18" height="18" rx="2"/>
-        <path d="M12 3v18"/>
-        <path d="M3 12h18"/>
-      </svg>
-    `;
-    colorInput.addEventListener("input", (event) => {
-      const color = event.target.value;
-      this.setBackgroundColor(color);
-      this.storeNodeProperty("Background Color", color);
-    });
-    this.bgColorInput = colorInput;
-    colorPickerContainer.appendChild(colorInput);
-    colorPickerContainer.appendChild(colorIcon);
-    container.appendChild(colorPickerContainer);
-  }
   setFOV(fov2) {
     if (this.activeCamera === this.perspectiveCamera) {
       this.perspectiveCamera.fov = fov2;
       this.perspectiveCamera.updateProjectionMatrix();
       this.renderer.render(this.scene, this.activeCamera);
+      this.storeNodeProperty("FOV", fov2);
+    }
+    if (this.previewRenderer && this.previewCamera instanceof PerspectiveCamera) {
+      this.previewCamera.fov = fov2;
+      this.previewCamera.updateProjectionMatrix();
+      this.previewRenderer.render(this.scene, this.previewCamera);
     }
   }
   getCameraState() {
@@ -46475,8 +46738,6 @@ class Load3d {
     };
   }
   setCameraState(state) {
-    if (this.activeCamera !== (state.cameraType === "perspective" ? this.perspectiveCamera : this.orthographicCamera)) {
-    }
     this.activeCamera.position.copy(state.position);
     this.controls.target.copy(state.target);
     if (this.activeCamera instanceof OrthographicCamera) {
@@ -46522,6 +46783,9 @@ class Load3d {
   }
   setMaterialMode(mode) {
     this.materialMode = mode;
+    if (this.controlsApp?._instance?.exposed) {
+      this.controlsApp._instance.exposed.showLightIntensityButton.value = mode == "original";
+    }
     if (this.currentModel) {
       if (mode === "depth") {
         this.renderer.outputColorSpace = LinearSRGBColorSpace;
@@ -46641,6 +46905,10 @@ class Load3d {
         return;
       }
     }
+    if (this.previewCamera) {
+      this.previewCamera = null;
+    }
+    this.previewCamera = this.activeCamera.clone();
     this.activeCamera.position.copy(position);
     this.activeCamera.rotation.copy(rotation);
     if (this.materialMode === "depth" && oldCamera !== this.activeCamera) {
@@ -46655,8 +46923,12 @@ class Load3d {
       this.viewHelperContainer
     );
     this.viewHelper.center = this.controls.target;
+    if (this.controlsApp?._instance?.exposed) {
+      this.controlsApp._instance.exposed.showFOVButton.value = this.getCurrentCameraType() == "perspective";
+    }
     this.storeNodeProperty("Camera Type", this.getCurrentCameraType());
     this.handleResize();
+    this.updatePreviewRender();
   }
   getCurrentCameraType() {
     return this.activeCamera === this.perspectiveCamera ? "perspective" : "orthographic";
@@ -46665,6 +46937,13 @@ class Load3d {
     if (this.gridHelper) {
       this.gridHelper.visible = showGrid;
       this.storeNodeProperty("Show Grid", showGrid);
+    }
+  }
+  togglePreview(showPreview) {
+    if (this.previewRenderer) {
+      this.showPreview = showPreview;
+      this.previewContainer.style.display = this.showPreview ? "block" : "none";
+      this.storeNodeProperty("Show Preview", showPreview);
     }
   }
   setLightIntensity(intensity) {
@@ -46683,10 +46962,14 @@ class Load3d {
         light.intensity = intensity * 0.5;
       }
     });
+    this.storeNodeProperty("Light Intensity", intensity);
   }
   startAnimation() {
     const animate = /* @__PURE__ */ __name(() => {
       this.animationFrameId = requestAnimationFrame(animate);
+      if (this.showPreview) {
+        this.updatePreviewRender();
+      }
       const delta = this.clock.getDelta();
       if (this.viewHelper.animating) {
         this.viewHelper.update(delta);
@@ -46764,6 +47047,10 @@ class Load3d {
     this.controls.dispose();
     this.viewHelper.dispose();
     this.renderer.dispose();
+    if (this.controlsApp) {
+      this.controlsApp.unmount();
+      this.controlsApp = null;
+    }
     this.renderer.domElement.remove();
     this.scene.clear();
   }
@@ -46893,6 +47180,9 @@ class Load3d {
     this.renderer.toneMappingExposure = 1;
     this.handleResize();
   }
+  refreshViewport() {
+    this.handleResize();
+  }
   handleResize() {
     const parentElement = this.renderer?.domElement?.parentElement;
     if (!parentElement) {
@@ -46914,6 +47204,7 @@ class Load3d {
       this.orthographicCamera.updateProjectionMatrix();
     }
     this.renderer.setSize(width, height);
+    this.setTargetSize(this.targetWidth, this.targetHeight);
   }
   animate = /* @__PURE__ */ __name(() => {
     requestAnimationFrame(this.animate);
@@ -46923,6 +47214,7 @@ class Load3d {
   captureScene(width, height) {
     return new Promise(async (resolve, reject) => {
       try {
+        this.updatePreviewSize();
         const originalWidth = this.renderer.domElement.width;
         const originalHeight = this.renderer.domElement.height;
         const originalClearColor = this.renderer.getClearColor(
@@ -46970,11 +47262,161 @@ class Load3d {
   setBackgroundColor(color) {
     this.renderer.setClearColor(new Color(color));
     this.renderer.render(this.scene, this.activeCamera);
-    if (this.bgColorInput) {
-      this.bgColorInput.value = color;
+    if (this.controlsApp?._instance?.exposed) {
+      this.controlsApp._instance.exposed.backgroundColor.value = color;
     }
+    this.storeNodeProperty("Background Color", color);
   }
 }
+const _hoisted_1 = { class: "absolute top-0 left-0 w-full h-full pointer-events-none" };
+const _hoisted_2 = {
+  key: 0,
+  class: "absolute top-0 left-0 w-full flex justify-center pt-2 gap-2 items-center z-10"
+};
+const _sfc_main = /* @__PURE__ */ defineComponent({
+  __name: "Load3DAnimationControls",
+  props: {
+    animations: {},
+    playing: { type: Boolean },
+    backgroundColor: {},
+    showGrid: { type: Boolean },
+    showPreview: { type: Boolean },
+    lightIntensity: {},
+    showLightIntensityButton: { type: Boolean },
+    fov: {},
+    showFOVButton: { type: Boolean },
+    showPreviewButton: { type: Boolean }
+  },
+  emits: ["toggleCamera", "toggleGrid", "togglePreview", "updateBackgroundColor", "togglePlay", "speedChange", "animationChange", "updateLightIntensity", "updateFOV"],
+  setup(__props, { expose: __expose, emit: __emit }) {
+    const props = __props;
+    const emit = __emit;
+    const animations = ref(props.animations);
+    const playing = ref(props.playing);
+    const selectedSpeed = ref(1);
+    const selectedAnimation = ref(0);
+    const backgroundColor = ref(props.backgroundColor);
+    const showGrid = ref(props.showGrid);
+    const showPreview = ref(props.showPreview);
+    const lightIntensity = ref(props.lightIntensity);
+    const showLightIntensityButton = ref(props.showLightIntensityButton);
+    const fov2 = ref(props.fov);
+    const showFOVButton = ref(props.showFOVButton);
+    const showPreviewButton = ref(props.showPreviewButton);
+    const load3dControlsRef = ref(null);
+    const speedOptions = [
+      { name: "0.1x", value: 0.1 },
+      { name: "0.5x", value: 0.5 },
+      { name: "1x", value: 1 },
+      { name: "1.5x", value: 1.5 },
+      { name: "2x", value: 2 }
+    ];
+    watch(backgroundColor, (newValue) => {
+      load3dControlsRef.value.backgroundColor = newValue;
+    });
+    watch(showLightIntensityButton, (newValue) => {
+      load3dControlsRef.value.showLightIntensityButton = newValue;
+    });
+    watch(showFOVButton, (newValue) => {
+      load3dControlsRef.value.showFOVButton = newValue;
+    });
+    watch(showPreviewButton, (newValue) => {
+      load3dControlsRef.value.showPreviewButton = newValue;
+    });
+    const onToggleCamera = /* @__PURE__ */ __name(() => {
+      emit("toggleCamera");
+    }, "onToggleCamera");
+    const onToggleGrid = /* @__PURE__ */ __name((value) => emit("toggleGrid", value), "onToggleGrid");
+    const onTogglePreview = /* @__PURE__ */ __name((value) => {
+      emit("togglePreview", value);
+    }, "onTogglePreview");
+    const onUpdateBackgroundColor = /* @__PURE__ */ __name((color) => emit("updateBackgroundColor", color), "onUpdateBackgroundColor");
+    const onUpdateLightIntensity = /* @__PURE__ */ __name((lightIntensity2) => {
+      emit("updateLightIntensity", lightIntensity2);
+    }, "onUpdateLightIntensity");
+    const onUpdateFOV = /* @__PURE__ */ __name((fov22) => {
+      emit("updateFOV", fov22);
+    }, "onUpdateFOV");
+    const togglePlay = /* @__PURE__ */ __name(() => {
+      playing.value = !playing.value;
+      emit("togglePlay", playing.value);
+    }, "togglePlay");
+    const speedChange = /* @__PURE__ */ __name(() => {
+      emit("speedChange", selectedSpeed.value);
+    }, "speedChange");
+    const animationChange = /* @__PURE__ */ __name(() => {
+      emit("animationChange", selectedAnimation.value);
+    }, "animationChange");
+    __expose({
+      animations,
+      selectedAnimation,
+      playing,
+      backgroundColor,
+      showGrid,
+      lightIntensity,
+      showLightIntensityButton,
+      fov: fov2,
+      showFOVButton
+    });
+    return (_ctx, _cache2) => {
+      return openBlock(), createElementBlock("div", _hoisted_1, [
+        createVNode(_sfc_main$1, {
+          backgroundColor: backgroundColor.value,
+          showGrid: showGrid.value,
+          showPreview: showPreview.value,
+          lightIntensity: lightIntensity.value,
+          showLightIntensityButton: showLightIntensityButton.value,
+          fov: fov2.value,
+          showFOVButton: showFOVButton.value,
+          showPreviewButton: showPreviewButton.value,
+          onToggleCamera,
+          onToggleGrid,
+          onTogglePreview,
+          onUpdateBackgroundColor,
+          onUpdateLightIntensity,
+          onUpdateFOV,
+          ref_key: "load3dControlsRef",
+          ref: load3dControlsRef
+        }, null, 8, ["backgroundColor", "showGrid", "showPreview", "lightIntensity", "showLightIntensityButton", "fov", "showFOVButton", "showPreviewButton"]),
+        animations.value && animations.value.length > 0 ? (openBlock(), createElementBlock("div", _hoisted_2, [
+          createVNode(unref(script), {
+            class: "p-button-rounded p-button-text",
+            onClick: togglePlay
+          }, {
+            default: withCtx(() => [
+              createBaseVNode("i", {
+                class: normalizeClass([
+                  "pi",
+                  playing.value ? "pi-pause" : "pi-play",
+                  "text-white text-lg"
+                ])
+              }, null, 2)
+            ]),
+            _: 1
+          }),
+          createVNode(unref(script$2), {
+            modelValue: selectedSpeed.value,
+            "onUpdate:modelValue": _cache2[0] || (_cache2[0] = ($event) => selectedSpeed.value = $event),
+            options: speedOptions,
+            optionLabel: "name",
+            optionValue: "value",
+            onChange: speedChange,
+            class: "w-24"
+          }, null, 8, ["modelValue"]),
+          createVNode(unref(script$2), {
+            modelValue: selectedAnimation.value,
+            "onUpdate:modelValue": _cache2[1] || (_cache2[1] = ($event) => selectedAnimation.value = $event),
+            options: animations.value,
+            optionLabel: "name",
+            optionValue: "index",
+            onChange: animationChange,
+            class: "w-32"
+          }, null, 8, ["modelValue", "options"])
+        ])) : createCommentVNode("", true)
+      ]);
+    };
+  }
+});
 class Load3dAnimation extends Load3d {
   static {
     __name(this, "Load3dAnimation");
@@ -46985,143 +47427,49 @@ class Load3dAnimation extends Load3d {
   selectedAnimationIndex = 0;
   isAnimationPlaying = false;
   animationSpeed = 1;
-  playPauseContainer = {};
-  animationSelect = {};
-  speedSelect = {};
-  constructor(container) {
-    super(container);
-    this.createPlayPauseButton(container);
-    this.createAnimationList(container);
-    this.createSpeedSelect(container);
+  constructor(container, options = {}) {
+    super(container, options);
   }
-  createAnimationList(container) {
-    this.animationSelect = document.createElement("select");
-    Object.assign(this.animationSelect.style, {
-      position: "absolute",
-      top: "3px",
-      left: "50%",
-      transform: "translateX(15px)",
-      width: "90px",
-      height: "20px",
-      backgroundColor: "rgba(0, 0, 0, 0.3)",
-      color: "white",
-      border: "none",
-      borderRadius: "4px",
-      fontSize: "12px",
-      padding: "0 8px",
-      cursor: "pointer",
-      display: "none",
-      outline: "none"
+  mountControls(options = {}) {
+    const controlsMount = document.createElement("div");
+    controlsMount.style.pointerEvents = "auto";
+    this.controlsContainer.appendChild(controlsMount);
+    this.controlsApp = createApp(_sfc_main, {
+      backgroundColor: "#282828",
+      showGrid: true,
+      showPreview: options.createPreview,
+      animations: [],
+      playing: false,
+      lightIntensity: 5,
+      showLightIntensityButton: true,
+      fov: 75,
+      showFOVButton: true,
+      showPreviewButton: options.createPreview,
+      onToggleCamera: /* @__PURE__ */ __name(() => this.toggleCamera(), "onToggleCamera"),
+      onToggleGrid: /* @__PURE__ */ __name((show) => this.toggleGrid(show), "onToggleGrid"),
+      onTogglePreview: /* @__PURE__ */ __name((show) => this.togglePreview(show), "onTogglePreview"),
+      onUpdateBackgroundColor: /* @__PURE__ */ __name((color) => this.setBackgroundColor(color), "onUpdateBackgroundColor"),
+      onTogglePlay: /* @__PURE__ */ __name((play) => this.toggleAnimation(play), "onTogglePlay"),
+      onSpeedChange: /* @__PURE__ */ __name((speed) => this.setAnimationSpeed(speed), "onSpeedChange"),
+      onAnimationChange: /* @__PURE__ */ __name((selectedAnimation) => this.updateSelectedAnimation(selectedAnimation), "onAnimationChange"),
+      onUpdateLightIntensity: /* @__PURE__ */ __name((lightIntensity) => this.setLightIntensity(lightIntensity), "onUpdateLightIntensity"),
+      onUpdateFOV: /* @__PURE__ */ __name((fov2) => this.setFOV(fov2), "onUpdateFOV")
     });
-    this.animationSelect.addEventListener("mouseenter", () => {
-      this.animationSelect.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-    });
-    this.animationSelect.addEventListener("mouseleave", () => {
-      this.animationSelect.style.backgroundColor = "rgba(0, 0, 0, 0.3)";
-    });
-    this.animationSelect.addEventListener("change", (event) => {
-      const select = event.target;
-      this.updateSelectedAnimation(select.selectedIndex);
-    });
-    container.appendChild(this.animationSelect);
+    this.controlsApp.use(PrimeVue);
+    this.controlsApp.directive("tooltip", Tooltip);
+    this.controlsApp.mount(controlsMount);
   }
   updateAnimationList() {
-    this.animationSelect.innerHTML = "";
-    this.animationClips.forEach((clip, index) => {
-      const option = document.createElement("option");
-      option.value = index.toString();
-      option.text = clip.name || `Animation ${index + 1}`;
-      option.selected = index === this.selectedAnimationIndex;
-      this.animationSelect.appendChild(option);
-    });
-  }
-  createPlayPauseButton(container) {
-    this.playPauseContainer = document.createElement("div");
-    this.playPauseContainer.style.position = "absolute";
-    this.playPauseContainer.style.top = "3px";
-    this.playPauseContainer.style.left = "50%";
-    this.playPauseContainer.style.transform = "translateX(-50%)";
-    this.playPauseContainer.style.width = "20px";
-    this.playPauseContainer.style.height = "20px";
-    this.playPauseContainer.style.cursor = "pointer";
-    this.playPauseContainer.style.alignItems = "center";
-    this.playPauseContainer.style.justifyContent = "center";
-    const updateButtonState = /* @__PURE__ */ __name(() => {
-      const icon = this.playPauseContainer.querySelector("svg");
-      if (icon) {
-        if (this.isAnimationPlaying) {
-          icon.innerHTML = `
-            <path d="M6 4h4v16H6zM14 4h4v16h-4z"/>
-          `;
-          this.playPauseContainer.title = "Pause Animation";
-        } else {
-          icon.innerHTML = `
-            <path d="M8 5v14l11-7z"/>
-          `;
-          this.playPauseContainer.title = "Play Animation";
-        }
+    if (this.controlsApp?._instance?.exposed) {
+      if (this.animationClips.length > 0) {
+        this.controlsApp._instance.exposed.animations.value = this.animationClips.map((clip, index) => ({
+          name: clip.name || `Animation ${index + 1}`,
+          index
+        }));
+      } else {
+        this.controlsApp._instance.exposed.animations.value = [];
       }
-    }, "updateButtonState");
-    const playIcon = document.createElement("div");
-    playIcon.innerHTML = `
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-        <path d="M8 5v14l11-7z"/>
-      </svg>
-    `;
-    this.playPauseContainer.addEventListener("mouseenter", () => {
-      this.playPauseContainer.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-    });
-    this.playPauseContainer.addEventListener("mouseleave", () => {
-      this.playPauseContainer.style.backgroundColor = "transparent";
-    });
-    this.playPauseContainer.addEventListener("click", (event) => {
-      event.stopPropagation();
-      this.toggleAnimation();
-      updateButtonState();
-    });
-    this.playPauseContainer.appendChild(playIcon);
-    container.appendChild(this.playPauseContainer);
-    this.playPauseContainer.style.display = "none";
-  }
-  createSpeedSelect(container) {
-    this.speedSelect = document.createElement("select");
-    Object.assign(this.speedSelect.style, {
-      position: "absolute",
-      top: "3px",
-      left: "50%",
-      transform: "translateX(-75px)",
-      width: "60px",
-      height: "20px",
-      backgroundColor: "rgba(0, 0, 0, 0.3)",
-      color: "white",
-      border: "none",
-      borderRadius: "4px",
-      fontSize: "12px",
-      padding: "0 8px",
-      cursor: "pointer",
-      display: "none",
-      outline: "none"
-    });
-    const speeds = [0.1, 0.5, 1, 1.5, 2];
-    speeds.forEach((speed) => {
-      const option = document.createElement("option");
-      option.value = speed.toString();
-      option.text = `${speed}x`;
-      option.selected = speed === 1;
-      this.speedSelect.appendChild(option);
-    });
-    this.speedSelect.addEventListener("mouseenter", () => {
-      this.speedSelect.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-    });
-    this.speedSelect.addEventListener("mouseleave", () => {
-      this.speedSelect.style.backgroundColor = "rgba(0, 0, 0, 0.3)";
-    });
-    this.speedSelect.addEventListener("change", (event) => {
-      const select = event.target;
-      const newSpeed = parseFloat(select.value);
-      this.setAnimationSpeed(newSpeed);
-    });
-    container.appendChild(this.speedSelect);
+    }
   }
   async setupModel(model) {
     await super.setupModel(model);
@@ -47146,21 +47494,7 @@ class Load3dAnimation extends Load3d {
         this.updateSelectedAnimation(0);
       }
     }
-    if (this.animationClips.length > 0) {
-      this.playPauseContainer.style.display = "block";
-    } else {
-      this.playPauseContainer.style.display = "none";
-    }
-    if (this.animationClips.length > 0) {
-      this.playPauseContainer.style.display = "block";
-      this.animationSelect.style.display = "block";
-      this.speedSelect.style.display = "block";
-      this.updateAnimationList();
-    } else {
-      this.playPauseContainer.style.display = "none";
-      this.animationSelect.style.display = "none";
-      this.speedSelect.style.display = "none";
-    }
+    this.updateAnimationList();
   }
   setAnimationSpeed(speed) {
     this.animationSpeed = speed;
@@ -47192,7 +47526,9 @@ class Load3dAnimation extends Load3d {
       action.paused = true;
     }
     this.animationActions = [action];
-    this.updateAnimationList();
+    if (this.controlsApp?._instance?.exposed) {
+      this.controlsApp._instance.exposed.selectedAnimation.value = index;
+    }
   }
   clearModel() {
     if (this.currentAnimation) {
@@ -47206,20 +47542,11 @@ class Load3dAnimation extends Load3d {
     this.selectedAnimationIndex = 0;
     this.isAnimationPlaying = false;
     this.animationSpeed = 1;
+    if (this.controlsApp?._instance?.exposed) {
+      this.controlsApp._instance.exposed.animations.value = [];
+      this.controlsApp._instance.exposed.selectedAnimation.value = 0;
+    }
     super.clearModel();
-    if (this.animationSelect) {
-      this.animationSelect.style.display = "none";
-      this.animationSelect.innerHTML = "";
-    }
-    if (this.speedSelect) {
-      this.speedSelect.style.display = "none";
-      this.speedSelect.value = "1";
-    }
-  }
-  getAnimationNames() {
-    return this.animationClips.map((clip, index) => {
-      return clip.name || `Animation ${index + 1}`;
-    });
   }
   toggleAnimation(play) {
     if (!this.currentAnimation || this.animationActions.length === 0) {
@@ -47227,15 +47554,8 @@ class Load3dAnimation extends Load3d {
       return;
     }
     this.isAnimationPlaying = play ?? !this.isAnimationPlaying;
-    const icon = this.playPauseContainer.querySelector("svg");
-    if (icon) {
-      if (this.isAnimationPlaying) {
-        icon.innerHTML = '<path d="M6 4h4v16H6zM14 4h4v16h-4z"/>';
-        this.playPauseContainer.title = "Pause Animation";
-      } else {
-        icon.innerHTML = '<path d="M8 5v14l11-7z"/>';
-        this.playPauseContainer.title = "Play Animation";
-      }
+    if (this.controlsApp?._instance?.exposed) {
+      this.controlsApp._instance.exposed.playing.value = this.isAnimationPlaying;
     }
     this.animationActions.forEach((action) => {
       if (this.isAnimationPlaying) {
@@ -47251,6 +47571,9 @@ class Load3dAnimation extends Load3d {
   startAnimation() {
     const animate = /* @__PURE__ */ __name(() => {
       this.animationFrameId = requestAnimationFrame(animate);
+      if (this.showPreview) {
+        this.updatePreviewRender();
+      }
       const delta = this.clock.getDelta();
       if (this.currentAnimation && this.isAnimationPlaying) {
         this.currentAnimation.update(delta);
@@ -47269,19 +47592,77 @@ class Load3dAnimation extends Load3d {
     animate();
   }
 }
-const containerToLoad3D = /* @__PURE__ */ new Map();
+class Load3dService {
+  static {
+    __name(this, "Load3dService");
+  }
+  static instance;
+  nodeToLoad3dMap = /* @__PURE__ */ new Map();
+  constructor() {
+  }
+  static getInstance() {
+    if (!Load3dService.instance) {
+      Load3dService.instance = new Load3dService();
+    }
+    return Load3dService.instance;
+  }
+  registerLoad3d(node, container, type) {
+    if (this.nodeToLoad3dMap.has(node)) {
+      this.removeLoad3d(node);
+    }
+    const isAnimation = type.includes("Animation");
+    const Load3dClass = isAnimation ? Load3dAnimation : Load3d;
+    const isPreview = type.includes("Preview");
+    const instance = new Load3dClass(container, { createPreview: !isPreview });
+    instance.setNode(node);
+    this.nodeToLoad3dMap.set(node, instance);
+    return instance;
+  }
+  getLoad3d(node) {
+    return this.nodeToLoad3dMap.get(node) || null;
+  }
+  getNodeByLoad3d(load3d) {
+    for (const [node, instance] of this.nodeToLoad3dMap) {
+      if (instance === load3d) {
+        return node;
+      }
+    }
+    return null;
+  }
+  removeLoad3d(node) {
+    const instance = this.nodeToLoad3dMap.get(node);
+    if (instance) {
+      instance.remove();
+      this.nodeToLoad3dMap.delete(node);
+    }
+  }
+  clear() {
+    for (const [node] of this.nodeToLoad3dMap) {
+      this.removeLoad3d(node);
+    }
+  }
+}
+const useLoad3dService = /* @__PURE__ */ __name(() => {
+  return Load3dService.getInstance();
+}, "useLoad3dService");
 app.registerExtension({
   name: "Comfy.Load3D",
   getCustomWidgets(app2) {
     return {
       LOAD_3D(node, inputName) {
-        let load3dNode = app2.graph._nodes.filter((wi) => wi.type == "Load3D");
         node.addProperty("Camera Info", "");
         const container = document.createElement("div");
-        container.id = `comfy-load-3d-${load3dNode.length}`;
         container.classList.add("comfy-load-3d");
-        const load3d = new Load3d(container);
-        containerToLoad3D.set(container.id, load3d);
+        const load3d = useLoad3dService().registerLoad3d(
+          node,
+          container,
+          "Load3D"
+        );
+        node.onMouseEnter = function() {
+          if (load3d) {
+            load3d.refreshViewport();
+          }
+        };
         node.onResize = function() {
           if (load3d) {
             load3d.handleResize();
@@ -47292,7 +47673,7 @@ app.registerExtension({
           if (load3d) {
             load3d.remove();
           }
-          containerToLoad3D.delete(container.id);
+          useLoad3dService().removeLoad3d(node);
           origOnRemoved?.apply(this, []);
         };
         node.onDrawBackground = function() {
@@ -47346,39 +47727,33 @@ app.registerExtension({
     const [oldWidth, oldHeight] = node.size;
     node.setSize([Math.max(oldWidth, 300), Math.max(oldHeight, 600)]);
     await nextTick();
-    const sceneWidget = node.widgets.find((w2) => w2.name === "image");
-    const container = sceneWidget.element;
-    const load3d = containerToLoad3D.get(container.id);
-    load3d.setNode(node);
+    const sceneWidget = node.widgets.find((w) => w.name === "image");
+    const load3d = useLoad3dService().getLoad3d(node);
     const modelWidget = node.widgets.find(
-      (w2) => w2.name === "model_file"
+      (w) => w.name === "model_file"
     );
-    const material = node.widgets.find((w2) => w2.name === "material");
-    const lightIntensity = node.widgets.find(
-      (w2) => w2.name === "light_intensity"
-    );
+    const material = node.widgets.find((w) => w.name === "material");
     const upDirection = node.widgets.find(
-      (w2) => w2.name === "up_direction"
+      (w) => w.name === "up_direction"
     );
-    const fov2 = node.widgets.find((w2) => w2.name === "fov");
     let cameraState = node.properties["Camera Info"];
     const config = new Load3DConfiguration(load3d);
+    const width = node.widgets.find((w) => w.name === "width");
+    const height = node.widgets.find((w) => w.name === "height");
     config.configure(
       "input",
       modelWidget,
       material,
-      lightIntensity,
       upDirection,
-      fov2,
-      cameraState
+      cameraState,
+      width,
+      height
     );
-    const w = node.widgets.find((w2) => w2.name === "width");
-    const h = node.widgets.find((w2) => w2.name === "height");
     sceneWidget.serializeValue = async () => {
       node.properties["Camera Info"] = load3d.getCameraState();
       const { scene: imageData, mask: maskData } = await load3d.captureScene(
-        w.value,
-        h.value
+        width.value,
+        height.value
       );
       const [data, dataMask] = await Promise.all([
         Load3dUtils.uploadTempImage(imageData, "scene"),
@@ -47396,15 +47771,19 @@ app.registerExtension({
   getCustomWidgets(app2) {
     return {
       LOAD_3D_ANIMATION(node, inputName) {
-        let load3dNode = app2.graph._nodes.filter(
-          (wi) => wi.type == "Load3DAnimation"
-        );
         node.addProperty("Camera Info", "");
         const container = document.createElement("div");
-        container.id = `comfy-load-3d-animation-${load3dNode.length}`;
         container.classList.add("comfy-load-3d-animation");
-        const load3d = new Load3dAnimation(container);
-        containerToLoad3D.set(container.id, load3d);
+        const load3d = useLoad3dService().registerLoad3d(
+          node,
+          container,
+          "Load3DAnimation"
+        );
+        node.onMouseEnter = function() {
+          if (load3d) {
+            load3d.refreshViewport();
+          }
+        };
         node.onResize = function() {
           if (load3d) {
             load3d.handleResize();
@@ -47415,7 +47794,7 @@ app.registerExtension({
           if (load3d) {
             load3d.remove();
           }
-          containerToLoad3D.delete(container.id);
+          useLoad3dService().removeLoad3d(node);
           origOnRemoved?.apply(this, []);
         };
         node.onDrawBackground = function() {
@@ -47467,42 +47846,36 @@ app.registerExtension({
   async nodeCreated(node) {
     if (node.constructor.comfyClass !== "Load3DAnimation") return;
     const [oldWidth, oldHeight] = node.size;
-    node.setSize([Math.max(oldWidth, 300), Math.max(oldHeight, 700)]);
+    node.setSize([Math.max(oldWidth, 400), Math.max(oldHeight, 700)]);
     await nextTick();
-    const sceneWidget = node.widgets.find((w2) => w2.name === "image");
-    const container = sceneWidget.element;
-    const load3d = containerToLoad3D.get(container.id);
-    load3d.setNode(node);
+    const sceneWidget = node.widgets.find((w) => w.name === "image");
+    const load3d = useLoad3dService().getLoad3d(node);
     const modelWidget = node.widgets.find(
-      (w2) => w2.name === "model_file"
+      (w) => w.name === "model_file"
     );
-    const material = node.widgets.find((w2) => w2.name === "material");
-    const lightIntensity = node.widgets.find(
-      (w2) => w2.name === "light_intensity"
-    );
+    const material = node.widgets.find((w) => w.name === "material");
     const upDirection = node.widgets.find(
-      (w2) => w2.name === "up_direction"
+      (w) => w.name === "up_direction"
     );
-    const fov2 = node.widgets.find((w2) => w2.name === "fov");
     let cameraState = node.properties["Camera Info"];
     const config = new Load3DConfiguration(load3d);
+    const width = node.widgets.find((w) => w.name === "width");
+    const height = node.widgets.find((w) => w.name === "height");
     config.configure(
       "input",
       modelWidget,
       material,
-      lightIntensity,
       upDirection,
-      fov2,
-      cameraState
+      cameraState,
+      width,
+      height
     );
-    const w = node.widgets.find((w2) => w2.name === "width");
-    const h = node.widgets.find((w2) => w2.name === "height");
     sceneWidget.serializeValue = async () => {
       node.properties["Camera Info"] = load3d.getCameraState();
       load3d.toggleAnimation(false);
       const { scene: imageData, mask: maskData } = await load3d.captureScene(
-        w.value,
-        h.value
+        width.value,
+        height.value
       );
       const [data, dataMask] = await Promise.all([
         Load3dUtils.uploadTempImage(imageData, "scene"),
@@ -47528,12 +47901,18 @@ app.registerExtension({
   getCustomWidgets(app2) {
     return {
       PREVIEW_3D(node, inputName) {
-        let load3dNode = app2.graph._nodes.filter((wi) => wi.type == "Preview3D");
         const container = document.createElement("div");
-        container.id = `comfy-preview-3d-${load3dNode.length}`;
         container.classList.add("comfy-preview-3d");
-        const load3d = new Load3d(container);
-        containerToLoad3D.set(container.id, load3d);
+        const load3d = useLoad3dService().registerLoad3d(
+          node,
+          container,
+          "Preview3D"
+        );
+        node.onMouseEnter = function() {
+          if (load3d) {
+            load3d.refreshViewport();
+          }
+        };
         node.onResize = function() {
           if (load3d) {
             load3d.handleResize();
@@ -47544,7 +47923,7 @@ app.registerExtension({
           if (load3d) {
             load3d.remove();
           }
-          containerToLoad3D.delete(container.id);
+          useLoad3dService().removeLoad3d(node);
           origOnRemoved?.apply(this, []);
         };
         node.onDrawBackground = function() {
@@ -47559,23 +47938,16 @@ app.registerExtension({
   async nodeCreated(node) {
     if (node.constructor.comfyClass !== "Preview3D") return;
     const [oldWidth, oldHeight] = node.size;
-    node.setSize([Math.max(oldWidth, 300), Math.max(oldHeight, 550)]);
+    node.setSize([Math.max(oldWidth, 400), Math.max(oldHeight, 550)]);
     await nextTick();
-    const sceneWidget = node.widgets.find((w) => w.name === "image");
-    const container = sceneWidget.element;
-    const load3d = containerToLoad3D.get(container.id);
-    load3d.setNode(node);
+    const load3d = useLoad3dService().getLoad3d(node);
     const modelWidget = node.widgets.find(
       (w) => w.name === "model_file"
     );
     const material = node.widgets.find((w) => w.name === "material");
-    const lightIntensity = node.widgets.find(
-      (w) => w.name === "light_intensity"
-    );
     const upDirection = node.widgets.find(
       (w) => w.name === "up_direction"
     );
-    const fov2 = node.widgets.find((w) => w.name === "fov");
     const onExecuted = node.onExecuted;
     node.onExecuted = function(message) {
       onExecuted?.apply(this, arguments);
@@ -47587,14 +47959,7 @@ app.registerExtension({
       }
       modelWidget.value = filePath.replaceAll("\\", "/");
       const config = new Load3DConfiguration(load3d);
-      config.configure(
-        "output",
-        modelWidget,
-        material,
-        lightIntensity,
-        upDirection,
-        fov2
-      );
+      config.configure("output", modelWidget, material, upDirection);
     };
   }
 });
@@ -47611,14 +47976,18 @@ app.registerExtension({
   getCustomWidgets(app2) {
     return {
       PREVIEW_3D_ANIMATION(node, inputName) {
-        let load3dNode = app2.graph._nodes.filter(
-          (wi) => wi.type == "Preview3DAnimation"
-        );
         const container = document.createElement("div");
-        container.id = `comfy-preview-3d-animation-${load3dNode.length}`;
         container.classList.add("comfy-preview-3d-animation");
-        const load3d = new Load3dAnimation(container);
-        containerToLoad3D.set(container.id, load3d);
+        const load3d = useLoad3dService().registerLoad3d(
+          node,
+          container,
+          "Preview3DAnimation"
+        );
+        node.onMouseEnter = function() {
+          if (load3d) {
+            load3d.refreshViewport();
+          }
+        };
         node.onResize = function() {
           if (load3d) {
             load3d.handleResize();
@@ -47629,7 +47998,7 @@ app.registerExtension({
           if (load3d) {
             load3d.remove();
           }
-          containerToLoad3D.delete(container.id);
+          useLoad3dService().removeLoad3d(node);
           origOnRemoved?.apply(this, []);
         };
         node.onDrawBackground = function() {
@@ -47650,21 +48019,14 @@ app.registerExtension({
     const [oldWidth, oldHeight] = node.size;
     node.setSize([Math.max(oldWidth, 300), Math.max(oldHeight, 550)]);
     await nextTick();
-    const sceneWidget = node.widgets.find((w) => w.name === "image");
-    const container = sceneWidget.element;
-    const load3d = containerToLoad3D.get(container.id);
-    load3d.setNode(node);
+    const load3d = useLoad3dService().getLoad3d(node);
     const modelWidget = node.widgets.find(
       (w) => w.name === "model_file"
     );
     const material = node.widgets.find((w) => w.name === "material");
-    const lightIntensity = node.widgets.find(
-      (w) => w.name === "light_intensity"
-    );
     const upDirection = node.widgets.find(
       (w) => w.name === "up_direction"
     );
-    const fov2 = node.widgets.find((w) => w.name === "fov");
     const onExecuted = node.onExecuted;
     node.onExecuted = function(message) {
       onExecuted?.apply(this, arguments);
@@ -47676,14 +48038,7 @@ app.registerExtension({
       }
       modelWidget.value = filePath.replaceAll("\\", "/");
       const config = new Load3DConfiguration(load3d);
-      config.configure(
-        "output",
-        modelWidget,
-        material,
-        lightIntensity,
-        upDirection,
-        fov2
-      );
+      config.configure("output", modelWidget, material, upDirection);
     };
   }
 });
@@ -53025,12 +53380,12 @@ app.registerExtension({
         __name(this, "NoteNode");
       }
       static category;
+      static collapsable;
+      static title_mode;
       color = LGraphCanvas.node_colors.yellow.color;
       bgcolor = LGraphCanvas.node_colors.yellow.bgcolor;
       groupcolor = LGraphCanvas.node_colors.yellow.groupcolor;
       isVirtualNode;
-      collapsable;
-      title_mode;
       constructor(title) {
         super(title);
         if (!this.properties) {
@@ -53108,7 +53463,6 @@ app.registerExtension({
         };
         this.onConnectionsChange = (type, index, connected, link_info) => {
           if (app2.configuringGraph) return;
-          this.applyOrientation();
           if (connected && type === LiteGraph.OUTPUT) {
             const types = new Set(
               this.outputs[0].links.map((l) => app2.graph.links[l].type).filter((t2) => t2 !== "*")
@@ -53191,7 +53545,6 @@ app.registerExtension({
             node.__outputType = displayType;
             node.outputs[0].name = node.properties.showOutputText ? displayType : "";
             node.size = node.computeSize();
-            node.applyOrientation();
             for (const l of node.outputs[0].links || []) {
               const link = app2.graph.links[l];
               if (link) {
@@ -53261,7 +53614,6 @@ app.registerExtension({
                 this.outputs[0].name = "";
               }
               this.size = this.computeSize();
-              this.applyOrientation();
               app2.graph.setDirtyCanvas(true, true);
             }, "callback")
           },
@@ -53272,29 +53624,9 @@ app.registerExtension({
                 !RerouteNode.defaultVisibility
               );
             }, "callback")
-          },
-          {
-            // naming is inverted with respect to LiteGraphNode.horizontal
-            // LiteGraphNode.horizontal == true means that
-            // each slot in the inputs and outputs are laid out horizontally,
-            // which is the opposite of the visual orientation of the inputs and outputs as a node
-            content: "Set " + (this.properties.horizontal ? "Horizontal" : "Vertical"),
-            callback: /* @__PURE__ */ __name(() => {
-              this.properties.horizontal = !this.properties.horizontal;
-              this.applyOrientation();
-            }, "callback")
           }
         );
         return [];
-      }
-      applyOrientation() {
-        this.horizontal = this.properties.horizontal;
-        if (this.horizontal) {
-          this.inputs[0].pos = [this.size[0] / 2, 0];
-        } else {
-          delete this.inputs[0].pos;
-        }
-        app2.graph.setDirtyCanvas(true, true);
       }
       computeSize() {
         return [
@@ -53725,8 +54057,11 @@ app.registerExtension({
 app.registerExtension({
   name: "Comfy.UploadImage",
   beforeRegisterNodeDef(nodeType, nodeData) {
-    if (nodeData?.input?.required?.image?.[1]?.image_upload === true) {
-      nodeData.input.required.upload = ["IMAGEUPLOAD"];
+    const imageInputSpec = nodeData?.input?.required?.image;
+    const config = imageInputSpec?.[1] ?? {};
+    const { image_upload = false, image_folder = "input" } = config;
+    if (image_upload && nodeData?.input?.required) {
+      nodeData.input.required.upload = ["IMAGEUPLOAD", { image_folder }];
     }
   }
 });
@@ -53844,4 +54179,4 @@ app.registerExtension({
     });
   }
 });
-//# sourceMappingURL=index-BYzwFNH3.js.map
+//# sourceMappingURL=index-D9D9jjLT.js.map
