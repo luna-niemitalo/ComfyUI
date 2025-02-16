@@ -1,6 +1,6 @@
 var __defProp = Object.defineProperty;
 var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
-import { di as ComfyDialog, dj as $el, dk as ComfyApp, h as app, L as LiteGraph, aD as LGraphCanvas, dl as useExtensionService, dm as processDynamicPrompt, b8 as isElectron, b9 as electronAPI, b as useWorkflowStore, by as checkMirrorReachable, bb as useDialogService, bg as t, dn as DraggableList, aW as useToastStore, $ as LGraphNode, dp as applyTextReplacements, dq as ComfyWidgets, dr as addValueControlWidgets, O as useNodeDefStore, a as useSettingStore, ds as serialise, dt as deserialiseAndCreate, aL as api, Z as LGraphGroup, d as defineComponent, T as ref, p as onMounted, d8 as onUnmounted, r as resolveDirective, o as openBlock, f as createElementBlock, k as createVNode, j as unref, l as script, z as withCtx, i as withDirectives, m as createBaseVNode, y as createBlock, aj as normalizeClass, du as script$1, v as vShow, B as createCommentVNode, dv as createApp, cs as Tooltip, N as watch, bm as script$2, dw as PrimeVue, V as nextTick, b4 as lodashExports, aO as setStorageValue, aM as getStorageValue } from "./index-DqXp9vW4.js";
+import { di as ComfyDialog, dj as $el, dk as ComfyApp, h as app, L as LiteGraph, aD as LGraphCanvas, dl as useExtensionService, dm as processDynamicPrompt, b8 as isElectron, b9 as electronAPI, b as useWorkflowStore, by as checkMirrorReachable, bb as useDialogService, bg as t, dn as DraggableList, aW as useToastStore, $ as LGraphNode, dp as applyTextReplacements, dq as ComfyWidgets, dr as addValueControlWidgets, O as useNodeDefStore, a as useSettingStore, ds as serialise, dt as deserialiseAndCreate, aL as api, Z as LGraphGroup, d as defineComponent, T as ref, p as onMounted, d8 as onUnmounted, r as resolveDirective, o as openBlock, f as createElementBlock, k as createVNode, j as unref, l as script, z as withCtx, i as withDirectives, m as createBaseVNode, y as createBlock, aj as normalizeClass, du as script$1, v as vShow, B as createCommentVNode, dv as createApp, cs as Tooltip, N as watch, bm as script$2, dw as PrimeVue, V as nextTick, b4 as lodashExports, aO as setStorageValue, aM as getStorageValue } from "./index-Bv0b06LE.js";
 import { P as PYTHON_MIRROR } from "./uvMirrors-B-HKMf6X.js";
 class ClipspaceDialog extends ComfyDialog {
   static {
@@ -46215,7 +46215,7 @@ class STLLoader extends Loader {
     return isBinary(binData) ? parseBinary(binData) : parseASCII(ensureString(data));
   }
 }
-const _hoisted_1$1 = { class: "absolute top-2 left-2 flex flex-col gap-2 z-20" };
+const _hoisted_1$1 = { class: "absolute top-2 left-2 flex flex-col gap-2 pointer-events-auto z-20" };
 const _hoisted_2$1 = { class: "pi pi-camera text-white text-lg" };
 const _hoisted_3 = { class: "pi pi-palette text-white text-lg" };
 const _hoisted_4 = ["value"];
@@ -47271,7 +47271,7 @@ class Load3d {
 const _hoisted_1 = { class: "absolute top-0 left-0 w-full h-full pointer-events-none" };
 const _hoisted_2 = {
   key: 0,
-  class: "absolute top-0 left-0 w-full flex justify-center pt-2 gap-2 items-center z-10"
+  class: "absolute top-0 left-0 w-full flex justify-center pt-2 gap-2 items-center pointer-events-auto z-10"
 };
 const _sfc_main = /* @__PURE__ */ defineComponent({
   __name: "Load3DAnimationControls",
@@ -54179,4 +54179,4 @@ app.registerExtension({
     });
   }
 });
-//# sourceMappingURL=index-D9D9jjLT.js.map
+//# sourceMappingURL=index-B36GcHVN.js.map
