@@ -7,7 +7,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from einops import rearrange
-# from flash_attn import flash_attn_varlen_qkvpacked_func
+# from aule import flash_attention_varlen_qkvpacked_func
 from comfy.ldm.modules.attention import optimized_attention
 
 from .layers import (

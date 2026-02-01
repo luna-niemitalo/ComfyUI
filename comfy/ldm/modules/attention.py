@@ -14,6 +14,25 @@ from .sub_quadratic_attention import efficient_dot_product_attention
 
 from comfy import model_management
 
+
+from aule import flash_attention as aule_flash
+
+def flash_attn_func(q, k, v, dropout_p=0.0, causal=False):
+    # Comfy never uses nonzero dropout in inference
+    if dropout_p not in (0.0, 0):
+        raise RuntimeError("Aule does not support dropout (training-only feature)")
+
+    scale = 1.0 / (q.shape[-1] ** 0.5)
+
+    return aule_flash(
+        q, k, v,
+        rot_cos=None,
+        rot_sin=None,
+        causal=causal,
+        scale=scale,
+    )
+
+
 if model_management.xformers_enabled():
     import xformers
     import xformers.ops
@@ -39,7 +58,9 @@ except ImportError:
 
 FLASH_ATTENTION_IS_AVAILABLE = False
 try:
-    from flash_attn import flash_attn_func
+    from aule import get_available_backends, install
+    print("Available attention backends:", get_available_backends())
+    install(backend='triton', verbose=False)
     FLASH_ATTENTION_IS_AVAILABLE = True
 except ImportError:
     if model_management.flash_attention_enabled():
