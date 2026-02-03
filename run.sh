@@ -19,7 +19,7 @@ export MIOPEN_COMPILE_PARALLEL_LEVEL=16
 ulimit -c 0
 # Define a simple, easy-to-edit list of arguments
 ARG_LIST=(
-	"--fast" 	#Enable some untested and potentially quality deteriorating optimizations. --fast with no arguments enables everything. You can pass a list specific optimizations if you
+	"--fast=fp16_accumulation" 	#Enable some untested and potentially quality deteriorating optimizations. --fast with no arguments enables everything. You can pass a list specific optimizations if you
 				#only want to enable specific ones. Current valid optimizations: fp16_accumulation fp8_matrix_mult cublas_ops
 	#"--force-non-blocking" #Force non-blocking memory transfers (may cause instability on some systems)
   	#"--use-split-cross-attention" # Use the split cross attention optimization. Ignored when xformers is used.
@@ -27,9 +27,13 @@ ARG_LIST=(
   	#"--use-pytorch-cross-attention" # Use the new pytorch 2.0 cross attention function.
   	#"--use-sage-attention"  #Use sage attention.
   	#"--use-flash-attention" #Use FlashAttention.
+	"--fp32-vae"
+	#"--cpu-vae"
+	"--fp16-unet"
 	"--force-fp16"          #Force fp16.
 	"--fp16-text-enc"     #Use FP16 for text encoders.
 	#"--verbose=DEBUG"
+	#"--cache-lru=0"   # Use LRU caching with a maximum of N node results cached. May use more RAM/VRAM.
 	"--default-device=1"
 	#"--cache-none" # Reduced RAM/VRAM usage at the expense of executing every node for each run.
 	#"--cache-ram=32" #[CACHE_RAM] Use RAM pressure caching with the specified headroom threshold. If available RAM drops below the threhold the cache remove large items to free RAM. Default 4GB
@@ -49,8 +53,6 @@ ARG_LIST=(
 	"--lowvram"          #Use lowvram mode.
 	#"--normalvram"        #Use normal_vram mode.
 	#"--highvram"         #Use highvram mode.
-	#"--fp8_e5m2-unet"   #Use simulated FP8 (e5m2) for the UNet (may improve performance on some GPUs)
-	#"--fp16-text-enc" #Use FP16 for text encoders
   	#"--base-directory=/media/luna/models" #BASE_DIRECTORY
                         #Set the ComfyUI base directory for models, custom_nodes,
                         #input, output, temp, and user directories.
