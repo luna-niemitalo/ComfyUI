@@ -34,7 +34,7 @@ ARG_LIST=(
 	"--fp16-text-enc"     #Use FP16 for text encoders.
 	#"--verbose=DEBUG"
 	#"--cache-lru=0"   # Use LRU caching with a maximum of N node results cached. May use more RAM/VRAM.
-	"--default-device=1"
+	"--default-device=0"
 	#"--cache-none" # Reduced RAM/VRAM usage at the expense of executing every node for each run.
 	#"--cache-ram=32" #[CACHE_RAM] Use RAM pressure caching with the specified headroom threshold. If available RAM drops below the threhold the cache remove large items to free RAM. Default 4GB
 	#"--disable-smart-memory" #Force ComfyUI to agressively offload to regular ram instead of keeping models in vram when it can.
