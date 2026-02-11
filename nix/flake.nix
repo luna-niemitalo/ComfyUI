@@ -35,7 +35,7 @@
         rocm.clr
         rocm.rocblas
         #rocm.hipblas
-		    rocm.hip-common
+		rocm.hip-common
       ];
     in
     {
@@ -51,6 +51,7 @@
 			pkgs.cmakeWithGui
 			pkgs63.rocmPackages_6.rocminfo
 			pkgs.vulkan-tools
+			pkgs.dotnet-sdk
 
 			pkgs.python313
 			pkgs.python313Packages.setuptools
