@@ -46,7 +46,13 @@ ARG_LIST=(
 	"--disable-api-nodes"   # Disable loading all api nodes. Also prevents the frontend from
                         	# communicating with the internet.
 	"--disable-all-custom-nodes"  # Disable loading all custom nodes.
-	"--whitelist-custom-nodes=ComfyUI-GGUF" 		# WHITELIST_CUSTOM_NODES [WHITELIST_CUSTOM_NODES ...]
+
+
+	"--whitelist-custom-nodes"
+	"SwarmComfyExtra"
+	"SwarmComfyCommon"
+	"ComfyUI-GGUF"
+ 		# WHITELIST_CUSTOM_NODES [WHITELIST_CUSTOM_NODES ...]
 									# Specify custom node folders to load even when --disable-all-custom-nodes
                         			# is enabled.
 	#"--novram"
