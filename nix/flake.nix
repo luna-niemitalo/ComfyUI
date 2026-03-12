@@ -77,7 +77,7 @@
 		export PATH=${rocm.clr}/bin:${rocm.clr}/llvm/bin:$PATH
 		export CPLUS_INCLUDE_PATH=$CPATH
 		echo "${pkgs.python313}/include/python3.13/Python.h"
-		#curl -LsSf https://astral.sh/uv/install.sh | INSTALLER_DOWNLOAD_URL=https://wheelnext.astral.sh/v0.0.3 sh
+		curl -LsSf https://astral.sh/uv/install.sh | INSTALLER_DOWNLOAD_URL=https://wheelnext.astral.sh/v0.0.3 sh
 
         export LD_LIBRARY_PATH=$ROCM_ROOT/lib:$HIP_PATH/lib:${rocm.rocblas}/lib:${rocm.hipblas}/lib
         export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${lib.makeLibraryPath runtimeLibs}
